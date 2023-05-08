@@ -1,0 +1,8 @@
+{
+    "name": "Community",
+    "version": "0.0.1",
+    "description": "Index of OpenSSF groups",
+    "dependencies": {
+      "js-yaml": "^4.1.0"
+    }
+  }
