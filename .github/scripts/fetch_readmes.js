@@ -48,7 +48,7 @@ function clearReadmeFiles() {
 
 function reorderReadmeContent(content) {
   const sections = {};
-  const regex = /^#{2,3}\s(.+)$/gm; // A regex pattern to match sections with their headings
+  const regex = /^##\s(.+?)(?:\r?\n|\r)/gm;// A regex pattern to match sections with their headings
   let match;
 
   // Extract the first paragraph
