@@ -1,29 +1,16 @@
 # OSSF End Users
 
-Anyone is welcome to join our open discussions.
+## Motivation
 
-## Quick Start
 
-### Meeting times
 
-Every 2 weeks, Thursday 10am EST/3pm UTC. The meeting invite with zoom details is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
-
-### Meeting notes
-
-Meeting notes are [maintained in a Google Doc](https://docs.google.com/document/d/1KQalBRzfRBvsqh73JUYfp1KG-AJdXcv2Z8LTIFoQP8c/edit#). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
-
-### Areas that need contributions
-
-- WG Documentation
-- Others TBD
-
-### Where to file issues
-
-Issues can be reviewed and filed [here](https://github.com/ossf/wg-endusers/issues)
+## Objective
 
 ## Objective
 
 The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
+
+## Vision
 
 ## Vision
 
@@ -36,6 +23,8 @@ We strive to:
 - Provide a forum for learning from the experience and insights of peers.
 - Create an End Users Working Group, with representation from key private industry, public sectors, and multiple geographical regions.
 - Establish end user representation and active participation in OpenSSF working groups and leadership, both in the TAC and the Governing Board.
+
+## Scope
 
 ## Scope
 
@@ -60,30 +49,58 @@ Based on the objective, mission, and goals above, we look to deliver specific de
 
 ## Current Work
 
-TBD
-
-## Related Activities
+## Current Work
 
 TBD
+
+## Quick Start
+
+## Quick Start
+
+## Get Involved
+
+
+
+## Meeting times
+
+### Meeting times
+
+Every 2 weeks, Thursday 10am EST/3pm UTC. The meeting invite with zoom details is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
+
+## Governance
 
 ## Governance
 
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
 
 - Lead - Jon Meadows
-- Co-Lead - 
+- Co-Lead -
+
+## Project Maintainers
 
 ### Project Maintainers
 
 TBD
 
+## Project Collaborators
+
 ### Project Collaborators
 
 TBD
 
-### Project Contributors
+## Active projects
 
-TBD
+
+
+## Licenses
+
+
+
+## Charter
+
+
+
+## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
 
