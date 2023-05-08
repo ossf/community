@@ -12,6 +12,8 @@ This is the starting point for joining and contributing to the OpenSSF community
 
 [![OpenSSF Introduction](https://user-images.githubusercontent.com/51727488/236529348-7fc48e96-b289-42f1-87bc-1f765ee48498.png)](https://docs.google.com/presentation/d/1ZQ7WjNH5fQL7qvpFN3jTFt-iQHqPpUc5of_azQc8iic/edit#slide=id.gc84c2d290f_0_126)
 
+[![OpenSSF Introduction](https://user-images.githubusercontent.com/51727488/236865417-806eb5aa-81ae-4aea-bcbe-63567d4d693b.png))](https://docs.google.com/presentation/d/1ZQ7WjNH5fQL7qvpFN3jTFt-iQHqPpUc5of_azQc8iic/edit#slide=id.g21f97cb2aa1_1_480)
+
 
  ## Governance
  
