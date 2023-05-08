@@ -19,21 +19,21 @@ const repoList = [
 
 // Define your desired section order
 const sectionOrder = [
-  "Motivation",
-  "Objective",
-  "Vision",
-  "Scope",
-  "Current Work",
-  "Quick Start",
-  "Get Involved",
-  "Meeting times",
-  "Governance",
-  "Project Maintainers",
-  "Project Collaborators",
-  "Active projects",
-  "Licenses",
-  "Charter",
-  "Antitrust Policy Notice"
+  "Motivation ",
+  "Objective ",
+  "Vision ",
+  "Scope ",
+  "Current Work ",
+  "Quick Start ",
+  "Get Involved ",
+  "Meeting times ",
+  "Governance ",
+  "Project Maintainers ",
+  "Project Collaborators ",
+  "Active projects ",
+  "Licenses ",
+  "Charter ",
+  "Antitrust Policy Notice "
 ];
 
 
