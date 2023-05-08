@@ -67,6 +67,17 @@ function reorderReadmeContent(content) {
   return reorderedContent.trim();
 }
 
+function clearReadmeFiles() {
+  for (const repoName of repoList) {
+    const repoDir = path.join(repoName);
+    const readmePath = path.join(repoDir, "README.md");
+    if (fs.existsSync(readmePath)) {
+      fs.writeFileSync(readmePath, "");
+    }
+  }
+}
+
+
 async function fetchReadmes() {
     for (const repoName of repoList) {
       try {
