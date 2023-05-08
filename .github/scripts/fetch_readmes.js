@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-const owner = ossf;
+const orgName = "ossf";
 
 // Replace with your desired repository names
 const repoList = [
@@ -20,7 +20,7 @@ const repoList = [
 async function fetchReadmes() {
     for (const repoName of repoList) {
       try {
-        const readmeData = await octokit.repos.getReadme({ owner, repo: repoName });
+        const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
         const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
   
         // Create a directory for the current repository
