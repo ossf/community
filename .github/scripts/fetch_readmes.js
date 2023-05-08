@@ -17,6 +17,56 @@ const repoList = [
   'wg-securing-software-repos'
 ];
 
+// Define your desired section order
+const sectionOrder = [
+  "Motivation",
+  "Objective",
+  "Vision",
+  "Scope",
+  "Current Work",
+  "Quick Start",
+  "Get Involved",
+  "Meeting times",
+  "Governance",
+  "Project Maintainers",
+  "Project Collaborators",
+  "Active projects",
+  "Licenses",
+  "Charter",
+  "Antitrust Policy Notice"
+];
+
+
+
+function reorderReadmeContent(content) {
+  const sections = {};
+  const regex = /^##\s(.+)$/gm; // A regex pattern to match sections with their headings
+  let match;
+
+  // Extract the first paragraph
+  const firstParagraphRegex = /(^[\s\S]*?(?=\n\n))/;
+  const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+
+  while ((match = regex.exec(content)) !== null) {
+    const sectionTitle = match[1].trim();
+    const sectionStart = match.index;
+    const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
+
+    // Extract the section content and store it in the 'sections' object
+    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+  }
+
+  // Reorder the sections based on the 'sectionOrder' array
+  let reorderedContent = firstParagraph;
+  for (const title of sectionOrder) {
+    if (sections[title]) {
+      reorderedContent += `\n\n## ${title}\n\n${sections[title]}`;
+    }
+  }
+
+  return reorderedContent.trim();
+}
+
 async function fetchReadmes() {
     for (const repoName of repoList) {
       try {
