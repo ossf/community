@@ -48,10 +48,9 @@ function clearReadmeFiles() {
 
 function reorderReadmeContent(content) {
   const sections = {};
-  const regex = /^##\s(.+?)(?:\r?\n|\r)/gm;// A regex pattern to match sections with their headings
+  const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gm;
   let match;
 
-  // Extract the first paragraph
   const firstParagraphRegex = /(^[\s\S]*?(?=\n\n))/;
   const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
 
@@ -60,15 +59,15 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    // Extract the section content and store it in the 'sections' object
     sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
   }
 
-  // Reorder the sections based on the 'sectionOrder' array
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
     if (sections[title]) {
       reorderedContent += `\n\n## ${title}\n\n${sections[title]}`;
+    } else {
+      reorderedContent += `\n\n## ${title}\n\n`;
     }
   }
 
