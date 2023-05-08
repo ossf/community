@@ -37,6 +37,14 @@ const sectionOrder = [
 ];
 
 
+function clearReadmeFiles() {
+  for (const repoName of repoList) {
+    const readmePath = path.join(repoName, "README.md");
+    if (fs.existsSync(readmePath)) {
+      fs.writeFileSync(readmePath, "");
+    }
+  }
+}
 
 function reorderReadmeContent(content) {
   const sections = {};
@@ -67,17 +75,6 @@ function reorderReadmeContent(content) {
   return reorderedContent.trim();
 }
 
-function clearReadmeFiles() {
-  for (const repoName of repoList) {
-    const repoDir = path.join(repoName);
-    const readmePath = path.join(repoDir, "README.md");
-    if (fs.existsSync(readmePath)) {
-      fs.writeFileSync(readmePath, "");
-    }
-  }
-}
-
-
 async function fetchReadmes() {
   // Clear existing README files before fetching new content
   clearReadmeFiles();
@@ -100,5 +97,5 @@ async function fetchReadmes() {
     }
   }
 }
-  
+
 fetchReadmes();
