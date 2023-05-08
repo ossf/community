@@ -1,21 +1,14 @@
 const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
 const path = require("path");
+const yaml = require("js-yaml");
+const fs = require("fs");
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const orgName = "ossf";
 
-// Replace with your desired repository names
-const repoList = [
-  'wg-endusers',
-  'wg-best-practices-os-developers',
-  'wg-security-tooling',
-  'wg-supply-chain-integrity',
-  'wg-vulnerability-disclosures',
-  'wg-securing-critical-projects',
-  'wg-identifying-security-threats',
-  'wg-securing-software-repos'
-];
+const repoListYaml = fs.readFileSync("repoList.yml", "utf8");
+const repoList = yaml.load(repoListYaml);
 
 // Define your desired section order
 const sectionOrder = [
