@@ -6,7 +6,8 @@ const yaml = require("js-yaml");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const orgName = "ossf";
 
-const repoListYaml = fs.readFileSync("repoList.yml", "utf8");
+
+const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
 // Define your desired section order
