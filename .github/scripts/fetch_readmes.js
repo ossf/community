@@ -80,17 +80,17 @@ async function fetchReadmes() {
 
   for (const repoName of repoList) {
     try {
-      const readmeData = await octokit.repos.getReadme({ owner, repo: repoName });
+      const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      // Reorder the content based on the defined rules
-      const reorderedContent = reorderReadmeContent(readmeContent);
-
-      // Save the reordered README file directly in the repository's folder
-      if (!fs.existsSync(repoName)) {
-        fs.mkdirSync(repoName);
+      // Create a directory for the current repository
+      const repoDir = path.join(repoName);
+      if (!fs.existsSync(repoDir)) {
+        fs.mkdirSync(repoDir);
       }
-      fs.writeFileSync(path.join(repoName, "README.md"), reorderedContent);
+
+      // Save the README file inside the repository directory
+      fs.writeFileSync(path.join(repoDir, "README.md"), readmeContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
