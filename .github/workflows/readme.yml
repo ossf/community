@@ -1,0 +1,32 @@
+name: Generate Readme
+on: [push]
+jobs:
+    fetch_readmes:
+      runs-on: ubuntu-latest
+  
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+  
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+  
+      - name: Install dependencies
+        run: |
+          npm install @octokit/rest
+  
+      - name: Fetch READMEs
+        run: node .github/scripts/fetch_readmes.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: your_github_username
+  
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add -A
+          git commit -m "Update README index" || echo "No changes to commit"
+          git push
