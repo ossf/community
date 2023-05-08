@@ -1,14 +1,18 @@
 # Best Practices for Open Source Developers
 
-[![GitHub Super-Linter](https://github.com/ossf/wg-best-practices-os-developers/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+## Motivation
 
-Anyone is welcome to join our open discussions related to the group's mission and charter.
+
+
+## Objective
 
 ## Objective
 
 Our objective is to provide open source developers with best practices recommendations, and with an easy way to learn and apply them.
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
+
+## Vision
 
 ## Vision
 
@@ -19,6 +23,8 @@ Our vision is to make it easy for developers to adopt these best practices, than
 - Provide tools to help developers _Adopt_ these good practices into their daily work
 
 <img align="top" src="https://github.com/ossf/wg-best-practices-os-developers/blob/main/img/OpenSSF%20Dev%20Best%20Practices%20Projects%20Relations.png">
+
+## Scope
 
 ## Scope
 
@@ -37,6 +43,8 @@ Supply a Learning platform
 
 - The learner can follow a track, track their progress and get badges
 - A suite of exercises are available for each best practice of the inventory
+
+## Current Work
 
 ## Current Work
 
@@ -82,23 +90,11 @@ You can also see our older work, [Recommended compiler option flags for C/C++ pr
 
 We welcome contributions, suggestions and updates to our projects. To contribute please fill in an [issue](https://github.com/ossf/wg-best-practices-os-developers/issues) or create a [pull request](https://github.com/ossf/wg-best-practices-os-developers/pulls).
 
-## Related Activities
-
-There are many great projects both within and outside the Foundation that compliment and intersect our work here. Some other great projects/resources to explore:
-
-- _SLSA Supply-chain Levels for Software Artifacts_ - <https://github.com/slsa-framework/slsa>
-  - Purpose - A security framework from source to service, giving anyone working with software a common language for increasing levels of software security and supply chain integrity
+## Quick Start
 
 ## Quick Start
 
-### Areas that need contributions
-
-- Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
-
-### Where to file issues
-
-- Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
-
+## Get Involved
 
 ## Get Involved
 
@@ -114,6 +110,7 @@ Anyone is welcome to join our open discussions related to the group's mission an
 - [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups)
 - Join the conversation on [Slack](https://openssf.slack.com/archives/C01AHCRP8BT)
 
+## Meeting times
 
 ## Meeting times
 
@@ -131,9 +128,7 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 |  Scorecard  | Occurs every 2nd Thursday 1:00p PT/4:00p ET/1800 UTC    | [Meeting Notes](https://docs.google.com/document/d/1dB2U7_qZpNW96vtuoG7ShmgKXzIg6R5XT5Tc-0yz6kE/edit%23&sa=D&source=calendar&usd=2&usg=AOvVaw0dlm9r67uXVvpla6TQtT28 )           |  [Git Repo](https://github.com/ossf/scorecard) | [Slack](https://openssf.slack.com/archives/C0235AR8N2C ) | [Mailing List]( ) |
 |  Security Knowledge Framework -  SKF  | TBD   | [Meeting Notes]( )           |  [Git Repo]( ) | [Slack](https://openssf.slack.com/archives/C04B7EZLTM1) | [Mailing List]( ) |
 
-
-
-
+## Governance
 
 ## Governance
 
@@ -143,12 +138,16 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 - Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
 - "*" denotes a project/SIG lead
 
+## Project Maintainers
+
 ### Project Maintainers
 
 - [Christopher "CRob" Robinson*, Intel](https://github.com/SecurityCRob)
 - [Xavier René-Corail, GitHub](https://github.com/xcorail)
 - [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
 - [Dave Russo*, Red Hat](https://github.com/drusso-rh)
+
+## Project Collaborators
 
 ### Project Collaborators
 
@@ -168,24 +167,11 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 - [Randall T. Vasquez*, Gentoo/Homebrew](https://github.com/ran-dall)
 - [Jay White, Microsoft](https://github.com/camaleon2016)
 
-### Project Contributors
+## Active projects
 
-- Aeva Black, Microsoft
-- Jory Burson, Linux Foundation
-- Rosaria Carr, Indeed
-- Riccardo ten Cate, SKF
-- Spyros Gasteratos*, OWASP/CRE
-- Sami Guirguis, TELUS
-- Jonathan Leitschuh*, Dan Kaminsky Fellowship @ Human Security
-- Jeff Mendoza, Google
-- Kara Olive, Google
-- Laurent Simon*, Google/Scorecard
-- Azeem Shaikh*, Google/Scorecard
-- Harimohan Rajamohanan, Wipro
-- Ixchel Ruiz, jfrog
-- Patricia Tarro, Dell
-- [Thomas Nyman*, Ericsson](https://github.com/thomasnyman)
-- Noam Dotan, Legit Security
+
+
+## Licenses
 
 ## Licenses
 
@@ -199,10 +185,14 @@ Formal specifications would be licensed under the
 
 ## Charter
 
+## Charter
+
 Like all OpenSSF working groups, this working group reports to the
 [OpenSSF Technical Advisory Council (TAC)](https://github.com/ossf/tac).
 For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
+
+## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
 
