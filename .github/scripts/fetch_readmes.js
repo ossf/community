@@ -19,21 +19,21 @@ const repoList = [
 
 // Define your desired section order
 const sectionOrder = [
-  "Motivation ",
-  "Objective ",
-  "Vision ",
-  "Scope ",
-  "Current Work ",
-  "Quick Start ",
-  "Get Involved ",
-  "Meeting times ",
-  "Governance ",
-  "Project Maintainers ",
-  "Project Collaborators ",
-  "Active projects ",
-  "Licenses ",
-  "Charter ",
-  "Antitrust Policy Notice "
+  "Motivation",
+  "Objective",
+  "Vision",
+  "Scope",
+  "Current Work",
+  "Quick Start",
+  "Get Involved",
+  "Meeting times",
+  "Governance",
+  "Project Maintainers",
+  "Project Collaborators",
+  "Active projects",
+  "Licenses",
+  "Charter",
+  "Antitrust Policy Notice"
 ];
 
 
@@ -76,7 +76,7 @@ function reorderReadmeContent(content) {
 
 async function fetchReadmes() {
   // Clear existing README files before fetching new content
-  clearReadmeFiles();
+  //clearReadmeFiles();
 
   for (const repoName of repoList) {
     try {
