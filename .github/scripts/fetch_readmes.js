@@ -76,7 +76,7 @@ function reorderReadmeContent(content) {
 
 async function fetchReadmes() {
   // Clear existing README files before fetching new content
-  //clearReadmeFiles();
+  clearReadmeFiles();
 
   for (const repoName of repoList) {
     try {
