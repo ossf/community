@@ -70,7 +70,7 @@ function reorderReadmeContent(content) {
   for (const title of sectionOrder) {
     const lowerCaseTitle = title.toLowerCase();
     if (sections[lowerCaseTitle]) {
-      reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
+      reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
     } else {
       reorderedContent += `\n\n## ${title}\n\nTBD`;
     }
