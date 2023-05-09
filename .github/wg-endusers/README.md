@@ -1,5 +1,7 @@
 # OSSF End Users
 
+Anyone is welcome to join our open discussions.
+
 ## Motivation
 
 
