@@ -29,7 +29,6 @@ const sectionOrder = [
   "Antitrust Policy Notice"
 ];
 
-const uniqueSectionHeaders = [];
 
 function clearReadmeFiles() {
   for (const repoName of repoList) {
@@ -68,51 +67,71 @@ function reorderReadmeContent(content) {
   return reorderedContent.trim();
 }
 
+function combineReadmes(readmeContents, sectionOrder) {
+  const combinedSections = {};
+
+  for (const sectionTitle of sectionOrder) {
+    combinedSections[sectionTitle] = [];
+  }
+
+  for (const content of readmeContents) {
+    const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gm;
+    let match;
+
+    while ((match = regex.exec(content)) !== null) {
+      const sectionTitle = match[1].trim();
+      const sectionStart = match.index + match[0].length;
+      const sectionEnd = content.indexOf("\n##", sectionStart) || content.length;
+
+      if (combinedSections.hasOwnProperty(sectionTitle)) {
+        combinedSections[sectionTitle].push(content.slice(sectionStart, sectionEnd).trim());
+      }
+    }
+  }
+
+  let combinedReadme = "";
+  for (const [sectionTitle, sections] of Object.entries(combinedSections)) {
+    combinedReadme += `## ${sectionTitle}\n\n`;
+    combinedReadme += sections.join("\n\n") + "\n\n";
+  }
+
+  return combinedReadme.trim();
+}
+
 async function fetchReadmes() {
+  // Clear existing README files before fetching new content
+  clearReadmeFiles();
+
+  const readmeContents = [];
+
   for (const repoName of repoList) {
     try {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      // Extract the section headers from the README file
-      const sectionHeaders = readmeContent.match(/## (.+)/g);
-
-      // Add the unique section headers to the new array
-      for (const sectionHeader of sectionHeaders) {
-        if (!uniqueSectionHeaders.includes(sectionHeader)) {
-          uniqueSectionHeaders.push(sectionHeader);
-        }
+      // Create a directory for the current repository
+      const repoDir = path.join(repoName);
+      if (!fs.existsSync(repoDir)) {
+        fs.mkdirSync(repoDir);
       }
+
+      const reorderedContent = reorderReadmeContent(readmeContent);
+      readmeContents.push(reorderedContent);
+
+      // Save the README file inside the repository directory
+      fs.writeFileSync(path.join(repoName, "README.md"), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
   }
 
-  // Sort the unique section headers in the desired order
-  uniqueSectionHeaders.sort(function(a, b) {
-    return sectionOrder.indexOf(a) - sectionOrder.indexOf(b);
-  });
-
-  // Create a new README file with the unique section headers
-  const newReadmeContent = uniqueSectionHeaders.map(function(sectionHeader) {
-    return `## ${sectionHeader}`;
-  }).join("\n\n");
-
-  // Write the new README file to disk
-  fs.writeFileSync("./new_readme.md", newReadmeContent);
+  return readmeContents;
 }
 
-// Create a new README index file
-const indexContent = `
-# Table of Contents
+async function main() {
+  const readmeContents = await fetchReadmes();
+  const combinedReadme = combineReadmes(readmeContents, sectionOrder);
+  fs.writeFileSync('README.md', combinedReadme);
+}
 
-${uniqueSectionHeaders.map(function(sectionHeader) {
-  return `* ${sectionHeader}`;
-}).join("\n\n")}`;
-
-// Write the new README index file to disk
-fs.writeFileSync("./new_readme_index.md", indexContent);
-
-
-// Call the fetchReadmes function
-fetchReadmes();
+main();
