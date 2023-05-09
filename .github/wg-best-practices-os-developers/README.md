@@ -110,7 +110,7 @@ Anyone is welcome to join our open discussions related to the group's mission an
 - [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups)
 - Join the conversation on [Slack](https://openssf.slack.com/archives/C01AHCRP8BT)
 
-## Meeting times
+## Meeting Times
 
 Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
@@ -128,7 +128,7 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 
 ## Meeting Notes
 
-TBD
+Meeting notes are maintained in a Google Doc found in the above table. If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
 
 ## Governance
 
