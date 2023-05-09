@@ -52,13 +52,15 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    if (!sections[sectionTitle]) {
+      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    }
   }
 
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
     if (sections[title]) {
-      reorderedContent += `\n\n## ${title}\n\n${sections[title]}`;
+      reorderedContent += `\n\n${sections[title]}`;
     } else {
       reorderedContent += `\n\n## ${title}\n\n`;
     }
@@ -66,6 +68,7 @@ function reorderReadmeContent(content) {
 
   return reorderedContent.trim();
 }
+
 
 function combineReadmes(readmeContents, sectionOrder) {
   const combinedSections = {};
