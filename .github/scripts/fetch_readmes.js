@@ -110,7 +110,7 @@ async function fetchReadmes() {
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
       // Create a directory for the current repository
-      const repoDir = path.join(repoName);
+      const repoDir = path.join(process.cwd(), repoName);
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
