@@ -92,7 +92,7 @@ async function fetchReadmes() {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      const repoDir = path.join(__dirname, "..", repoName);
+      const repoDir = path.join(__dirname, "..", "..", repoName); 
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
