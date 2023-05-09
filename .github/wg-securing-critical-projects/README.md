@@ -2,6 +2,8 @@
 
 ## Motivation
 
+## Motivation
+
 <table align="right">
   <tr><td><img align="right" src="https://imgs.xkcd.com/comics/dependency.png"></td></tr>
   <tr><td><a href="https://xkcd.com/2347">Source</a>. Randall Munroe. Licensed under <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></td></tr>
@@ -48,6 +50,8 @@ this help available.
 
 ## Governance
 
+## Governance
+
 This group is chaired by Amir Montazery (OSTIF) and Jeff Mendoza (Kusari).
 
 Full details of process and roles are linked from [governance README](/governance).
@@ -60,7 +64,7 @@ Full details of process and roles are linked from [governance README](/governanc
 
 
 
-## Active projects
+## Active Projects
 
 
 
@@ -72,4 +76,4 @@ Full details of process and roles are linked from [governance README](/governanc
 
 
 
-## Antitrust Policy Notice
+## Antitrust Policy

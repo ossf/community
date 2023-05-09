@@ -1,5 +1,7 @@
 # Identifying Security Threats in Open Source Projects
 
+## Motivation
+
 ### Motivation
 
 Open source software is an essential part of modern software development, and
@@ -16,6 +18,8 @@ compromise the organizations or users that use those projects. It's
 essential that we understand these threats and work to build defenses against
 them.
 
+## Objective
+
 ### Objective
 
 Our objective is to enable stakeholders to have informed confidence in the
@@ -29,6 +33,8 @@ individual open source software components.
 
 
 
+## Scope
+
 ### Scope
 
 The scope of this working group includes "security", as opposed to privacy,
@@ -39,10 +45,14 @@ ecosystem, as opposed to focusing exclusively on critical open source projects.
 
 
 
+## Quick Start
+
 ### Quick Start
 
 The best way to get started is to simply join a working group meeting. You can also
 read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) to get up to speed with what we're up to.
+
+## Get Involved
 
 ### Get Involved
 
@@ -55,6 +65,8 @@ read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULC
 ## Meeting times
 
 
+
+## Governance
 
 ### Governance
 
@@ -71,9 +83,27 @@ document outlines the scope and governance of our group activities.
 
 
 
-## Active projects
+## Active Projects
 
+### Active Projects
 
+* [Alpha-Omega](https://openssf.org/community/alpha-omega)
+  * Leads: Michael Scovetta, Michael Winser, Brian Behlendorf
+
+* [Office Hours](https://openssf.slack.com/archives/C03LTHA6M61)
+  * Lead: Marta Rybczynska
+
+* [Security Insights](https://github.com/ossf/security-insights-spec) - Provides a mechanism for projects to report information about their security practices in a machine-readable way.
+  * Lead: Luigi Gubello
+
+* [Security Metrics](https://metrics.openssf.org) -
+  This project's purpose is to collect, organize, and provide interesting security metrics for
+  open source projects to stakeholders, including users.
+  * Lead: Michael Scovetta [existing implementation]
+  * Leads: Vinod, Jay White, Christine Abernathy
+
+* [Security Reviews](https://github.com/ossf/security-reviews) -
+  This repository contains a collection of security reviews of open source software.
 
 ## Licenses
 
@@ -83,4 +113,10 @@ document outlines the scope and governance of our group activities.
 
 
 
-## Antitrust Policy Notice
+## Antitrust Policy
+
+### Antitrust Policy
+
+Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
+
+Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
