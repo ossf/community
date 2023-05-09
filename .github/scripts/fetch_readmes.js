@@ -29,6 +29,7 @@ const sectionOrder = [
   "Antitrust Policy Notice"
 ];
 
+const uniqueSectionHeaders = [];
 
 function clearReadmeFiles() {
   for (const repoName of repoList) {
@@ -68,28 +69,50 @@ function reorderReadmeContent(content) {
 }
 
 async function fetchReadmes() {
-  // Clear existing README files before fetching new content
-  clearReadmeFiles();
-
   for (const repoName of repoList) {
     try {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      // Create a directory for the current repository
-      const repoDir = path.join(repoName);
-      if (!fs.existsSync(repoDir)) {
-        fs.mkdirSync(repoDir);
+      // Extract the section headers from the README file
+      const sectionHeaders = readmeContent.match(/## (.+)/g);
+
+      // Add the unique section headers to the new array
+      for (const sectionHeader of sectionHeaders) {
+        if (!uniqueSectionHeaders.includes(sectionHeader)) {
+          uniqueSectionHeaders.push(sectionHeader);
+        }
       }
-
-      const reorderedContent = reorderReadmeContent(readmeContent);
-
-      // Save the README file inside the repository directory
-      fs.writeFileSync(path.join(repoName, "README.md"), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
   }
+
+  // Sort the unique section headers in the desired order
+  uniqueSectionHeaders.sort(function(a, b) {
+    return sectionOrder.indexOf(a) - sectionOrder.indexOf(b);
+  });
+
+  // Create a new README file with the unique section headers
+  const newReadmeContent = uniqueSectionHeaders.map(function(sectionHeader) {
+    return `## ${sectionHeader}`;
+  }).join("\n\n");
+
+  // Write the new README file to disk
+  fs.writeFileSync("./new_readme.md", newReadmeContent);
 }
 
+// Create a new README index file
+const indexContent = `
+# Table of Contents
+
+${uniqueSectionHeaders.map(function(sectionHeader) {
+  return `* ${sectionHeader}`;
+}).join("\n\n")}`;
+
+// Write the new README index file to disk
+fs.writeFileSync("./new_readme_index.md", indexContent);
+
+
+// Call the fetchReadmes function
 fetchReadmes();
