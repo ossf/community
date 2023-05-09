@@ -21,7 +21,7 @@ const sectionOrder = [
   "Areas that need contributions",
   "Where to file issues",
   "Get Involved",
-  "Meeting times",
+  "Meeting Times",
   "Meeting Notes",
   "Governance",
   "Project Maintainers",
