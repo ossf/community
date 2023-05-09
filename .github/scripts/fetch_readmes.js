@@ -18,15 +18,18 @@ const sectionOrder = [
   "Scope",
   "Current Work",
   "Quick Start",
+  "Areas that need contributions",
+  "Where to file issues",
   "Get Involved",
   "Meeting times",
+  "Meeting Notes",
   "Governance",
   "Project Maintainers",
   "Project Collaborators",
   "Active Projects",
   "Licenses",
   "Charter",
-  "Antitrust Policy"
+  "Antitrust Policy Notice"
 ];
 
 
