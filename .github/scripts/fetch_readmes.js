@@ -50,7 +50,6 @@ function createEmptySections() {
 
 function reorderReadmeContent(content) {
   const sections = createEmptySections();
-  const sections = {};
   const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
