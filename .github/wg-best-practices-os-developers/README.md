@@ -88,6 +88,14 @@ We welcome contributions, suggestions and updates to our projects. To contribute
 
 ## Quick Start
 
+### Areas that need contributions
+
+- Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
+
+### Where to file issues
+
+- Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
+
 ## Get Involved
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
@@ -117,6 +125,10 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 |  Memory Safety SIG   | Every 2nd Thursday 10:00a PT/1:00p ET/1500 UTC           | [Meeting Notes](https://docs.google.com/document/d/1Ehpp1UmAIqMs0ZdKr15sd5MS48OeaGKB9H40htVehs4/edit?usp=sharing)                       |  [Git Repo](https://github.com/ossf/Memory-Safety) | [Slack](https://openssf.slack.com/archives/C03G8NZH58R) | [Mailing List](https://lists.openssf.org/g/openssf-sig-memory-safety) |
 |  Scorecard  | Occurs every 2nd Thursday 1:00p PT/4:00p ET/1800 UTC    | [Meeting Notes](https://docs.google.com/document/d/1dB2U7_qZpNW96vtuoG7ShmgKXzIg6R5XT5Tc-0yz6kE/edit%23&sa=D&source=calendar&usd=2&usg=AOvVaw0dlm9r67uXVvpla6TQtT28 )           |  [Git Repo](https://github.com/ossf/scorecard) | [Slack](https://openssf.slack.com/archives/C0235AR8N2C ) | [Mailing List]( ) |
 |  Security Knowledge Framework -  SKF  | TBD   | [Meeting Notes]( )           |  [Git Repo]( ) | [Slack](https://openssf.slack.com/archives/C04B7EZLTM1) | [Mailing List]( ) |
+
+## Meeting Notes
+
+TBD
 
 ## Governance
 
@@ -172,6 +184,8 @@ Like all OpenSSF working groups, this working group reports to the
 For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
 
-## Antitrust Policy
+## Antitrust Policy Notice
 
-TBD
+Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
+
+Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
