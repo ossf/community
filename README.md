@@ -4,15 +4,9 @@
 
 
 
-
-
 Most developers are not security experts and even the most seasoned developers, security experts or not, make mistakes.  Tools can be used to help weed out security defects allowing developers to focus on the features they want to develop.
 
-
-
 Supply chain issues and attacks cause significant damage worldwide including lost revenue, costs of ransomware payments, costs of mitigation, denial of access to resources, reduced customer trust, and public deception. As a matter of public trust, governments are beginning to mandate actions aimed at improving the security and integrity of supply chains. The [US White House Executive Order on Improving the Nation’s Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) is one such example.
-
-
 
 
 
@@ -32,8 +26,6 @@ projects are the same, and support can come in many shapes.
 We intend to work with upstream maintainers to understand what help and support they need, and then develop scalable processes to make
 this help available.
 
-
-
 Open source software is an essential part of modern software development, and
 of practically all technology solutions. Adoption of open source software has
 grown over the past two decades, powering everything from tiny "Internet of
@@ -48,23 +40,15 @@ compromise the organizations or users that use those projects. It's
 essential that we understand these threats and work to build defenses against
 them.
 
-
-
 This working group is for and focuses on the maintainers of software repositories, software registries, and tools which rely on them, at various levels including system, language, plugin, extensions and container systems. It provides a forum to share experiences and to discuss shared problems, risks and threats.
 
 ## Objective
 
-
-
 The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
-
-
 
 Our objective is to provide open source developers with best practices recommendations, and with an easy way to learn and apply them.
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
-
-
 
 Our mission is to Identify, Evaluate, Improve, Develop & Ease Deployment of universally-accessible, developer focused tooling to help the open source community secure their code.  This space allows members to collaborate together on these goals.
 
@@ -74,11 +58,7 @@ Our mission is to Identify, Evaluate, Improve, Develop & Ease Deployment of univ
 * Develop - Despite the large number of tools available, there are still large areas of the security problem space that do not have tools to help developers find issues.  We will develop those tools where there is interest and bandwidth.
 * Ease Deployment - __Most critically__, open source developers need to know what tools they should be using and how to easily integrate them into their development process.  Unless developers have an easy way to drop in security tooling, it is unlikely to be included.  We will provide this information to open source developers.
 
-
-
 The objective of the Supply Chain Integrity Working Group (WG) is to provide a global community for collaborating to help individuals and organizations assess and improve the security of end-to-end supply chains for open source software.
-
-
 
 
 
@@ -90,8 +70,6 @@ open source ecosystem and recommending practical mitigations. We will also
 identify a set of key metrics and build tooling to communicate those metrics
 to stakeholders, enabling a better understanding of the security posture of
 individual open source software components.
-
-
 
 * Enable faster cross-pollination of existing ideas across ecosystems (including technical measures, infrastructure approaches, and policies)
 * Act as a clearinghouse for new ideas that could benefit multiple ecosystems
@@ -107,8 +85,6 @@ The working group may create:
 
 ## Vision
 
-
-
 The End Users Working Group (WG) represents the interests of public and private sector organizations that primarily consume open source rather than produce it.
 
 We strive to:
@@ -119,8 +95,6 @@ We strive to:
 - Create an End Users Working Group, with representation from key private industry, public sectors, and multiple geographical regions.
 - Establish end user representation and active participation in OpenSSF working groups and leadership, both in the TAC and the Governing Board.
 
-
-
 Our vision is to make it easy for developers to adopt these best practices, thanks to:
 
 - _Identifying_ good practices, requirements, and tools that help open source developers create and maintain more secure software
@@ -128,8 +102,6 @@ Our vision is to make it easy for developers to adopt these best practices, than
 - Provide tools to help developers _Adopt_ these good practices into their daily work
 
 <img align="top" src="https://github.com/ossf/wg-best-practices-os-developers/blob/main/img/OpenSSF%20Dev%20Best%20Practices%20Projects%20Relations.png">
-
-
 
 Our vision is to improve the perception of security in open source software.
 
@@ -151,8 +123,6 @@ This group is chaired by Josh Bressers (@joshbressers).
 
 ## Scope
 
-
-
 Based on the objective, mission, and goals above, we look to deliver specific delivereables:
 
 - _Ensure that the use cases for end user consumption of open-source software are understood and factored into OSSF programs._
@@ -171,8 +141,6 @@ Based on the objective, mission, and goals above, we look to deliver specific de
       - Recruitment
       - Marketing
       - Promote best practices and outreach
-
-
 
 The Developer Best Practices group wants to help identify and curate an accessible [inventory](https://github.com/ossf/wg-best-practices-os-developers/blob/main/docs/inventory.md) of best practices
 
@@ -198,8 +166,6 @@ Supply a Learning platform
 
 
 
-
-
 The scope of this working group includes "security", as opposed to privacy,
 resiliency, or other related areas. We also consider the broad open source
 ecosystem, as opposed to focusing exclusively on critical open source projects.
@@ -208,11 +174,7 @@ ecosystem, as opposed to focusing exclusively on critical open source projects.
 
 ## Current Work
 
-
-
 TBD
-
-
 
 Our work is organized into several discrete-yet-related projects that help us achieve our goals:
 
@@ -282,20 +244,12 @@ We welcome contributions, suggestions and updates to our projects. To contribute
 
 
 
-
-
-
-
-
-
 The best way to get started is to simply join a working group meeting. You can also
 read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) to get up to speed with what we're up to.
 
 
 
 ## Get Involved
-
-
 
 
 
@@ -319,8 +273,6 @@ Anyone is welcome to join our open discussions related to the group's mission an
 
 
 
-
-
 * Please get involved with our specific projects, e.g,.
 * [Mailing List](https://lists.openssf.org/g/openssf-wg-security-threats) and [Security Reviews](https://github.com/ossf/security-reviews).
   ([Manage your subscriptions to OpenSSF mailing lists](https://lists.openssf.org/g/main/subgroups))
@@ -331,11 +283,7 @@ Anyone is welcome to join our open discussions related to the group's mission an
 
 ## Meeting times
 
-
-
 Every 2 weeks, Thursday 10am EST/3pm UTC. The meeting invite with zoom details is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
-
-
 
 Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
@@ -351,13 +299,9 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 |  Scorecard  | Occurs every 2nd Thursday 1:00p PT/4:00p ET/1800 UTC    | [Meeting Notes](https://docs.google.com/document/d/1dB2U7_qZpNW96vtuoG7ShmgKXzIg6R5XT5Tc-0yz6kE/edit%23&sa=D&source=calendar&usd=2&usg=AOvVaw0dlm9r67uXVvpla6TQtT28 )           |  [Git Repo](https://github.com/ossf/scorecard) | [Slack](https://openssf.slack.com/archives/C0235AR8N2C ) | [Mailing List]( ) |
 |  Security Knowledge Framework -  SKF  | TBD   | [Meeting Notes]( )           |  [Git Repo]( ) | [Slack](https://openssf.slack.com/archives/C04B7EZLTM1) | [Mailing List]( ) |
 
-
-
 [Zoom](https://zoom.us/j/96055397788?pwd=bzFxYjNrUTZvNDFLdjVCZHQyWDhNdz09) every other Tuesday at 16:00 GMT from Aug 11.
 
 The meeting invite is available on the public [OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
-
-
 
 
 
@@ -373,22 +317,16 @@ The meeting invite is available on the public [OSSF calendar](https://calendar.g
 
 ## Governance
 
-
-
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
 
 - Lead - Jon Meadows
 - Co-Lead -
-
-
 
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
 
 - Lead - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 - Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
 - "*" denotes a project/SIG lead
-
-
 
 
 
@@ -401,20 +339,14 @@ Full details of process and roles are linked from [governance README](/governanc
 
 
 
-
-
 This group is chaired by Amir Montazery (OSTIF) and Jeff Mendoza (Kusari).
 
 Full details of process and roles are linked from [governance README](/governance).
-
-
 
 The [CHARTER](https://github.com/ossf/wg-identifying-security-threats/blob/main/CHARTER.md)
 document outlines the scope and governance of our group activities.
 
 * Lead: [Michael Scovetta](mailto:michael.scovetta@microsoft.com)
-
-
 
 We use the [securing-software-repos-wg](https://github.com/orgs/ossf/teams/securing-software-repos-wg) GitHub team.
 
@@ -424,18 +356,12 @@ This group is chaired by [Dustin Ingram](https://github.com/di).
 
 ## Project Maintainers
 
-
-
 TBD
-
-
 
 - [Christopher "CRob" Robinson*, Intel](https://github.com/SecurityCRob)
 - [Xavier René-Corail, GitHub](https://github.com/xcorail)
 - [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
 - [Dave Russo*, Red Hat](https://github.com/drusso-rh)
-
-
 
 
 
@@ -452,11 +378,7 @@ TBD
 
 ## Project Collaborators
 
-
-
 TBD
-
-
 
 - [Christine Abernathy*, F5](https://github.com/caabernathy)
 - [Daniel Applequist*, Snyk](https://github.com/Torgo)
@@ -473,8 +395,6 @@ TBD
 - [Eric Tice, WiPro](https://github.com/)
 - [Randall T. Vasquez*, Gentoo/Homebrew](https://github.com/ran-dall)
 - [Jay White, Microsoft](https://github.com/camaleon2016)
-
-
 
 
 
@@ -512,11 +432,7 @@ TBD
 
 
 
-
-
 ## Licenses
-
-
 
 
 
@@ -544,8 +460,6 @@ Formal specifications would be licensed under the
 
 
 
-
-
 Like all OpenSSF working groups, this working group reports to the
 [OpenSSF Technical Advisory Council (TAC)](https://github.com/ossf/tac).
 For more organizational information, see the
@@ -565,13 +479,9 @@ For more organizational information, see the
 
 ## Antitrust Policy Notice
 
-
-
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation
-
-
 
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 

@@ -1,7 +1,5 @@
 # Identifying Security Threats in Open Source Projects
 
-## Motivation
-
 ### Motivation
 
 Open source software is an essential part of modern software development, and
@@ -18,8 +16,6 @@ compromise the organizations or users that use those projects. It's
 essential that we understand these threats and work to build defenses against
 them.
 
-## Objective
-
 ### Objective
 
 Our objective is to enable stakeholders to have informed confidence in the
@@ -33,8 +29,6 @@ individual open source software components.
 
 
 
-## Scope
-
 ### Scope
 
 The scope of this working group includes "security", as opposed to privacy,
@@ -45,14 +39,10 @@ ecosystem, as opposed to focusing exclusively on critical open source projects.
 
 
 
-## Quick Start
-
 ### Quick Start
 
 The best way to get started is to simply join a working group meeting. You can also
 read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) to get up to speed with what we're up to.
-
-## Get Involved
 
 ### Get Involved
 
@@ -65,8 +55,6 @@ read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULC
 ## Meeting times
 
 
-
-## Governance
 
 ### Governance
 

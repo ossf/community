@@ -2,8 +2,6 @@
 
 ## Motivation
 
-## Motivation
-
 <table align="right">
   <tr><td><img align="right" src="https://imgs.xkcd.com/comics/dependency.png"></td></tr>
   <tr><td><a href="https://xkcd.com/2347">Source</a>. Randall Munroe. Licensed under <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></td></tr>
@@ -47,8 +45,6 @@ this help available.
 ## Meeting times
 
 
-
-## Governance
 
 ## Governance
 

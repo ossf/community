@@ -2,11 +2,7 @@
 
 ## Motivation
 
-## Motivation
-
 Supply chain issues and attacks cause significant damage worldwide including lost revenue, costs of ransomware payments, costs of mitigation, denial of access to resources, reduced customer trust, and public deception. As a matter of public trust, governments are beginning to mandate actions aimed at improving the security and integrity of supply chains. The [US White House Executive Order on Improving the Nation’s Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) is one such example.
-
-## Objective
 
 ## Objective
 
@@ -35,8 +31,6 @@ The objective of the Supply Chain Integrity Working Group (WG) is to provide a g
 ## Meeting times
 
 
-
-## Governance
 
 ## Governance
 

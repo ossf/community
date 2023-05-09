@@ -6,11 +6,7 @@
 
 ## Objective
 
-## Objective
-
 The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
-
-## Vision
 
 ## Vision
 
@@ -23,8 +19,6 @@ We strive to:
 - Provide a forum for learning from the experience and insights of peers.
 - Create an End Users Working Group, with representation from key private industry, public sectors, and multiple geographical regions.
 - Establish end user representation and active participation in OpenSSF working groups and leadership, both in the TAC and the Governing Board.
-
-## Scope
 
 ## Scope
 
@@ -49,11 +43,7 @@ Based on the objective, mission, and goals above, we look to deliver specific de
 
 ## Current Work
 
-## Current Work
-
 TBD
-
-## Quick Start
 
 ## Quick Start
 
@@ -61,13 +51,9 @@ TBD
 
 
 
-## Meeting times
-
 ### Meeting times
 
 Every 2 weeks, Thursday 10am EST/3pm UTC. The meeting invite with zoom details is available on the [public OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
-
-## Governance
 
 ## Governance
 
@@ -76,13 +62,9 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 - Lead - Jon Meadows
 - Co-Lead -
 
-## Project Maintainers
-
 ### Project Maintainers
 
 TBD
-
-## Project Collaborators
 
 ### Project Collaborators
 
@@ -99,8 +81,6 @@ TBD
 ## Charter
 
 
-
-## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
 
