@@ -36,7 +36,7 @@ individual open source software components.
 
 ## Vision
 
-
+TBD
 
 ## Scope
 
@@ -48,7 +48,7 @@ ecosystem, as opposed to focusing exclusively on critical open source projects.
 
 ## Current Work
 
-
+TBD
 
 ## Quick Start
 
@@ -69,7 +69,7 @@ read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULC
 
 ## Meeting times
 
-
+TBD
 
 ## Governance
 
@@ -82,11 +82,11 @@ document outlines the scope and governance of our group activities.
 
 ## Project Maintainers
 
-
+TBD
 
 ## Project Collaborators
 
-
+TBD
 
 ## Active Projects
 
@@ -112,11 +112,11 @@ document outlines the scope and governance of our group activities.
 
 ## Licenses
 
-
+TBD
 
 ## Charter
 
-
+TBD
 
 ## Antitrust Policy
 

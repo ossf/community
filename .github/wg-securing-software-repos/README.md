@@ -26,11 +26,11 @@ The working group may create:
 
 ## Vision
 
-
+TBD
 
 ## Scope
 
-
+TBD
 
 ## Current Work
 
@@ -41,11 +41,11 @@ The working group may create:
 
 ## Quick Start
 
-
+TBD
 
 ## Get Involved
 
-
+TBD
 
 ## Meeting times
 
@@ -67,23 +67,23 @@ This group is chaired by [Dustin Ingram](https://github.com/di).
 
 ## Project Maintainers
 
-
+TBD
 
 ## Project Collaborators
 
-
+TBD
 
 ## Active Projects
 
-
+TBD
 
 ## Licenses
 
-
+TBD
 
 ## Charter
 
-
+TBD
 
 ## Antitrust Policy
 

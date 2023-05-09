@@ -4,7 +4,7 @@ Anyone is welcome to join our open discussions.
 
 ## Motivation
 
-
+TBD
 
 ## Objective
 
@@ -61,7 +61,7 @@ TBD
 
 ## Get Involved
 
-
+TBD
 
 ## Meeting times
 
@@ -92,14 +92,16 @@ TBD
 
 ## Active Projects
 
-
+TBD
 
 ## Licenses
 
-
+TBD
 
 ## Charter
 
-
+TBD
 
 ## Antitrust Policy
+
+TBD

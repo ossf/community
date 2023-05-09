@@ -6,7 +6,7 @@ Anyone is welcome to join our open discussions related to the group's mission an
 
 ## Motivation
 
-
+TBD
 
 ## Objective
 
@@ -173,7 +173,7 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 
 ## Active Projects
 
-
+TBD
 
 ## Licenses
 
@@ -197,3 +197,5 @@ For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
 
 ## Antitrust Policy
+
+TBD

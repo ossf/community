@@ -26,31 +26,31 @@ this help available.
 
 ## Objective
 
-
+TBD
 
 ## Vision
 
-
+TBD
 
 ## Scope
 
-
+TBD
 
 ## Current Work
 
-
+TBD
 
 ## Quick Start
 
-
+TBD
 
 ## Get Involved
 
-
+TBD
 
 ## Meeting times
 
-
+TBD
 
 ## Governance
 
@@ -62,23 +62,23 @@ Full details of process and roles are linked from [governance README](/governanc
 
 ## Project Maintainers
 
-
+TBD
 
 ## Project Collaborators
 
-
+TBD
 
 ## Active Projects
 
-
+TBD
 
 ## Licenses
 
-
+TBD
 
 ## Charter
 
-
+TBD
 
 ## Antitrust Policy
 

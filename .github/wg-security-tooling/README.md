@@ -34,19 +34,19 @@ This group is chaired by Josh Bressers (@joshbressers).
 
 ## Scope
 
-
+TBD
 
 ## Current Work
 
-
+TBD
 
 ## Quick Start
 
-
+TBD
 
 ## Get Involved
 
-
+TBD
 
 ## Meeting times
 
@@ -58,15 +58,15 @@ The meeting invite is available on the public [OSSF calendar](https://calendar.g
 
 ## Governance
 
-
+TBD
 
 ## Project Maintainers
 
-
+TBD
 
 ## Project Collaborators
 
-
+TBD
 
 ## Active Projects
 
@@ -74,11 +74,11 @@ The meeting invite is available on the public [OSSF calendar](https://calendar.g
 
 ## Licenses
 
-
+TBD
 
 ## Charter
 
-
+TBD
 
 ## Antitrust Policy
 
