@@ -52,7 +52,9 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    if (!sections[sectionTitle]) {
+      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    }
   }
 
   let reorderedContent = firstParagraph;
