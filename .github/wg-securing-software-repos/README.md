@@ -4,11 +4,7 @@ OpenSSF Working Group on Securing Software Repositories
 
 ## Motivation
 
-## Motivation
-
 This working group is for and focuses on the maintainers of software repositories, software registries, and tools which rely on them, at various levels including system, language, plugin, extensions and container systems. It provides a forum to share experiences and to discuss shared problems, risks and threats.
-
-## Objective
 
 ## Objective
 
@@ -32,8 +28,6 @@ TBD
 
 TBD
 
-## Current Work
-
 ## Current work
 
 * Survey of OSS software repositories
@@ -49,13 +43,9 @@ TBD
 
 ## Meeting times
 
-## Meeting times
-
 [Zoom](https://zoom.us/j/94941582286?pwd=SjdwZmY1eit6RlhiS1RsLzBZK3pVdz09) every other Wednesday, alternating between EMEA (13:00 UTC) and APAC-friendly times (22:00 UTC).
 
 The meeting invite is available on the public [OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
-
-## Governance
 
 ## Governance
 
@@ -84,8 +74,6 @@ TBD
 ## Charter
 
 TBD
-
-## Antitrust Policy
 
 ## Antitrust policy
 

@@ -10,13 +10,9 @@ TBD
 
 ## Objective
 
-## Objective
-
 Our objective is to provide open source developers with best practices recommendations, and with an easy way to learn and apply them.
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
-
-## Vision
 
 ## Vision
 
@@ -27,8 +23,6 @@ Our vision is to make it easy for developers to adopt these best practices, than
 - Provide tools to help developers _Adopt_ these good practices into their daily work
 
 <img align="top" src="https://github.com/ossf/wg-best-practices-os-developers/blob/main/img/OpenSSF%20Dev%20Best%20Practices%20Projects%20Relations.png">
-
-## Scope
 
 ## Scope
 
@@ -47,8 +41,6 @@ Supply a Learning platform
 
 - The learner can follow a track, track their progress and get badges
 - A suite of exercises are available for each best practice of the inventory
-
-## Current Work
 
 ## Current Work
 
@@ -96,10 +88,6 @@ We welcome contributions, suggestions and updates to our projects. To contribute
 
 ## Quick Start
 
-## Quick Start
-
-## Get Involved
-
 ## Get Involved
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
@@ -113,8 +101,6 @@ Anyone is welcome to join our open discussions related to the group's mission an
 - Official communications occur on the Best Practices [mailing list](https://lists.openssf.org/g/openssf-wg-best-practices)
 - [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups)
 - Join the conversation on [Slack](https://openssf.slack.com/archives/C01AHCRP8BT)
-
-## Meeting times
 
 ## Meeting times
 
@@ -134,15 +120,11 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 
 ## Governance
 
-## Governance
-
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
 
 - Lead - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 - Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
 - "*" denotes a project/SIG lead
-
-## Project Maintainers
 
 ### Project Maintainers
 
@@ -150,8 +132,6 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 - [Xavier René-Corail, GitHub](https://github.com/xcorail)
 - [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
 - [Dave Russo*, Red Hat](https://github.com/drusso-rh)
-
-## Project Collaborators
 
 ### Project Collaborators
 
@@ -177,8 +157,6 @@ TBD
 
 ## Licenses
 
-## Licenses
-
 Unless otherwise specifically noted, software released by this working
 group is released under the [Apache 2.0 license](LICENSES/Apache-2.0.txt),
 and documentation is released under the
@@ -186,8 +164,6 @@ and documentation is released under the
 Formal specifications would be licensed under the
 [Community Specification License](https://github.com/CommunitySpecification/1.0)
 (though at this time we don't have any examples of that).
-
-## Charter
 
 ## Charter
 

@@ -6,8 +6,6 @@ and [Governance](#governance) section describes how our operations are consisten
 
 ## Motivation
 
-## Motivation
-
 <table align="right">
   <tr><td><img align="right" src="https://imgs.xkcd.com/comics/dependency.png"></td></tr>
   <tr><td><a href="https://xkcd.com/2347">Source</a>. Randall Munroe. Licensed under <a href="https://creativecommons.org/licenses/by-nc/2.5/">CC BY-NC 2.5</a></td></tr>
@@ -54,8 +52,6 @@ TBD
 
 ## Governance
 
-## Governance
-
 This group is chaired by Amir Montazery (OSTIF) and Jeff Mendoza (Kusari).
 
 Full details of process and roles are linked from [governance README](/governance).
@@ -79,8 +75,6 @@ TBD
 ## Charter
 
 TBD
-
-## Antitrust Policy
 
 ## Antitrust policy
 

@@ -2,11 +2,7 @@
 
 ## Motivation
 
-## Motivation
-
 Supply chain issues and attacks cause significant damage worldwide including lost revenue, costs of ransomware payments, costs of mitigation, denial of access to resources, reduced customer trust, and public deception. As a matter of public trust, governments are beginning to mandate actions aimed at improving the security and integrity of supply chains. The [US White House Executive Order on Improving the Nation’s Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) is one such example.
-
-## Objective
 
 ## Objective
 
@@ -38,8 +34,6 @@ TBD
 
 ## Governance
 
-## Governance
-
 This WG is chaired by Isaac Hepworth. Melba Lopez and Jay White are co-chairs.
 
 Working Group operations are consistent with standard operating guidelines provided by the OSSF Technical Advisory Committee
@@ -66,8 +60,6 @@ TBD
 ## Charter
 
 TBD
-
-## Antitrust Policy
 
 ## Antitrust policy
 
