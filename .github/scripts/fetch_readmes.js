@@ -72,12 +72,13 @@ function reorderReadmeContent(content) {
     if (sections[lowerCaseTitle]) {
       reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
     } else {
-      reorderedContent += `\n\n## ${title}\n\n`;
+      reorderedContent += `\n\n## ${title}\n\nTBD`;
     }
   }
 
   return reorderedContent.trim();
 }
+
 
 
 async function fetchReadmes() {
