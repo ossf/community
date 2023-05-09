@@ -52,15 +52,13 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    if (!sections[sectionTitle]) {
-      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
-    }
+    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
   }
 
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
     if (sections[title]) {
-      reorderedContent += `\n\n${sections[title]}`;
+      reorderedContent += `\n\n## ${title}\n\n${sections[title]}`;
     } else {
       reorderedContent += `\n\n## ${title}\n\n`;
     }
@@ -69,12 +67,11 @@ function reorderReadmeContent(content) {
   return reorderedContent.trim();
 }
 
-
 function combineReadmes(readmeContents, sectionOrder) {
   const combinedSections = {};
 
   for (const sectionTitle of sectionOrder) {
-    combinedSections[sectionTitle] = [];
+    combinedSections[sectionTitle] = new Set();
   }
 
   for (const content of readmeContents) {
@@ -95,14 +92,13 @@ function combineReadmes(readmeContents, sectionOrder) {
   let combinedReadme = "";
   for (const [sectionTitle, sections] of Object.entries(combinedSections)) {
     combinedReadme += `## ${sectionTitle}\n\n`;
-    combinedReadme += sections.join("\n\n") + "\n\n";
+    combinedReadme += Array.from(sections).join("\n\n") + "\n\n";
   }
 
   return combinedReadme.trim();
 }
 
 async function fetchReadmes() {
-  // Clear existing README files before fetching new content
   clearReadmeFiles();
 
   const readmeContents = [];
@@ -110,26 +106,27 @@ async function fetchReadmes() {
   for (const repoName of repoList) {
     try {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
-      const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
+      const readmeBuffer = Buffer.from(readmeData.data.content, "base64");
+      const readmeContent = reorderReadmeContent(readmeBuffer.toString("utf-8"));
+      readmeContents.push(readmeContent);
 
-      // Create a directory for the current repository
       const repoDir = path.join(__dirname, "..", repoName);
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
 
-      const reorderedContent = reorderReadmeContent(readmeContent);
-      readmeContents.push(reorderedContent);
+      const readmePath = path.join(repoDir, "README.md");
+      fs.writeFileSync(readmePath, readmeContent);
 
-      // Save the README file inside the repository directory
-      fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
   }
 
-  return readmeContents;
+  const combinedReadme = combineReadmes(readmeContents, sectionOrder);
+  fs.writeFileSync("README.md", combinedReadme);
 }
+
 
 async function main() {
   const readmeContents = await fetchReadmes();
