@@ -23,10 +23,10 @@ const sectionOrder = [
   "Governance",
   "Project Maintainers",
   "Project Collaborators",
-  "Active projects",
+  "Active Projects",
   "Licenses",
   "Charter",
-  "Antitrust Policy Notice"
+  "Antitrust Policy"
 ];
 
 
@@ -41,7 +41,7 @@ function clearReadmeFiles() {
 
 function reorderReadmeContent(content) {
   const sections = {};
-  const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gm;
+  const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
   const firstParagraphRegex = /(^[\s\S]*?(?=\n\n))/;
@@ -67,71 +67,26 @@ function reorderReadmeContent(content) {
   return reorderedContent.trim();
 }
 
-function combineReadmes(readmeContents, sectionOrder) {
-  const combinedSections = {};
-
-  for (const sectionTitle of sectionOrder) {
-    combinedSections[sectionTitle] = new Set();
-  }
-
-  for (const content of readmeContents) {
-    const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gm;
-    let match;
-
-    while ((match = regex.exec(content)) !== null) {
-      const sectionTitle = match[1].trim();
-      const sectionStart = match.index + match[0].length;
-      const sectionEnd = content.indexOf("\n##", sectionStart) || content.length;
-
-      if (combinedSections.hasOwnProperty(sectionTitle)) {
-        combinedSections[sectionTitle].push(content.slice(sectionStart, sectionEnd).trim());
-      }
-    }
-  }
-
-  let combinedReadme = "";
-  for (const [sectionTitle, sections] of Object.entries(combinedSections)) {
-    combinedReadme += `## ${sectionTitle}\n\n`;
-    combinedReadme += Array.from(sections).join("\n\n") + "\n\n";
-  }
-
-  return combinedReadme.trim();
-}
 
 async function fetchReadmes() {
   clearReadmeFiles();
 
-  const readmeContents = [];
-
   for (const repoName of repoList) {
     try {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
-      const readmeBuffer = Buffer.from(readmeData.data.content, "base64");
-      const readmeContent = reorderReadmeContent(readmeBuffer.toString("utf-8"));
-      readmeContents.push(readmeContent);
+      const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
       const repoDir = path.join(__dirname, "..", repoName);
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
 
-      const readmePath = path.join(repoDir, "README.md");
-      fs.writeFileSync(readmePath, readmeContent);
-
+      const reorderedContent = reorderReadmeContent(readmeContent);
+      fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
   }
-
-  const combinedReadme = combineReadmes(readmeContents, sectionOrder);
-  fs.writeFileSync("README.md", combinedReadme);
 }
 
-
-async function main() {
-  const readmeContents = await fetchReadmes();
-  const combinedReadme = combineReadmes(readmeContents, sectionOrder);
-  fs.writeFileSync('README.md', combinedReadme);
-}
-
-main();
+fetchReadmes();

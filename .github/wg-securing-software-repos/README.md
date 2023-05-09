@@ -72,4 +72,4 @@ This group is chaired by [Dustin Ingram](https://github.com/di).
 
 
 
-## Antitrust Policy Notice
+## Antitrust Policy
