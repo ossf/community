@@ -119,7 +119,7 @@ async function fetchReadmes() {
       readmeContents.push(reorderedContent);
 
       // Save the README file inside the repository directory
-      fs.writeFileSync(path.join(repoName, "README.md"), reorderedContent);
+      fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoName}: ${error.message}`);
     }
