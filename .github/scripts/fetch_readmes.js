@@ -44,11 +44,11 @@ function reorderReadmeContent(content) {
   const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
-  const firstParagraphRegex = /(^[\s\S]*?(?=\n\n))/;
+  const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
   const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
 
   while ((match = regex.exec(content)) !== null) {
-    const sectionTitle = match[1].trim();
+    const sectionTitle = match[1].trim().toLowerCase();
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
@@ -59,8 +59,9 @@ function reorderReadmeContent(content) {
 
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
-    if (sections[title]) {
-      reorderedContent += `\n\n## ${title}\n\n${sections[title]}`;
+    const lowerCaseTitle = title.toLowerCase();
+    if (sections[lowerCaseTitle]) {
+      reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
     } else {
       reorderedContent += `\n\n## ${title}\n\n`;
     }
