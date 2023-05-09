@@ -39,7 +39,17 @@ function clearReadmeFiles() {
   }
 }
 
+function createEmptySections() {
+  const emptySections = {};
+  for (const title of sectionOrder) {
+    const lowerCaseTitle = title.toLowerCase();
+    emptySections[lowerCaseTitle] = "";
+  }
+  return emptySections;
+}
+
 function reorderReadmeContent(content) {
+  const sections = createEmptySections();
   const sections = {};
   const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
