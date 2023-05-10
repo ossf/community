@@ -22,7 +22,7 @@ const sectionOrder = [
   ["Project Collaborators"],
   ["Licenses"],
   ["Charter", "Governance"],
-  ["Antitrust Policy"]
+  ["Antitrust Policy Notice"]
 ];
 
 function clearReadmeFiles() {
