@@ -62,6 +62,10 @@ read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULC
 * We meet every other week on Wednesdays. See the
   [OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
+### Meeting Notes
+
+[Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
+
 ## Project Maintainers
 
 TBD

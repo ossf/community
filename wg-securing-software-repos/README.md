@@ -43,6 +43,10 @@ TBD
 
 The meeting invite is available on the public [OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
+## Meeting Notes
+
+Meeting notes are maintained in a [Google Doc](https://docs.google.com/document/d/1-f6m442MHg9hktrbcp-4sM9GbZC3HLTpZPpxMXjMCp4/edit). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
+
 ## Project Maintainers
 
 TBD
