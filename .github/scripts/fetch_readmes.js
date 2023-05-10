@@ -63,18 +63,11 @@ function reorderReadmeContent(content) {
 
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
-    let foundSection = false;
-    for (const title of titleGroup) {
-      const lowerCaseTitle = title.toLowerCase();
-      if (sections[lowerCaseTitle]) {
-        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
-        foundSection = true;
-        break;
-      }
-    }
-
-    if (!foundSection) {
-      reorderedContent += `\n\n## ${titleGroup[0]}\n\nTBD`;
+    const lowerCaseTitle = title.toLowerCase();
+    if (sections[lowerCaseTitle]) {
+      reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
+    } else {
+      reorderedContent += `\n\n## ${title}\n\nTBD`;
     }
   }
 
