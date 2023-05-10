@@ -10,28 +10,20 @@ const orgName = "ossf";
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
-// Define your desired section order
 const sectionOrder = [
-  "Motivation",
-  "Objective",
-  "Vision",
-  "Scope",
-  "Current Work",
-  "Quick Start",
-  "Areas that need contributions",
-  "Where to file issues",
-  "Get Involved",
-  "Meeting Times",
-  "Meeting Notes",
-  "Governance",
-  "Project Maintainers",
-  "Project Collaborators",
-  "Active Projects",
-  "Licenses",
-  "Charter",
-  "Antitrust Policy Notice"
+  ["Objective","Motivation"],
+  ["Vision"],
+  ["Scope"],
+  ["Current Work", "Active Projects"],
+  ["Quick Start"],
+  ["Get Involved"],
+  ["Meeting times"],
+  ["Project Maintainers"],
+  ["Project Collaborators"],
+  ["Licenses"],
+  ["Charter", "Governance"],
+  ["Antitrust Policy"]
 ];
-
 
 function clearReadmeFiles() {
   for (const repoName of repoList) {
@@ -71,11 +63,18 @@ function reorderReadmeContent(content) {
 
   let reorderedContent = firstParagraph;
   for (const title of sectionOrder) {
-    const lowerCaseTitle = title.toLowerCase();
-    if (sections[lowerCaseTitle]) {
-      reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
-    } else {
-      reorderedContent += `\n\n## ${title}\n\nTBD`;
+    let foundSection = false;
+    for (const title of titleGroup) {
+      const lowerCaseTitle = title.toLowerCase();
+      if (sections[lowerCaseTitle]) {
+        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
+        foundSection = true;
+        break;
+      }
+    }
+
+    if (!foundSection) {
+      reorderedContent += `\n\n## ${titleGroup[0]}\n\nTBD`;
     }
   }
 
