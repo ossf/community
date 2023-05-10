@@ -1,7 +1,8 @@
 # OpenSSF Community
 
 
-Welcome to the OpenSSF Community! 
+Welcome to the OpenSSF Community! For any questions, concerns, reports, etc., please email operations@openssf.org.
+
 
 This is the starting point for joining and contributing to the OpenSSF community - improving docs, improving code, giving talks etc.
 
