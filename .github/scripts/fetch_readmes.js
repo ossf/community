@@ -9,20 +9,20 @@ const orgName = "ossf";
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
-// Define your desired section order
 const sectionOrder = [
-  ["Objective","Motivation"],
+  ["Objective", "Motivation"],
   ["Vision"],
   ["Scope"],
   ["Current Work", "Active Projects"],
   ["Quick Start"],
   ["Get Involved"],
   ["Meeting times"],
+  ["Meeting Notes"],
   ["Project Maintainers"],
   ["Project Collaborators"],
   ["Licenses"],
   ["Charter", "Governance"],
-  ["Antitrust Policy Notice"]
+  ["Antitrust Policy", "Antitrust Policy Notice"]
 ];
 
 function clearReadmeFiles() {
