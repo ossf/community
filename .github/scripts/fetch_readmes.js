@@ -11,17 +11,15 @@ const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
 const sectionOrder = [
-  ["Objective","Motivation"],
   ["Vision"],
   ["Scope"],
-  ["Current Work", "Active Projects"],
+
   ["Quick Start"],
   ["Get Involved"],
   ["Meeting times"],
   ["Project Maintainers"],
   ["Project Collaborators"],
   ["Licenses"],
-  ["Charter", "Governance"],
   ["Antitrust Policy"]
 ];
 
