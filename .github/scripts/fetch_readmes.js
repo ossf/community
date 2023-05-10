@@ -6,10 +6,10 @@ const yaml = require("js-yaml");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const orgName = "ossf";
 
-
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
+// Define your desired section order
 const sectionOrder = [
   ["Objective","Motivation"],
   ["Vision"],
@@ -27,27 +27,15 @@ const sectionOrder = [
 
 function clearReadmeFiles() {
   for (const repoName of repoList) {
-    const readmePath = path.join(repoName, "README.md");
+    const readmePath = path.join("..", "..", repoName, "README.md");
     if (fs.existsSync(readmePath)) {
       fs.writeFileSync(readmePath, "");
     }
   }
 }
 
-function createEmptySections() {
-  const emptySections = {};
-  for (const titleGroup of sectionOrder) {
-    for (const title of titleGroup) {
-      const lowerCaseTitle = title.toLowerCase();
-      emptySections[lowerCaseTitle] = "";
-    }
-  }
-  return emptySections;
-}
-
-
 function reorderReadmeContent(content) {
-  const sections = createEmptySections();
+  const sections = {};
   const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
@@ -59,33 +47,23 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    if (!sections[sectionTitle]) {
-      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
-    }
+    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
   }
 
   let reorderedContent = firstParagraph;
   for (const titleGroup of sectionOrder) {
-    let foundSection = false;
-    for (const title of titleGroup) {
-      const lowerCaseTitle = title.toLowerCase();
-      if (sections[lowerCaseTitle]) {
-        reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
-        foundSection = true;
-        break;
-      }
-    }
-    
-    if (!foundSection) {
+    const lowerCaseTitleGroup = titleGroup.map(title => title.toLowerCase());
+    const foundTitle = lowerCaseTitleGroup.find(title => sections[title] !== undefined);
+
+    if (foundTitle) {
+      reorderedContent += `\n\n${sections[foundTitle]}`;
+    } else {
       reorderedContent += `\n\n## ${titleGroup[0]}\n\nTBD`;
     }
   }
 
   return reorderedContent.trim();
 }
-
-
-
 
 async function fetchReadmes() {
   clearReadmeFiles();
@@ -95,7 +73,7 @@ async function fetchReadmes() {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      const repoDir = path.join(__dirname, "..", "..", repoName); 
+      const repoDir = path.join(__dirname, "..", "..", repoName);
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
