@@ -10,6 +10,10 @@ Our objective is to provide open source developers with best practices recommend
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
 
+## Motivation
+
+TBD
+
 ## Vision
 
 Our vision is to make it easy for developers to adopt these best practices, thanks to:
@@ -81,6 +85,10 @@ You can also see our older work, [Recommended compiler option flags for C/C++ pr
   - Purpose - (Learn) To provide industry standard secure software development training materials that will educate learners of all levels and backgrounds on how to create, compose, deploy, and maintain software securely using best practices in cyber and application security.
 
 We welcome contributions, suggestions and updates to our projects. To contribute please fill in an [issue](https://github.com/ossf/wg-best-practices-os-developers/issues) or create a [pull request](https://github.com/ossf/wg-best-practices-os-developers/pulls).
+
+## Active Projects
+
+TBD
 
 ## Quick Start
 
@@ -160,8 +168,54 @@ Like all OpenSSF working groups, this working group reports to the
 For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
 
+## Governance
+
+The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
+
+- Lead - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+- Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
+- "*" denotes a project/SIG lead
+
+## Antitrust Policy
+
+TBD
+
 ## Antitrust Policy Notice
 
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
+
+## Related Activities
+
+There are many great projects both within and outside the Foundation that compliment and intersect our work here. Some other great projects/resources to explore:
+
+- _SLSA Supply-chain Levels for Software Artifacts_ - <https://github.com/slsa-framework/slsa>
+  - Purpose - A security framework from source to service, giving anyone working with software a common language for increasing levels of software security and supply chain integrity
+
+### Areas that need contributions
+
+- Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
+
+### Where to file issues
+
+- Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
+
+### Project Contributors
+
+- Aeva Black, Microsoft
+- Jory Burson, Linux Foundation
+- Rosaria Carr, Indeed
+- Riccardo ten Cate, SKF
+- Spyros Gasteratos*, OWASP/CRE
+- Sami Guirguis, TELUS
+- Jonathan Leitschuh*, Dan Kaminsky Fellowship @ Human Security
+- Jeff Mendoza, Google
+- Kara Olive, Google
+- Laurent Simon*, Google/Scorecard
+- Azeem Shaikh*, Google/Scorecard
+- Harimohan Rajamohanan, Wipro
+- Ixchel Ruiz, jfrog
+- Patricia Tarro, Dell
+- [Thomas Nyman*, Ericsson](https://github.com/thomasnyman)
+- Noam Dotan, Legit Security

@@ -6,6 +6,10 @@ Anyone is welcome to join our open discussions.
 
 The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
 
+## Motivation
+
+TBD
+
 ## Vision
 
 The End Users Working Group (WG) represents the interests of public and private sector organizations that primarily consume open source rather than produce it.
@@ -43,6 +47,10 @@ Based on the objective, mission, and goals above, we look to deliver specific de
 
 TBD
 
+## Active Projects
+
+TBD
+
 ## Quick Start
 
 ## Get Involved
@@ -69,6 +77,10 @@ TBD
 
 TBD
 
+## Charter
+
+TBD
+
 ## Governance
 
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
@@ -76,8 +88,29 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 - Lead - Jon Meadows
 - Co-Lead -
 
+## Antitrust Policy
+
+TBD
+
 ## Antitrust Policy Notice
 
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
+
+### Areas that need contributions
+
+- WG Documentation
+- Others TBD
+
+### Where to file issues
+
+Issues can be reviewed and filed [here](https://github.com/ossf/wg-endusers/issues)
+
+## Related Activities
+
+TBD
+
+### Project Contributors
+
+TBD
