@@ -10,7 +10,8 @@ const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
 const sectionOrder = [
-  ["Objective", "Motivation"],
+  ["Objective"],
+  ["Motivation"],
   ["Vision"],
   ["Scope"],
   ["Current Work", "Active Projects"],
@@ -36,7 +37,7 @@ function clearReadmeFiles() {
 
 function reorderReadmeContent(content) {
   const sections = {};
-  const regex = /^#{2,3}\s(.+?)(?:\r?\n|\r)/gmi;
+  const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
@@ -47,20 +48,28 @@ function reorderReadmeContent(content) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    if (!sections[sectionTitle]) {
+      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    }
   }
 
   let reorderedContent = firstParagraph;
-  for (const titleGroup of sectionOrder) {
-    const lowerCaseTitleGroup = titleGroup.map(title => title.toLowerCase());
-    const foundTitle = lowerCaseTitleGroup.find(title => sections[title] !== undefined);
-
-    if (foundTitle) {
-      reorderedContent += `\n\n${sections[foundTitle]}`;
-    } else {
-      reorderedContent += `\n\n## ${titleGroup[0]}\n\nTBD`;
+  for (const titleArr of sectionOrder) {
+    for (const title of titleArr) {
+      const lowerCaseTitle = title.toLowerCase();
+      if (sections[lowerCaseTitle]) {
+        reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
+        delete sections[lowerCaseTitle];
+      } else {
+        reorderedContent += `\n\n## ${title}\n\nTBD`;
+      }
     }
   }
+
+  for (const section in sections) {
+    reorderedContent += `\n\n${sections[section]}`;
+  }
+
 
   return reorderedContent.trim();
 }
