@@ -2,6 +2,10 @@
 
 OpenSSF Working Group on Securing Software Repositories
 
+## Motivation
+
+This working group is for and focuses on the maintainers of software repositories, software registries, and tools which rely on them, at various levels including system, language, plugin, extensions and container systems. It provides a forum to share experiences and to discuss shared problems, risks and threats.
+
 ## Objective
 
 * Enable faster cross-pollination of existing ideas across ecosystems (including technical measures, infrastructure approaches, and policies)
@@ -15,10 +19,6 @@ The working group may create:
 
 * Normative, non-binding recommendations on common schemas
 * Descriptive documentation of experiences and best practices
-
-## Motivation
-
-This working group is for and focuses on the maintainers of software repositories, software registries, and tools which rely on them, at various levels including system, language, plugin, extensions and container systems. It provides a forum to share experiences and to discuss shared problems, risks and threats.
 
 ## Vision
 

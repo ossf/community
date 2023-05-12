@@ -4,13 +4,6 @@ This charter describes operations as an [OSSF Technical Initiative](https://gith
 The [Focus](#focus) section below describes what is in and out of scope,
 and [Governance](#governance) section describes how our operations are consistent with OSSF policies with links to more detailed documents.
 
-### Objective
-
-To the best of our efforts, the goals of the working group are:
-
-1. Identify critical open source software (OSS) projects. 
-2. Secure those projects.
-
 ## Motivation
 
 <table align="right">
@@ -28,6 +21,13 @@ Whether it is dedicated help from specialized experts or simply grant money or c
 projects are the same, and support can come in many shapes.
 We intend to work with upstream maintainers to understand what help and support they need, and then develop scalable processes to make
 this help available.
+
+### Objective
+
+To the best of our efforts, the goals of the working group are:
+
+1. Identify critical open source software (OSS) projects. 
+2. Secure those projects.
 
 ## Vision
 

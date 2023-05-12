@@ -2,6 +2,10 @@
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 
+## Motivation
+
+Most developers are not security experts and even the most seasoned developers, security experts or not, make mistakes.  Tools can be used to help weed out security defects allowing developers to focus on the features they want to develop.
+
 ## Objective
 
 Our mission is to Identify, Evaluate, Improve, Develop & Ease Deployment of universally-accessible, developer focused tooling to help the open source community secure their code.  This space allows members to collaborate together on these goals.
@@ -11,10 +15,6 @@ Our mission is to Identify, Evaluate, Improve, Develop & Ease Deployment of univ
 * Improve - Some tools need just a little bit of help to offer the best solution.  We need to, where possible, contribute to improve those tools.
 * Develop - Despite the large number of tools available, there are still large areas of the security problem space that do not have tools to help developers find issues.  We will develop those tools where there is interest and bandwidth.
 * Ease Deployment - __Most critically__, open source developers need to know what tools they should be using and how to easily integrate them into their development process.  Unless developers have an easy way to drop in security tooling, it is unlikely to be included.  We will provide this information to open source developers.
-
-## Motivation
-
-Most developers are not security experts and even the most seasoned developers, security experts or not, make mistakes.  Tools can be used to help weed out security defects allowing developers to focus on the features they want to develop.
 
 ## Vision
 

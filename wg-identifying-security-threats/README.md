@@ -5,15 +5,6 @@ confidence in the security of open source projects. We do this by collecting,
 curating, and communicating relevant metrics and metadata from open source
 projects and the ecosystems of which they are a part.
 
-### Objective
-
-Our objective is to enable stakeholders to have informed confidence in the
-security of open source projects. This includes identifying threats to the
-open source ecosystem and recommending practical mitigations. We will also
-identify a set of key metrics and build tooling to communicate those metrics
-to stakeholders, enabling a better understanding of the security posture of
-individual open source software components.
-
 ### Motivation
 
 Open source software is an essential part of modern software development, and
@@ -29,6 +20,15 @@ open source projects and the ecosystems they are a part of in order to
 compromise the organizations or users that use those projects. It's
 essential that we understand these threats and work to build defenses against
 them.
+
+### Objective
+
+Our objective is to enable stakeholders to have informed confidence in the
+security of open source projects. This includes identifying threats to the
+open source ecosystem and recommending practical mitigations. We will also
+identify a set of key metrics and build tooling to communicate those metrics
+to stakeholders, enabling a better understanding of the security posture of
+individual open source software components.
 
 ## Vision
 

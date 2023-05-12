@@ -4,15 +4,15 @@
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 
+## Motivation
+
+TBD
+
 ## Objective
 
 Our objective is to provide open source developers with best practices recommendations, and with an easy way to learn and apply them.
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
-
-## Motivation
-
-TBD
 
 ## Vision
 

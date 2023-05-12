@@ -2,13 +2,13 @@
 
 Anyone is welcome to join our open discussions.
 
-## Objective
-
-The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
-
 ## Motivation
 
 TBD
+
+## Objective
+
+The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
 
 ## Vision
 
