@@ -4,8 +4,7 @@ For any questions, concerns, reports, etc., please email operations@openssf.org.
 
 ## Notes
 
-[Meeting Notes](https://docs.google.com/document/d/1-sb9beYqkUb3BNIarF1QeJYOgUEC7x1M2uEwSFTkXFM/edit)
-
+[Meeting Notes](https://github.com/ossf/foundation/tree/main/Public%20Minutes)
 
 ## Process
 
