@@ -1,5 +1,11 @@
 # Overview
 
+## Overview
+
+-   [What Is Scorecard?](#what-is-scorecard)
+-   [Prominent Scorecard Users](#prominent-scorecard-users)
+-   [Scorecard's Public Data](#public-data)
+
 This is under the Best Practices working group.
 
 
@@ -9,8 +15,6 @@ The designated lead(s):
 - [Naveen Srinivasan](https://github.com/naveensrinivasan)
 - [Risto McGehee](https://github.com/chrismcgehee)
 - [Stephen Augustus](https://github.com/justaugustus)
-
-
 
 ## Motivation
 
