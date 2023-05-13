@@ -61,7 +61,7 @@ TBD
 
 TBD
 
-## installing a local development environment
+## Installing a Local Development Environment
 
 ## Installing a Local Development Environment
 
@@ -102,7 +102,7 @@ them, but haven't had cycles to fix them yet. Press Ctrl-C to exit the applicati
 and then re-run `docker-compose -f docker/docker-compose.yml run`. In my testing,
 "third time's the charm". I hope this to be fixed shortly.
 
-## first time usage
+## First Time Usage
 
 ## First Time Usage
 
@@ -167,7 +167,7 @@ to complete. (This is absurdly long, and something that we'll need to fix.)
 Once the process has started, you can immediately access the site. The main URL
 (http://localhost:8000) should work, and Grafana should have some projects populated.
 
-## actualy doing development work
+## Actualy doing development work
 
 ## Actualy doing development work
 
@@ -183,7 +183,7 @@ means:
 * Creating the import job in `src/management/app/management/commands/`
 * Adding the job to `docker/web/cron.daily`.
 
-## reporting issues
+## Reporting Issues
 
 ## Reporting Issues
 

@@ -74,7 +74,7 @@ TBD
 
 TBD
 
-## how it works
+## How it works
 
 ## How it works
 
@@ -108,12 +108,12 @@ and packet data that can indicate malicious interactions with the system as well
 as network connections that can be used to leak sensitive data or allow remote
 access.
 
-## public data
+## Public Data
 
 ## Public Data
 This data is available in the public [BigQuery dataset](https://console.cloud.google.com/bigquery?d=packages&p=ossf-malware-analysis&t=analysis&page=table).
 
-## configuration
+## Configuration
 
 ## Configuration
 
@@ -130,7 +130,7 @@ kafka for scheduler in
 An example of these variables can be found in the
 [e2e example docker-compose](examples/e2e/docker-compose.yml).
 
-## analysis
+## Analysis
 
 ### Analysis
 
@@ -150,7 +150,7 @@ URL to get custom uploaded packages from. Values should follow
 publish messages for consumption after a new package analysis is complete. Values should follow
 [goclouddev publishing](https://gocloud.dev/howto/pubsub/publish/).
 
-## scheduler
+## Scheduler
 
 ### Scheduler
 
@@ -163,7 +163,7 @@ data coming out of [package-feeds](https://github.com/ossf/package-feeds).
 Values should follow
 [goclouddev subscriptions](https://gocloud.dev/howto/pubsub/subscribe/).
 
-## local analysis
+## Local Analysis
 
 ## Local Analysis
 
@@ -179,7 +179,7 @@ and full logs to `/tmp/dockertmp`.
 
 [gVisor]: https://gvisor.dev/
 
-## live package
+## Live package
 
 ### Live package
 
@@ -196,7 +196,7 @@ Or with a specific version
 $ scripts/run_analysis.sh -ecosystem pypi -package Django -version 4.1.3
 ```
 
-## local package
+## Local package
 
 ### Local package
 
@@ -208,7 +208,7 @@ located in local archive `/path/to/test.whl`
 $ scripts/run_analysis.sh -ecosystem pypi -package test -local /path/to/test.whl
 ```
 
-## docker notes
+## Docker notes
 
 ### Docker notes
 
@@ -218,11 +218,11 @@ $ scripts/run_analysis.sh -ecosystem pypi -package test -local /path/to/test.whl
 containers. `-v /var/lib/containers:/var/lib/containers` is also used as it
 allows caching the sandbox images and supports local developement.
 
-## development
+## Development
 
 ## Development
 
-## required dependencies
+## Required Dependencies
 
 ### Required Dependencies
 

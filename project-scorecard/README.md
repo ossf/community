@@ -70,7 +70,7 @@ TBD
 
 TBD
 
-## overview
+## Overview
 
 ## Overview
 
@@ -78,7 +78,7 @@ TBD
 -   [Prominent Scorecard Users](#prominent-scorecard-users)
 -   [Scorecard's Public Data](#public-data)
 
-## using scorecard
+## Using Scorecard
 
 ## Using Scorecard
 
@@ -91,7 +91,7 @@ TBD
     -   [Authentication](#authentication)
     -   [Basic Usage](#basic-usage)
 
-## checks
+## Checks
 
 ## Checks
 
@@ -99,17 +99,17 @@ TBD
 -   [Detailed Check Documentation](docs/checks.md) (Scoring Criteria, Risks, and
     Remediation)
 
-## other important recommendations
+## Other Important Recommendations
 
 ## Other Important Recommendations
 -   [Two-factor Authentication (2FA)](#two-factor-authentication-2fa)
 
-## scoring
+## Scoring
 
 ## Scoring
 -   [Aggregate Score](#aggregate-score)
 
-## contribute
+## Contribute
 
 ## Contribute
 
@@ -120,13 +120,13 @@ TBD
 -   [Connect with the Scorecard Community](#connect-with-the-scorecard-community)
 -   [Report a Security Issue](SECURITY.md)
 
-## faq
+## FAQ
 
 ## FAQ
 
 - [FAQ](docs/faq.md)
 
-## what is scorecard?
+## What is Scorecard?
 
 ### What is Scorecard?
 We created Scorecard to help open source maintainers improve their security
@@ -144,7 +144,7 @@ working with the maintainers to make improvements.
 The inspiration for Scorecard’s logo:
 ["You passed! All D's ... and an A!"](https://youtu.be/rDMMYT3vkTk)
 
-## project goals
+## Project Goals
 
 #### Project Goals
 
@@ -154,7 +154,7 @@ The inspiration for Scorecard’s logo:
 1.  Use this data to proactively improve the security posture of the critical
     projects the world depends on.
 
-## prominent scorecard users
+## Prominent Scorecard Users
 
 ### Prominent Scorecard Users
 
@@ -167,7 +167,7 @@ metrics. Prominent projects that use Scorecard include:
 -   [sos.dev](https://sos.dev)
 -   [deps.dev](https://deps.dev)
 
-## public data
+## Public Data
 
 ### Public Data
 
@@ -209,7 +209,7 @@ send a Pull Request with others. Currently, this list is derived from **projects
 hosted on GitHub ONLY**. We do plan to expand them in near future to account for
 projects hosted on other source control systems.
 
-## scorecard github action
+## Scorecard GitHub Action
 
 ### Scorecard GitHub Action
 
@@ -220,7 +220,7 @@ repository’s Security tab. For more information, see the Scorecard GitHub
 Action
 [installation instructions](https://github.com/ossf/scorecard-action#installation).
 
-## scorecard rest api
+## Scorecard REST API
 
 ### Scorecard REST API
 
@@ -230,7 +230,7 @@ To enable your project to be available on the REST API, set
 [`publish_results: true`](https://github.com/ossf/scorecard-action/blob/dd5015aaf9688596b0e6d11e7f24fff566aa366b/action.yaml#L35)
 in the Scorecard GitHub Action setting.
 
-## scorecard badges
+## Scorecard Badges
 
 ### Scorecard Badges
 
@@ -244,14 +244,14 @@ To include a badge on your project's repository, simply add the following markdo
 Scorecard](https://api.securityscorecards.dev/projects/github.com/{owner}/{repo}/badge)](https://api.securityscorecards.dev/projects/github.com/{owner}/{repo})
 ```
 
-## scorecard command line interface
+## Scorecard Command Line Interface
 
 ### Scorecard Command Line Interface
 
 To run a Scorecard scan on projects you do not own, use the command line
 interface installation option.
 
-## prerequisites
+## Prerequisites
 
 #### Prerequisites
 
@@ -262,11 +262,11 @@ Windows are welcome.
 Language: You must have GoLang installed to run Scorecard
 (https://golang.org/doc/install)
 
-## installation
+## Installation
 
 #### Installation
 
-## authentication
+## Authentication
 
 #### Authentication
 
@@ -310,11 +310,11 @@ GITHUB_APP_ID=<app id>
 These variables can be obtained from the GitHub
 [developer settings](https://github.com/settings/apps) page.
 
-## basic usage
+## Basic Usage
 
 #### Basic Usage
 
-## scorecard checks
+## Scorecard Checks
 
 ### Scorecard Checks
 
@@ -342,14 +342,14 @@ Name        | Description                               | Risk Level | Token Req
 [Vulnerabilities](docs/checks.md#vulnerabilities)               | Does the project have unfixed vulnerabilities? Uses the [OSV service](https://osv.dev).                                                                                                                                                                                                                                      | High | PAT, GITHUB_TOKEN   | Fully Supported |
 [Webhooks](docs/checks.md#webhooks)                             | Does the webhook defined in the repository have a token configured to authenticate the origins of requests?                                                                                                                                                                                                                                      | High | maintainer PAT (`admin: repo_hook` or `admin> read:repo_hook` [doc](https://docs.github.com/en/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository)  |  | EXPERIMENTAL
 
-## detailed checks documentation
+## Detailed Checks Documentation
 
 ### Detailed Checks Documentation
 
 To see detailed information about each check, its scoring criteria, and
 remediation steps, check out the [checks documentation page](docs/checks.md).
 
-## two-factor authentication (2fa)
+## Two-factor Authentication (2FA)
 
 ### Two-factor Authentication (2FA)
 
@@ -359,11 +359,11 @@ We strongly recommend that you enable 2FA on GitHub and any important account wh
 
 Though it is not an official check, we urge all project maintainers to enable 2FA to protect their projects from compromise.
 
-## enabling 2fa
+## Enabling 2FA
 
 #### Enabling 2FA
 
-## aggregate score
+## Aggregate Score
 
 ### Aggregate Score
 Each individual check returns a score of 0 to 10, with 10 representing the best
@@ -378,7 +378,7 @@ weight-based average of the individual checks weighted by risk.
 See the [list of current Scorecard checks](#scorecard-checks) for each check's
 risk level.
 
-## report problems
+## Report Problems
 
 ### Report Problems
 
@@ -387,7 +387,7 @@ If you have what looks like a bug, please use the
 you file an issue, please search existing issues to see if your issue is already
 covered.
 
-## contribute to scorecard
+## Contribute to Scorecard
 
 ### Contribute to Scorecard
 
@@ -396,13 +396,13 @@ Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 See the [Contributing](CONTRIBUTING.md) documentation for guidance on how to
 contribute to the project.
 
-## adding a scorecard check
+## Adding a Scorecard Check
 
 ### Adding a Scorecard Check
 
 If you'd like to add a check, please see guidance [here](checks/write.md).
 
-## connect with the scorecard community
+## Connect with the Scorecard Community
 
 ### Connect with the Scorecard Community
 
@@ -428,13 +428,13 @@ Slack Channel                 | [#security_scorecards](https://slack.openssf.org
 <img width="30px" src="https://github.com/chrismcgehee.png">     | Chris McGehee     | Datto   | [chrismcgehee](https://github.com/chrismcgehee)
 <img width="30px" src="https://github.com/justaugustus.png">     | Stephen Augustus  | Cisco   | [justaugustus](https://github.com/justaugustus)
 
-## report a security issue
+## Report a Security Issue
 
 ### Report a Security Issue
 
 To report a security issue, please follow instructions [here](SECURITY.md).
 
-## stargazers over time
+## Stargazers over time
 
 ## Stargazers over time
 

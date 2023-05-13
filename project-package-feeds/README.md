@@ -106,7 +106,7 @@ TBD
 
 TBD
 
-## feedoptions
+## FeedOptions
 
 ## FeedOptions
 
@@ -123,7 +123,7 @@ feeds:
     - barPackage
 ```
 
-## legacy configuration
+## Legacy Configuration
 
 ## Legacy Configuration
 

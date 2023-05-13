@@ -82,7 +82,7 @@ TBD
 
 TBD
 
-## view or download the s2c2f specification
+## View or Download the S2C2F Specification
 
 ## View or Download the S2C2F Specification
 
@@ -99,14 +99,14 @@ TBD
 *   [S2C2F SIG Slack](https://openssf.slack.com/archives/C03THTH3RSM)
 *   [Supply Chain Integrity WG Slack](https://openssf.slack.com/archives/C01A1MA7A1K)
 
-## sig maintainers
+## SIG Maintainers
 
 ## SIG Maintainers
 - [Jay White, Microsoft](https://github.com/camaleon2016)
 - [Adrian Diglio, Microsoft](https://github.com/adriandiglio)
 - [Jasmine Wang, Microsoft](https://github.com/jasminewang0)
 
-## sig collaborators
+## SIG Collaborators
 
 ## SIG Collaborators
 - [Christopher "CRob" Robinson, Intel](https://github.com/SecurityCRob)

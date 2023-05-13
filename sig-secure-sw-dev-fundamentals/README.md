@@ -72,7 +72,7 @@ TBD
 
 TBD
 
-## how do i get an mfa token?
+## How do I get an MFA token?
 
 ## How do I get an MFA token?
 
@@ -95,14 +95,14 @@ The OpenSSF cares about privacy and does *not* get detailed lists of
 who gets every token; we only get aggregate values (per-project Google tokens
 and aggregate totals from GitHub).
 
-## how do i use an mfa token?
+## How do I use an MFA token?
 
 ## How do I use an MFA token?
 
 For some simple instructions on how to use MFA tokens for common OSS
 situations see our [Token Usage Guide](guide/token-usage-guide.md).
 
-## how we're doing this
+## How we're doing this
 
 ## How we're doing this
 
@@ -140,7 +140,7 @@ We also want to ensure this isn't just a "token effort".
 You can see the now-obsolete draft document
 [*The Great MFA Distribution Plan*](https://docs.google.com/document/d/1Hhg4KcLCzEdd9ZcbdEviN0TIUTLyWDsIdF6B_hY3Xv0/edit) if you want to see more detail.
 
-## why are we doing this?
+## Why are we doing this?
 
 ## Why are we doing this?
 
@@ -168,7 +168,7 @@ Still, by using tools such as Multi-factor Authentication, the likelihood that b
 
 This will increase the level of security and protection for your project immensely, but use your common sense.
 
-## why not use an authentication app instead?
+## Why not use an authentication app instead?
 
 ## Why not use an authentication app instead?
 
@@ -186,7 +186,7 @@ steal the keys underlying the authentication app.
 In contrast, hardware tokens
 are single-purpose so far fewer attacks work against them.
 
-## how were critical oss projects selected?
+## How were critical OSS projects selected?
 
 ## How were critical OSS projects selected?
 
@@ -243,7 +243,7 @@ we have available to critical projects.
 The sooner the tokens start getting used by developers, the sooner we
 counter some attacks on critical projects.
 
-## background information
+## Background information
 
 ## Background information
 

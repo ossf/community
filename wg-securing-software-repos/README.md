@@ -8,7 +8,55 @@ The designated lead(s):
 
 OpenSSF Working Group on Securing Software Repositories
 
-# Motivation
+## Motivation
+
+TBD
+
+## Objective
+
+TBD
+
+## Vision
+
+TBD
+
+## Scope
+
+TBD
+
+## Current Work
+
+TBD
+
+## Quick Start
+
+TBD
+
+## Get Involved
+
+TBD
+
+## Meeting times
+
+TBD
+
+## Meeting Notes
+
+TBD
+
+## Licenses
+
+TBD
+
+## Charter
+
+TBD
+
+## Antitrust Policy
+
+TBD
+
+## Motivation
 
 ## Motivation
 
@@ -30,28 +78,37 @@ The working group may create:
 * Normative, non-binding recommendations on common schemas
 * Descriptive documentation of experiences and best practices
 
-## Vision
+## Antigoals
 
-TBD
+### Antigoals
 
-## Scope
+* The working group is not a governing body and does not create binding obligations on members
+* The working group does not dictate technologies, tools or solutions, though members are free to recommend them to one another
 
-TBD
-
-## Current Work
+## Current work
 
 ## Current work
 
 * Survey of OSS software repositories
 * TBD
 
-## Quick Start
+## Governance
 
-TBD
+## Governance
 
-## Get Involved
+We use the [securing-software-repos-wg](https://github.com/orgs/ossf/teams/securing-software-repos-wg) GitHub team.
 
-TBD
+The [CHARTER.md](https://github.com/ossf/wg-securing-software-repos/blob/main/CHARTER.md) outlines the scope and governance of our group activities.
+
+This group is chaired by [Dustin Ingram](https://github.com/di).
+
+## Communication
+
+## Communication
+
+* [Meeting Minutes](https://docs.google.com/document/d/1-f6m442MHg9hktrbcp-4sM9GbZC3HLTpZPpxMXjMCp4/edit)
+* [Mailing list](https://lists.openssf.org/g/openssf-wg-securing-software-repos). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
+* [OpenSSF Slack](https://openssf.slack.com/archives/C034CBLMQ9G) instance in the `#wg_securing_software_repos` channel (see [here](https://openssf.slack.com/join/shared_invite/zt-xoktwsef-VzM~b22G2gfT_~4woTTsQA#/shared-invite/email) for an invite)
 
 ## Meeting times
 
@@ -67,28 +124,6 @@ The meeting invite is available on the public [OSSF calendar](https://calendar.g
 
 Meeting notes are maintained in a [Google Doc](https://docs.google.com/document/d/1-f6m442MHg9hktrbcp-4sM9GbZC3HLTpZPpxMXjMCp4/edit). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
 
-## Licenses
-
-TBD
-
-## Charter
-
-TBD
-
-## Governance
-
-## Governance
-
-We use the [securing-software-repos-wg](https://github.com/orgs/ossf/teams/securing-software-repos-wg) GitHub team.
-
-The [CHARTER.md](https://github.com/ossf/wg-securing-software-repos/blob/main/CHARTER.md) outlines the scope and governance of our group activities.
-
-This group is chaired by [Dustin Ingram](https://github.com/di).
-
-## Antitrust Policy
-
-TBD
-
 ## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
@@ -97,22 +132,7 @@ Linux Foundation meetings involve participation by industry competitors, and it 
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
 
-## antigoals
-
-### Antigoals
-
-* The working group is not a governing body and does not create binding obligations on members
-* The working group does not dictate technologies, tools or solutions, though members are free to recommend them to one another
-
-## communication
-
-## Communication
-
-* [Meeting Minutes](https://docs.google.com/document/d/1-f6m442MHg9hktrbcp-4sM9GbZC3HLTpZPpxMXjMCp4/edit)
-* [Mailing list](https://lists.openssf.org/g/openssf-wg-securing-software-repos). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
-* [OpenSSF Slack](https://openssf.slack.com/archives/C034CBLMQ9G) instance in the `#wg_securing_software_repos` channel (see [here](https://openssf.slack.com/join/shared_invite/zt-xoktwsef-VzM~b22G2gfT_~4woTTsQA#/shared-invite/email) for an invite)
-
-## intellectual property
+## Intellectual Property
 
 ## Intellectual Property
 

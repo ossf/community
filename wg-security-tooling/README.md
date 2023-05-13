@@ -8,7 +8,55 @@ The designated lead(s):
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 
-# Motivation
+## Motivation
+
+TBD
+
+## Objective
+
+TBD
+
+## Vision
+
+TBD
+
+## Scope
+
+TBD
+
+## Current Work
+
+TBD
+
+## Quick Start
+
+TBD
+
+## Get Involved
+
+TBD
+
+## Meeting times
+
+TBD
+
+## Meeting Notes
+
+TBD
+
+## Licenses
+
+TBD
+
+## Charter
+
+TBD
+
+## Antitrust Policy
+
+TBD
+
+## Motivation
 
 ## Motivation
 
@@ -38,27 +86,15 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 
 This group is chaired by Josh Bressers (@joshbressers).
 
-## Scope
+## Communications
 
-TBD
+## Communications
 
-## Current Work
+* [Meeting Minutes](https://docs.google.com/document/d/1DoB7zgtLsP-JGF77ASkHV7UMofTE2wseniexaa6Q4M8/edit#)
+* [Mailing list](https://lists.openssf.org/g/openssf-wg-security-tooling). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
+* [Slack](https://openssf.slack.com/archives/C019Q1VEA87)
 
-TBD
-
-## Active Projects
-
-## Active projects
-
-## Quick Start
-
-TBD
-
-## Get Involved
-
-TBD
-
-## Meeting times
+## Meeting Times
 
 ## Meeting Times
 
@@ -72,18 +108,6 @@ The meeting invite is available on the public [OSSF calendar](https://calendar.g
 
 Meeting notes are maintained in a [Google Doc](https://docs.google.com/document/d/1DoB7zgtLsP-JGF77ASkHV7UMofTE2wseniexaa6Q4M8/edit#). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
 
-## Licenses
-
-TBD
-
-## Charter
-
-TBD
-
-## Antitrust Policy
-
-TBD
-
 ## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
@@ -92,39 +116,35 @@ Linux Foundation meetings involve participation by industry competitors, and it 
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
 
-## communications
+## Active projects
 
-## Communications
+## Active projects
 
-* [Meeting Minutes](https://docs.google.com/document/d/1DoB7zgtLsP-JGF77ASkHV7UMofTE2wseniexaa6Q4M8/edit#)
-* [Mailing list](https://lists.openssf.org/g/openssf-wg-security-tooling). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
-* [Slack](https://openssf.slack.com/archives/C019Q1VEA87)
-
-## sbom everywhere sig
+## SBOM Everywhere SIG
 
 ### SBOM Everywhere SIG
 
 * [SBOM Everywhere Google Drive folder](https://drive.google.com/drive/folders/154MCLeIOQEgPpTUL7yzplOiipBVJ5KZJ)
 * [Mailing list](https://lists.openssf.org/g/openssf-sig-sbom)
 
-## (draft) false positive suppression specification
+## (DRAFT) False Positive Suppression Specification
 
 ### (DRAFT) False Positive Suppression Specification 
 
 * [(DRAFT) False Positive Suppression Specification](https://docs.google.com/document/d/1811qanC8h9egv3Iszn_rrXGtAoSCz0YJGzp9vACjjH8/edit#) (Sandbox DRAFT)
 
-## guide
+## Guide
 
 ### Guide
 
 * [Guide to Security Tools](https://github.com/ossf/wg-security-tooling/blob/main/guide.md)
 
-## cve benchmarking initiative
+## CVE benchmarking initiative
 
 ### CVE benchmarking initiative
 * The [CVE benchmarking initiative](https://github.com/ossf-cve-benchmark/ossf-cve-benchmark) was announced at [BlackHat Europe 2020](https://www.blackhat.com/eu-20/briefings/schedule/#fps-are-cheap-show-me-the-cves-21345), presented by [Bas van Schaik](https://github.com/sj) and [Kevin Backhouse](https://github.com/kevinbackhouse).
 
-## oss fuzzing
+## OSS Fuzzing
 
 ### OSS Fuzzing
 * Fuzzing Collaboration subgroup - focuses on improving fuzzing
@@ -133,20 +153,20 @@ Examples of types of actions that are prohibited at Linux Foundation meetings an
   - Has its own [fuzzing-collaboration mailing list on Google Groups](https://groups.google.com/g/fuzzing-collaboration)
 * [Fuzz-introspector](https://github.com/ossf/fuzz-introspector/) -  a tool to help fuzzer developers to get an understanding of their fuzzer’s performance and identify any potential blockers.
 
-## dast scanning and web application definition
+## DAST scanning and web application definition
 
 ### DAST scanning and web application definition
 * Lead: Simon Bennetts
 * [Web Application Definition 1.0.0](https://github.com/ossf/wg-security-tooling/wiki/WebAppDefn)
 
-## related non-openssf work
+## Related non-OpenSSF work
 
 ## Related non-OpenSSF work
 
 * [OSS-Fuzz: Continuous fuzzing for open source software](https://github.com/google/oss-fuzz)
 * [FuzzBench: Fuzzer Benchmarking As a Service](https://github.com/google/fuzzbench)
 
-## codeql rules
+## CodeQL rules
 
 ### CodeQL rules
 * Coming

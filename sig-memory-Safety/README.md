@@ -28,13 +28,9 @@ TBD
 
 TBD
 
-# Quick Start
+## Quick Start
 
-### Quick Start
-
-* Areas that need contributions
-* [ ] Review of the Proposed Stream #4 Mobilization Plan
-* [File issues](https://github.com/ossf/Memory-Safety/issues)
+TBD
 
 ## Get Involved
 
@@ -60,7 +56,7 @@ TBD
 
 TBD
 
-## **motivation**
+## **Motivation**
 
 ## **Motivation**
 
@@ -68,7 +64,7 @@ Memory safety vulnerabilities, caused by mistakes in memory management, are comm
 
 Memory safe languages like Rust, Go, and Java are less prone to these types of errors. The consequences of these vulnerabilities are not just technical, but can result in significant financial losses and invasion of personal data and privacy. A recent analysis by Google Project Zero showed that 67% of vulnerabilities exploited in the wild were due to a lack of memory safety, making it a critical issue that needs to be addressed in software development.
 
-## **objective**
+## **Objective**
 
 ## **Objective**
 
@@ -76,19 +72,19 @@ Memory safe languages like Rust, Go, and Java are less prone to these types of e
 
 **Mission**: Understand and reduce memory safety vulnerabilities in OSS.
 
-## **scope**
+## **Scope**
 
 ## **Scope**
 
 Develop pragmatic guidance, standards, and software (including tools, tool improvements, and rewrites), along with advocating such changes, to systematically reduce memory safety vulnerabilities through the use of memory-safe programming languages and techniques, all informed by real-world data and risks.
 
-## **prior work**
+## **Prior Work**
 
 ## **Prior Work**
 
 * N/A
 
-## **get involved**
+## **Get Involved**
 
 ## **Get Involved**
 
@@ -96,14 +92,22 @@ Develop pragmatic guidance, standards, and software (including tools, tool impro
 [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
 * [Memory Safety SIG Slack](https://openssf.slack.com/archives/C03G8NZH58R)
 
-## **meeting times**
+## Quick Start
+
+### Quick Start
+
+* Areas that need contributions
+* [ ] Review of the Proposed Stream #4 Mobilization Plan
+* [File issues](https://github.com/ossf/Memory-Safety/issues)
+
+## **Meeting times**
 
 ## **Meeting times**
 
 * Every other Thursday @ 13:00am EST. The invite is available on the [OpenSSF Community Calendar](https://calendar.google.com/calendar/u/0/r?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 * [Meeting Minutes](https://docs.google.com/document/d/1Ehpp1UmAIqMs0ZdKr15sd5MS48OeaGKB9H40htVehs4)
 
-## **governance**
+## **Governance**
 
 ## **Governance**
 
@@ -112,14 +116,14 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 * Lead name: [Nell Shamrell-Harrington](https://github.com/nellshamrell)
 * Co-Lead name: [Avishay Balter, Microsoft](https://github.com/balteravishay)
 
-## sig maintainers
+## SIG Maintainers
 
 ### SIG Maintainers
 
 * [Christopher "CRob" Robinson, Intel](https://github.com/SecurityCRob)
 * [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
 
-## sig collaborators
+## SIG Collaborators
 
 ### SIG Collaborators
 
@@ -131,7 +135,7 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 * [Josh Aas (he/him, ISRG/Prossimo)](https://github.com/bdaehlie)
 * [Jonathan Leitschuh (he/him) OpenSSF](https://github.com/JLLeitschuh)
 
-## **intellectual property**
+## **Intellectual Property**
 
 ## **Intellectual Property**
 

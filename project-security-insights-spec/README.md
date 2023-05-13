@@ -59,7 +59,7 @@ TBD
 
 TBD
 
-## introduction
+## Introduction
 
 ## Introduction
 
@@ -89,7 +89,7 @@ extracted into security evaluations, etc.).
 This is an early version created by the OpenSSF Identifying Security Threats Working 
 Group. See the [OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
-## security-insights.yml
+## SECURITY-INSIGHTS.yml
 
 ## SECURITY-INSIGHTS.yml
 
@@ -108,7 +108,7 @@ otherwise would not be automatically accessible. Humans and tools that evaluate
 projects may want to report results both including and not including self-assertions, 
 or assertions unverified by a trusted third party.
 
-## user stories
+## User stories
 
 ## User stories
 
@@ -129,7 +129,7 @@ third-party software.
 | user | contact the project maintainers for general questions | I can solve my issues |
 | user | read a security policy | I can easily know security practices in place |
 
-## threat model
+## Threat Model
 
 ## Threat Model
 
@@ -139,7 +139,7 @@ for SECURITY-INSIGHTS project is available both in [PDF format](docs/SECURITY-IN
 
 ![Threat Model](docs/SECURITY-INSIGHTS-STRIDE-threat-model.png)
 
-## supply-chain
+## Supply-chain
 
 ### Supply-chain
 
@@ -148,7 +148,7 @@ domain, server, etc) linked in the `SECURITY-INSIGHTS.yml`.
 
 **Mitigation:** Maintainers could self-host the evidence to reduce risks.
 
-## false information in the security-insights.yml
+## False information in the SECURITY-INSIGHTS.yml
 
 ### False information in the SECURITY-INSIGHTS.yml
 
@@ -160,7 +160,7 @@ INSIGHTS to evaluate the project.
 return 200 OK status) and a weighted score to reduce the risks. In addition, the open-source
 community can read the YAML file and report false information (or just information without clear evidence).
 
-## private information sharing
+## Private information sharing
 
 ### Private information sharing
 
@@ -169,7 +169,7 @@ containing unpatched vulnerabilities).
 
 **Mitigation:**
 
-## malicious pull-request
+## Malicious pull-request
 
 ### Malicious pull-request
 
@@ -180,7 +180,7 @@ malicious URLs) to obtain a particular advantage.
 approved by the maintainers. In addition, the maintainers could decide to not
 accept direct contributions to the `SECURITY-INSIGHTS.yml`.
 
-## missing pull-request review or lacks in the review process
+## Missing pull-request review or lacks in the review process
 
 ### Missing pull-request review or lacks in the review process
 

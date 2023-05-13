@@ -11,7 +11,55 @@ This charter describes operations as an [OSSF Technical Initiative](https://gith
 The [Focus](#focus) section below describes what is in and out of scope,
 and [Governance](#governance) section describes how our operations are consistent with OSSF policies with links to more detailed documents.
 
-# Motivation
+## Motivation
+
+TBD
+
+## Objective
+
+TBD
+
+## Vision
+
+TBD
+
+## Scope
+
+TBD
+
+## Current Work
+
+TBD
+
+## Quick Start
+
+TBD
+
+## Get Involved
+
+TBD
+
+## Meeting times
+
+TBD
+
+## Meeting Notes
+
+TBD
+
+## Licenses
+
+TBD
+
+## Charter
+
+TBD
+
+## Antitrust Policy
+
+TBD
+
+## Motivation
 
 ## Motivation
 
@@ -31,6 +79,10 @@ projects are the same, and support can come in many shapes.
 We intend to work with upstream maintainers to understand what help and support they need, and then develop scalable processes to make
 this help available.
 
+## Focus
+
+## Focus
+
 ## Objective
 
 ### Objective
@@ -39,14 +91,6 @@ To the best of our efforts, the goals of the working group are:
 
 1. Identify critical open source software (OSS) projects. 
 2. Secure those projects.
-
-## Vision
-
-TBD
-
-## Scope
-
-TBD
 
 ## Current Work
 
@@ -65,66 +109,14 @@ TBD
 * [allstar](https://github.com/ossf/allstar)
     * Lead: Jeff Mendoza
 
-## Quick Start
-
-TBD
-
-## Get Involved
-
-TBD
-
-## Meeting times
-
-TBD
-
-## Meeting Notes
-
-#### Meeting Notes
-
-Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1MIXxadtWsaROpFcJnBtYnQPoyzTCIDhd0IGV8PIV0mQ/edit). (Join the group above to edit.)
-
-Meeting Recordings are available on Youtube at: https://www.youtube.com/playlist?list=PLVl2hFL_zAh-cAfx6y4k-fODfbHeQzb_O.
-
-## Licenses
-
-TBD
-
-## Charter
-
-TBD
-
-## Governance
-
-## Governance
-
-This group is chaired by Amir Montazery (OSTIF) and Jeff Mendoza (Kusari).
-
-Full details of process and roles are linked from [governance README](/governance).
-
-## Antitrust Policy
-
-TBD
-
-## Antitrust Policy Notice
-
-## Antitrust Policy Notice
-
-Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
-
-Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
-
-## focus
-
-## Focus
-
-## role definitions
+## Role Definitions
 
 ### Role Definitions
 
 * Lead: Drives work forward
 * Contributor: Available for taking work and completing
 
-## how were critical oss projects selected?
+## How were critical OSS projects selected?
 
 ## How were critical OSS projects selected?
 
@@ -174,7 +166,7 @@ We have no doubt that other OSS projects will be added to the
 critical OSS projects list over time. If you're interested in helping
 to do that, please join the working group.
 
-## related work to quantitatively identify critical projects
+## Related work to quantitatively identify critical projects
 
 ## Related work to quantitatively identify critical projects
 
@@ -185,7 +177,7 @@ to do that, please join the working group.
 * [Core Infrastructure Initiative (CII) Open Source Software Census II Strategy](https://www.ida.org/research-and-publications/publications/all/c/co/core-infrastructure-initiative-cii-open-source-software-census-ii-strategy) by David A. Wheeler & Jason N. Dossett, October 2017
 * [Report on the 2020 FOSS Contributor Survey](https://www.linuxfoundation.org/blog/2020/12/download-the-report-on-the-2020-foss-contributor-survey/) by Frank Nagle, David A. Wheeler, Hila Lifshitz-Assaf, Haylee Ham, and Jennifer L. Hoffman
 
-## operations
+## Operations
 
 ## Operations
 
@@ -193,13 +185,13 @@ WG-Securing-Critical-Projects operations are consistent with standard operating 
 provided by the OSSF Technical Advisory Committee
 [TAC](https://github.com/ossf/tac).
 
-## meetings times
+## Meetings Times
 
 ### Meetings Times
 
 Meetings will all be published on the [OSSF Community Calendar](https://calendar.google.com/calendar/r?cid=s63voefhp5i9pfltb5q67ngpes@group.calendar.google.com).
 
-## communications
+## Communications
 
 ### Communications
 
@@ -207,8 +199,32 @@ We have a public email list available here: https://lists.openssf.org/g/openssf-
 
 You can also join us for day-to-day conversations on slack: https://openssf.slack.com/messages/wg_securing_critical_projects
 
-## identifying critical projects
+## Meeting Notes
+
+#### Meeting Notes
+
+Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1MIXxadtWsaROpFcJnBtYnQPoyzTCIDhd0IGV8PIV0mQ/edit). (Join the group above to edit.)
+
+Meeting Recordings are available on Youtube at: https://www.youtube.com/playlist?list=PLVl2hFL_zAh-cAfx6y4k-fODfbHeQzb_O.
+
+## Governance
+
+## Governance
+
+This group is chaired by Amir Montazery (OSTIF) and Jeff Mendoza (Kusari).
+
+Full details of process and roles are linked from [governance README](/governance).
+
+## Identifying Critical Projects
 
 ## Identifying Critical Projects
 
 [See information on identifying critical projects](https://github.com/ossf/wg-securing-critical-projects/tree/main/Initiatives/Identifying-Critical-Projects)
+
+## Antitrust Policy Notice
+
+## Antitrust Policy Notice
+
+Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
+
+Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.

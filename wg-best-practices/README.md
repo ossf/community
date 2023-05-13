@@ -13,7 +13,51 @@ Anyone is welcome to join our open discussions related to the group's mission an
 
 TBD
 
-# Objective
+## Objective
+
+TBD
+
+## Vision
+
+TBD
+
+## Scope
+
+TBD
+
+## Current Work
+
+TBD
+
+## Quick Start
+
+TBD
+
+## Get Involved
+
+TBD
+
+## Meeting times
+
+TBD
+
+## Meeting Notes
+
+TBD
+
+## Licenses
+
+TBD
+
+## Charter
+
+TBD
+
+## Antitrust Policy
+
+TBD
+
+## Objective
 
 ## Objective
 
@@ -99,9 +143,30 @@ You can also see our older work, [Recommended compiler option flags for C/C++ pr
 
 We welcome contributions, suggestions and updates to our projects. To contribute please fill in an [issue](https://github.com/ossf/wg-best-practices-os-developers/issues) or create a [pull request](https://github.com/ossf/wg-best-practices-os-developers/pulls).
 
+## Related Activities
+
+## Related Activities
+
+There are many great projects both within and outside the Foundation that compliment and intersect our work here. Some other great projects/resources to explore:
+
+- _SLSA Supply-chain Levels for Software Artifacts_ - <https://github.com/slsa-framework/slsa>
+  - Purpose - A security framework from source to service, giving anyone working with software a common language for increasing levels of software security and supply chain integrity
+
 ## Quick Start
 
 ## Quick Start
+
+## Areas that need contributions
+
+### Areas that need contributions
+
+- Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
+
+## Where to file issues
+
+### Where to file issues
+
+- Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
 
 ## Get Involved
 
@@ -119,7 +184,7 @@ Anyone is welcome to join our open discussions related to the group's mission an
 - [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups)
 - Join the conversation on [Slack](https://openssf.slack.com/archives/C01AHCRP8BT)
 
-## Meeting times
+## Meeting Times
 
 ## Meeting Times
 
@@ -143,6 +208,66 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 
 Meeting notes are maintained in a Google Doc found in the above table. If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
 
+## Governance
+
+## Governance
+
+The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
+
+- Lead - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+- Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
+- "*" denotes a project/SIG lead
+
+## Project Maintainers
+
+### Project Maintainers
+
+- [Christopher "CRob" Robinson*, Intel](https://github.com/SecurityCRob)
+- [Xavier René-Corail, GitHub](https://github.com/xcorail)
+- [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
+- [Dave Russo*, Red Hat](https://github.com/drusso-rh)
+
+## Project Collaborators
+
+### Project Collaborators
+
+- [Christine Abernathy*, F5](https://github.com/caabernathy)
+- [Daniel Applequist*, Snyk](https://github.com/Torgo)
+- Avishay Balter, Microsoft
+- [Jeffrey Borek, IBM](https://github.com/jtborek)
+- [VM Brasseur, WiPro](https://github.com/)
+- [Glenn ten Cate*, OWASP/SKF](https://github.com/)
+- [Judy Kelly, Red Hat](https://github.com/judyobrienie)
+- [Georg Kunz, Ericsson](https://github.com/gkunz)
+- [Arnaud J Le Hors, IBM](https://github.com/lehors)
+- [Matt Rutkowski, IBM](https://github.com/mrutkows)
+- [Marta Rybczynska, Syslinbit](https://github.com/mrybczyn)
+- Yotam Perkal, Rezilion
+- [Eric Tice, WiPro](https://github.com/)
+- [Randall T. Vasquez*, Gentoo/Homebrew](https://github.com/ran-dall)
+- [Jay White, Microsoft](https://github.com/camaleon2016)
+
+## Project Contributors
+
+### Project Contributors
+
+- Aeva Black, Microsoft
+- Jory Burson, Linux Foundation
+- Rosaria Carr, Indeed
+- Riccardo ten Cate, SKF
+- Spyros Gasteratos*, OWASP/CRE
+- Sami Guirguis, TELUS
+- Jonathan Leitschuh*, Dan Kaminsky Fellowship @ Human Security
+- Jeff Mendoza, Google
+- Kara Olive, Google
+- Laurent Simon*, Google/Scorecard
+- Azeem Shaikh*, Google/Scorecard
+- Harimohan Rajamohanan, Wipro
+- Ixchel Ruiz, jfrog
+- Patricia Tarro, Dell
+- [Thomas Nyman*, Ericsson](https://github.com/thomasnyman)
+- Noam Dotan, Legit Security
+
 ## Licenses
 
 ## Licenses
@@ -164,20 +289,6 @@ Like all OpenSSF working groups, this working group reports to the
 For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
 
-## Governance
-
-## Governance
-
-The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
-
-- Lead - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-- Co-Lead - [Xavier René-Corail](https://github.com/xcorail)
-- "*" denotes a project/SIG lead
-
-## Antitrust Policy
-
-TBD
-
 ## Antitrust Policy Notice
 
 ## Antitrust Policy Notice
@@ -185,74 +296,3 @@ TBD
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
-
-## related activities
-
-## Related Activities
-
-There are many great projects both within and outside the Foundation that compliment and intersect our work here. Some other great projects/resources to explore:
-
-- _SLSA Supply-chain Levels for Software Artifacts_ - <https://github.com/slsa-framework/slsa>
-  - Purpose - A security framework from source to service, giving anyone working with software a common language for increasing levels of software security and supply chain integrity
-
-## areas that need contributions
-
-### Areas that need contributions
-
-- Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
-
-## where to file issues
-
-### Where to file issues
-
-- Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
-
-## project maintainers
-
-### Project Maintainers
-
-- [Christopher "CRob" Robinson*, Intel](https://github.com/SecurityCRob)
-- [Xavier René-Corail, GitHub](https://github.com/xcorail)
-- [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
-- [Dave Russo*, Red Hat](https://github.com/drusso-rh)
-
-## project collaborators
-
-### Project Collaborators
-
-- [Christine Abernathy*, F5](https://github.com/caabernathy)
-- [Daniel Applequist*, Snyk](https://github.com/Torgo)
-- Avishay Balter, Microsoft
-- [Jeffrey Borek, IBM](https://github.com/jtborek)
-- [VM Brasseur, WiPro](https://github.com/)
-- [Glenn ten Cate*, OWASP/SKF](https://github.com/)
-- [Judy Kelly, Red Hat](https://github.com/judyobrienie)
-- [Georg Kunz, Ericsson](https://github.com/gkunz)
-- [Arnaud J Le Hors, IBM](https://github.com/lehors)
-- [Matt Rutkowski, IBM](https://github.com/mrutkows)
-- [Marta Rybczynska, Syslinbit](https://github.com/mrybczyn)
-- Yotam Perkal, Rezilion
-- [Eric Tice, WiPro](https://github.com/)
-- [Randall T. Vasquez*, Gentoo/Homebrew](https://github.com/ran-dall)
-- [Jay White, Microsoft](https://github.com/camaleon2016)
-
-## project contributors
-
-### Project Contributors
-
-- Aeva Black, Microsoft
-- Jory Burson, Linux Foundation
-- Rosaria Carr, Indeed
-- Riccardo ten Cate, SKF
-- Spyros Gasteratos*, OWASP/CRE
-- Sami Guirguis, TELUS
-- Jonathan Leitschuh*, Dan Kaminsky Fellowship @ Human Security
-- Jeff Mendoza, Google
-- Kara Olive, Google
-- Laurent Simon*, Google/Scorecard
-- Azeem Shaikh*, Google/Scorecard
-- Harimohan Rajamohanan, Wipro
-- Ixchel Ruiz, jfrog
-- Patricia Tarro, Dell
-- [Thomas Nyman*, Ericsson](https://github.com/thomasnyman)
-- Noam Dotan, Legit Security

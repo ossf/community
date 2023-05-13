@@ -60,7 +60,7 @@ TBD
 
 TBD
 
-## goals
+## Goals
 
 ## Goals
 
@@ -70,7 +70,7 @@ TBD
 
 1. Use this data to proactively improve the security posture of these critical projects.
 
-## criticality score
+## Criticality Score
 
 ## Criticality Score
 
@@ -104,7 +104,7 @@ open source project:
 - We are looking for community ideas to improve upon these parameters.
 - There will always be exceptions to the individual reasoning rules.
 
-## usage
+## Usage
 
 ## Usage
 
@@ -143,7 +143,7 @@ However, other config files can be supplied to produce different scores. See
 Feel free to copy one of the configurations and adjust the weights and
 thresholds to suit your needs.
 
-## authentication
+## Authentication
 
 ### Authentication
 
@@ -180,7 +180,7 @@ set GITLAB_AUTH_TOKEN=<your access token>
 ```
 -->
 
-## formatting results
+## Formatting Results
 
 ### Formatting Results
 
@@ -188,7 +188,7 @@ There are three formats currently: `text`, `json`, and `csv`. Others may be adde
 
 These may be specified with the `-format` flag.
 
-## other commands
+## Other Commands
 
 ## Other Commands
 
@@ -203,7 +203,7 @@ working with criticality score data.
 - [`scorer`](https://github.com/ossf/criticality_score/blob/main/cmd/scorer):
   a tool for recalculating criticality scores based on an input CSV file.
 
-## public data
+## Public Data
 
 ## Public Data
 
@@ -218,7 +218,7 @@ project running in GCP. Details for how this is deployed can be found in the
 We do plan to expand them in near future to account for projects hosted on other
 source control systems.
 
-## csv data
+## CSV data
 
 ### CSV data
 
@@ -228,7 +228,7 @@ The data is available on Google Cloud Storage and can be downloaded via:
 - [`gsutil`](https://cloud.google.com/storage/docs/gsutil_install)
 command-line tool: `gsutil ls gs://ossf-criticality-score/`
 
-## bigquery dataset
+## BigQuery Dataset
 
 ### BigQuery Dataset
 
@@ -243,7 +243,7 @@ ORDER BY default_score DESC
    LIMIT 100;
 ```
 
-## contributing
+## Contributing
 
 ## Contributing
 

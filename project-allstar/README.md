@@ -59,25 +59,25 @@ TBD
 
 TBD
 
-## overview
+## Overview
 
 ## Overview
 
 -  [What Is Allstar?](#what-is-allstar)
 
-## what's new with allstar
+## What's new with Allstar
 
 ## What's new with Allstar
 
 - [whats-new.md](whats-new.md)
 
-## disabling unwanted issues
+## Disabling Unwanted Issues
 
 ## Disabling Unwanted Issues
 
 -  [Help! I'm getting issues created by Allstar and I don't want them!](#disabling-unwanted-issues-1)
 
-## getting started
+## Getting Started
 
 ## Getting Started
 
@@ -87,27 +87,27 @@ TBD
     - [Quickstart Installation](#quickstart-installation)
     - [Manual Installation](#manual-installation)
 
-## policies and actions
+## Policies and Actions
 
 ## Policies and Actions
 - [Actions](#actions)
 - [Policies](#policies)
 
-## advanced
+## Advanced
 
 ## Advanced
 - [Configuration Definitions](#configuration-definitions)
 - [Example Configurations](#example-config-repository)
 - [Run Your Own Instance of Allstar](operator.md)
 
-## contribute
+## Contribute
 
 ## Contribute
 - [Contributing](#contributing)
 ________
 ________
 
-## what is allstar?
+## What is Allstar?
 
 ### What is Allstar?
 
@@ -127,11 +127,11 @@ Allstar is developed under the [OpenSSF](https://openssf.org/) organization, as
 a part of the [Securing Critical Projects Working
 Group](https://github.com/ossf/wg-securing-critical-projects).
 
-## [what's new with allstar](whats-new.md)
+## [What's new with Allstar](whats-new.md)
 
 ## [What's new with Allstar](whats-new.md)
 
-## background
+## Background
 
 ### Background
 
@@ -156,7 +156,7 @@ These configurations are done in the organization's `.allstar` repository.
    the organization's `.allstar` repository (admins), or the repository's
    `.allstar` directory (maintainers).
 
-## org-level options
+## Org-Level Options
 
 ### Org-Level Options 
 
@@ -231,13 +231,13 @@ configured at the org level. </td>
 </tbody>
 </table>
 
-## installation options
+## Installation Options
 
 ### Installation Options
 
 Both the Quickstart and Manual Installation options involve installing the Allstar app. You may review the permissions requested. The app asks for read access to most settings and file contents to detect security compliance. It requests write access to issues and checks so that it can create issues and allow the `block` action.
 
-## quickstart installation
+## Quickstart Installation
 
 #### Quickstart Installation 
 This installation option will enable Allstar using the
@@ -267,7 +267,7 @@ your repositories. Allstar will create an issue if a policy is violated.
 
 To change any configurations, see the [manual installation directions](manual-install.md).
 
-## manual installation
+## Manual Installation
 
 #### Manual Installation
 This installation option will walk you through creating
@@ -283,7 +283,7 @@ all your repositories)
 2) Follow the [manual installation directions](manual-install.md) to create org-level or 
 repository-level Allstar config files and individual policy files.
 
-## **actions**
+## **Actions**
 
 ## **Actions**
 
@@ -312,7 +312,7 @@ future.
 - `email`: Allstar would send an email to the repository administrator(s).
 - `rpc`: Allstar would send an rpc to some organization-specific system.
 
-## **action configuration**
+## **Action configuration**
 
 ### **Action configuration**
 
@@ -325,7 +325,7 @@ Two settings are available to configure the issue action:
 - `issueRepo` is available at the organization level. Setting it will force all
   issues created in the organization to be created in the repository specified.
 
-## **policies**
+## **Policies**
 
 ## **Policies**
 
@@ -344,7 +344,7 @@ action: issue
 
 The details of how the `fix` action works for each policy is detailed below. If omitted below, the `fix` action is not applicable.
 
-## branch protection
+## Branch Protection
 
 ### Branch Protection
 
@@ -361,7 +361,7 @@ for correcting settings.
 
 The `fix` action will change the branch protection settings to be in compliance with the specified policy configuration.
 
-## binary artifacts
+## Binary Artifacts
 
 ### Binary Artifacts
 
@@ -375,7 +375,7 @@ binary artifact from the repository to achieve compliance. As the scorecard
 results can be verbose, you may need to run [scorecard
 itself](https://github.com/ossf/scorecard) to see all the detailed information.
 
-## outside collaborators
+## Outside Collaborators
 
 ### Outside Collaborators
 
@@ -389,7 +389,7 @@ have either administrator(default) or push(optional) access to the
 repository. Only organization members should have this access, as otherwise
 untrusted members can change admin level settings and commit malicious code.
 
-## security.md
+## SECURITY.md
 
 ### SECURITY.md
 
@@ -403,7 +403,7 @@ the [GitHub
 tab](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)
 that helps you commit a security policy to your repository.
 
-## dangerous workflow
+## Dangerous Workflow
 
 ### Dangerous Workflow
 
@@ -417,7 +417,7 @@ behavior. See the [Security Scorecards
 Documentation](https://github.com/ossf/scorecard/blob/main/docs/checks.md#dangerous-workflow)
 for more information on this check.
 
-## generic scorecard check
+## Generic Scorecard Check
 
 ### Generic Scorecard Check
 
@@ -431,7 +431,7 @@ the [Security Scorecards
 Documentation](https://github.com/ossf/scorecard/blob/main/docs/checks.md)
 for more information on each check.
 
-## github actions
+## GitHub Actions
 
 ### GitHub Actions
 
@@ -444,7 +444,7 @@ This policy checks the GitHub Actions workflow configuration files
 they are in line with rules (eg. require, deny) defined in the
 organization-level config for the policy.
 
-## repository administrators
+## Repository Administrators
 
 ### Repository Administrators
 
@@ -454,14 +454,14 @@ here](https://pkg.go.dev/github.com/ossf/allstar/pkg/policies/admin#OrgConfig).
 
 This policy checks that by default all repositories must have a user or group assigned as an Administrator. It allows you to optionally configure if users are allowed to be administrators (as opposed to teams).
 
-## future policies
+## Future Policies
 
 ### Future Policies
 
 - Ensure dependabot is enabled.
 - Check that dependencies are pinned/frozen.
 
-## **example config repository**
+## **Example Config Repository**
 
 ## **Example Config Repository**
 
@@ -470,14 +470,14 @@ of Allstar config being used. As the organization administrator, consider a
 README.md with some information on how Allstar is being used in your
 organization.
 
-## configuration definitions
+## Configuration Definitions
 
 ### Configuration Definitions
 
 - [Organization level enable configuration](https://pkg.go.dev/github.com/ossf/allstar/pkg/config#OrgOptConfig)
 - [Repository Override enable configuration]( https://pkg.go.dev/github.com/ossf/allstar/pkg/config#RepoOptConfig)
 
-## secondary org-level configuration location
+## Secondary Org-Level configuration location
 
 ### Secondary Org-Level configuration location
 
@@ -494,7 +494,7 @@ secondary location. To clarify, for `allstar.yaml`:
 This is also true for the org-level configuration files for the individual
 policies, as described below.
 
-## repo policy configurations in the org repo
+## Repo policy configurations in the Org Repo
 
 ### Repo policy configurations in the Org Repo
 
@@ -514,7 +514,7 @@ For example, Allstar will lookup the policy configuration for a given repo
 | `.github` | `allstar/myapp/branch_protection.yaml` | If `.allstar` repo does not exist. |
 | `.github` | `allstar/branch_protection.yaml` | If `.allstar` repo does not exist. |
 
-## org-level base and merge configuration location
+## Org-level Base and Merge Configuration Location
 
 ### Org-level Base and Merge Configuration Location
 
@@ -552,7 +552,7 @@ method this is applied is described as a [JSON Merge
 Patch](https://datatracker.ietf.org/doc/html/rfc7396). The `baseConfig` must be
 a GitHub `<org>/<repository>`.
 
-## **contributing**
+## **Contributing**
 
 ## **Contributing**
 

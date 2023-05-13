@@ -65,7 +65,7 @@ TBD
 
 TBD
 
-## documentation and samples
+## Documentation and samples
 
 ## Documentation and samples
 The main Fuzz Introspector documentation is available here: https://fuzz-introspector.readthedocs.io This documentation includes user guides, OSS-Fuzz instructions, tutorials, development docs and more.
@@ -83,7 +83,7 @@ Additionally, there is more information:
   - [Use with OSS-Fuzz](oss_fuzz_integration#build-fuzz-introspector-with-oss-fuzz) (Recommended)
   - [Use without OSS-Fuzz](doc/LocalBuild.md)
 
-## architecture
+## Architecture
 
 ## Architecture
 The workflow of fuzz-introspector can be visualised as follows:
@@ -91,18 +91,18 @@ The workflow of fuzz-introspector can be visualised as follows:
 
 A more detailed description is available in [doc/Architecture](/doc/Architecture.md)
 
-## contribute
+## Contribute
 
 ## Contribute
 ### Code of Conduct
 Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## code of conduct
+## Code of Conduct
 
 ### Code of Conduct
 Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## connect with the fuzzing community
+## Connect with the Fuzzing Community
 
 ### Connect with the Fuzzing Community
 If you want to get involved in the Fuzzing community or have ideas to chat about, we discuss
