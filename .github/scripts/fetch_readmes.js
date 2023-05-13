@@ -14,7 +14,6 @@ const DIR_PATH = path.join(__dirname, "..", "..");
 
 const repoList = yaml.load(fs.readFileSync(REPO_LIST_PATH, "utf8"));
 
-
 const sectionOrder = [
   ["Motivation"],
   ["Objective"],
@@ -43,16 +42,25 @@ function generateLeadsMarkdown(leads) {
   return leads.map(lead => `- [${lead.name}](https://github.com/${lead.githubId})`).join("\n");
 }
 
-function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
+function reorderReadmeContent(content, description, leadsMarkdown) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
+  
+  // New regex for the main title
+  const mainTitleRegex = /^#\s(.+?)(?:\r?\n|\r)/m;
+  const mainTitle = (content.match(mainTitleRegex) || ["", ""])[1].trim();
 
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
-  const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+  let firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+
+  // Remove the original main title from the first paragraph
+  firstParagraph = firstParagraph.replace(mainTitleRegex, '').trim();
 
   const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\n The designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
+  // Remove the original main title from the content
+  content = content.replace(mainTitleRegex, '').trim();
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim().toLowerCase();
@@ -81,7 +89,6 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     reorderedContent += `\n\n${sections[section]}`;
   }
 
-
   return reorderedContent.trim();
 }
 
@@ -89,32 +96,42 @@ function appendRepoInfoToMainReadme() {
   const mainReadmePath = path.join(__dirname, "..", "..", "README.md");
   let mainReadmeContent = fs.existsSync(mainReadmePath) ? fs.readFileSync(mainReadmePath, "utf8") : "";
 
-  mainReadmeContent += "\n\n## Repository Information\n\n";
+  const startMarker = "\n\n## Repository Information\n\n";
+  const endMarker = "\n\n## End of Repository Information\n\n";
+
+  const start = mainReadmeContent.indexOf(startMarker);
+  const end = mainReadmeContent.indexOf(endMarker);
+
+  let newSectionContent = "";
 
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
 
-    mainReadmeContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
-    mainReadmeContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
-    mainReadmeContent += `**Description:** ${repoData.description}\n`;
-    mainReadmeContent += `**Leads:**\n`;
+    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
+    newSectionContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
+    newSectionContent += `\n **Description:** ${repoData.description}\n`;
+    newSectionContent += `**Leads:**\n`;
 
     if (repoData && Array.isArray(repoData.leads)) {
       for (const lead of repoData.leads) {
-        mainReadmeContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
+        newSectionContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
       }
     } else {
       console.log(`Leads property does not exist or is not iterable for repoData: ${JSON.stringify(repoData)}`);
     }
 
-    mainReadmeContent += "\n";
+    newSectionContent += "\n";
+  }
+
+  if (start >= 0 && end >= 0) {
+    mainReadmeContent = mainReadmeContent.slice(0, start) + startMarker + newSectionContent + endMarker + mainReadmeContent.slice(end + endMarker.length);
+  } else {
+    mainReadmeContent += startMarker + newSectionContent + endMarker;
   }
 
   fs.writeFileSync(mainReadmePath, mainReadmeContent);
 }
-
-
 
 async function fetchReadmes() {
   await clearReadmeFiles();
@@ -126,13 +143,13 @@ async function fetchReadmes() {
 
       const repoDir = path.join(DIR_PATH, repoData.newRepoName);
       if (!fs.existsSync(repoDir)) {
-        await fs.mkdir(repoDir, { recursive: true });
+        await fs.promises.mkdir(repoDir, { recursive: true });
       }
 
       const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown, repoData.newRepoName);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
 
-      await fs.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
+      await fs.promises.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
     }
@@ -142,3 +159,4 @@ async function fetchReadmes() {
 }
 
 fetchReadmes();
+
