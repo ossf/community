@@ -1,7 +1,8 @@
 # OpenSSF Community
 
 
-Welcome to the OpenSSF Community! 
+Welcome to the OpenSSF Community! For any questions, concerns, reports, etc., please email operations@openssf.org.
+
 
 This is the starting point for joining and contributing to the OpenSSF community - improving docs, improving code, giving talks etc.
 
@@ -56,12 +57,13 @@ Most official meetings are public, and recordings are uploaded to the [OpenSSF Y
 We encourage all contributors to become members. We aim to grow an active, healthy community of contributors, reviewers, and code owners. Learn more about requirements and responsibilities of membership in our [Membership page](https://openssf.org/join/) or see [current members](https://landscape.openssf.org/).
 
 
+
 ## Repository Information
 
 ### [tac](https://github.com/ossf/tac)
 **Original Repository:** [tac](https://github.com/ossf/tac)
+**Description:** This is a top level group.
 
- **Description:** This is a top level group.
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 

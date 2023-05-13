@@ -1,6 +1,6 @@
-# Governign Board Sub-commettee Public Policy 
+# Governing Board Sub-committee Public Policy
 
-For any questions, concerns, reports, etc. please email operations@openssf.org.
+For any questions, concerns, reports, etc., please email operations@openssf.org.
 
 ## Notes
 
