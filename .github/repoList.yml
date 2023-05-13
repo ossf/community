@@ -1,16 +1,24 @@
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
+  description: This is a top level group
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices
+  description: This is a top level group
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
+  description: This is a top level group
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
+  description: This is a top level group
 - oldRepoName: wg-vulnerability-disclosures
   newRepoName: wg-vulnerability-disclosures
+  description: This is a top level group
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
+  description: This is a top level group
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
+  description: This is a top level group
 - oldRepoName: wg-securing-software-repos
   newRepoName: wg-securing-software-repos
+  description: This is a top level group

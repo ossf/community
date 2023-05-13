@@ -85,11 +85,18 @@ async function fetchReadmes() {
 
       const repoDir = path.join(__dirname, "..", "..", repoData.newRepoName);
       if (!fs.existsSync(repoDir)) {
-        fs.mkdirSync(repoDir);
-      }
+        fs.mkdirSync(repoDir, { recursive: true });
+        }
 
       const reorderedContent = reorderReadmeContent(readmeContent);
-      fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
+
+      const finalContent = `# ${repoData.newRepoName}\n\n${repoData.description}\n\n${reorderedContent}`;
+
+
+      fs.writeFileSync(path.join(repoDir, "README.md"), finalContent);
+      
+      console.log(`Description for ${repoData.newRepoName}: ${repoData.description}`);
+
     } catch (error) {
       console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
     }
