@@ -2,6 +2,8 @@ const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
+const util = require('util');
+const writeFile = util.promisify(fs.writeFile)
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const orgName = "ossf";
@@ -32,7 +34,7 @@ async function clearReadmeFiles() {
   for (const repoData of repoList) {
     const readmePath = path.join(DIR_PATH, repoData.newRepoName, README_FILENAME);
     if (fs.existsSync(readmePath)) {
-      await fs.writeFile(readmePath, "");
+      await writeFile(readmePath, "");
     }
   }
 }
