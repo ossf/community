@@ -100,8 +100,12 @@ function appendRepoInfoToMainReadme() {
     mainReadmeContent += `**Description:** ${repoData.description}\n`;
     mainReadmeContent += `**Leads:**\n`;
 
-    for (const lead of repoData.leads) {
-      mainReadmeContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
+    if (repoData && Array.isArray(repoData.leads)) {
+      for (const lead of repoData.leads) {
+        mainReadmeContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
+      }
+    } else {
+      console.log(`Leads property does not exist or is not iterable for repoData: ${JSON.stringify(repoData)}`);
     }
 
     mainReadmeContent += "\n";
@@ -109,6 +113,7 @@ function appendRepoInfoToMainReadme() {
 
   fs.writeFileSync(mainReadmePath, mainReadmeContent);
 }
+
 
 
 async function fetchReadmes() {
