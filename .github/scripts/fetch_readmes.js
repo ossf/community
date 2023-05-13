@@ -6,11 +6,11 @@ const yaml = require("js-yaml");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const orgName = "ossf";
 
-const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
-const repoList = yaml.load(repoListYaml);
+const REPO_LIST_PATH = "./.github/repoList.yml";
+const README_FILENAME = "README.md";
+const DIR_PATH = path.join(__dirname, "..", "..");
 
-
-
+const repoList = yaml.load(fs.readFileSync(REPO_LIST_PATH, "utf8"));
 
 
 const sectionOrder = [
@@ -23,21 +23,22 @@ const sectionOrder = [
   ["Get Involved"],
   ["Meeting times"],
   ["Meeting Notes"],
-  ["Project Maintainers"],
-  ["Project Collaborators"],
   ["Licenses"],
   ["Charter", "Governance"],
   ["Antitrust Policy", "Antitrust Policy Notice"]
 ];
 
-function clearReadmeFiles() {
+async function clearReadmeFiles() {
   for (const repoData of repoList) {
-    const newRepoName = repoData.newRepoName;
-    const readmePath = path.join("..", "..", newRepoName, "README.md");
+    const readmePath = path.join(DIR_PATH, repoData.newRepoName, README_FILENAME);
     if (fs.existsSync(readmePath)) {
-      fs.writeFileSync(readmePath, "");
+      await fs.writeFile(readmePath, "");
     }
   }
+}
+
+function generateLeadsMarkdown(leads) {
+  return leads.map(lead => `- [${lead.name}](https://github.com/${lead.githubId})`).join("\n");
 }
 
 function reorderReadmeContent(content, description, leadsMarkdown) {
@@ -48,7 +49,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
   const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
 
-  const firstParagraphWithDescription = `${description}\n\n The designated lead(s):\n ${leadsMarkdown}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `${description}\n\n The designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim().toLowerCase();
@@ -82,28 +83,22 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 }
 
 async function fetchReadmes() {
-  clearReadmeFiles();
+  await clearReadmeFiles();
 
   for (const repoData of repoList) {
     try {
       const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoData.oldRepoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      const repoDir = path.join(__dirname, "..", "..", repoData.newRepoName);
+      const repoDir = path.join(DIR_PATH, repoData.newRepoName);
       if (!fs.existsSync(repoDir)) {
-        fs.mkdirSync(repoDir, { recursive: true });
-        }
+        await fs.mkdir(repoDir, { recursive: true });
+      }
 
-        let leadsMarkdown = "";
-        for (const lead of repoData.leads) {
-          leadsMarkdown += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
-        }
-      
+      const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
       const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
 
-      fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
-      
-
+      await fs.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
     }
