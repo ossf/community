@@ -2,7 +2,7 @@ OpenSSF Best Practices Badge project is under the Best Practices working group.
 
 
  The designated lead is:
- - Azeem Shaikh with Github ID: [azeemshaikh38](https://github.com/azeemshaikh38) - Laurent Simon with Github ID: [laurentsimon](https://github.com/laurentsimon) - Naveen Srinivasan with Github ID: [naveensrinivasan](https://github.com/naveensrinivasan) - Risto McGehee with Github ID: [chrismcgehee](https://github.com/chrismcgehee) - Stephen Augustus with Github ID: [justaugustus](https://github.com/justaugustus)
+ - Azeem Shaikh with Github ID: [azeemshaikh38](https://github.com/azeemshaikh38)\n - Laurent Simon with Github ID: [laurentsimon](https://github.com/laurentsimon)\n - Naveen Srinivasan with Github ID: [naveensrinivasan](https://github.com/naveensrinivasan)\n - Risto McGehee with Github ID: [chrismcgehee](https://github.com/chrismcgehee)\n - Stephen Augustus with Github ID: [justaugustus](https://github.com/justaugustus)
 
 
 # OpenSSF Scorecard
