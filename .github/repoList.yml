@@ -1,50 +1,64 @@
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
   description: This is a top level group
-  lead: jonmuk
+  lead: >
+   - Jonathan Meadows with Github ID: [jonmuk](https://github.com/jonmuk)
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices
   description: This is a top level group
   lead: >
-    Christopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
+    - Christopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
   description: >
     This is a top level group.
   lead: >
-    joshbressers
+    - Josh Bressers with Github ID: [joshbressers](https://github.com/joshbressers)
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
   description: >
     This is a top level group.
-  lead: kimsterv, Dan Lorenc
+  lead: >
+    - Kim Lewandowski with Github ID: [kimsterv](https://github.com/kimsterv)
+    - Dan Lorenc with Github ID: [dlorenc](https://github.com/dlorenc)
 - oldRepoName: wg-vulnerability-disclosures
   newRepoName: wg-vulnerability-disclosures
   description: >
     This is a top level group.
-  lead: SecurityCRob
+  lead: >
+    - Christopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
   description: >
     This is a top level group.
-  lead: jeffmendoza, amirhmh3
+  lead: >
+    - Jeff Mendoza with Github ID: [jeffmendoza](https://github.com/jeffmendoza)
+    - Amir Hossin Montazery with Github ID: [amirhmh3](https://github.com/amirhmh3)
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
   description: >
     This is a top level group.
-  lead: scovetta
+  lead:  >
+    - Michael Scovetta with Github ID: [scovetta](https://github.com/scovetta)
 - oldRepoName: wg-securing-software-repos
   newRepoName: wg-securing-software-repos
   description: >
     This is a top level group.
-  lead: di
+  lead:  >
+    - Dustin Ingram with Github ID: [di](https://github.com/di)
 - oldRepoName: secure-sw-dev-fundamentals
   newRepoName: secure-sw-dev-fundamentals
   description: >
     Secure Software Development Fundamentals courses SIG is under the Best Practices working group.
-  lead: david-a-wheeler
+  lead:  >
+    - David Wheeler with Github ID: [david-a-wheeler](https://github.com/david-a-wheeler)
 - oldRepoName: scorecard
   newRepoName: scorecard
   description: >
     OpenSSF Best Practices Badge project is under the Best Practices working group.
-  lead: azeemshaikh38, laurentsimon, naveensrinivasan, 	chrismcgehee, justaugustus
+  lead:  >
+    - Azeem Shaikh with Github ID: [azeemshaikh38](https://github.com/azeemshaikh38)
+    - Laurent Simon with Github ID: [laurentsimon](https://github.com/laurentsimon)
+    - Naveen Srinivasan with Github ID: [naveensrinivasan](https://github.com/naveensrinivasan)
+    - Risto McGehee with Github ID: [chrismcgehee](https://github.com/chrismcgehee)
+    - Stephen Augustus with Github ID: [justaugustus](https://github.com/justaugustus)

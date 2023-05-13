@@ -44,7 +44,7 @@ function reorderReadmeContent(content, description,lead) {
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
   const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
 
-  const firstParagraphWithDescription = `${description}\n\n The designated lead is${lead}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `${description}\n\n The designated lead is:\n ${lead}\n\n${firstParagraph}`;
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim().toLowerCase();
