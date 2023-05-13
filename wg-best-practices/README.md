@@ -1,4 +1,4 @@
-# wg-best-practices
+wg-best-practices
 
 This is a top level group
 

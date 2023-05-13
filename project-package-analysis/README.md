@@ -1,4 +1,4 @@
-# project-package-analysis
+project-package-analysis
 
 This is under wg-securing-critical-projects
 

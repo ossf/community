@@ -1,4 +1,4 @@
-# sig-secure-supply-chain-consumption-framework
+sig-secure-supply-chain-consumption-framework
 
 This is under wg-supply-chain-integrity
 

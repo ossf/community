@@ -1,4 +1,4 @@
-# wg-securing-software-repos
+wg-securing-software-repos
 
 This is a top level group.
 

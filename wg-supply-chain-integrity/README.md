@@ -1,4 +1,4 @@
-# wg-supply-chain-integrity
+wg-supply-chain-integrity
 
 This is a top level group.
 

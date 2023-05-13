@@ -1,4 +1,4 @@
-# project-package-feeds
+project-package-feeds
 
 This is under wg-securing-critical-projects
 

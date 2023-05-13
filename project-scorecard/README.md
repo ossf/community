@@ -1,4 +1,4 @@
-# project-scorecard
+project-scorecard
 
 This is under the Best Practices working group.
 

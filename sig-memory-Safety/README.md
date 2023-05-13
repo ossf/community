@@ -1,4 +1,4 @@
-# sig-memory-Safety
+sig-memory-Safety
 
 This is under the Best Practices working group.
 

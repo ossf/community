@@ -1,4 +1,4 @@
-# wg-securing-critical-projects
+wg-securing-critical-projects
 
 This is a top level group.
 

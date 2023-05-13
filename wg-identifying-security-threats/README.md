@@ -1,4 +1,4 @@
-# wg-identifying-security-threats
+wg-identifying-security-threats
 
 This is a top level group.
 

@@ -1,4 +1,4 @@
-# project-osv-schema
+project-osv-schema
 
 This is under wg-vulnerability-disclosures
 

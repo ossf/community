@@ -1,4 +1,4 @@
-# sig-secure-sw-dev-fundamentals
+sig-secure-sw-dev-fundamentals
 
 This is under the Best Practices working group.
 

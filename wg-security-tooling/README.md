@@ -1,4 +1,4 @@
-# wg-security-tooling
+wg-security-tooling
 
 This is a top level group.
 

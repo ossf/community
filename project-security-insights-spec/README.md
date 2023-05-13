@@ -1,4 +1,4 @@
-# project-security-insights-spec
+project-security-insights-spec
 
 This is under wg-identifying-security-threats
 

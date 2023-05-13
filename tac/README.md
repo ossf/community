@@ -1,4 +1,4 @@
-# tac
+tac
 
 This is a top level group.
 

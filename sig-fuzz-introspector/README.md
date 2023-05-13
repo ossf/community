@@ -1,4 +1,4 @@
-# sig-fuzz-introspector
+sig-fuzz-introspector
 
 This is under wg-security-tooling
 

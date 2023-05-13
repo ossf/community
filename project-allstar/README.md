@@ -1,4 +1,4 @@
-# project-allstar
+project-allstar
 
 This is under wg-securing-critical-projects
 

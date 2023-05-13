@@ -1,4 +1,4 @@
-# project-criticality_score
+project-criticality_score
 
 This is under wg-securing-critical-projects
 
