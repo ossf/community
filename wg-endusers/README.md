@@ -1,8 +1,10 @@
+This is a top level group
+
+ The designated lead isjonmuk
+
 # OSSF End Users
 
 Anyone is welcome to join our open discussions.
-
-This is a top level group
 
 ## Motivation
 

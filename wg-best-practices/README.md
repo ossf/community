@@ -1,10 +1,13 @@
+This is a top level group
+
+ The designated lead isChristopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
+
+
 # Best Practices for Open Source Developers
 
 [![GitHub Super-Linter](https://github.com/ossf/wg-best-practices-os-developers/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
-
-This is a top level group
 
 ## Motivation
 

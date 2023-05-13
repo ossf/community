@@ -1,6 +1,9 @@
-# Supply Chain Integrity WG
+This is a top level group.
 
-This is a top level group
+
+ The designated lead iskimsterv, Dan Lorenc
+
+# Supply Chain Integrity WG
 
 ## Motivation
 

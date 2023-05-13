@@ -1,8 +1,11 @@
+This is a top level group.
+
+
+ The designated lead isdi
+
 # wg-securing-software-repos
 
 OpenSSF Working Group on Securing Software Repositories
-
-This is a top level group
 
 ## Motivation
 
