@@ -7,8 +7,6 @@ This is under wg-securing-critical-projects
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-# Package Feeds
-
 The binary produced by [cmd/scheduled-feed/main.go](cmd/scheduled-feed/main.go) can be used to monitor various
 package repositories for changes and publish data to external services for further processing.
 

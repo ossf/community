@@ -6,8 +6,6 @@ This is under wg-identifying-security-threats
  The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
-# README
-
 **OpenSSF Working Group:** [Identifying Security Threats in Open Source Projects](https://github.com/ossf/wg-identifying-security-threats)
 
 **Official document:** [Project Security Information Specification (SECURITY-INSIGHTS.yml))](https://docs.google.com/document/d/1Hqks2J0wVqS_YFUQeIyjkLneLfo3_9A-pbU-7DZpGwM/edit) - 

@@ -6,8 +6,6 @@ This is a top level group.
  The designated lead(s):
 - [Josh Bressers](https://github.com/joshbressers)
 
-# OSSF Security Tooling
-
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 
 ## Motivation

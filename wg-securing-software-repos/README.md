@@ -6,8 +6,6 @@ This is a top level group.
  The designated lead(s):
 - [Dustin Ingram](https://github.com/di)
 
-# wg-securing-software-repos
-
 OpenSSF Working Group on Securing Software Repositories
 
 ## Motivation

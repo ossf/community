@@ -8,7 +8,6 @@ This is under wg-security-tooling
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector)
 
-# Fuzz introspector
 
 Fuzz introspector is a tool to help fuzzer developers to get an understanding of their fuzzer’s performance 
 and identify any potential blockers. Fuzz introspector aggregates the fuzzers’ functional data like coverage,

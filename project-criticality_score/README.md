@@ -7,8 +7,6 @@ This is under wg-securing-critical-projects
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-# Open Source Project Criticality Score (Beta)
-
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/criticality_score/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/criticality_score)
 
 This project is maintained by members of the

@@ -9,7 +9,6 @@ This is under wg-securing-critical-projects
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis)
 
-# Package Analysis
 
 The Package Analysis project analyses the capabilities of packages available on open source repositories. The project looks for behaviors that indicate malicious software: 
 
