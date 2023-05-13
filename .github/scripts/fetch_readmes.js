@@ -43,7 +43,7 @@ function generateLeadsMarkdown(leads) {
   return leads.map(lead => `- [${lead.name}](https://github.com/${lead.githubId})`).join("\n");
 }
 
-function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
+function reorderReadmeContent(content, description, leadsMarkdown) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
@@ -70,17 +70,18 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     firstParagraph = content.trim();
   }
 
-  const firstParagraphWithDescription = `${mainTitle}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
   reorderedContent += `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}`;
 
   let h1Added = false;
+  const uniqueTitles = new Set();
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
-      if (sections[lowerCaseTitle]) {
+      if (sections[lowerCaseTitle] && !uniqueTitles.has(lowerCaseTitle)) {
         if (!h1Added) {
           h1Added = true;
           reorderedContent += `\n\n# ${title}\n\n${sections[lowerCaseTitle]}`;
@@ -88,6 +89,7 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
           reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
         }
         delete sections[lowerCaseTitle];
+        uniqueTitles.add(lowerCaseTitle);
         sectionAdded = true;
       } else if (!sectionAdded) {
         reorderedContent += `\n\n## ${title}\n\nTBD`;
@@ -102,6 +104,7 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
 
   return reorderedContent.trim();
 }
+
 
 
 
