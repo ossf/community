@@ -49,6 +49,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   let match;
 
   let mainTitle = "";
+  let firstParagraph = "";
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim();
@@ -62,6 +63,13 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
       }
     }
 
+    if (!firstParagraph && !mainTitle) {
+      const sectionContent = content.slice(sectionStart, sectionEnd).trim();
+      if (sectionContent !== description) {
+        firstParagraph = sectionContent;
+      }
+    }
+
     if (!sections[sectionTitle]) {
       sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
     }
@@ -72,6 +80,8 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   reorderedContent += `${description}\n\n`;
 
   reorderedContent += `The designated lead(s):\n${leadsMarkdown}\n\n`;
+
+  reorderedContent += `${firstParagraph}\n\n`;
 
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
@@ -93,6 +103,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
   return reorderedContent.trim();
 }
+
 
 
 
