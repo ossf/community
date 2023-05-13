@@ -1,11 +1,11 @@
-# 
-
-
+# Open Source Vulnerability Schema
 
 This is under wg-vulnerability-disclosures
 
-The designated lead(s):
+ The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+
 
 ## Motivation
 
@@ -24,6 +24,10 @@ TBD
 TBD
 
 ## Current Work
+
+TBD
+
+## Active Projects
 
 TBD
 
@@ -51,6 +55,14 @@ TBD
 
 TBD
 
+## Governance
+
+TBD
+
 ## Antitrust Policy
+
+TBD
+
+## Antitrust Policy Notice
 
 TBD
