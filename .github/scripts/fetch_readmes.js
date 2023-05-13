@@ -52,7 +52,10 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   const mainTitle = (content.match(mainTitleRegex) || ["", ""])[1].trim();
 
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
-  const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+  let firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+
+  // Remove the original main title from the first paragraph
+  firstParagraph = firstParagraph.replace(mainTitleRegex, '').trim();
 
   const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\n The designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
