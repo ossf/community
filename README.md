@@ -62,8 +62,8 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ### [tac](https://github.com/ossf/tac)
 **Original Repository:** [tac](https://github.com/ossf/tac)
-**Description:** This is a top level group.
 
+ **Description:** This is a top level group.
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
