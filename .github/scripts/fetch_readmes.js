@@ -95,7 +95,7 @@ function appendRepoInfoToMainReadme() {
   const start = mainReadmeContent.indexOf(startMarker);
   const end = mainReadmeContent.indexOf(endMarker);
 
-  let newSectionContent = startMarker;
+  let newSectionContent = "";
 
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
@@ -117,17 +117,15 @@ function appendRepoInfoToMainReadme() {
     newSectionContent += "\n";
   }
 
-  newSectionContent += endMarker;
-
-  // If the appended section exists, replace it. Otherwise, append the new section.
   if (start >= 0 && end >= 0) {
-    mainReadmeContent = mainReadmeContent.slice(0, start) + newSectionContent + mainReadmeContent.slice(end + endMarker.length);
+    mainReadmeContent = mainReadmeContent.slice(0, start) + startMarker + newSectionContent + endMarker + mainReadmeContent.slice(end + endMarker.length);
   } else {
-    mainReadmeContent += newSectionContent;
+    mainReadmeContent += startMarker + newSectionContent + endMarker;
   }
 
   fs.writeFileSync(mainReadmePath, mainReadmeContent);
 }
+
 
 
 
