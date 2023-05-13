@@ -85,6 +85,7 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
  **Description:** This is a top level group
 **Leads:**
+- [Jonathan Meadows](https://github.com/jonmuk)
 
 ### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
 **Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
@@ -156,13 +157,90 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
-### [sig-memory-Safety](https://github.com/ossf/sig-memory-Safety)
-**Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
+### [sig-education](https://github.com/ossf/sig-education)
+**Original Repository:** [education](https://github.com/ossf/education)
 
  **Description:** This is under the Best Practices working group.
 
 **Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [sig-memory-Safety](https://github.com/ossf/sig-memory-Safety)
+**Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
+
+ **Description:** This is under the Best Practices working group.
+**Leads:**
 - [Nell Shamrell-Harrington](https://github.com/nellshamrell)
+
+### [sig-oss-vulnerability-guide](https://github.com/ossf/sig-oss-vulnerability-guide)
+**Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
+
+ **Description:** This is under wg-vulnerability-disclosures
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [sig-sirt](https://github.com/ossf/sig-sirt)
+**Original Repository:** [SIRT](https://github.com/ossf/SIRT)
+
+ **Description:** This is under wg-vulnerability-disclosures
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [project-osv-schema](https://github.com/ossf/project-osv-schema)
+**Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
+
+ **Description:** This is under wg-vulnerability-disclosures
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [sig-OpenVEX](https://github.com/ossf/sig-OpenVEX)
+**Original Repository:** [OpenVEX](https://github.com/ossf/OpenVEX)
+
+ **Description:** This is under wg-vulnerability-disclosures
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [project-security-insights-spec](https://github.com/ossf/project-security-insights-spec)
+**Original Repository:** [security-insights-spec](https://github.com/ossf/security-insights-spec)
+
+ **Description:** This is under wg-identifying-security-threats
+
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [project-project-Security-Metrics](https://github.com/ossf/project-project-Security-Metrics)
+**Original Repository:** [Project-Security-Metrics](https://github.com/ossf/Project-Security-Metrics)
+
+ **Description:** This is under wg-identifying-security-threats
+
+**Leads:**
+- [Michael Scovetta](https://github.com/scovetta)
+
+### [project-security-reviews](https://github.com/ossf/project-security-reviews)
+**Original Repository:** [security-reviews](https://github.com/ossf/security-reviews)
+
+ **Description:** This is under wg-identifying-security-threats
+
+**Leads:**
+- [Michael Scovetta](https://github.com/scovetta)
+
+### [sig-fuzz-introspector](https://github.com/ossf/sig-fuzz-introspector)
+**Original Repository:** [fuzz-introspector](https://github.com/ossf/fuzz-introspector)
+
+ **Description:** This is under wg-security-tooling
+
+**Leads:**
+- [Josh Bressers](https://github.com/joshbressers)
+
+### [sig-secure-supply-chain-consumption-framework](https://github.com/ossf/sig-secure-supply-chain-consumption-framework)
+**Original Repository:** [s2c2f](https://github.com/ossf/s2c2f)
+
+ **Description:** This is under wg-supply-chain-integrity
+
+**Leads:**
+- [Jay White](https://github.com/camaleon2016)
+- [Adrian Diglio](https://github.com/adriandiglio)
+- [Jasmine Wang](https://github.com/jasminewang0)
 
 ### [project-criticality_score](https://github.com/ossf/project-criticality_score)
 **Original Repository:** [criticality_score](https://github.com/ossf/criticality_score)
@@ -191,40 +269,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-### [project-project-Security-Metrics](https://github.com/ossf/project-project-Security-Metrics)
-**Original Repository:** [Project-Security-Metrics](https://github.com/ossf/Project-Security-Metrics)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [project-security-insights-spec](https://github.com/ossf/project-security-insights-spec)
-**Original Repository:** [security-insights-spec](https://github.com/ossf/security-insights-spec)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-secure-supply-chain-consumption-framework](https://github.com/ossf/sig-secure-supply-chain-consumption-framework)
-**Original Repository:** [s2c2f](https://github.com/ossf/s2c2f)
-
- **Description:** This is under wg-supply-chain-integrity
-
-**Leads:**
-- [Jay White](https://github.com/camaleon2016)
-- [Adrian Diglio](https://github.com/adriandiglio)
-- [Jasmine Wang](https://github.com/jasminewang0)
-
-### [sig-fuzz-introspector](https://github.com/ossf/sig-fuzz-introspector)
-**Original Repository:** [fuzz-introspector](https://github.com/ossf/fuzz-introspector)
-
- **Description:** This is under wg-security-tooling
-
-**Leads:**
-- [Josh Bressers](https://github.com/joshbressers)
-
 ### [project-allstar](https://github.com/ossf/project-allstar)
 **Original Repository:** [allstar](https://github.com/ossf/allstar)
 
@@ -233,21 +277,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [sig-oss-vulnerability-guide](https://github.com/ossf/sig-oss-vulnerability-guide)
-**Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
-
- **Description:** This is under wg-vulnerability-disclosures
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-osv-schema](https://github.com/ossf/project-osv-schema)
-**Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 ### [sig-dei](https://github.com/ossf/sig-dei)
 **Original Repository:** [DEI-SIG](https://github.com/ossf/DEI-SIG)

@@ -2,7 +2,6 @@
 
 This is under the Best Practices working group.
 
-
  The designated lead(s):
 - [Nell Shamrell-Harrington](https://github.com/nellshamrell)
 
