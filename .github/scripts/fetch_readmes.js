@@ -48,19 +48,18 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
-  let firstParagraph = "";
-  let h1Title = "";
-  let sectionStarted = false;
+  let mainTitle = "";
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim();
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    if (sectionTitle === mainTitle) {
-      h1Title = content.slice(sectionStart, sectionEnd).trim();
-    } else if (!firstParagraph) {
-      firstParagraph = content.slice(sectionStart, sectionEnd).trim();
+    if (!mainTitle) {
+      const sectionContent = content.slice(sectionStart, sectionEnd).trim();
+      if (sectionContent !== description) {
+        mainTitle = sectionTitle;
+      }
     }
 
     if (!sections[sectionTitle]) {
@@ -68,11 +67,11 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
     }
   }
 
-  const firstParagraphWithDescription = `${h1Title}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
+  let reorderedContent = `# ${mainTitle}\n\n`;
 
-  let reorderedContent = firstParagraphWithDescription;
+  reorderedContent += `${description}\n\n`;
 
-  const addedTitles = new Set();
+  reorderedContent += `The designated lead(s):\n${leadsMarkdown}\n\n`;
 
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
@@ -80,21 +79,21 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
 
-      if (sections[lowerCaseTitle] && !addedTitles.has(lowerCaseTitle)) {
-        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
-        addedTitles.add(lowerCaseTitle);
+      if (sections[lowerCaseTitle]) {
+        reorderedContent += `## ${title}\n\n${sections[lowerCaseTitle]}\n\n`;
         sectionAdded = true;
         break;
       }
     }
 
     if (!sectionAdded) {
-      reorderedContent += `\n\n## ${titleArr[0]}\n\nTBD`;
+      reorderedContent += `## ${titleArr[0]}\n\nTBD\n\n`;
     }
   }
 
   return reorderedContent.trim();
 }
+
 
 
 
