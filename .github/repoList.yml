@@ -92,3 +92,85 @@
     - name: Stephen Augustus
       githubId: justaugustus
       url: https://github.com/justaugustus
+- oldRepoName: tac
+  newRepoName: tac
+  description: >
+    This is a top level group.
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: criticality_score
+  newRepoName: project-criticality_score
+  description: >
+    This is under wg-securing-critical-projects
+  leads:
+    - name: Jeff Mendoza
+      githubId: jeffmendoza
+      url: https://github.com/jeffmendoza
+    - name: Amir Hossin Montazery
+      githubId: amirhmh3
+      url: https://github.com/amirhmh3
+- oldRepoName: package-feeds
+  newRepoName: project-package-feeds
+  description: >
+    This is under wg-securing-critical-projects
+  leads:
+    - name: Jeff Mendoza
+      githubId: jeffmendoza
+      url: https://github.com/jeffmendoza
+    - name: Amir Hossin Montazery
+      githubId: amirhmh3
+      url: https://github.com/amirhmh3
+- oldRepoName: package-analysis
+  newRepoName: project-package-analysis
+  description: >
+    This is under wg-securing-critical-projects
+  leads:
+    - name: Jeff Mendoza
+      githubId: jeffmendoza
+      url: https://github.com/jeffmendoza
+    - name: Amir Hossin Montazery
+      githubId: amirhmh3
+      url: https://github.com/amirhmh3
+- oldRepoName: Project-Security-Metrics
+  newRepoName: project-project-Security-Metrics
+  description: >
+    This is under wg-identifying-security-threats
+  leads:
+    - name: Michael Scovetta
+      githubId: scovetta
+      url: https://github.com/scovetta
+- oldRepoName: s2c2f
+  newRepoName: sig-secure-supply-chain-consumption-framework
+  description: >
+    This is under wg-supply-chain-integrity
+  leads:
+    - name: Jay White
+      githubId: camaleon2016
+      url: https://github.com/camaleon2016
+    - name: Adrian Diglio
+      githubId: adriandiglio
+      url: https://github.com/adriandiglio
+    - name: Jasmine Wang
+      githubId: jasminewang0
+      url: https://github.com/jasminewang0
+- oldRepoName: fuzz-introspector
+  newRepoName: sig-fuzz-introspector
+  description: >
+    This is under wg-security-tooling
+  leads:
+    - name: Josh Bressers
+      githubId: joshbressers
+      url: https://github.com/joshbressers
+- oldRepoName: allstar
+  newRepoName: project-allstar
+  description: >
+    This is under wg-securing-critical-projects
+  leads:
+    - name: Jeff Mendoza
+      githubId: jeffmendoza
+      url: https://github.com/jeffmendoza
+    - name: Amir Hossin Montazery
+      githubId: amirhmh3
+      url: https://github.com/amirhmh3
