@@ -9,6 +9,8 @@ const orgName = "ossf";
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
+console.log(repoList); 
+
 const sectionOrder = [
   ["Motivation"],
   ["Objective"],
@@ -27,8 +29,9 @@ const sectionOrder = [
 ];
 
 function clearReadmeFiles() {
-  for (const repoName of repoList) {
-    const readmePath = path.join("..", "..", repoName, "README.md");
+  for (const repoData of repoList) {
+    const newRepoName = repoData.newRepoName;
+    const readmePath = path.join("..", "..", newRepoName, "README.md");
     if (fs.existsSync(readmePath)) {
       fs.writeFileSync(readmePath, "");
     }
