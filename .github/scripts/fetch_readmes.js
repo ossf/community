@@ -9,8 +9,6 @@ const orgName = "ossf";
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
-console.log(repoList); 
-
 const sectionOrder = [
   ["Motivation"],
   ["Objective"],
@@ -81,14 +79,11 @@ async function fetchReadmes() {
   clearReadmeFiles();
 
   for (const repoData of repoList) {
-    const oldRepoName = repoData.oldRepoName;
-    const newRepoName = repoData.newRepoName;
-
     try {
-      const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: oldRepoName });
+      const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoData.oldRepoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
-      const repoDir = path.join(__dirname, "..", "..", repoName);
+      const repoDir = path.join(__dirname, "..", "..", repoData.newRepoName);
       if (!fs.existsSync(repoDir)) {
         fs.mkdirSync(repoDir);
       }
@@ -96,7 +91,7 @@ async function fetchReadmes() {
       const reorderedContent = reorderReadmeContent(readmeContent);
       fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
     } catch (error) {
-      console.error(`Error fetching README for ${repoName}: ${error.message}`);
+      console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
     }
   }
 }
