@@ -27,10 +27,6 @@ TBD
 
 TBD
 
-## Active Projects
-
-TBD
-
 ## Quick Start
 
 TBD
@@ -55,14 +51,6 @@ TBD
 
 TBD
 
-## Governance
-
-TBD
-
 ## Antitrust Policy
-
-TBD
-
-## Antitrust Policy Notice
 
 TBD

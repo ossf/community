@@ -93,10 +93,6 @@ You can also see our older work, [Recommended compiler option flags for C/C++ pr
 
 We welcome contributions, suggestions and updates to our projects. To contribute please fill in an [issue](https://github.com/ossf/wg-best-practices-os-developers/issues) or create a [pull request](https://github.com/ossf/wg-best-practices-os-developers/pulls).
 
-## Active Projects
-
-TBD
-
 ## Quick Start
 
 ## Get Involved

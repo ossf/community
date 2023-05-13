@@ -29,10 +29,6 @@ TBD
 
 TBD
 
-## Active Projects
-
-TBD
-
 ## Quick Start
 
 TBD

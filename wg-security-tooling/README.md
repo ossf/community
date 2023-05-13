@@ -70,10 +70,6 @@ TBD
 
 TBD
 
-## Governance
-
-TBD
-
 ## Antitrust Policy
 
 TBD

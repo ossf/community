@@ -41,10 +41,6 @@ TBD
 * Survey of OSS software repositories
 * TBD
 
-## Active Projects
-
-TBD
-
 ## Quick Start
 
 TBD

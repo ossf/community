@@ -30,10 +30,6 @@ TBD
 
 TBD
 
-## Active Projects
-
-TBD
-
 ### Quick Start
 
 * Areas that need contributions
@@ -60,15 +56,7 @@ TBD
 
 TBD
 
-## Governance
-
-TBD
-
 ## Antitrust Policy
-
-TBD
-
-## Antitrust Policy Notice
 
 TBD
 

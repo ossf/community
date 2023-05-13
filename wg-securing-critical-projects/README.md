@@ -61,10 +61,6 @@ TBD
 * [allstar](https://github.com/ossf/allstar)
     * Lead: Jeff Mendoza
 
-## Active Projects
-
-TBD
-
 ## Quick Start
 
 TBD
