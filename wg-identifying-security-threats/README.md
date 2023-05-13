@@ -1,3 +1,5 @@
+undefined
+
 # Identifying Security Threats in Open Source Projects
 
 The purpose of this working group is to enable stakeholders to have informed
@@ -11,7 +13,7 @@ This is a top level group.
 The designated lead(s):
 - [Michael Scovetta](https://github.com/scovetta)
 
-## Motivation
+# Motivation
 
 ### Motivation
 

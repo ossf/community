@@ -1,3 +1,5 @@
+undefined
+
 # wg-securing-software-repos
 
 OpenSSF Working Group on Securing Software Repositories
@@ -8,7 +10,7 @@ This is a top level group.
 The designated lead(s):
 - [Dustin Ingram](https://github.com/di)
 
-## Motivation
+# Motivation
 
 ## Motivation
 

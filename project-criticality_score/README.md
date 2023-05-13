@@ -1,3 +1,5 @@
+undefined
+
 # Open Source Project Criticality Score (Beta)
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/criticality_score/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/criticality_score)

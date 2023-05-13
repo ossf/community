@@ -1,3 +1,5 @@
+undefined
+
 # WG Securing Critical Projects
 
 This charter describes operations as an [OSSF Technical Initiative](https://github.com/ossf/tac/blob/master/charters/).
@@ -11,7 +13,7 @@ The designated lead(s):
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-## Motivation
+# Motivation
 
 ## Motivation
 

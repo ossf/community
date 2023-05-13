@@ -1,3 +1,5 @@
+undefined
+
 # Open Source Vulnerability Schema 
 
 This is the repository for the Open Source Vulnerability schema, which is currently exported by:
