@@ -1,10 +1,4 @@
-wg-identifying-security-threats
-
-This is a top level group.
-
-
-The designated lead(s):
-- [Michael Scovetta](https://github.com/scovetta)
+# wg-identifying-security-threats
 
 # Identifying Security Threats in Open Source Projects
 
@@ -12,6 +6,14 @@ The purpose of this working group is to enable stakeholders to have informed
 confidence in the security of open source projects. We do this by collecting,
 curating, and communicating relevant metrics and metadata from open source
 projects and the ecosystems of which they are a part.
+
+This is a top level group.
+
+
+The designated lead(s):
+- [Michael Scovetta](https://github.com/scovetta)
+
+## Motivation
 
 ### Motivation
 
@@ -29,6 +31,8 @@ compromise the organizations or users that use those projects. It's
 essential that we understand these threats and work to build defenses against
 them.
 
+## Objective
+
 ### Objective
 
 Our objective is to enable stakeholders to have informed confidence in the
@@ -42,6 +46,8 @@ individual open source software components.
 
 TBD
 
+## Scope
+
 ### Scope
 
 The scope of this working group includes "security", as opposed to privacy,
@@ -51,6 +57,8 @@ ecosystem, as opposed to focusing exclusively on critical open source projects.
 ## Current Work
 
 TBD
+
+## Active Projects
 
 ### Active Projects
 
@@ -72,10 +80,14 @@ TBD
 * [Security Reviews](https://github.com/ossf/security-reviews) -
   This repository contains a collection of security reviews of open source software.
 
+## Quick Start
+
 ### Quick Start
 
 The best way to get started is to simply join a working group meeting. You can also
 read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) to get up to speed with what we're up to.
+
+## Get Involved
 
 ### Get Involved
 
@@ -85,10 +97,14 @@ read our [Meeting Minutes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULC
 * [OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * [Join us on Slack](https://openssf.slack.com/archives/C01A50B978T)
 
+## Meeting times
+
 ### Meeting Times
 
 * We meet every other week on Wednesdays. See the
   [OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
+
+## Meeting Notes
 
 ### Meeting Notes
 
@@ -102,6 +118,8 @@ TBD
 
 TBD
 
+## Governance
+
 ### Governance
 
 The [CHARTER](https://github.com/ossf/wg-identifying-security-threats/blob/main/CHARTER.md)
@@ -113,15 +131,21 @@ document outlines the scope and governance of our group activities.
 
 TBD
 
+## Antitrust Policy Notice
+
 ### Antitrust Policy Notice
 
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
 
+## inactive projects
+
 ### Inactive Projects
 
 * [Threats, Risks, and Mitigations in the Open Source Ecosystem](https://github.com/ossf/wg-identifying-security-threats/blob/main/publications/threats-risks-mitigations/v1.1/Threats%2C%20Risks%2C%20and%20Mitigations%20in%20the%20Open%20Source%20Ecosystem%20-%20v1.1.pdf)
+
+## related work
 
 ### Related Work
 

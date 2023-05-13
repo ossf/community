@@ -1,4 +1,6 @@
-wg-supply-chain-integrity
+# wg-supply-chain-integrity
+
+# Supply Chain Integrity WG
 
 This is a top level group.
 
@@ -7,11 +9,13 @@ The designated lead(s):
 - [Kim Lewandowski](https://github.com/kimsterv)
 - [Dan Lorenc](https://github.com/dlorenc)
 
-# Supply Chain Integrity WG
+## Motivation
 
 ## Motivation
 
 Supply chain issues and attacks cause significant damage worldwide including lost revenue, costs of ransomware payments, costs of mitigation, denial of access to resources, reduced customer trust, and public deception. As a matter of public trust, governments are beginning to mandate actions aimed at improving the security and integrity of supply chains. The [US White House Executive Order on Improving the Nation’s Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) is one such example.
+
+## Objective
 
 ## Objective
 
@@ -55,6 +59,8 @@ TBD
 
 ## Governance
 
+## Governance
+
 This WG is chaired by Isaac Hepworth. Melba Lopez and Jay White are co-chairs.
 
 Working Group operations are consistent with standard operating guidelines provided by the OSSF Technical Advisory Committee
@@ -68,9 +74,13 @@ TBD
 
 ## Antitrust Policy Notice
 
+## Antitrust Policy Notice
+
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
+
+## communications
 
 ## Communications
 
@@ -80,15 +90,21 @@ See Google Groups for past archive: https://groups.google.com/forum/#!forum/ossf
 
 You can also join our Slack channel at https://openssf.slack.com/messages/wg_supply_chain_integrity
 
+## meetings times
+
 ## Meetings Times
 
 The working group meets every other Wednesday at 9 AM Pacific. The public calendar is available here: https://calendar.google.com/calendar/embed?src=s63voefhp5i9pfltb5q67ngpes%40group.calendar.google.com&ctz=America%2FLos_Angeles
 
 Subscribe to the calendar for meeting details.
 
+## meetings notes
+
 ## Meetings Notes
 
 Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1xPs2sSbH3I9Ich7OyLOzl85oJshnK8Q6WoAgREE5-zA/edit). (Join the group listed under communications to edit.)
+
+## documents
 
 ## Documents
 Documents for the working group can be found in the following Google Drive location: 
@@ -96,6 +112,8 @@ https://drive.google.com/drive/folders/14VpLCYYAEZt1OQn490ajBg28TKXNPuUJ?usp=sha
 
 Documents include the following:
 * [User Stories](https://docs.google.com/document/d/1_TQizML8sXAm3OdoNA_plihZ14OHng_XRvJXKv_o_bs/edit?usp=sharing)
+
+## activities
 
 ## Activities
 

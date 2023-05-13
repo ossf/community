@@ -1,14 +1,14 @@
-sig-memory-Safety
+# sig-memory-Safety
+
+# **OpenSSF Memory Safety Special Interest Group (SIG)**
+
+The Memory Safety SIG is a group working within the [OpenSSF's Best Practices Working Group](https://github.com/ossf/wg-best-practices-os-developers) formed to advance and deliver upon [The OpenSSF's Mobilization Plan - Stream 4](https://8112310.fs1.hubspotusercontent-na1.net/hubfs/8112310/OpenSSF/White%20House%20OSS%20Mobilization%20Plan.pdf?hsCtaTracking=3b79d59d-e8d3-4c69-a67b-6b87b325313c%7C7a1a8b01-65ae-4bac-b97c-071dac09a2d8).
 
 This is under the Best Practices working group.
 
 
 The designated lead(s):
 - [Nell Shamrell-Harrington](https://github.com/nellshamrell)
-
-# **OpenSSF Memory Safety Special Interest Group (SIG)**
-
-The Memory Safety SIG is a group working within the [OpenSSF's Best Practices Working Group](https://github.com/ossf/wg-best-practices-os-developers) formed to advance and deliver upon [The OpenSSF's Mobilization Plan - Stream 4](https://8112310.fs1.hubspotusercontent-na1.net/hubfs/8112310/OpenSSF/White%20House%20OSS%20Mobilization%20Plan.pdf?hsCtaTracking=3b79d59d-e8d3-4c69-a67b-6b87b325313c%7C7a1a8b01-65ae-4bac-b97c-071dac09a2d8).
 
 ## Motivation
 
@@ -29,6 +29,8 @@ TBD
 ## Current Work
 
 TBD
+
+## Quick Start
 
 ### Quick Start
 
@@ -60,11 +62,15 @@ TBD
 
 TBD
 
+## **motivation**
+
 ## **Motivation**
 
 Memory safety vulnerabilities, caused by mistakes in memory management, are common in unsafe programming languages like C and C++.This type of vulnerability is responsible for a majority of security breaches, with estimates from Microsoft and Google showing that up to 70% and 90% of vulnerabilities in their products, respectively, are memory safety vulnerabilities.
 
 Memory safe languages like Rust, Go, and Java are less prone to these types of errors. The consequences of these vulnerabilities are not just technical, but can result in significant financial losses and invasion of personal data and privacy. A recent analysis by Google Project Zero showed that 67% of vulnerabilities exploited in the wild were due to a lack of memory safety, making it a critical issue that needs to be addressed in software development.
+
+## **objective**
 
 ## **Objective**
 
@@ -72,13 +78,19 @@ Memory safe languages like Rust, Go, and Java are less prone to these types of e
 
 **Mission**: Understand and reduce memory safety vulnerabilities in OSS.
 
+## **scope**
+
 ## **Scope**
 
 Develop pragmatic guidance, standards, and software (including tools, tool improvements, and rewrites), along with advocating such changes, to systematically reduce memory safety vulnerabilities through the use of memory-safe programming languages and techniques, all informed by real-world data and risks.
 
+## **prior work**
+
 ## **Prior Work**
 
 * N/A
+
+## **get involved**
 
 ## **Get Involved**
 
@@ -86,10 +98,14 @@ Develop pragmatic guidance, standards, and software (including tools, tool impro
 [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
 * [Memory Safety SIG Slack](https://openssf.slack.com/archives/C03G8NZH58R)
 
+## **meeting times**
+
 ## **Meeting times**
 
 * Every other Thursday @ 13:00am EST. The invite is available on the [OpenSSF Community Calendar](https://calendar.google.com/calendar/u/0/r?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 * [Meeting Minutes](https://docs.google.com/document/d/1Ehpp1UmAIqMs0ZdKr15sd5MS48OeaGKB9H40htVehs4)
+
+## **governance**
 
 ## **Governance**
 
@@ -98,10 +114,14 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 * Lead name: [Nell Shamrell-Harrington](https://github.com/nellshamrell)
 * Co-Lead name: [Avishay Balter, Microsoft](https://github.com/balteravishay)
 
+## sig maintainers
+
 ### SIG Maintainers
 
 * [Christopher "CRob" Robinson, Intel](https://github.com/SecurityCRob)
 * [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
+
+## sig collaborators
 
 ### SIG Collaborators
 
@@ -112,6 +132,8 @@ The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group acti
 * [Gabriel Dos Reis (Microsoft)](https://github.com/GabrielDosReis)
 * [Josh Aas (he/him, ISRG/Prossimo)](https://github.com/bdaehlie)
 * [Jonathan Leitschuh (he/him) OpenSSF](https://github.com/JLLeitschuh)
+
+## **intellectual property**
 
 ## **Intellectual Property**
 

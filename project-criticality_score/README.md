@@ -1,11 +1,4 @@
-project-criticality_score
-
-This is under wg-securing-critical-projects
-
-
-The designated lead(s):
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
+# project-criticality_score
 
 # Open Source Project Criticality Score (Beta)
 
@@ -13,6 +6,13 @@ The designated lead(s):
 
 This project is maintained by members of the
 [Securing Critical Projects WG](https://github.com/ossf/wg-securing-critical-projects).
+
+This is under wg-securing-critical-projects
+
+
+The designated lead(s):
+- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
 
 ## Motivation
 
@@ -62,6 +62,8 @@ TBD
 
 TBD
 
+## goals
+
 ## Goals
 
 1. Generate a **criticality score** for every open source project.
@@ -69,6 +71,8 @@ TBD
 1. Create a list of critical projects that the open source community depends on.
 
 1. Use this data to proactively improve the security posture of these critical projects.
+
+## criticality score
 
 ## Criticality Score
 
@@ -101,6 +105,8 @@ open source project:
 - You can override those defaut values at runtime as described below.
 - We are looking for community ideas to improve upon these parameters.
 - There will always be exceptions to the individual reasoning rules.
+
+## usage
 
 ## Usage
 
@@ -139,6 +145,8 @@ However, other config files can be supplied to produce different scores. See
 Feel free to copy one of the configurations and adjust the weights and
 thresholds to suit your needs.
 
+## authentication
+
 ### Authentication
 
 Before running criticality score, you need to:
@@ -174,11 +182,15 @@ set GITLAB_AUTH_TOKEN=<your access token>
 ```
 -->
 
+## formatting results
+
 ### Formatting Results
 
 There are three formats currently: `text`, `json`, and `csv`. Others may be added in the future.
 
 These may be specified with the `-format` flag.
+
+## other commands
 
 ## Other Commands
 
@@ -193,6 +205,8 @@ working with criticality score data.
 - [`scorer`](https://github.com/ossf/criticality_score/blob/main/cmd/scorer):
   a tool for recalculating criticality scores based on an input CSV file.
 
+## public data
+
 ## Public Data
 
 If you're interested in seeing a list of critical projects with their criticality
@@ -206,6 +220,8 @@ project running in GCP. Details for how this is deployed can be found in the
 We do plan to expand them in near future to account for projects hosted on other
 source control systems.
 
+## csv data
+
 ### CSV data
 
 The data is available on Google Cloud Storage and can be downloaded via:
@@ -213,6 +229,8 @@ The data is available on Google Cloud Storage and can be downloaded via:
 - web browser: [commondatastorage.googleapis.com/ossf-criticality-score/index.html](https://commondatastorage.googleapis.com/ossf-criticality-score/index.html)
 - [`gsutil`](https://cloud.google.com/storage/docs/gsutil_install)
 command-line tool: `gsutil ls gs://ossf-criticality-score/`
+
+## bigquery dataset
 
 ### BigQuery Dataset
 
@@ -226,6 +244,8 @@ With a GCP account you can run queries across the data. For example, here is a q
 ORDER BY default_score DESC
    LIMIT 100;
 ```
+
+## contributing
 
 ## Contributing
 

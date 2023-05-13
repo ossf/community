@@ -1,13 +1,13 @@
-tac
+# tac
+
+# OpenSSF Technical Advisory Council (TAC)
+
+The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives of the OpenSSF.
 
 This is a top level group.
 
 The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-# OpenSSF Technical Advisory Council (TAC)
-
-The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives of the OpenSSF.
 
 ## Motivation
 
@@ -35,6 +35,8 @@ TBD
 
 ## Get Involved
 
+## Get Involved
+
 Official communications occur on the [TAC mailing list](https://lists.openssf.org/g/openssf-tac/topics). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
 
 Informal discussions occur in the TAC channel of the [OpenSSF Slack](https://slack.openssf.org/).
@@ -56,7 +58,11 @@ TBD
 
 ## Charter
 
+## Charter
+
 The TAC is chartered as part of the [Open Source Security Foundation Charter](https://openssf.org/about/charter/).
+
+## Antitrust Policy
 
 ## Antitrust Policy
 
@@ -64,11 +70,15 @@ Linux Foundation meetings involve participation by industry competitors, and it 
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
 
+## meetings
+
 ## Meetings
 
 The TAC [meetings minutes](https://docs.google.com/document/d/18BJlokTeG5e5ARD1VFDl5bIP75OFPCtzf77lfadQ4f0/edit#) are online and appear on the [OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
 Meetings are also recorded and posted to the [OpenSSF YouTube channel](https://www.youtube.com/channel/UCUdhiXNEBEayowJXY_v7AXQ/).
+
+## tac members
 
 ## TAC Members
 
@@ -84,9 +94,13 @@ Meetings are also recorded and posted to the [OpenSSF YouTube channel](https://w
 
 NOTE: \* marked entries denote OpenSSF Governing Board appointed members, others are community elected.
 
+## technical initiatives
+
 ## Technical Initiatives
 
 The following Technical Initatives have been approved by the TAC:
+
+## working groups
 
 ### Working Groups
 
@@ -101,9 +115,13 @@ The following Technical Initatives have been approved by the TAC:
 | Securing Software Repositories | https://github.com/ossf/wg-securing-software-repos      | [Meeting Notes](https://docs.google.com/document/d/1-f6m442MHg9hktrbcp-4sM9GbZC3HLTpZPpxMXjMCp4/edit)  | Incubating |
 | End Users                      | https://github.com/ossf/wg-endusers                     | [Meeting Notes](https://docs.google.com/document/d/1KQalBRzfRBvsqh73JUYfp1KG-AJdXcv2Z8LTIFoQP8c/edit)  | Incubating |
 
+## overview diagrams
+
 ### Overview Diagrams
 
 Diagrams with an overview of the OpenSSF, including its projects and SIGs, are available in the presentation [OpenSSF Introduction (including Diagrammers’ Society diagrams)](https://docs.google.com/presentation/d/1ZQ7WjNH5fQL7qvpFN3jTFt-iQHqPpUc5of_azQc8iic/edit) as created and maintained by the [OpenSSF Diagrammer's Society](https://github.com/ossf/Diagrammers-Society).
+
+## projects
 
 ### Projects
 
@@ -121,6 +139,8 @@ Diagrams with an overview of the OpenSSF, including its projects and SIGs, are a
 | Security Insights Spec | https://github.com/ossf/security-insights-spec   | [Meeting Notes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) | Identifying Security Threats WG | TBD        |
 | Security Metrics       | https://github.com/ossf/Project-Security-Metrics | [Meeting Notes](https://docs.google.com/document/d/1AfI0S6VjBCO0ZkULCYZGHuzzW8TPqO3zYxRjzmKvUB4/edit?usp=sharing) | Identifying Security Threats WG | TBD        |
 | Sigstore               | https://github.com/sigstore                      | [Meeting Notes](https://docs.google.com/document/d/1bsl-Y0KulSD7O_nTekad1sAKOVRb80wyGb-Q5x-zdg0/edit) | OpenSSF TAC    | TBD        |
+
+## openssf affiliated projects
 
 ### OpenSSF affiliated projects
 

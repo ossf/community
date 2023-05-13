@@ -1,15 +1,15 @@
-sig-dei
-
-TBD
-
-The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+# sig-dei
 
 # Example .allstar Quickstart Repository
 
 This repository can be forked into your organization as `.allstar` to quickly
 enable issue creation for all Allstar policies on all repositories with the
 default settings.
+
+TBD
+
+The designated lead(s):
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 ## Motivation
 

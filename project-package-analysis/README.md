@@ -1,11 +1,4 @@
-project-package-analysis
-
-This is under wg-securing-critical-projects
-
-
-The designated lead(s):
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
+# project-package-analysis
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis)
 
@@ -27,6 +20,13 @@ and originally started there.
 
 For examples of what this project has detected, check out the
 [case studies](docs/case_studies.md).
+
+This is under wg-securing-critical-projects
+
+
+The designated lead(s):
+- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
 
 ## Motivation
 
@@ -76,6 +76,8 @@ TBD
 
 TBD
 
+## how it works
+
 ## How it works
 
 The project's components are:
@@ -108,8 +110,12 @@ and packet data that can indicate malicious interactions with the system as well
 as network connections that can be used to leak sensitive data or allow remote
 access.
 
+## public data
+
 ## Public Data
 This data is available in the public [BigQuery dataset](https://console.cloud.google.com/bigquery?d=packages&p=ossf-malware-analysis&t=analysis&page=table).
+
+## configuration
 
 ## Configuration
 
@@ -125,6 +131,8 @@ kafka for scheduler in
 
 An example of these variables can be found in the
 [e2e example docker-compose](examples/e2e/docker-compose.yml).
+
+## analysis
 
 ### Analysis
 
@@ -144,6 +152,8 @@ URL to get custom uploaded packages from. Values should follow
 publish messages for consumption after a new package analysis is complete. Values should follow
 [goclouddev publishing](https://gocloud.dev/howto/pubsub/publish/).
 
+## scheduler
+
 ### Scheduler
 
 `OSSMALWARE_WORKER_TOPIC` - Can be used to set the topic URL to publish data for
@@ -154,6 +164,8 @@ consumption by Analysis workers. Values should follow
 data coming out of [package-feeds](https://github.com/ossf/package-feeds).
 Values should follow
 [goclouddev subscriptions](https://gocloud.dev/howto/pubsub/subscribe/).
+
+## local analysis
 
 ## Local Analysis
 
@@ -168,6 +180,8 @@ The commands below will dump the JSON results to `/tmp/results`
 and full logs to `/tmp/dockertmp`.
 
 [gVisor]: https://gvisor.dev/
+
+## live package
 
 ### Live package
 
@@ -184,6 +198,8 @@ Or with a specific version
 $ scripts/run_analysis.sh -ecosystem pypi -package Django -version 4.1.3
 ```
 
+## local package
+
 ### Local package
 
 To run analysis on a local PyPi package named 'test',
@@ -194,6 +210,8 @@ located in local archive `/path/to/test.whl`
 $ scripts/run_analysis.sh -ecosystem pypi -package test -local /path/to/test.whl
 ```
 
+## docker notes
+
 ### Docker notes
 
 (Note: these options are handled by the `scripts/run_analysis.sh` script).
@@ -202,7 +220,11 @@ $ scripts/run_analysis.sh -ecosystem pypi -package test -local /path/to/test.whl
 containers. `-v /var/lib/containers:/var/lib/containers` is also used as it
 allows caching the sandbox images and supports local developement.
 
+## development
+
 ## Development
+
+## required dependencies
 
 ### Required Dependencies
 

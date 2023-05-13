@@ -1,11 +1,4 @@
-project-package-feeds
-
-This is under wg-securing-critical-projects
-
-
-The designated lead(s):
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
+# project-package-feeds
 
 # Package Feeds
 
@@ -60,6 +53,13 @@ timer: false
 
 An event handler can be configured through the `events` field, this is documented in the [events README](./pkg/events/README.md).
 
+This is under wg-securing-critical-projects
+
+
+The designated lead(s):
+- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
+
 ## Motivation
 
 TBD
@@ -108,6 +108,8 @@ TBD
 
 TBD
 
+## feedoptions
+
 ## FeedOptions
 
 Feeds can be configured with additional options, not all feeds will support these features. Check [feeds/README.md](./pkg/feeds/README.md) for more information on feed specific configurations.
@@ -122,6 +124,8 @@ feeds:
     - fooPackage
     - barPackage
 ```
+
+## legacy configuration
 
 ## Legacy Configuration
 

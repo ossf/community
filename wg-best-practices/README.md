@@ -1,9 +1,4 @@
-wg-best-practices
-
-This is a top level group
-
-The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+# wg-best-practices
 
 # Best Practices for Open Source Developers
 
@@ -11,15 +6,24 @@ The designated lead(s):
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 
+This is a top level group
+
+The designated lead(s):
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
 ## Motivation
 
 TBD
 
 ## Objective
 
+## Objective
+
 Our objective is to provide open source developers with best practices recommendations, and with an easy way to learn and apply them.
 
 Unlike other existing best practices list, we want it to be widely distributed to open source developers and community-sourced. And we want these practices to stick, thanks to an effective learning platform.
+
+## Vision
 
 ## Vision
 
@@ -30,6 +34,8 @@ Our vision is to make it easy for developers to adopt these best practices, than
 - Provide tools to help developers _Adopt_ these good practices into their daily work
 
 <img align="top" src="https://github.com/ossf/wg-best-practices-os-developers/blob/main/img/OpenSSF%20Dev%20Best%20Practices%20Projects%20Relations.png">
+
+## Scope
 
 ## Scope
 
@@ -48,6 +54,8 @@ Supply a Learning platform
 
 - The learner can follow a track, track their progress and get badges
 - A suite of exercises are available for each best practice of the inventory
+
+## Current Work
 
 ## Current Work
 
@@ -95,6 +103,10 @@ We welcome contributions, suggestions and updates to our projects. To contribute
 
 ## Quick Start
 
+## Quick Start
+
+## Get Involved
+
 ## Get Involved
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
@@ -108,6 +120,8 @@ Anyone is welcome to join our open discussions related to the group's mission an
 - Official communications occur on the Best Practices [mailing list](https://lists.openssf.org/g/openssf-wg-best-practices)
 - [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups)
 - Join the conversation on [Slack](https://openssf.slack.com/archives/C01AHCRP8BT)
+
+## Meeting times
 
 ## Meeting Times
 
@@ -127,7 +141,11 @@ Every 2 weeks, Tuesday 10am EST. The meeting invite is available on the [public 
 
 ## Meeting Notes
 
+## Meeting Notes
+
 Meeting notes are maintained in a Google Doc found in the above table. If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
+
+## Licenses
 
 ## Licenses
 
@@ -141,10 +159,14 @@ Formal specifications would be licensed under the
 
 ## Charter
 
+## Charter
+
 Like all OpenSSF working groups, this working group reports to the
 [OpenSSF Technical Advisory Council (TAC)](https://github.com/ossf/tac).
 For more organizational information, see the
 [OpenSSF Charter](https://openssf.org/about/charter/).
+
+## Governance
 
 ## Governance
 
@@ -160,9 +182,13 @@ TBD
 
 ## Antitrust Policy Notice
 
+## Antitrust Policy Notice
+
 Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
+
+## related activities
 
 ## Related Activities
 
@@ -171,13 +197,19 @@ There are many great projects both within and outside the Foundation that compli
 - _SLSA Supply-chain Levels for Software Artifacts_ - <https://github.com/slsa-framework/slsa>
   - Purpose - A security framework from source to service, giving anyone working with software a common language for increasing levels of software security and supply chain integrity
 
+## areas that need contributions
+
 ### Areas that need contributions
 
 - Any topics related to helping developers more easily make more secure software or consumers to better understand the security qualities of the software they wish to ingest
 
+## where to file issues
+
 ### Where to file issues
 
 - Issues can be reviewed and filed [here](https://github.com/ossf/wg-best-practices-os-developers/issues)
+
+## project maintainers
 
 ### Project Maintainers
 
@@ -185,6 +217,8 @@ There are many great projects both within and outside the Foundation that compli
 - [Xavier René-Corail, GitHub](https://github.com/xcorail)
 - [David A Wheeler, LF/OSSF](https://github.com/david-a-wheeler)
 - [Dave Russo*, Red Hat](https://github.com/drusso-rh)
+
+## project collaborators
 
 ### Project Collaborators
 
@@ -203,6 +237,8 @@ There are many great projects both within and outside the Foundation that compli
 - [Eric Tice, WiPro](https://github.com/)
 - [Randall T. Vasquez*, Gentoo/Homebrew](https://github.com/ran-dall)
 - [Jay White, Microsoft](https://github.com/camaleon2016)
+
+## project contributors
 
 ### Project Contributors
 

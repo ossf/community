@@ -1,10 +1,4 @@
-sig-secure-sw-dev-fundamentals
-
-This is under the Best Practices working group.
-
-
-The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+# sig-secure-sw-dev-fundamentals
 
 # The Great MFA Distribution Project
 
@@ -25,6 +19,12 @@ of validation for a developer's identity when logging into code repositories or 
 critical tasks such as signing code.
 Attackers generally find it much harder to take over an account authenticated with an MFA token compared to an account authenticated with only a password;
 see [why we are doing this](#why-we-ard-doing-this) for more information.
+
+This is under the Best Practices working group.
+
+
+The designated lead(s):
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 ## Motivation
 
@@ -74,6 +74,8 @@ TBD
 
 TBD
 
+## how do i get an mfa token?
+
 ## How do I get an MFA token?
 
 If your open source software (OSS) project has been notified that
@@ -95,10 +97,14 @@ The OpenSSF cares about privacy and does *not* get detailed lists of
 who gets every token; we only get aggregate values (per-project Google tokens
 and aggregate totals from GitHub).
 
+## how do i use an mfa token?
+
 ## How do I use an MFA token?
 
 For some simple instructions on how to use MFA tokens for common OSS
 situations see our [Token Usage Guide](guide/token-usage-guide.md).
+
+## how we're doing this
 
 ## How we're doing this
 
@@ -136,6 +142,8 @@ We also want to ensure this isn't just a "token effort".
 You can see the now-obsolete draft document
 [*The Great MFA Distribution Plan*](https://docs.google.com/document/d/1Hhg4KcLCzEdd9ZcbdEviN0TIUTLyWDsIdF6B_hY3Xv0/edit) if you want to see more detail.
 
+## why are we doing this?
+
 ## Why are we doing this?
 
 Why do this? Our goal is to prevent supply chain attacks involving
@@ -162,6 +170,8 @@ Still, by using tools such as Multi-factor Authentication, the likelihood that b
 
 This will increase the level of security and protection for your project immensely, but use your common sense.
 
+## why not use an authentication app instead?
+
 ## Why not use an authentication app instead?
 
 An authentication app (such as Authy) running on a mobile phone
@@ -177,6 +187,8 @@ embedded malicious code that can be used to
 steal the keys underlying the authentication app.
 In contrast, hardware tokens
 are single-purpose so far fewer attacks work against them.
+
+## how were critical oss projects selected?
 
 ## How were critical OSS projects selected?
 
@@ -232,6 +244,8 @@ Even if they didn't expire, though, we think it's wiser to quickly get tokens
 we have available to critical projects.
 The sooner the tokens start getting used by developers, the sooner we
 counter some attacks on critical projects.
+
+## background information
 
 ## Background information
 

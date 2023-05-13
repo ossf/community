@@ -1,12 +1,4 @@
-sig-secure-supply-chain-consumption-framework
-
-This is under wg-supply-chain-integrity
-
-
-The designated lead(s):
-- [Jay White](https://github.com/camaleon2016)
-- [Adrian Diglio](https://github.com/adriandiglio)
-- [Jasmine Wang](https://github.com/jasminewang0)
+# sig-secure-supply-chain-consumption-framework
 
 # Secure Supply Chain Consumption Framework (S2C2F) SIG
 
@@ -35,6 +27,14 @@ The objective for the S2C2F SIG is to develop and continuously improve upon a gu
 
 
 ##
+
+This is under wg-supply-chain-integrity
+
+
+The designated lead(s):
+- [Jay White](https://github.com/camaleon2016)
+- [Adrian Diglio](https://github.com/adriandiglio)
+- [Jasmine Wang](https://github.com/jasminewang0)
 
 ## Motivation
 
@@ -84,6 +84,8 @@ TBD
 
 TBD
 
+## view or download the s2c2f specification
+
 ## View or Download the S2C2F Specification
 
 > ⭐: **Click
@@ -99,10 +101,14 @@ TBD
 *   [S2C2F SIG Slack](https://openssf.slack.com/archives/C03THTH3RSM)
 *   [Supply Chain Integrity WG Slack](https://openssf.slack.com/archives/C01A1MA7A1K)
 
+## sig maintainers
+
 ## SIG Maintainers
 - [Jay White, Microsoft](https://github.com/camaleon2016)
 - [Adrian Diglio, Microsoft](https://github.com/adriandiglio)
 - [Jasmine Wang, Microsoft](https://github.com/jasminewang0)
+
+## sig collaborators
 
 ## SIG Collaborators
 - [Christopher "CRob" Robinson, Intel](https://github.com/SecurityCRob)

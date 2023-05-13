@@ -1,10 +1,4 @@
-project-project-Security-Metrics
-
-This is under wg-identifying-security-threats
-
-
-The designated lead(s):
-- [Michael Scovetta](https://github.com/scovetta)
+# project-project-Security-Metrics
 
 # Security Metrics
 
@@ -14,6 +8,12 @@ for open source projects to stakeholders, including users.
 This project is in early development and we welcome community support. For more information or
 to get involved, please see our [workgroup](https://github.com/ossf/wg-identifying-security-threats)
 page.
+
+This is under wg-identifying-security-threats
+
+
+The designated lead(s):
+- [Michael Scovetta](https://github.com/scovetta)
 
 ## Motivation
 
@@ -63,6 +63,8 @@ TBD
 
 TBD
 
+## installing a local development environment
+
 ## Installing a Local Development Environment
 
 Setting up a basic development environment is straightforward:
@@ -101,6 +103,8 @@ Now you can run the application with:
 them, but haven't had cycles to fix them yet. Press Ctrl-C to exit the application,
 and then re-run `docker-compose -f docker/docker-compose.yml run`. In my testing,
 "third time's the charm". I hope this to be fixed shortly.
+
+## first time usage
 
 ## First Time Usage
 
@@ -165,6 +169,8 @@ to complete. (This is absurdly long, and something that we'll need to fix.)
 Once the process has started, you can immediately access the site. The main URL
 (http://localhost:8000) should work, and Grafana should have some projects populated.
 
+## actualy doing development work
+
 ## Actualy doing development work
 
 The Django application is set up to run from the host machine, so you can immediately edit
@@ -178,6 +184,8 @@ means:
 
 * Creating the import job in `src/management/app/management/commands/`
 * Adding the job to `docker/web/cron.daily`.
+
+## reporting issues
 
 ## Reporting Issues
 
