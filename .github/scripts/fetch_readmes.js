@@ -70,15 +70,17 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     firstParagraph = content.trim();
   }
 
-  const firstParagraphWithDescription = `${mainTitle}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `# ${mainTitle}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
+  reorderedContent += `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}`;
+
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
       if (sections[lowerCaseTitle]) {
-        reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
+        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
         delete sections[lowerCaseTitle];
         sectionAdded = true;
       } else if (!sectionAdded) {
@@ -89,11 +91,12 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
   }
 
   for (const section in sections) {
-    reorderedContent += `\n\n${sections[section]}`;
+    reorderedContent += `\n\n## ${section}\n\n${sections[section]}`;
   }
 
   return reorderedContent.trim();
 }
+
 
 
 function appendRepoInfoToMainReadme() {
