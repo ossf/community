@@ -14,7 +14,6 @@ const DIR_PATH = path.join(__dirname, "..", "..");
 
 const repoList = yaml.load(fs.readFileSync(REPO_LIST_PATH, "utf8"));
 
-
 const sectionOrder = [
   ["Motivation"],
   ["Objective"],
@@ -47,50 +46,44 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
+  
+  // New regex for the main title
+  const mainTitleRegex = /^#\s(.+?)(?:\r?\n|\r)/m;
+  const mainTitle = (content.match(mainTitleRegex) || ["", ""])[1].trim();
 
-  let mainTitle = "";
-  let mainContent = "";
+  const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
+  const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
+
+  const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\n The designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
+
+  // Remove the original main title from the content
+  content = content.replace(mainTitleRegex, '').trim();
 
   while ((match = regex.exec(content)) !== null) {
-    const sectionTitle = match[1].trim();
+    const sectionTitle = match[1].trim().toLowerCase();
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
-
-    if (!mainTitle) {
-      const sectionContent = content.slice(sectionStart, sectionEnd).trim();
-      mainTitle = sectionTitle;
-      mainContent = sectionContent;
-    }
 
     if (!sections[sectionTitle]) {
       sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
     }
   }
 
-  let reorderedContent = `# ${mainTitle}\n\n`;
-
-  reorderedContent += `${mainContent}\n\n`;
-
-  reorderedContent += `${description}\n\n`;
-
-  reorderedContent += `The designated lead(s):\n${leadsMarkdown}\n\n`;
-
+  let reorderedContent = firstParagraphWithDescription;
   for (const titleArr of sectionOrder) {
-    let sectionAdded = false;
-
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
-
       if (sections[lowerCaseTitle]) {
-        reorderedContent += `## ${title}\n${sections[lowerCaseTitle]}\n`;
-        sectionAdded = true;
-        break;
+        reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
+        delete sections[lowerCaseTitle];
+      } else {
+        reorderedContent += `\n\n## ${title}\n\nTBD`;
       }
     }
+  }
 
-    if (!sectionAdded) {
-      reorderedContent += `## ${titleArr[0]}\n\nTBD\n\n`;
-    }
+  for (const section in sections) {
+    reorderedContent += `\n\n${sections[section]}`;
   }
 
   return reorderedContent.trim();
@@ -137,9 +130,6 @@ function appendRepoInfoToMainReadme() {
   fs.writeFileSync(mainReadmePath, mainReadmeContent);
 }
 
-
-
-
 async function fetchReadmes() {
   await clearReadmeFiles();
 
@@ -154,7 +144,7 @@ async function fetchReadmes() {
       }
 
       const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown, repoData.newRepoName);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
 
       await fs.promises.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
@@ -166,3 +156,4 @@ async function fetchReadmes() {
 }
 
 fetchReadmes();
+
