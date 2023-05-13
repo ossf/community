@@ -1,3 +1,7 @@
+# wg-securing-critical-projects
+
+This is a top level group
+
 # WG Securing Critical Projects
 
 This charter describes operations as an [OSSF Technical Initiative](https://github.com/ossf/tac/blob/master/charters/).
