@@ -49,7 +49,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   let match;
 
   let mainTitle = "";
-  let firstParagraph = "";
+  let mainContent = "";
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim();
@@ -58,16 +58,8 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
     if (!mainTitle) {
       const sectionContent = content.slice(sectionStart, sectionEnd).trim();
-      if (sectionContent !== description) {
-        mainTitle = sectionTitle;
-      }
-    }
-
-    if (!firstParagraph && !mainTitle) {
-      const sectionContent = content.slice(sectionStart, sectionEnd).trim();
-      if (sectionContent !== description) {
-        firstParagraph = sectionContent;
-      }
+      mainTitle = sectionTitle;
+      mainContent = sectionContent;
     }
 
     if (!sections[sectionTitle]) {
@@ -77,11 +69,11 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
   let reorderedContent = `# ${mainTitle}\n\n`;
 
+  reorderedContent += `${mainContent}\n\n`;
+
   reorderedContent += `${description}\n\n`;
 
   reorderedContent += `The designated lead(s):\n${leadsMarkdown}\n\n`;
-
-  reorderedContent += `${firstParagraph}\n\n`;
 
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
@@ -90,7 +82,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
       const lowerCaseTitle = title.toLowerCase();
 
       if (sections[lowerCaseTitle]) {
-        reorderedContent += `## ${title}\n\n${sections[lowerCaseTitle]}\n\n`;
+        reorderedContent += `## ${title}\n${sections[lowerCaseTitle]}\n`;
         sectionAdded = true;
         break;
       }
@@ -103,10 +95,6 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
   return reorderedContent.trim();
 }
-
-
-
-
 
 function appendRepoInfoToMainReadme() {
   const mainReadmePath = path.join(__dirname, "..", "..", "README.md");
