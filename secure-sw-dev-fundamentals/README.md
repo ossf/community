@@ -1,8 +1,8 @@
 Secure Software Development Fundamentals courses SIG is under the Best Practices working group.
 
 
- The designated lead is:
- - David Wheeler with Github ID: [david-a-wheeler](https://github.com/david-a-wheeler)
+ The designated lead(s):
+ - [David Wheeler](https://github.com/david-a-wheeler)
 
 
 # secure-sw-dev-fundamentals: Secure Software Development Fundamentals courses (from the OpenSSF Best Practices WG)

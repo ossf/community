@@ -1,8 +1,8 @@
 This is a top level group.
 
 
- The designated lead is:
- - Josh Bressers with Github ID: [joshbressers](https://github.com/joshbressers)
+ The designated lead(s):
+ - [Josh Bressers](https://github.com/joshbressers)
 
 
 # OSSF Security Tooling

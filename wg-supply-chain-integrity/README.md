@@ -1,8 +1,9 @@
 This is a top level group.
 
 
- The designated lead is:
- - Kim Lewandowski with Github ID: [kimsterv](https://github.com/kimsterv)\n - Dan Lorenc with Github ID: [dlorenc](https://github.com/dlorenc)
+ The designated lead(s):
+ - [Kim Lewandowski](https://github.com/kimsterv)
+- [Dan Lorenc](https://github.com/dlorenc)
 
 
 # Supply Chain Integrity WG

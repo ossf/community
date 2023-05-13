@@ -1,8 +1,8 @@
 This is a top level group.
 
 
- The designated lead is:
- - Michael Scovetta with Github ID: [scovetta](https://github.com/scovetta)
+ The designated lead(s):
+ - [Michael Scovetta](https://github.com/scovetta)
 
 
 # Identifying Security Threats in Open Source Projects
