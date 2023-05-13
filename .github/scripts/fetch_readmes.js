@@ -9,10 +9,7 @@ const orgName = "ossf";
 const repoListYaml = fs.readFileSync("./.github/repoList.yml", "utf8");
 const repoList = yaml.load(repoListYaml);
 
-let leadsMarkdown = "";
-for (const lead of repoData.leads) {
-  leadsMarkdown += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
-}
+
 
 
 
@@ -43,7 +40,7 @@ function clearReadmeFiles() {
   }
 }
 
-function reorderReadmeContent(content, description) {
+function reorderReadmeContent(content, description, leadsMarkdown) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
@@ -97,9 +94,12 @@ async function fetchReadmes() {
         fs.mkdirSync(repoDir, { recursive: true });
         }
 
-
+        let leadsMarkdown = "";
+        for (const lead of repoData.leads) {
+          leadsMarkdown += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
+        }
       
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, repoData.lead);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
 
       fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
       
