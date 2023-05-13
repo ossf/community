@@ -70,10 +70,9 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
     firstParagraph = content.trim();
   }
 
-  const firstParagraphWithDescription = `\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
-  reorderedContent += `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}`;
 
   let h1Added = false;
   const uniqueTitles = new Set();
@@ -99,11 +98,16 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   }
 
   for (const section in sections) {
-    reorderedContent += `\n\n## ${section}\n\n${sections[section]}`;
+    const lowerCaseSection = section.toLowerCase();
+    if (!uniqueTitles.has(lowerCaseSection)) {
+      reorderedContent += `\n\n## ${section}\n\n${sections[section]}`;
+      uniqueTitles.add(lowerCaseSection);
+    }
   }
 
   return reorderedContent.trim();
 }
+
 
 
 
