@@ -1,5 +1,3 @@
-undefined
-
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis)
 
 # Package Analysis

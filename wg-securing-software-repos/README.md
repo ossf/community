@@ -1,5 +1,3 @@
-undefined
-
 # wg-securing-software-repos
 
 OpenSSF Working Group on Securing Software Repositories

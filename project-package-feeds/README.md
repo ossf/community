@@ -1,5 +1,3 @@
-undefined
-
 # Package Feeds
 
 The binary produced by [cmd/scheduled-feed/main.go](cmd/scheduled-feed/main.go) can be used to monitor various

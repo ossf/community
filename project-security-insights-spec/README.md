@@ -1,5 +1,3 @@
-undefined
-
 # README
 
 **OpenSSF Working Group:** [Identifying Security Threats in Open Source Projects](https://github.com/ossf/wg-identifying-security-threats)

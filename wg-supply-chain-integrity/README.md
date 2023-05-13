@@ -1,5 +1,3 @@
-undefined
-
 # Supply Chain Integrity WG
 
 This is a top level group.

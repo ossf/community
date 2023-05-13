@@ -1,5 +1,3 @@
-undefined
-
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector)
 
 # Fuzz introspector

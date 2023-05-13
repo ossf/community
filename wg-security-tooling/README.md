@@ -1,5 +1,3 @@
-undefined
-
 # OSSF Security Tooling
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
