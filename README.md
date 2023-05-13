@@ -58,71 +58,88 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ## Repository Information
 
-### [wg-endusers](https://github.com/ossf/wg-endusers)
-**Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
-**Description:** This is a top level group
-**Leads:**
+### [tac](https://github.com/ossf/tac)
+**Original Repository:** [tac](https://github.com/ossf/tac)
 
-### [wg-best-practices](https://github.com/ossf/wg-best-practices)
-**Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
-**Description:** This is a top level group
+ **Description:** This is a top level group.
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
+### [wg-best-practices](https://github.com/ossf/wg-best-practices)
+**Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
+
+ **Description:** This is a top level group
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+**Original Repository:** [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+
+ **Description:** This is a top level group.
+
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [wg-endusers](https://github.com/ossf/wg-endusers)
+**Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
+
+ **Description:** This is a top level group
+**Leads:**
+
+### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
+**Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
+
+ **Description:** This is a top level group.
+
+**Leads:**
+- [Michael Scovetta](https://github.com/scovetta)
+
 ### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
 **Original Repository:** [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
-**Description:** This is a top level group.
+
+ **Description:** This is a top level group.
 
 **Leads:**
 - [Josh Bressers](https://github.com/joshbressers)
 
+### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
+**Original Repository:** [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
+
+ **Description:** This is a top level group.
+
+**Leads:**
+- [Dustin Ingram](https://github.com/di)
+
 ### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
 **Original Repository:** [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
-**Description:** This is a top level group.
+
+ **Description:** This is a top level group.
 
 **Leads:**
 - [Kim Lewandowski](https://github.com/kimsterv)
 - [Dan Lorenc](https://github.com/dlorenc)
 
-### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-**Original Repository:** [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-**Description:** This is a top level group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
 ### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
 **Original Repository:** [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
-**Description:** This is a top level group.
+
+ **Description:** This is a top level group.
 
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-**Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-**Description:** This is a top level group.
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-**Original Repository:** [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-**Description:** This is a top level group.
-
-**Leads:**
-- [Dustin Ingram](https://github.com/di)
-
-### [secure-sw-dev-fundamentals](https://github.com/ossf/secure-sw-dev-fundamentals)
+### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
 **Original Repository:** [secure-sw-dev-fundamentals](https://github.com/ossf/secure-sw-dev-fundamentals)
-**Description:** Secure Software Development Fundamentals courses SIG is under the Best Practices working group.
+
+ **Description:** This is under the Best Practices working group. Full name is Secure Software Development Fundamentals courses SIG.
 
 **Leads:**
 - [David Wheeler](https://github.com/david-a-wheeler)
 
-### [scorecard](https://github.com/ossf/scorecard)
+### [project-scorecard](https://github.com/ossf/project-scorecard)
 **Original Repository:** [scorecard](https://github.com/ossf/scorecard)
-**Description:** OpenSSF Best Practices Badge project is under the Best Practices working group.
+
+ **Description:** This is under the Best Practices working group.
 
 **Leads:**
 - [Azeem Shaikh](https://github.com/azeemshaikh38)
@@ -131,16 +148,26 @@ We encourage all contributors to become members. We aim to grow an active, healt
 - [Risto McGehee](https://github.com/chrismcgehee)
 - [Stephen Augustus](https://github.com/justaugustus)
 
-### [tac](https://github.com/ossf/tac)
-**Original Repository:** [tac](https://github.com/ossf/tac)
-**Description:** This is a top level group.
+### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
+**Original Repository:** [great-mfa-project](https://github.com/ossf/great-mfa-project)
+
+ **Description:** This is under the Best Practices working group.
 
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
+### [sig-memory-Safety](https://github.com/ossf/sig-memory-Safety)
+**Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
+
+ **Description:** This is under the Best Practices working group.
+
+**Leads:**
+- [Nell Shamrell-Harrington](https://github.com/nellshamrell)
+
 ### [project-criticality_score](https://github.com/ossf/project-criticality_score)
 **Original Repository:** [criticality_score](https://github.com/ossf/criticality_score)
-**Description:** This is under wg-securing-critical-projects
+
+ **Description:** This is under wg-securing-critical-projects
 
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
@@ -148,7 +175,8 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ### [project-package-feeds](https://github.com/ossf/project-package-feeds)
 **Original Repository:** [package-feeds](https://github.com/ossf/package-feeds)
-**Description:** This is under wg-securing-critical-projects
+
+ **Description:** This is under wg-securing-critical-projects
 
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
@@ -156,7 +184,8 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ### [project-package-analysis](https://github.com/ossf/project-package-analysis)
 **Original Repository:** [package-analysis](https://github.com/ossf/package-analysis)
-**Description:** This is under wg-securing-critical-projects
+
+ **Description:** This is under wg-securing-critical-projects
 
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
@@ -164,14 +193,24 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ### [project-project-Security-Metrics](https://github.com/ossf/project-project-Security-Metrics)
 **Original Repository:** [Project-Security-Metrics](https://github.com/ossf/Project-Security-Metrics)
-**Description:** This is under wg-identifying-security-threats
+
+ **Description:** This is under wg-identifying-security-threats
 
 **Leads:**
 - [Michael Scovetta](https://github.com/scovetta)
 
+### [project-security-insights-spec](https://github.com/ossf/project-security-insights-spec)
+**Original Repository:** [security-insights-spec](https://github.com/ossf/security-insights-spec)
+
+ **Description:** This is under wg-identifying-security-threats
+
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
 ### [sig-secure-supply-chain-consumption-framework](https://github.com/ossf/sig-secure-supply-chain-consumption-framework)
 **Original Repository:** [s2c2f](https://github.com/ossf/s2c2f)
-**Description:** This is under wg-supply-chain-integrity
+
+ **Description:** This is under wg-supply-chain-integrity
 
 **Leads:**
 - [Jay White](https://github.com/camaleon2016)
@@ -180,18 +219,43 @@ We encourage all contributors to become members. We aim to grow an active, healt
 
 ### [sig-fuzz-introspector](https://github.com/ossf/sig-fuzz-introspector)
 **Original Repository:** [fuzz-introspector](https://github.com/ossf/fuzz-introspector)
-**Description:** This is under wg-security-tooling
+
+ **Description:** This is under wg-security-tooling
 
 **Leads:**
 - [Josh Bressers](https://github.com/joshbressers)
 
 ### [project-allstar](https://github.com/ossf/project-allstar)
 **Original Repository:** [allstar](https://github.com/ossf/allstar)
-**Description:** This is under wg-securing-critical-projects
+
+ **Description:** This is under wg-securing-critical-projects
 
 **Leads:**
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
+
+### [sig-oss-vulnerability-guide](https://github.com/ossf/sig-oss-vulnerability-guide)
+**Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
+
+ **Description:** This is under wg-vulnerability-disclosures
+
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [project-osv-schema](https://github.com/ossf/project-osv-schema)
+**Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
+
+ **Description:** This is under wg-vulnerability-disclosures
+
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [sig-dei](https://github.com/ossf/sig-dei)
+**Original Repository:** [DEI-SIG](https://github.com/ossf/DEI-SIG)
+
+ **Description:** TBD
+**Leads:**
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 
 
