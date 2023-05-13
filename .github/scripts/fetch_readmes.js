@@ -89,26 +89,41 @@ function appendRepoInfoToMainReadme() {
   const mainReadmePath = path.join(__dirname, "..", "..", "README.md");
   let mainReadmeContent = fs.existsSync(mainReadmePath) ? fs.readFileSync(mainReadmePath, "utf8") : "";
 
-  mainReadmeContent += "\n\n## Repository Information\n\n";
+  const startMarker = "\n\n## Repository Information\n\n";
+  const endMarker = "\n\n## End of Repository Information\n\n";
+
+  const start = mainReadmeContent.indexOf(startMarker);
+  const end = mainReadmeContent.indexOf(endMarker);
+
+  let newSectionContent = startMarker;
 
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
 
-    mainReadmeContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
-    mainReadmeContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
-    mainReadmeContent += `**Description:** ${repoData.description}\n`;
-    mainReadmeContent += `**Leads:**\n`;
+    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
+    newSectionContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
+    newSectionContent += `**Description:** ${repoData.description}\n`;
+    newSectionContent += `**Leads:**\n`;
 
     if (repoData && Array.isArray(repoData.leads)) {
       for (const lead of repoData.leads) {
-        mainReadmeContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
+        newSectionContent += `- [${lead.name}](https://github.com/${lead.githubId})\n`;
       }
     } else {
       console.log(`Leads property does not exist or is not iterable for repoData: ${JSON.stringify(repoData)}`);
     }
 
-    mainReadmeContent += "\n";
+    newSectionContent += "\n";
+  }
+
+  newSectionContent += endMarker;
+
+  // If the appended section exists, replace it. Otherwise, append the new section.
+  if (start >= 0 && end >= 0) {
+    mainReadmeContent = mainReadmeContent.slice(0, start) + newSectionContent + mainReadmeContent.slice(end + endMarker.length);
+  } else {
+    mainReadmeContent += newSectionContent;
   }
 
   fs.writeFileSync(mainReadmePath, mainReadmeContent);
