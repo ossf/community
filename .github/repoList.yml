@@ -27,8 +27,10 @@
   newRepoName: wg-endusers
   description: This is a top level group
   structure: 3
-  lead: >
-    - Jonathan Meadows with Github ID: [jonmuk](https://github.com/jonmuk)
+  leads:
+    - name: Jonathan Meadows
+      githubId: jonmuk
+      url: https://github.com/jonmuk
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
   description: >
@@ -120,15 +122,109 @@
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
-- oldRepoName: Memory-Safety
-  newRepoName: sig-memory-Safety
+- oldRepoName: education
+  newRepoName: sig-education
   description: >
     This is under the Best Practices working group.
+  structure: 1-H
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: Memory-Safety
+  newRepoName: sig-memory-Safety
+  description: This is under the Best Practices working group.
   structure: 1-AJ
   leads:
     - name: Nell Shamrell-Harrington
       githubId: nellshamrell
       url: https://github.com/nellshamrell
+
+- oldRepoName: oss-vulnerability-guide
+  newRepoName: sig-oss-vulnerability-guide
+  description: This is under wg-vulnerability-disclosures
+  structure: 2-I
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: SIRT
+  newRepoName: sig-sirt
+  description: This is under wg-vulnerability-disclosures
+  structure: 2-J
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: osv-schema
+  newRepoName: project-osv-schema
+  description: This is under wg-vulnerability-disclosures
+  structure: 2-K
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: OpenVEX
+  newRepoName: sig-OpenVEX
+  description: This is under wg-vulnerability-disclosures
+  structure: 2-AK
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: security-insights-spec
+  newRepoName: project-security-insights-spec
+  description: >
+    This is under wg-identifying-security-threats
+  structure: 4-N
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: Project-Security-Metrics
+  newRepoName: project-project-Security-Metrics
+  description: >
+    This is under wg-identifying-security-threats
+  structure: 4-O
+  leads:
+    - name: Michael Scovetta
+      githubId: scovetta
+      url: https://github.com/scovetta
+- oldRepoName: security-reviews
+  newRepoName: project-security-reviews
+  description: >
+    This is under wg-identifying-security-threats
+  structure: 4-P
+  leads:
+    - name: Michael Scovetta
+      githubId: scovetta
+      url: https://github.com/scovetta
+- oldRepoName: fuzz-introspector
+  newRepoName: sig-fuzz-introspector
+  description: >
+    This is under wg-security-tooling
+  structure: 5-U
+  leads:
+    - name: Josh Bressers
+      githubId: joshbressers
+      url: https://github.com/joshbressers
+
+- oldRepoName: s2c2f
+  newRepoName: sig-secure-supply-chain-consumption-framework
+  description: >
+    This is under wg-supply-chain-integrity
+  structure: 7-Y
+  leads:
+    - name: Jay White
+      githubId: camaleon2016
+      url: https://github.com/camaleon2016
+    - name: Adrian Diglio
+      githubId: adriandiglio
+      url: https://github.com/adriandiglio
+    - name: Jasmine Wang
+      githubId: jasminewang0
+      url: https://github.com/jasminewang0
+
 - oldRepoName: criticality_score
   newRepoName: project-criticality_score
   description: >
@@ -165,48 +261,7 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
-- oldRepoName: Project-Security-Metrics
-  newRepoName: project-project-Security-Metrics
-  description: >
-    This is under wg-identifying-security-threats
-  structure: 2-O
-  leads:
-    - name: Michael Scovetta
-      githubId: scovetta
-      url: https://github.com/scovetta
-- oldRepoName: security-insights-spec
-  newRepoName: project-security-insights-spec
-  description: >
-    This is under wg-identifying-security-threats
-  structure: 2-N
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: s2c2f
-  newRepoName: sig-secure-supply-chain-consumption-framework
-  description: >
-    This is under wg-supply-chain-integrity
-  structure: 7-Y
-  leads:
-    - name: Jay White
-      githubId: camaleon2016
-      url: https://github.com/camaleon2016
-    - name: Adrian Diglio
-      githubId: adriandiglio
-      url: https://github.com/adriandiglio
-    - name: Jasmine Wang
-      githubId: jasminewang0
-      url: https://github.com/jasminewang0
-- oldRepoName: fuzz-introspector
-  newRepoName: sig-fuzz-introspector
-  description: >
-    This is under wg-security-tooling
-  structure: 5-U
-  leads:
-    - name: Josh Bressers
-      githubId: joshbressers
-      url: https://github.com/joshbressers
+
 - oldRepoName: allstar
   newRepoName: project-allstar
   description: >
@@ -219,23 +274,7 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
-- oldRepoName: oss-vulnerability-guide
-  newRepoName: sig-oss-vulnerability-guide
-  description: >
-    This is under wg-vulnerability-disclosures
-  structure: 2-I
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: osv-schema
-  newRepoName: project-osv-schema
-  description: This is under wg-vulnerability-disclosures
-  structure: 2-K
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
+
 - oldRepoName: DEI-SIG
   newRepoName: sig-dei
   description: TBD
