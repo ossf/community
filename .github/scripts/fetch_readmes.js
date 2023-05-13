@@ -70,7 +70,7 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     firstParagraph = content.trim();
   }
 
-  const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `${mainTitle}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
   for (const titleArr of sectionOrder) {
