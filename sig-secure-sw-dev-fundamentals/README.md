@@ -3,7 +3,7 @@
 This is under the Best Practices working group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 # The Great MFA Distribution Project

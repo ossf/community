@@ -3,7 +3,7 @@
 This is under the Best Practices working group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Nell Shamrell-Harrington](https://github.com/nellshamrell)
 
 # **OpenSSF Memory Safety Special Interest Group (SIG)**

@@ -3,7 +3,7 @@
 This is under wg-security-tooling
 
 
- The designated lead(s):
+The designated lead(s):
 - [Josh Bressers](https://github.com/joshbressers)
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector)

@@ -3,7 +3,7 @@
 This is a top level group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Josh Bressers](https://github.com/joshbressers)
 
 # OSSF Security Tooling

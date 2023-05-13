@@ -3,7 +3,7 @@
 This is under wg-identifying-security-threats
 
 
- The designated lead(s):
+The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 # README

@@ -3,7 +3,7 @@
 This is a top level group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 

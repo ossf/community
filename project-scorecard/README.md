@@ -3,7 +3,7 @@
 This is under the Best Practices working group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Azeem Shaikh](https://github.com/azeemshaikh38)
 - [Laurent Simon](https://github.com/laurentsimon)
 - [Naveen Srinivasan](https://github.com/naveensrinivasan)

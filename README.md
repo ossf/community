@@ -246,7 +246,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
 
  **Description:** This is under wg-vulnerability-disclosures
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 

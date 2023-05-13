@@ -2,7 +2,7 @@
 
 This is a top level group.
 
- The designated lead(s):
+The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 # OpenSSF Technical Advisory Council (TAC)

@@ -3,7 +3,7 @@
 This is a top level group.
 
 
- The designated lead(s):
+The designated lead(s):
 - [Michael Scovetta](https://github.com/scovetta)
 
 # Identifying Security Threats in Open Source Projects
