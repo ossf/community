@@ -1,27 +1,66 @@
-- oldRepoName: wg-endusers
-  newRepoName: wg-endusers
-  description: This is a top level group
-  lead: >
-    - Jonathan Meadows with Github ID: [jonmuk](https://github.com/jonmuk)
-- oldRepoName: wg-best-practices-os-developers
-  newRepoName: wg-best-practices
-  description: This is a top level group
+- oldRepoName: tac
+  newRepoName: tac
+  description: This is a top level group.
+  structure: Technical Advisory Council
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+- oldRepoName: wg-best-practices-os-developers
+  newRepoName: wg-best-practices
+  description: This is a top level group
+  structure: 1
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: wg-vulnerability-disclosures
+  newRepoName: wg-vulnerability-disclosures
+  description: >
+    This is a top level group.
+  structure: 2
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: wg-endusers
+  newRepoName: wg-endusers
+  description: This is a top level group
+  structure: 3
+  lead: >
+    - Jonathan Meadows with Github ID: [jonmuk](https://github.com/jonmuk)
+- oldRepoName: wg-identifying-security-threats
+  newRepoName: wg-identifying-security-threats
+  description: >
+    This is a top level group.
+  structure: 4
+  leads:
+    - name: Michael Scovetta
+      githubId: scovetta
+      url: https://github.com/scovetta
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
+  structure: 5
   description: >
     This is a top level group.
   leads:
     - name: Josh Bressers
       githubId: joshbressers
       url: https://github.com/joshbressers
+- oldRepoName: wg-securing-software-repos
+  newRepoName: wg-securing-software-repos
+  description: >
+    This is a top level group.
+  structure: 6
+  leads:
+    - name: Dustin Ingram
+      githubId: di
+      url: https://github.com/di
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
   description: >
     This is a top level group.
+  structure: 7
   leads:
     - name: Kim Lewandowski
       githubId: kimsterv
@@ -29,18 +68,11 @@
     - name: Dan Lorenc
       githubId: dlorenc
       url: https://github.com/dlorenc
-- oldRepoName: wg-vulnerability-disclosures
-  newRepoName: wg-vulnerability-disclosures
-  description: >
-    This is a top level group.
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
   description: >
     This is a top level group.
+  structure: 8
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -48,34 +80,21 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
-- oldRepoName: wg-identifying-security-threats
-  newRepoName: wg-identifying-security-threats
-  description: >
-    This is a top level group.
-  leads:
-    - name: Michael Scovetta
-      githubId: scovetta
-      url: https://github.com/scovetta
-- oldRepoName: wg-securing-software-repos
-  newRepoName: wg-securing-software-repos
-  description: >
-    This is a top level group.
-  leads:
-    - name: Dustin Ingram
-      githubId: di
-      url: https://github.com/di
+
 - oldRepoName: secure-sw-dev-fundamentals
-  newRepoName: secure-sw-dev-fundamentals
+  newRepoName: sig-secure-sw-dev-fundamentals
   description: >
-    Secure Software Development Fundamentals courses SIG is under the Best Practices working group.
+    This is under the Best Practices working group. Full name is Secure Software Development Fundamentals courses SIG.
+  structure: 1-A
   leads:
     - name: David Wheeler
       githubId: david-a-wheeler
       url: https://github.com/david-a-wheeler
 - oldRepoName: scorecard
-  newRepoName: scorecard
+  newRepoName: project-scorecard
   description: >
-    OpenSSF Best Practices Badge project is under the Best Practices working group.
+    This is under the Best Practices working group.
+  structure: 1-D
   leads:
     - name: Azeem Shaikh
       githubId: azeemshaikh38
@@ -92,18 +111,29 @@
     - name: Stephen Augustus
       githubId: justaugustus
       url: https://github.com/justaugustus
-- oldRepoName: tac
-  newRepoName: tac
+- oldRepoName: great-mfa-project
+  newRepoName: sig-secure-sw-dev-fundamentals
   description: >
-    This is a top level group.
+    This is under the Best Practices working group.
+  structure: 1-E
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+- oldRepoName: Memory-Safety
+  newRepoName: sig-memory-Safety
+  description: >
+    This is under the Best Practices working group.
+  structure: 1-AJ
+  leads:
+    - name: Nell Shamrell-Harrington
+      githubId: nellshamrell
+      url: https://github.com/nellshamrell
 - oldRepoName: criticality_score
   newRepoName: project-criticality_score
   description: >
     This is under wg-securing-critical-projects
+  structure: 8-AA
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -115,6 +145,7 @@
   newRepoName: project-package-feeds
   description: >
     This is under wg-securing-critical-projects
+  structure: 8-AC
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -126,6 +157,7 @@
   newRepoName: project-package-analysis
   description: >
     This is under wg-securing-critical-projects
+  structure: 8-AC
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -137,14 +169,25 @@
   newRepoName: project-project-Security-Metrics
   description: >
     This is under wg-identifying-security-threats
+  structure: 2-O
   leads:
     - name: Michael Scovetta
       githubId: scovetta
       url: https://github.com/scovetta
+- oldRepoName: security-insights-spec
+  newRepoName: project-security-insights-spec
+  description: >
+    This is under wg-identifying-security-threats
+  structure: 2-N
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
 - oldRepoName: s2c2f
   newRepoName: sig-secure-supply-chain-consumption-framework
   description: >
     This is under wg-supply-chain-integrity
+  structure: 7-Y
   leads:
     - name: Jay White
       githubId: camaleon2016
@@ -159,6 +202,7 @@
   newRepoName: sig-fuzz-introspector
   description: >
     This is under wg-security-tooling
+  structure: 5-U
   leads:
     - name: Josh Bressers
       githubId: joshbressers
@@ -167,6 +211,7 @@
   newRepoName: project-allstar
   description: >
     This is under wg-securing-critical-projects
+  structure: 8-AD
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -174,3 +219,29 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
+- oldRepoName: oss-vulnerability-guide
+  newRepoName: sig-oss-vulnerability-guide
+  description: >
+    This is under wg-vulnerability-disclosures
+  structure: 2-I
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: osv-schema
+  newRepoName: project-osv-schema
+  description: >
+    This is under wg-vulnerability-disclosures
+  structure: 2-K
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob
+- oldRepoName: DEI-SIG
+  newRepoName: sig-dei
+  description: TBD
+  structure: TBD
+  leads:
+    - name: Christopher "CRob" Robinson
+      githubId: SecurityCRob
+      url: https://github.com/SecurityCRob

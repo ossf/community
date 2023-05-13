@@ -103,7 +103,7 @@ function appendRepoInfoToMainReadme() {
 
     newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
     newSectionContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
-    newSectionContent += `**Description:** ${repoData.description}\n`;
+    newSectionContent += `\n **Description:** ${repoData.description}\n`;
     newSectionContent += `**Leads:**\n`;
 
     if (repoData && Array.isArray(repoData.leads)) {
@@ -139,13 +139,13 @@ async function fetchReadmes() {
 
       const repoDir = path.join(DIR_PATH, repoData.newRepoName);
       if (!fs.existsSync(repoDir)) {
-        await fs.mkdir(repoDir, { recursive: true });
+        await fs.promises.mkdir(repoDir, { recursive: true });
       }
 
       const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
       const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown, repoData.newRepoName);
 
-      await fs.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
+      await fs.promises.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
       console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
     }

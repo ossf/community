@@ -25,7 +25,7 @@ OpenSSF has the following types of groups that are officially supported:
   - The GB conisists of one representative of each premier members, one elected general mmeber, one TAC representative member, one Associate Member Representative appointed by the OpenSSF Governing Board, and one Security Community Individual Representative elected by contributors to Technical Initiatives.
   - Subcommittees under the GB are open to all GB members or assigned representatives.  
 
-- The [Technical Advisory Council ](https://openssf.org/about/tac/) is responsible for the general success of all Technical Initiatives (defined below). TAC meetings are generally open to the public, with the exception of special sessions. 
+- The [Technical Advisory Council](https://openssf.org/about/tac/) is responsible for the general success of all Technical Initiatives (defined below). TAC meetings are generally open to the public, with the exception of special sessions. 
   - TAC membership is limited to seven (7) seats, with alternating elections every year. Contributors to Technical Initiatves may run, and each contributor may vote in TAC elections. 
  
 
