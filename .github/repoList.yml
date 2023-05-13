@@ -1,24 +1,50 @@
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
   description: This is a top level group
+  lead: jonmuk
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices
   description: This is a top level group
+  lead: >
+    Christopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: >
+    joshbressers
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: kimsterv, Dan Lorenc
 - oldRepoName: wg-vulnerability-disclosures
   newRepoName: wg-vulnerability-disclosures
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: SecurityCRob
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: jeffmendoza, amirhmh3
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: scovetta
 - oldRepoName: wg-securing-software-repos
   newRepoName: wg-securing-software-repos
-  description: This is a top level group
+  description: >
+    This is a top level group.
+  lead: di
+- oldRepoName: secure-sw-dev-fundamentals
+  newRepoName: secure-sw-dev-fundamentals
+  description: >
+    Secure Software Development Fundamentals courses SIG is under the Best Practices working group.
+  lead: david-a-wheeler
+- oldRepoName: scorecard
+  newRepoName: scorecard
+  description: >
+    OpenSSF Best Practices Badge project is under the Best Practices working group.
+  lead: azeemshaikh38, laurentsimon, naveensrinivasan, 	chrismcgehee, justaugustus

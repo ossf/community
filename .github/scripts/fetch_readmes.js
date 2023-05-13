@@ -36,7 +36,7 @@ function clearReadmeFiles() {
   }
 }
 
-function reorderReadmeContent(content, description) {
+function reorderReadmeContent(content, description,lead) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
@@ -44,7 +44,7 @@ function reorderReadmeContent(content, description) {
   const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
   const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
 
-  const firstParagraphWithDescription = `${firstParagraph}\n\n${description}`;
+  const firstParagraphWithDescription = `${description}\n\n The designated lead is${lead}\n\n${firstParagraph}`;
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim().toLowerCase();
@@ -90,11 +90,10 @@ async function fetchReadmes() {
         fs.mkdirSync(repoDir, { recursive: true });
         }
 
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, repoData.lead);
 
       fs.writeFileSync(path.join(repoDir, "README.md"), reorderedContent);
       
-      console.log(`Description for ${repoData.newRepoName}: ${repoData.description}`);
 
     } catch (error) {
       console.error(`Error fetching README for ${repoData.oldRepoName}: ${error.message}`);
