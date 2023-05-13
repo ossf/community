@@ -1,3 +1,10 @@
+This is under wg-securing-critical-projects
+
+
+The designated lead(s):
+- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
+
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/package-analysis)
 
 # Package Analysis
@@ -18,13 +25,6 @@ and originally started there.
 
 For examples of what this project has detected, check out the
 [case studies](docs/case_studies.md).
-
-This is under wg-securing-critical-projects
-
-
-The designated lead(s):
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
 
 ## Motivation
 

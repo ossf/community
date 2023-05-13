@@ -1,15 +1,15 @@
-# WG Securing Critical Projects
-
-This charter describes operations as an [OSSF Technical Initiative](https://github.com/ossf/tac/blob/master/charters/).
-The [Focus](#focus) section below describes what is in and out of scope,
-and [Governance](#governance) section describes how our operations are consistent with OSSF policies with links to more detailed documents.
-
 This is a top level group.
 
 
 The designated lead(s):
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
+
+# WG Securing Critical Projects
+
+This charter describes operations as an [OSSF Technical Initiative](https://github.com/ossf/tac/blob/master/charters/).
+The [Focus](#focus) section below describes what is in and out of scope,
+and [Governance](#governance) section describes how our operations are consistent with OSSF policies with links to more detailed documents.
 
 # Motivation
 

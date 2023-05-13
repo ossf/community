@@ -1,3 +1,8 @@
+This is under wg-vulnerability-disclosures
+
+The designated lead(s):
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
 # Open Source Vulnerability Schema 
 
 This is the repository for the Open Source Vulnerability schema, which is currently exported by:
@@ -37,11 +42,6 @@ These vulnerabilites are aggregated by https://osv.dev.
 Reference tooling (e.g. converters) can be found in the [tools/](tools) directory
 
 The current version of spec is rendered [here](https://ossf.github.io/osv-schema/).
-
-This is under wg-vulnerability-disclosures
-
-The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 ## Motivation
 

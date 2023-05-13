@@ -1,3 +1,10 @@
+This is under wg-securing-critical-projects
+
+
+The designated lead(s):
+- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
+
 # Package Feeds
 
 The binary produced by [cmd/scheduled-feed/main.go](cmd/scheduled-feed/main.go) can be used to monitor various
@@ -50,13 +57,6 @@ timer: false
 `timer` will configure interal polling of the `feeds` at the given `poll_rate` period, individual feeds configured with a `poll_rate` will poll on an interval regardless of these options. To specify this configuration file, define its path in your environment under the `PACKAGE_FEEDS_CONFIG_PATH` variable.
 
 An event handler can be configured through the `events` field, this is documented in the [events README](./pkg/events/README.md).
-
-This is under wg-securing-critical-projects
-
-
-The designated lead(s):
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
 
 ## Motivation
 

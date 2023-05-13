@@ -1,3 +1,11 @@
+This is under wg-supply-chain-integrity
+
+
+The designated lead(s):
+- [Jay White](https://github.com/camaleon2016)
+- [Adrian Diglio](https://github.com/adriandiglio)
+- [Jasmine Wang](https://github.com/jasminewang0)
+
 # Secure Supply Chain Consumption Framework (S2C2F) SIG
 
 <img alt="secure package icon" src="images/secure-package-icon.png" width=15%>
@@ -25,14 +33,6 @@ The objective for the S2C2F SIG is to develop and continuously improve upon a gu
 
 
 ##
-
-This is under wg-supply-chain-integrity
-
-
-The designated lead(s):
-- [Jay White](https://github.com/camaleon2016)
-- [Adrian Diglio](https://github.com/adriandiglio)
-- [Jasmine Wang](https://github.com/jasminewang0)
 
 ## Motivation
 

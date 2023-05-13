@@ -1,3 +1,9 @@
+This is under the Best Practices working group.
+
+
+The designated lead(s):
+- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
 # The Great MFA Distribution Project
 
 Welcome to the Great MFA Distribution Project
@@ -17,12 +23,6 @@ of validation for a developer's identity when logging into code repositories or 
 critical tasks such as signing code.
 Attackers generally find it much harder to take over an account authenticated with an MFA token compared to an account authenticated with only a password;
 see [why we are doing this](#why-we-ard-doing-this) for more information.
-
-This is under the Best Practices working group.
-
-
-The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
 ## Motivation
 

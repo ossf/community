@@ -1,3 +1,9 @@
+This is under wg-security-tooling
+
+
+The designated lead(s):
+- [Josh Bressers](https://github.com/joshbressers)
+
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/fuzz-introspector)
 
 # Fuzz introspector
@@ -10,12 +16,6 @@ identifying fuzz bottlenecks and blockers and eventually helps in developing bet
 Fuzz-introspector aims to improve fuzzing experience of a project by guiding on whether you should:
 - introduce new fuzzers to a fuzz harness
 - modify existing fuzzers to improve the quality of your harness.
-
-This is under wg-security-tooling
-
-
-The designated lead(s):
-- [Josh Bressers](https://github.com/joshbressers)
 
 ## Motivation
 

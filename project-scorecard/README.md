@@ -1,3 +1,13 @@
+This is under the Best Practices working group.
+
+
+The designated lead(s):
+- [Azeem Shaikh](https://github.com/azeemshaikh38)
+- [Laurent Simon](https://github.com/laurentsimon)
+- [Naveen Srinivasan](https://github.com/naveensrinivasan)
+- [Risto McGehee](https://github.com/chrismcgehee)
+- [Stephen Augustus](https://github.com/justaugustus)
+
 # OpenSSF Scorecard
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/scorecard/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/scorecard)
@@ -11,16 +21,6 @@
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 
 <img align="right" src="artwork/openssf_security_compressed.png" width="200" height="400">
-
-This is under the Best Practices working group.
-
-
-The designated lead(s):
-- [Azeem Shaikh](https://github.com/azeemshaikh38)
-- [Laurent Simon](https://github.com/laurentsimon)
-- [Naveen Srinivasan](https://github.com/naveensrinivasan)
-- [Risto McGehee](https://github.com/chrismcgehee)
-- [Stephen Augustus](https://github.com/justaugustus)
 
 ## Motivation
 

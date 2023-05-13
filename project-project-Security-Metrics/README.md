@@ -1,3 +1,9 @@
+This is under wg-identifying-security-threats
+
+
+The designated lead(s):
+- [Michael Scovetta](https://github.com/scovetta)
+
 # Security Metrics
 
 The purpose of this project is to collect, organize, and provide interesting security metrics
@@ -6,12 +12,6 @@ for open source projects to stakeholders, including users.
 This project is in early development and we welcome community support. For more information or
 to get involved, please see our [workgroup](https://github.com/ossf/wg-identifying-security-threats)
 page.
-
-This is under wg-identifying-security-threats
-
-
-The designated lead(s):
-- [Michael Scovetta](https://github.com/scovetta)
 
 ## Motivation
 

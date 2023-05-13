@@ -1,15 +1,15 @@
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/allstar/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/allstar)
-
-<img align="right" src="artwork/openssf_allstar_alt.png" width="300" height="400">
-
-# **Allstar**
-
 This is under wg-securing-critical-projects
 
 
 The designated lead(s):
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/allstar/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/allstar)
+
+<img align="right" src="artwork/openssf_allstar_alt.png" width="300" height="400">
+
+# **Allstar**
 
 ## Motivation
 
