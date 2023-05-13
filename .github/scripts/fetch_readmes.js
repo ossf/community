@@ -49,6 +49,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   let match;
 
   let firstParagraph = "";
+  let h1Title = "";
   let sectionStarted = false;
 
   while ((match = regex.exec(content)) !== null) {
@@ -56,9 +57,10 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
-    if (!sectionStarted) {
-      firstParagraph = content.slice(0, sectionStart).trim();
-      sectionStarted = true;
+    if (sectionTitle === mainTitle) {
+      h1Title = content.slice(sectionStart, sectionEnd).trim();
+    } else if (!firstParagraph) {
+      firstParagraph = content.slice(sectionStart, sectionEnd).trim();
     }
 
     if (!sections[sectionTitle]) {
@@ -66,11 +68,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
     }
   }
 
-  if (!sectionStarted) {
-    firstParagraph = content.trim();
-  }
-
-  const firstParagraphWithDescription = `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `${h1Title}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
 
@@ -92,15 +90,6 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
     if (!sectionAdded) {
       reorderedContent += `\n\n## ${titleArr[0]}\n\nTBD`;
-    }
-  }
-
-  for (const sectionTitle in sections) {
-    const lowerCaseTitle = sectionTitle.toLowerCase();
-
-    if (!addedTitles.has(lowerCaseTitle)) {
-      reorderedContent += `\n\n## ${sectionTitle}\n\n${sections[sectionTitle]}`;
-      addedTitles.add(lowerCaseTitle);
     }
   }
 
