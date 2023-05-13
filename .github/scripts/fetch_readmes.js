@@ -52,7 +52,7 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
   let sectionStarted = false;
 
   while ((match = regex.exec(content)) !== null) {
-    const sectionTitle = match[1].trim().toLowerCase();
+    const sectionTitle = match[1].trim();
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
@@ -61,8 +61,8 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
       sectionStarted = true;
     }
 
-    if (!sections[sectionTitle]) {
-      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
+    if (!sections[sectionTitle.toLowerCase()]) {
+      sections[sectionTitle.toLowerCase()] = content.slice(sectionStart, sectionEnd).trim();
     }
   }
 
@@ -70,17 +70,23 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     firstParagraph = content.trim();
   }
 
-  const firstParagraphWithDescription = `\n\n${firstParagraph}`;
+  const firstParagraphWithDescription = `${mainTitle}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
   reorderedContent += `\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}`;
 
+  let h1Added = false;
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
       if (sections[lowerCaseTitle]) {
-        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
+        if (!h1Added) {
+          h1Added = true;
+          reorderedContent += `\n\n# ${title}\n\n${sections[lowerCaseTitle]}`;
+        } else {
+          reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
+        }
         delete sections[lowerCaseTitle];
         sectionAdded = true;
       } else if (!sectionAdded) {
@@ -157,7 +163,7 @@ async function fetchReadmes() {
       }
 
       const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown, repoData.newRepoName);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
 
       await fs.promises.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
