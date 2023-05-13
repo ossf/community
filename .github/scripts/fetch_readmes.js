@@ -48,21 +48,29 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
 
-  const firstParagraphRegex = /(^[\s\S]*?(?=\n#{2,3}))/;
-  const firstParagraph = (content.match(firstParagraphRegex) || [""])[0].trim();
-
-  const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\n The designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
-
+  let firstParagraph = "";
+  let sectionStarted = false;
 
   while ((match = regex.exec(content)) !== null) {
     const sectionTitle = match[1].trim().toLowerCase();
     const sectionStart = match.index;
     const sectionEnd = content.indexOf("\n##", sectionStart + match[0].length) || content.length;
 
+    if (!sectionStarted) {
+      firstParagraph = content.slice(0, sectionStart).trim();
+      sectionStarted = true;
+    }
+
     if (!sections[sectionTitle]) {
       sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
     }
   }
+
+  if (!sectionStarted) {
+    firstParagraph = content.trim();
+  }
+
+  const firstParagraphWithDescription = `# ${mainTitle}\n\n${description}\n\nThe designated lead(s):\n${leadsMarkdown}\n\n${firstParagraph}`;
 
   let reorderedContent = firstParagraphWithDescription;
   for (const titleArr of sectionOrder) {
@@ -84,9 +92,9 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
     reorderedContent += `\n\n${sections[section]}`;
   }
 
-
   return reorderedContent.trim();
 }
+
 
 function appendRepoInfoToMainReadme() {
   const mainReadmePath = path.join(__dirname, "..", "..", "README.md");

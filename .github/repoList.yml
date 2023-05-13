@@ -230,8 +230,7 @@
       url: https://github.com/SecurityCRob
 - oldRepoName: osv-schema
   newRepoName: project-osv-schema
-  description: >
-    This is under wg-vulnerability-disclosures
+  description: This is under wg-vulnerability-disclosures
   structure: 2-K
   leads:
     - name: Christopher "CRob" Robinson
