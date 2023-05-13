@@ -1,7 +1,9 @@
 This is a top level group.
 
 
- The designated lead isjeffmendoza, amirhmh3
+ The designated lead is:
+ - Jeff Mendoza with Github ID: [jeffmendoza](https://github.com/jeffmendoza) - Amir Hossin Montazery with Github ID: [amirhmh3](https://github.com/amirhmh3)
+
 
 # WG Securing Critical Projects
 

@@ -1,7 +1,9 @@
 This is a top level group.
 
 
- The designated lead isdi
+ The designated lead is:
+ - Dustin Ingram with Github ID: [di](https://github.com/di)
+
 
 # wg-securing-software-repos
 

@@ -1,6 +1,8 @@
 This is a top level group
 
- The designated lead isjonmuk
+ The designated lead is:
+ - Jonathan Meadows with Github ID: [jonmuk](https://github.com/jonmuk)
+
 
 # OSSF End Users
 

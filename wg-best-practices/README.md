@@ -1,6 +1,7 @@
 This is a top level group
 
- The designated lead isChristopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
+ The designated lead is:
+ - Christopher "CRob" Robinson with Github ID: [SecurityCRob](https://github.com/securityCRob)
 
 
 # Best Practices for Open Source Developers
