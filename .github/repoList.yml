@@ -1,8 +1,16 @@
-- wg-endusers
-- wg-best-practices-os-developers
-- wg-security-tooling
-- wg-supply-chain-integrity
-- wg-vulnerability-disclosures
-- wg-securing-critical-projects
-- wg-identifying-security-threats
-- wg-securing-software-repos
+- oldRepoName: wg-endusers
+  newRepoName: wg-endusers
+- oldRepoName: wg-best-practices-os-developers
+  newRepoName: wg-best-practices
+- oldRepoName: wg-security-tooling
+  newRepoName: wg-security-tooling
+- oldRepoName: wg-supply-chain-integrity
+  newRepoName: wg-supply-chain-integrity
+- oldRepoName: wg-vulnerability-disclosures
+  newRepoName: wg-vulnerability-disclosures
+- oldRepoName: wg-securing-critical-projects
+  newRepoName: wg-securing-critical-projects
+- oldRepoName: wg-identifying-security-threats
+  newRepoName: wg-identifying-security-threats
+- oldRepoName: wg-securing-software-repos
+  newRepoName: wg-securing-software-repos

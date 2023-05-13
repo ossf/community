@@ -77,9 +77,12 @@ function reorderReadmeContent(content) {
 async function fetchReadmes() {
   clearReadmeFiles();
 
-  for (const repoName of repoList) {
+  for (const repoData of repoList) {
+    const oldRepoName = repoData.oldRepoName;
+    const newRepoName = repoData.newRepoName;
+
     try {
-      const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: repoName });
+      const readmeData = await octokit.repos.getReadme({ owner: orgName, repo: oldRepoName });
       const readmeContent = Buffer.from(readmeData.data.content, "base64").toString();
 
       const repoDir = path.join(__dirname, "..", "..", repoName);
