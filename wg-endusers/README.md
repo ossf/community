@@ -1,10 +1,8 @@
-# wg-endusers
-
-This is a top level group
-
 # OSSF End Users
 
 Anyone is welcome to join our open discussions.
+
+This is a top level group
 
 ## Motivation
 

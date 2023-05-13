@@ -1,10 +1,8 @@
-# wg-security-tooling
-
-This is a top level group
-
 # OSSF Security Tooling
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
+
+This is a top level group
 
 ## Motivation
 

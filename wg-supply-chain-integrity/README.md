@@ -1,8 +1,6 @@
-# wg-supply-chain-integrity
+# Supply Chain Integrity WG
 
 This is a top level group
-
-# Supply Chain Integrity WG
 
 ## Motivation
 

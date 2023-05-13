@@ -1,12 +1,10 @@
-# wg-best-practices
-
-This is a top level group
-
 # Best Practices for Open Source Developers
 
 [![GitHub Super-Linter](https://github.com/ossf/wg-best-practices-os-developers/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
+
+This is a top level group
 
 ## Motivation
 
