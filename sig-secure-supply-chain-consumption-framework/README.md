@@ -1,5 +1,3 @@
-# sig-secure-supply-chain-consumption-framework
-
 # Secure Supply Chain Consumption Framework (S2C2F) SIG
 
 <img alt="secure package icon" src="images/secure-package-icon.png" width=15%>

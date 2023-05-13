@@ -1,5 +1,3 @@
-# wg-best-practices
-
 # Best Practices for Open Source Developers
 
 [![GitHub Super-Linter](https://github.com/ossf/wg-best-practices-os-developers/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)

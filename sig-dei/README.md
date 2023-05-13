@@ -1,5 +1,3 @@
-# sig-dei
-
 # Example .allstar Quickstart Repository
 
 This repository can be forked into your organization as `.allstar` to quickly

@@ -1,5 +1,3 @@
-# wg-identifying-security-threats
-
 # Identifying Security Threats in Open Source Projects
 
 The purpose of this working group is to enable stakeholders to have informed

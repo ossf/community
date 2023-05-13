@@ -1,5 +1,3 @@
-# project-allstar
-
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ossf/allstar/badge)](https://api.securityscorecards.dev/projects/github.com/ossf/allstar)
 
 <img align="right" src="artwork/openssf_allstar_alt.png" width="300" height="400">

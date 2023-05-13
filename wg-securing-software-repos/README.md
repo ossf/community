@@ -1,7 +1,5 @@
 # wg-securing-software-repos
 
-# wg-securing-software-repos
-
 OpenSSF Working Group on Securing Software Repositories
 
 This is a top level group.

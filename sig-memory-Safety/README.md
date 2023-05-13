@@ -1,5 +1,3 @@
-# sig-memory-Safety
-
 # **OpenSSF Memory Safety Special Interest Group (SIG)**
 
 The Memory Safety SIG is a group working within the [OpenSSF's Best Practices Working Group](https://github.com/ossf/wg-best-practices-os-developers) formed to advance and deliver upon [The OpenSSF's Mobilization Plan - Stream 4](https://8112310.fs1.hubspotusercontent-na1.net/hubfs/8112310/OpenSSF/White%20House%20OSS%20Mobilization%20Plan.pdf?hsCtaTracking=3b79d59d-e8d3-4c69-a67b-6b87b325313c%7C7a1a8b01-65ae-4bac-b97c-071dac09a2d8).

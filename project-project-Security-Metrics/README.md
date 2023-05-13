@@ -1,5 +1,3 @@
-# project-project-Security-Metrics
-
 # Security Metrics
 
 The purpose of this project is to collect, organize, and provide interesting security metrics
