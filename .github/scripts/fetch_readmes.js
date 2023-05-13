@@ -66,13 +66,16 @@ function reorderReadmeContent(content, description, leadsMarkdown, mainTitle) {
 
   let reorderedContent = firstParagraphWithDescription;
   for (const titleArr of sectionOrder) {
+    let sectionAdded = false;
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
       if (sections[lowerCaseTitle]) {
         reorderedContent += `\n\n${sections[lowerCaseTitle]}`;
         delete sections[lowerCaseTitle];
-      } else {
+        sectionAdded = true;
+      } else if (!sectionAdded) {
         reorderedContent += `\n\n## ${title}\n\nTBD`;
+        sectionAdded = true;
       }
     }
   }
