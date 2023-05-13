@@ -61,8 +61,8 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
       sectionStarted = true;
     }
 
-    if (!sections[sectionTitle.toLowerCase()]) {
-      sections[sectionTitle.toLowerCase()] = content.slice(sectionStart, sectionEnd).trim();
+    if (!sections[sectionTitle]) {
+      sections[sectionTitle] = content.slice(sectionStart, sectionEnd).trim();
     }
   }
 
@@ -74,41 +74,38 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
 
   let reorderedContent = firstParagraphWithDescription;
 
-  let h1Added = false;
-  const uniqueTitles = new Set();
+  const addedTitles = new Set();
+
   for (const titleArr of sectionOrder) {
     let sectionAdded = false;
+
     for (const title of titleArr) {
       const lowerCaseTitle = title.toLowerCase();
-      if (sections[lowerCaseTitle] && !uniqueTitles.has(lowerCaseTitle)) {
-        if (!h1Added) {
-          h1Added = true;
-          reorderedContent += `\n\n# ${title}\n\n${sections[lowerCaseTitle]}`;
-        } else {
-          reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
-        }
-        delete sections[lowerCaseTitle];
-        uniqueTitles.add(lowerCaseTitle);
+
+      if (sections[lowerCaseTitle] && !addedTitles.has(lowerCaseTitle)) {
+        reorderedContent += `\n\n## ${title}\n\n${sections[lowerCaseTitle]}`;
+        addedTitles.add(lowerCaseTitle);
         sectionAdded = true;
-      } else if (!sectionAdded) {
-        reorderedContent += `\n\n## ${title}\n\nTBD`;
-        sectionAdded = true;
+        break;
       }
+    }
+
+    if (!sectionAdded) {
+      reorderedContent += `\n\n## ${titleArr[0]}\n\nTBD`;
     }
   }
 
-  for (const section in sections) {
-    const lowerCaseSection = section.toLowerCase();
-    if (!uniqueTitles.has(lowerCaseSection)) {
-      reorderedContent += `\n\n## ${section}\n\n${sections[section]}`;
-      uniqueTitles.add(lowerCaseSection);
+  for (const sectionTitle in sections) {
+    const lowerCaseTitle = sectionTitle.toLowerCase();
+
+    if (!addedTitles.has(lowerCaseTitle)) {
+      reorderedContent += `\n\n## ${sectionTitle}\n\n${sections[sectionTitle]}`;
+      addedTitles.add(lowerCaseTitle);
     }
   }
 
   return reorderedContent.trim();
 }
-
-
 
 
 
@@ -170,7 +167,7 @@ async function fetchReadmes() {
       }
 
       const leadsMarkdown = generateLeadsMarkdown(repoData.leads);
-      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown);
+      const reorderedContent = reorderReadmeContent(readmeContent, repoData.description, leadsMarkdown, repoData.newRepoName);
 
       await fs.promises.writeFile(path.join(repoDir, README_FILENAME), reorderedContent);
     } catch (error) {
