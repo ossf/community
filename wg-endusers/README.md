@@ -1,4 +1,4 @@
-# OSSF End Users
+# OpenSSF End Users
 
 This is a top level group
 
@@ -13,7 +13,8 @@ TBD
 
 ## Objective
 
-The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of OpenSSF.
+The End User Working Group aims to ensure that the distinct and impactful voice of end users is heard in the development and delivery of the technical vision of 
+F.
 
 ## Vision
 

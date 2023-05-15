@@ -64,7 +64,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [tac](https://github.com/ossf/tac)
 
  **Description:** This is a top level group.
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -72,7 +71,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
 
  **Description:** This is a top level group
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -88,7 +86,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
 
  **Description:** This is a top level group
-
 **Leads:**
 - [Jonathan Meadows](https://github.com/jonmuk)
 
@@ -174,7 +171,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
 
  **Description:** This is under the Best Practices working group.
-
 **Leads:**
 - [Nell Shamrell-Harrington](https://github.com/nellshamrell)
 
@@ -182,7 +178,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
 
  **Description:** This is under wg-vulnerability-disclosures
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -190,7 +185,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [SIRT](https://github.com/ossf/SIRT)
 
  **Description:** This is under wg-vulnerability-disclosures
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -198,7 +192,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
 
  **Description:** This is under wg-vulnerability-disclosures
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -206,7 +199,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [OpenVEX](https://github.com/ossf/OpenVEX)
 
  **Description:** This is under wg-vulnerability-disclosures
-
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
@@ -292,7 +284,6 @@ We encourage all contributors to become members. We aim to grow an active, healt
 **Original Repository:** [DEI-SIG](https://github.com/ossf/DEI-SIG)
 
  **Description:** TBD
- 
 **Leads:**
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
