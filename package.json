@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Index of OpenSSF groups",
     "dependencies": {
-        "@octokit/rest": "^19.0.8",
+        "@octokit/rest": "^19.0.11",
         "js-yaml": "^4.1.0"
     }
 }
