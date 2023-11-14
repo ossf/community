@@ -98,7 +98,7 @@ TBD
 
 ## How do I submit a review?
 
-***Note: Do not disclose "new" or "unknown" vulnerabilities to this project or to this repository.***
+***Note: Do not disclose "new" or "unknown" vulnerabilities in other projects to this project or to this repository.***
 
 1. Choose an open source component.
 2. Complete the form on the [QuickStart](https://ossf.github.io/security-reviews/quickstart.html) page (this will generate your review as a markdown file).
@@ -177,6 +177,13 @@ GitHub Security Advisories, commercial vulnerability databases), and
 many security researchers make available their own security assessments,
 but to the best of our knowledge, this project is somewhat unique
 in its purpose and approach.
+
+## Security / vulnerability reporting
+
+For information on how to
+report vulnerabilities in the software in this repository
+(e.g., our scripts), see
+[SECURITY.md](./SECURITY.md).
 
 ## More Information
 

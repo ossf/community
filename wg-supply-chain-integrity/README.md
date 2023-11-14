@@ -66,6 +66,8 @@ Working Group operations are consistent with standard operating guidelines provi
 
 Full details of process and roles are linked from [governance README](/governance).
 
+New SCI WG Charter can be read from [governance CHARTER](/governance/CHARTER.MD)
+
 ## Antitrust Policy
 
 TBD
@@ -92,20 +94,20 @@ Subscribe to the calendar for meeting details.
 
 ## Meetings Notes
 
-Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1xPs2sSbH3I9Ich7OyLOzl85oJshnK8Q6WoAgREE5-zA/edit). (Join the group listed under communications to edit.)
+Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1moVFPn5pLi-uGs840_YBCrwdpHajU0ptFmlL4F9GryQ/edit).
 
 ## Documents
-Documents for the working group can be found in the following Google Drive location: 
-https://drive.google.com/drive/folders/14VpLCYYAEZt1OQn490ajBg28TKXNPuUJ?usp=sharing
 
-Documents include the following:
 * [User Stories](https://docs.google.com/document/d/1_TQizML8sXAm3OdoNA_plihZ14OHng_XRvJXKv_o_bs/edit?usp=sharing)
 
 ## Activities
 
 * [Supply-chain Levels for Software Artifacts (SLSA, pronounced ”salsa”)](https://slsa.dev/) - see also the [SLSA repository](https://github.com/slsa-framework/slsa)
+* [SLSA Tooling Project](slsa-tooling.md)
 * [Factory for Repeatable Secure Creation of Artifacts (FRSCA, pronounced "fresca")](https://buildsec.github.io/frsca) - see also the [FRSCA repository](https://github.com/buildsec/frsca)
 * [Secure Supply Chain Consumption Framework (S2C2F) Special Interest Group (SIG)](https://github.com/ossf/s2c2f)
+* Supply Chain Integrity Positioning Special Interest Group (SIG)
+* [gittuf: A security layer for Git repositories](https://github.com/gittuf/gittuf)
 
 Older activities (as Digital Identity Attestation WG):
   * [Former Digital Identity Attestation WG Readme](https://github.com/ossf/wg-supply-chain-integrity/blob/0804679461f7ed288d50d70da7ae9c7152b1e51d/README.md)

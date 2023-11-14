@@ -30,7 +30,7 @@ Our vision is to improve the perception of security in open source software.
 
 The [CHARTER.md](CHARTER.md) outlines the scope and governance of our group activities.
 
-This group is chaired by Josh Bressers (@joshbressers).
+This group is chaired by [Ryan Ware](https://github.com/ware).
 
 ## Scope
 
@@ -48,17 +48,19 @@ TBD
 
 ## Get Involved
 
-TBD
+* [Meeting Minutes](https://docs.google.com/document/d/1jzxhzIfkOMTagpeFWYoZpMKwHYeO4Gc7Eq5FcMFEw2c/edit?usp=sharing)
+* [Mailing list](https://lists.openssf.org/g/openssf-wg-security-tooling). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
+* [Slack](https://openssf.slack.com/archives/C019Q1VEA87)
 
 ## Meeting Times
 
-[Zoom](https://zoom.us/j/96055397788?pwd=bzFxYjNrUTZvNDFLdjVCZHQyWDhNdz09) every other Tuesday at 16:00 GMT from Aug 11.
+[Zoom](https://zoom-lfx.platform.linuxfoundation.org/meeting/94897563315?password=7f03d8e7-7bc9-454e-95bd-6e1e09cb3b0b) every other Friday at 16:00 GMT from Nov 17.
 
 The meeting invite is available on the public [OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
 ## Meeting Notes
 
-Meeting notes are maintained in a [Google Doc](https://docs.google.com/document/d/1DoB7zgtLsP-JGF77ASkHV7UMofTE2wseniexaa6Q4M8/edit#). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
+Meeting notes are maintained in a [Google Doc](https://docs.google.com/document/d/1jzxhzIfkOMTagpeFWYoZpMKwHYeO4Gc7Eq5FcMFEw2c/edit?usp=sharing). If attending please add your name, and if a returning attendee, please change the color of your name from gray to black.
 
 ## Licenses
 
@@ -82,12 +84,6 @@ Linux Foundation meetings involve participation by industry competitors, and it 
 
 Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
 
-## Communications
-
-* [Meeting Minutes](https://docs.google.com/document/d/1DoB7zgtLsP-JGF77ASkHV7UMofTE2wseniexaa6Q4M8/edit#)
-* [Mailing list](https://lists.openssf.org/g/openssf-wg-security-tooling). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
-* [Slack](https://openssf.slack.com/archives/C019Q1VEA87)
-
 ### SBOM Everywhere SIG
 
 * [SBOM Everywhere Google Drive folder](https://drive.google.com/drive/folders/154MCLeIOQEgPpTUL7yzplOiipBVJ5KZJ)
@@ -107,7 +103,7 @@ Examples of types of actions that are prohibited at Linux Foundation meetings an
 ### OSS Fuzzing
 * Fuzzing Collaboration subgroup - focuses on improving fuzzing
   - Meets montly starting 2022-01-04 at 10:30am Pacific Time (see the OpenSSF calendar) via [this Zoom link](https://zoom.us/j/99960722134?)
-  - [Meeting notes](https://docs.google.com/document/d/1u4_vL0UK69C7D3qatP9Q6gjGX1PMJjWnO4-3F4pJ0oo/edit#)
+  - [Meeting notes](https://docs.google.com/document/d/1TmhqYpB1Ly-5o-F31RVHxgpunW6qeDTVopBCtCmKhs0/edit?usp=sharing)
   - Has its own [fuzzing-collaboration mailing list on Google Groups](https://groups.google.com/g/fuzzing-collaboration)
 * [Fuzz-introspector](https://github.com/ossf/fuzz-introspector/) -  a tool to help fuzzer developers to get an understanding of their fuzzer’s performance and identify any potential blockers.
 

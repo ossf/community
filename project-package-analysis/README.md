@@ -169,8 +169,8 @@ Values should follow
 ## Local Analysis
 
 To run the analysis code locally, the easiest way is to use the Docker image
-`gcr.io/ossf-malware-analysis/analysis`. This can be built from
-`./build/build_docker.sh`, or the public images can be used instead.
+`gcr.io/ossf-malware-analysis/analysis`. This can be built with
+`make build_analysis_image`, or the public images can be used instead.
 
 This container uses `podman` to run a nested, sandboxed ([gVisor]) container for
 analysis.
@@ -217,7 +217,7 @@ allows caching the sandbox images and supports local developement.
 
 ### Required Dependencies
 
-- Go v1.19
+- Go v1.21
 - Docker
 
 # Contributing

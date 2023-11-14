@@ -77,7 +77,7 @@ TBD
 
 #### Meeting Notes
 
-Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1MIXxadtWsaROpFcJnBtYnQPoyzTCIDhd0IGV8PIV0mQ/edit). (Join the group above to edit.)
+Meeting Notes and Agendas are available on [Google Drive](https://docs.google.com/document/d/1GFslP6elYCx27TUitdigDr1gsOItYkL0Vq7hTB9y4Lo/edit?usp=sharing). 
 
 Meeting Recordings are available on Youtube at: https://www.youtube.com/playlist?list=PLVl2hFL_zAh-cAfx6y4k-fODfbHeQzb_O.
 

@@ -34,10 +34,9 @@ TBD
 
 TBD
 
-## Current work
+## Current Work
 
-* Survey of OSS software repositories
-* TBD
+TBD
 
 ## Active Projects
 
@@ -53,7 +52,7 @@ TBD
 
 ## Meeting times
 
-[Zoom](https://zoom.us/j/94941582286?pwd=SjdwZmY1eit6RlhiS1RsLzBZK3pVdz09) every other Wednesday, alternating between EMEA (13:00 UTC) and APAC-friendly times (22:00 UTC).
+[Zoom](https://zoom-lfx.platform.linuxfoundation.org/meeting/98058137343?password=28dafc6e-cfcf-440d-bb63-ca73a1739f06) every other Wednesday, alternating between EMEA (13:00 UTC) and APAC-friendly times (22:00 UTC).
 
 The meeting invite is available on the public [OSSF calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
@@ -71,11 +70,9 @@ TBD
 
 ## Governance
 
-We use the [securing-software-repos-wg](https://github.com/orgs/ossf/teams/securing-software-repos-wg) GitHub team.
+The [CHARTER.md](https://github.com/ossf/wg-securing-software-repos/blob/main/CHARTER.md) outlines the scope and governance of our group activities, as well as the maintainers of this repository.
 
-The [CHARTER.md](https://github.com/ossf/wg-securing-software-repos/blob/main/CHARTER.md) outlines the scope and governance of our group activities.
-
-This group is chaired by [Dustin Ingram](https://github.com/di).
+This group is co-chaired by [Dustin Ingram](https://github.com/di) and [Zach Steindler](https://github.com/steiza).
 
 ## Antitrust Policy
 
@@ -91,6 +88,23 @@ Examples of types of actions that are prohibited at Linux Foundation meetings an
 
 * The working group is not a governing body and does not create binding obligations on members
 * The working group does not dictate technologies, tools or solutions, though members are free to recommend them to one another
+
+## Published work
+
+See also https://repos.openssf.org/
+
+* **[Build Provenance and Code-signing for Homebrew](https://repos.openssf.org/proposals/build-provenance-and-code-signing-for-homebrew)** - July 2023
+  > A proposal for introducing build provenance and cryptographic signatures to the Homebrew package manager.
+* **[Build Provenance for All Package Registries](https://repos.openssf.org/build-provenance-for-all-package-registries)** - July 2023
+  > Guidance for package registries in adopting build provenance to verifiably link a package back to its source code and build instructions.
+* **[The Package Manager Landscape Survey](https://github.com/ossf/wg-securing-software-repos/blob/main/survey/2022/README.md)** - December 2022
+  > A survey/landscape of different security mechanisms and features that are implemented across the different ecosystems as they pertain to security critical user journeys.
+
+## Projects
+
+| Name | Repository/Home Page | Notes | Status |
+| --- | --- | --- | --- |
+| Repository Service for TUF | https://github.com/repository-service-tuf/repository-service-tuf |  [Meeting Notes](https://docs.google.com/document/d/13a_AtFpPK9WO4PlAN6ciD-G1jiBU3gEDtRD1OUinUFY/edit)  | Sandbox |
 
 ## Communication
 

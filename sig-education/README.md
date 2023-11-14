@@ -6,6 +6,8 @@ This is under the Best Practices working group.
  The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
+<img align="right" src="https://github.com/ossf/education/blob/main/ossf-goose-edu-sig2.png" width="400" height="400">
+
 This Education SIG is a group working within the [OpenSSF's Best Practices Working Group](https://github.com/ossf/wg-best-practices-os-developers) formed to advance and deliver upon [The OpenSSF's Mobilization Plan - Stream 1](https://8112310.fs1.hubspotusercontent-na1.net/hubfs/8112310/OpenSSF/White%20House%20OSS%20Mobilization%20Plan.pdf?hsCtaTracking=3b79d59d-e8d3-4c69-a67b-6b87b325313c%7C7a1a8b01-65ae-4bac-b97c-071dac09a2d8). This SIG is dedicated to providing industry standard secure software development training materials that will educate learners of all levels and backgrounds on how to create, compose, deploy, and maintain software securely using best practices in cyber and application security.
 
 ## Motivation
@@ -62,11 +64,16 @@ TBD
 ## Meeting times
 
 - The Full SIG meets every other Wednesday @ 09:00am EST. The invite is available on the [OpenSSF Community Calendar](https://calendar.google.com/calendar/u/0/r?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
-- [2023 Meeting Minutes](https://docs.google.com/document/d/18GBwvQJNcPnwxKrnp43DhBZC7K1JM0xzGkDoKh5mu8U/edit#heading=h.9m0zi4b0wnne)
-- [2022 Meeting Minutes](https://docs.google.com/document/d/1Lt8uGpiMFfgws8VF36xtTMaJAeHufha-7Dqz1tjrPGY/edit#heading=h.naeeah7jeanr)
+- [2023 Meeting Minutes](https://docs.google.com/document/d/18lIznkQyrcD_KI-7bKhWJQ5bjwdHpdzelA9kPTF1Gow/edit)
+
+- [2022 Meeting Minutes](https://docs.google.com/document/d/1wuly4bt7zSv4WYsbsr3AlNdq6QOMPCAAt2jtr0PtfQM/edit)
 
 - The Diversity, Equality, and Inclusion (DEI) subcommittee meets every other Tuesday @ 11am EST.  The invite is available on the [OpenSSF Community Calendar](https://calendar.google.com/calendar/u/0/r?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
-- [DEI Subcommittee Meeting Notes](https://docs.google.com/document/d/1LdQ07veOcJ596Vo3aQZCFy-HHeEO7cHnbE_6u_uq9Fk/edit#)
+- [DEI Subcommittee Meeting Notes](https://docs.google.com/document/d/1Ba_NJWWlsbTn2kVoBFpnMFMmdez9yJrHayocaxKkjaY/edit?usp=sharing)
+- [2022 Meeting Minutes](https://docs.google.com/document/d/1wuly4bt7zSv4WYsbsr3AlNdq6QOMPCAAt2jtr0PtfQM/edit?usp=sharing)
+
+- The Diversity, Equality, and Inclusion (DEI) subcommittee meets every other Tuesday @ 11am EST.  The invite is available on the [OpenSSF Community Calendar](https://calendar.google.com/calendar/u/0/r?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
+- [DEI Subcommittee Meeting Notes](https://docs.google.com/document/d/1Ba_NJWWlsbTn2kVoBFpnMFMmdez9yJrHayocaxKkjaY/edit#heading=h.9m0zi4b0wnne)
 
 ## Meeting Notes
 
