@@ -8,6 +8,15 @@ This is the starting point for the community to learn how to contribute.
 
 We keep a [living spreadsheet of all the working groups, projects, and special interest groups](https://docs.google.com/spreadsheets/d/140czMjqhe9YxLBTx4rWkjHxWEWqD_tVQ1s8l9Q2PE2g/edit#gid=1040608229) that contains meeting links, notes and most recent TAC updates. 
 
+## Overall structure
+
+For the [Google slides of these sources, click here.](https://docs.google.com/presentation/d/1yiAGkDwxTSHFsjlrx4fMdfpeb5LSW064lQZMN9n9F5M/edit#slide=id.g254aa5f1c0a_0_129)
+
+![Working Groups, Projects,   SIGs](https://github.com/ossf/.github/assets/51727488/9d48ffe7-aaf2-4800-9b79-18a1ae64ac4f)
+
+![Working Groups, Projects,   SIGs (1)](https://github.com/ossf/.github/assets/51727488/e6949b1d-adf3-4c72-bd2c-3d36e5322efe)
+
+
 
 ## Repository Information
 
