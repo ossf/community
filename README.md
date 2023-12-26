@@ -10,11 +10,198 @@ We keep a [living spreadsheet of all the working groups, projects, and special i
 
 ## Overall structure
 
-For the [Google slides of these sources, click here.](https://docs.google.com/presentation/d/1yiAGkDwxTSHFsjlrx4fMdfpeb5LSW064lQZMN9n9F5M/edit#slide=id.g254aa5f1c0a_0_129)
+```mermaid
+%%{init:{'flowchart':{'nodeSpacing': 0, 'rankSpacing': 0}}}%%
+%%{init:{'subgraph':{'nodeSpacing': -10, 'rankSpacing': -40}}}%%
+%%{init:{'note':{'nodeSpacing': -10, 'rankSpacing': -40}}}%%
+%%%%{init: {'flowchart' : {'curve' : 'linear'}}}%%%%
 
-![Working Groups, Projects,   SIGs](https://github.com/ossf/.github/assets/51727488/9d48ffe7-aaf2-4800-9b79-18a1ae64ac4f)
+graph TB
 
-![Working Groups, Projects,   SIGs (1)](https://github.com/ossf/.github/assets/51727488/e6949b1d-adf3-4c72-bd2c-3d36e5322efe)
+bp("<b>Best Practices WG</b> \nIdentification, awareness, and education \nof security best practices")
+bp --- bpA
+style note fill:#3d1973,stroke:#FFF,stroke-width:0px
+classDef type stroke-width:0px ,primaryTextColor:#fff, color:#FFF, fill:transparent
+
+subgraph bpA[ ]
+    direction LR
+    style bpA fill:#281151,stroke:#333,stroke-width:4px
+    bp1(Secure Software Development Fundamentals Courses):::type
+    bp2(<font color=orange>Security Knowledge Framework 'SKF'):::type
+    bp3(<font color=orange>OpenSSF Best Practices Badge):::type
+    bp4(<font color=orange><b><i>OpenSSF Scorecard</b></i>):::type
+    bp5(<font color=orange>Common Requirements Enumeration 'CRE'):::type
+    bp6(Concise & Best Practices Guides):::type
+    bp7(Education):::type
+    bp8(Memory Safety):::type
+    bp9(The Security Toolbelt):::type
+end
+    click bp "https://github.com/ossf/wg-best-practices-os-developers" "Best Practices"
+    click bp1 "https://openssf.org/training/courses/" "Secure Software Development Fundamentals"
+    click bp2 "https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best" "Security Knowledge Framework 'SKF'"
+    click bp3 "https://bestpractices.coreinfrastructure.org" "OpenSSF Best Practices Badge"
+    click bp4 "https://github.com/ossf/scorecard" "OpenSSF Scorecard"
+    click bp5 "https://github.com/OWASP/OpenCRE" "Common Requirements Enumeration"
+    click bp6 "https://openssf.org/resources/guides/" "Concise & Best Practices Guides"
+    click bp7 "https://github.com/ossf/education" "Education"
+    click bp8 "https://github.com/ossf/Memory-Safety" "Memory Safety"
+    click bp9 "https://github.com/ossf/toolbelt" "Security Toolbelt"
+
+
+
+st("<b><i>Security Toolings WG</b></i> \n State of the art security tools")
+st --- stA
+
+subgraph stA[ ]
+    style stA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+
+    st1(<font color=white><b><i>SBOM Everywhere</b></i>):::type
+    st2(<font color=white><b><i>OSS Fuzzing</b></i>):::type
+    st3(<font color=orange><b><i>SBOMit</b></i>):::type
+
+end
+    click st "https://github.com/ossf/wg-security-tooling" "Security Tooling"
+    click st1 "https://drive.google.com/drive/folders/154MCLeIOQEgPpTUL7yzplOiipBVJ5KZJ" "SBOM Everywhere"
+    click st2 "https://docs.google.com/document/d/1TmhqYpB1Ly-5o-F31RVHxgpunW6qeDTVopBCtCmKhs0/edit" "OSS Fuzzing"
+    click st3 "https://github.com/sbomit" "SBOMit"
+
+sc("<b><i>Supply Chain Integrity WG</b></i> \nEnsuring the provenance of \nopen source code")
+sc --- scA
+
+subgraph scA[ ]
+    style scA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    sc1(<b><i><font color=orange>Supply-chain Levels for Software Artifacts 'SLSA' SIG</b></i>):::type
+    sc2(<b><i><font color=white>Secure Supply Chain Consumpt Framework 'S2C2F'</b></i>):::type
+    sc3(<b><i><font color=orange>gittuf</b></i>):::type
+    sc4(<b><i><font color=orange>GUAC</b></i>):::type
+end
+    click sc "https://github.com/ossf/wg-supply-chain-integrity" "Supply Chain Integrity"
+    click sc1 "https://slsa.dev/" "SLSA"
+    click sc2 "https://github.com/ossf/s2c2f" "S2C2F"
+    click sc3 "https://github.com/gittuf/gittuf" "gittuf"
+    click sc4 "https://github.com/guacsec/guac" "GUAC"
+subgraph note
+    direction LR
+    Y(<i><b>Initiatives in italic are seeking members and actively meeting</i></b>):::type
+    Z(<i><b><font color=orange>Projects are Orange</i></b>):::type
+    X(<i><b><font color=white>SIGs are White</i></b>):::type
+end
+ 
+vd("<b><i>Vulnerability Disclosures WG</b></i> \n Efficient vulnerability reporting \nand remediation")
+vd --- vdA
+
+subgraph vdA[ ]
+    style vdA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    vd1(<font color=white>CVD Guides):::type
+    vd2(<font color=white>OSS-SIRT SIG):::type
+    vd3(<font color=orange>Open Source Vuln Schema 'OSV'):::type
+    vd4(<b><i><font color=white>OpenVEX SIG</b></i>):::type
+    vd5(<font color=white>Vuln Autofix SIG):::type
+
+end
+    click vd "https://github.com/ossf/wg-supply-chain-integrity" "Supply Chain Integrity"
+    click vd1 "https://github.com/ossf/oss-vulnerability-guide" "CVD"
+    click vd2 "https://github.com/ossf/SIRT" "SIRT"
+    click vd3 "https://github.com/ossf/osv-schema" "OSV"
+    click vd4 "https://github.com/ossf/OpenVEX" "OpenVEX"
+
+ss("<b><i>Securing Software Repositories</b></i> \n Collaboration between repository operators")
+ss --- ssA
+
+subgraph ssA[ ]
+    style ssA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    ss1(<b><i><font color=orange>RSTUF</b></i>):::type
+
+end
+    click ss "https://github.com/ossf/wg-securing-software-repos" "Securing Software Repositories"
+    click ss1 "https://github.com/repository-service-tuf" "RSTUF"
+
+eu("<b><i>End Users</b></i> \n Voice of public & private sector orgs \nthat primarily consume open source")
+eu --- euA
+
+subgraph euA[ ]
+    style euA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    eu1(<b><i><font color=white>Threat Modeling</b></i>):::type
+
+end
+    click eu "https://github.com/ossf/wg-securing-software-repos" "Securing Software Repositories"
+    click eu1 "https://docs.google.com/document/d/1abI65H4pF5y8YtA2_TuDBAaI47v9mTfpr5mwVvccX_I/edit" "Threat Modeling"
+
+mm("<b><i>Metrics & Metadata WG </b></i> \n Security metrics/reviews for \nopen source projects")
+mm --- mmA
+
+subgraph mmA[ ]
+    style mmA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    mm1(<font color=orange>Security Insights):::type
+    mm2(<font color=orange>Security-Metrics: Risk Dashboard):::type
+    mm3(<font color=orange>Security Reviews):::type
+    mm5(<font color=orange>ecurity Insights Spec ):::type
+
+end
+    click mm "https://github.com/ossf/wg-identifying-security-threats" "Metrics & Metadata"
+    click mm1 "https://github.com/ossf/security-insights-spec" "Security Insights"
+    click mm2 "https://github.com/ossf/Project-Security-Metrics" "Security-Metrics: Risk Dashboard"
+    click mm3 "https://github.com/ossf/security-reviews" "Security Reviews"
+    click mm4 "https://github.com/ossf/security-insights-spec" "ecurity Insights Spec"
+
+
+scp("<b><i>Securing Critical Projects WG</b></i> \n Identification of critical \nopen source projects")
+scp --- scpA
+
+subgraph scpA[ ]
+    style scpA fill:#491b86,stroke:#FFF,stroke-width:4px
+    direction LR
+    scp1(<font color=white>List of Critical OS Prj, components, & Frameworks):::type
+    scp2(<font color=orange>Criticality Score):::type
+    scp3(<font color=white>Harvard study):::type
+    scp5(<font color=white>Package Analysis/Feeds):::type
+
+end
+    click scp "https://github.com/ossf/wg-securing-critical-projects" "Securing Critical Projects"
+    click scp1 "https://docs.google.com/spreadsheets/d/1ONZ4qeMq8xmeCHX03lIgIYE4MEXVfVL6oj05lbuXTDM/edit" "List of Critical OS Prj, components, & Frameworks"
+    click scp2 "https://github.com/ossf/criticality_score" "criticality_score"
+    click scp3 "https://www.coreinfrastructure.org/programs/census-program-ii/" "Harvard study"
+    click scp4 "https://github.com/ossf/package-analysis" "Package Analysis"
+
+subgraph note
+    direction LR
+    Y(<i><b>Initiatives in italic are seeking members and actively meeting</i></b>):::type
+    Z(<i><b><font color=orange>Projects are Orange</i></b>):::type
+    X(<i><b><font color=white>SIGs are White</i></b>):::type
+end
+
+
+
+wg(" ")
+wg ~~~~~ wgA
+
+subgraph wgA[ ]
+    style wgA fill:#ececff,stroke:#FFF,stroke-width:4px
+    direction LR
+    wg1(<i><b><<font color=black>AI/ML Security WG</i></b>):::type
+    wg2(<i><b><<font color=black>DevRel Community</i></b>):::type
+    wg3(<i><b><<font color=black>Diversity, Equity, & Inclusion WG</i></b>):::type
+
+end
+    click wg1 "https://github.com/ossf/ai-ml-security" "AI/ML Security"
+    click wg2 "https://github.com/ossf/DevRel-community" "DevRel"
+    click wg3 "https://openssf.slack.com/archives/C068TF7AH0U" "Diversity, Equity, & Inclusion"
+
+vdA ~~~~ ss 
+bpA ~~~~ eu
+mmA ~~~~ st
+scA ~~~~ scp
+
+
+mmA ~~~~~~ note
+bpA ~~~ wg
+```
 
 
 
