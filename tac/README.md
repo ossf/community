@@ -5,7 +5,7 @@ This is a top level group.
  The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
 
-The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives of the OpenSSF.
+The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF.
 
 ## Motivation
 
@@ -36,6 +36,8 @@ TBD
 TBD
 
 ## Get Involved
+
+Although the TAC is composed of a set of official members listed below, any community member is welcome to participate in the TAC discussions.
 
 Official communications occur on the [TAC mailing list](https://lists.openssf.org/g/openssf-tac/topics). [Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
 
@@ -88,8 +90,8 @@ Meetings are also recorded and posted to the [OpenSSF YouTube channel](https://w
 | ---------------- | :--------: | ------------------------------ | ------------ | --------------------------|
 | Arnaud J Le&nbsp;Hors | Vice Chair | lehors@us.ibm.com              | IBM          | April 2023 - March 2024\* |
 | Bob Callaway     |  | bcallaway@google.com           | Google       | April 2023 - March 2024   |
-| CRob Robinson    | Chair | christopher.robinson@intel.com | Intel        |  April 2023 - March 2024\* |
-| Dan Appelquist   |  | dan@torgo.com                  | Snyk         | August 2023 - March 2024   |
+| Christopher "CRob" Robinson    | Chair | christopher.robinson@intel.com | Intel        |  April 2023 - March 2024\* |
+| Dan Appelquist   |  | dan@torgo.com                  | Independent         | August 2023 - March 2024   |
 | Dustin Ingram    |  | dii@google.com                 | Google       | April 2023 - March 2024   |
 | Michael Lieberman|  | mike@kusari.dev                | Kusari       | July 2023 - March 2024    |
 | Zach Steindler   |  | steiza@github.com              | GitHub       | April 2023 - March 2024\* |
@@ -97,6 +99,8 @@ Meetings are also recorded and posted to the [OpenSSF YouTube channel](https://w
 NOTE: \* marked entries denote OpenSSF Governing Board appointed members, others are community elected.
 
 ## Technical Initiatives
+
+The governance of TIs is documented in [the process section](process). This section provides you with all the information about the different types of initiatives and how they are managed, as well as how to propose a new initiative. It also covers the different levels of maturity a TI can be in, the requirements that must be met to move up to the next level, as well as the benefits that come with each level. 
 
 The following Technical Initiatives have been approved by the TAC:
 
@@ -125,7 +129,7 @@ Diagrams with an overview of the OpenSSF, including its projects and SIGs, are a
 | Best Practices Badge   | https://github.com/coreinfrastructure/best-practices-badge | [Mailing list](https://lists.coreinfrastructure.org/mailman/listinfo/cii-badges) | Best Practices WG   | TBD        |
 | Criticality Score      | https://github.com/ossf/criticality_score        | [Meeting Notes](https://docs.google.com/document/d/1GFslP6elYCx27TUitdigDr1gsOItYkL0Vq7hTB9y4Lo/edit?usp=sharing) | Securing Critical Projects WG   | TBD        |
 | Fuzz Introspector      | https://github.com/ossf/fuzz-introspector        | [Meeting Notes](https://docs.google.com/document/d/1jzxhzIfkOMTagpeFWYoZpMKwHYeO4Gc7Eq5FcMFEw2c/edit?usp=sharing) | Security Tooling WG            | TBD        |
-| GUAC                   | https://github.com/guacsec/guac                  | TBD    | TBD        | Supply Chain Integrity WG | Incubating |
+| GUAC                   | https://github.com/guacsec/guac                  | [Meeting Notes](https://docs.google.com/document/d/1ImSlr_t3WNZ3zWqpmfqkw1mi6_nkv3enkQ7snWDomKA/edit)  | Supply Chain Integrity WG | Incubating |
 | gittuf | https://github.com/gittuf/gittuf | TBD | Supply Chain Integrity WG | Sandbox |
 | OSV Schema             | https://github.com/ossf/osv-schema               | [Meeting Notes](https://docs.google.com/document/d/1jzqhW9SK9QRA39fQz0RiAkvpRWB0xztt1TAFJEseTlA/edit?usp=sharing) | Vulnerability Disclosures WG   | TBD        |
 | Package Analysis       | https://github.com/ossf/package-analysis         | [Meeting Notes](https://docs.google.com/document/d/1GFslP6elYCx27TUitdigDr1gsOItYkL0Vq7hTB9y4Lo/edit) | Securing Critical Projects WG   | TBD        |

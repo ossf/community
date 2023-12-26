@@ -105,6 +105,7 @@ TBD
 -   [Default Scorecard Checks](#scorecard-checks)
 -   [Detailed Check Documentation](docs/checks.md) (Scoring Criteria, Risks, and
     Remediation)
+-   [Beginner's Guide to Scorecard Checks](#beginners-guide-to-scorecard-checks)
 
 ## Other Important Recommendations
 -   [Two-factor Authentication (2FA)](#two-factor-authentication-2fa)
@@ -162,10 +163,10 @@ metrics. Prominent projects that use Scorecard include:
 
 ### View a Project's Score
 
-To see scores for projects regularly scanned by Scorecard, navigate to the webviewer, replacing the placeholder text with the platform, user/org, and repository name: 
+To see scores for projects regularly scanned by Scorecard, navigate to the webviewer, replacing the placeholder text with the platform, user/org, and repository name:
 https://securityscorecards.dev/viewer/?uri=<github_or_gitlab>.com/<user_name_or_org>/<repository_name>.
 
-For example: 
+For example:
  - [https://securityscorecards.dev/viewer/?uri=github.com/ossf/scorecard](https://securityscorecards.dev/viewer/?uri=github.com/ossf/scorecard)
  - [https://securityscorecards.dev/viewer/?uri=gitlab.com/fdroid/fdroidclient](https://securityscorecards.dev/viewer/?uri=gitlab.com/fdroid/fdroidclient)
 
@@ -333,6 +334,10 @@ Name        | Description                               | Risk Level | Token Req
 To see detailed information about each check, its scoring criteria, and
 remediation steps, check out the [checks documentation page](docs/checks.md).
 
+### Beginner's Guide to Scorecard Checks
+
+For a guide to the checks you should use when getting started, see the [beginner's guide to scorecard checks](docs/beginner-checks.md).
+
 ### Two-factor Authentication (2FA)
 
 [Two-factor Authentication (2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) adds an extra layer of security when logging into websites or apps. 2FA protects your account if your password is compromised by requiring a second form of authentication, such as codes sent via SMS or authentication app, or touching a physical security key.
@@ -398,7 +403,7 @@ To report a security issue, please follow instructions [here](SECURITY.md).
 
 ### Join the Scorecards Project Meeting
 
-#### Zoom 
+#### Zoom
 
 We meet every other Thursday - 4p ET on this [zoom link](https://zoom.us/j/98835923979?pwd=RG5JZ3czZEtmRDlGdms0ZktmMFQvUT09).
 
