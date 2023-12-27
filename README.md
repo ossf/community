@@ -203,10 +203,202 @@ mmA ~~~~~~ note
 bpA ~~~ wg
 ```
 
+## Projects by Work Group
+### Securing Critical Projects Work Group
+#### Allstar 
+<img align="right" src="https://github.com/ossf/community/assets/51727488/bc8deed2-6544-4a84-a603-3e9b0f83d595" width="250"  alt="image">
 
+Allstar is a GitHub App that continuously monitors GitHub organizations or repositories for adherence to security best practices. If Allstar detects a security policy violation, it creates an issue to alert the repository or organization owner. For some security policies, Allstar can also automatically change the project setting that caused the violation, reverting it to the expected state.
+
+Allstar’s goal is to give you finely tuned control over the files and settings that affect the security of your projects. You can choose which security policies to monitor at both the organization and repository level, and how to handle policy violations. You can also develop or contribute new policies.
+
+Currently, Allstar meets as part of the Scorecard meetings
+
+<br clear="all"/>
+
+
+#### Criticality Score
+
+A project's criticality score defines the influence and importance of a project. It is a number between 0 (least-critical) and 1 (most-critical). It is based on the following algorithm by Rob Pike:
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/7c6b5199-7896-4f72-972b-9d116ff39fa5" width="359" height="96" alt="image">
+
+We have the Goals
+- Generate a criticality score for every open source project.
+- Create a list of critical projects that the open source community depends on.
+- Use this data to proactively improve the security posture of these critical projects.
+
+
+
+Currently, Criticality Score meets as part of the Securing Critical Projects Work Group. Join us every other Thursday.
+
+<br clear="all"/>
+
+
+#### Package Analysis / Feeds
+
+The Package Analysis project analyses the capabilities of packages available on open source repositories. The project looks for behaviors that indicate malicious software: 
+
+- What files do they access? 
+- What addresses do they connect to? 
+- What commands do they run? 
+
+The project also tracks changes in how packages behave over time, to identify when previously safe software begins acting suspiciously. 
+
+This effort is meant to improve the security of open source software by detecting malicious behavior, informing consumers selecting packages, and providing researchers with data about the ecosystem. 
+
+This code is designed to work with the
+[Package Feeds](https://github.com/ossf/package-feeds) project,
+and originally started there.
+
+If you want to get involved or have ideas you'd like to chat about, we discuss this project in the OSSF Securing Critical Projects Working Group meetings.
+
+<br clear="all"/>
+
+<hr>
+
+### Best Practices Work Group
+#### Best Practices Badge
+<img align="right" src="https://github.com/ossf/community/assets/51727488/1494160e-5e34-41e9-8158-b1b47f8842f7" width="300" alt="image">
+
+We help identify the best practices for Free/Libre and Open Source Software (FLOSS) and implement a badging system for those best practices. The "BadgeApp" badging system is a simple web application that lets projects self-certify that they meet the criteria and show a badge. The real goal of this project is to encourage projects to apply best practices, and to help users determine which FLOSS projects do so. We believe that FLOSS projects that implement best practices are more likely to produce better software, including more secure software.
+
+See the [OpenSSF Best Practices badge website]([url](https://www.bestpractices.dev/en)) if you want to try to get a badge.
+
+Currently, we are not meeting but join us on the slack channel [#wg_best_practices_ossdev](https://openssf.slack.com/archives/C01AHCRP8BT) to participate in the conversation!
+
+<br clear="all"/>
+
+#### OpenSSF Scorecard
+
+**HELP WANTED**
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/a8609d21-1d6a-4f13-b126-c168e990ccea" width="200" alt="image">
+
+We created OpenSSF Scorecard to help open source maintainers improve their security best practices and to help open source consumers judge whether their dependencies are safe.
+
+OpenSSF Scorecard is an automated tool that assesses a number of essential heuristics ("checks") associated with software security and assigns each check a score of 0-10. You can use these scores to understand specific areas to improve in order to strengthen the security posture of your project. You can also assess the risks that dependencies introduce and make informed decisions about accepting these risks, evaluating alternative solutions, or working with the maintainers to make improvements.
+
+Currently, we are meeting at many convenient times; Check the [OpenSSF Google Calander](https://calendar.google.com/calendar/u/0?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for a time that fits your needs. 
+
+<br clear="all"/>
+<hr>
+
+### Security Tooling Work Group
+#### Fuzz Introspector	
+Fuzz introspector is a tool to help fuzzer developers to get an understanding of their fuzzer’s performance and identify any potential blockers. Fuzz introspector aggregates the fuzzers’ functional data like coverage, hit frequency, entry points, etc to give the developer a birds eye view of their fuzzer. This helps with identifying fuzz bottlenecks and blockers and eventually helps in developing better fuzzers.
+
+Fuzz-introspector aims to improve fuzzing experience of a project by guiding on whether you should:
+- introduce new fuzzers to a fuzz harness
+- modify existing fuzzers to improve the quality of your harness.
+  
+We meet monthly on the first Tuesday, join in the conversation
+
+<br clear="all"/>
+
+#### SBOMit
+
+<img align="right" src="https://github.com/ossf/community/assets/51727488/d0e2ac1f-74f0-4f43-8195-17d9434cf329" width="500"  alt="image">
+
+We created OpenSSF Scorecard to help open source maintainers improve their security best practices and to help open source consumers judge whether their dependencies are safe.
+
+OpenSSF Scorecard is an automated tool that assesses a number of essential heuristics ("checks") associated with software security and assigns each check a score of 0-10. You can use these scores to understand specific areas to improve in order to strengthen the security posture of your project. You can also assess the risks that dependencies introduce and make informed decisions about accepting these risks, evaluating alternative solutions, or working with the maintainers to make improvements.
+
+Currently, we every other Wednesday; Check the [OpenSSF Google Calander](https://calendar.google.com/calendar/u/0?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for a time that fits your needs. 
+Or join us on the slack channel [#sbomit](https://openssf.slack.com/archives/C04U3BHL0AE) to join the conversation.
+
+<br clear="all"/>
+<hr>
+
+### Supply Chain Integrity Work Group
+#### GUAC
+
+
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/c6aa7dc1-5d8a-4269-bb5b-2258ae473329" alt="image">
+
+Currently, we have office hours and community meetings; Check the [OpenSSF Google Calander](https://calendar.google.com/calendar/u/0?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for a time that fits your needs. 
+
+Or join us on the slack channel [#guac](https://openssf.slack.com/archives/C03U677QD46) to join the conversation.
+
+<br clear="all"/>
+
+#### gittuf
+
+#### SLSA Tooling	
+
+<br clear="all"/>
+<hr>
+
+### Vulnerability Disclosures Work Group
+#### OSV Schema	
+
+This is the repository for the Open Source Vulnerability schema (OSV Schema), which is currently exported by:
+- [AlmaLinux](https://github.com/AlmaLinux/osv-database)
+- [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb)
+- [Curl](https://curl.se/docs/vuln.json)
+- [GitHub Security Advisories](https://github.com/github/advisory-database)
+- [Global Security Database](https://github.com/cloudsecurityalliance/gsd-database)
+- [Go Vulnerability Database](https://github.com/golang/vulndb)
+- [Haskell Security Advisories](https://github.com/haskell/security-advisories)
+- [LoopBack Advisory Database](https://github.com/loopbackio/security/tree/main/advisories)
+- [OSS-Fuzz](https://github.com/google/oss-fuzz-vulns)
+- [OSV.dev maintained converters](https://github.com/google/osv.dev#current-data-sources) (Debian, Alpine, NVD)
+- [PyPI Advisory Database](https://github.com/pypa/advisory-database)
+- [Python Software Foundation Database](https://github.com/psf/advisory-database)
+- [RConsortium Advisory Database](https://github.com/RConsortium/r-advisory-database)
+- [Rocky Linux](https://distro-tools.rocky.page/apollo/openapi/#osv)
+- [Rust Advisory Database](https://github.com/RustSec/advisory-db)
+- [VMWare Photon OS](https://github.com/vmware/photon/wiki/Security-Advisories) (unofficial)
+
+Currently, we are not meeting but join us on the slack channel [#osv_schema](https://openssf.slack.com/archives/C03K6SZBH2S) to participate in the conversation!
+
+
+<br clear="all"/>
+<hr>
+
+### Securing Software Repositories Work Group
+#### Repository Service for TUF	
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/e2c9c29e-07e6-47e8-80c9-0e4ccdf4af24" width="350" alt="image">
+
+<br clear="all"/>
+<hr>
+
+### Identifying Security Threats Work Group
+#### Security Insights Spec
+
+#### Security Metrics	
+
+<hr>
+
+### Top Level or Affiliated 
+#### Sigstore
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/e21d7f00-1dee-4c36-90e0-2ca5bbd7abae" width="300" alt="image">
+
+Learn more at [https://sigstore.dev/](https://sigstore.dev/)
+
+We meet every 2 weeks on Tuesday
+<br clear="all"/>
+<br>
+
+#### Core Toolchain Infrastructure	
+**Coming soon**
+
+<br>
+
+#### Alpha Omega	
+<img align="left" src="https://github.com/ossf/community/assets/51727488/75080941-9f8d-4df9-9a2d-db560ac47215" width="300" alt="image">
+
+Alpha-Omega is an associated project of the OpenSSF, established in February 2022, funded by Microsoft, Google, and Amazon, and with a mission to protect society by catalyzing sustainable security improvements to the most critical open source software projects and ecosystems. The project aims to build a world where critical open source projects are secure and where security vulnerabilities are found and fixed quickly.
+
+We meet on the first Wednesday of each month or join us on the slack channel [#alpha_omega](https://openssf.slack.com/archives/C02LUUWQZNK) to participate in the conversation!
+<br clear="all"/>
+
+<hr>
 
 ## Repository Information
-
 ### [tac](https://github.com/ossf/tac)
 **Original Repository:** [tac](https://github.com/ossf/tac)
 
