@@ -20,7 +20,7 @@ const sectionOrder = [
   ["Vision"],
   ["Scope"],
   ["Current Work", "Active Projects"],
-  ["Quick Start"],
+  ["Contribute", "Quick Start"],
   ["Get Involved"],
   ["Meeting times"],
   ["Meeting Notes"],

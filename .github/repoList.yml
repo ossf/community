@@ -8,6 +8,9 @@
       url: https://github.com/SecurityCRob
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices
+  meeting-time: Every other Tuesday 10:00a ET
+  zoom: https://zoom.us/j/96695083462?pwd=M3hWRTN1U2RKdWwyTUtpMUl0MGVEQT09 
+  notes: https://docs.google.com/document/d/1x-fMIt6ZIV6SM-M29xEVKeB505GbDzSIVXg-8uF_FQU/edit#
   description: This is a top level group
   structure: 1
   leads:
@@ -94,6 +97,9 @@
       url: https://github.com/david-a-wheeler
 - oldRepoName: scorecard
   newRepoName: project-scorecard
+  meeting-time: Every other Thursday - 4p ET
+  zoom: https://zoom.us/j/98835923979?pwd=RG5JZ3czZEtmRDlGdms0ZktmMFQvUT09
+  notes: https://docs.google.com/document/d/1dB2U7_qZpNW96vtuoG7ShmgKXzIg6R5XT5Tc-0yz6kE/edit#
   description: >
     This is under the Best Practices working group.
   structure: 1-D
@@ -124,6 +130,9 @@
       url: https://github.com/SecurityCRob
 - oldRepoName: education
   newRepoName: sig-education
+  zoom: https://zoom.us/j/94621219538?pwd=dGl2dko0R01kRXFmVlZYWVFwM1FSQT09
+  notes: https://docs.google.com/document/d/18GBwvQJNcPnwxKrnp43DhBZC7K1JM0xzGkDoKh5mu8U/edit#
+  meeting-time: Every other Wednesday - 9:00a ET/1400 UTC
   description: >
     This is under the Best Practices working group.
   structure: 1-H
@@ -133,6 +142,8 @@
       url: https://github.com/SecurityCRob
 - oldRepoName: Memory-Safety
   newRepoName: sig-memory-Safety
+  zoom: https://zoom.us/j/92215549251
+  note: https://docs.google.com/document/d/1Ehpp1UmAIqMs0ZdKr15sd5MS48OeaGKB9H40htVehs4/edit?usp=sharing
   description: This is under the Best Practices working group.
   structure: 1-AJ
   leads:
@@ -277,9 +288,15 @@
 
 - oldRepoName: DEI-SIG
   newRepoName: sig-dei
+  meeting-time: Every other Tuesday - 11:00a ET/1600 UTC
+  zoom: https://zoom.us/j/91587450609
+  notes: https://docs.google.com/document/d/1LdQ07veOcJ596Vo3aQZCFy-HHeEO7cHnbE_6u_uq9Fk/edit#
   description: TBD
   structure: TBD
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+
+
+
