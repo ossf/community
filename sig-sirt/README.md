@@ -42,6 +42,10 @@ TBD
 
 TBD
 
+## Contribute
+
+TBD
+
 ### Quick Start
 - The OSS-SIRT proposed [plan](https://github.com/ossf/SIRT/tree/main/plan)
 - Areas that need contributions

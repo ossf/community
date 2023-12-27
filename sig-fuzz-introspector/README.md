@@ -42,6 +42,10 @@ TBD
 
 TBD
 
+## Contribute
+### Code of Conduct
+Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Quick Start
 
 TBD
@@ -107,10 +111,6 @@ The workflow of fuzz-introspector can be visualised as follows:
 ![Functions table](/doc/img/fuzz-introspector-architecture.png)
 
 A more detailed description is available in [doc/Architecture](/doc/Architecture.md)
-
-## Contribute
-### Code of Conduct
-Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Code of Conduct
 Before contributing, please follow our [Code of Conduct](CODE_OF_CONDUCT.md).

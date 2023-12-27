@@ -46,6 +46,15 @@ TBD
 
 TBD
 
+## Contribute
+
+-   [Report Problems](#report-problems)
+-   [Code of Conduct](CODE_OF_CONDUCT.md)
+-   [Contribute to Scorecard ](CONTRIBUTING.md)
+-   [Add a New Check](checks/write.md)
+-   [Connect with the Scorecard Community](#connect-with-the-scorecard-community)
+-   [Report a Security Issue](SECURITY.md)
+
 ## Quick Start
 
 TBD
@@ -112,15 +121,6 @@ TBD
 
 ## Scoring
 -   [Aggregate Score](#aggregate-score)
-
-## Contribute
-
--   [Report Problems](#report-problems)
--   [Code of Conduct](CODE_OF_CONDUCT.md)
--   [Contribute to Scorecard ](CONTRIBUTING.md)
--   [Add a New Check](checks/write.md)
--   [Connect with the Scorecard Community](#connect-with-the-scorecard-community)
--   [Report a Security Issue](SECURITY.md)
 
 ## FAQ
 

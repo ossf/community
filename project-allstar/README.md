@@ -37,6 +37,11 @@ TBD
 
 TBD
 
+## Contribute
+- [Contributing](#contributing)
+________
+________
+
 ## Quick Start
 
 TBD
@@ -101,11 +106,6 @@ TBD
 - [Configuration Definitions](#configuration-definitions)
 - [Example Configurations](#example-config-repository)
 - [Run Your Own Instance of Allstar](operator.md)
-
-## Contribute
-- [Contributing](#contributing)
-________
-________
 
 ### What is Allstar?
 
