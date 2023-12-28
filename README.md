@@ -472,7 +472,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link)
 
-** Our Group Lead(s):**- [Christopher CRob Robinson](https://github.com/SecurityCRob)
+[Join us on Slack channel #tac](https://openssf.slack.com/archives/C01AAV2TTEG)
+
+ **Our Group Lead(s):**
+- [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 ### [wg-best-practices](https://github.com/ossf/wg-best-practices)
 
@@ -485,7 +488,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link)
 
-** Our Group Lead(s):**- [Christopher CRob Robinson](https://github.com/SecurityCRob)
+[Join us on Slack channel #wg_best_practices_ossdev](https://openssf.slack.com/archives/C01AHCRP8BT)
+
+ **Our Group Lead(s):**
+- [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 ### [ai-ml-security](https://github.com/ossf/ai-ml-security)
 
@@ -498,7 +504,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1YNP-XJ9jpTjM6ekKOBgHH8-avAws2DVKeCpn858siiQ/edit#heading=h.l453rgplh0xw)
 
-** Our Group Lead(s):**- [Mihai Maruseac](https://github.com/mihaimaruseac)
+[Join us on Slack channel #wg_ai_ml_security](https://openssf.slack.com/archives/C0587E513KR)
+
+ **Our Group Lead(s):**
+- [Mihai Maruseac](https://github.com/mihaimaruseac)
 
 ### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
 
@@ -511,7 +520,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1AXkapzjZ-SxwcBN7rZeSstkzdapd3sbzfHDxz6A59Ic/edit)
 
-** Our Group Lead(s):**- [Christopher CRob Robinson](https://github.com/SecurityCRob)
+[Join us on Slack channel #wg_vulnerability_disclosures](https://openssf.slack.com/archives/C019Y2A28Q6)
+
+ **Our Group Lead(s):**
+- [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 ### [wg-dei](https://github.com/ossf/wg-dei)
 
@@ -524,7 +536,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1zGTOJdFVIMnixT3EFQ6_bbQ0iy7f4Z4TxhX9A5VY9TM/edit)
 
-** Our Group Lead(s):**- [Jay White](https://github.com/camaleon2016)
+[Join us on Slack channel #wg_dei](https://openssf.slack.com/archives/C068TF7AH0U)
+
+ **Our Group Lead(s):**
+- [Jay White](https://github.com/camaleon2016)
 
 ### [wg-endusers](https://github.com/ossf/wg-endusers)
 
@@ -537,7 +552,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1JrKetG5zeDqUn9n7SKI3L0oR-S9k0r4YMHFcqhZ7WNU/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Jonathan Meadows](https://github.com/jonmuk)
+[Join us on Slack channel #wg_end_users](https://openssf.slack.com/archives/C03488JMKNX)
+
+ **Our Group Lead(s):**
+- [Jonathan Meadows](https://github.com/jonmuk)
 
 ### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
 
@@ -550,7 +568,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1XimygAYGbG2aofAiBD9--ZMTALdnbdbVw53R851ZZKY/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Michael Scovetta](https://github.com/scovetta)
+[Join us on Slack channel #wg_identifying_security_threats](https://openssf.slack.com/archives/C01A50B978T)
+
+ **Our Group Lead(s):**
+- [Michael Scovetta](https://github.com/scovetta)
 
 ### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
 
@@ -563,7 +584,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1bFpHEbbEUf2rWiYXQY7cGg1HrmI9TqwaD8U_3Hi9A8I/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Ryan Ware](https://github.com/ware)
+[Join us on Slack channel #wg_security_tooling](https://openssf.slack.com/archives/C019Q1VEA87)
+
+ **Our Group Lead(s):**
+- [Ryan Ware](https://github.com/ware)
 
 ### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
 
@@ -576,7 +600,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1HzA4M4toiExUYQAkuLqimy4EuuunHagUQ7rZKJDb1Os/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Dustin Ingram](https://github.com/di)
+[Join us on Slack channel #wg_securing_software_repos](https://openssf.slack.com/archives/C034CBLMQ9G)
+
+ **Our Group Lead(s):**
+- [Dustin Ingram](https://github.com/di)
 
 ### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
 
@@ -589,7 +616,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1NzmoZFuyPKmmX7P1GXADfNNmHFDkGHXyE0TfQFX2daw/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Isaac Hepworth](https://github.com/hepwori)
+[Join us on Slack channel #wg_supply_chain_integrity](https://openssf.slack.com/archives/C01A1MA7A1K)
+
+ **Our Group Lead(s):**
+- [Isaac Hepworth](https://github.com/hepwori)
 - [Dan Lorenc](https://github.com/dlorenc)
 
 ### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
@@ -603,7 +633,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 [Here are our meeting notes](https://docs.google.com/document/d/1j_efLVDXGoKgfHHZbJtpBxd_Gso1ghHBdK3NfEVc15o/edit?usp=sharing)
 
-** Our Group Lead(s):**- [Jeff Mendoza](https://github.com/jeffmendoza)
+[Join us on Slack channel #wg_securing_critical_projects](https://openssf.slack.com/archives/C019Y2AR76J)
+
+ **Our Group Lead(s):**
+- [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
 
