@@ -8,6 +8,7 @@ This is the starting point for the community to learn how to contribute.
 
 We keep a [living spreadsheet of all the working groups, projects, and special interest groups](https://docs.google.com/spreadsheets/d/140czMjqhe9YxLBTx4rWkjHxWEWqD_tVQ1s8l9Q2PE2g/edit#gid=1040608229) that contains meeting links, notes and most recent TAC updates. 
 
+
 ## Overall structure
 
 Here is the structure of the OpenSSF Work Groups. Click on each Work Group, Special Interest Group, or Project to learn more about that Technical initiative. Note that those in _italic_ are seeking new members right now!
