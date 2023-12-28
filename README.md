@@ -457,3 +457,112 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 <hr>
 
+
+
+## Work Group Information
+
+### [tac](https://github.com/ossf/tac)
+**Original Repository:** [tac](https://github.com/ossf/tac)
+**Description:** "The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/94234355704?password=939d8506-7e58-4072-89e3-6b59259ee9db)
+**Meeting Times:** None
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link)
+**Group Lead(s):**- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [wg-best-practices](https://github.com/ossf/wg-best-practices)
+**Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
+**Description:** "Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/97123533582?password=51bc1484-f12d-4382-b768-6d8f3c9b08c2)
+**Meeting Times:** None
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link)
+**Group Lead(s):**- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [ai-ml-security](https://github.com/ossf/ai-ml-security)
+**Original Repository:** [ai-ml-security](https://github.com/ossf/ai-ml-security)
+**Description:** "We formed in September 2023 after the growing problem of AI/ML Security in open source. Join is to discuss the possible security impacts of AI / ML technologies on open source software, maintainers, communities, and their adopters, along with how OSS projects could safely or effectively leverage LLMs to improve their security posture."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/97349085860?password=3d2b70af-6d20-4b45-ac5b-de4e99e964ae)
+**Meeting Times:** Every other Monday 1:00p ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1YNP-XJ9jpTjM6ekKOBgHH8-avAws2DVKeCpn858siiQ/edit#heading=h.l453rgplh0xw)
+**Group Lead(s):**- [Mihai Maruseac](https://github.com/mihaimaruseac)
+
+### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+**Original Repository:** [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+**Description:** "We are improving the overall security of the OSS ecosystem by helping advance vulnerability reporting and communication."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/93701721327?password=a2e18922-298a-4d84-ba1f-55af95f0f5cc)
+**Meeting Times:** Every other Wednesday 11:00a ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1AXkapzjZ-SxwcBN7rZeSstkzdapd3sbzfHDxz6A59Ic/edit)
+**Group Lead(s):**- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+
+### [wg-dei](https://github.com/ossf/wg-dei)
+**Original Repository:** [wg-dei](https://github.com/ossf/wg-dei)
+**Description:** "We formed in December 2023 to help increase representation and strengthen the overall effectiveness of the cybersecurity workforce."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/98853031629?password=a356aa22-ab31-4e2e-a8a0-9ecb45af84bd)
+**Meeting Times:** Every other Tuesday 11:00a ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1zGTOJdFVIMnixT3EFQ6_bbQ0iy7f4Z4TxhX9A5VY9TM/edit)
+**Group Lead(s):**- [Jay White](https://github.com/camaleon2016)
+
+### [wg-endusers](https://github.com/ossf/wg-endusers)
+**Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
+**Description:** "We represent the interests of public and private sector organizations that primarily consume open source rather than produce it. Right now, we are focusing on threat modeling. Join us to see how threat modeling works and get your ideas in the current scope."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/95757110915?password=21683129-f958-4ea8-a36d-1fffaa06f49c)
+**Meeting Times:** Every Monday 12:30p ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1JrKetG5zeDqUn9n7SKI3L0oR-S9k0r4YMHFcqhZ7WNU/edit?usp=sharing)
+**Group Lead(s):**- [Jonathan Meadows](https://github.com/jonmuk)
+
+### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
+**Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
+**Description:** "Now called Metrics & Metadata! We enable informed confidence in the security of OSS by collecting, curating, and communicating relevant metrics and metadata. Our WG has mostly projects that focus on the code to get this done."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/99771890101?password=9f10219a-9545-4047-80fb-b5ca75bc850c)
+**Meeting Times:** Every other Wednesday 1:00p ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1XimygAYGbG2aofAiBD9--ZMTALdnbdbVw53R851ZZKY/edit?usp=sharing)
+**Group Lead(s):**- [Michael Scovetta](https://github.com/scovetta)
+
+### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
+**Original Repository:** [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
+**Description:** "Our mission is to provide the best security tools for open source developers and make them universally accessible. We talk a lot about SBOMs currently."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/94897563315?password=7f03d8e7-7bc9-454e-95bd-6e1e09cb3b0b)
+**Meeting Times:** Every other Friday 11:00a ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1bFpHEbbEUf2rWiYXQY7cGg1HrmI9TqwaD8U_3Hi9A8I/edit?usp=sharing)
+**Group Lead(s):**- [Ryan Ware](https://github.com/ware)
+
+### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
+**Original Repository:** [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
+**Description:** "We provide a collaborative environment for aligning on the introduction of new tools and technologies to strengthen and secure software repositories. Our current project is Repository Service for TUF, join to learn more."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/98058137343?password=28dafc6e-cfcf-440d-bb63-ca73a1739f06)
+**Meeting Times:** Every 4 weeks on Wednesday at 6:00p ET and Every 4 weeks on Thursday at 9:00pa ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1HzA4M4toiExUYQAkuLqimy4EuuunHagUQ7rZKJDb1Os/edit?usp=sharing)
+**Group Lead(s):**- [Dustin Ingram](https://github.com/di)
+
+### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
+**Original Repository:** [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
+**Description:** "We are helping people understand and make decisions on the provenance of the code they maintain, produce and use. We have great projects like GUAC, SLSA and gittuf that you can work with."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/96297611656?password=f030337b-dc4d-43d4-ac55-26db510f3d1c)
+**Meeting Times:** Every other Wednesday 12:00p ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1NzmoZFuyPKmmX7P1GXADfNNmHFDkGHXyE0TfQFX2daw/edit?usp=sharing)
+**Group Lead(s):**- [Isaac Hepworth](https://github.com/hepwori)
+- [Dan Lorenc](https://github.com/dlorenc)
+
+### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
+**Original Repository:** [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
+**Description:** "Wonder how critical OSS projects are selected? Then join us! We have progress reports every other week on each project/SIG so it is easy to jump in and get going."
+
+**Meeting Link:** [Zoom Meeting](https://zoom-lfx.platform.linuxfoundation.org/meeting/95053207038?password=41a2966d-c96b-42d3-b2ee-635fc1dbaf51)
+**Meeting Times:** Every 4 weeks on Thursday 12:00p ET
+**Meeting Notes:** [Google Docs](https://docs.google.com/document/d/1j_efLVDXGoKgfHHZbJtpBxd_Gso1ghHBdK3NfEVc15o/edit?usp=sharing)
+**Group Lead(s):**- [Jeff Mendoza](https://github.com/jeffmendoza)
+- [Amir Hossin Montazery](https://github.com/amirhmh3)
+
+
+
+## End of Work Group Information
+

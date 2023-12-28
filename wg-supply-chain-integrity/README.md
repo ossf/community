@@ -1,10 +1,10 @@
 # Supply Chain Integrity WG
 
-This is a top level group.
+"We are helping people understand and make decisions on the provenance of the code they maintain, produce and use. We have great projects like GUAC, SLSA and gittuf that you can work with."
 
 
  The designated lead(s):
-- [Kim Lewandowski](https://github.com/kimsterv)
+- [Isaac Hepworth](https://github.com/hepwori)
 - [Dan Lorenc](https://github.com/dlorenc)
 
 # Supply Chain Integrity WG

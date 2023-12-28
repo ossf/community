@@ -1,6 +1,7 @@
 # Best Practices for Open Source Developers
 
-This is a top level group
+"Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
+
 
  The designated lead(s):
 - [Christopher "CRob" Robinson](https://github.com/SecurityCRob)

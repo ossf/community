@@ -1,6 +1,6 @@
 # WG Securing Critical Projects
 
-This is a top level group.
+"Wonder how critical OSS projects are selected? Then join us! We have progress reports every other week on each project/SIG so it is easy to jump in and get going."
 
 
  The designated lead(s):
