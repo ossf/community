@@ -4,7 +4,7 @@
   zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/94234355704?password=939d8506-7e58-4072-89e3-6b59259ee9db
   notes: https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link
   description: >
-  description: This is a top level group.
+    "The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF."
   structure: Technical Advisory Council
   leads:
     - name: Christopher "CRob" Robinson
@@ -17,9 +17,6 @@
   notes: https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link
   description: >
     "Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
-  - We envision a world where software developers can easily IDENTIFY good practices, requirements and tools that help them create and maintain secure world-class software, helping foster a community where security knowledge is shared and amplified.
-  - We seek to provide means to LEARN techniques of writing and identifying secure software using methods best suited to learners of all types.
-  - We desire to provide tools to help developers ADOPT these good practices seamlessly into their daily work."
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
@@ -59,7 +56,7 @@
       url: https://github.com/camaleon2016
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
-   meeting-time: Every Monday 12:30p ET
+  meeting-time: Every Monday 12:30p ET
   zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/95757110915?password=21683129-f958-4ea8-a36d-1fffaa06f49c
   notes: https://docs.google.com/document/d/1JrKetG5zeDqUn9n7SKI3L0oR-S9k0r4YMHFcqhZ7WNU/edit?usp=sharing
   description: >
@@ -81,7 +78,7 @@
       url: https://github.com/scovetta
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
-    meeting-time: Every other Friday 11:00a ET
+  meeting-time: Every other Friday 11:00a ET
   zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/94897563315?password=7f03d8e7-7bc9-454e-95bd-6e1e09cb3b0b
   notes: https://docs.google.com/document/d/1bFpHEbbEUf2rWiYXQY7cGg1HrmI9TqwaD8U_3Hi9A8I/edit?usp=sharing
   description: >
