@@ -1,6 +1,6 @@
 # Identifying Security Threats in Open Source Projects
 
-This is a top level group.
+Now called Metrics & Metadata! We enable informed confidence in the security of OSS by collecting, curating, and communicating relevant metrics and metadata. Our WG has mostly projects that focus on the code to get this done.
 
 
  The designated lead(s):

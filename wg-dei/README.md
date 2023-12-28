@@ -1,9 +1,10 @@
 # Example .allstar Quickstart Repository
 
-TBD
+We formed in December 2023 to help increase representation and strengthen the overall effectiveness of the cybersecurity workforce.
+
 
  The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+- [Jay White](https://github.com/camaleon2016)
 
 
 

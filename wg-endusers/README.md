@@ -1,6 +1,7 @@
 # OpenSSF End Users
 
-This is a top level group
+We represent the interests of public and private sector organizations that primarily consume open source rather than produce it. Right now, we are focusing on threat modeling. Join us to see how threat modeling works and get your ideas in the current scope.
+
 
  The designated lead(s):
 - [Jonathan Meadows](https://github.com/jonmuk)

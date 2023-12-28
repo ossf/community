@@ -108,12 +108,12 @@ function appendRepoInfoToMainReadme() {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
     newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
-    newSectionContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
-    newSectionContent += `**Description:** ${repoData.description}\n`;
-    newSectionContent += `**Meeting Link:** [Zoom Meeting](${repoData.zoom})\n`;
-    newSectionContent += `**Meeting Times:** ${repoData['meeting-time']}\n`;
-    newSectionContent += `**Meeting Notes:** [Google Docs](${repoData.notes})\n`;
-    newSectionContent += `**Group Lead(s):**`;
+    newSectionContent += `\n ${repoData.description}\n`;
+    newSectionContent += `\n [Join us via this Zoom Link](${repoData.zoom})\n`;
+    newSectionContent += `\n We meet ${repoData['meeting-time']}\n`;
+    newSectionContent += `\n[Here are our meeting notes](${repoData.notes})\n`;
+    newSectionContent += `\n[Join us on Slack channel #${repoData.slack_name}](${repoData.slack_link})\n`;
+    newSectionContent += `\n **Our Group Lead(s):**\n`;
 
     if (repoData && Array.isArray(repoData.leads)) {
       for (const lead of repoData.leads) {

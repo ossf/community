@@ -1,10 +1,10 @@
 # OSSF Security Tooling
 
-This is a top level group.
+Our mission is to provide the best security tools for open source developers and make them universally accessible. We talk a lot about SBOMs currently.
 
 
  The designated lead(s):
-- [Josh Bressers](https://github.com/joshbressers)
+- [Ryan Ware](https://github.com/ware)
 
 Anyone is welcome to join our open discussions related to the group's mission and charter.
 

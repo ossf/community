@@ -1,9 +1,10 @@
 # OpenSSF Technical Advisory Council (TAC)
 
-This is a top level group.
+The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF.
+
 
  The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+- [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF.
 

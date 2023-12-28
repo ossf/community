@@ -1,6 +1,6 @@
 # wg-securing-software-repos
 
-This is a top level group.
+We provide a collaborative environment for aligning on the introduction of new tools and technologies to strengthen and secure software repositories. Our current project is Repository Service for TUF, join to learn more.
 
 
  The designated lead(s):

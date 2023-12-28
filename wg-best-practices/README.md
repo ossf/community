@@ -1,9 +1,10 @@
 # Best Practices for Open Source Developers
 
-This is a top level group
+Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
+
 
  The designated lead(s):
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
+- [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 [![GitHub Super-Linter](https://github.com/ossf/wg-best-practices-os-developers/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
