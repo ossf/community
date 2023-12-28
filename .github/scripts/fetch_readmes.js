@@ -96,8 +96,8 @@ function appendRepoInfoToMainReadme() {
   const mainReadmePath = path.join(__dirname, "..", "..", "README.md");
   let mainReadmeContent = fs.existsSync(mainReadmePath) ? fs.readFileSync(mainReadmePath, "utf8") : "";
 
-  const startMarker = "\n\n## Repository Information\n\n";
-  const endMarker = "\n\n## End of Repository Information\n\n";
+  const startMarker = "\n\n## Work Group Information\n\n";
+  const endMarker = "\n\n## End of Work Group Information\n\n";
 
   const start = mainReadmeContent.indexOf(startMarker);
   const end = mainReadmeContent.indexOf(endMarker);
@@ -107,11 +107,13 @@ function appendRepoInfoToMainReadme() {
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
-
     newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
     newSectionContent += `**Original Repository:** [${repoData.oldRepoName}](${repoUrl})\n`;
-    newSectionContent += `\n **Description:** ${repoData.description}\n`;
-    newSectionContent += `**Leads:**\n`;
+    newSectionContent += `**Description:** ${repoData.description}\n`;
+    newSectionContent += `**Meeting Link:** [Zoom Meeting](${repoData.zoom})\n`;
+    newSectionContent += `**Meeting Times:** ${repoData['meeting-time']}\n`;
+    newSectionContent += `**Meeting Notes:** [Google Docs](${repoData.notes})\n`;
+    newSectionContent += `**Group Lead(s):**`;
 
     if (repoData && Array.isArray(repoData.leads)) {
       for (const lead of repoData.leads) {

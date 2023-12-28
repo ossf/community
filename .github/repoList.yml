@@ -1,5 +1,9 @@
 - oldRepoName: tac
   newRepoName: tac
+  meeting-time: None
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/94234355704?password=939d8506-7e58-4072-89e3-6b59259ee9db
+  notes: https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link
+  description: >
   description: This is a top level group.
   structure: Technical Advisory Council
   leads:
@@ -8,76 +12,116 @@
       url: https://github.com/SecurityCRob
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices
-  meeting-time: Every other Tuesday 10:00a ET
-  zoom: https://zoom.us/j/96695083462?pwd=M3hWRTN1U2RKdWwyTUtpMUl0MGVEQT09 
-  notes: https://docs.google.com/document/d/1x-fMIt6ZIV6SM-M29xEVKeB505GbDzSIVXg-8uF_FQU/edit#
-  description: This is a top level group
-  structure: 1
+  meeting-time: None
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/97123533582?password=51bc1484-f12d-4382-b768-6d8f3c9b08c2
+  notes: https://docs.google.com/document/d/1JY8FREBPCUUFpuv7-4B9EjeS2MLDpel0dbG5DFWrTns/edit?usp=drive_link
+  description: >
+    "Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
+  - We envision a world where software developers can easily IDENTIFY good practices, requirements and tools that help them create and maintain secure world-class software, helping foster a community where security knowledge is shared and amplified.
+  - We seek to provide means to LEARN techniques of writing and identifying secure software using methods best suited to learners of all types.
+  - We desire to provide tools to help developers ADOPT these good practices seamlessly into their daily work."
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+- oldRepoName: ai-ml-security
+  newRepoName: ai-ml-security
+  meeting-time: Every other Monday 1:00p ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/97349085860?password=3d2b70af-6d20-4b45-ac5b-de4e99e964ae
+  notes: https://docs.google.com/document/d/1YNP-XJ9jpTjM6ekKOBgHH8-avAws2DVKeCpn858siiQ/edit#heading=h.l453rgplh0xw
+  description: >
+    "We formed in September 2023 after the growing problem of AI/ML Security in open source. Join is to discuss the possible security impacts of AI / ML technologies on open source software, maintainers, communities, and their adopters, along with how OSS projects could safely or effectively leverage LLMs to improve their security posture."
+  leads:
+    - name: Mihai Maruseac
+      githubId: mihaimaruseac
+      url: https://github.com/mihaimaruseac
 - oldRepoName: wg-vulnerability-disclosures
   newRepoName: wg-vulnerability-disclosures
+  meeting-time: Every other Wednesday 11:00a ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/93701721327?password=a2e18922-298a-4d84-ba1f-55af95f0f5cc
+  notes: https://docs.google.com/document/d/1AXkapzjZ-SxwcBN7rZeSstkzdapd3sbzfHDxz6A59Ic/edit
   description: >
-    This is a top level group.
-  structure: 2
+    "We are improving the overall security of the OSS ecosystem by helping advance vulnerability reporting and communication."
   leads:
     - name: Christopher "CRob" Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+- oldRepoName: wg-dei
+  newRepoName: wg-dei
+  meeting-time: Every other Tuesday 11:00a ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/98853031629?password=a356aa22-ab31-4e2e-a8a0-9ecb45af84bd
+  notes: https://docs.google.com/document/d/1zGTOJdFVIMnixT3EFQ6_bbQ0iy7f4Z4TxhX9A5VY9TM/edit
+  description: >
+    "We formed in December 2023 to help increase representation and strengthen the overall effectiveness of the cybersecurity workforce."
+  leads:
+    - name: Jay White
+      githubId: camaleon2016
+      url: https://github.com/camaleon2016
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
-  description: This is a top level group
-  structure: 3
+   meeting-time: Every Monday 12:30p ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/95757110915?password=21683129-f958-4ea8-a36d-1fffaa06f49c
+  notes: https://docs.google.com/document/d/1JrKetG5zeDqUn9n7SKI3L0oR-S9k0r4YMHFcqhZ7WNU/edit?usp=sharing
+  description: >
+    "We represent the interests of public and private sector organizations that primarily consume open source rather than produce it. Right now, we are focusing on threat modeling. Join us to see how threat modeling works and get your ideas in the current scope."
   leads:
     - name: Jonathan Meadows
       githubId: jonmuk
       url: https://github.com/jonmuk
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
+  meeting-time: Every other Wednesday 1:00p ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/99771890101?password=9f10219a-9545-4047-80fb-b5ca75bc850c
+  notes: https://docs.google.com/document/d/1XimygAYGbG2aofAiBD9--ZMTALdnbdbVw53R851ZZKY/edit?usp=sharing
   description: >
-    This is a top level group.
-  structure: 4
+    "Now called Metrics & Metadata! We enable informed confidence in the security of OSS by collecting, curating, and communicating relevant metrics and metadata. Our WG has mostly projects that focus on the code to get this done."
   leads:
     - name: Michael Scovetta
       githubId: scovetta
       url: https://github.com/scovetta
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
-  structure: 5
+    meeting-time: Every other Friday 11:00a ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/94897563315?password=7f03d8e7-7bc9-454e-95bd-6e1e09cb3b0b
+  notes: https://docs.google.com/document/d/1bFpHEbbEUf2rWiYXQY7cGg1HrmI9TqwaD8U_3Hi9A8I/edit?usp=sharing
   description: >
-    This is a top level group.
+    "Our mission is to provide the best security tools for open source developers and make them universally accessible. We talk a lot about SBOMs currently."
   leads:
-    - name: Josh Bressers
-      githubId: joshbressers
-      url: https://github.com/joshbressers
+    - name: Ryan Ware
+      githubId: ware
+      url: https://github.com/ware
 - oldRepoName: wg-securing-software-repos
   newRepoName: wg-securing-software-repos
+  meeting-time: Every 4 weeks on Wednesday at 6:00p ET and Every 4 weeks on Thursday at 9:00pa ET 
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/98058137343?password=28dafc6e-cfcf-440d-bb63-ca73a1739f06
+  notes: https://docs.google.com/document/d/1HzA4M4toiExUYQAkuLqimy4EuuunHagUQ7rZKJDb1Os/edit?usp=sharing
   description: >
-    This is a top level group.
-  structure: 6
+    "We provide a collaborative environment for aligning on the introduction of new tools and technologies to strengthen and secure software repositories. Our current project is Repository Service for TUF, join to learn more."
   leads:
     - name: Dustin Ingram
       githubId: di
       url: https://github.com/di
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
+  meeting-time: Every other Wednesday 12:00p ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/96297611656?password=f030337b-dc4d-43d4-ac55-26db510f3d1c
+  notes: https://docs.google.com/document/d/1NzmoZFuyPKmmX7P1GXADfNNmHFDkGHXyE0TfQFX2daw/edit?usp=sharing
   description: >
-    This is a top level group.
-  structure: 7
+    "We are helping people understand and make decisions on the provenance of the code they maintain, produce and use. We have great projects like GUAC, SLSA and gittuf that you can work with."
   leads:
-    - name: Kim Lewandowski
-      githubId: kimsterv
-      url: https://github.com/kimsterv
+    - name: Isaac Hepworth
+      githubId: hepwori
+      url: https://github.com/hepwori
     - name: Dan Lorenc
       githubId: dlorenc
       url: https://github.com/dlorenc
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
+  meeting-time: Every 4 weeks on Thursday 12:00p ET
+  zoom: https://zoom-lfx.platform.linuxfoundation.org/meeting/95053207038?password=41a2966d-c96b-42d3-b2ee-635fc1dbaf51
+  notes: https://docs.google.com/document/d/1j_efLVDXGoKgfHHZbJtpBxd_Gso1ghHBdK3NfEVc15o/edit?usp=sharing
   description: >
-    This is a top level group.
-  structure: 8
+    "Wonder how critical OSS projects are selected? Then join us! We have progress reports every other week on each project/SIG so it is easy to jump in and get going."
   leads:
     - name: Jeff Mendoza
       githubId: jeffmendoza
@@ -85,218 +129,3 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
-
-- oldRepoName: secure-sw-dev-fundamentals
-  newRepoName: sig-secure-sw-dev-fundamentals
-  description: >
-    This is under the Best Practices working group. Full name is Secure Software Development Fundamentals courses SIG.
-  structure: 1-A
-  leads:
-    - name: David Wheeler
-      githubId: david-a-wheeler
-      url: https://github.com/david-a-wheeler
-- oldRepoName: scorecard
-  newRepoName: project-scorecard
-  meeting-time: Every other Thursday - 4p ET
-  zoom: https://zoom.us/j/98835923979?pwd=RG5JZ3czZEtmRDlGdms0ZktmMFQvUT09
-  notes: https://docs.google.com/document/d/1dB2U7_qZpNW96vtuoG7ShmgKXzIg6R5XT5Tc-0yz6kE/edit#
-  description: >
-    This is under the Best Practices working group.
-  structure: 1-D
-  leads:
-    - name: Azeem Shaikh
-      githubId: azeemshaikh38
-      url: https://github.com/azeemshaikh38
-    - name: Laurent Simon
-      githubId: laurentsimon
-      url: https://github.com/laurentsimon
-    - name: Naveen Srinivasan
-      githubId: naveensrinivasan
-      url: https://github.com/naveensrinivasan
-    - name: Risto McGehee
-      githubId: chrismcgehee
-      url: https://github.com/chrismcgehee
-    - name: Stephen Augustus
-      githubId: justaugustus
-      url: https://github.com/justaugustus
-- oldRepoName: great-mfa-project
-  newRepoName: sig-secure-sw-dev-fundamentals
-  description: >
-    This is under the Best Practices working group.
-  structure: 1-E
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: education
-  newRepoName: sig-education
-  zoom: https://zoom.us/j/94621219538?pwd=dGl2dko0R01kRXFmVlZYWVFwM1FSQT09
-  notes: https://docs.google.com/document/d/18GBwvQJNcPnwxKrnp43DhBZC7K1JM0xzGkDoKh5mu8U/edit#
-  meeting-time: Every other Wednesday - 9:00a ET/1400 UTC
-  description: >
-    This is under the Best Practices working group.
-  structure: 1-H
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: Memory-Safety
-  newRepoName: sig-memory-Safety
-  zoom: https://zoom.us/j/92215549251
-  note: https://docs.google.com/document/d/1Ehpp1UmAIqMs0ZdKr15sd5MS48OeaGKB9H40htVehs4/edit?usp=sharing
-  description: This is under the Best Practices working group.
-  structure: 1-AJ
-  leads:
-    - name: Nell Shamrell-Harrington
-      githubId: nellshamrell
-      url: https://github.com/nellshamrell
-
-- oldRepoName: oss-vulnerability-guide
-  newRepoName: sig-oss-vulnerability-guide
-  description: This is under wg-vulnerability-disclosures
-  structure: 2-I
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: SIRT
-  newRepoName: sig-sirt
-  description: This is under wg-vulnerability-disclosures
-  structure: 2-J
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: osv-schema
-  newRepoName: project-osv-schema
-  description: This is under wg-vulnerability-disclosures
-  structure: 2-K
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: OpenVEX
-  newRepoName: sig-OpenVEX
-  description: This is under wg-vulnerability-disclosures
-  structure: 2-AK
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: security-insights-spec
-  newRepoName: project-security-insights-spec
-  description: >
-    This is under wg-identifying-security-threats
-  structure: 4-N
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-- oldRepoName: Project-Security-Metrics
-  newRepoName: project-project-Security-Metrics
-  description: >
-    This is under wg-identifying-security-threats
-  structure: 4-O
-  leads:
-    - name: Michael Scovetta
-      githubId: scovetta
-      url: https://github.com/scovetta
-- oldRepoName: security-reviews
-  newRepoName: project-security-reviews
-  description: >
-    This is under wg-identifying-security-threats
-  structure: 4-P
-  leads:
-    - name: Michael Scovetta
-      githubId: scovetta
-      url: https://github.com/scovetta
-- oldRepoName: fuzz-introspector
-  newRepoName: sig-fuzz-introspector
-  description: >
-    This is under wg-security-tooling
-  structure: 5-U
-  leads:
-    - name: Josh Bressers
-      githubId: joshbressers
-      url: https://github.com/joshbressers
-
-- oldRepoName: s2c2f
-  newRepoName: sig-secure-supply-chain-consumption-framework
-  description: >
-    This is under wg-supply-chain-integrity
-  structure: 7-Y
-  leads:
-    - name: Jay White
-      githubId: camaleon2016
-      url: https://github.com/camaleon2016
-    - name: Adrian Diglio
-      githubId: adriandiglio
-      url: https://github.com/adriandiglio
-    - name: Jasmine Wang
-      githubId: jasminewang0
-      url: https://github.com/jasminewang0
-
-- oldRepoName: criticality_score
-  newRepoName: project-criticality_score
-  description: >
-    This is under wg-securing-critical-projects
-  structure: 8-AA
-  leads:
-    - name: Jeff Mendoza
-      githubId: jeffmendoza
-      url: https://github.com/jeffmendoza
-    - name: Amir Hossin Montazery
-      githubId: amirhmh3
-      url: https://github.com/amirhmh3
-- oldRepoName: package-feeds
-  newRepoName: project-package-feeds
-  description: >
-    This is under wg-securing-critical-projects
-  structure: 8-AC
-  leads:
-    - name: Jeff Mendoza
-      githubId: jeffmendoza
-      url: https://github.com/jeffmendoza
-    - name: Amir Hossin Montazery
-      githubId: amirhmh3
-      url: https://github.com/amirhmh3
-- oldRepoName: package-analysis
-  newRepoName: project-package-analysis
-  description: >
-    This is under wg-securing-critical-projects
-  structure: 8-AC
-  leads:
-    - name: Jeff Mendoza
-      githubId: jeffmendoza
-      url: https://github.com/jeffmendoza
-    - name: Amir Hossin Montazery
-      githubId: amirhmh3
-      url: https://github.com/amirhmh3
-
-- oldRepoName: allstar
-  newRepoName: project-allstar
-  description: >
-    This is under wg-securing-critical-projects
-  structure: 8-AD
-  leads:
-    - name: Jeff Mendoza
-      githubId: jeffmendoza
-      url: https://github.com/jeffmendoza
-    - name: Amir Hossin Montazery
-      githubId: amirhmh3
-      url: https://github.com/amirhmh3
-
-- oldRepoName: DEI-SIG
-  newRepoName: sig-dei
-  meeting-time: Every other Tuesday - 11:00a ET/1600 UTC
-  zoom: https://zoom.us/j/91587450609
-  notes: https://docs.google.com/document/d/1LdQ07veOcJ596Vo3aQZCFy-HHeEO7cHnbE_6u_uq9Fk/edit#
-  description: TBD
-  structure: TBD
-  leads:
-    - name: Christopher "CRob" Robinson
-      githubId: SecurityCRob
-      url: https://github.com/SecurityCRob
-
-
-
