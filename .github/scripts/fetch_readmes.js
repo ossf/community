@@ -112,7 +112,8 @@ function appendRepoInfoToMainReadme() {
     newSectionContent += `\n [Join us via this Zoom Link](${repoData.zoom})\n`;
     newSectionContent += `\n We meet ${repoData['meeting-time']}\n`;
     newSectionContent += `\n[Here are our meeting notes](${repoData.notes})\n`;
-    newSectionContent += `\n** Our Group Lead(s):**`;
+    newSectionContent += `\n[Join us on Slack channel #${repoData.slack_name}](${repoData.slack_link})\n`;
+    newSectionContent += `\n **Our Group Lead(s):**\n`;
 
     if (repoData && Array.isArray(repoData.leads)) {
       for (const lead of repoData.leads) {
