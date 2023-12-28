@@ -10,6 +10,8 @@ We keep a [living spreadsheet of all the working groups, projects, and special i
 
 ## Overall structure
 
+Here is the structure of the OpenSSF Work Groups. Click on each Work Group, Special Interest Group, or Project to learn more about that Technical initiative. Note that those in _italic_ are seeking new members right now!
+
 ```mermaid
 %%{init:{'flowchart':{'nodeSpacing': 0, 'rankSpacing': 0}}}%%
 %%{init:{'subgraph':{'nodeSpacing': -10, 'rankSpacing': -40}}}%%
@@ -203,7 +205,7 @@ mmA ~~~~~~ note
 bpA ~~~ wg
 ```
 
-## Projects by Work Group
+## OpenSSF Projects sorted by Work Group
 ### Securing Critical Projects Work Group
 #### Allstar 
 <img align="right" src="https://github.com/ossf/community/assets/51727488/bc8deed2-6544-4a84-a603-3e9b0f83d595" width="250"  alt="image">
@@ -313,9 +315,11 @@ Or join us on the slack channel [#sbomit](https://openssf.slack.com/archives/C04
 ### Supply Chain Integrity Work Group
 #### GUAC
 
-
-
 <img align="left" src="https://github.com/ossf/community/assets/51727488/c6aa7dc1-5d8a-4269-bb5b-2258ae473329" alt="image">
+
+Software supply chain attacks are on the rise and it’s hard to know what your software is at risk for and how to protect it. Many tools are available to help you generate Software Bills of Materials (SBOMs), signed attestations, and vulnerability reports, but they stop there, leaving you to figure out how they all fit together.
+
+[GUAC (Graph for Understanding Artifact Composition)](https://guac.sh/) aims to fill in the gaps by ingesting software metadata, like SBOMs, and mapping out relationships between software. When you know how one piece of software affects another, you’ll be able to fully understand your software security position and act as needed.
 
 Currently, we have office hours and community meetings; Check the [OpenSSF Google Calander](https://calendar.google.com/calendar/u/0?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for a time that fits your needs. 
 
@@ -325,7 +329,27 @@ Or join us on the slack channel [#guac](https://openssf.slack.com/archives/C03U6
 
 #### gittuf
 
+<img align="right" src="https://github.com/ossf/community/assets/51727488/754b3c7d-6e7e-4505-be2e-545edfb482b2" width="500"  alt="image">
+
+[gittuf](https://gittuf.dev/) provides a security layer for Git using some concepts introduced by [The Update Framework (TUF)](https://theupdateframework.io/). Among other features, gittuf handles key management for all developers on the repository, allows you to set permissions for repository branches, tags, files, etc., lets you use new cryptographic algorithms (SHA256, etc.), protects against other attacks Git is vulnerable to, and more — all while being backwards compatible with GitHub, GitLab, etc.
+
+We meet on the first Friday of every month, or join us on the Slack channel [#gittuf](https://openssf.slack.com/archives/C05QVUN4WUW) to talk.
+
+<br clear="all"/>
+
 #### SLSA Tooling	
+
+**HELP WANTED**
+
+
+<img align="left" src="https://github.com/ossf/community/assets/51727488/684e5b5b-4cc5-4086-9eb5-9a9daaf35634"  width="225"  alt="image">
+
+Supply-chain Levels for Software Artifacts, or SLSA ("salsa").
+
+It’s a security framework, a checklist of standards and controls to prevent tampering, improve integrity, and secure packages and infrastructure. It’s how you get from "safe enough" to being as resilient as possible, at any link in the chain.
+
+We would love to have you join our slack channel [#slsa-specification](https://openssf.slack.com/archives/C03NUSAPKC6)
+Also, every week on Monday, we meet on Zoom; join us next week! Check the [OpenSSF Google Calander](https://calendar.google.com/calendar/u/0?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for the invite.
 
 <br clear="all"/>
 <hr>
@@ -353,7 +377,6 @@ This is the repository for the Open Source Vulnerability schema (OSV Schema), wh
 
 Currently, we are not meeting but join us on the slack channel [#osv_schema](https://openssf.slack.com/archives/C03K6SZBH2S) to participate in the conversation!
 
-
 <br clear="all"/>
 <hr>
 
@@ -362,13 +385,48 @@ Currently, we are not meeting but join us on the slack channel [#osv_schema](htt
 
 <img align="left" src="https://github.com/ossf/community/assets/51727488/e2c9c29e-07e6-47e8-80c9-0e4ccdf4af24" width="350" alt="image">
 
+[Repository Service for TUF (RSTUF)](https://github.com/repository-service-tuf/repository-service-tuf) is a collection of components that provide services for securing content downloads from tampering between the repository and the client (for example, by an on-path attacker).
+
+RSTUF security properties are achieved by implementing The Update Framework (TUF) as a service.
+
+Repository Service for TUF is platform, artifact, language, and process-flow agnostic.
+
+RSTUF simplifies the adoption of TUF by removing the need to design a repository integration -- RSTUF encapsulates that design.
+
+Repository Service for TUF (RSTUF) is designed to be integrated with existing content delivery solutions -- at the edge or in public/private clouds -- alongside current artifact production systems, such as build systems, including; Jenkins, GitHub Actions, GitLab, CircleCI, etc. RSTUF protects downloading, installing, and updating content from arbitrary content repositories, such as a web server, JFrog Artifactory, GitHub packages, etc.
+
+
+Our community meetings are Monthly on the first Wednesday. 
+Join us on the slack channel [#repository-service-tuf](https://openssf.slack.com/archives/C052QF5CZFH) to participate in the conversation!
+
 <br clear="all"/>
 <hr>
 
-### Identifying Security Threats Work Group
+### Identifying Security Threats Work Group (New Name: Metrics & Metadata)
+
+The following projects are discussed at the work group level every other Wednesday. To join the meeting see the[OpenSSF Community Calendar](https://calendar.google.com/calendar?cid=czYzdm9lZmhwNWk5cGZsdGI1cTY3bmdwZXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
+
 #### Security Insights Spec
 
+This specification provides a mechanism for projects to report information about their security in a machine-processable way. It is formatted as a YAML file to make it easy to read and edit by humans.
+
+Values that are included within the specification may be required or optional. Optional values are recommendations from the Open Source Security Foundation's _Identifying Security Threats Working Group_, but may not be prudent for all use cases.
+
+Example implementations can be found on the specification's [GitHub repository](https://github.com/ossf/security-insights-spec).
+
+A collection of unofficial supplemental tooling can be found in the ["SI Tooling" GitHub Repository](https://github.com/ossf/si-tooling).
+
+We are not seeking new members but improvement, suggestions and clarification requests can be logged as [GitHub Issues](https://github.com/ossf/security-insights-spec/issues/new), raised as discussion on [Slack channel #security_insights](https://openssf.slack.com/archives/C04BB493NET). 
+
+To discuss live join the work group meeting. 
+
 #### Security Metrics	
+
+The purpose of this project is to collect, organize, and provide interesting security metrics for open source projects to stakeholders, including users.
+
+This project is in early development and we welcome community support. 
+
+To discuss live join the work group meeting. 
 
 <hr>
 
@@ -397,471 +455,4 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 <br clear="all"/>
 
 <hr>
-
-## Repository Information
-### [tac](https://github.com/ossf/tac)
-**Original Repository:** [tac](https://github.com/ossf/tac)
-
- **Description:** This is a top level group.
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-best-practices](https://github.com/ossf/wg-best-practices)
-**Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
-
- **Description:** This is a top level group
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-**Original Repository:** [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-endusers](https://github.com/ossf/wg-endusers)
-**Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
-
- **Description:** This is a top level group
-**Leads:**
-- [Jonathan Meadows](https://github.com/jonmuk)
-
-### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-**Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
-**Original Repository:** [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Josh Bressers](https://github.com/joshbressers)
-
-### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-**Original Repository:** [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Dustin Ingram](https://github.com/di)
-
-### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
-**Original Repository:** [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Kim Lewandowski](https://github.com/kimsterv)
-- [Dan Lorenc](https://github.com/dlorenc)
-
-### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
-**Original Repository:** [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
-**Original Repository:** [secure-sw-dev-fundamentals](https://github.com/ossf/secure-sw-dev-fundamentals)
-
- **Description:** This is under the Best Practices working group. Full name is Secure Software Development Fundamentals courses SIG.
-
-**Leads:**
-- [David Wheeler](https://github.com/david-a-wheeler)
-
-### [project-scorecard](https://github.com/ossf/project-scorecard)
-**Original Repository:** [scorecard](https://github.com/ossf/scorecard)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Azeem Shaikh](https://github.com/azeemshaikh38)
-- [Laurent Simon](https://github.com/laurentsimon)
-- [Naveen Srinivasan](https://github.com/naveensrinivasan)
-- [Risto McGehee](https://github.com/chrismcgehee)
-- [Stephen Augustus](https://github.com/justaugustus)
-
-### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
-**Original Repository:** [great-mfa-project](https://github.com/ossf/great-mfa-project)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-education](https://github.com/ossf/sig-education)
-**Original Repository:** [education](https://github.com/ossf/education)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-memory-Safety](https://github.com/ossf/sig-memory-Safety)
-**Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
-
- **Description:** This is under the Best Practices working group.
-**Leads:**
-- [Nell Shamrell-Harrington](https://github.com/nellshamrell)
-
-### [sig-oss-vulnerability-guide](https://github.com/ossf/sig-oss-vulnerability-guide)
-**Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-sirt](https://github.com/ossf/sig-sirt)
-**Original Repository:** [SIRT](https://github.com/ossf/SIRT)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-osv-schema](https://github.com/ossf/project-osv-schema)
-**Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-OpenVEX](https://github.com/ossf/sig-OpenVEX)
-**Original Repository:** [OpenVEX](https://github.com/ossf/OpenVEX)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-security-insights-spec](https://github.com/ossf/project-security-insights-spec)
-**Original Repository:** [security-insights-spec](https://github.com/ossf/security-insights-spec)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-project-Security-Metrics](https://github.com/ossf/project-project-Security-Metrics)
-**Original Repository:** [Project-Security-Metrics](https://github.com/ossf/Project-Security-Metrics)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [project-security-reviews](https://github.com/ossf/project-security-reviews)
-**Original Repository:** [security-reviews](https://github.com/ossf/security-reviews)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [sig-fuzz-introspector](https://github.com/ossf/sig-fuzz-introspector)
-**Original Repository:** [fuzz-introspector](https://github.com/ossf/fuzz-introspector)
-
- **Description:** This is under wg-security-tooling
-
-**Leads:**
-- [Josh Bressers](https://github.com/joshbressers)
-
-### [sig-secure-supply-chain-consumption-framework](https://github.com/ossf/sig-secure-supply-chain-consumption-framework)
-**Original Repository:** [s2c2f](https://github.com/ossf/s2c2f)
-
- **Description:** This is under wg-supply-chain-integrity
-
-**Leads:**
-- [Jay White](https://github.com/camaleon2016)
-- [Adrian Diglio](https://github.com/adriandiglio)
-- [Jasmine Wang](https://github.com/jasminewang0)
-
-### [project-criticality_score](https://github.com/ossf/project-criticality_score)
-**Original Repository:** [criticality_score](https://github.com/ossf/criticality_score)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-package-feeds](https://github.com/ossf/project-package-feeds)
-**Original Repository:** [package-feeds](https://github.com/ossf/package-feeds)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-package-analysis](https://github.com/ossf/project-package-analysis)
-**Original Repository:** [package-analysis](https://github.com/ossf/package-analysis)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-allstar](https://github.com/ossf/project-allstar)
-**Original Repository:** [allstar](https://github.com/ossf/allstar)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [sig-dei](https://github.com/ossf/sig-dei)
-**Original Repository:** [DEI-SIG](https://github.com/ossf/DEI-SIG)
-
- **Description:** TBD
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-
-
-## End of Repository Information
-
-
-
-## Repository Information
-
-### [tac](https://github.com/ossf/tac)
-**Original Repository:** [tac](https://github.com/ossf/tac)
-
- **Description:** This is a top level group.
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-best-practices](https://github.com/ossf/wg-best-practices)
-**Original Repository:** [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
-
- **Description:** This is a top level group
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-**Original Repository:** [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [wg-endusers](https://github.com/ossf/wg-endusers)
-**Original Repository:** [wg-endusers](https://github.com/ossf/wg-endusers)
-
- **Description:** This is a top level group
-**Leads:**
-- [Jonathan Meadows](https://github.com/jonmuk)
-
-### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-**Original Repository:** [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
-**Original Repository:** [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Josh Bressers](https://github.com/joshbressers)
-
-### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-**Original Repository:** [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Dustin Ingram](https://github.com/di)
-
-### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
-**Original Repository:** [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Kim Lewandowski](https://github.com/kimsterv)
-- [Dan Lorenc](https://github.com/dlorenc)
-
-### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
-**Original Repository:** [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
-
- **Description:** This is a top level group.
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
-**Original Repository:** [secure-sw-dev-fundamentals](https://github.com/ossf/secure-sw-dev-fundamentals)
-
- **Description:** This is under the Best Practices working group. Full name is Secure Software Development Fundamentals courses SIG.
-
-**Leads:**
-- [David Wheeler](https://github.com/david-a-wheeler)
-
-### [project-scorecard](https://github.com/ossf/project-scorecard)
-**Original Repository:** [scorecard](https://github.com/ossf/scorecard)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Azeem Shaikh](https://github.com/azeemshaikh38)
-- [Laurent Simon](https://github.com/laurentsimon)
-- [Naveen Srinivasan](https://github.com/naveensrinivasan)
-- [Risto McGehee](https://github.com/chrismcgehee)
-- [Stephen Augustus](https://github.com/justaugustus)
-
-### [sig-secure-sw-dev-fundamentals](https://github.com/ossf/sig-secure-sw-dev-fundamentals)
-**Original Repository:** [great-mfa-project](https://github.com/ossf/great-mfa-project)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-education](https://github.com/ossf/sig-education)
-**Original Repository:** [education](https://github.com/ossf/education)
-
- **Description:** This is under the Best Practices working group.
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-memory-Safety](https://github.com/ossf/sig-memory-Safety)
-**Original Repository:** [Memory-Safety](https://github.com/ossf/Memory-Safety)
-
- **Description:** This is under the Best Practices working group.
-**Leads:**
-- [Nell Shamrell-Harrington](https://github.com/nellshamrell)
-
-### [sig-oss-vulnerability-guide](https://github.com/ossf/sig-oss-vulnerability-guide)
-**Original Repository:** [oss-vulnerability-guide](https://github.com/ossf/oss-vulnerability-guide)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-sirt](https://github.com/ossf/sig-sirt)
-**Original Repository:** [SIRT](https://github.com/ossf/SIRT)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-osv-schema](https://github.com/ossf/project-osv-schema)
-**Original Repository:** [osv-schema](https://github.com/ossf/osv-schema)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [sig-OpenVEX](https://github.com/ossf/sig-OpenVEX)
-**Original Repository:** [OpenVEX](https://github.com/ossf/OpenVEX)
-
- **Description:** This is under wg-vulnerability-disclosures
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-security-insights-spec](https://github.com/ossf/project-security-insights-spec)
-**Original Repository:** [security-insights-spec](https://github.com/ossf/security-insights-spec)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-### [project-project-Security-Metrics](https://github.com/ossf/project-project-Security-Metrics)
-**Original Repository:** [Project-Security-Metrics](https://github.com/ossf/Project-Security-Metrics)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [project-security-reviews](https://github.com/ossf/project-security-reviews)
-**Original Repository:** [security-reviews](https://github.com/ossf/security-reviews)
-
- **Description:** This is under wg-identifying-security-threats
-
-**Leads:**
-- [Michael Scovetta](https://github.com/scovetta)
-
-### [sig-fuzz-introspector](https://github.com/ossf/sig-fuzz-introspector)
-**Original Repository:** [fuzz-introspector](https://github.com/ossf/fuzz-introspector)
-
- **Description:** This is under wg-security-tooling
-
-**Leads:**
-- [Josh Bressers](https://github.com/joshbressers)
-
-### [sig-secure-supply-chain-consumption-framework](https://github.com/ossf/sig-secure-supply-chain-consumption-framework)
-**Original Repository:** [s2c2f](https://github.com/ossf/s2c2f)
-
- **Description:** This is under wg-supply-chain-integrity
-
-**Leads:**
-- [Jay White](https://github.com/camaleon2016)
-- [Adrian Diglio](https://github.com/adriandiglio)
-- [Jasmine Wang](https://github.com/jasminewang0)
-
-### [project-criticality_score](https://github.com/ossf/project-criticality_score)
-**Original Repository:** [criticality_score](https://github.com/ossf/criticality_score)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-package-feeds](https://github.com/ossf/project-package-feeds)
-**Original Repository:** [package-feeds](https://github.com/ossf/package-feeds)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-package-analysis](https://github.com/ossf/project-package-analysis)
-**Original Repository:** [package-analysis](https://github.com/ossf/package-analysis)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [project-allstar](https://github.com/ossf/project-allstar)
-**Original Repository:** [allstar](https://github.com/ossf/allstar)
-
- **Description:** This is under wg-securing-critical-projects
-
-**Leads:**
-- [Jeff Mendoza](https://github.com/jeffmendoza)
-- [Amir Hossin Montazery](https://github.com/amirhmh3)
-
-### [sig-dei](https://github.com/ossf/sig-dei)
-**Original Repository:** [DEI-SIG](https://github.com/ossf/DEI-SIG)
-
- **Description:** TBD
-**Leads:**
-- [Christopher "CRob" Robinson](https://github.com/SecurityCRob)
-
-
-
-## End of Repository Information
 
