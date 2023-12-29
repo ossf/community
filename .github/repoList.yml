@@ -13,7 +13,8 @@
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
 - oldRepoName: wg-best-practices-os-developers
-  newRepoName: wg-best-practices
+  newRepoName: wg-best-practices-os-developers
+  logo: best_logo.png
   slack_name: wg_best_practices_ossdev
   slack_link: https://openssf.slack.com/archives/C01AHCRP8BT
   meeting-time: None
@@ -40,6 +41,7 @@
       url: https://github.com/mihaimaruseac
 - oldRepoName: wg-vulnerability-disclosures
   newRepoName: wg-vulnerability-disclosures
+  logo: vuln_logo.png
   slack_name: wg_vulnerability_disclosures
   slack_link: https://openssf.slack.com/archives/C019Y2A28Q6
   meeting-time: every other Wednesday 11:00a ET

@@ -46,7 +46,7 @@ function reorderReadmeContent(content, description, leadsMarkdown) {
   const sections = {};
   const regex = /^#{2,4}\s(.+?)(?:\r?\n|\r)/gmi;
   let match;
-  
+
   // New regex for the main title
   const mainTitleRegex = /^#\s(.+?)(?:\r?\n|\r)/m;
   const mainTitle = (content.match(mainTitleRegex) || ["", ""])[1].trim();
@@ -107,7 +107,16 @@ function appendRepoInfoToMainReadme() {
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
-    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
+
+    // Construct the URL for the raw logo content
+    const logoUrl = repoData.logo ? `https://raw.githubusercontent.com/${orgName}/community/main/.github/logos/${repoData.logo}` : null;
+
+    newSectionContent += `\n ### [${repoData.newRepoName}](${newRepoUrl})\n`;
+
+    if (logoUrl) {
+      newSectionContent += `\n ![Logo](${logoUrl})\n`;
+    }
+
     newSectionContent += `\n ${repoData.description}\n`;
     newSectionContent += `\n [Join us via this Zoom Link](${repoData.zoom})\n`;
     newSectionContent += `\n We meet ${repoData['meeting-time']}\n`;
@@ -124,7 +133,10 @@ function appendRepoInfoToMainReadme() {
     }
 
     newSectionContent += "\n";
+    newSectionContent += `<br clear="all"/>`;
+    newSectionContent += `<hr></hr>`;
   }
+
 
   if (start >= 0 && end >= 0) {
     mainReadmeContent = mainReadmeContent.slice(0, start) + startMarker + newSectionContent + endMarker + mainReadmeContent.slice(end + endMarker.length);

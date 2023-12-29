@@ -461,7 +461,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 
 ## Work Group Information
 
-### [tac](https://github.com/ossf/tac)
+
+ ### [tac](https://github.com/ossf/tac)
 
  The OpenSSF Technical Advisory Council is responsible for oversight of the various Technical Initiatives (TI) of the OpenSSF.
 
@@ -477,7 +478,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
-### [wg-best-practices](https://github.com/ossf/wg-best-practices)
+<br clear="all"/><hr></hr>
+ ### [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
+
+ ![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/best_logo.png)
 
  Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
 
@@ -493,7 +497,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
-### [ai-ml-security](https://github.com/ossf/ai-ml-security)
+<br clear="all"/><hr></hr>
+ ### [ai-ml-security](https://github.com/ossf/ai-ml-security)
 
  We formed in September 2023 after the growing problem of AI/ML Security in open source. Join is to discuss the possible security impacts of AI / ML technologies on open source software, maintainers, communities, and their adopters, along with how OSS projects could safely or effectively leverage LLMs to improve their security posture.
 
@@ -509,7 +514,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Mihai Maruseac](https://github.com/mihaimaruseac)
 
-### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+<br clear="all"/><hr></hr>
+ ### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
+
+ ![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/vuln_logo.png)
 
  We are improving the overall security of the OSS ecosystem by helping advance vulnerability reporting and communication.
 
@@ -525,7 +533,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
-### [wg-dei](https://github.com/ossf/wg-dei)
+<br clear="all"/><hr></hr>
+ ### [wg-dei](https://github.com/ossf/wg-dei)
 
  We formed in December 2023 to help increase representation and strengthen the overall effectiveness of the cybersecurity workforce.
 
@@ -541,7 +550,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Jay White](https://github.com/camaleon2016)
 
-### [wg-endusers](https://github.com/ossf/wg-endusers)
+<br clear="all"/><hr></hr>
+ ### [wg-endusers](https://github.com/ossf/wg-endusers)
 
  We represent the interests of public and private sector organizations that primarily consume open source rather than produce it. Right now, we are focusing on threat modeling. Join us to see how threat modeling works and get your ideas in the current scope.
 
@@ -557,7 +567,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Jonathan Meadows](https://github.com/jonmuk)
 
-### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
+<br clear="all"/><hr></hr>
+ ### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
 
  Now called Metrics & Metadata! We enable informed confidence in the security of OSS by collecting, curating, and communicating relevant metrics and metadata. Our WG has mostly projects that focus on the code to get this done.
 
@@ -573,7 +584,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Michael Scovetta](https://github.com/scovetta)
 
-### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
+<br clear="all"/><hr></hr>
+ ### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
 
  Our mission is to provide the best security tools for open source developers and make them universally accessible. We talk a lot about SBOMs currently.
 
@@ -589,7 +601,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Ryan Ware](https://github.com/ware)
 
-### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
+<br clear="all"/><hr></hr>
+ ### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
 
  We provide a collaborative environment for aligning on the introduction of new tools and technologies to strengthen and secure software repositories. Our current project is Repository Service for TUF, join to learn more.
 
@@ -605,7 +618,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Dustin Ingram](https://github.com/di)
 
-### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
+<br clear="all"/><hr></hr>
+ ### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
 
  We are helping people understand and make decisions on the provenance of the code they maintain, produce and use. We have great projects like GUAC, SLSA and gittuf that you can work with.
 
@@ -622,7 +636,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Isaac Hepworth](https://github.com/hepwori)
 - [Dan Lorenc](https://github.com/dlorenc)
 
-### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
+<br clear="all"/><hr></hr>
+ ### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
 
  Wonder how critical OSS projects are selected? Then join us! We have progress reports every other week on each project/SIG so it is easy to jump in and get going.
 
@@ -639,7 +654,7 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
-
+<br clear="all"/><hr></hr>
 
 ## End of Work Group Information
 
