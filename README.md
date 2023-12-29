@@ -132,7 +132,7 @@ subgraph euA[ ]
     eu1(<b><i><font color=white>Threat Modeling</b></i>):::type
 
 end
-    click eu "https://github.com/ossf/wg-securing-software-repos" "Securing Software Repositories"
+    click eu "https://github.com/ossf/wg-endusers" "End Users"
     click eu1 "https://docs.google.com/document/d/1abI65H4pF5y8YtA2_TuDBAaI47v9mTfpr5mwVvccX_I/edit" "Threat Modeling"
 
 mm("<b><i>Metrics & Metadata WG </b></i> \n Security metrics/reviews for \nopen source projects")
@@ -144,14 +144,14 @@ subgraph mmA[ ]
     mm1(<font color=orange>Security Insights):::type
     mm2(<font color=orange>Security-Metrics: Risk Dashboard):::type
     mm3(<font color=orange>Security Reviews):::type
-    mm5(<font color=orange>ecurity Insights Spec ):::type
+    mm5(<font color=orange>Security Insights Spec):::type
 
 end
     click mm "https://github.com/ossf/wg-identifying-security-threats" "Metrics & Metadata"
     click mm1 "https://github.com/ossf/security-insights-spec" "Security Insights"
     click mm2 "https://github.com/ossf/Project-Security-Metrics" "Security-Metrics: Risk Dashboard"
     click mm3 "https://github.com/ossf/security-reviews" "Security Reviews"
-    click mm4 "https://github.com/ossf/security-insights-spec" "ecurity Insights Spec"
+    click mm4 "https://github.com/ossf/security-insights-spec" "Security Insights Spec"
 
 
 scp("<b><i>Securing Critical Projects WG</b></i> \n Identification of critical \nopen source projects")
@@ -163,7 +163,8 @@ subgraph scpA[ ]
     scp1(<font color=white>List of Critical OS Prj, components, & Frameworks):::type
     scp2(<font color=orange>Criticality Score):::type
     scp3(<font color=white>Harvard study):::type
-    scp5(<font color=white>Package Analysis/Feeds):::type
+    scp4(<font color=orange>Package Analysis/Feeds):::type
+    scp5(<font color=orange>Allstar):::type
 
 end
     click scp "https://github.com/ossf/wg-securing-critical-projects" "Securing Critical Projects"
@@ -171,6 +172,7 @@ end
     click scp2 "https://github.com/ossf/criticality_score" "criticality_score"
     click scp3 "https://www.coreinfrastructure.org/programs/census-program-ii/" "Harvard study"
     click scp4 "https://github.com/ossf/package-analysis" "Package Analysis"
+    click scp5 "https://github.com/ossf/allstar" "Package Analysis"
 
 subgraph note
     direction LR
