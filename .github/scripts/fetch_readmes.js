@@ -112,9 +112,11 @@ function appendRepoInfoToMainReadme() {
     const logoUrl = repoData.logo ? `https://raw.githubusercontent.com/${orgName}/community/main/.github/logos/${repoData.logo}` : null;
 
     newSectionContent += `\n ### [${repoData.newRepoName}](${newRepoUrl})\n`;
+    
 
     if (logoUrl) {
-      newSectionContent += `\n ![Logo](${logoUrl})\n`;
+      newSectionContent += `\n  <img align="right" src="${logoUrl}" width="200" alt="image">\n`;
+
     }
 
     newSectionContent += `\n ${repoData.description}\n`;
