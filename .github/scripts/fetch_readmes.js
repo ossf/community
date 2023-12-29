@@ -15,8 +15,7 @@ const DIR_PATH = path.join(__dirname, "..", "..");
 const repoList = yaml.load(fs.readFileSync(REPO_LIST_PATH, "utf8"));
 
 const sectionOrder = [
-  ["Motivation"],
-  ["Objective"],
+  ["Mission"],
   ["Vision"],
   ["Scope"],
   ["Current Work", "Active Projects"],
@@ -173,6 +172,6 @@ async function fetchReadmes() {
 
   appendRepoInfoToMainReadme();
 }
-
-fetchReadmes();
+appendRepoInfoToMainReadme();
+//fetchReadmes();
 
