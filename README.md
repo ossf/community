@@ -478,7 +478,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
 <br clear="all"/><hr></hr>### [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
-![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/best_logo.png)
+
+ ![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/best_logo.png)
 
  Want to help drive open source security education or help develop best practices? We have a lot of projects and groups that are working towards these goals.
 
@@ -511,7 +512,8 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Mihai Maruseac](https://github.com/mihaimaruseac)
 
 <br clear="all"/><hr></hr>### [wg-vulnerability-disclosures](https://github.com/ossf/wg-vulnerability-disclosures)
-![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/vuln_logo.png)
+
+ ![Logo](https://raw.githubusercontent.com/ossf/community/main/.github/logos/vuln_logo.png)
 
  We are improving the overall security of the OSS ecosystem by helping advance vulnerability reporting and communication.
 
