@@ -111,7 +111,7 @@ function appendRepoInfoToMainReadme() {
     // Construct the URL for the raw logo content
     const logoUrl = repoData.logo ? `https://raw.githubusercontent.com/${orgName}/community/main/.github/logos/${repoData.logo}` : null;
 
-    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
+    newSectionContent += `\n ### [${repoData.newRepoName}](${newRepoUrl})\n`;
 
     if (logoUrl) {
       newSectionContent += `\n ![Logo](${logoUrl})\n`;
