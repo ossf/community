@@ -114,7 +114,7 @@ function appendRepoInfoToMainReadme() {
     newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
 
     if (logoUrl) {
-      newSectionContent += `![Logo](${logoUrl})\n`;
+      newSectionContent += `\n ![Logo](${logoUrl})\n`;
     }
 
     newSectionContent += `\n ${repoData.description}\n`;
