@@ -134,6 +134,21 @@ function appendRepoInfoToMainReadme() {
     }
 
     newSectionContent += "\n";
+
+    if (repoData.sigs && repoData.sigs.length > 0) {
+      newSectionContent += `\n **Special Interest Groups (SIGs):**\n`;
+      repoData.sigs.forEach(sig => {
+        newSectionContent += `- [${sig.name}](${sig.url})\n`;
+      });
+    }
+
+    if (repoData.projects && repoData.projects.length > 0) {
+      newSectionContent += `\n **Projects:**\n`;
+      repoData.projects.forEach(project => {
+        newSectionContent += `- [${project.name}](${project.url})\n`;
+      });
+    }
+
     newSectionContent += `<br clear="all"/>`;
     newSectionContent += `<hr></hr>`;
   }
@@ -170,8 +185,7 @@ async function fetchReadmes() {
     }
   }
 
-  appendRepoInfoToMainReadme();
 }
-appendRepoInfoToMainReadme();
 //fetchReadmes();
+appendRepoInfoToMainReadme();
 

@@ -12,6 +12,26 @@
     - name: Christopher CRob Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+  sigs:
+    - name: Secure Software Development Fundamentals
+      url: https://openssf.org/training/courses/
+    - name: Concise & Best Practices Guides
+      url: https://openssf.org/resources/guides/
+    - name: Education
+      url: https://github.com/ossf/education
+    - name: Memory Safety
+      url: https://github.com/ossf/Memory-Safety
+    - name: Security Toolbelt
+      url: https://github.com/ossf/toolbelt
+  projects:
+    - name: OpenSSF Best Practices Badge
+      url: https://bestpractices.coreinfrastructure.org
+    - name: OpenSSF Scorecard
+      url: https://github.com/ossf/scorecard
+    - name: Security Knowledge Framework 'SKF'
+      url: https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best
+    - name: Common Requirements Enumeration
+      url: https://github.com/OWASP/OpenCRE
 - oldRepoName: wg-best-practices-os-developers
   newRepoName: wg-best-practices-os-developers
   logo: best_logo.png
@@ -26,6 +46,26 @@
     - name: Christopher CRob Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+  sigs:
+    - name: Secure Software Development Fundamentals
+      url: https://openssf.org/training/courses/
+    - name: Security Knowledge Framework 'SKF'
+      url: https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best
+    - name: Common Requirements Enumeration
+      url: https://github.com/OWASP/OpenCRE
+    - name: Concise & Best Practices Guides
+      url: https://openssf.org/resources/guides/
+    - name: Education
+      url: https://github.com/ossf/education
+    - name: Memory Safety
+      url: https://github.com/ossf/Memory-Safety
+    - name: Security Toolbelt
+      url: https://github.com/ossf/toolbelt
+  projects:
+    - name: OpenSSF Best Practices Badge
+      url: https://bestpractices.coreinfrastructure.org
+    - name: OpenSSF Scorecard
+      url: https://github.com/ossf/scorecard
 - oldRepoName: ai-ml-security
   newRepoName: ai-ml-security
   slack_name: wg_ai_ml_security
@@ -53,6 +93,18 @@
     - name: Christopher CRob Robinson
       githubId: SecurityCRob
       url: https://github.com/SecurityCRob
+  sigs:
+    - name: CVD Guides
+      url: https://github.com/ossf/oss-vulnerability-guide
+    - name: SIRT
+      url: https://github.com/ossf/SIRT
+    - name: OpenVEX
+      url: https://github.com/ossf/OpenVEX
+    - name: Vuln Autofix SIG
+      url: https://docs.google.com/document/d/1_QwN7yQXWGM2tJaostIRNqyZIhVceVlIyXqCrSdC4E8/edit?usp=drive_link
+  projects:
+    - name: Open Source Vuln Schema 'OSV'
+      url: https://github.com/ossf/osv-schema
 - oldRepoName: wg-dei
   newRepoName: wg-dei
   slack_name: wg_dei
@@ -66,6 +118,26 @@
     - name: Jay White
       githubId: camaleon2016
       url: https://github.com/camaleon2016
+  sigs:
+    - name: Secure Software Development Fundamentals
+      url: https://openssf.org/training/courses/
+    - name: Security Knowledge Framework 'SKF'
+      url: https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best
+    - name: Common Requirements Enumeration
+      url: https://github.com/OWASP/OpenCRE
+    - name: Concise & Best Practices Guides
+      url: https://openssf.org/resources/guides/
+    - name: Education
+      url: https://github.com/ossf/education
+    - name: Memory Safety
+      url: https://github.com/ossf/Memory-Safety
+    - name: Security Toolbelt
+      url: https://github.com/ossf/toolbelt
+  projects:
+    - name: OpenSSF Best Practices Badge
+      url: https://bestpractices.coreinfrastructure.org
+    - name: OpenSSF Scorecard
+      url: https://github.com/ossf/scorecard
 - oldRepoName: wg-endusers
   newRepoName: wg-endusers
   slack_name: wg_end_users
@@ -79,6 +151,9 @@
     - name: Jonathan Meadows
       githubId: jonmuk
       url: https://github.com/jonmuk
+  sigs:
+    - name: Threat Modeling
+      url: https://docs.google.com/document/d/1abI65H4pF5y8YtA2_TuDBAaI47v9mTfpr5mwVvccX_I/edit
 - oldRepoName: wg-identifying-security-threats
   newRepoName: wg-identifying-security-threats
   slack_name: wg_identifying_security_threats
@@ -92,6 +167,15 @@
     - name: Michael Scovetta
       githubId: scovetta
       url: https://github.com/scovetta
+  projects:
+    - name: Security Insights
+      url: https://github.com/ossf/security-insights-spec
+    - name: 'Security-Metrics: Risk Dashboard'
+      url: https://github.com/ossf/Project-Security-Metrics
+    - name: Security Reviews
+      url: https://github.com/ossf/security-reviews
+    - name: Security Insights Spec
+      url: https://github.com/ossf/security-insights-spec
 - oldRepoName: wg-security-tooling
   newRepoName: wg-security-tooling
   slack_name: wg_security_tooling
@@ -105,6 +189,14 @@
     - name: Ryan Ware
       githubId: ware
       url: https://github.com/ware
+  sigs:
+    - name: SBOM Everywhere
+      url: https://drive.google.com/drive/folders/154MCLeIOQEgPpTUL7yzplOiipBVJ5KZJ
+    - name: OSS Fuzzing
+      url: https://docs.google.com/document/d/1TmhqYpB1Ly-5o-F31RVHxgpunW6qeDTVopBCtCmKhs0/edit
+  projects:
+    - name: SBOMit
+      url: https://github.com/sbomit
 - oldRepoName: wg-securing-software-repos
   newRepoName: wg-securing-software-repos
   slack_name: wg_securing_software_repos
@@ -118,6 +210,9 @@
     - name: Dustin Ingram
       githubId: di
       url: https://github.com/di
+  projects:
+    - name: RSTUF
+      url: https://github.com/repository-service-tuf
 - oldRepoName: wg-supply-chain-integrity
   newRepoName: wg-supply-chain-integrity
   slack_name: wg_supply_chain_integrity
@@ -134,6 +229,16 @@
     - name: Dan Lorenc
       githubId: dlorenc
       url: https://github.com/dlorenc
+  sigs:
+    - name: S2C2F
+      url: https://github.com/ossf/s2c2f
+  projects:
+    - name: SLSA
+      url: https://slsa.dev/
+    - name: gittuf
+      url: https://github.com/gittuf/gittuf
+    - name: GUAC
+      url: https://github.com/guacsec/guac   
 - oldRepoName: wg-securing-critical-projects
   newRepoName: wg-securing-critical-projects
   slack_name: wg_securing_critical_projects
@@ -150,3 +255,15 @@
     - name: Amir Hossin Montazery
       githubId: amirhmh3
       url: https://github.com/amirhmh3
+  sigs:
+    - name: List of Critical OS Prj, components, & Frameworks
+      url: https://docs.google.com/spreadsheets/d/1ONZ4qeMq8xmeCHX03lIgIYE4MEXVfVL6oj05lbuXTDM/edit
+    - name: Harvard study
+      url: https://www.coreinfrastructure.org/programs/census-program-ii/
+  projects:
+    - name: criticality_score
+      url: https://github.com/ossf/criticality_score
+    - name: Package Analysis/Feeds
+      url: https://github.com/ossf/package-analysis
+    - name: Allstar
+      url: https://github.com/ossf/allstar
