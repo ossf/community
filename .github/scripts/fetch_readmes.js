@@ -107,12 +107,16 @@ function appendRepoInfoToMainReadme() {
   for (const repoData of repoList) {
     const repoUrl = `https://github.com/${orgName}/${repoData.oldRepoName}`;
     const newRepoUrl = `https://github.com/${orgName}/${repoData.newRepoName}`;
-    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
-    const logoPath = repoData.logo ? path.join("..", "logos", repoData.logo) : null;
 
-    if (logoPath) {
-      newSectionContent += `![Logo](${logoPath})\n`;
+    // Construct the URL for the raw logo content
+    const logoUrl = repoData.logo ? `https://raw.githubusercontent.com/${orgName}/community/main/.github/logos/${repoData.logo}` : null;
+
+    newSectionContent += `### [${repoData.newRepoName}](${newRepoUrl})\n`;
+
+    if (logoUrl) {
+      newSectionContent += `![Logo](${logoUrl})\n`;
     }
+
     newSectionContent += `\n ${repoData.description}\n`;
     newSectionContent += `\n [Join us via this Zoom Link](${repoData.zoom})\n`;
     newSectionContent += `\n We meet ${repoData['meeting-time']}\n`;
