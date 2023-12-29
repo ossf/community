@@ -15,8 +15,7 @@ const DIR_PATH = path.join(__dirname, "..", "..");
 const repoList = yaml.load(fs.readFileSync(REPO_LIST_PATH, "utf8"));
 
 const sectionOrder = [
-  ["Motivation"],
-  ["Objective"],
+  ["Mission"],
   ["Vision"],
   ["Scope"],
   ["Current Work", "Active Projects"],
@@ -112,9 +111,11 @@ function appendRepoInfoToMainReadme() {
     const logoUrl = repoData.logo ? `https://raw.githubusercontent.com/${orgName}/community/main/.github/logos/${repoData.logo}` : null;
 
     newSectionContent += `\n ### [${repoData.newRepoName}](${newRepoUrl})\n`;
+    
 
     if (logoUrl) {
-      newSectionContent += `\n ![Logo](${logoUrl})\n`;
+      newSectionContent += `\n  <img align="right" src="${logoUrl}" width="200" alt="image">\n`;
+
     }
 
     newSectionContent += `\n ${repoData.description}\n`;
@@ -171,6 +172,6 @@ async function fetchReadmes() {
 
   appendRepoInfoToMainReadme();
 }
-
-fetchReadmes();
+appendRepoInfoToMainReadme();
+//fetchReadmes();
 
