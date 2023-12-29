@@ -480,6 +480,22 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [Secure Software Development Fundamentals](https://openssf.org/training/courses/)
+- [Concise & Best Practices Guides](https://openssf.org/resources/guides/)
+- [Education](https://github.com/ossf/education)
+- [Memory Safety](https://github.com/ossf/Memory-Safety)
+- [Security Toolbelt](https://github.com/ossf/toolbelt)
+**Projects:**
+
+ Join us in the following Projects:
+- [OpenSSF Best Practices Badge](https://bestpractices.coreinfrastructure.org)
+- [OpenSSF Scorecard](https://github.com/ossf/scorecard)
+- [Security Knowledge Framework 'SKF'](https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best)
+- [Common Requirements Enumeration](https://github.com/OWASP/OpenCRE)
 <br clear="all"/><hr></hr>
  ### [wg-best-practices-os-developers](https://github.com/ossf/wg-best-practices-os-developers)
 
@@ -499,6 +515,22 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [Secure Software Development Fundamentals](https://openssf.org/training/courses/)
+- [Security Knowledge Framework 'SKF'](https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best)
+- [Common Requirements Enumeration](https://github.com/OWASP/OpenCRE)
+- [Concise & Best Practices Guides](https://openssf.org/resources/guides/)
+- [Education](https://github.com/ossf/education)
+- [Memory Safety](https://github.com/ossf/Memory-Safety)
+- [Security Toolbelt](https://github.com/ossf/toolbelt)
+**Projects:**
+
+ Join us in the following Projects:
+- [OpenSSF Best Practices Badge](https://bestpractices.coreinfrastructure.org)
+- [OpenSSF Scorecard](https://github.com/ossf/scorecard)
 <br clear="all"/><hr></hr>
  ### [ai-ml-security](https://github.com/ossf/ai-ml-security)
 
@@ -535,6 +567,18 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Christopher CRob Robinson](https://github.com/SecurityCRob)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [CVD Guides](https://github.com/ossf/oss-vulnerability-guide)
+- [SIRT](https://github.com/ossf/SIRT)
+- [OpenVEX](https://github.com/ossf/OpenVEX)
+- [Vuln Autofix SIG](https://docs.google.com/document/d/1_QwN7yQXWGM2tJaostIRNqyZIhVceVlIyXqCrSdC4E8/edit?usp=drive_link)
+**Projects:**
+
+ Join us in the following Projects:
+- [Open Source Vuln Schema 'OSV'](https://github.com/ossf/osv-schema)
 <br clear="all"/><hr></hr>
  ### [wg-dei](https://github.com/ossf/wg-dei)
 
@@ -552,6 +596,22 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Jay White](https://github.com/camaleon2016)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [Secure Software Development Fundamentals](https://openssf.org/training/courses/)
+- [Security Knowledge Framework 'SKF'](https://www.securityknowledgeframework.org/#:~:text=part%20of%20the-,OpenSSF,-Working%20group%3A%20Best)
+- [Common Requirements Enumeration](https://github.com/OWASP/OpenCRE)
+- [Concise & Best Practices Guides](https://openssf.org/resources/guides/)
+- [Education](https://github.com/ossf/education)
+- [Memory Safety](https://github.com/ossf/Memory-Safety)
+- [Security Toolbelt](https://github.com/ossf/toolbelt)
+**Projects:**
+
+ Join us in the following Projects:
+- [OpenSSF Best Practices Badge](https://bestpractices.coreinfrastructure.org)
+- [OpenSSF Scorecard](https://github.com/ossf/scorecard)
 <br clear="all"/><hr></hr>
  ### [wg-endusers](https://github.com/ossf/wg-endusers)
 
@@ -569,6 +629,11 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Jonathan Meadows](https://github.com/jonmuk)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [Threat Modeling](https://docs.google.com/document/d/1abI65H4pF5y8YtA2_TuDBAaI47v9mTfpr5mwVvccX_I/edit)
 <br clear="all"/><hr></hr>
  ### [wg-identifying-security-threats](https://github.com/ossf/wg-identifying-security-threats)
 
@@ -586,6 +651,13 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Michael Scovetta](https://github.com/scovetta)
 
+**Projects:**
+
+ Join us in the following Projects:
+- [Security Insights](https://github.com/ossf/security-insights-spec)
+- [Security-Metrics: Risk Dashboard](https://github.com/ossf/Project-Security-Metrics)
+- [Security Reviews](https://github.com/ossf/security-reviews)
+- [Security Insights Spec](https://github.com/ossf/security-insights-spec)
 <br clear="all"/><hr></hr>
  ### [wg-security-tooling](https://github.com/ossf/wg-security-tooling)
 
@@ -603,6 +675,16 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Ryan Ware](https://github.com/ware)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [SBOM Everywhere](https://drive.google.com/drive/folders/154MCLeIOQEgPpTUL7yzplOiipBVJ5KZJ)
+- [OSS Fuzzing](https://docs.google.com/document/d/1TmhqYpB1Ly-5o-F31RVHxgpunW6qeDTVopBCtCmKhs0/edit)
+**Projects:**
+
+ Join us in the following Projects:
+- [SBOMit](https://github.com/sbomit)
 <br clear="all"/><hr></hr>
  ### [wg-securing-software-repos](https://github.com/ossf/wg-securing-software-repos)
 
@@ -620,6 +702,10 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Our Group Lead(s):**
 - [Dustin Ingram](https://github.com/di)
 
+**Projects:**
+
+ Join us in the following Projects:
+- [RSTUF](https://github.com/repository-service-tuf)
 <br clear="all"/><hr></hr>
  ### [wg-supply-chain-integrity](https://github.com/ossf/wg-supply-chain-integrity)
 
@@ -638,6 +724,17 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Isaac Hepworth](https://github.com/hepwori)
 - [Dan Lorenc](https://github.com/dlorenc)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [S2C2F](https://github.com/ossf/s2c2f)
+**Projects:**
+
+ Join us in the following Projects:
+- [SLSA](https://slsa.dev/)
+- [gittuf](https://github.com/gittuf/gittuf)
+- [GUAC](https://github.com/guacsec/guac)
 <br clear="all"/><hr></hr>
  ### [wg-securing-critical-projects](https://github.com/ossf/wg-securing-critical-projects)
 
@@ -656,6 +753,18 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
 - [Jeff Mendoza](https://github.com/jeffmendoza)
 - [Amir Hossin Montazery](https://github.com/amirhmh3)
 
+
+ **Special Interest Groups (SIGs):**
+
+ Join us in the following SIGs:
+- [List of Critical OS Prj, components, & Frameworks](https://docs.google.com/spreadsheets/d/1ONZ4qeMq8xmeCHX03lIgIYE4MEXVfVL6oj05lbuXTDM/edit)
+- [Harvard study](https://www.coreinfrastructure.org/programs/census-program-ii/)
+**Projects:**
+
+ Join us in the following Projects:
+- [criticality_score](https://github.com/ossf/criticality_score)
+- [Package Analysis/Feeds](https://github.com/ossf/package-analysis)
+- [Allstar](https://github.com/ossf/allstar)
 <br clear="all"/><hr></hr>
 
 ## End of Work Group Information
