@@ -129,8 +129,8 @@ function appendRepoInfoToMainReadme() {
     }
 
     newSectionContent += "\n";
-    <br clear="all"/>
-    <hr></hr>
+    <br clear="all"/>;
+    <hr></hr>;
   }
 
 
