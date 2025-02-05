@@ -373,7 +373,7 @@ We meet on the first Wednesday of each month or join us on the slack channel [#a
  **Projects:**
 - [Open Source Vuln Schema 'OSV'](https://github.com/ossf/osv-schema)
 <br clear="all"/><hr></hr>
- ### [wg-dei](https://github.com/ossf/wg-dei)
+ ### [wg-BEAR](https://github.com/ossf/wg-dei)
 
  We formed in December 2023 to help increase representation and strengthen the overall effectiveness of the cybersecurity workforce.
 
