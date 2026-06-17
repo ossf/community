@@ -1,0 +1,149 @@
+---
+layout: default
+---
+{%- comment -%} Resolve this page's project from the master list. {%- endcomment -%}
+{%- assign project_id = page.project_id -%}
+{%- assign project = nil -%}
+{%- for pr in site.data.projects -%}
+  {%- if pr.id == project_id -%}{%- assign project = pr -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="tool-hero">
+  <p class="tool-hero__eyebrow"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> OpenSSF project</p>
+  <h1 class="tool-hero__title">{{ project.name }}</h1>
+  <p class="tool-hero__summary">{{ project.description }}</p>
+  <p class="tool-hero__links">
+    {%- if project.url -%}
+    <a class="tool-hero__link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Project site
+    </a>
+    {%- endif -%}
+    {%- if project.insights -%}
+    <a class="tool-hero__link" href="{{ project.insights }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
+    </a>
+    {%- endif -%}
+    {%- if project.lfx_id -%}
+    <a class="tool-hero__link" href="https://insights.linuxfoundation.org/project/{{ project.lfx_id }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-chart-line" aria-hidden="true"></i> LFX Insights
+    </a>
+    {%- endif -%}
+  </p>
+</section>
+
+{%- comment -%} Personas this project addresses, each with its verbatim note. {%- endcomment -%}
+{%- if project.personas and project.personas != empty -%}
+<h2 class="tool-matrix__heading">How each persona uses {{ project.name }}</h2>
+
+<nav class="tool-jumpnav" aria-label="Jump to persona">
+  <span class="tool-jumpnav__label">Jump to:</span>
+  {%- for link in project.personas -%}
+    {%- assign p = nil -%}
+    {%- for cand in site.data.personas -%}{%- if cand.id == link.id -%}{%- assign p = cand -%}{%- endif -%}{%- endfor -%}
+    {%- if p -%}<a href="#persona-{{ p.id }}"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i> {{ p.short }}</a>{%- endif -%}
+  {%- endfor -%}
+</nav>
+
+<div class="tool-matrix" role="list">
+  {%- for link in project.personas -%}
+    {%- assign p = nil -%}
+    {%- for cand in site.data.personas -%}{%- if cand.id == link.id -%}{%- assign p = cand -%}{%- endif -%}{%- endfor -%}
+    {%- if p -%}
+    <details class="tool-persona-row" id="persona-{{ p.id }}" open>
+      <summary>
+        <span class="tool-persona-row__icon"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i></span>
+        <span class="tool-persona-row__title">
+          <span class="tool-persona-row__persona">{{ p.name }}</span>
+          <span class="tool-persona-row__short">{{ p.short }}</span>
+        </span>
+        <span class="tool-persona-row__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+      </summary>
+      <div class="tool-persona-row__body">
+        <p>{{ link.note }}</p>
+        <p class="tool-persona-row__meta">
+          <a href="{{ '/personas/' | append: p.id | append: '/' | relative_url }}">See every project for {{ p.short }} →</a>
+        </p>
+      </div>
+    </details>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+{%- endif -%}
+
+{%- comment -%} Problems this project addresses, each with its note. {%- endcomment -%}
+{%- if project.problems and project.problems != empty -%}
+<h2 class="tool-matrix__heading">Problems {{ project.name }} helps with</h2>
+
+<div class="tool-matrix" role="list">
+  {%- for link in project.problems -%}
+    {%- assign prob = nil -%}
+    {%- for cand in site.data.problems -%}{%- if cand.id == link.id -%}{%- assign prob = cand -%}{%- endif -%}{%- endfor -%}
+    {%- if prob -%}
+    <details class="tool-persona-row" id="problem-{{ prob.id }}" open>
+      <summary>
+        <span class="tool-persona-row__icon"><i class="fa-solid {{ prob.icon }}" aria-hidden="true"></i></span>
+        <span class="tool-persona-row__title">
+          <span class="tool-persona-row__persona">{{ prob.name }}</span>
+          <span class="tool-persona-row__short">{{ prob.short }}</span>
+        </span>
+        <span class="tool-persona-row__chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+      </summary>
+      <div class="tool-persona-row__body">
+        <p>{{ link.note }}</p>
+        <p class="tool-persona-row__meta">
+          <a href="{{ '/problems/' | append: prob.id | append: '/' | relative_url }}">See every project for {{ prob.short }} →</a>
+        </p>
+      </div>
+    </details>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+{%- endif -%}
+
+{%- comment -%}
+  Related projects. Relationships are authored one-directional; render the
+  union of (a) ids this project lists and (b) projects that list this one.
+  Build a delimited string, dedupe, drop self.
+{%- endcomment -%}
+{%- assign rel_kinds = "similar_to,compatible_with" | split: "," -%}
+{%- for kind in rel_kinds -%}
+  {%- assign acc = "," -%}
+  {%- assign rel_count = 0 -%}
+  {%- comment -%} explicit ids on this project {%- endcomment -%}
+  {%- assign explicit = project[kind] -%}
+  {%- if explicit -%}
+    {%- for rid in explicit -%}
+      {%- assign probe = rid | prepend: "," | append: "," -%}
+      {%- unless acc contains probe -%}{%- assign acc = acc | append: rid | append: "," -%}{%- assign rel_count = rel_count | plus: 1 -%}{%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- comment -%} reverse: projects that list this one {%- endcomment -%}
+  {%- for cand in site.data.projects -%}
+    {%- assign back = cand[kind] -%}
+    {%- if back and back contains project.id and cand.id != project.id -%}
+      {%- assign probe = cand.id | prepend: "," | append: "," -%}
+      {%- unless acc contains probe -%}{%- assign acc = acc | append: cand.id | append: "," -%}{%- assign rel_count = rel_count | plus: 1 -%}{%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign ids = acc | split: "," -%}
+  {%- if rel_count > 0 -%}
+    {%- if kind == "similar_to" -%}{%- assign rel_label = "Similar projects" -%}{%- assign rel_blurb = "Cover similar ground — you may only need one." -%}
+    {%- else -%}{%- assign rel_label = "Works well with" -%}{%- assign rel_blurb = "Commonly combined with this project." -%}{%- endif -%}
+    <section class="project-related">
+      <h2 class="project-related__heading">{{ rel_label }}</h2>
+      <p class="project-related__blurb">{{ rel_blurb }}</p>
+      <div class="tool-jumpnav project-related__links">
+        {%- for rid in ids -%}
+          {%- assign target = nil -%}
+          {%- for cand in site.data.projects -%}{%- if cand.id == rid -%}{%- assign target = cand -%}{%- endif -%}{%- endfor -%}
+          {%- if target -%}<a href="{{ '/projects/' | append: target.id | append: '/' | relative_url }}">{{ target.name }}</a>{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="persona-footer-actions">
+  <a class="persona-back-link" href="{{ '/projects/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All projects</a>
+  <a class="persona-back-link" href="{{ '/' | relative_url }}">Start over <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>

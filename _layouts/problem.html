@@ -1,0 +1,99 @@
+---
+layout: default
+---
+{%- assign problem_id = page.problem_id -%}
+{%- assign active_problem = nil -%}
+{%- for pr in site.data.problems -%}
+  {%- if pr.id == problem_id -%}{%- assign active_problem = pr -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="persona-hero">
+  <div class="persona-hero__eyebrow">
+    <i class="fa-solid {{ active_problem.icon }}" aria-hidden="true"></i>
+    <span>Problem view</span>
+  </div>
+  <h1 class="persona-hero__title">{{ active_problem.name }}</h1>
+  <p class="persona-hero__summary">{{ active_problem.summary }}</p>
+</section>
+
+<nav class="persona-switcher" role="tablist" aria-label="Switch problem">
+  {%- for pr in site.data.problems -%}
+    {%- assign is_active = false -%}
+    {%- if pr.id == problem_id -%}{%- assign is_active = true -%}{%- endif -%}
+    <a role="tab"
+       aria-selected="{{ is_active }}"
+       {% if is_active %}aria-current="page"{% endif %}
+       tabindex="{% if is_active %}0{% else %}-1{% endif %}"
+       class="persona-pill{% if is_active %} persona-pill--active{% endif %}"
+       href="{{ '/problems/' | append: pr.id | append: '/' | relative_url }}">
+      <i class="fa-solid {{ pr.icon }}" aria-hidden="true"></i>
+      <span>{{ pr.short }}</span>
+    </a>
+  {%- endfor -%}
+</nav>
+
+{%- comment -%}
+  Projects that address this problem; capture each one's note and accumulate
+  the deduped set of personas those projects serve (derived through projects).
+{%- endcomment -%}
+{%- assign matched_count = 0 -%}
+{%- assign persona_ids = "," -%}
+{%- for project in site.data.projects -%}
+  {%- assign match = nil -%}
+  {%- for link in project.problems -%}
+    {%- if link.id == problem_id -%}{%- assign match = link -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if match -%}
+    {%- assign matched_count = matched_count | plus: 1 -%}
+    {%- for pel in project.personas -%}
+      {%- assign probe = pel.id | prepend: "," | append: "," -%}
+      {%- unless persona_ids contains probe -%}{%- assign persona_ids = persona_ids | append: pel.id | append: "," -%}{%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<p class="persona-intro">
+  {{ matched_count }} OpenSSF projects help with
+  <strong>{{ active_problem.short }}</strong>, each with a one-sentence note on how.
+  Prefer another way in? <a href="{{ '/personas/' | relative_url }}">Browse by role →</a>
+</p>
+
+<div class="component-grid tool-card-grid">
+  {%- for project in site.data.projects -%}
+    {%- assign match = nil -%}
+    {%- for link in project.problems -%}
+      {%- if link.id == problem_id -%}{%- assign match = link -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if match -%}
+    <a class="component-card tool-card" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">
+      <h2 class="tool-card__title">{{ project.name }}</h2>
+      <p class="tool-card__usage">{{ match.note }}</p>
+      <p class="tool-card__link">Full project breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
+    </a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+{%- if matched_count == 0 -%}
+<p class="empty-state">No projects are currently mapped to this problem. <a href="https://github.com/{{ site.repository }}">Contributions welcome →</a></p>
+{%- endif -%}
+
+{%- comment -%} Derived: personas who care about this problem. {%- endcomment -%}
+{%- assign persona_list = persona_ids | split: "," -%}
+{%- if persona_list != empty -%}
+<section class="derived-chips">
+  <h2 class="derived-chips__heading">Personas who care about this</h2>
+  <div class="tool-jumpnav derived-chips__links">
+    {%- for pid in persona_list -%}
+      {%- assign p = nil -%}
+      {%- for cand in site.data.personas -%}{%- if cand.id == pid -%}{%- assign p = cand -%}{%- endif -%}{%- endfor -%}
+      {%- if p -%}<a href="{{ '/personas/' | append: p.id | append: '/' | relative_url }}"><i class="fa-solid {{ p.icon }}" aria-hidden="true"></i> {{ p.short }}</a>{%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+<div class="persona-footer-actions">
+  <a class="persona-back-link" href="{{ '/problems/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Pick a different problem</a>
+  <a class="persona-back-link" href="{{ '/projects/' | relative_url }}">Browse all projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>

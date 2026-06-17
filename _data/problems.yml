@@ -1,0 +1,79 @@
+# Master list 2 of 3: PROBLEMS.
+#
+# Short data blocks describing the security problems the OpenSSF toolchain
+# addresses. `id` is the URL slug (/problems/<id>/) and the lookup key
+# referenced from projects.yml -> problems[].id.
+#
+# Same five fields as a persona (id, name, short, icon, summary) so the card
+# and hero markup is shared. Drafted best-effort — review and refine the set.
+#
+# INVARIANT: every problem id referenced by any project in projects.yml MUST
+# have a matching problems/<id>.md stub, or derived links 404 and `make test`
+# fails.
+
+- id: build-provenance
+  name: Build & Provenance Integrity
+  short: Build Integrity
+  icon: fa-cubes
+  summary: >-
+    Ensuring artefacts are built from the expected source, on a trusted
+    platform, without tampering — and that the resulting provenance is
+    verifiable by anyone downstream.
+
+- id: artifact-signing
+  name: Artefact Signing & Verification
+  short: Signing
+  icon: fa-signature
+  summary: >-
+    Proving who produced an artefact and confirming it has not been altered in
+    transit, ideally without the burden of managing long-lived signing keys.
+
+- id: dependency-visibility
+  name: Dependency & SBOM Visibility
+  short: Visibility
+  icon: fa-diagram-project
+  summary: >-
+    Knowing exactly what components ship inside your software — direct and
+    transitive — and being able to query that inventory when something changes.
+
+- id: vulnerability-management
+  name: Vulnerability Management
+  short: Vulnerabilities
+  icon: fa-bug
+  summary: >-
+    Tracking which known vulnerabilities affect your software, sharing
+    machine-readable exploitability status, and cutting through false positives.
+
+- id: secure-configuration
+  name: Secure Repository Configuration
+  short: Configuration
+  icon: fa-sliders
+  summary: >-
+    Keeping source repositories configured to a safe baseline — branch
+    protection, required reviews, hardened settings — and stopping drift before
+    it becomes an entry point.
+
+- id: security-posture
+  name: Measuring Security Posture
+  short: Posture
+  icon: fa-gauge-high
+  summary: >-
+    Quantifying how healthy and well-maintained a project is, so maintainers,
+    consumers, and registries can compare projects and prioritise attention.
+
+- id: policy-compliance
+  name: Policy & Compliance Enforcement
+  short: Compliance
+  icon: fa-clipboard-check
+  summary: >-
+    Defining a consistent set of security expectations and automatically
+    enforcing them across many projects — and producing evidence for auditors
+    and regulators.
+
+- id: secrets-management
+  name: Secrets Management
+  short: Secrets
+  icon: fa-key
+  summary: >-
+    Storing, rotating, and brokering access to credentials and signing keys so
+    they never end up hardcoded in source or leaked through a pipeline.

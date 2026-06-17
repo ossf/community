@@ -1,0 +1,56 @@
+# 6 personas — the roles that touch the OpenSSF toolchain. This file is the source of truth.
+# `id` is used as the URL slug (/personas/<id>/) and as the lookup key in projects.yml.
+
+- id: developer
+  name: Software Developer / Maintainer
+  short: Developer
+  icon: fa-code
+  summary: >-
+    You write and maintain the software. You need tools that shift security
+    left — into local builds, pull-request checks, and everyday release
+    hygiene — without slowing you down.
+
+- id: ospo
+  name: Open Source Professional (OSPO)
+  short: OSPO
+  icon: fa-building-columns
+  summary: >-
+    You steward your organization's open source strategy. You need tools that
+    let you set, enforce, and measure consistent security expectations across
+    every project you touch.
+
+- id: security
+  name: Security Engineer / Architect
+  short: Security
+  icon: fa-shield-halved
+  summary: >-
+    You design and defend the systems around the software. You need tools that
+    give you architectural visibility, threat-model traceability, and
+    automated enforcement of security guarantees.
+
+- id: devops
+  name: CI/CD DevOps & Tooling Integrator
+  short: DevOps
+  icon: fa-gears
+  summary: >-
+    You own the pipelines that build, test, and ship code. You need tools that
+    bolt cleanly into CI/CD, block unsafe dependencies, and produce verifiable
+    artefacts at every stage.
+
+- id: package-manager
+  name: Package & Repository Manager
+  short: Package Manager
+  icon: fa-box-archive
+  summary: >-
+    You run the registries and repositories that serve software to the world.
+    You need tools that surface trust signals to consumers and protect
+    artefacts in flight.
+
+- id: executive
+  name: Executive / End-User Consumer
+  short: Executive
+  icon: fa-briefcase
+  summary: >-
+    You make procurement, compliance, and risk decisions on behalf of a larger
+    organization. You need tools that translate supply-chain evidence into
+    signals you can act on.

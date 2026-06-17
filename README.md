@@ -1,101 +1,144 @@
-# **OSSF Project/WG Name**
+# OpenSSF Tools by Persona
 
-[Brief description of the initiative]
+A Jekyll site built from three master lists — **personas**, **problems**, and
+**projects** — that maps the OpenSSF projects onto the roles they serve and the
+problems they solve. Each project declares which personas and problems it
+addresses (with a sentence of prose per link) plus the projects it's similar to
+or pairs well with. Visitors start from whichever axis fits: their role, the
+problem they're solving, or a specific project.
 
+## Site map
 
-## 
-**Motivation**
+```
+/                          landing page · browse by role / problem / project
+/personas/                 persona index
+/personas/<id>/            persona view · projects for this role + problems they solve
+/problems/                 problem index
+/problems/<id>/            problem view · projects that help + personas who care
+/projects/                 project index
+/projects/<slug>/          project detail · personas, problems, related projects
+/about/                    about the mapping + data source
+```
 
-[Background / use cases of the problem to be solved]
+## Tech stack
 
+- **[Jekyll](https://jekyllrb.com/) 4.4** with the `minima` base theme
+- **kramdown** for Markdown, **Rouge** for syntax highlighting
+- **`jekyll-seo-tag`** + **`jekyll-feed`**
+- **SCSS** compiled by Jekyll (front-matter-prefixed `assets/css/style.scss`)
+- **FontAwesome** via CDN for icons
+- Vanilla JS for the theme toggle
 
-## 
-**Objective**
+There are no framework dependencies beyond the plugins pinned in `Gemfile`.
 
-[What is to be achieved with this initiative]
+## Data files
 
-[OKRs - OPTIONAL]
+All content lives in three Jekyll data files plus a JSON mirror — everything
+else in the site is layout.
 
+| File                            | Purpose                                                                                              |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `_data/personas.yml`            | Persona rows (id, name, short, icon, summary) — **source of truth**                                  |
+| `_data/problems.yml`            | Problem rows (same five fields as a persona) — **source of truth**                                   |
+| `_data/projects.yml`            | Projects; each declares the personas + problems it addresses (`{id, note}` lists), `insights`, and optional `similar_to`/`compatible_with` — **source of truth** |
+| `assets/data/catalog.json`      | Generated at build time from the three YAML files; do not edit by hand                               |
 
-## 
-**Scope**
+Personas and problems are linked only *through* projects — a persona page derives
+the problems its projects solve, and vice versa. The three YAML files are the
+single source of truth; the `note` sentences, `insights` links, and project
+relationships are all edited here and refined over time.
 
-[What is in and out of scope]
+**Invariant:** every problem `id` used in `projects.yml` must have a matching
+`problems/<id>.md` stub, or `make test` fails on a dead internal link.
 
+## Build
 
-## 
-**Prior Work**
+A `Makefile` wraps the common loops (Ruby ≥ 3.2 required):
 
+```sh
+make deps     # bundle install (first time / after Gemfile changes)
+make start    # serve on http://localhost:4000
+make test     # jekyll build + htmlproofer (run this before opening a PR)
+```
 
+On a fresh macOS box, `make brand-new-env-installs` installs a suitable Ruby
+via Homebrew first. The raw equivalents are `bundle install` and
+`bundle exec jekyll serve` if you'd rather not use `make`.
 
-*   List of prior and/or related projects
+## Repository layout
 
-## 
-**Active Projects**
+```
+community/
+├── _config.yml
+├── _data/
+│   ├── navigation.yml        # header nav
+│   ├── sidebar.yml           # collapsible sidebar (hand-maintained)
+│   ├── personas.yml          # master list 1 · personas
+│   ├── problems.yml          # master list 2 · problems
+│   └── projects.yml          # master list 3 · projects (+ persona/problem maps)
+├── _includes/
+│   ├── header.html           # OpenSSF logo + branding + theme toggle
+│   ├── footer.html           # social links + copyright
+│   └── sidebar.html          # collapsible <details> sidebar nav
+├── _layouts/
+│   ├── default.html          # shell (header + sidebar + content + footer)
+│   ├── home.html             # shell without sidebar (landing page)
+│   ├── page.html             # default page wrapper
+│   ├── persona.html          # switcher + project cards + derived problem chips
+│   ├── problem.html          # switcher + project cards + derived persona chips
+│   └── project.html          # personas + problems accordions + related projects
+├── assets/
+│   ├── css/style.scss        # Gemara stylesheet + net-new site CSS
+│   ├── js/theme-toggle.js    # dark-mode toggle (verbatim from Gemara)
+│   ├── fonts/                # Cairo + IBMPlexSans
+│   ├── data/catalog.json
+│   ├── favicon.ico
+│   └── logo.svg
+├── personas/
+│   ├── index.md              # /personas/
+│   ├── developer.md          # /personas/developer/ …etc.
+│   └── …
+├── problems/
+│   ├── index.md              # /problems/
+│   ├── build-provenance.md   # /problems/build-provenance/ …etc.
+│   └── …
+├── projects/
+│   ├── index.md              # /projects/
+│   ├── allstar.md            # /projects/allstar/ …etc.
+│   └── …
+├── about.md                  # /about/
+└── index.md                  # /
+```
 
-[Optional]
+## Contributing
 
-## 
-**Inactive Projects**
+The site is data-driven, so most contributions are edits to one of the three
+`_data/*.yml` files — no templating required.
 
-[Optional]
+- **Add or fix a project** → edit `_data/projects.yml` and add a one-line stub at
+  `projects/<slug>.md` (copy an existing stub and change the front matter).
+- **Add a persona or problem** → append to `_data/personas.yml` or
+  `_data/problems.yml`, add the matching `personas/<id>.md` / `problems/<id>.md`
+  stub, and reference it from at least one project in `_data/projects.yml`.
+- **Keep the sidebar in sync** → `_data/sidebar.yml` is hand-maintained, so add
+  your new id/url there too.
 
-# 
-**Get Involved**
+Every problem and persona `id` used in `projects.yml` must have a matching stub
+page, or `make test` fails on a dead internal link. Run `make test` before
+opening a pull request against [`ossf/community`](https://github.com/ossf/community).
 
-*   Official communications occur on the [ADD LINK TO YOUR WG MAILING LIST] (ex: https://lists.openssf.org/g/openssf-tac/topics).  \
-[Manage your subscriptions to Open SSF mailing lists](https://lists.openssf.org/g/main/subgroups).
-*   [Add Slack information if availabable]
+## Accessibility
 
-## 
+- Full keyboard navigation: focus rings on pills, tabs, and `<details>` summaries.
+- `aria-selected` / `aria-current` on the persona switcher pills.
+- Native `<details>` elements on the tool-detail accordion (no JS needed).
+- Dark-mode parity via the `data-theme="dark"` attribute and the inline
+  anti-flash script in the `<head>`.
+- Responsive down to mobile; the sticky persona switcher collapses to a
+  static strip on screens ≤ 600 px.
 
+## License & attribution
 
-### 
-**Quick Start**
-
-*   Areas that need contributions
-*   Build information if applicable
-*   Where to file issues
-*   Etc.
-
-## 
-**Meeting times**
-
-[TODO: Update with your WG meeting details]
-*   Every other Tuesday @ 10:00am PST (Link to calendar invite)
-*   [Meeting Minutes](https://docs.google.com/document/d/1uXQI1vI5_HyOvxHMexrnTY_ruBrynbPl5yOd1UM4g3A/edit#heading=h.yworp6sxzb6g)
-
-# 
-**Governance**
-
-[TODO: Update this link to your specific CHARTER.md file]
-The [CHARTER.md](https://github.com/ossf/project-template/blob/main/CHARTER.md) outlines the scope and governance of our group activities.
-
-
-[OPTIONAL]
-*   Lead name 
-*   Co-Lead name
-
-#
-**Intellectual Property**
-
-In accordance with the [OpenSSF Charter (PDF)](https://charter.openssf.org/), work produced by this group is licensed as follows:
-
-[TODO: Select below the applicable license(s), delete those that don't apply, and update the LICENSE file accordingly. For specification development refer to the specific instructions on the [Community Specification Getting Started page](https://github.com/CommunitySpecification/1.0/blob/main/..Getting%20Started.md).
-
-Note that for source code, instead of Apache, you may choose to use the MIT License available at https://opensource.org/licenses/MIT. Otherwise, no other license than those listed here may be used without approval from the Governing Board.]
-
-1. Software source code
-* Apache License, Version 2.0, available at https://www.apache.org/licenses/LICENSE-2.0;
-2. Data
-* Any of the Community Data License Agreements, available at https://www.cdla.io;
-3. Specifications
-* Community Specification License, Version 1.0, available at https://github.com/CommunitySpecification/1.0
-4. All other Documentation
-* Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/
-
-**Antitrust Policy Notice**
-
-Linux Foundation meetings involve participation by industry competitors, and it is the intention of the Linux Foundation to conduct all of its activities in accordance with applicable antitrust and competition laws. It is therefore extremely important that attendees adhere to meeting agendas, and be aware of, and not participate in, any activities that are prohibited under applicable US state, federal or foreign antitrust and competition laws.
-
-Examples of types of actions that are prohibited at Linux Foundation meetings and in connection with Linux Foundation activities are described in the Linux Foundation Antitrust Policy available at http://www.linuxfoundation.org/antitrust-policy. If you have questions about these matters, please contact your company counsel, or if you are a member of the Linux Foundation, feel free to contact Andrew Updegrove of the firm of Gesmer Updegrove LLP, which provides legal counsel to the Linux Foundation.
+The OpenSSF logo is used with attribution and links back to
+<https://openssf.org>. This site is distributed under the same license as the
+underlying OpenSSF project metadata.

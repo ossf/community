@@ -1,0 +1,70 @@
+# Hand-maintained sidebar tree. Keep the ids/urls in sync with personas.yml,
+# problems.yml, and projects.yml — they are not generated automatically.
+
+- title: Browse by Persona
+  url: /personas/
+  children:
+    - title: Software Developer / Maintainer
+      url: /personas/developer/
+    - title: Open Source Professional (OSPO)
+      url: /personas/ospo/
+    - title: Security Engineer / Architect
+      url: /personas/security/
+    - title: CI/CD DevOps & Tooling Integrator
+      url: /personas/devops/
+    - title: Package & Repository Manager
+      url: /personas/package-manager/
+    - title: Executive / End-User Consumer
+      url: /personas/executive/
+- title: Browse by Problem
+  url: /problems/
+  children:
+    - title: Build & Provenance Integrity
+      url: /problems/build-provenance/
+    - title: Artefact Signing & Verification
+      url: /problems/artifact-signing/
+    - title: Dependency & SBOM Visibility
+      url: /problems/dependency-visibility/
+    - title: Vulnerability Management
+      url: /problems/vulnerability-management/
+    - title: Secure Repository Configuration
+      url: /problems/secure-configuration/
+    - title: Measuring Security Posture
+      url: /problems/security-posture/
+    - title: Policy & Compliance Enforcement
+      url: /problems/policy-compliance/
+    - title: Secrets Management
+      url: /problems/secrets-management/
+- title: Browse by Project
+  url: /projects/
+  children:
+    - title: Allstar
+      url: /projects/allstar/
+    - title: Best Practices Badge
+      url: /projects/best-practices-badge/
+    - title: Criticality Score
+      url: /projects/criticality-score/
+    - title: GUAC
+      url: /projects/guac/
+    - title: Minder
+      url: /projects/minder/
+    - title: Open Bao
+      url: /projects/open-bao/
+    - title: OpenSSF Scorecard
+      url: /projects/openssf-scorecard/
+    - title: OSPS Baseline
+      url: /projects/osps-baseline/
+    - title: OSV Schema & OpenVEX
+      url: /projects/osv-openvex/
+    - title: Protobom / SBOM Tools
+      url: /projects/protobom/
+    - title: Repository Service for TUF (RSTUF)
+      url: /projects/rstuf/
+    - title: Security Insights
+      url: /projects/security-insights/
+    - title: Sigstore
+      url: /projects/sigstore/
+    - title: SLSA
+      url: /projects/slsa/
+- title: About
+  url: /about/

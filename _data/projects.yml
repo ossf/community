@@ -1,0 +1,434 @@
+# Master list 3 of 3: PROJECTS.
+#
+# Each project declares which personas and problems it claims to address.
+# Both `personas` and `problems` are lists of {id, note} maps — the id links
+# to a master-list entry, the note is one sentence of prose.
+#
+# - personas[].note: one sentence per persona id (defined in personas.yml).
+# - problems[].note: one sentence per problem id (defined in problems.yml).
+#   Edit and refine these freely — this file is the source of truth.
+# - insights: link to the project's Security Insights file
+#   (https://security-insights.openssf.org). Optional. The URLs below are
+#   best-effort drafts pointing at the conventional repo location — verify them.
+# - lfx_id: the project's slug on LFX Insights. Optional. The "LFX Insights"
+#   link is built as https://insights.linuxfoundation.org/project/<lfx_id> and
+#   only renders when this field is set. Add the slug per project once verified.
+# - similar_to / compatible_with: optional lists of other project ids. Author
+#   one direction only; pages render the relationship symmetrically.
+#
+# INVARIANT: every problem id used below MUST have a matching problems/<id>.md
+# stub and an entry in problems.yml, or `make test` fails on a dead link.
+
+- id: allstar
+  name: Allstar
+  url: https://github.com/ossf/allstar
+  insights: https://github.com/ossf/allstar/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A GitHub app that continuously monitors organization and repository
+    settings and automatically enforces security best practices such as
+    branch protection.
+  personas:
+    - id: developer
+      note: "Installs the Allstar GitHub app to automatically enforce security best practices like branch protection on their repositories."
+    - id: ospo
+      note: "Enforces standardized security policies across an organization's entire GitHub footprint at scale."
+    - id: security
+      note: "Configures Allstar policies to automatically detect and remediate misconfigurations across repositories."
+    - id: devops
+      note: "Configures Allstar to continuously audit and enforce security policies on GitHub repositories that host critical CI/CD pipelines and infrastructure."
+    - id: package-manager
+      note: "Ensures that GitHub repositories hosting packages maintain continuous security configurations and branch protections to prevent unauthorized code injections at the source."
+    - id: executive
+      note: "Gains assurance of continuous automated compliance with organizational security policies across all code repositories."
+  problems:
+    - id: secure-configuration
+      note: "Continuously watches repository settings and auto-remediates drift away from a safe configuration baseline."
+    - id: policy-compliance
+      note: "Encodes organization-wide security policy as code and enforces it across every repository automatically."
+  similar_to:
+    - minder
+  compatible_with:
+    - openssf-scorecard
+
+- id: best-practices-badge
+  name: Best Practices Badge
+  url: https://www.bestpractices.dev/
+  insights: https://github.com/coreinfrastructure/best-practices-badge/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A voluntary self-certification program that lets open source projects
+    demonstrate they follow recognized development best practices.
+  personas:
+    - id: developer
+      note: "Achieves the Best Practices Badge to voluntarily self-certify and demonstrate their adherence to secure development standards."
+    - id: ospo
+      note: "Mandates the achievement of the badge across internal open source projects to demonstrate a commitment to security and quality."
+    - id: security
+      note: "Uses the Best Practices Badge as a signaling mechanism to verify that a project adheres to good practices."
+    - id: devops
+      note: "Integrates badge status checks into the pipeline to block the inclusion of dependencies that fail to meet baseline security practices."
+    - id: package-manager
+      note: "Uses the badge as a metadata indicator to highlight secure and well-maintained packages to end users in the repository."
+    - id: executive
+      note: "Uses the badge as a trust signal to make risk-aware procurement and enterprise decisions."
+  problems:
+    - id: security-posture
+      note: "Turns adherence to recognised practices into a single, comparable trust signal that consumers can read at a glance."
+    - id: policy-compliance
+      note: "Gives organizations a published bar that internal projects can be required to meet and demonstrate."
+  similar_to:
+    - osps-baseline
+  compatible_with:
+    - openssf-scorecard
+
+- id: criticality-score
+  name: Criticality Score
+  url: https://github.com/ossf/criticality_score
+  insights: https://github.com/ossf/criticality_score/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A metric that quantifies how critical an open source project is to the
+    broader ecosystem so maintainers and consumers can prioritize attention
+    and investment.
+  personas:
+    - id: developer
+      note: "Evaluates the criticality score of their own project to understand its ecosystem impact and secure necessary maintenance support."
+    - id: ospo
+      note: "Utilizes the criticality score to prioritize resource allocation and security audits for the most crucial dependencies used within the enterprise."
+    - id: security
+      note: "Queries the Criticality Score to prioritize dependencies and automate the assessment of project impact, ensuring the highest-risk single points of failure receive immediate architectural review."
+    - id: devops
+      note: "Integrates the criticality score into CI/CD workflows to trigger stricter security testing for highly critical components."
+    - id: package-manager
+      note: "Surfaces criticality scores in package registries to help developers make informed decisions about which packages to adopt."
+    - id: executive
+      note: "Uses criticality scores to assess systemic risk and advocate for investments in the most vital open source infrastructure."
+  problems:
+    - id: security-posture
+      note: "Scores how critical a project is to the wider ecosystem so attention and investment can be prioritised where it matters most."
+  compatible_with:
+    - openssf-scorecard
+
+- id: guac
+  name: GUAC
+  url: https://guac.sh/
+  insights: https://github.com/guacsec/guac/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    Graph for Understanding Artifact Composition — a queryable supply-chain
+    knowledge graph that aggregates SBOMs, attestations, and vulnerability
+    data.
+  personas:
+    - id: developer
+      note: "Queries GUAC to understand the exact dependency graph and vulnerability blast radius for the components they are actively developing."
+    - id: ospo
+      note: "Leverages GUAC to maintain a comprehensive, queryable graph of software supply chain metadata across all enterprise projects."
+    - id: security
+      note: "Utilizes GUAC to establish architectural traceability of published components across the software supply chain."
+    - id: devops
+      note: "Integrates GUAC into the pipeline to automatically block builds that introduce malicious or policy-violating transitive dependencies."
+    - id: package-manager
+      note: "Leverages GUAC to expose actionable metadata about components and their relationships for supply chain integrity."
+    - id: executive
+      note: "Relies on GUAC's high-level supply chain visibility to understand enterprise risk exposure during major zero-day vulnerability events."
+  problems:
+    - id: dependency-visibility
+      note: "Aggregates SBOMs and attestations into one queryable graph so you can trace any component and its relationships."
+    - id: vulnerability-management
+      note: "Joins vulnerability data to the dependency graph to reveal the blast radius of a newly disclosed flaw."
+  compatible_with:
+    - protobom
+    - osv-openvex
+
+- id: minder
+  name: Minder
+  url: https://github.com/mindersec/minder
+  insights: https://github.com/mindersec/minder/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A software-supply-chain security platform that continuously verifies
+    secure practices and enforces standardized policies across
+    repositories and artefacts.
+  personas:
+    - id: developer
+      note: "Uses Minder to proactively manage their security posture and attest secure practices to downstream consumers."
+    - id: ospo
+      note: "Deploys Minder to establish and continuously verify standardized security policies across all internal and open source project portfolios."
+    - id: security
+      note: "Maps repository configurations to enterprise threat models, using Minder to continuously enforce secure development lifecycles and prevent configuration drift."
+    - id: devops
+      note: "Configures Minder to execute security posture management checks and minimize risk along the supply chain."
+    - id: package-manager
+      note: "Ensures that published packages originate from repositories that continuously pass strict security posture checks."
+    - id: executive
+      note: "Leverages verifiable proof of secure development practices to satisfy auditors and enterprise customers through continuous attestation."
+  problems:
+    - id: secure-configuration
+      note: "Continuously verifies repository configuration against secure-by-default rules and prevents drift over time."
+    - id: policy-compliance
+      note: "Enforces standardized security policy across whole portfolios of repositories and artefacts from one control plane."
+  similar_to:
+    - allstar
+  compatible_with:
+    - openssf-scorecard
+
+- id: open-bao
+  name: Open Bao
+  url: https://openbao.org/
+  insights: https://github.com/openbao/openbao/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A community-governed, open source secrets-management platform for storing,
+    rotating, and brokering access to secrets, credentials, and signing keys.
+  personas:
+    - id: developer
+      note: "Uses Open Bao APIs to securely fetch database credentials and API keys without hardcoding them into source code."
+    - id: ospo
+      note: "Promotes Open Bao as the standard, open-source-governed solution for managing secrets across the organization's projects."
+    - id: security
+      note: "Designs centralized secrets management architectures using Open Bao to enforce strict access controls and credential rotation."
+    - id: devops
+      note: "Integrates Open Bao to securely inject ephemeral credentials into CI/CD pipelines during automated builds and deployments."
+    - id: package-manager
+      note: "Utilizes Open Bao to manage secrets and signing keys, ensuring the untampered and trusted distribution of packages."
+    - id: executive
+      note: "Ensures regulatory compliance and software sovereignty through a community-governed secrets management solution, mitigating risks associated with vendor lock-in and licensing shifts."
+  problems:
+    - id: secrets-management
+      note: "Stores, rotates, and brokers access to credentials and signing keys so they never get hardcoded or leaked."
+  compatible_with:
+    - sigstore
+
+- id: openssf-scorecard
+  name: OpenSSF Scorecard
+  url: https://scorecard.dev/
+  insights: https://github.com/ossf/scorecard/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    An automated tool that assesses open source projects against a curated
+    set of security-health checks and produces a comparable score.
+  personas:
+    - id: developer
+      note: "Leverages the OpenSSF Scorecard to identify and implement the security practices required for commercial downstream adoption."
+    - id: ospo
+      note: "Utilizes the OpenSSF Scorecard to systematically measure project security health and establish baseline enterprise policies for safe open source consumption."
+    - id: security
+      note: "Leverages the OpenSSF Scorecard to assess open source projects for security risks through automated checks."
+    - id: devops
+      note: "Embeds the OpenSSF Scorecard to execute automated security health checks directly within CI/CD pipelines."
+    - id: package-manager
+      note: "Displays OpenSSF Scorecard metrics on the registry interface to help users evaluate the security hygiene of available packages."
+    - id: executive
+      note: "Evaluates trust and mitigates supply chain risk by reviewing the health metrics of dependencies."
+  problems:
+    - id: security-posture
+      note: "Runs automated health checks against a project and produces a single comparable score consumers can act on."
+    - id: secure-configuration
+      note: "Flags risky repository configuration through automated checks so it can be hardened before adoption."
+  similar_to:
+    - best-practices-badge
+  compatible_with:
+    - allstar
+
+- id: osps-baseline
+  name: OSPS Baseline
+  url: https://baseline.openssf.org/
+  insights: https://github.com/ossf/security-baseline/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    The Open Source Project Security Baseline — a consensus-driven minimum
+    set of security requirements for projects to adopt and for consumers to
+    expect.
+  personas:
+    - id: developer
+      note: "Adopts the OSPS Baseline to implement fundamental security steps, like secure workflows and disclosure policies, early in development."
+    - id: ospo
+      note: "Uses the OSPS Baseline to define and enforce security expectations for projects across the enterprise."
+    - id: security
+      note: "Integrates the OSPS Baseline to enforce structured security requirements and reduce defects early in the software creation phase."
+    - id: devops
+      note: "Configures pipeline guardrails to automatically verify that projects adhere to the fundamental practices outlined in the baseline."
+    - id: package-manager
+      note: "Requires adherence to the baseline as a prerequisite for verifying or promoting packages within the repository ecosystem."
+    - id: executive
+      note: "Adopts the structured baseline to ensure organizational compliance with policies and regulations like the Cyber Resilience Act."
+  problems:
+    - id: policy-compliance
+      note: "Provides a consensus minimum set of requirements that maps cleanly onto regulations like the Cyber Resilience Act."
+    - id: security-posture
+      note: "Defines the floor of expected security practices so projects can be measured against a shared bar."
+  similar_to:
+    - best-practices-badge
+  compatible_with:
+    - minder
+
+- id: osv-openvex
+  name: OSV Schema & OpenVEX
+  url: https://ossf.github.io/osv-schema/
+  insights: https://github.com/ossf/osv-schema/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    Standard, machine-readable formats for describing vulnerabilities (OSV)
+    and their exploitability status (OpenVEX) across the software supply
+    chain.
+  personas:
+    - id: developer
+      note: "Generates OpenVEX documents to explicitly inform users that their project is not affected by a specific vulnerability found in a dependency."
+    - id: ospo
+      note: "Adopts the OSV schema to standardize how vulnerability information is ingested and tracked across all enterprise open source usage."
+    - id: security
+      note: "Adopts the OSV Schema and OpenVEX to standardize vulnerability reporting and coordinate incident response and analysis."
+    - id: devops
+      note: "Automates the ingestion of OSV data and OpenVEX statements in the pipeline to prevent false positive vulnerability alerts from breaking builds."
+    - id: package-manager
+      note: "Serves OSV-formatted advisories directly from the registry to ensure package consumers receive actionable, machine-readable vulnerability updates."
+    - id: executive
+      note: "Reviews standardized vulnerability data formats to clearly understand post-release risk during procurement and auditing."
+  problems:
+    - id: vulnerability-management
+      note: "Standardises how vulnerabilities and their exploitability status are described so tools can exchange them and suppress false positives."
+  compatible_with:
+    - guac
+    - protobom
+
+- id: protobom
+  name: Protobom / SBOM Tools
+  url: https://github.com/protobom/protobom
+  insights: https://github.com/protobom/protobom/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A shared library and toolset for generating, translating, and consuming
+    Software Bills of Materials in standard formats such as SPDX and
+    CycloneDX.
+  personas:
+    - id: developer
+      note: "Integrates SBOM generation tools into their local build process to automatically document the components used in their software."
+    - id: ospo
+      note: "Mandates the use of standard SBOM formats and tools like Protobom to maintain a comprehensive inventory of third-party software assets."
+    - id: security
+      note: "Analyzes ingested SBOMs to rapidly identify and triage vulnerable components across the organization's application portfolio."
+    - id: devops
+      note: "Embeds Protobom into the automated release pipeline to seamlessly generate and attach SBOMs to every compiled artifact."
+    - id: package-manager
+      note: "Distributes generated Software Bill of Materials (SBOMs) alongside packages to provide consumers with a transparent component inventory."
+    - id: executive
+      note: "Demands SBOMs as trust signals to assess post-release risk and make informed consumption decisions."
+  problems:
+    - id: dependency-visibility
+      note: "Generates and translates SBOMs in standard formats so the component inventory travels with the artefact."
+  compatible_with:
+    - guac
+    - osv-openvex
+
+- id: rstuf
+  name: Repository Service for TUF (RSTUF)
+  url: https://repository-service-tuf.readthedocs.io/
+  insights: https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A drop-in implementation of The Update Framework (TUF) that protects
+    software repositories from compromise, rollback, and man-in-the-middle
+    attacks.
+  personas:
+    - id: developer
+      note: "Relies on RSTUF-backed repositories to confidently pull dependencies without fear of targeted man-in-the-middle or rollback attacks."
+    - id: ospo
+      note: "Recommends RSTUF to ensure the organization's internally hosted artifact repositories are resilient against compromise."
+    - id: security
+      note: "Implements The Update Framework (TUF) via RSTUF to secure software delivery architectures and protect cryptographic root keys."
+    - id: devops
+      note: "Configures build pipelines to exclusively interact with RSTUF-secured repositories to guarantee the integrity of fetched dependencies."
+    - id: package-manager
+      note: "Implements RSTUF to secure content downloads against tampering between the remote repository and the client."
+    - id: executive
+      note: "Reduces enterprise liability by ensuring all software updates distributed to customers are cryptographically verified and secure."
+  problems:
+    - id: artifact-signing
+      note: "Cryptographically signs repository metadata so clients can verify content has not been tampered with in transit."
+    - id: build-provenance
+      note: "Protects the distribution chain against rollback and man-in-the-middle attacks between repository and client."
+  similar_to:
+    - sigstore
+  compatible_with:
+    - slsa
+
+- id: security-insights
+  name: Security Insights
+  url: https://github.com/ossf/security-insights-spec
+  insights: https://github.com/ossf/security-insights-spec/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A machine-processable YAML specification that lets a project declare its
+    security posture, vulnerability-handling process, and supporting
+    resources.
+  personas:
+    - id: developer
+      note: "Creates a Security Insights file to report their project's security information in a machine-processable way."
+    - id: ospo
+      note: "Aggregates Security Insights files across projects to programmatically monitor the security health and maintenance status of open source dependencies."
+    - id: security
+      note: "Consumes Security Insights metadata to automatically assess the vulnerability management practices of third-party libraries."
+    - id: devops
+      note: "Uses the machine-readable Security Insights YAML file to automatically approve or block dependencies during pipeline execution."
+    - id: package-manager
+      note: "Incorporates Security Insights data into the repository index to allow users to search and filter packages based on their security policies."
+    - id: executive
+      note: "Analyzes machine-processable metadata and prioritization to evaluate operational risk and establish trust in vendors."
+  problems:
+    - id: security-posture
+      note: "Lets a project self-declare its security posture in a machine-readable file that consumers can aggregate and compare."
+    - id: dependency-visibility
+      note: "Surfaces a project's vulnerability-handling process and resources so downstream consumers can reason about it programmatically."
+  compatible_with:
+    - openssf-scorecard
+
+- id: sigstore
+  name: Sigstore
+  url: https://www.sigstore.dev/
+  insights: https://github.com/sigstore/sigstore/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A free, identity-based artefact-signing service backed by a public
+    transparency log so anyone can verify who built what.
+  personas:
+    - id: developer
+      note: "Adopts Sigstore to cryptographically sign artifacts and ensure their integrity early in the release process."
+    - id: ospo
+      note: "Standardizes on keyless signing (Sigstore) across the enterprise to eliminate the overhead of managing long-lived cryptographic keys."
+    - id: security
+      note: "Validates the transparency log to audit the provenance and authenticity of software components used in production."
+    - id: devops
+      note: "Deploys Sigstore to enable identity-based (keyless) signing via OIDC, eliminating the risk of compromised long-lived build secrets and automating artifact verification in the pipeline."
+    - id: package-manager
+      note: "Integrates Sigstore natively into the package registry to automatically verify incoming artifact signatures and display provenance to users."
+    - id: executive
+      note: "Verifies cryptographic signatures as trust signals to confirm artifact integrity post-release."
+  problems:
+    - id: artifact-signing
+      note: "Provides keyless, identity-based signing backed by a public transparency log so anyone can verify who built what."
+    - id: build-provenance
+      note: "Records signatures in a transparency log, making artefact provenance independently auditable downstream."
+  similar_to:
+    - rstuf
+  compatible_with:
+    - slsa
+    - open-bao
+
+- id: slsa
+  name: SLSA
+  url: https://slsa.dev/
+  insights: https://github.com/slsa-framework/slsa/blob/main/SECURITY-INSIGHTS.yml
+  lfx_id: slsa
+  description: >-
+    Supply-chain Levels for Software Artifacts — a framework of progressive
+    security requirements for source, build, and provenance integrity.
+  personas:
+    - id: developer
+      note: "Follows SLSA guidelines to implement secure coding and build practices that prevent tampering with their source code."
+    - id: ospo
+      note: "Adopts the SLSA framework as an organizational standard to systematically measure and improve the supply chain security of all projects."
+    - id: security
+      note: "Uses the SLSA framework to identify architectural gaps in the build process and design tamper-evident build systems."
+    - id: devops
+      note: "Applies the SLSA framework to generate non-falsifiable build provenance, ensuring that the artifact produced can be cryptographically traced back to the specific source and build platform."
+    - id: package-manager
+      note: "Requires specific SLSA compliance levels before allowing high-profile packages to be published or verified in the repository."
+    - id: executive
+      note: "Mandates SLSA compliance to assure enterprise customers and regulators that the organization's software is protected against supply chain tampering."
+  problems:
+    - id: build-provenance
+      note: "Defines progressive levels for source, build, and provenance integrity so artefacts can be traced back to their origin."
+    - id: policy-compliance
+      note: "Gives organizations a tiered standard to mandate and demonstrate supply-chain security to customers and regulators."
+  similar_to:
+    - sigstore
+  compatible_with:
+    - rstuf

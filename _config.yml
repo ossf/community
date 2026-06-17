@@ -1,0 +1,67 @@
+# OpenSSF Tools by Persona — Site Configuration
+
+title: OpenSSF Tools by Persona
+description: >-
+  Browse OpenSSF tools by the role you play. Each of 14 OpenSSF projects is
+  mapped to six personas with a one-sentence, role-specific usage guide.
+
+url: "https://tools.openssf.org"
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+
+# Author/Project info (displayed in footer)
+author:
+  name: OpenSSF contributors
+  email: operations@openssf.org
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# GitHub metadata
+repository: ossf/community
+github:
+  is_project_page: true
+
+show_excerpts: false
+
+# Social Media Links (rendered via FontAwesome in footer)
+social_links:
+  - icon: github
+    url: "https://github.com/ossf"
+  - icon: x-twitter
+    url: "https://x.com/openssf"
+  - icon: bluesky
+    url: "https://bsky.app/profile/openssf.org"
+  - icon: linkedin
+    url: "https://www.linkedin.com/company/openssf/"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  toc_levels: "2"
