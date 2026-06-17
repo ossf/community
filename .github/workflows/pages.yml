@@ -1,0 +1,60 @@
+name: Deploy site to GitHub Pages
+
+on:
+  # Deploy on every push to the default branch
+  push:
+    branches: ["main"]
+  # ...and allow a manual run from the Actions tab
+  workflow_dispatch:
+
+# Grant the token only what Pages needs
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; don't cancel an in-progress publish
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true # runs bundle install and caches gems
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # Create/enable the Pages site automatically on first run
+          # (needs the pages: write permission granted above).
+          enablement: true
+
+      - name: Build with Jekyll
+        # base_path is the project subpath (e.g. /community) so links resolve
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # defaults to ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
