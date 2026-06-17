@@ -183,31 +183,31 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "IBMPlexSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
-  line-height: 1.25;
-  margin-top: var(--spacing-xl);
+  line-height: 1.2;
+  margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
   color: var(--openssf-purple-dark);
   break-after: avoid-page;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 h2 {
-  font-size: 2rem;
-  margin-top: var(--spacing-xxl);
+  font-size: 1.5rem;
+  margin-top: var(--spacing-xl);
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--openssf-purple);
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 h5, h6 {
@@ -245,7 +245,7 @@ p {
 /* Status line styling - make entire status line larger */
 .page-content h1 + p,
 .page-content > p:first-of-type {
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.6;
   margin-bottom: var(--spacing-lg);
 
@@ -368,14 +368,14 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
 
   img {
     display: block;
-    height: 90px;
+    height: 64px;
     width: auto;
     max-width: 100%;
   }
 
   @media screen and (max-width: 768px) {
     img {
-      height: 70px;
+      height: 52px;
     }
   }
 }
@@ -479,7 +479,7 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
 }
 
 .site-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -501,12 +501,8 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
     }
   }
 
-  @media screen and (max-width: 900px) {
-    font-size: 3.00rem;
-  }
-
   @media screen and (max-width: 600px) {
-    font-size: 1.00rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1062,7 +1058,7 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
     color: var(--openssf-purple-dark);
     margin-top: 0;
     margin-bottom: var(--spacing-md);
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1450,15 +1446,15 @@ table {
 
 @media screen and (max-width: 900px) {
   h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
     font-size: 1.75rem;
   }
 
+  h2 {
+    font-size: 1.4rem;
+  }
+
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1608,19 +1604,19 @@ select:focus {
 }
 
 .landing-hero__title {
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--openssf-purple-dark);
   margin: 0 0 var(--spacing-md);
   line-height: 1.15;
 
   @media screen and (max-width: 900px) {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
 
 .landing-hero__lede {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.55;
   color: var(--color-text-primary);
   max-width: 62ch;
@@ -1699,7 +1695,7 @@ select:focus {
 
 .persona-card__name {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   color: var(--openssf-purple-dark) !important;
   line-height: 1.25;
 }
@@ -1797,7 +1793,7 @@ select:focus {
 }
 
 .persona-hero__title {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   margin: 0 0 var(--spacing-sm);
   color: var(--openssf-purple-dark);
 }
@@ -2014,7 +2010,7 @@ select:focus {
 
 .tool-hero__title {
   margin: 0 0 var(--spacing-sm);
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   color: var(--openssf-purple-dark);
 }
 
