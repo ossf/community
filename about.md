@@ -2,12 +2,12 @@
 layout: default
 title: About
 permalink: /about/
-description: About the OpenSSF Tools-by-Persona mapping — where the data comes from, who it's for, and how to contribute.
+description: About OpenSSF Project Community — where the data comes from, who it's for, and how to contribute.
 ---
 
 # About this site
 
-**OpenSSF Tools by Persona** is a role- and problem-first way to navigate the
+**OpenSSF Project Community** is a role- and problem-first way to navigate the
 projects the Open Source Security Foundation ships. Rather than ask visitors to
 read a stack of separate project READMEs and work out which ones apply to them,
 this site lets you start from whichever angle fits how you think: your role, the

@@ -5,20 +5,45 @@ description: Find the OpenSSF projects that fit you. Browse by your role, by the
 ---
 
 <section class="landing-hero">
-  <p class="landing-hero__eyebrow">OpenSSF · Tools by Persona</p>
-  <h1 class="landing-hero__title">Find the OpenSSF projects that fit you</h1>
-  <p class="landing-hero__lede">
-    The OpenSSF ships <strong>{{ site.data.projects | size }} projects</strong> that secure
-    open source software — but not all of them speak to every role or every problem.
-    Start from whichever angle fits how you think.
-  </p>
-  <p class="landing-hero__matrix-note">
-    <span class="landing-hero__badge">{{ site.data.personas | size }} personas</span>
-    <span class="landing-hero__x">·</span>
-    <span class="landing-hero__badge">{{ site.data.problems | size }} problems</span>
-    <span class="landing-hero__x">·</span>
-    <span class="landing-hero__badge landing-hero__badge--accent">{{ site.data.projects | size }} projects</span>
-  </p>
+  <div class="landing-hero__intro">
+    <h1 class="landing-hero__title">Find the right OpenSSF projects that fit your situation</h1>
+    <p class="landing-hero__lede">
+      The OpenSSF ships <strong>{{ site.data.projects | size }} projects</strong> that secure
+      open source software — but not all of them speak to every role or every problem.
+      Start from whichever angle fits how you think.
+    </p>
+  </div>
+
+  <nav class="hero-router" aria-label="Ways to browse">
+    <p class="hero-router__title">Start from an angle</p>
+
+    <a class="hero-route" href="#pick-a-persona">
+      <span class="hero-route__head">
+        <span class="hero-route__name">By role</span>
+        <span class="hero-route__count">{{ site.data.personas | size }} personas</span>
+      </span>
+      <span class="hero-route__desc">Match the persona that fits your day job.</span>
+      <i class="fa-solid fa-arrow-right hero-route__arrow" aria-hidden="true"></i>
+    </a>
+
+    <a class="hero-route" href="#browse-by-problem">
+      <span class="hero-route__head">
+        <span class="hero-route__name">By problem</span>
+        <span class="hero-route__count">{{ site.data.problems | size }} problems</span>
+      </span>
+      <span class="hero-route__desc">Start from the security problem you're solving.</span>
+      <i class="fa-solid fa-arrow-right hero-route__arrow" aria-hidden="true"></i>
+    </a>
+
+    <a class="hero-route" href="{{ '/projects/' | relative_url }}">
+      <span class="hero-route__head">
+        <span class="hero-route__name">By project</span>
+        <span class="hero-route__count">{{ site.data.projects | size }} projects</span>
+      </span>
+      <span class="hero-route__desc">Jump straight to a project you already know.</span>
+      <i class="fa-solid fa-arrow-right hero-route__arrow" aria-hidden="true"></i>
+    </a>
+  </nav>
 </section>
 
 <h2 id="pick-a-persona" class="landing-section-title">Browse by role</h2>
@@ -36,7 +61,7 @@ description: Find the OpenSSF projects that fit you. Browse by your role, by the
   {% endfor %}
 </div>
 
-<h2 class="landing-section-title">Browse by problem</h2>
+<h2 id="browse-by-problem" class="landing-section-title">Browse by problem</h2>
 <p>Know the problem you're trying to solve? Start there and see which projects help.</p>
 
 <div class="component-grid persona-grid">

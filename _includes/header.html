@@ -1,17 +1,11 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <div class="header-top">
-      <div class="site-logo">
-        <a href="https://openssf.org" target="_blank" rel="noopener noreferrer">
+      <div class="site-brand">
+        <a class="site-brand__logo" href="https://openssf.org" target="_blank" rel="noopener noreferrer">
           <img src="{{ '/assets/logo.svg' | relative_url }}" alt="OpenSSF" height="90" />
         </a>
-      </div>
-
-      <div class="site-branding">
-        <h1 class="site-title">
-          <a href="{{ '/' | relative_url }}" rel="author">{{ site.title | escape | default: "OpenSSF Tools by Persona" }}</a>
-        </h1>
-        <p class="site-tagline">Find the OpenSSF tools that fit your role</p>
+        <a class="site-brand__name" href="{{ '/' | relative_url }}" rel="home">Project Community</a>
       </div>
 
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
