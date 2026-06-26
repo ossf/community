@@ -104,7 +104,7 @@ community/
 │   └── …
 ├── projects/
 │   ├── index.md              # /projects/
-│   ├── allstar.md            # /projects/allstar/ …etc.
+│   ├── bomctl.md             # /projects/bomctl/ …etc.
 │   └── …
 ├── about.md                  # /about/
 └── index.md                  # /

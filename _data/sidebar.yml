@@ -38,18 +38,24 @@
 - title: Browse by Project
   url: /projects/
   children:
-    - title: Allstar
-      url: /projects/allstar/
     - title: Best Practices Badge
       url: /projects/best-practices-badge/
+    - title: Bomctl
+      url: /projects/bomctl/
     - title: Criticality Score
       url: /projects/criticality-score/
+    - title: Gemara
+      url: /projects/gemara/
+    - title: gittuf
+      url: /projects/gittuf/
     - title: GUAC
       url: /projects/guac/
     - title: Minder
       url: /projects/minder/
     - title: Open Bao
       url: /projects/open-bao/
+    - title: OpenSSF Model Signing (OMS)
+      url: /projects/model-signing/
     - title: OpenSSF Scorecard
       url: /projects/openssf-scorecard/
     - title: OSPS Baseline
@@ -60,6 +66,8 @@
       url: /projects/protobom/
     - title: Repository Service for TUF (RSTUF)
       url: /projects/rstuf/
+    - title: SBOMit
+      url: /projects/sbomit/
     - title: Security Insights
       url: /projects/security-insights/
     - title: Sigstore
