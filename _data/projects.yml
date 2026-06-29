@@ -525,3 +525,118 @@
     - sigstore
   compatible_with:
     - rstuf
+# Append these to community/_data/projects.yml.
+# Imported from sibling research catalog 2026-06-28.
+
+- id: bomctl
+  name: "Bomctl"
+  url: https://openssf.org/projects/bomctl/
+  description: >-
+    Bridges the gap between SBOM generation tools and SBOM analysis/consumption tools, providing format-aware SBOM manipulation.
+  personas: []
+  problems: []
+
+- id: fuzz-introspector
+  name: "Fuzz Introspector"
+  url: https://openssf.org/projects/fuzz-introspector/
+  description: >-
+    Improves the fuzzing experience for projects by providing visibility into fuzzer coverage and reachability.
+  personas: []
+  problems: []
+
+- id: fuzzingbrain
+  name: "FuzzingBrain"
+  url: https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  description: >-
+    An OSSF project approved by the TAC and currently in LF legal formation; public documentation is not yet available, so scope and classification are provisional.
+  personas: []
+  problems: []
+
+- id: gemara
+  name: "Gemara"
+  url: https://openssf.org/projects/gemara/
+  description: >-
+    Models categorical layers of automated governance activities, providing a framework for expressing security and compliance controls in a machine-readable way.
+  personas: []
+  problems: []
+
+- id: gittuf
+  name: "gittuf"
+  url: https://openssf.org/projects/gittuf/
+  description: >-
+    Applies TUF-style signing and metadata to Git repositories to protect repository contents from unauthorized or malicious changes.
+  personas: []
+  problems: []
+
+- id: in-toto
+  name: "in-toto"
+  url: https://in-toto.io/
+  description: >-
+    A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation envelope that SLSA Provenance and other signed-statement formats ship in.
+  personas: []
+  problems: []
+
+- id: openssf-model-signing
+  name: "OpenSSF Model Signing"
+  url: https://openssf.org/projects/model-signing/
+  description: >-
+    Provides a library and CLI for signing and verifying machine-learning models, extending supply-chain integrity practices to AI artifacts.
+  personas: []
+  problems: []
+
+- id: oss-crs
+  name: "OSS-CRS"
+  url: https://openssf.org/projects/oss-crs/
+  description: >-
+    A framework for LLM-based bug-finding and bug-fixing systems applied to open source software, exploring autonomous vulnerability discovery and remediation.
+  personas: []
+  problems: []
+
+- id: package-analysis
+  name: "Package Analysis"
+  url: https://openssf.org/projects/package-analysis/
+  description: >-
+    Dynamically and statically analyzes packages from open source package registries to detect malicious behavior such as credential exfiltration and backdoors.
+  personas: []
+  problems: []
+
+- id: sbomit
+  name: "SBOMit"
+  url: https://openssf.org/projects/sbomit/
+  description: >-
+    A format-independent component-attestation method that ties SBOM contents to verifiable build-time observations, improving SBOM trustworthiness.
+  personas: []
+  problems: []
+
+- id: secure-agentic-framework
+  name: "Secure Agentic Framework"
+  url: https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  description: >-
+    An OSSF project approved by the TAC and currently in LF legal formation; public documentation is not yet available, so scope and classification are provisional.
+  personas: []
+  problems: []
+
+- id: slsa-github-generator
+  name: "slsa-github-generator"
+  url: https://github.com/slsa-framework/slsa-github-generator
+  description: >-
+    Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions. Produces signed in-toto attestations bound to the builder identity per the SLSA build track.
+  personas: []
+  problems: []
+
+- id: slsa-verifier
+  name: "slsa-verifier"
+  url: https://github.com/slsa-framework/slsa-verifier
+  description: >-
+    Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations, validates the builder identity, and enforces SLSA build-level expectations on incoming artefacts.
+  personas: []
+  problems: []
+
+- id: zarf
+  name: "Zarf"
+  url: https://openssf.org/projects/zarf/
+  description: >-
+    Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained systems by bundling applications and their dependencies into portable packages.
+  personas: []
+  problems: []
+

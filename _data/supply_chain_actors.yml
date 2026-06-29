@@ -1,0 +1,24 @@
+# Canonical supply-chain actor enum. Distinct from the existing
+# `personas` list (which is end-user-role-based); these are
+# supply-chain position-based.
+
+- id: software-producer
+  name: "Software Producer"
+  description: >-
+    Maintainers, contributors — the humans and orgs producing software.
+
+- id: software-distributor
+  name: "Software Distributor"
+  description: >-
+    Package forges, source forges, registries — the systems that move software.
+
+- id: software-consumer
+  name: "Software Consumer"
+  description: >-
+    Manufacturers, end users — the humans and orgs that depend on software produced by others.
+
+- id: other
+  name: "Other (Governance / Risk / Compliance / Policy)"
+  description: >-
+    Cross-cutting governance, advocacy, policy, and compliance work.
+

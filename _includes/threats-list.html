@@ -1,0 +1,76 @@
+{%- comment -%}
+  SLSA v1.2 threats list — native HTML rendering of the threat taxonomy
+  with mitigation links. Replaces the baked SVG variant. Each threat
+  expands inline (<details>) to show its description + mitigations.
+
+  Categories from threat_categories.yml, threats from threats.yml.
+  Mitigations' `ref` fields are resolved against architecture_records
+  for kind-aware URL construction (artifacts → /artifacts/, projects →
+  /projects/).
+{%- endcomment -%}
+
+<div class="threats">
+  {%- for cat in site.data.threat_categories -%}
+    {%- assign cat_threats = site.data.threats | where: "category_letter", cat.letter -%}
+    {%- if cat_threats.size > 0 -%}
+    <section class="threats__category" id="threats-{{ cat.letter | downcase }}">
+      <h3 class="threats__category-heading">
+        <span class="threats__category-letter">{{ cat.letter }}</span>
+        {{ cat.name }}
+        <span class="threats__category-count">{{ cat_threats.size }} threat{% if cat_threats.size != 1 %}s{% endif %}</span>
+      </h3>
+      <ol class="threats__list">
+        {%- for t in cat_threats -%}
+          {%- assign covered = false -%}
+          {%- if t.mitigations and t.mitigations.size > 0 -%}{%- assign covered = true -%}{%- endif -%}
+          <li class="threat {% unless covered %}threat--gap{% endunless %}" id="threat-{{ t.code | downcase }}">
+            <details class="threat__details">
+              <summary class="threat__summary">
+                <span class="threat__code {% unless covered %}threat__code--gap{% endunless %}">{{ t.code }}</span>
+                <span class="threat__label">{{ t.label }}</span>
+                {%- if covered -%}
+                  <span class="threat__coverage threat__coverage--covered">{{ t.mitigations.size }} mitigation{% if t.mitigations.size != 1 %}s{% endif %}</span>
+                {%- else -%}
+                  <span class="threat__coverage threat__coverage--gap">no current OSSF coverage</span>
+                {%- endif -%}
+              </summary>
+              <div class="threat__body">
+                {%- if t.description -%}<p class="threat__description">{{ t.description }}</p>{%- endif -%}
+                {%- if covered -%}
+                <p class="threat__mitigations-label"><strong>Mitigated by:</strong></p>
+                <ul class="threat__mitigations">
+                  {%- for m in t.mitigations -%}
+                    {%- assign mrec = nil -%}
+                    {%- for r in site.data.architecture_records -%}
+                      {%- if r.id == m.ref -%}{%- assign mrec = r -%}{%- endif -%}
+                    {%- endfor -%}
+                    <li class="threat__mitigation{% if m.status == 'needs-review' %} threat__mitigation--nr{% endif %}">
+                      {%- if mrec -%}
+                        {%- if mrec.kind == "artifact" -%}{%- assign m_path = "/artifacts/" -%}{%- else -%}{%- assign m_path = "/projects/" -%}{%- endif -%}
+                        {%- if mrec.has_community_page -%}
+                          <a class="threat__mitigation-link" href="{{ m_path | append: mrec.id | append: '/' | relative_url }}">{{ mrec.name }}</a>
+                        {%- else -%}
+                          <span class="threat__mitigation-name">{{ mrec.name }}</span>
+                        {%- endif -%}
+                        {%- if mrec.kind == "working-group" %}<span class="threat__mitigation-badge">WG</span>{%- endif -%}
+                        {%- if mrec.kind == "artifact" %}<span class="threat__mitigation-badge">artifact</span>{%- endif -%}
+                      {%- else -%}
+                        <span class="threat__mitigation-name threat__mitigation-name--unresolved">{{ m.ref }}</span>
+                      {%- endif -%}
+                      {%- if m.status == "needs-review" -%}<span class="threat__mitigation-nr">needs-review</span>{%- endif -%}
+                      {%- if m.note -%}<p class="threat__mitigation-note">{{ m.note }}</p>{%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {%- else -%}
+                <p class="threat__gap-note"><em>No OpenSSF project or working group currently lists this threat in its scope. This is a real coverage gap and a worklist for the TAC.</em></p>
+                {%- endif -%}
+              </div>
+            </details>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </section>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
