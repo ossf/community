@@ -74,5 +74,67 @@
       url: /projects/sigstore/
     - title: SLSA
       url: /projects/slsa/
+    - title: bomctl
+      url: /projects/bomctl/
+    - title: Fuzz Introspector
+      url: /projects/fuzz-introspector/
+    - title: FuzzingBrain
+      url: /projects/fuzzingbrain/
+    - title: Gemara
+      url: /projects/gemara/
+    - title: gittuf
+      url: /projects/gittuf/
+    - title: in-toto
+      url: /projects/in-toto/
+    - title: OpenSSF Model Signing
+      url: /projects/openssf-model-signing/
+    - title: OSS-CRS
+      url: /projects/oss-crs/
+    - title: Package Analysis
+      url: /projects/package-analysis/
+    - title: SBOMit
+      url: /projects/sbomit/
+    - title: Secure Agentic Framework
+      url: /projects/secure-agentic-framework/
+    - title: slsa-github-generator
+      url: /projects/slsa-github-generator/
+    - title: slsa-verifier
+      url: /projects/slsa-verifier/
+    - title: Zarf
+      url: /projects/zarf/
+- title: Browse by Artifact
+  url: /artifacts/
+  children:
+    - title: in-toto Attestation
+      url: /artifacts/in-toto-attestation/
+    - title: OSV Record
+      url: /artifacts/osv-record/
+    - title: SARIF
+      url: /artifacts/sarif/
+    - title: SBOM (Software Bill of Materials)
+      url: /artifacts/sbom/
+    - title: SLSA Provenance
+      url: /artifacts/slsa-provenance/
+    - title: VEX (Vulnerability Exploitability eXchange)
+      url: /artifacts/vex/
+- title: Browse by Architecture View
+  url: /architecture/
+  children:
+    - title: SLSA v1.2 Threats × OSSF Coverage
+      url: /architecture/slsa-threats/
+    - title: Secure Production (producer pillar)
+      url: /architecture/secure-production/
+    - title: Secure Distribution (distributor pillar)
+      url: /architecture/secure-distribution/
+    - title: Secure Consumption (consumer pillar)
+      url: /architecture/secure-consumption/
+    - title: Stewardship (other / governance pillar)
+      url: /architecture/stewardship/
+    - title: Overview — full catalog
+      url: /architecture/overview/
+    - title: TAC summary
+      url: /architecture/tac-summary/
+    - title: Architecture gaps
+      url: /architecture/gaps/
 - title: About
   url: /about/

@@ -1,0 +1,33 @@
+# Canonical SDLC stage enum (matches the SLSA stage taxonomy with a
+# producer prefix for the engineer's workstation).
+
+- id: producer
+  name: Producer
+  description: >-
+    The engineer and their workstation — local tooling, dev environment, identity hygiene.
+
+- id: source
+  name: Source
+  description: >-
+    The source repository and the SCM platform that hosts it.
+
+- id: build
+  name: Build
+  description: >-
+    The CI/CD platform and the project's build configuration.
+
+- id: distribution
+  name: Distribution
+  description: >-
+    The artifact registry and the project's published artefacts.
+
+- id: consumer
+  name: Consumer
+  description: >-
+    The end-user environment and the project as it runs downstream.
+
+- id: dependencies
+  name: Dependencies
+  description: >-
+    The recursive supply-chain loop — every consumer is also a producer.
+

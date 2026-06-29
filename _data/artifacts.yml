@@ -1,0 +1,61 @@
+# OpenSSF output formats (SLSA Provenance, SBOM, VEX, ...). Each
+# entry maps to /artifacts/<id>/. Imported from sibling research catalog.
+
+- id: in-toto-attestation
+  name: "in-toto Attestation"
+  url: https://github.com/in-toto/attestation
+  description: >-
+    The signed-envelope format that SLSA Provenance and other supply-chain attestations ship in. Defines the predicate/statement structure and signature wrapper used by every conforming attestation.
+  sdlc_stages: []
+  supply_chain_actors: []
+  categories: ["specification"]
+
+- id: osv-record
+  name: "OSV Record (vulnerability record format)"
+  aliases: ["OSV Record"]
+  url: https://ossf.github.io/osv-schema/
+  description: >-
+    The serialised vulnerability-record format produced by OSV-aligned databases (osv.dev, GHSA, PyPA, Go vuln DB) and consumed by vuln scanners and SCA tools. Distinct from the `osv-schema` project, which is the authoring effort defining the f…
+  sdlc_stages: ["dependencies"]
+  supply_chain_actors: ["software-consumer"]
+  categories: ["data-source", "specification"]
+
+- id: sarif
+  name: "SARIF"
+  aliases: ["Static Analysis Results Interchange Format"]
+  url: https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html
+  description: >-
+    An OASIS standard JSON format for representing static analysis tool results. Consumed by code-scanning UIs (e.g. GitHub Code Scanning) and produced by linters, scanners, and policy tools such as Scorecard.
+  sdlc_stages: ["source"]
+  supply_chain_actors: ["software-producer"]
+  categories: ["specification"]
+
+- id: sbom
+  name: "Software Bill of Materials"
+  aliases: ["SBOM"]
+  url: https://www.cisa.gov/sbom
+  description: >-
+    A machine-readable inventory of the components contained in a software artifact. Multiple authoritative formats exist (CycloneDX, SPDX); this record models the SBOM concept itself rather than any single format.
+  sdlc_stages: ["consumer", "distribution"]
+  supply_chain_actors: ["software-consumer", "software-distributor"]
+  categories: ["specification"]
+
+- id: slsa-provenance
+  name: "SLSA Provenance"
+  url: https://slsa.dev/spec/v1.0/provenance
+  description: >-
+    Cryptographically attested record of how a software artifact was built, including the build platform identity, source revision, build parameters, and the resulting artifact digest.
+  sdlc_stages: ["build"]
+  supply_chain_actors: ["software-producer"]
+  categories: ["specification"]
+
+- id: vex
+  name: "Vulnerability Exploitability eXchange"
+  aliases: ["VEX"]
+  url: https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases
+  description: >-
+    A machine-readable statement asserting whether a known vulnerability affects a given software artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive vuln signal.
+  sdlc_stages: ["consumer"]
+  supply_chain_actors: ["software-consumer"]
+  categories: ["specification"]
+

@@ -6,5 +6,9 @@
   url: /problems/
 - title: Projects
   url: /projects/
+- title: Artifacts
+  url: /artifacts/
+- title: Architecture
+  url: /architecture/
 - title: About
   url: /about/
