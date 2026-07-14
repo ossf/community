@@ -1,0 +1,233 @@
+# Best Practices for Open Source Developers
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+
+working_group:
+  id: best-practices-wg
+  name: Best Practices for Open Source Developers
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [best-practices, governance]
+  sdlc_stages: [producer, source]
+  supply_chain_actors: [software-producer]
+  threats:
+  - id: slsa-v1-2-a1
+    status: needs-review
+    note: >-
+      OSSF Best Practices WG addresses producer trustworthiness indirectly through community-level
+      guidance, but no direct technical control exists upstream.
+  cell_synopses:
+  - stage: producer
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Educates the producer audience directly: developer training, the Concise Guide, course
+      material, conference workshops.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Stewards source-layer best-practice work (Scorecard, Best Practices Badge, education
+      materials) targeting open source maintainers and the repos they manage.
+projects:
+- id: best-practices-badge
+  name: Best Practices Badge
+  url: https://www.bestpractices.dev/
+  openssf_url: https://openssf.org/projects/best-practices-badge/
+  insights: >-
+    https://github.com/coreinfrastructure/best-practices-badge/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A voluntary self-certification program that lets open source projects demonstrate they
+    follow recognized development best practices.
+  kind: project
+  categories: [best-practices]
+  sdlc_stages: [producer, source]
+  supply_chain_actors: [software-consumer, software-producer]
+  threats:
+  - id: slsa-v1-2-a1
+    status: needs-review
+    note: >-
+      Badge criteria signal a producer's commitment to vetted practices, which contributes
+      to the trust basis SLSA references for this threat.
+  cell_synopses:
+  - stage: producer
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Downstream consumers can read the badge to gauge a project's producer-side hygiene before
+      adoption.
+    note: >-
+      Consumer use is documented anecdotally rather than as a stated programme goal; confirm
+      with upstream.
+  - stage: producer
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Defines a self-assessment programme that maintainers complete on behalf of their own
+      project, encoding what the foundation expects responsible OSS producers to do.
+  - stage: source
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Consumers use the badge as a screening signal alongside other source-layer metadata.
+    note: >-
+      Consumer-side use of source-layer criteria isn't a stated programme goal; confirm with
+      upstream.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Most badge criteria operate at the source-repository layer: branch protection, code
+      review, vulnerability reporting, and CI on commit. The badge effectively codifies source-stage
+      producer hygiene.
+  personas:
+  - id: developer
+    note: >-
+      Achieves the Best Practices Badge to voluntarily self-certify and demonstrate their
+      adherence to secure development standards.
+  - id: ospo
+    note: >-
+      Mandates the achievement of the badge across internal open source projects to demonstrate
+      a commitment to security and quality.
+  - id: security
+    note: >-
+      Uses the Best Practices Badge as a signaling mechanism to verify that a project adheres
+      to good practices.
+  - id: devops
+    note: >-
+      Integrates badge status checks into the pipeline to block the inclusion of dependencies
+      that fail to meet baseline security practices.
+  - id: package-manager
+    note: >-
+      Uses the badge as a metadata indicator to highlight secure and well-maintained packages
+      to end users in the repository.
+  - id: executive
+    note: >-
+      Uses the badge as a trust signal to make risk-aware procurement and enterprise decisions.
+  problems:
+  - id: security-posture
+    note: >-
+      Turns adherence to recognised practices into a single, comparable trust signal that
+      consumers can read at a glance.
+  - id: policy-compliance
+    note: >-
+      Gives organizations a published bar that internal projects can be required to meet and
+      demonstrate.
+  similar_to: [osps-baseline]
+  compatible_with: [openssf-scorecard]
+- id: openssf-scorecard
+  name: OpenSSF Scorecard
+  url: https://scorecard.dev/
+  openssf_url: https://openssf.org/projects/scorecard/
+  insights: https://github.com/ossf/scorecard/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    An automated tool that assesses open source projects against a curated set of security-health
+    checks and produces a comparable score.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build, source]
+  supply_chain_actors: [software-consumer, software-producer]
+  threats:
+  - id: slsa-v1-2-b1
+    status: confirmed
+  - id: slsa-v1-2-b2
+    status: needs-review
+    note: >-
+      Scorecard does not currently detect multi-account control; the threat is identified
+      but not automatically caught.
+  - id: slsa-v1-2-b3
+    status: confirmed
+  - id: slsa-v1-2-b6
+    status: confirmed
+  - id: slsa-v1-2-b8
+    status: needs-review
+    note: >-
+      Scorecard checks for required-status-checks settings; confirm coverage matches SLSA
+      Source L3+.
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Consumers reading a Scorecard report see build-stage signals (signed releases, packaging)
+      alongside source-stage signals.
+    note: >-
+      Scorecard's build-stage coverage is partial within its overall check set; framing depends
+      on which checks the consumer cares about.
+  - stage: build
+    actor: software-producer
+    status: needs-review
+    text: >-
+      A subset of checks (Signed-Releases, Packaging, Token-Permissions, CI-Tests) reaches
+      into the build/release stage, so a producer who runs Scorecard sees flags on build-stage
+      hygiene too.
+    note: >-
+      Scorecard's build-stage coverage is partial; framing depends on which checks the producer
+      cares about.
+  - stage: source
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers use Scorecard scores as a fast screening signal when evaluating a third-party
+      dependency: a low score on Code-Review or Branch-Protection means the producer hasn't
+      hardened the supply-chain entry.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Runs automated checks against a project's source repository — branch protection, code
+      review, dependency-update, vulnerability scanning, etc. — and assigns each a per-check
+      score so the producer can spot gaps.
+  relationships:
+  - kind: consumes
+    target: osv-record
+    status: needs-review
+    note: >-
+      Scorecard reads vulnerability data via the OSV API; whether that counts as consuming
+      OSV records or only querying the database is a curator judgement call.
+  - kind: produces
+    target: sarif
+    status: confirmed
+  personas:
+  - id: developer
+    note: >-
+      Leverages the OpenSSF Scorecard to identify and implement the security practices required
+      for commercial downstream adoption.
+  - id: ospo
+    note: >-
+      Utilizes the OpenSSF Scorecard to systematically measure project security health and
+      establish baseline enterprise policies for safe open source consumption.
+  - id: security
+    note: >-
+      Leverages the OpenSSF Scorecard to assess open source projects for security risks through
+      automated checks.
+  - id: devops
+    note: >-
+      Embeds the OpenSSF Scorecard to execute automated security health checks directly within
+      CI/CD pipelines.
+  - id: package-manager
+    note: >-
+      Displays OpenSSF Scorecard metrics on the registry interface to help users evaluate
+      the security hygiene of available packages.
+  - id: executive
+    note: >-
+      Evaluates trust and mitigates supply chain risk by reviewing the health metrics of dependencies.
+  problems:
+  - id: security-posture
+    note: >-
+      Runs automated health checks against a project and produces a single comparable score
+      consumers can act on.
+  - id: secure-configuration
+    note: >-
+      Flags risky repository configuration through automated checks so it can be hardened
+      before adoption.
+  similar_to: [best-practices-badge]

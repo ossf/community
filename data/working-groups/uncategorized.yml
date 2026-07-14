@@ -1,0 +1,527 @@
+# UNCATEGORIZED — projects with no working group recorded yet.
+#
+# THIS IS A HOLDING PEN, NOT A WORKING GROUP. The project list in ossf/tac's
+# README does not place these, and guessing would publish a fact we do not have.
+# Move an entry into the right working-groups/<wg>.yml file to categorise it —
+# that, by itself, is the whole change.
+#
+# These are not one problem. As of this writing:
+#
+#   gemara, osps-baseline      likely ORBIT, but unconfirmed by the TAC list.
+#   slsa-github-generator,
+#   slsa-verifier              sub-projects of SLSA, which is Supply Chain
+#                              Integrity. Whether a sub-project inherits its
+#                              parent's WG is an open question.
+#   in-toto                    a CNCF project. It may have no OpenSSF WG at all,
+#                              in which case "uncategorized" is the wrong word
+#                              for it and the model needs an answer for
+#                              non-OpenSSF entries.
+#   sigstore, open-bao, rstuf  established projects the TAC list does not place.
+#   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
+
+projects:
+- id: gemara
+  name: Gemara
+  url: https://gemara.openssf.org/
+  openssf_url: https://openssf.org/projects/gemara/
+  insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
+  description: >-
+    A GRC engineering model — a machine-readable, layered data model that bridges high-level
+    compliance requirements and low-level technical evidence to enable automated risk assessment
+    across security tooling.
+  kind: project
+  categories: [specification]
+  sdlc_stages: [source]
+  supply_chain_actors: [other, software-producer]
+  cell_synopses:
+  - stage: source
+    actor: other
+    status: needs-review
+    text: >-
+      Gemara models the categorical governance controls a project commits to in its repository
+      (e.g., release policy, dependency policy, vulnerability disclosure) so reviewers and
+      auditors can compare across projects on the same axes.
+    note: >-
+      Gemara's framing as repo-anchored governance modelling is recent; confirm scope with
+      the project.
+  - stage: source
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers use Gemara to express their project's governance commitments in machine-readable
+      form alongside the source they control.
+    note: >-
+      Producer-side adoption is the design intent but documentation is sparse; confirm with
+      upstream.
+  personas:
+  - id: ospo
+    note: >-
+      Expresses the organization's controls and compliance requirements in Gemara's shared
+      model so they can be assessed consistently across projects.
+  - id: security
+    note: >-
+      Maps threats, controls, and evidence onto Gemara's layered schema to drive automated,
+      repeatable risk assessment.
+  - id: devops
+    note: >-
+      Consumes Gemara's machine-readable model to automate control evaluation and evidence
+      collection inside the pipeline.
+  - id: executive
+    note: >-
+      Reads risk and compliance status rolled up through Gemara's model rather than from disconnected,
+      hand-assembled spreadsheets.
+  problems:
+  - id: policy-compliance
+    note: >-
+      Encodes governance, risk, and compliance requirements as a shared data model so controls
+      map cleanly between regulations and evidence.
+  - id: security-posture
+    note: >-
+      Standardizes how risk and control evidence are expressed so posture can be assessed
+      automatically and compared across projects.
+- id: open-bao
+  name: Open Bao
+  url: https://openbao.org/
+  openssf_url: https://openssf.org/projects/openbao/
+  insights: https://github.com/openbao/openbao/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A community-governed, open source secrets-management platform for storing, rotating, and
+    brokering access to secrets, credentials, and signing keys.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build, consumer]
+  supply_chain_actors: [software-consumer, software-producer]
+  threats:
+  - id: slsa-v1-2-e5
+    status: needs-review
+    note: >-
+      OpenBao manages secrets used by build pipelines; reduces the surface where keys can
+      be stolen, but doesn't directly mitigate runtime compromise.
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      A few consumer-operated build platforms also consume OpenBao for the build secrets they
+      ingest.
+    note: Less common than producer-side build use; confirm whether to tag.
+  - stage: build
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers' build pipelines fetch credentials, signing keys, and short-lived tokens from
+      OpenBao at build time so secret material never lives in the build environment longer
+      than the job needs it.
+    note: >-
+      Build-stage role is the dominant deployment pattern but isn't framed as OpenBao's central
+      concern by upstream.
+  - stage: consumer
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Application operators (downstream consumers of the OpenBao image) deploy it to manage
+      their own runtime secrets, key rotation, and certificate issuance.
+  - stage: consumer
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producers run OpenBao to manage the secrets their applications consume at runtime, replacing
+      static configuration with short-lived, audited credential leases.
+  personas:
+  - id: developer
+    note: >-
+      Uses Open Bao APIs to securely fetch database credentials and API keys without hardcoding
+      them into source code.
+  - id: ospo
+    note: >-
+      Promotes Open Bao as the standard, open-source-governed solution for managing secrets
+      across the organization's projects.
+  - id: security
+    note: >-
+      Designs centralized secrets management architectures using Open Bao to enforce strict
+      access controls and credential rotation.
+  - id: devops
+    note: >-
+      Integrates Open Bao to securely inject ephemeral credentials into CI/CD pipelines during
+      automated builds and deployments.
+  - id: package-manager
+    note: >-
+      Utilizes Open Bao to manage secrets and signing keys, ensuring the untampered and trusted
+      distribution of packages.
+  - id: executive
+    note: >-
+      Ensures regulatory compliance and software sovereignty through a community-governed
+      secrets management solution, mitigating risks associated with vendor lock-in and licensing
+      shifts.
+  problems:
+  - id: secrets-management
+    note: >-
+      Stores, rotates, and brokers access to credentials and signing keys so they never get
+      hardcoded or leaked.
+  compatible_with: [sigstore]
+- id: osps-baseline
+  name: OSPS Baseline
+  url: https://baseline.openssf.org/
+  openssf_url: https://openssf.org/projects/osps-baseline/
+  insights: >-
+    https://github.com/ossf/security-baseline/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    The Open Source Project Security Baseline — a consensus-driven minimum set of security
+    requirements for projects to adopt and for consumers to expect.
+  kind: project
+  categories: [best-practices, specification]
+  sdlc_stages: [producer, source]
+  supply_chain_actors: [other, software-producer]
+  threats:
+  - id: slsa-v1-2-b1
+    status: needs-review
+    note: >-
+      OSPS Baseline includes review-related criteria; confirm whether they fully cover B1.
+  - id: slsa-v1-2-b8
+    status: needs-review
+    note: OSPS Baseline includes process-enforcement criteria; confirm coverage.
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: needs-review
+    text: >-
+      Compliance and governance reviewers use the Baseline as an audit checklist when scoring
+      producer-side practices.
+    note: >-
+      Compliance/audit use pattern is documented in ORBIT material; confirm specific framing.
+  - stage: producer
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Defines the minimum set of practices an OSS project's maintainers MUST adopt on their
+      development environment and project setup (account hygiene, signing, secret handling,
+      supported toolchain). Acts as the producer-stage 'floor'.
+  - stage: source
+    actor: other
+    status: needs-review
+    text: >-
+      Compliance and governance reviewers map repo-level evidence to specific Baseline criteria
+      when grading a project.
+    note: Same caveat as producer × other; confirm with the ORBIT WG.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Baseline requirements that anchor at the repository — branch protection, signed commits,
+      vulnerability disclosure metadata, contribution policies — live here and are graded
+      by ORBIT-aligned tooling.
+  personas:
+  - id: developer
+    note: >-
+      Adopts the OSPS Baseline to implement fundamental security steps, like secure workflows
+      and disclosure policies, early in development.
+  - id: ospo
+    note: >-
+      Uses the OSPS Baseline to define and enforce security expectations for projects across
+      the enterprise.
+  - id: security
+    note: >-
+      Integrates the OSPS Baseline to enforce structured security requirements and reduce
+      defects early in the software creation phase.
+  - id: devops
+    note: >-
+      Configures pipeline guardrails to automatically verify that projects adhere to the fundamental
+      practices outlined in the baseline.
+  - id: package-manager
+    note: >-
+      Requires adherence to the baseline as a prerequisite for verifying or promoting packages
+      within the repository ecosystem.
+  - id: executive
+    note: >-
+      Adopts the structured baseline to ensure organizational compliance with policies and
+      regulations like the Cyber Resilience Act.
+  problems:
+  - id: policy-compliance
+    note: >-
+      Provides a consensus minimum set of requirements that maps cleanly onto regulations
+      like the Cyber Resilience Act.
+  - id: security-posture
+    note: >-
+      Defines the floor of expected security practices so projects can be measured against
+      a shared bar.
+  similar_to: [best-practices-badge]
+  compatible_with: [minder]
+- id: rstuf
+  name: Repository Service for TUF (RSTUF)
+  url: https://repository-service-tuf.readthedocs.io/
+  openssf_url: https://openssf.org/projects/repository-service-for-tuf/
+  insights: >-
+    https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A drop-in implementation of The Update Framework (TUF) that protects software repositories
+    from compromise, rollback, and man-in-the-middle attacks.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [distribution]
+  supply_chain_actors: [software-consumer, software-distributor]
+  threats:
+  - id: slsa-v1-2-g3
+    status: needs-review
+    note: >-
+      RSTUF can enforce attestation requirements at the repository layer; confirm exact policy
+      hooks.
+  - id: slsa-v1-2-g5
+    status: confirmed
+  cell_synopses:
+  - stage: distribution
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers' TUF clients verify RSTUF metadata before accepting an artefact, defending
+      against compromised registries and downgrade attacks.
+  - stage: distribution
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Registries and mirrors run RSTUF to add TUF-style signed metadata over the artefacts
+      they serve, so downstream clients can detect tampering between the registry and themselves.
+  personas:
+  - id: developer
+    note: >-
+      Relies on RSTUF-backed repositories to confidently pull dependencies without fear of
+      targeted man-in-the-middle or rollback attacks.
+  - id: ospo
+    note: >-
+      Recommends RSTUF to ensure the organization's internally hosted artifact repositories
+      are resilient against compromise.
+  - id: security
+    note: >-
+      Implements The Update Framework (TUF) via RSTUF to secure software delivery architectures
+      and protect cryptographic root keys.
+  - id: devops
+    note: >-
+      Configures build pipelines to exclusively interact with RSTUF-secured repositories to
+      guarantee the integrity of fetched dependencies.
+  - id: package-manager
+    note: >-
+      Implements RSTUF to secure content downloads against tampering between the remote repository
+      and the client.
+  - id: executive
+    note: >-
+      Reduces enterprise liability by ensuring all software updates distributed to customers
+      are cryptographically verified and secure.
+  problems:
+  - id: artifact-signing
+    note: >-
+      Cryptographically signs repository metadata so clients can verify content has not been
+      tampered with in transit.
+  - id: build-provenance
+    note: >-
+      Protects the distribution chain against rollback and man-in-the-middle attacks between
+      repository and client.
+  similar_to: [sigstore]
+  compatible_with: [slsa]
+- id: sigstore
+  name: Sigstore
+  url: https://www.sigstore.dev/
+  openssf_url: https://openssf.org/projects/sigstore/
+  insights: https://github.com/sigstore/sigstore/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A free, identity-based artefact-signing service backed by a public transparency log so
+    anyone can verify who built what.
+  kind: project
+  categories: [framework, service]
+  sdlc_stages: [build, consumer, distribution]
+  supply_chain_actors: [software-consumer, software-distributor, software-producer]
+  threats:
+  - id: slsa-v1-2-e1
+    status: confirmed
+  - id: slsa-v1-2-e5
+    status: confirmed
+  - id: slsa-v1-2-f3
+    status: confirmed
+  - id: slsa-v1-2-f4
+    status: confirmed
+  - id: slsa-v1-2-g6
+    status: confirmed
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Some consumers run reproducer builds to cross-check Sigstore-signed artefacts; this
+      is a niche flow.
+    note: >-
+      Not the central consumer-facing pattern; confirm if this should be tagged at all.
+  - stage: build
+    actor: software-distributor
+    status: needs-review
+    text: >-
+      Distributors with their own CI may operate Sigstore infrastructure to sign artefacts
+      they republish.
+    note: >-
+      Distributor-side adoption pattern; confirm whether registries operate Sigstore in their
+      own build path.
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Cosign and Fulcio let producers sign artefacts at build time with short-lived, identity-bound
+      certificates, replacing the long-lived signing keys traditional CI/CD pipelines need
+      to manage.
+  - stage: consumer
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Cosign verify (or any Sigstore-compatible verifier) lets consumers prove an artefact's
+      identity at install time without trusting the registry alone.
+  - stage: consumer
+    actor: software-distributor
+    status: needs-review
+    text: >-
+      Some distributors verify signatures as part of admission control before serving downloads.
+    note: Distributor-side verification pattern; confirm scope.
+  - stage: consumer
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers occasionally verify their own published artefacts during release rehearsal.
+    note: Tangential to producer focus; confirm whether to tag.
+  - stage: distribution
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers receive Sigstore signatures alongside the artefact and can verify them before
+      extraction or install.
+  - stage: distribution
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Registries (npm, PyPI, container registries) verify Sigstore signatures and surface
+      them to consumers, integrating signed-provenance flows into the distribution layer itself.
+  - stage: distribution
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producers' Sigstore signatures (and Rekor inclusion proofs) ride with their artefacts
+      through registries, so the signed claim survives intermediate hops in the distribution
+      chain.
+  personas:
+  - id: developer
+    note: >-
+      Adopts Sigstore to cryptographically sign artifacts and ensure their integrity early
+      in the release process.
+  - id: ospo
+    note: >-
+      Standardizes on keyless signing (Sigstore) across the enterprise to eliminate the overhead
+      of managing long-lived cryptographic keys.
+  - id: security
+    note: >-
+      Validates the transparency log to audit the provenance and authenticity of software
+      components used in production.
+  - id: devops
+    note: >-
+      Deploys Sigstore to enable identity-based (keyless) signing via OIDC, eliminating the
+      risk of compromised long-lived build secrets and automating artifact verification in
+      the pipeline.
+  - id: package-manager
+    note: >-
+      Integrates Sigstore natively into the package registry to automatically verify incoming
+      artifact signatures and display provenance to users.
+  - id: executive
+    note: >-
+      Verifies cryptographic signatures as trust signals to confirm artifact integrity post-release.
+  problems:
+  - id: artifact-signing
+    note: >-
+      Provides keyless, identity-based signing backed by a public transparency log so anyone
+      can verify who built what.
+  - id: build-provenance
+    note: >-
+      Records signatures in a transparency log, making artefact provenance independently auditable
+      downstream.
+  similar_to: [rstuf]
+  compatible_with: [slsa, open-bao]
+- id: fuzzingbrain
+  name: FuzzingBrain
+  url: >-
+    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  description: >-
+    An OSSF project approved by the TAC and currently in LF legal formation; public documentation
+    is not yet available, so scope and classification are provisional.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [source]
+  supply_chain_actors: [software-producer]
+  cell_synopses:
+  - stage: source
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Provisional: fuzzing-related projects historically operate on producer-controlled source
+      repositories. Awaiting public docs to confirm the exact source-stage role.
+    note: Formation-stage project; upstream documentation not yet available.
+- id: in-toto
+  name: in-toto
+  url: https://in-toto.io/
+  description: >-
+    A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
+    envelope that SLSA Provenance and other signed-statement formats ship in.
+  kind: project
+  categories: [specification]
+  sdlc_stages: [build]
+  supply_chain_actors: [software-producer]
+  relationships:
+  - kind: produces
+    target: in-toto-attestation
+    status: confirmed
+- id: oss-crs
+  name: OSS-CRS
+  url: https://openssf.org/projects/oss-crs/
+  openssf_url: https://openssf.org/projects/oss-crs/
+  description: >-
+    A framework for LLM-based bug-finding and bug-fixing systems applied to open source software,
+    exploring autonomous vulnerability discovery and remediation.
+  kind: project
+  categories: [specification]
+  sdlc_stages: [source]
+  supply_chain_actors: [software-producer]
+  cell_synopses:
+  - stage: source
+    actor: software-producer
+    status: needs-review
+    text: >-
+      OSS-CRS uses LLM-based reasoning to find and propose fixes for bugs in open source code,
+      operating directly on the producer's source repository.
+    note: Sandbox-stage project; framing is in flux as the framework matures.
+- id: slsa-github-generator
+  name: slsa-github-generator
+  url: https://github.com/slsa-framework/slsa-github-generator
+  description: >-
+    Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions.
+    Produces signed in-toto attestations bound to the builder identity per the SLSA build
+    track.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build]
+  supply_chain_actors: [software-producer]
+  relationships:
+  - kind: implements
+    target: slsa
+    status: confirmed
+  - kind: produces
+    target: slsa-provenance
+    status: confirmed
+- id: slsa-verifier
+  name: slsa-verifier
+  url: https://github.com/slsa-framework/slsa-verifier
+  description: >-
+    Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations,
+    validates the builder identity, and enforces SLSA build-level expectations on incoming
+    artefacts.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  relationships:
+  - kind: consumes
+    target: slsa-provenance
+    status: confirmed
+  - kind: implements
+    target: slsa
+    status: confirmed

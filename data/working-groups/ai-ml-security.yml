@@ -1,0 +1,155 @@
+# AI/ML Security
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+
+working_group:
+  id: ai-ml-security
+  name: AI/ML Security
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [build, consumer, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Some ML consumers run derivative builds; the WG's tooling carries forward to them.
+    note: Consumer-as-producer pattern; confirm scope.
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Coordinates standards and tooling — model signing, attestations, supply-chain hygiene
+      — that ML producers run at training/packaging time.
+  - stage: consumer
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Consumers apply WG runtime-security guidance when deploying ML systems.
+    note: Consumer-runtime focus partially documented; confirm scope.
+  - stage: consumer
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers re-evaluate model-runtime security (e.g., prompt injection, adversarial inputs)
+      per WG guidance.
+    note: Consumer-runtime focus partially documented; confirm scope.
+  - stage: distribution
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Consumers verify ML signatures and provenance at fetch time using WG-coordinated tooling.
+    note: Same caveat as distribution × producer.
+  - stage: distribution
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Coordinates how signed ML artefacts move through model hubs and registries, mirroring
+      the supply-chain stories on the non-ML side.
+    note: >-
+      Distribution-stage WG focus is implicit in the AI/ML supply chain story; confirm explicit
+      framing.
+projects:
+- id: model-signing
+  name: OpenSSF Model Signing (OMS)
+  url: https://openssf.org/projects/model-signing/
+  description: >-
+    A library and CLI for cryptographically signing and verifying machine learning models
+    of any format or size, supporting multiple PKI backends including Sigstore, self-signed
+    certificates, and bare key pairs.
+  kind: project
+  categories: [specification]
+  sdlc_stages: [build, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      ML consumers who build derived models (fine-tuning, distillation) themselves take on
+      the producer role and re-sign the derivative — a build-stage flow on the consumer side.
+    note: >-
+      Consumer-as-producer pattern is real for ML but not the documented central use case;
+      confirm.
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      ML producers run the model-signing CLI/library as part of their model-publication pipeline,
+      producing a signed manifest over the model artefacts and binding it to a Sigstore identity.
+  - stage: distribution
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers verify model signatures before loading, defending against tampered weights
+      from compromised mirrors or model hubs.
+  - stage: distribution
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Signed model manifests travel with the model through Hugging Face, registries, and other
+      ML distribution channels, so the signature is available wherever the model is fetched.
+  personas:
+  - id: developer
+    note: >-
+      Signs the ML models they publish so downstream users can confirm a model came from them
+      and has not been altered.
+  - id: security
+    note: >-
+      Verifies model signatures before deployment to keep tampered or untrusted model weights
+      out of production systems.
+  - id: devops
+    note: >-
+      Adds keyless model signing and verification as pipeline steps, mirroring the artifact-signing
+      controls already used for code.
+  - id: package-manager
+    note: >-
+      Surfaces and verifies model signatures so a model registry can prove the provenance
+      of the weights it serves.
+  problems:
+  - id: artifact-signing
+    note: >-
+      Extends identity-based signing and verification to ML models of any format, so consumers
+      can confirm who produced the weights.
+  - id: build-provenance
+    note: >-
+      Attaches verifiable signatures to model artifacts, letting downstream users trace a
+      model back to its origin.
+  compatible_with: [sigstore]
+- id: secure-agentic-framework
+  name: Secure Agentic Framework
+  url: >-
+    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  description: >-
+    An OSSF project approved by the TAC and currently in LF legal formation; public documentation
+    is not yet available, so scope and classification are provisional.
+  kind: project
+  categories: [framework]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other, software-producer]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: needs-review
+    text: >-
+      Provisional: AI safety and governance teams may use the framework as a policy/audit
+      surface.
+    note: Formation-stage project; upstream documentation not yet available.
+  - stage: producer
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Provisional: agentic-AI security tooling typically targets producers integrating AI
+      agents into developer workflows. Awaiting public docs to refine.
+    note: Formation-stage project; upstream documentation not yet available.

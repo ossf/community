@@ -2,8 +2,9 @@
 
 title: OpenSSF Project Community
 description: >-
-  Browse OpenSSF tools by the role you play. Each of 14 OpenSSF projects is
-  mapped to six personas with a one-sentence, role-specific usage guide.
+  Browse OpenSSF projects by the role you play. Every project is mapped to the
+  personas it serves and the problems it solves, with a one-sentence,
+  role-specific usage guide for each.
 
 url: "https://tools.openssf.org"
 
@@ -16,11 +17,38 @@ author:
   name: OpenSSF contributors
   email: operations@openssf.org
 
-# Build settings
+# Build settings.
+#
+# NOTE: `theme:` below is the Jekyll config key naming the base theme GEM. It is
+# unrelated to the theme/ DIRECTORY in this repo, which is our own source. The
+# two just share a word.
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Where things live. Two directories, and that is the whole repo:
+#
+#   data/   the content — the only thing most contributors ever edit.
+#   theme/  everything that turns it into a website: layouts, includes, plugins,
+#           the hand-written pages, and assets.
+#
+# theme/assets/** is published at /assets/** by theme/_plugins/theme_assets.rb,
+# which exists solely so assets don't have to sit at the repo root. See that file.
+data_dir: data
+layouts_dir: theme/_layouts
+includes_dir: theme/_includes
+plugins_dir: theme/_plugins
+
+# Jekyll's Sass converter emits TWO files from one .scss source: the stylesheet
+# and a .css.map. Both are derived from the same page, so both honour the
+# `permalink:` that theme/assets/css/style.scss needs — and the sourcemap, written
+# second, would overwrite the stylesheet with JSON. The site would deploy with no
+# CSS. Turning sourcemaps off is the fix, and it also stops shipping ~54KB of
+# mapping data to every visitor. Do not re-enable this without giving the
+# stylesheet a different home.
+sass:
+  sourcemap: never
 
 # Exclude from processing
 exclude:
@@ -32,6 +60,15 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - CLAUDE.md
+  - CHARTER.md
+  - SECURITY.md
+  - LICENSE
+  - Makefile
+  # data/ is read via data_dir. Without this it would ALSO be walked as content
+  # and copied verbatim into the built site, because Jekyll only auto-skips
+  # directories whose name starts with "_".
+  - data
 
 # Defaults
 defaults:

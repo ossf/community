@@ -1,0 +1,74 @@
+{%- comment -%}
+  Pillar grid for /architecture/* pages. 6 columns (one per SDLC stage),
+  each listing the architecture_records whose sdlc_stages contains the
+  column's stage AND whose supply_chain_actors contains the actor
+  parameter passed to this include.
+
+  Records with a matching cell_synopsis for the (stage, actor) cell
+  render as a <details> element — the summary holds the linked name,
+  the body holds the curated synopsis text + a needs-review badge when
+  applicable. Records without a synopsis render as plain hover-linked
+  text.
+
+  Usage:
+    {% include pillar-grid.html actor="software-producer" %}
+{%- endcomment -%}
+
+{%- include community-records.html -%}
+{% assign actor = include.actor %}
+{% assign pillar_records = records | where_exp: "r", "r.supply_chain_actors contains actor" | sort: "id" %}
+
+<div class="pillar-grid" role="table" aria-label="Architecture pillar grid">
+  {% for stage in site.data.definitions.sdlc_stages %}
+    {% assign in_col = pillar_records | where_exp: "r", "r.sdlc_stages contains stage.id" %}
+    <section class="pillar-col" role="rowgroup" aria-labelledby="pillar-col-{{ stage.id }}">
+      <h3 class="pillar-col__header" id="pillar-col-{{ stage.id }}" title="{{ stage.description }}">{{ stage.name }}</h3>
+      {% if in_col.size == 0 %}
+        <p class="pillar-col__empty">(none)</p>
+      {% else %}
+        <ul class="pillar-col__list">
+          {% for r in in_col %}
+            {%- assign syn = nil -%}
+            {%- if r.cell_synopses -%}
+              {%- for s in r.cell_synopses -%}
+                {%- if s.stage == stage.id and s.actor == actor -%}{%- assign syn = s -%}{%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            <li class="pillar-record pillar-record--{{ r.kind }}">
+              {% if syn %}
+                <details class="pillar-record__details">
+                  <summary class="pillar-record__summary">
+                    {%- if r.kind != "working-group" -%}
+                      {%- if r.kind == "artifact" -%}{%- assign rec_path = "/artifacts/" -%}{%- else -%}{%- assign rec_path = "/projects/" -%}{%- endif -%}
+                      <a class="pillar-record__link" href="{{ rec_path | append: r.id | append: '/' | relative_url }}" title="{{ r.name }} — see {{ r.kind }} page">{{ r.name }}</a>
+                    {%- elsif r.url -%}
+                      <a class="pillar-record__link pillar-record__link--external" href="{{ r.url }}" target="_blank" rel="noopener noreferrer" title="{{ r.name }} — open upstream site">{{ r.name }} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                    {%- else -%}
+                      <span class="pillar-record__name" title="{{ r.name }} ({{ r.id }})">{{ r.name }}</span>
+                    {%- endif -%}
+                    {% if r.kind == "working-group" %}<span class="pillar-record__badge" title="Working group">WG</span>{% endif %}
+                    {% if syn.status == "needs-review" %}<span class="pillar-record__nr" title="Curator inference pending upstream confirmation">needs-review</span>{% endif %}
+                  </summary>
+                  <div class="pillar-record__synopsis">
+                    <p>{{ syn.text }}</p>
+                    {% if syn.note %}<p class="pillar-record__synopsis-note"><em>Inference note:</em> {{ syn.note }}</p>{% endif %}
+                  </div>
+                </details>
+              {% else %}
+                {%- if r.kind != "working-group" -%}
+                  {%- if r.kind == "artifact" -%}{%- assign rec_path2 = "/artifacts/" -%}{%- else -%}{%- assign rec_path2 = "/projects/" -%}{%- endif -%}
+                  <a class="pillar-record__link" href="{{ rec_path2 | append: r.id | append: '/' | relative_url }}" title="{{ r.name }} — see {{ r.kind }} page">{{ r.name }}</a>
+                {%- elsif r.url -%}
+                  <a class="pillar-record__link pillar-record__link--external" href="{{ r.url }}" target="_blank" rel="noopener noreferrer" title="{{ r.name }} — open upstream site">{{ r.name }} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                {%- else -%}
+                  <span class="pillar-record__name" title="{{ r.name }} ({{ r.id }})">{{ r.name }}</span>
+                {%- endif -%}
+                {% if r.kind == "working-group" %}<span class="pillar-record__badge" title="Working group">WG</span>{% endif %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  {% endfor %}
+</div>
