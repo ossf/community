@@ -1,4 +1,4 @@
-# OpenSSF Tools by Persona
+# OpenSSF Project Community
 
 A Jekyll site built entirely from data files that map the OpenSSF projects onto
 the roles they serve, the problems they solve, and the SLSA threats they mitigate.
@@ -29,9 +29,9 @@ problem they're solving, or a specific project.
 - **[Jekyll](https://jekyllrb.com/) 4.4** with the `minima` base theme
 - **kramdown** for Markdown, **Rouge** for syntax highlighting
 - **`jekyll-seo-tag`** + **`jekyll-feed`**
-- **SCSS** compiled by Jekyll (front-matter-prefixed `assets/css/style.scss`)
-- **FontAwesome** via CDN for icons
-- Vanilla JS for the theme toggle
+- **SCSS** compiled by Jekyll (front-matter-prefixed `theme/assets/css/style.scss`)
+- **FontAwesome** via CDN for icons; Cairo and IBM Plex Sans self-hosted in `theme/assets/fonts/`
+- Vanilla JS for the theme toggle and the architecture-page category filter
 
 There are no framework dependencies beyond the plugins pinned in `Gemfile`.
 
@@ -97,8 +97,8 @@ in its `relationships:` list. The artifact pages reverse-derive it, and
 `/architecture/gaps/` uses it to flag any format something generates but nothing
 reads.
 
-`assets/data/catalog.json` is generated at build time from both halves — do not
-edit it by hand.
+`theme/assets/data/catalog.json` (published at `/assets/data/catalog.json`) is
+regenerated at build time from both halves — do not edit it by hand.
 
 ### Relationships are derived, never authored twice
 
@@ -138,8 +138,9 @@ make start    # serve on http://localhost:4000
 make test     # jekyll build + htmlproofer (run this before opening a PR)
 ```
 
-On a fresh macOS box, `make brand-new-env-installs` installs a suitable Ruby
-via Homebrew first. The raw equivalents are `bundle install` and
+On a fresh macOS box, `make brand-new-env-installs` installs Ruby via Homebrew
+first — pinned to `ruby@3.3`, because Ruby 4.x breaks C extensions in older
+gems Jekyll still depends on. The raw equivalents are `bundle install` and
 `bundle exec jekyll serve` if you'd rather not use `make`.
 
 ## Repository layout
@@ -169,7 +170,10 @@ community/
 │
 ├── theme/                   ← THE WEBSITE. How the data becomes pages.
 │   ├── _plugins/
-│   │   └── catalog_pages.rb    generates every persona/problem/project/artifact page
+│   │   ├── catalog.rb          pools data/working-groups/*.yml + governance.yml
+│   │   │                       into site.data.catalog; WG membership = filename
+│   │   ├── catalog_pages.rb    generates every persona/problem/project/artifact page
+│   │   └── theme_assets.rb     publishes theme/assets/** at /assets/**
 │   ├── _layouts/
 │   │   ├── default.html        shell (header + sidebar + content + footer)
 │   │   ├── home.html           shell without sidebar (landing page)
@@ -180,16 +184,17 @@ community/
 │   │   └── artifact.html       matrix placement + relationships
 │   ├── _includes/
 │   │   ├── header.html · footer.html · sidebar.html
-│   │   ├── community-records.html   pools projects + artifacts + WGs into `records`
-│   │   ├── threat-coverage.html     derives which threats have a mitigation
-│   │   ├── pillar-grid.html         SDLC × actor matrix for /architecture/*
-│   │   └── threats-list.html        SLSA threats + reverse-derived mitigations
+│   │   ├── community-records.html      pools projects + artifacts + WGs into `records`
+│   │   ├── threat-coverage.html        derives which threats have a mitigation
+│   │   ├── pillar-grid.html            SDLC × actor matrix for /architecture/*
+│   │   ├── threats-list.html           SLSA threats + reverse-derived mitigations
+│   │   ├── relationships-section.html  a record's implements/produces/consumes links
+│   │   └── architecture-style.html     shared CSS for the architecture views
 │   ├── pages/             the only hand-written pages on the site
-│       ├── index.md · about.md
-│       ├── personas.md · problems.md · projects.md · artifacts.md   (section indexes)
-│       └── architecture/  the architecture views
-│
-│   └── assets/            css · js · fonts · logo
+│   │   ├── index.md · about.md
+│   │   ├── personas.md · problems.md · projects.md · artifacts.md   (section indexes)
+│   │   └── architecture/  the architecture views
+│   └── assets/            css · js · fonts · logo · data/catalog.json
 │                          published at /assets/** by theme/_plugins/theme_assets.rb
 │
 ├── _config.yml            points Jekyll at data/ and theme/
