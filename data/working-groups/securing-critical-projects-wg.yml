@@ -1,0 +1,39 @@
+# Securing Critical Projects
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+#
+# This working group currently hosts no projects.
+
+working_group:
+  id: securing-critical-projects-wg
+  name: Securing Critical Projects
+  url: https://github.com/ossf/tac
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other, software-producer]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: needs-review
+    text: >-
+      Worked with funders and policy bodies (Alpha-Omega, governments) to direct support toward
+      critical-project producers.
+    note: Archived WG; placement is historical context.
+  - stage: producer
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Historically supported producer-side hardening for the most critical OSS dependencies
+      — funding, audits, maintainer support. Now archived; concerns absorbed by other WGs.
+    note: Archived WG; placement is historical context.
+projects: []

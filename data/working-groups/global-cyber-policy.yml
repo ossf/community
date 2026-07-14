@@ -1,0 +1,34 @@
+# Global Cyber Policy
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+#
+# This working group currently hosts no projects.
+
+working_group:
+  id: global-cyber-policy
+  name: Global Cyber Policy
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: needs-review
+    text: >-
+      Tracks legislative and regulatory developments that shape the constraints open source
+      producers operate under (NIS2, CRA, similar regimes).
+    note: >-
+      SDLC-stage tagging is a shoehorn per the constitution v1.1.0 note on governance records;
+      confirm whether persona/stage placement should evolve.
+projects: []

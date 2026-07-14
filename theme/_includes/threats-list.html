@@ -1,0 +1,85 @@
+{%- comment -%}
+  SLSA v1.2 threats list — the threat taxonomy with its mitigations.
+
+  Categories come from definitions/slsa_threat_categories.yml, threats from
+  definitions/slsa_threats.yml. Both are a verbatim mirror of the SLSA spec and
+  carry NO mitigation data.
+
+  The mitigation list is DERIVED: each community record declares the threats it
+  mitigates (`threats: [{id, status, note}]`), and we reverse-lookup that here.
+  This is the same derived-relationship pattern personas/problems already use —
+  a project claims its coverage on its own record, and the threat page reads it
+  back. Nobody has to edit the static SLSA mirror to claim a mitigation.
+{%- endcomment -%}
+
+{%- include community-records.html -%}
+
+<div class="threats">
+  {%- for cat in site.data.definitions.slsa_threat_categories -%}
+    {%- assign cat_threats = site.data.definitions.slsa_threats | where: "category_letter", cat.letter -%}
+    {%- if cat_threats.size > 0 -%}
+    <section class="threats__category" id="threats-{{ cat.letter | downcase }}">
+      <h3 class="threats__category-heading">
+        <span class="threats__category-letter">{{ cat.letter }}</span>
+        {{ cat.name }}
+        <span class="threats__category-count">{{ cat_threats.size }} threat{% if cat_threats.size != 1 %}s{% endif %}</span>
+      </h3>
+      <ol class="threats__list">
+        {%- for t in cat_threats -%}
+          {%- comment -%} Reverse-derive this threat's mitigators from the catalog. {%- endcomment -%}
+          {%- assign mitigators = "" | split: "" -%}
+          {%- for r in records -%}
+            {%- for claim in r.threats -%}
+              {%- if claim.id == t.id -%}{%- assign mitigators = mitigators | push: r -%}{%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+          {%- assign covered = false -%}
+          {%- if mitigators.size > 0 -%}{%- assign covered = true -%}{%- endif -%}
+          <li class="threat {% unless covered %}threat--gap{% endunless %}" id="threat-{{ t.code | downcase }}">
+            <details class="threat__details">
+              <summary class="threat__summary">
+                <span class="threat__code {% unless covered %}threat__code--gap{% endunless %}">{{ t.code }}</span>
+                <span class="threat__label">{{ t.label }}</span>
+                {%- if covered -%}
+                  <span class="threat__coverage threat__coverage--covered">{{ mitigators.size }} mitigation{% if mitigators.size != 1 %}s{% endif %}</span>
+                {%- else -%}
+                  <span class="threat__coverage threat__coverage--gap">no current OSSF coverage</span>
+                {%- endif -%}
+              </summary>
+              <div class="threat__body">
+                {%- if t.description -%}<p class="threat__description">{{ t.description }}</p>{%- endif -%}
+                {%- if covered -%}
+                <p class="threat__mitigations-label"><strong>Mitigated by:</strong></p>
+                <ul class="threat__mitigations">
+                  {%- for mrec in mitigators -%}
+                    {%- comment -%} Re-read this record's own claim for its status + note. {%- endcomment -%}
+                    {%- assign claim = nil -%}
+                    {%- for c in mrec.threats -%}
+                      {%- if c.id == t.id -%}{%- assign claim = c -%}{%- endif -%}
+                    {%- endfor -%}
+                    <li class="threat__mitigation{% if claim.status == 'needs-review' %} threat__mitigation--nr{% endif %}">
+                      {%- if mrec.kind == "working-group" -%}
+                        <span class="threat__mitigation-name">{{ mrec.name }}</span>
+                        <span class="threat__mitigation-badge">WG</span>
+                      {%- else -%}
+                        {%- if mrec.kind == "artifact" -%}{%- assign m_path = "/artifacts/" -%}{%- else -%}{%- assign m_path = "/projects/" -%}{%- endif -%}
+                        <a class="threat__mitigation-link" href="{{ m_path | append: mrec.id | append: '/' | relative_url }}">{{ mrec.name }}</a>
+                        {%- if mrec.kind == "artifact" %}<span class="threat__mitigation-badge">artifact</span>{%- endif -%}
+                      {%- endif -%}
+                      {%- if claim.status == "needs-review" -%}<span class="threat__mitigation-nr">needs-review</span>{%- endif -%}
+                      {%- if claim.note -%}<p class="threat__mitigation-note">{{ claim.note }}</p>{%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {%- else -%}
+                <p class="threat__gap-note"><em>No OpenSSF project or working group currently lists this threat in its scope. This is a real coverage gap and a worklist for the TAC.</em></p>
+                {%- endif -%}
+              </div>
+            </details>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </section>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

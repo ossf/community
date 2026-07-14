@@ -1,0 +1,179 @@
+# ORBIT (Open Resources for Baselines, Interoperability, and Tooling)
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+
+working_group:
+  id: orbit
+  name: ORBIT (Open Resources for Baselines, Interoperability, and Tooling)
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer, source]
+  supply_chain_actors: [other, software-producer]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: confirmed
+    text: >-
+      Auditors and compliance teams reach back to producer-stage practices when grading a
+      project against the Baseline.
+  - stage: producer
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producer-stage guidance (development practices, contributor hygiene, supported toolchain)
+      sits alongside the source-layer criteria.
+  - stage: source
+    actor: other
+    status: confirmed
+    text: >-
+      Compliance/risk reviewers use ORBIT-coordinated material to map repository evidence
+      to international frameworks and regulations.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Stewards the OSPS Baseline and the source-layer evidence-gathering tooling producers
+      run to demonstrate conformance.
+projects:
+- id: minder
+  name: Minder
+  url: https://github.com/mindersec/minder
+  openssf_url: https://openssf.org/projects/minder/
+  insights: https://github.com/mindersec/minder/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A software-supply-chain security platform that continuously verifies secure practices
+    and enforces standardized policies across repositories and artefacts.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [source]
+  supply_chain_actors: [other, software-producer]
+  threats:
+  - id: slsa-v1-2-b4
+    status: needs-review
+    note: >-
+      Minder enforces policies that could narrow rule exceptions; confirm whether existing
+      rulesets cover this.
+  cell_synopses:
+  - stage: source
+    actor: other
+    status: needs-review
+    text: >-
+      Compliance and security teams use Minder to express their corporate posture as enforceable
+      policy on the source layer.
+    note: >-
+      Compliance-team framing is documented in marketing material; confirm specific upstream
+      framing.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Continuously enforces policy across a producer's source repositories — branch protection,
+      dependency review, secret scanning, vulnerability response — so the producer's policy
+      is the actual policy on every repo, not just the intended one.
+  personas:
+  - id: developer
+    note: >-
+      Uses Minder to proactively manage their security posture and attest secure practices
+      to downstream consumers.
+  - id: ospo
+    note: >-
+      Deploys Minder to establish and continuously verify standardized security policies across
+      all internal and open source project portfolios.
+  - id: security
+    note: >-
+      Maps repository configurations to enterprise threat models, using Minder to continuously
+      enforce secure development lifecycles and prevent configuration drift.
+  - id: devops
+    note: >-
+      Configures Minder to execute security posture management checks and minimize risk along
+      the supply chain.
+  - id: package-manager
+    note: >-
+      Ensures that published packages originate from repositories that continuously pass strict
+      security posture checks.
+  - id: executive
+    note: >-
+      Leverages verifiable proof of secure development practices to satisfy auditors and enterprise
+      customers through continuous attestation.
+  problems:
+  - id: secure-configuration
+    note: >-
+      Continuously verifies repository configuration against secure-by-default rules and prevents
+      drift over time.
+  - id: policy-compliance
+    note: >-
+      Enforces standardized security policy across whole portfolios of repositories and artefacts
+      from one control plane.
+  compatible_with: [openssf-scorecard]
+- id: security-insights
+  name: Security Insights
+  url: https://github.com/ossf/security-insights-spec
+  openssf_url: https://openssf.org/projects/security-insights/
+  insights: >-
+    https://github.com/ossf/security-insights-spec/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A machine-processable YAML specification that lets a project declare its security posture,
+    vulnerability-handling process, and supporting resources.
+  kind: project
+  categories: [specification]
+  sdlc_stages: [source]
+  supply_chain_actors: [software-consumer, software-producer]
+  cell_synopses:
+  - stage: source
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers (and downstream tooling like Scorecard) read Security Insights to evaluate
+      a producer's security posture without manually scanning the repo for clues.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producers publish a `SECURITY-INSIGHTS.yml` file in their source repository declaring
+      contact points, response SLAs, signing policy, and dependency-management practices in
+      a machine-readable form.
+  personas:
+  - id: developer
+    note: >-
+      Creates a Security Insights file to report their project's security information in a
+      machine-processable way.
+  - id: ospo
+    note: >-
+      Aggregates Security Insights files across projects to programmatically monitor the security
+      health and maintenance status of open source dependencies.
+  - id: security
+    note: >-
+      Consumes Security Insights metadata to automatically assess the vulnerability management
+      practices of third-party libraries.
+  - id: devops
+    note: >-
+      Uses the machine-readable Security Insights YAML file to automatically approve or block
+      dependencies during pipeline execution.
+  - id: package-manager
+    note: >-
+      Incorporates Security Insights data into the repository index to allow users to search
+      and filter packages based on their security policies.
+  - id: executive
+    note: >-
+      Analyzes machine-processable metadata and prioritization to evaluate operational risk
+      and establish trust in vendors.
+  problems:
+  - id: security-posture
+    note: >-
+      Lets a project self-declare its security posture in a machine-readable file that consumers
+      can aggregate and compare.
+  - id: dependency-visibility
+    note: >-
+      Surfaces a project's vulnerability-handling process and resources so downstream consumers
+      can reason about it programmatically.
+  compatible_with: [openssf-scorecard]

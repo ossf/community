@@ -1,0 +1,39 @@
+# BEAR (Belonging, Empowerment, Allyship, and Representation)
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+#
+# This working group currently hosts no projects.
+
+working_group:
+  id: bear
+  name: BEAR (Belonging, Empowerment, Allyship, and Representation)
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other, software-producer]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: confirmed
+    text: >-
+      BEAR's work shapes the producer community itself — who feels welcome to participate,
+      how mentorship operates, how representation is improved — rather than any specific technical
+      control.
+  - stage: producer
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers benefit downstream from a broader, more sustainable contributor community.
+    note: >-
+      Indirect framing; confirm whether this should be tagged as software-producer at all.
+projects: []

@@ -1,0 +1,20 @@
+{%- comment -%}
+  The pooled community catalog — every record that can sit in the architecture
+  matrix: projects + artifacts + working groups.
+
+  This replaces the old `architecture_records.yml`, which was a second registry
+  that restated each project's id/name/url alongside _data/projects.yml and
+  drifted from it. Each record now lives in exactly one file, and `kind` is the
+  discriminator once they are pooled here.
+
+  Assigns `records`. Liquid includes share the caller's scope, so:
+
+    {%- include community-records.html -%}
+    {%- for r in records -%} ... {%- endfor -%}
+
+  Link routing: kind `project` -> /projects/<id>/, `artifact` -> /artifacts/<id>/,
+  `working-group` -> no page of its own (render the name, or link out to r.url).
+{%- endcomment -%}
+{%- assign records = site.data.catalog.projects
+      | concat: site.data.definitions.artifacts
+      | concat: site.data.catalog.working_groups -%}
