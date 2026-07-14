@@ -1,0 +1,690 @@
+<style>
+/* ============================================
+   Architecture views (/architecture/*)
+   Native HTML pillar grids — themed via existing CSS variables,
+   no SVG, fully hoverable + clickable, dark-mode-aware for free.
+   ============================================ */
+
+/* Pillar grid: 6 columns matching the SDLC stage enum. Columns
+   collapse responsively on narrower viewports. */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin: var(--spacing-lg, 1.5rem) 0;
+  align-items: start;
+}
+
+.pillar-col {
+  background: var(--color-bg-secondary, #f6f8fa);
+  border: 1px solid var(--color-border-light, #e7ecf0);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 80px;
+}
+
+.pillar-col__header {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--openssf-purple, #45208c);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  cursor: help;
+}
+
+.pillar-col__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 8px 12px;
+}
+
+.pillar-record {
+  margin: 2px 0;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  transition: background-color 0.12s, color 0.12s;
+}
+
+.pillar-record:hover {
+  background: var(--color-bg-tertiary, #f0f2f5);
+}
+
+.pillar-record__link,
+.pillar-record__name {
+  color: var(--color-text-primary, #24292f);
+  font-weight: 500;
+}
+
+.pillar-record__link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.pillar-record__link:hover,
+.pillar-record__link:focus {
+  color: var(--openssf-purple, #45208c);
+  border-bottom-color: var(--openssf-purple, #45208c);
+}
+
+[data-theme="dark"] .pillar-record__link:hover,
+[data-theme="dark"] .pillar-record__link:focus {
+  color: var(--openssf-purple, #a78bfa);
+  border-bottom-color: var(--openssf-purple, #a78bfa);
+}
+
+.pillar-record__link--external i {
+  font-size: 0.7em;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+.pillar-record__badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  background: var(--openssf-purple-lighter, #7253ED);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 9999px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+/* Artifact-record specific styling — distinguish them visually from
+   projects (italics + a soft purple background) without being loud. */
+.pillar-record--artifact .pillar-record__link,
+.pillar-record--artifact .pillar-record__name { font-style: italic; }
+
+/* Artifact-page header bits (Bundle 2). */
+.tool-hero__aliases {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: -0.5rem 0 0.75rem;
+}
+.artifact-meta {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+.artifact-meta__chip {
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 0 4px 4px 0;
+  background: var(--color-bg-tertiary);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  color: var(--color-text-primary);
+}
+.artifact-meta--unplaced { font-style: italic; }
+.artifact-placement {
+  margin: 1rem 0 1.5rem;
+  padding: 12px 16px;
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--openssf-purple);
+  border-radius: 0 6px 6px 0;
+}
+.artifact-placement p { margin: 0.25rem 0; }
+.artifact-placement a {
+  color: var(--openssf-purple);
+  text-decoration: none;
+}
+.artifact-placement a:hover { text-decoration: underline; }
+[data-theme="dark"] .artifact-placement a { color: var(--openssf-purple, #a78bfa); }
+
+/* Relationships section (Bundle 3) — appears on project and artifact pages
+   showing outgoing + incoming typed edges. */
+.relationships {
+  margin: 1rem 0 1.5rem;
+}
+.relationships__heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0.5rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.relationships__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.relationship {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0;
+  padding: 8px 12px;
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--openssf-purple);
+  border-radius: 0 4px 4px 0;
+}
+.relationships--incoming .relationship {
+  border-left-color: var(--openssf-purple-lighter, #7253ED);
+}
+.relationship__verb {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+  padding: 2px 8px;
+  background: var(--color-bg-tertiary);
+  border-radius: 4px;
+  text-transform: lowercase;
+}
+.relationship__link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.relationship__link:hover {
+  color: var(--openssf-purple);
+  text-decoration: underline;
+}
+[data-theme="dark"] .relationship__link:hover {
+  color: var(--openssf-purple, #a78bfa);
+}
+.relationship__name {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+.relationship__name--unresolved {
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+.relationship__kind-badge {
+  display: inline-block;
+  padding: 0 6px;
+  background: var(--openssf-purple-lighter, #7253ED);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+.relationship__nr {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+}
+[data-theme="dark"] .relationship__nr {
+  background: #422910;
+  color: #fbbf24;
+}
+.relationship__note {
+  width: 100%;
+  margin: 4px 0 0;
+  padding-left: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.pillar-col__empty {
+  color: var(--color-text-tertiary, #6e7781);
+  font-style: italic;
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 16px 8px;
+}
+
+/* Category filter chips (Bundle 5) — chip row at the top of
+   /architecture/ index, toggles .is-filtered-out on elements with
+   data-categories. */
+.architecture-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 6px;
+  margin: 1rem 0 1.5rem;
+  padding: 12px 16px;
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+}
+.architecture-chips__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-right: 6px;
+}
+.architecture-chip {
+  padding: 5px 12px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.architecture-chip:hover { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+.architecture-chip[aria-pressed="true"] {
+  background: var(--openssf-purple);
+  color: #ffffff;
+  border-color: var(--openssf-purple);
+}
+.architecture-chip--all[aria-pressed="true"] {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border-color: var(--color-text-tertiary);
+}
+.architecture-chip:focus-visible {
+  outline: 2px solid var(--openssf-purple);
+  outline-offset: 2px;
+}
+.is-filtered-out { display: none !important; }
+
+/* Per-record expandable synopsis (Bundle 1). Each record with a matching
+   (stage, actor) cell synopsis renders as <details>; the summary shows
+   the name + badges, the body shows the curated paragraph. */
+.pillar-record__details {
+  margin: 0;
+  padding: 0;
+}
+.pillar-record__summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.pillar-record__summary::-webkit-details-marker { display: none; }
+.pillar-record__summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 0.9em;
+  color: var(--color-text-tertiary, #6e7781);
+  font-size: 0.7em;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+.pillar-record__details[open] > .pillar-record__summary::before {
+  transform: rotate(90deg);
+}
+.pillar-record__synopsis {
+  margin: 6px 0 4px 1em;
+  padding: 8px 10px;
+  background: var(--color-bg-tertiary, #f0f2f5);
+  border-left: 3px solid var(--openssf-purple, #45208c);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary, #57606a);
+}
+.pillar-record__synopsis p { margin: 0 0 4px; }
+.pillar-record__synopsis p:last-child { margin-bottom: 0; }
+.pillar-record__synopsis-note {
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary, #6e7781);
+}
+
+/* "needs-review" badge — visual signal that this cell is curator-inferred,
+   pending upstream confirmation. */
+.pillar-record__nr {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  text-transform: lowercase;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pillar-record__nr {
+  background: #422910;
+  color: #fbbf24;
+}
+
+/* Responsive: collapse 6 → 3 → 1 columns as viewport narrows. */
+@media (max-width: 1100px) {
+  .pillar-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+}
+
+/* Overview / TAC summary / gaps tables (Bundle 7) — flat catalog
+   views and coverage stats rendered as plain tables with chips for
+   stages/actors/categories. */
+.overview__summary, .tac-summary__count {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+}
+.overview__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  font-size: 0.9rem;
+}
+.overview__table th, .overview__table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+  vertical-align: top;
+}
+.overview__table th {
+  background: var(--color-bg-secondary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.overview__table tbody tr:hover { background: var(--color-bg-secondary); }
+.overview__name a {
+  color: var(--openssf-purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+.overview__name a:hover { text-decoration: underline; }
+[data-theme="dark"] .overview__name a { color: var(--openssf-purple, #a78bfa); }
+
+.overview__kind {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+}
+.overview__kind--project { background: var(--openssf-purple); color: #ffffff; }
+.overview__kind--working-group { background: #7253ED; color: #ffffff; }
+.overview__kind--artifact { background: #0ea5e9; color: #ffffff; }
+[data-theme="dark"] .overview__kind--project { background: #a78bfa; color: #170D34; }
+[data-theme="dark"] .overview__kind--working-group { background: #c4b5fd; color: #170D34; }
+[data-theme="dark"] .overview__kind--artifact { background: #38bdf8; color: #170D34; }
+
+.overview__chip {
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  padding: 1px 7px;
+  font-size: 0.7rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  border-radius: 9999px;
+}
+.overview__chip--cat {
+  background: var(--openssf-purple-lighter, #7253ED);
+  color: #ffffff;
+  font-family: inherit;
+}
+[data-theme="dark"] .overview__chip--cat {
+  background: #4c1d95;
+  color: #c4b5fd;
+}
+
+.tac-summary__heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--openssf-purple-dark, #170D34);
+  margin: 2rem 0 0.5rem;
+  scroll-margin-top: 1rem;
+}
+[data-theme="dark"] .tac-summary__heading { color: #c4b5fd; }
+.tac-summary__subheading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 1.5rem 0 0.5rem;
+}
+.tac-summary__list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.5rem;
+}
+.tac-summary__list li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* SLSA threats list (Bundle 6) — replaces the baked SVG with native
+   HTML. Each threat is a <details> with a colour-coded code badge
+   (purple for covered, red for gap), expandable to show description
+   + mitigations. */
+.threats__summary {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+}
+.threats__jumpnav {
+  margin: 1rem 0 1.5rem;
+  padding: 12px 16px;
+  background: var(--color-bg-secondary);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: baseline;
+}
+.threats__jumpnav-label {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+.threats__jumpnav a {
+  color: var(--openssf-purple);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.threats__jumpnav a:hover { text-decoration: underline; }
+[data-theme="dark"] .threats__jumpnav a { color: var(--openssf-purple, #a78bfa); }
+
+.threats { margin: 1.5rem 0; }
+.threats__category { margin: 2rem 0; scroll-margin-top: 1rem; }
+.threats__category-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--openssf-purple-dark, #170D34);
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+[data-theme="dark"] .threats__category-heading {
+  color: var(--openssf-purple-dark, #c4b5fd);
+}
+.threats__category-letter {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  text-align: center;
+  background: var(--openssf-purple);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+.threats__category-count {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+}
+
+.threats__list { list-style: none; padding: 0; margin: 0; }
+
+.threat {
+  margin: 6px 0;
+  background: var(--color-bg-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+  scroll-margin-top: 1rem;
+}
+.threat--gap { background: #fef2f2; }
+[data-theme="dark"] .threat--gap { background: #3a1d28; }
+
+.threat__details { margin: 0; }
+.threat__summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.threat__summary::-webkit-details-marker { display: none; }
+.threat__summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--color-text-tertiary);
+  font-size: 0.8em;
+  transition: transform 0.15s;
+}
+.threat__details[open] > .threat__summary::after { transform: rotate(180deg); }
+
+.threat__code {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--openssf-purple);
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.threat__code--gap { background: #991b1b; }
+[data-theme="dark"] .threat__code--gap { background: #dc2626; }
+
+.threat__label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.threat__coverage {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.threat__coverage--covered { background: #d1fae5; color: #064e3b; }
+[data-theme="dark"] .threat__coverage--covered { background: #064e3b; color: #34d399; }
+.threat__coverage--gap { background: #fee2e2; color: #7f1d1d; }
+[data-theme="dark"] .threat__coverage--gap { background: #7f1d1d; color: #fca5a5; }
+
+.threat__body {
+  padding: 4px 14px 14px;
+  border-top: 1px solid var(--color-border-light);
+}
+.threat__description {
+  margin: 8px 0;
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.threat__mitigations-label { margin: 12px 0 6px; font-size: 0.9rem; }
+.threat__mitigations { list-style: none; padding: 0; margin: 0; }
+.threat__mitigation {
+  display: inline-block;
+  margin: 3px 6px 3px 0;
+  padding: 4px 10px;
+  background: var(--color-bg-tertiary);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.threat__mitigation--nr { background: #fef3c7; color: #92400e; }
+[data-theme="dark"] .threat__mitigation--nr { background: #422910; color: #fbbf24; }
+
+.threat__mitigation-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.threat__mitigation-link:hover { color: var(--openssf-purple); text-decoration: underline; }
+[data-theme="dark"] .threat__mitigation-link:hover { color: var(--openssf-purple, #a78bfa); }
+.threat__mitigation-name { font-weight: 500; color: var(--color-text-primary); }
+.threat__mitigation-name--unresolved { color: var(--color-text-tertiary); font-style: italic; }
+.threat__mitigation-badge {
+  display: inline-block;
+  padding: 0 5px;
+  margin-left: 4px;
+  background: var(--openssf-purple-lighter, #7253ED);
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.threat__mitigation-nr {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 5px;
+  background: #fbbf24;
+  color: #422910;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-transform: lowercase;
+}
+.threat__mitigation-note {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+.threat__gap-note {
+  margin: 8px 0 4px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* Architecture-figure (legacy, used by /architecture/slsa-threats/
+   until that page is migrated off baked SVGs). */
+.architecture-figure {
+  margin: var(--spacing-lg, 1.5rem) 0;
+  padding: 0;
+}
+.architecture-figure__svg { display: block; margin: 0 auto 0.75rem; }
+.architecture-figure__svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.architecture-figure__svg--dark { display: none; }
+[data-theme="dark"] .architecture-figure__svg--light { display: none; }
+[data-theme="dark"] .architecture-figure__svg--dark { display: block; }
+.architecture-figure figcaption {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #57606a);
+  max-width: 70ch;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
+}
+.architecture-figure figcaption code { font-size: 0.85em; }
+</style>

@@ -143,6 +143,8 @@ layout: default
   {%- endif -%}
 {%- endfor -%}
 
+{% include relationships-section.html record_id=project.id %}
+
 <div class="persona-footer-actions">
   <a class="persona-back-link" href="{{ '/projects/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All projects</a>
   <a class="persona-back-link" href="{{ '/' | relative_url }}">Start over <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>

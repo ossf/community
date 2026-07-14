@@ -1,0 +1,42 @@
+# Category enum (mirrors feature 005's 8-value enum).
+
+- id: specification
+  name: "Specification"
+  description: >-
+    A normative document defining an interface, format, or process.
+
+- id: tooling
+  name: "Tooling"
+  description: >-
+    An executable tool, library, or CLI that does work for a user.
+
+- id: best-practices
+  name: "Best Practices"
+  description: >-
+    Curated guidance and frameworks for adoption (not a normative spec).
+
+- id: framework
+  name: "Framework"
+  description: >-
+    A coordinated bundle of guidance, tooling, and processes — broader than a single spec.
+
+- id: service
+  name: "Service"
+  description: >-
+    A hosted offering — connect to rather than install.
+
+- id: data-source
+  name: "Data Source"
+  description: >-
+    A maintained dataset other tooling consumes.
+
+- id: education
+  name: "Education"
+  description: >-
+    Materials whose primary product is human learning.
+
+- id: governance
+  name: "Governance"
+  description: >-
+    Cross-cutting governance, risk, compliance, advocacy, or policy work.
+
