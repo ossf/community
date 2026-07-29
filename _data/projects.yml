@@ -235,24 +235,25 @@
   compatible_with:
     - sigstore
 
-- id: open-bao
-  name: Open Bao
+- id: openbao
+  name: OpenBao
   url: https://openbao.org/
-  insights: https://github.com/openbao/openbao/blob/main/SECURITY-INSIGHTS.yml
+  insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
   description: >-
-    A community-governed, open source secrets-management platform for storing,
-    rotating, and brokering access to secrets, credentials, and signing keys.
+    A community-governed, open source secrets management platform for storing,
+    rotating, and brokering access to secrets, credentials, tokens, and
+    cryptographic keys.
   personas:
     - id: developer
-      note: "Uses Open Bao APIs to securely fetch database credentials and API keys without hardcoding them into source code."
+      note: "Uses OpenBao APIs to securely fetch database credentials and API keys without hardcoding them into source code."
     - id: ospo
-      note: "Promotes Open Bao as the standard, open-source-governed solution for managing secrets across the organization's projects."
+      note: "Promotes OpenBao as the standard, open-source-governed solution for managing secrets across the organization's projects."
     - id: security
-      note: "Designs centralized secrets management architectures using Open Bao to enforce strict access controls and credential rotation."
+      note: "Designs centralized secrets management architectures using OpenBao to enforce strict access controls and credential rotation."
     - id: devops
-      note: "Integrates Open Bao to securely inject ephemeral credentials into CI/CD pipelines during automated builds and deployments."
+      note: "Integrates OpenBao to securely inject ephemeral credentials into CI/CD pipelines during automated builds and deployments."
     - id: package-manager
-      note: "Utilizes Open Bao to manage secrets and signing keys, ensuring the untampered and trusted distribution of packages."
+      note: "Utilizes OpenBao to manage secrets and signing keys, ensuring the untampered and trusted distribution of packages."
     - id: executive
       note: "Ensures regulatory compliance and software sovereignty through a community-governed secrets management solution, mitigating risks associated with vendor lock-in and licensing shifts."
   problems:
@@ -493,7 +494,7 @@
     - rstuf
   compatible_with:
     - slsa
-    - open-bao
+    - openbao
 
 - id: slsa
   name: SLSA
