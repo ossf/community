@@ -16,7 +16,7 @@
 #                              in which case "uncategorized" is the wrong word
 #                              for it and the model needs an answer for
 #                              non-OpenSSF entries.
-#   sigstore, open-bao, rstuf  established projects the TAC list does not place.
+#   sigstore, openbao, rstuf   established projects the TAC list does not place.
 #   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
 
 projects:
@@ -79,14 +79,14 @@ projects:
     note: >-
       Standardizes how risk and control evidence are expressed so posture can be assessed
       automatically and compared across projects.
-- id: open-bao
-  name: Open Bao
+- id: openbao
+  name: OpenBao
   url: https://openbao.org/
   openssf_url: https://openssf.org/projects/openbao/
-  insights: https://github.com/openbao/openbao/blob/main/SECURITY-INSIGHTS.yml
+  insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
   description: >-
-    A community-governed, open source secrets-management platform for storing, rotating, and
-    brokering access to secrets, credentials, and signing keys.
+    A community-governed, open source secrets management platform for storing, rotating, and
+    brokering access to secrets, credentials, tokens, and cryptographic keys.
   kind: project
   categories: [tooling]
   sdlc_stages: [build, consumer]
@@ -130,23 +130,23 @@ projects:
   personas:
   - id: developer
     note: >-
-      Uses Open Bao APIs to securely fetch database credentials and API keys without hardcoding
+      Uses OpenBao APIs to securely fetch database credentials and API keys without hardcoding
       them into source code.
   - id: ospo
     note: >-
-      Promotes Open Bao as the standard, open-source-governed solution for managing secrets
+      Promotes OpenBao as the standard, open-source-governed solution for managing secrets
       across the organization's projects.
   - id: security
     note: >-
-      Designs centralized secrets management architectures using Open Bao to enforce strict
+      Designs centralized secrets management architectures using OpenBao to enforce strict
       access controls and credential rotation.
   - id: devops
     note: >-
-      Integrates Open Bao to securely inject ephemeral credentials into CI/CD pipelines during
+      Integrates OpenBao to securely inject ephemeral credentials into CI/CD pipelines during
       automated builds and deployments.
   - id: package-manager
     note: >-
-      Utilizes Open Bao to manage secrets and signing keys, ensuring the untampered and trusted
+      Utilizes OpenBao to manage secrets and signing keys, ensuring the untampered and trusted
       distribution of packages.
   - id: executive
     note: >-
@@ -436,7 +436,7 @@ projects:
       Records signatures in a transparency log, making artefact provenance independently auditable
       downstream.
   similar_to: [rstuf]
-  compatible_with: [slsa, open-bao]
+  compatible_with: [slsa, openbao]
 - id: fuzzingbrain
   name: FuzzingBrain
   url: >-
