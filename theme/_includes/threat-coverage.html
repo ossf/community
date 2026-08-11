@@ -1,0 +1,20 @@
+{%- comment -%}
+  Assigns `covered_ids` — every threat id that at least one community record
+  claims to mitigate, as a pipe-delimited string. Test coverage with:
+
+    {%- assign needle = "|" | append: t.id | append: "|" -%}
+    {%- if covered_ids contains needle -%} ... covered ... {%- endif -%}
+
+  The pipe delimiters are load-bearing. Liquid's `contains` is a substring test
+  on strings, and threat ids are prefixes of one another — "slsa-v1-2-b1" is a
+  substring of "slsa-v1-2-b12". Without the delimiters, B1 would report as
+  covered whenever B12 was.
+
+  Requires `records`, so include community-records.html first.
+{%- endcomment -%}
+{%- assign covered_ids = "|" -%}
+{%- for r in records -%}
+  {%- for c in r.threats -%}
+    {%- assign covered_ids = covered_ids | append: c.id | append: "|" -%}
+  {%- endfor -%}
+{%- endfor -%}

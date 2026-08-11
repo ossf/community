@@ -1,0 +1,375 @@
+# DEFINITION — SLSA v1.2 supply-chain threats. Mirrors the upstream spec.
+#
+# DO NOT add project mitigations here. A project claims a threat from its own
+# entry in data/working-groups/<wg>.yml (`threats:`); the threat pages derive
+# their mitigation lists by reverse-lookup. That keeps this file a faithful
+# mirror of SLSA and keeps every rep-editable field on the rep's own record.
+#
+# Only edit this file to track an upstream SLSA revision.
+
+- id: slsa-v1-2-a1
+  code: A1
+  category_letter: A
+  label: Software producer intentionally creates malicious revision
+  description: >-
+    A producer deliberately creates harmful code targeting consumers. SLSA does not address
+    this directly; the trust basis comes from open source community governance and organizational
+    incentives.
+- id: slsa-v1-2-b1
+  code: B1
+  category_letter: B
+  label: Submit change without review
+  description: >-
+    Malicious code pushed directly to the source repository, bypassing approval processes.
+    SLSA Source L4 mitigates by requiring two-party approval before acceptance.
+- id: slsa-v1-2-b2
+  code: B2
+  category_letter: B
+  label: Single actor controls multiple accounts
+  description: >-
+    One person uses multiple accounts to self-approve code changes, defeating two-party review.
+- id: slsa-v1-2-b3
+  code: B3
+  category_letter: B
+  label: Use robot account to submit change
+  description: >-
+    Exploit automated accounts with change submission privileges to push unreviewed code.
+- id: slsa-v1-2-b4
+  code: B4
+  category_letter: B
+  label: Abuse of rule exceptions
+  description: >-
+    Circumvent policies through poorly defined exception clauses (e.g., branch protection
+    bypass lists).
+- id: slsa-v1-2-b5
+  code: B5
+  category_letter: B
+  label: Highly-permissioned actor bypasses controls
+  description: Admin users disable protections to push unauthorized changes.
+- id: slsa-v1-2-b6
+  code: B6
+  category_letter: B
+  label: Alter change history
+  description: >-
+    Force-push or rewrite commits to hide malicious activity. SLSA Source L2+ mitigates by
+    preventing branch history alteration.
+- id: slsa-v1-2-b7
+  code: B7
+  category_letter: B
+  label: Replace tagged content with malicious content
+  description: >-
+    Reassign release tags to point at compromised code. SLSA Source L2+ mitigates by protecting
+    tags from being updated.
+- id: slsa-v1-2-b8
+  code: B8
+  category_letter: B
+  label: Skip required checks
+  description: >-
+    Submit code without following documented development processes. SLSA Source L3+ mitigates
+    by enforcing process via technical controls.
+- id: slsa-v1-2-b9
+  code: B9
+  category_letter: B
+  label: Modify code after review
+  description: >-
+    Alter change contents after peer approval but before submission. SLSA Source L4 mitigates
+    by invalidating approvals when changes are modified.
+- id: slsa-v1-2-b10
+  code: B10
+  category_letter: B
+  label: Submit unreviewable change
+  description: >-
+    Craft changes appearing benign to reviewers but containing hidden malice. SLSA Source
+    L4 requires review systems present intelligible representations.
+- id: slsa-v1-2-b11
+  code: B11
+  category_letter: B
+  label: Copy reviewed change to another context
+  description: Get approval in one environment, then apply in different context.
+- id: slsa-v1-2-b12
+  code: B12
+  category_letter: B
+  label: Commit graph attacks
+  description: >-
+    Include malicious commits alongside reversing commits to obscure intent.
+- id: slsa-v1-2-b13
+  code: B13
+  category_letter: B
+  label: Collude with another trusted person
+  description: Two authorized reviewers work together to approve bad changes.
+- id: slsa-v1-2-b14
+  code: B14
+  category_letter: B
+  label: Trick reviewer into approving bad code
+  description: >-
+    Construct deceptive changes ("bugdoor") that pass human review. Not currently addressed
+    by SLSA.
+- id: slsa-v1-2-b15
+  code: B15
+  category_letter: B
+  label: Reviewer blindly approves changes
+  description: >-
+    Approver rubber-stamps changes without substantive review. Not currently addressed by
+    SLSA.
+- id: slsa-v1-2-b16
+  code: B16
+  category_letter: B
+  label: Forge change metadata
+  description: >-
+    Misrepresent authorship, timestamp, or discoverability of a change. SLSA Source L2+ attributes
+    changes only to authenticated identities.
+- id: slsa-v1-2-c1
+  code: C1
+  category_letter: C
+  label: Platform admin abuses privileges
+  description: Infrastructure administrator exploits access to bypass controls.
+- id: slsa-v1-2-c2
+  code: C2
+  category_letter: C
+  label: Exploit vulnerability in SCM
+  description: >-
+    Leverage implementation flaws in source control system. Not currently addressed by SLSA.
+- id: slsa-v1-2-d1
+  code: D1
+  category_letter: D
+  label: Build from unofficial fork of code
+  description: >-
+    Build using the expected process but from an unauthorized repository copy. Mitigated by
+    verifying provenance source location matches expectations.
+- id: slsa-v1-2-d2
+  code: D2
+  category_letter: D
+  label: Build from unofficial branch or tag
+  description: >-
+    Checkout experimental or unprotected branches for release. Mitigated by verifying source
+    revision reachability.
+- id: slsa-v1-2-d3
+  code: D3
+  category_letter: D
+  label: Build from unofficial build steps
+  description: >-
+    Execute custom build instructions outside official configuration. Mitigated by verifying
+    build configuration source matches expected value.
+- id: slsa-v1-2-d4
+  code: D4
+  category_letter: D
+  label: Build from unofficial parameters
+  description: >-
+    Inject malicious behavior through build environment variables or flags. Mitigated by verifying
+    all external parameters match expected values.
+- id: slsa-v1-2-d5
+  code: D5
+  category_letter: D
+  label: Build from modified version after checkout
+  description: >-
+    Build from local modifications not in the official repository. Mitigated when the build
+    platform records the actual source repository in provenance.
+- id: slsa-v1-2-e1
+  code: E1
+  category_letter: E
+  label: Forge provenance values
+  description: >-
+    Generate false provenance and obtain a trusted platform signature. SLSA Build L2+ requires
+    a trusted control plane generate provenance; L3+ hardens the control plane.
+- id: slsa-v1-2-e2
+  code: E2
+  category_letter: E
+  label: Forge output digest of provenance
+  description: >-
+    Set the artifact hash without platform verification of actual production. Not a security
+    problem per the SLSA spec — provenance binds to whatever artifact carries the matching
+    digest.
+- id: slsa-v1-2-e3
+  code: E3
+  category_letter: E
+  label: Compromise project owner
+  description: >-
+    Gain project-owner permissions to influence the build or provenance. SLSA Build L2+ ensures
+    the owner cannot influence the build process.
+- id: slsa-v1-2-e4
+  code: E4
+  category_letter: E
+  label: Compromise other build
+  description: >-
+    Run a malicious build affecting parallel or subsequent builds via shared infrastructure.
+    SLSA Build L3 isolates builds from each other.
+- id: slsa-v1-2-e5
+  code: E5
+  category_letter: E
+  label: Steal cryptographic secrets
+  description: >-
+    Exfiltrate or misuse provenance signing keys. SLSA Build L3 isolates builds so only the
+    control plane accesses secrets.
+- id: slsa-v1-2-e6
+  code: E6
+  category_letter: E
+  label: Poison the build cache
+  description: >-
+    Inject malicious artifacts into a cache for reuse by benign builds. SLSA Build L3 isolates
+    the cache and keys entries by transitive closure.
+- id: slsa-v1-2-e7
+  code: E7
+  category_letter: E
+  label: Compromise build platform admin
+  description: >-
+    Gain admin access to modify builds via debugging or SSH access. Mitigated by admin controls
+    (two-person approvals, audit logging).
+- id: slsa-v1-2-f1
+  code: F1
+  category_letter: F
+  label: Build with untrusted CI/CD
+  description: >-
+    Use unofficial pipeline not meeting security standards. Mitigated by verifying the builder
+    matches the expected value in provenance.
+- id: slsa-v1-2-f2
+  code: F2
+  category_letter: F
+  label: Upload package without provenance
+  description: >-
+    Publish artifact lacking cryptographic build attestation. SLSA Build L1 requires provenance
+    before acceptance.
+- id: slsa-v1-2-f3
+  code: F3
+  category_letter: F
+  label: Tamper with artifact after CI/CD
+  description: >-
+    Modify benign artifact post-build, then re-upload with the original provenance. Mitigated
+    by verifying the provenance subject hash matches the artifact.
+- id: slsa-v1-2-f4
+  code: F4
+  category_letter: F
+  label: Tamper with provenance
+  description: >-
+    Modify provenance metadata to pass expectations checks. SLSA Build L2 requires a valid
+    cryptographic signature on provenance.
+- id: slsa-v1-2-g1
+  code: G1
+  category_letter: G
+  label: Build with untrusted CI/CD (distribution)
+  description: >-
+    Registry contains an artifact built on a non-compliant platform. Mitigated by verifying
+    the builder or VSA matches expectations.
+- id: slsa-v1-2-g2
+  code: G2
+  category_letter: G
+  label: Issue VSA from untrusted intermediary
+  description: >-
+    An unauthorized entity issues a verification summary for a malicious package. Mitigated
+    by verifying VSAs come from a trusted intermediary only.
+- id: slsa-v1-2-g3
+  code: G3
+  category_letter: G
+  label: Upload package without provenance or VSA
+  description: >-
+    Package replaced without attestation in the registry. SLSA Build L1 requires provenance
+    or a VSA before acceptance.
+- id: slsa-v1-2-g4
+  code: G4
+  category_letter: G
+  label: Replace package and VSA with another
+  description: >-
+    Swap artifact and attestation, presenting a valid but mismatched VSA. Mitigated by verifying
+    the VSA resourceUri matches the requested package.
+- id: slsa-v1-2-g5
+  code: G5
+  category_letter: G
+  label: Tamper with artifact after upload
+  description: >-
+    Modify benign package post-publication while retaining attestation. SLSA Build L1 requires
+    the subject hash match the served artifact.
+- id: slsa-v1-2-g6
+  code: G6
+  category_letter: G
+  label: Tamper with provenance or VSA
+  description: >-
+    Modify attestation to pass verification checks. SLSA Build L2 requires valid cryptographic
+    signatures.
+- id: slsa-v1-2-h1
+  code: H1
+  category_letter: H
+  label: Dependency confusion
+  description: >-
+    Register a shadowing name in a public registry, misdirecting victim lookups. Mitigated
+    by verifying internal package provenance against expectations.
+- id: slsa-v1-2-h2
+  code: H2
+  category_letter: H
+  label: Typosquatting
+  description: >-
+    Register a similar-looking package name to trick user installation. Not currently addressed
+    directly by SLSA.
+- id: slsa-v1-2-i1
+  code: I1
+  category_letter: I
+  label: Improper usage
+  description: >-
+    Software used insecurely, enabling adversary compromise. Not addressed by SLSA; complemented
+    by 'Secure by Design' practices.
+- id: slsa-v1-2-j1
+  code: J1
+  category_letter: J
+  label: Include vulnerable dependency
+  description: >-
+    Statically bundle compromised library or base image in build output. Future SLSA Dependency
+    track will address this; today, mitigated via vulnerability databases and SBOMs.
+- id: slsa-v1-2-j2
+  code: J2
+  category_letter: J
+  label: Use compromised build tool
+  description: >-
+    Leverage a compromised compiler, utility, or OS package. Mitigated by recursively applying
+    SLSA verification to build tooling.
+- id: slsa-v1-2-j3
+  code: J3
+  category_letter: J
+  label: Use compromised runtime dependency during build
+  description: >-
+    Load a compromised runtime artifact during testing or linking. Mitigated by applying SLSA
+    recursively and isolating tests from output artifacts.
+- id: slsa-v1-2-j4
+  code: J4
+  category_letter: J
+  label: Use compromised dependency at runtime
+  description: >-
+    Load a malicious artifact when the software executes. Not explicitly modeled by SLSA;
+    each dependency is treated separately.
+- id: slsa-v1-2-k1
+  code: K1
+  category_letter: K
+  label: Delete the code
+  description: >-
+    Erase the source revision after the build, preventing inspection. Not currently addressed
+    by SLSA.
+- id: slsa-v1-2-k2
+  code: K2
+  category_letter: K
+  label: Dependency becomes unavailable
+  description: >-
+    Build cannot proceed due to missing transitive dependencies. Not currently addressed by
+    SLSA.
+- id: slsa-v1-2-k3
+  code: K3
+  category_letter: K
+  label: De-list artifact
+  description: >-
+    Package registry stops serving a published artifact. Not currently addressed by SLSA.
+- id: slsa-v1-2-k4
+  code: K4
+  category_letter: K
+  label: De-list provenance
+  description: >-
+    Package registry stops serving an attestation. Not currently addressed by SLSA.
+- id: slsa-v1-2-l1
+  code: L1
+  category_letter: L
+  label: Tamper with recorded expectations
+  description: >-
+    Modify verifier's configuration to accept unauthorized artifacts. Mitigated by requiring
+    two-party authorization for expectation changes.
+- id: slsa-v1-2-l2
+  code: L2
+  category_letter: L
+  label: Exploit cryptographic hash collisions
+  description: >-
+    Leverage digest-algorithm weakness to substitute artifacts. Mitigated by using collision-resistant
+    algorithms (SHA-256).

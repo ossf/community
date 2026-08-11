@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{%- comment -%} Resolve this page's artifact from the master list. {%- endcomment -%}
+{%- assign artifact_id = page.artifact_id -%}
+{%- assign artifact = nil -%}
+{%- for a in site.data.definitions.artifacts -%}
+  {%- if a.id == artifact_id -%}{%- assign artifact = a -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="tool-hero">
+  <p class="tool-hero__eyebrow"><i class="fa-solid fa-file-shield" aria-hidden="true"></i> OpenSSF artifact</p>
+  <h1 class="tool-hero__title">{{ artifact.name }}</h1>
+  {%- if artifact.aliases -%}
+  <p class="tool-hero__aliases"><em>Also known as:</em> {{ artifact.aliases | join: ", " }}</p>
+  {%- endif -%}
+  <p class="tool-hero__summary">{{ artifact.description }}</p>
+  <p class="tool-hero__links">
+    {%- if artifact.url -%}
+    <a class="tool-hero__link" href="{{ artifact.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Upstream specification
+    </a>
+    {%- endif -%}
+  </p>
+</section>
+
+{%- comment -%} Categories (Bundle 5 will surface these as chips). {%- endcomment -%}
+{%- if artifact.categories and artifact.categories != empty -%}
+<p class="artifact-meta">
+  <strong>Categories:</strong>
+  {%- for c in artifact.categories -%}
+    {%- assign cat = nil -%}
+    {%- for cand in site.data.definitions.categories -%}{%- if cand.id == c -%}{%- assign cat = cand -%}{%- endif -%}{%- endfor -%}
+    <span class="artifact-meta__chip">{% if cat %}{{ cat.name }}{% else %}{{ c }}{% endif %}</span>
+  {%- endfor -%}
+</p>
+{%- endif -%}
+
+{%- comment -%} Matrix placement (where this artifact flows in the SDLC × actor matrix). {%- endcomment -%}
+{%- if artifact.sdlc_stages and artifact.sdlc_stages != empty -%}
+<h2 class="tool-matrix__heading">Where it flows in the supply chain</h2>
+<div class="artifact-placement">
+  <p><strong>SDLC stages:</strong>
+    {%- for sid in artifact.sdlc_stages -%}
+      {%- assign s = nil -%}
+      {%- for cand in site.data.definitions.sdlc_stages -%}{%- if cand.id == sid -%}{%- assign s = cand -%}{%- endif -%}{%- endfor -%}
+      {%- if s -%}<a href="{{ '/architecture/' | relative_url }}" title="{{ s.description }}">{{ s.name }}</a>{%- unless forloop.last %}, {% endunless -%}{%- endif -%}
+    {%- endfor -%}
+  </p>
+  <p><strong>Supply-chain actors:</strong>
+    {%- for aid in artifact.supply_chain_actors -%}
+      {%- assign act = nil -%}
+      {%- for cand in site.data.definitions.supply_chain_actors -%}{%- if cand.id == aid -%}{%- assign act = cand -%}{%- endif -%}{%- endfor -%}
+      {%- if act -%}
+        {%- if aid == "software-producer" -%}<a href="{{ '/architecture/secure-production/' | relative_url }}">{{ act.name }}</a>
+        {%- elsif aid == "software-distributor" -%}<a href="{{ '/architecture/secure-distribution/' | relative_url }}">{{ act.name }}</a>
+        {%- elsif aid == "software-consumer" -%}<a href="{{ '/architecture/secure-consumption/' | relative_url }}">{{ act.name }}</a>
+        {%- elsif aid == "other" -%}<a href="{{ '/architecture/stewardship/' | relative_url }}">{{ act.name }}</a>
+        {%- else -%}{{ act.name }}{%- endif -%}
+        {%- unless forloop.last %}, {% endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </p>
+</div>
+{%- else -%}
+<p class="artifact-meta artifact-meta--unplaced">
+  <em>This artifact is referenced by other records but doesn't itself inhabit a single (stage, actor) cell. It appears in projects' "produces" or "consumes" relationships only.</em>
+</p>
+{%- endif -%}
+
+{%- comment -%} Relationships (Bundle 3 fills this section). {%- endcomment -%}
+{% include relationships-section.html record_id=artifact.id %}
+
+<div class="persona-footer-actions">
+  <a class="persona-back-link" href="{{ '/artifacts/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All artifacts</a>
+  <a class="persona-back-link" href="{{ '/' | relative_url }}">Start over <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>

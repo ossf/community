@@ -1,0 +1,280 @@
+# Security Tooling
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+
+working_group:
+  id: security-tooling
+  name: Security Tooling
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance, tooling]
+  sdlc_stages: [build, source]
+  supply_chain_actors: [software-producer]
+  cell_synopses:
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Build-stage security tooling — fuzzing, SBOM generation, attestation flows, build-time
+      SBOM (SBOMit, Protobom) — sits under this WG's umbrella.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Coordinates source-layer security tooling targeted at OSS producers: GUAC, Scorecard,
+      Bomctl, Protobom, fuzzing, SBOM tooling. Records under this WG generally appear in the
+      source or build column.
+projects:
+- id: bomctl
+  name: Bomctl
+  url: https://github.com/bomctl/bomctl
+  openssf_url: https://openssf.org/projects/bomctl/
+  description: >-
+    Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
+    and SBOM analysis — fetching, merging, and manipulating SBOMs across SPDX and CycloneDX.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [dependencies, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  cell_synopses:
+  - stage: dependencies
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers feed SBOMs from multiple producers into bomctl to merge, deduplicate, and
+      query the dependency graph of what they've installed.
+  - stage: dependencies
+    actor: software-producer
+    status: confirmed
+    text: >-
+      bomctl's central concern is the SBOM-as-dependency-graph: producers use it to construct,
+      sign, and consolidate the per-component data their downstream consumers need to perform
+      dependency analysis.
+  - stage: distribution
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Distributors and consumers can use bomctl to extract or transform SBOMs they received
+      via a registry.
+    note: >-
+      Same caveat as producer; the distribution stage tag is needs-review on the record.
+  - stage: distribution
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers use bomctl to manipulate SBOMs (e.g., translate between formats, sign, attach)
+      at release time so the distributed artefact carries the SBOM the consumer expects.
+    note: >-
+      Distribution-stage producer use case; bomctl is currently distribution-tagged needs-review
+      on the record itself.
+  personas:
+  - id: developer
+    note: >-
+      Fetches and merges the SBOMs for their project's dependencies into a single document
+      they can inspect and hand downstream.
+  - id: ospo
+    note: >-
+      Normalizes SBOMs arriving in mixed formats into a consistent inventory the organization
+      can track across every project.
+  - id: security
+    note: >-
+      Pulls together SBOMs from disparate sources so a component can be traced wherever it
+      appears in the portfolio.
+  - id: devops
+    note: >-
+      Wires bomctl into the pipeline to fetch, merge, and reformat SBOMs as a build step rather
+      than a manual chore.
+  - id: package-manager
+    note: >-
+      Translates and consolidates incoming SBOMs so the registry can serve a clean, format-consistent
+      component inventory.
+  problems:
+  - id: dependency-visibility
+    note: >-
+      Bridges SBOM generation and analysis by fetching, merging, and translating bills of
+      materials into one queryable inventory.
+  compatible_with: [protobom, guac]
+- id: fuzz-introspector
+  name: Fuzz Introspector
+  url: https://openssf.org/projects/fuzz-introspector/
+  openssf_url: https://openssf.org/projects/fuzz-introspector/
+  description: >-
+    Improves the fuzzing experience for projects by providing visibility into fuzzer coverage
+    and reachability.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build, source]
+  supply_chain_actors: [software-producer]
+  cell_synopses:
+  - stage: build
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Fuzz Introspector typically runs inside the producer's CI/build pipeline alongside the
+      fuzzer itself, where its reports are generated.
+    note: >-
+      The build-stage placement is a deployment-pattern observation, not a stated upstream
+      scope; confirm.
+  - stage: source
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Analyses the source code of fuzz harnesses (and the code they exercise) to expose untouched
+      reachability, helping producers improve harness coverage rather than running fuzzers
+      blind.
+- id: protobom
+  name: Protobom / SBOM Tools
+  url: https://github.com/protobom/protobom
+  openssf_url: https://openssf.org/projects/protobom/
+  insights: https://github.com/protobom/protobom/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A shared library and toolset for generating, translating, and consuming Software Bills
+    of Materials in standard formats such as SPDX and CycloneDX.
+  kind: project
+  categories: [specification, tooling]
+  sdlc_stages: [build, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers that build derived artefacts (final binaries, container images) emit their
+      own SBOMs at build time via the same library.
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producers generate SBOMs via Protobom-backed tools as part of the build, getting format-agnostic
+      SBOM emission (CycloneDX, SPDX) from one library.
+  - stage: distribution
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Distributors and consumers read those SBOMs via Protobom on receipt, decoupling the
+      consumer's tooling from the producer's chosen format.
+    note: Same caveat as the producer × distribution cell.
+  - stage: distribution
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers' build-time SBOMs are attached to the artefact and travel through distribution
+      channels.
+    note: >-
+      Distribution-stage tag is a flow observation, not Protobom's stated central scope.
+  personas:
+  - id: developer
+    note: >-
+      Integrates SBOM generation tools into their local build process to automatically document
+      the components used in their software.
+  - id: ospo
+    note: >-
+      Mandates the use of standard SBOM formats and tools like Protobom to maintain a comprehensive
+      inventory of third-party software assets.
+  - id: security
+    note: >-
+      Analyzes ingested SBOMs to rapidly identify and triage vulnerable components across
+      the organization's application portfolio.
+  - id: devops
+    note: >-
+      Embeds Protobom into the automated release pipeline to seamlessly generate and attach
+      SBOMs to every compiled artifact.
+  - id: package-manager
+    note: >-
+      Distributes generated Software Bill of Materials (SBOMs) alongside packages to provide
+      consumers with a transparent component inventory.
+  - id: executive
+    note: >-
+      Demands SBOMs as trust signals to assess post-release risk and make informed consumption
+      decisions.
+  problems:
+  - id: dependency-visibility
+    note: >-
+      Generates and translates SBOMs in standard formats so the component inventory travels
+      with the artefact.
+  compatible_with: [guac, osv-openvex]
+- id: sbomit
+  name: SBOMit
+  url: https://sbomit.dev/
+  openssf_url: https://openssf.org/projects/sbomit/
+  description: >-
+    An SBOM-format-independent method that embeds in-toto and Witness attestations into Software
+    Bills of Materials, cryptographically validating the steps performed across the software
+    supply chain.
+  kind: project
+  categories: [tooling]
+  sdlc_stages: [build, distribution]
+  supply_chain_actors: [software-consumer, software-producer]
+  threats:
+  - id: slsa-v1-2-f2
+    status: confirmed
+  cell_synopses:
+  - stage: build
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers building their own artefacts on top of SBOMit-using producers inherit the
+      same attestation flow.
+  - stage: build
+    actor: software-producer
+    status: confirmed
+    text: >-
+      Producers integrate SBOMit into the build pipeline to attest the components observed
+      at build time (per the in-toto attestation model), tying the SBOM cryptographically
+      to what the build actually consumed.
+  - stage: distribution
+    actor: software-consumer
+    status: needs-review
+    text: >-
+      Consumers receive the attested SBOM via the distribution channel and verify it before
+      trusting the dependency list.
+    note: Same caveat as producer × distribution.
+  - stage: distribution
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers' attested SBOMs ride with the artefact through distribution channels, so consumers
+      receive both the SBOM and the attestation that ties it to the build.
+    note: >-
+      Distribution-stage tag is a flow observation; framing depends on whether the attestation
+      is detached or inline.
+  personas:
+  - id: developer
+    note: >-
+      Generates an SBOM whose entries are backed by signed attestations of how each component
+      was actually built.
+  - id: security
+    note: >-
+      Validates the in-toto attestations carried inside an SBOM to confirm the supply-chain
+      steps behind every listed component.
+  - id: devops
+    note: >-
+      Produces attestation-backed SBOMs as a release step so provenance travels with the component
+      inventory automatically.
+  - id: package-manager
+    note: >-
+      Distributes SBOMs whose contents are cryptographically tied to verifiable build steps,
+      raising the trust of served packages.
+  problems:
+  - id: build-provenance
+    note: >-
+      Binds in-toto and Witness attestations to SBOM entries so each component carries verifiable
+      proof of how it was built.
+  - id: dependency-visibility
+    note: >-
+      Produces a standard SBOM as the carrier for that provenance, keeping the component inventory
+      and its evidence together.
+  - id: artifact-signing
+    note: >-
+      Relies on signed attestations over components, so the bill of materials itself becomes
+      cryptographically verifiable.
+  compatible_with: [protobom, slsa, sigstore]

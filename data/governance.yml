@@ -1,0 +1,41 @@
+# GOVERNANCE BODIES — the TAC and the Governing Board.
+#
+# These are NOT working groups, which is why they are not in working-groups/.
+# Nothing is a "member" of them and they host no projects. They live here because
+# they are still records on the architecture pages: they carry a matrix placement
+# and cell synopses like any other body.
+#
+# They keep `kind: working-group` because that is what the templates key off to
+# render a body with no page of its own (external link, "WG" badge). That field
+# is really "how do I render this", not "what is this" — worth untangling, but
+# not today.
+
+bodies:
+- id: tac
+  name: OpenSSF Technical Advisory Council
+  url: https://openssf.org/about/tac/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: confirmed
+    text: >-
+      Provides technical oversight for the OpenSSF as a whole: project lifecycle approval,
+      working-group charters, technical funding allocation, conflict resolution.
+- id: governing-board
+  name: OpenSSF Governing Board
+  url: https://openssf.org/about/board/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [producer]
+  supply_chain_actors: [other]
+  cell_synopses:
+  - stage: producer
+    actor: other
+    status: confirmed
+    text: >-
+      Strategic and resourcing oversight for the OpenSSF: priorities, funding, member engagement,
+      public posture. Sets the scope within which the technical work happens.

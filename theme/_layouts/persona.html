@@ -1,0 +1,101 @@
+---
+layout: default
+---
+{%- assign persona_id = page.persona_id -%}
+{%- assign active_persona = nil -%}
+{%- for p in site.data.definitions.personas -%}
+  {%- if p.id == persona_id -%}{%- assign active_persona = p -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="persona-hero">
+  <div class="persona-hero__eyebrow">
+    <i class="fa-solid {{ active_persona.icon }}" aria-hidden="true"></i>
+    <span>Persona view</span>
+  </div>
+  <h1 class="persona-hero__title">{{ active_persona.name }}</h1>
+  <p class="persona-hero__summary">{{ active_persona.summary }}</p>
+</section>
+
+<nav class="persona-switcher" role="tablist" aria-label="Switch persona">
+  {%- for p in site.data.definitions.personas -%}
+    {%- assign is_active = false -%}
+    {%- if p.id == persona_id -%}{%- assign is_active = true -%}{%- endif -%}
+    <a role="tab"
+       aria-selected="{{ is_active }}"
+       {% if is_active %}aria-current="page"{% endif %}
+       tabindex="{% if is_active %}0{% else %}-1{% endif %}"
+       class="persona-pill{% if is_active %} persona-pill--active{% endif %}"
+       href="{{ '/personas/' | append: p.id | append: '/' | relative_url }}">
+      <i class="fa-solid {{ p.icon }}" aria-hidden="true"></i>
+      <span>{{ p.short }}</span>
+    </a>
+  {%- endfor -%}
+</nav>
+
+{%- comment -%}
+  Find the projects that address this persona; capture each one's note.
+  Along the way, accumulate the deduped set of problem ids those projects
+  cover — the persona<->problem relationship that only exists through projects.
+{%- endcomment -%}
+{%- assign matched_count = 0 -%}
+{%- assign prob_ids = "," -%}
+{%- for project in site.data.catalog.projects -%}
+  {%- assign match = nil -%}
+  {%- for link in project.personas -%}
+    {%- if link.id == persona_id -%}{%- assign match = link -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if match -%}
+    {%- assign matched_count = matched_count | plus: 1 -%}
+    {%- for prl in project.problems -%}
+      {%- assign probe = prl.id | prepend: "," | append: "," -%}
+      {%- unless prob_ids contains probe -%}{%- assign prob_ids = prob_ids | append: prl.id | append: "," -%}{%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<p class="persona-intro">
+  Here are the {{ matched_count }} OpenSSF projects that address the
+  <strong>{{ active_persona.short }}</strong> persona, each with a one-sentence
+  action written for the role. Prefer another way in?
+  <a href="{{ '/problems/' | relative_url }}">Browse by problem →</a>
+</p>
+
+<div class="component-grid tool-card-grid">
+  {%- for project in site.data.catalog.projects -%}
+    {%- assign match = nil -%}
+    {%- for link in project.personas -%}
+      {%- if link.id == persona_id -%}{%- assign match = link -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if match -%}
+    <a class="component-card tool-card" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">
+      <h2 class="tool-card__title">{{ project.name }}</h2>
+      <p class="tool-card__usage">{{ match.note }}</p>
+      <p class="tool-card__link">Full project breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
+    </a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+{%- if matched_count == 0 -%}
+<p class="empty-state">No projects are currently mapped to this persona. <a href="https://github.com/{{ site.repository }}">Contributions welcome →</a></p>
+{%- endif -%}
+
+{%- comment -%} Derived: problems these projects help with. {%- endcomment -%}
+{%- assign prob_list = prob_ids | split: "," -%}
+{%- if prob_list != empty -%}
+<section class="derived-chips">
+  <h2 class="derived-chips__heading">Problems these projects help you with</h2>
+  <div class="tool-jumpnav derived-chips__links">
+    {%- for pid in prob_list -%}
+      {%- assign prob = nil -%}
+      {%- for cand in site.data.definitions.problems -%}{%- if cand.id == pid -%}{%- assign prob = cand -%}{%- endif -%}{%- endfor -%}
+      {%- if prob -%}<a href="{{ '/problems/' | append: prob.id | append: '/' | relative_url }}"><i class="fa-solid {{ prob.icon }}" aria-hidden="true"></i> {{ prob.short }}</a>{%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+<div class="persona-footer-actions">
+  <a class="persona-back-link" href="{{ '/' | relative_url }}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Pick a different persona</a>
+  <a class="persona-back-link" href="{{ '/projects/' | relative_url }}">Browse all projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>

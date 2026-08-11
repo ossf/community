@@ -1,0 +1,103 @@
+# Securing Software Repositories
+#
+# MEMBERSHIP IS THIS FILE. A project listed below belongs to this working group;
+# there is no `wg:` field on the project, so the two can never disagree. The
+# build derives membership from the filename (theme/_plugins/catalog.rb).
+#
+# To move a project between working groups, move its entry between these files.
+#
+# Project assignments come from the list published in ossf/tac's README, which is
+# the authoritative source. Do not add a project here on a hunch — if the TAC list
+# does not place it, it belongs in uncategorized.yml until someone who knows says
+# otherwise.
+
+working_group:
+  id: securing-software-repositories
+  name: Securing Software Repositories
+  url: https://openssf.org/community/openssf-working-groups/
+  kind: working-group
+  categories: [governance]
+  sdlc_stages: [distribution, source]
+  supply_chain_actors: [software-distributor, software-producer]
+  threats:
+  - id: slsa-v1-2-g1
+    status: needs-review
+    note: >-
+      Securing Software Repositories WG owns guidance for registries to enforce SLSA-aligned
+      builder requirements; confirm specific recommendations.
+  - id: slsa-v1-2-h1
+    status: needs-review
+    note: >-
+      Securing Software Repositories WG owns guidance against this attack class; confirm specific
+      recommendations.
+  cell_synopses:
+  - stage: distribution
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Directly works with registry operators (npm, PyPI, RubyGems, distros) on the controls
+      they implement: 2FA, signing acceptance, dependency-confusion defences.
+  - stage: distribution
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers benefit from registry-side controls: their published packages live in a more
+      defended distribution channel.
+    note: >-
+      Producer-side benefit is indirect; framing is downstream of the WG's distributor focus.
+  - stage: source
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Source-forge operators (GitHub, GitLab, Codeberg) participate in the WG when source-side
+      repository security is the locus.
+  - stage: source
+    actor: software-producer
+    status: needs-review
+    text: >-
+      Producers see source-forge improvements (e.g., signed commits, ref protection) emerge
+      from WG-led work.
+    note: Producer-side benefit is downstream of the source-forge focus.
+projects:
+- id: package-analysis
+  name: Package Analysis
+  url: https://openssf.org/projects/package-analysis/
+  openssf_url: https://openssf.org/projects/package-analysis/
+  description: >-
+    Dynamically and statically analyzes packages from open source package registries to detect
+    malicious behavior such as credential exfiltration and backdoors.
+  kind: project
+  categories: [data-source, tooling]
+  sdlc_stages: [dependencies, distribution]
+  supply_chain_actors: [software-consumer, software-distributor]
+  threats:
+  - id: slsa-v1-2-h1
+    status: confirmed
+  - id: slsa-v1-2-h2
+    status: confirmed
+  cell_synopses:
+  - stage: dependencies
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers see fewer compromised dependencies in their graphs because Package Analysis
+      flags malicious behaviour at upstream registries.
+  - stage: dependencies
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Targets dependency-confusion and typosquat attacks at the distribution layer — vectors
+      that exploit the dependency-resolution flow rather than the package itself.
+  - stage: distribution
+    actor: software-consumer
+    status: confirmed
+    text: >-
+      Consumers benefit indirectly: a registry that runs Package Analysis catches malicious
+      packages before they reach the consumer's install step.
+  - stage: distribution
+    actor: software-distributor
+    status: confirmed
+    text: >-
+      Runs static and dynamic analysis on packages newly published to a registry, so the registry
+      can detect malicious behaviour (network exfiltration, credential theft, backdoors) before
+      consumers download them.

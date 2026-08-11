@@ -1,0 +1,60 @@
+{%- comment -%}
+  Sidebar nav. A section either derives its children from a data file
+  (`derive:`) or lists them explicitly (`children:`) — see _data/sidebar.yml.
+  Derived children are titled by the record's `name` and linked to
+  /<derive>/<id>/, so the sidebar cannot drift from the catalog.
+{%- endcomment -%}
+<aside class="site-sidebar" role="complementary">
+  <div class="sidebar-content">
+    <h3 class="sidebar-title">Quick Links</h3>
+    <nav class="sidebar-nav" aria-label="Sidebar">
+      {%- for item in site.data.sidebar -%}
+
+        {%- assign derived = nil -%}
+        {%- case item.derive -%}
+          {%- when "personas"  -%}{%- assign derived = site.data.definitions.personas -%}
+          {%- when "problems"  -%}{%- assign derived = site.data.definitions.problems -%}
+          {%- when "projects"  -%}{%- assign derived = site.data.catalog.projects -%}
+          {%- when "artifacts" -%}{%- assign derived = site.data.definitions.artifacts -%}
+        {%- endcase -%}
+
+        {%- if derived or item.children -%}
+          {%- assign is_open = false -%}
+          {%- if page.url contains item.url -%}{%- assign is_open = true -%}{%- endif -%}
+          <details class="sidebar-details"{% if is_open %} open{% endif %}>
+            <summary class="sidebar-summary">
+              <a href="{{ item.url | relative_url }}" class="sidebar-summary-link" onclick="event.stopPropagation();">{{ item.title | escape }}</a>
+            </summary>
+            <div class="sidebar-nested">
+              {%- if derived -%}
+                {%- for record in derived -%}
+                  {%- assign child_url = "/" | append: item.derive | append: "/" | append: record.id | append: "/" -%}
+                  {%- assign is_current = false -%}
+                  {%- if page.url == child_url -%}{%- assign is_current = true -%}{%- endif -%}
+                  <a href="{{ child_url | relative_url }}"
+                     class="sidebar-link sidebar-nested-link{% if is_current %} sidebar-link--active{% endif %}"
+                     {% if is_current %}aria-current="page"{% endif %}>{{ record.name | escape }}</a>
+                {%- endfor -%}
+              {%- else -%}
+                {%- for child in item.children -%}
+                  {%- assign is_current = false -%}
+                  {%- if page.url == child.url -%}{%- assign is_current = true -%}{%- endif -%}
+                  <a href="{{ child.url | relative_url }}"
+                     class="sidebar-link sidebar-nested-link{% if is_current %} sidebar-link--active{% endif %}"
+                     {% if is_current %}aria-current="page"{% endif %}>{{ child.title | escape }}</a>
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+          </details>
+        {%- else -%}
+          {%- assign is_current = false -%}
+          {%- if page.url == item.url -%}{%- assign is_current = true -%}{%- endif -%}
+          <a href="{{ item.url | relative_url }}"
+             class="sidebar-link{% if is_current %} sidebar-link--active{% endif %}"
+             {% if is_current %}aria-current="page"{% endif %}>{{ item.title | escape }}</a>
+        {%- endif -%}
+
+      {%- endfor -%}
+    </nav>
+  </div>
+</aside>

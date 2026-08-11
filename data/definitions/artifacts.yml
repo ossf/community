@@ -1,0 +1,107 @@
+# DEFINITION — artifacts: the things that FLOW between projects, as opposed
+# to the projects themselves. SBOM, VEX, SARIF, SLSA Provenance, and so on.
+#
+# These are external specifications — CISA (SBOM, VEX), OASIS (SARIF), slsa.dev,
+# in-toto, OSV. No OpenSSF project representative owns "what VEX is", which is
+# why they are definitions and not catalog data: you reference these by id, you
+# don't describe your project here.
+#
+# Each entry maps to /artifacts/<id>/. Fields are the same shape as a project's
+# (see data/working-groups/<wg>.yml), but in practice an artifact carries only
+# identity plus its matrix placement.
+#
+# WHO PRODUCES/CONSUMES WHAT IS NOT AUTHORED HERE. A project declares its own
+# `produces:` / `consumes:` edges in its `relationships:` list, pointing at an
+# artifact id. The artifact pages reverse-derive from that, and /architecture/gaps/
+# uses it to flag any artifact that something generates but nothing reads.
+
+- id: in-toto-attestation
+  name: in-toto Attestation
+  url: https://github.com/in-toto/attestation
+  description: >-
+    The signed-envelope format that SLSA Provenance and other supply-chain attestations ship
+    in. Defines the predicate/statement structure and signature wrapper used by every conforming
+    attestation.
+  kind: artifact
+  categories: [specification]
+# UNRESOLVED — is OSV a project, a format, or both?
+#
+# This record and the `osv-openvex` project in data/community/projects.yml share
+# the same url (https://ossf.github.io/osv-schema/), and the only relationship
+# authored on an artifact anywhere is `osv-record extends osv-openvex` below — a
+# record format "extending" a project, which does not really parse.
+#
+# The pair looks like it was imported without anyone deciding what OSV is here.
+# Resolving it means picking one of: the format is the artifact and the schema
+# effort is the project (then give them distinct urls and fix the edge), or they
+# are one thing and one of the two records should go. Left as-is deliberately —
+# this is a question for the OSV folks, not a cleanup.
+#
+# The `description` below is also truncated mid-sentence; it arrived that way and
+# renders that way on /artifacts/osv-record/. Rewrite it when the above is settled.
+- id: osv-record
+  name: OSV Record (vulnerability record format)
+  aliases: [OSV Record]
+  url: https://ossf.github.io/osv-schema/
+  description: >-
+    The serialised vulnerability-record format produced by OSV-aligned databases (osv.dev,
+    GHSA, PyPA, Go vuln DB) and consumed by vuln scanners and SCA tools. Distinct from the
+    `osv-schema` project, which is the authoring effort defining the f…
+  kind: artifact
+  categories: [data-source, specification]
+  sdlc_stages: [dependencies]
+  supply_chain_actors: [software-consumer]
+  relationships:
+  - kind: extends
+    target: osv-openvex
+    status: confirmed
+    note: >-
+      The artifact (the record format itself) is the concrete instance of what the OSV Schema
+      project specifies.
+- id: sarif
+  name: SARIF
+  aliases: [Static Analysis Results Interchange Format]
+  url: https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html
+  description: >-
+    An OASIS standard JSON format for representing static analysis tool results. Consumed
+    by code-scanning UIs (e.g. GitHub Code Scanning) and produced by linters, scanners, and
+    policy tools such as Scorecard.
+  kind: artifact
+  categories: [specification]
+  sdlc_stages: [source]
+  supply_chain_actors: [software-producer]
+- id: sbom
+  name: Software Bill of Materials
+  aliases: [SBOM]
+  url: https://www.cisa.gov/sbom
+  description: >-
+    A machine-readable inventory of the components contained in a software artifact. Multiple
+    authoritative formats exist (CycloneDX, SPDX); this record models the SBOM concept itself
+    rather than any single format.
+  kind: artifact
+  categories: [specification]
+  sdlc_stages: [consumer, distribution]
+  supply_chain_actors: [software-consumer, software-distributor]
+- id: slsa-provenance
+  name: SLSA Provenance
+  url: https://slsa.dev/spec/v1.0/provenance
+  description: >-
+    Cryptographically attested record of how a software artifact was built, including the
+    build platform identity, source revision, build parameters, and the resulting artifact
+    digest.
+  kind: artifact
+  categories: [specification]
+  sdlc_stages: [build]
+  supply_chain_actors: [software-producer]
+- id: vex
+  name: Vulnerability Exploitability eXchange
+  aliases: [VEX]
+  url: https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases
+  description: >-
+    A machine-readable statement asserting whether a known vulnerability affects a given software
+    artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive
+    vuln signal.
+  kind: artifact
+  categories: [specification]
+  sdlc_stages: [consumer]
+  supply_chain_actors: [software-consumer]
