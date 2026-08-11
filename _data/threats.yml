@@ -237,7 +237,7 @@
     status: confirmed
   - ref: sigstore
     status: confirmed
-  - ref: open-bao
+  - ref: openbao
     status: needs-review
     note: "OpenBao manages secrets used by build pipelines; reduces the surface where keys can be stolen, but doesn't directly mitigate runtime compromise."
 - id: slsa-v1-2-e6

@@ -322,7 +322,7 @@
     text: Continuously enforces policy across a producer's source repositories — branch protection, dependency review, secret scanning, vulnerability response — so the producer's policy is the actual policy
       on every repo, not just the intended one.
   categories: [tooling]
-- id: open-bao
+- id: openbao
   name: OpenBao
   kind: project
   has_community_page: true
