@@ -44,6 +44,15 @@ description: Find the OpenSSF projects that fit you. Browse by your role, by the
       <span class="hero-route__desc">Jump straight to a project you already know.</span>
       <i class="fa-solid fa-arrow-right hero-route__arrow" aria-hidden="true"></i>
     </a>
+
+    <a class="hero-route" href="{{ '/publications/' | relative_url }}">
+      <span class="hero-route__head">
+        <span class="hero-route__name">By publication</span>
+        <span class="hero-route__count">{{ site.data.catalog.publications | size }} publications</span>
+      </span>
+      <span class="hero-route__desc">Start from a spec, framework, or format.</span>
+      <i class="fa-solid fa-arrow-right hero-route__arrow" aria-hidden="true"></i>
+    </a>
   </nav>
 </section>
 

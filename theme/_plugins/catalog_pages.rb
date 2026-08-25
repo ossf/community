@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Generates every persona / problem / project / artifact page from data/.
+# Generates every persona / problem / project / publication page from data/.
 #
 # There are NO stub files on disk and there is deliberately NO override path:
 # the data files are the only source of truth. Adding an id to data/ creates its
@@ -26,10 +26,10 @@ module OpenSSFCommunity
     # dir => [data path, layout name]. The layout name also gives the front
     # matter id key the layouts look up (`persona_id`, `project_id`, ...).
     TYPES = {
-      "personas"  => [%w[definitions personas],   "persona"],
-      "problems"  => [%w[definitions problems],   "problem"],
-      "projects"  => [%w[catalog  projects],  "project"],
-      "artifacts" => [%w[definitions artifacts], "artifact"],
+      "personas"     => [%w[definitions personas], "persona"],
+      "problems"     => [%w[definitions problems], "problem"],
+      "projects"     => [%w[catalog projects],     "project"],
+      "publications" => [%w[catalog publications], "publication"],
     }.freeze
 
     def generate(site)
@@ -82,15 +82,17 @@ module OpenSSFCommunity
           "Which personas and problems #{name} addresses — a role-by-role and " \
           "problem-by-problem breakdown of the OpenSSF project."
         end
-      when "artifact"
-        "What #{name} is and which OpenSSF projects produce or consume it."
+      when "publication"
+        "What #{name} is and which OpenSSF projects produce, consume, or relate to it."
       end
     end
 
-    # Fail the build on the two mistakes this data model is most exposed to.
-    # Both are silent at runtime: the layouts resolve a record with a
-    # loop-and-flag find, so a duplicate id quietly wins (last match) and a
-    # dangling reference quietly renders a link to a page that does not exist.
+    # Fail the build on the mistakes this data model is most exposed to.
+    # All are silent at runtime: the layouts resolve a record with a
+    # loop-and-flag find, so a duplicate id quietly wins (last match), a
+    # dangling persona/problem reference quietly renders a link to a page that
+    # does not exist, and a typo'd threat/enum id or relationship target just
+    # drops the fact from every derived view.
     def validate!(records)
       errors = []
 
@@ -103,15 +105,31 @@ module OpenSSFCommunity
         errors << "#{dir}: #{blank.size} record(s) missing id or name" if blank.any?
       end
 
-      # Every persona/problem a project claims must be a real vocabulary term.
+      # Every id a record references must resolve — persona/problem links,
+      # relationship kinds and targets, related records, and the status values
+      # maintainers are asked to flip.
       persona_ids = records["personas"].map { |r| r["id"] }
       problem_ids = records["problems"].map { |r| r["id"] }
-      records["projects"].each do |p|
-        (p["personas"] || []).each do |link|
-          errors << "projects/#{p['id']}: unknown persona id '#{link['id']}'" unless persona_ids.include?(link["id"])
+      record_ids  = (records["projects"] + records["publications"]).map { |r| r["id"] }
+      rel_kinds   = %w[implements produces consumes extends superseded-by]
+      statuses    = %w[confirmed needs-review]
+
+      (records["projects"] + records["publications"]).each do |rec|
+        where = rec["id"]
+        (rec["personas"] || []).each do |link|
+          errors << "#{where}: unknown persona id '#{link['id']}'" unless persona_ids.include?(link["id"])
         end
-        (p["problems"] || []).each do |link|
-          errors << "projects/#{p['id']}: unknown problem id '#{link['id']}'" unless problem_ids.include?(link["id"])
+        (rec["problems"] || []).each do |link|
+          errors << "#{where}: unknown problem id '#{link['id']}'" unless problem_ids.include?(link["id"])
+        end
+        (rec["relationships"] || []).each do |r|
+          errors << "#{where}: unknown relationship kind '#{r['kind']}'" unless rel_kinds.include?(r["kind"])
+          errors << "#{where}: unknown relationship target '#{r['target']}'" unless record_ids.include?(r["target"])
+          s = r["status"]
+          errors << "#{where}: status '#{s}' is not confirmed|needs-review" if s && !statuses.include?(s)
+        end
+        (rec["similar_to"].to_a + rec["compatible_with"].to_a).each do |pid|
+          errors << "#{where}: unknown related record '#{pid}'" unless record_ids.include?(pid)
         end
       end
 

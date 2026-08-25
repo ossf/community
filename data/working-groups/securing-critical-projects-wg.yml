@@ -12,28 +12,17 @@
 # otherwise.
 #
 # This working group currently hosts no projects.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: securing-critical-projects-wg
   name: Securing Critical Projects
   url: https://github.com/ossf/tac
   kind: working-group
-  categories: [governance]
-  sdlc_stages: [producer]
-  supply_chain_actors: [other, software-producer]
-  cell_synopses:
-  - stage: producer
-    actor: other
-    status: needs-review
-    text: >-
-      Worked with funders and policy bodies (Alpha-Omega, governments) to direct support toward
-      critical-project producers.
-    note: Archived WG; placement is historical context.
-  - stage: producer
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Historically supported producer-side hardening for the most critical OSS dependencies
-      — funding, audits, maintainer support. Now archived; concerns absorbed by other WGs.
-    note: Archived WG; placement is historical context.
 projects: []

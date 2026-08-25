@@ -10,34 +10,19 @@
 # the authoritative source. Do not add a project here on a hunch — if the TAC list
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: best-practices-wg
   name: Best Practices for Open Source Developers
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
-  categories: [best-practices, governance]
-  sdlc_stages: [producer, source]
-  supply_chain_actors: [software-producer]
-  threats:
-  - id: slsa-v1-2-a1
-    status: needs-review
-    note: >-
-      OSSF Best Practices WG addresses producer trustworthiness indirectly through community-level
-      guidance, but no direct technical control exists upstream.
-  cell_synopses:
-  - stage: producer
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Educates the producer audience directly: developer training, the Concise Guide, course
-      material, conference workshops.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Stewards source-layer best-practice work (Scorecard, Best Practices Badge, education
-      materials) targeting open source maintainers and the repos they manage.
 projects:
 - id: best-practices-badge
   name: Best Practices Badge
@@ -49,46 +34,6 @@ projects:
     A voluntary self-certification program that lets open source projects demonstrate they
     follow recognized development best practices.
   kind: project
-  categories: [best-practices]
-  sdlc_stages: [producer, source]
-  supply_chain_actors: [software-consumer, software-producer]
-  threats:
-  - id: slsa-v1-2-a1
-    status: needs-review
-    note: >-
-      Badge criteria signal a producer's commitment to vetted practices, which contributes
-      to the trust basis SLSA references for this threat.
-  cell_synopses:
-  - stage: producer
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Downstream consumers can read the badge to gauge a project's producer-side hygiene before
-      adoption.
-    note: >-
-      Consumer use is documented anecdotally rather than as a stated programme goal; confirm
-      with upstream.
-  - stage: producer
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Defines a self-assessment programme that maintainers complete on behalf of their own
-      project, encoding what the foundation expects responsible OSS producers to do.
-  - stage: source
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers use the badge as a screening signal alongside other source-layer metadata.
-    note: >-
-      Consumer-side use of source-layer criteria isn't a stated programme goal; confirm with
-      upstream.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Most badge criteria operate at the source-repository layer: branch protection, code
-      review, vulnerability reporting, and CI on commit. The badge effectively codifies source-stage
-      producer hygiene.
   personas:
   - id: developer
     note: >-
@@ -133,60 +78,6 @@ projects:
     An automated tool that assesses open source projects against a curated set of security-health
     checks and produces a comparable score.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [build, source]
-  supply_chain_actors: [software-consumer, software-producer]
-  threats:
-  - id: slsa-v1-2-b1
-    status: confirmed
-  - id: slsa-v1-2-b2
-    status: needs-review
-    note: >-
-      Scorecard does not currently detect multi-account control; the threat is identified
-      but not automatically caught.
-  - id: slsa-v1-2-b3
-    status: confirmed
-  - id: slsa-v1-2-b6
-    status: confirmed
-  - id: slsa-v1-2-b8
-    status: needs-review
-    note: >-
-      Scorecard checks for required-status-checks settings; confirm coverage matches SLSA
-      Source L3+.
-  cell_synopses:
-  - stage: build
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers reading a Scorecard report see build-stage signals (signed releases, packaging)
-      alongside source-stage signals.
-    note: >-
-      Scorecard's build-stage coverage is partial within its overall check set; framing depends
-      on which checks the consumer cares about.
-  - stage: build
-    actor: software-producer
-    status: needs-review
-    text: >-
-      A subset of checks (Signed-Releases, Packaging, Token-Permissions, CI-Tests) reaches
-      into the build/release stage, so a producer who runs Scorecard sees flags on build-stage
-      hygiene too.
-    note: >-
-      Scorecard's build-stage coverage is partial; framing depends on which checks the producer
-      cares about.
-  - stage: source
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers use Scorecard scores as a fast screening signal when evaluating a third-party
-      dependency: a low score on Code-Review or Branch-Protection means the producer hasn't
-      hardened the supply-chain entry.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Runs automated checks against a project's source repository — branch protection, code
-      review, dependency-update, vulnerability scanning, etc. — and assigns each a per-check
-      score so the producer can spot gaps.
   relationships:
   - kind: consumes
     target: osv-record

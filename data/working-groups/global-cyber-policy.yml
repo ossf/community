@@ -12,23 +12,17 @@
 # otherwise.
 #
 # This working group currently hosts no projects.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: global-cyber-policy
   name: Global Cyber Policy
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
-  categories: [governance]
-  sdlc_stages: [producer]
-  supply_chain_actors: [other]
-  cell_synopses:
-  - stage: producer
-    actor: other
-    status: needs-review
-    text: >-
-      Tracks legislative and regulatory developments that shape the constraints open source
-      producers operate under (NIS2, CRA, similar regimes).
-    note: >-
-      SDLC-stage tagging is a shoehorn per the constitution v1.1.0 note on governance records;
-      confirm whether persona/stage placement should evolve.
 projects: []

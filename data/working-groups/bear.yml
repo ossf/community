@@ -12,28 +12,17 @@
 # otherwise.
 #
 # This working group currently hosts no projects.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: bear
   name: BEAR (Belonging, Empowerment, Allyship, and Representation)
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
-  categories: [governance]
-  sdlc_stages: [producer]
-  supply_chain_actors: [other, software-producer]
-  cell_synopses:
-  - stage: producer
-    actor: other
-    status: confirmed
-    text: >-
-      BEAR's work shapes the producer community itself — who feels welcome to participate,
-      how mentorship operates, how representation is improved — rather than any specific technical
-      control.
-  - stage: producer
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers benefit downstream from a broader, more sustainable contributor community.
-    note: >-
-      Indirect framing; confirm whether this should be tagged as software-producer at all.
 projects: []

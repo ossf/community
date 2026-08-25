@@ -15,13 +15,16 @@ problem you're solving, or a specific project.
 
 ## How the site is built
 
-Everything renders from **three master lists** in `_data/`:
+Everything renders from **four record types** in `data/`:
 
 - **Personas** ({{ site.data.definitions.personas | size }}) — the roles that touch the OpenSSF toolchain.
 - **Problems** ({{ site.data.definitions.problems | size }}) — the security problems those projects address.
 - **Projects** ({{ site.data.catalog.projects | size }}) — each declaring which personas and problems it
   addresses (with a sentence of prose for each), plus links to similar and
   complementary projects.
+- **Publications** ({{ site.data.catalog.publications | size }}) — the specifications, frameworks, and
+  formats of the ecosystem, from SLSA and the OSPS Baseline to SBOM and VEX,
+  linked to the projects that produce, consume, or implement them.
 
 Personas and problems are never linked directly — that relationship is *derived
 through projects*. A persona page surfaces the problems its projects solve; a
@@ -45,6 +48,12 @@ problem page surfaces the personas who care.
 - **[{{ project.name }}]({{ '/projects/' | append: project.id | append: '/' | relative_url }})** — <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">project site ↗</a>
 {% endfor %}
 
+### Publications
+
+{% for pub in site.data.catalog.publications %}
+- **[{{ pub.name }}]({{ '/publications/' | append: pub.id | append: '/' | relative_url }})** — <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">read it ↗</a>
+{% endfor %}
+
 ## How to use this site
 
 Start from whichever axis is most natural:
@@ -58,12 +67,12 @@ Every page links across to the other axes, so you can pivot freely.
 
 ## Data source
 
-The site renders straight from the three Jekyll data files above
-(`_data/personas.yml`, `_data/problems.yml`, `_data/projects.yml`), plus a JSON
-mirror at `/assets/data/catalog.json` for client-side consumers. Those three
-files are the single source of truth — the usage sentences, problem mappings,
-Security Insights links, and project relationships all live there and are
-refined over time.
+The site renders straight from the Jekyll data files in `data/` — the
+vocabularies in `data/definitions/` and the per-working-group catalog files in
+`data/working-groups/` — plus a JSON mirror at `/assets/data/catalog.json` for
+client-side consumers. Those files are the single source of truth — the usage
+sentences, problem mappings, Security Insights links, and project relationships
+all live there and are refined over time.
 
 ## Contributing
 

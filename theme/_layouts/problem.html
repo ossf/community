@@ -32,13 +32,14 @@ layout: default
   {%- endfor -%}
 </nav>
 
+{%- assign pool = site.data.catalog.projects | concat: site.data.catalog.publications -%}
 {%- comment -%}
   Projects that address this problem; capture each one's note and accumulate
   the deduped set of personas those projects serve (derived through projects).
 {%- endcomment -%}
 {%- assign matched_count = 0 -%}
 {%- assign persona_ids = "," -%}
-{%- for project in site.data.catalog.projects -%}
+{%- for project in pool -%}
   {%- assign match = nil -%}
   {%- for link in project.problems -%}
     {%- if link.id == problem_id -%}{%- assign match = link -%}{%- endif -%}
@@ -53,22 +54,23 @@ layout: default
 {%- endfor -%}
 
 <p class="persona-intro">
-  {{ matched_count }} OpenSSF projects help with
+  {{ matched_count }} OpenSSF projects and publications help with
   <strong>{{ active_problem.short }}</strong>, each with a one-sentence note on how.
   Prefer another way in? <a href="{{ '/personas/' | relative_url }}">Browse by role →</a>
 </p>
 
 <div class="component-grid tool-card-grid">
-  {%- for project in site.data.catalog.projects -%}
+  {%- for project in pool -%}
     {%- assign match = nil -%}
     {%- for link in project.problems -%}
       {%- if link.id == problem_id -%}{%- assign match = link -%}{%- endif -%}
     {%- endfor -%}
     {%- if match -%}
-    <a class="component-card tool-card" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">
+    {%- if project.kind == "publication" -%}{%- assign card_base = "/publications/" -%}{%- else -%}{%- assign card_base = "/projects/" -%}{%- endif -%}
+    <a class="component-card tool-card" href="{{ card_base | append: project.id | append: '/' | relative_url }}">
       <h2 class="tool-card__title">{{ project.name }}</h2>
       <p class="tool-card__usage">{{ match.note }}</p>
-      <p class="tool-card__link">Full project breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
+      <p class="tool-card__link">Full breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
     </a>
     {%- endif -%}
   {%- endfor -%}

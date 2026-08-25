@@ -1,17 +1,13 @@
 # Sidebar tree.
 #
-# Catalog sections are NOT listed by hand — they set `derive:` and their children
-# are generated from the data files by _includes/sidebar.html, so they can never
-# drift from the catalog. (They did: this file previously listed 32 projects,
-# including bomctl, gemara, gittuf and sbomit twice each, and several titles had
-# fallen out of sync with the names in projects.yml.)
+# Sections are NOT listed by hand — each sets `derive:` and its children are
+# generated from the data files by _includes/sidebar.html, so the sidebar can
+# never drift from the catalog. (It did: this file once listed 32 projects,
+# several twice, with titles out of sync with the data.)
 #
-#   derive: personas | problems | projects | artifacts
-#     -> children are every record in that data file, titled by its `name` and
+#   derive: personas | problems | projects | publications
+#     -> children are every record in that pool, titled by its `name` and
 #        linked to /<derive>/<id>/.
-#
-# Only sections whose children are hand-authored pages (the architecture views)
-# list their children explicitly, because those pages are not data records.
 
 - title: Browse by Persona
   url: /personas/
@@ -25,29 +21,9 @@
   url: /projects/
   derive: projects
 
-- title: Browse by Artifact
-  url: /artifacts/
-  derive: artifacts
-
-- title: Browse by Architecture View
-  url: /architecture/
-  children:
-    - title: SLSA v1.2 Threats × OSSF Coverage
-      url: /architecture/slsa-threats/
-    - title: Secure Production (producer pillar)
-      url: /architecture/secure-production/
-    - title: Secure Distribution (distributor pillar)
-      url: /architecture/secure-distribution/
-    - title: Secure Consumption (consumer pillar)
-      url: /architecture/secure-consumption/
-    - title: Stewardship (other / governance pillar)
-      url: /architecture/stewardship/
-    - title: Overview — full catalog
-      url: /architecture/overview/
-    - title: TAC summary
-      url: /architecture/tac-summary/
-    - title: Architecture gaps
-      url: /architecture/gaps/
+- title: Browse by Publication
+  url: /publications/
+  derive: publications
 
 - title: About
   url: /about/

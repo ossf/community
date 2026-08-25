@@ -32,6 +32,7 @@ layout: default
   {%- endfor -%}
 </nav>
 
+{%- assign pool = site.data.catalog.projects | concat: site.data.catalog.publications -%}
 {%- comment -%}
   Find the projects that address this persona; capture each one's note.
   Along the way, accumulate the deduped set of problem ids those projects
@@ -39,7 +40,7 @@ layout: default
 {%- endcomment -%}
 {%- assign matched_count = 0 -%}
 {%- assign prob_ids = "," -%}
-{%- for project in site.data.catalog.projects -%}
+{%- for project in pool -%}
   {%- assign match = nil -%}
   {%- for link in project.personas -%}
     {%- if link.id == persona_id -%}{%- assign match = link -%}{%- endif -%}
@@ -54,23 +55,24 @@ layout: default
 {%- endfor -%}
 
 <p class="persona-intro">
-  Here are the {{ matched_count }} OpenSSF projects that address the
+  Here are the {{ matched_count }} OpenSSF projects and publications that address the
   <strong>{{ active_persona.short }}</strong> persona, each with a one-sentence
   action written for the role. Prefer another way in?
   <a href="{{ '/problems/' | relative_url }}">Browse by problem →</a>
 </p>
 
 <div class="component-grid tool-card-grid">
-  {%- for project in site.data.catalog.projects -%}
+  {%- for project in pool -%}
     {%- assign match = nil -%}
     {%- for link in project.personas -%}
       {%- if link.id == persona_id -%}{%- assign match = link -%}{%- endif -%}
     {%- endfor -%}
     {%- if match -%}
-    <a class="component-card tool-card" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">
+    {%- if project.kind == "publication" -%}{%- assign card_base = "/publications/" -%}{%- else -%}{%- assign card_base = "/projects/" -%}{%- endif -%}
+    <a class="component-card tool-card" href="{{ card_base | append: project.id | append: '/' | relative_url }}">
       <h2 class="tool-card__title">{{ project.name }}</h2>
       <p class="tool-card__usage">{{ match.note }}</p>
-      <p class="tool-card__link">Full project breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
+      <p class="tool-card__link">Full breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
     </a>
     {%- endif -%}
   {%- endfor -%}

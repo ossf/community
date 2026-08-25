@@ -10,40 +10,19 @@
 # the authoritative source. Do not add a project here on a hunch — if the TAC list
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: orbit
   name: ORBIT (Open Resources for Baselines, Interoperability, and Tooling)
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
-  categories: [governance]
-  sdlc_stages: [producer, source]
-  supply_chain_actors: [other, software-producer]
-  cell_synopses:
-  - stage: producer
-    actor: other
-    status: confirmed
-    text: >-
-      Auditors and compliance teams reach back to producer-stage practices when grading a
-      project against the Baseline.
-  - stage: producer
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Producer-stage guidance (development practices, contributor hygiene, supported toolchain)
-      sits alongside the source-layer criteria.
-  - stage: source
-    actor: other
-    status: confirmed
-    text: >-
-      Compliance/risk reviewers use ORBIT-coordinated material to map repository evidence
-      to international frameworks and regulations.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Stewards the OSPS Baseline and the source-layer evidence-gathering tooling producers
-      run to demonstrate conformance.
 projects:
 - id: minder
   name: Minder
@@ -54,32 +33,6 @@ projects:
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [source]
-  supply_chain_actors: [other, software-producer]
-  threats:
-  - id: slsa-v1-2-b4
-    status: needs-review
-    note: >-
-      Minder enforces policies that could narrow rule exceptions; confirm whether existing
-      rulesets cover this.
-  cell_synopses:
-  - stage: source
-    actor: other
-    status: needs-review
-    text: >-
-      Compliance and security teams use Minder to express their corporate posture as enforceable
-      policy on the source layer.
-    note: >-
-      Compliance-team framing is documented in marketing material; confirm specific upstream
-      framing.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Continuously enforces policy across a producer's source repositories — branch protection,
-      dependency review, secret scanning, vulnerability response — so the producer's policy
-      is the actual policy on every repo, not just the intended one.
   personas:
   - id: developer
     note: >-
@@ -124,24 +77,7 @@ projects:
   description: >-
     A machine-processable YAML specification that lets a project declare its security posture,
     vulnerability-handling process, and supporting resources.
-  kind: project
-  categories: [specification]
-  sdlc_stages: [source]
-  supply_chain_actors: [software-consumer, software-producer]
-  cell_synopses:
-  - stage: source
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers (and downstream tooling like Scorecard) read Security Insights to evaluate
-      a producer's security posture without manually scanning the repo for clues.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Producers publish a `SECURITY-INSIGHTS.yml` file in their source repository declaring
-      contact points, response SLAs, signing policy, and dependency-management practices in
-      a machine-readable form.
+  kind: publication
   personas:
   - id: developer
     note: >-
