@@ -15,7 +15,7 @@
           {%- when "personas"  -%}{%- assign derived = site.data.definitions.personas -%}
           {%- when "problems"  -%}{%- assign derived = site.data.definitions.problems -%}
           {%- when "projects"  -%}{%- assign derived = site.data.catalog.projects -%}
-          {%- when "artifacts" -%}{%- assign derived = site.data.definitions.artifacts -%}
+          {%- when "publications" -%}{%- assign derived = site.data.catalog.publications -%}
         {%- endcase -%}
 
         {%- if derived or item.children -%}

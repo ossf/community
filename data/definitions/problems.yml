@@ -1,15 +1,14 @@
-# Master list 2 of 3: PROBLEMS.
+# PROBLEMS — the security problems the OpenSSF toolchain addresses.
 #
-# Short data blocks describing the security problems the OpenSSF toolchain
-# addresses. `id` is the URL slug (/problems/<id>/) and the lookup key
-# referenced from projects.yml -> problems[].id.
+# `id` is the URL slug (/problems/<id>/) and the key projects reference from
+# data/working-groups/<wg>.yml -> problems[].id.
 #
 # Same five fields as a persona (id, name, short, icon, summary) so the card
-# and hero markup is shared. Drafted best-effort — review and refine the set.
+# and hero markup is shared.
 #
-# INVARIANT: every problem id referenced by any project in projects.yml MUST
-# have a matching problems/<id>.md stub, or derived links 404 and `make test`
-# fails.
+# The build fails on a project referencing a problem id that is not in this
+# file (theme/_plugins/catalog_pages.rb); pages are generated from the data,
+# so nothing else keeps the two in sync.
 
 - id: build-provenance
   name: Build & Provenance Integrity

@@ -10,50 +10,19 @@
 # the authoritative source. Do not add a project here on a hunch — if the TAC list
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 working_group:
   id: supply-chain-integrity
   name: Supply Chain Integrity
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
-  categories: [governance]
-  sdlc_stages: [build, consumer, distribution]
-  supply_chain_actors: [software-consumer, software-producer]
-  cell_synopses:
-  - stage: build
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers ingest the build-stage provenance the WG's projects emit, completing the verification
-      loop SLSA defines.
-  - stage: build
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Stewards SLSA, GUAC, gittuf, Zarf, S2C2F — producer-side controls that bind builds to
-      verifiable provenance and source.
-  - stage: consumer
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers verify provenance at install or use time before trusting the artefact.
-    note: Consumer-stage tag is a flow observation; confirm framing.
-  - stage: consumer
-    actor: software-producer
-    status: needs-review
-    text: Producers re-verify provenance during release rehearsals.
-    note: Consumer-stage tag is a flow observation; confirm scope.
-  - stage: distribution
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers fetch provenance via distribution channels and verify it before install.
-  - stage: distribution
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Provenance and attestations have to travel through distribution channels; the WG's work
-      covers that handoff.
 projects:
 - id: gittuf
   name: gittuf
@@ -66,36 +35,6 @@ projects:
     to source control — enforcing who may change what through signed policy and a tamper-evident
     reference state log.
   kind: project
-  categories: [specification]
-  sdlc_stages: [source]
-  supply_chain_actors: [software-producer]
-  threats:
-  - id: slsa-v1-2-b6
-    status: confirmed
-  - id: slsa-v1-2-b7
-    status: confirmed
-  - id: slsa-v1-2-b9
-    status: confirmed
-  - id: slsa-v1-2-b12
-    status: needs-review
-    note: >-
-      gittuf's signed commit history makes graph manipulation auditable; confirm whether it
-      detects this attack pattern specifically.
-  - id: slsa-v1-2-b16
-    status: confirmed
-  - id: slsa-v1-2-k1
-    status: needs-review
-    note: >-
-      gittuf's signed history makes deletions auditable but does not prevent them at the platform
-      layer.
-  cell_synopses:
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Applies TUF-style signed metadata to a Git repository: refs, tags, and the policy that
-      determines who can write what. Producers gain cryptographic attestation that the code
-      they committed is the code being built, mitigating source-forge compromise.
   personas:
   - id: developer
     note: >-
@@ -133,54 +72,6 @@ projects:
     Graph for Understanding Artifact Composition — a queryable supply-chain knowledge graph
     that aggregates SBOMs, attestations, and vulnerability data.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [consumer, dependencies]
-  supply_chain_actors: [software-consumer, software-producer]
-  threats:
-  - id: slsa-v1-2-j1
-    status: confirmed
-  - id: slsa-v1-2-j2
-    status: needs-review
-    note: >-
-      GUAC can model build-tool provenance for analysis; confirm specific build-tool-tracking
-      features.
-  - id: slsa-v1-2-j4
-    status: confirmed
-  cell_synopses:
-  - stage: consumer
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers query GUAC at evaluation time (or as a periodic job) to triage their dependency
-      graph against the latest vulnerability data.
-    note: >-
-      The consumer-runtime tag overlaps with the dependencies-stage tag; both currently apply
-      but the framing differs.
-  - stage: consumer
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers running their own GUAC instance also query it at evaluation time for their
-      own outbound risk.
-    note: >-
-      Loosely fits the consumer stage; confirm whether this is a separate cell from dependencies
-      × producer.
-  - stage: dependencies
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      GUAC ingests SBOMs, vulnerabilities, provenance, and other supply-chain metadata into
-      a unified graph so consumers can ask 'what depends on this?' and 'what is exploitable
-      for me?' without stitching the data themselves.
-  - stage: dependencies
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers can ingest their own SBOMs into a GUAC instance for outbound impact analysis
-      on disclosures.
-    note: >-
-      Producer use case is documented but less central than consumer-side analysis; confirm
-      with upstream.
   relationships:
   - kind: consumes
     target: sbom
@@ -232,82 +123,7 @@ projects:
   description: >-
     Supply-chain Levels for Software Artifacts — a framework of progressive security requirements
     for source, build, and provenance integrity.
-  kind: project
-  categories: [best-practices, specification]
-  sdlc_stages: [build, distribution]
-  supply_chain_actors: [software-consumer, software-producer]
-  threats:
-  - id: slsa-v1-2-b1
-    status: confirmed
-  - id: slsa-v1-2-d1
-    status: confirmed
-  - id: slsa-v1-2-d2
-    status: confirmed
-  - id: slsa-v1-2-d3
-    status: confirmed
-  - id: slsa-v1-2-d4
-    status: confirmed
-  - id: slsa-v1-2-d5
-    status: confirmed
-  - id: slsa-v1-2-e1
-    status: confirmed
-  - id: slsa-v1-2-e3
-    status: confirmed
-  - id: slsa-v1-2-e4
-    status: confirmed
-  - id: slsa-v1-2-e5
-    status: confirmed
-  - id: slsa-v1-2-e6
-    status: confirmed
-  - id: slsa-v1-2-f1
-    status: confirmed
-  - id: slsa-v1-2-f2
-    status: confirmed
-  - id: slsa-v1-2-f3
-    status: confirmed
-  - id: slsa-v1-2-f4
-    status: confirmed
-  - id: slsa-v1-2-g3
-    status: confirmed
-  - id: slsa-v1-2-g5
-    status: confirmed
-  - id: slsa-v1-2-g6
-    status: confirmed
-  - id: slsa-v1-2-j2
-    status: confirmed
-  - id: slsa-v1-2-j3
-    status: confirmed
-  cell_synopses:
-  - stage: build
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers verify SLSA provenance against expectations (expected source, expected builder,
-      expected parameters) to detect tampering between the build and the artefact they install.
-  - stage: build
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Build levels L1–L3 mandate that producers generate signed build provenance (typically
-      in-toto attestations) capturing the source, build platform, and build inputs that produced
-      each artefact.
-  - stage: distribution
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers fetch the provenance alongside the artefact from the distribution channel
-      and chain it back to the build.
-    note: >-
-      Distribution-stage role for consumers is implicit; confirm framing with upstream.
-  - stage: distribution
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers ensure provenance travels with the artefact through their distribution channels
-      (registries, mirrors) so the consumer-side verification step can find it.
-    note: >-
-      Distribution-stage role is implicit in SLSA Build L1+ but not framed as a separate producer
-      obligation by the spec.
+  kind: publication
   relationships:
   - kind: produces
     target: slsa-provenance
@@ -360,42 +176,3 @@ projects:
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained
     systems by bundling applications and their dependencies into portable packages.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [consumer, distribution]
-  supply_chain_actors: [software-consumer, software-distributor]
-  threats:
-  - id: slsa-v1-2-k3
-    status: needs-review
-    note: >-
-      Zarf's air-gapped bundles preserve artifacts after registry de-listing for the consumer's
-      local use; not a generalised mitigation.
-  cell_synopses:
-  - stage: consumer
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Operators in air-gapped or constrained environments deploy Zarf bundles into their local
-      cluster, completing the supply chain without ever fetching from the public network.
-  - stage: consumer
-    actor: software-distributor
-    status: needs-review
-    text: >-
-      Some distributors operate Zarf as a packaging/repackaging layer between upstream and
-      their downstream consumers.
-    note: Distributor-side adoption pattern; confirm scope.
-  - stage: distribution
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Consumers receive Zarf bundles and use them to seed their own local registry, decoupling
-      the consumer from continuous upstream connectivity.
-    note: >-
-      Consumer-side use is the dominant scenario; flagged needs-review because the distribution-stage
-      tagging is fluid.
-  - stage: distribution
-    actor: software-distributor
-    status: confirmed
-    text: >-
-      Bundles applications, their dependencies, and registry content into a single portable
-      package that can be delivered to air-gapped or disconnected environments. Reshapes the
-      distribution channel around the bundle.

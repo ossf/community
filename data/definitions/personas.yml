@@ -1,5 +1,6 @@
-# 6 personas — the roles that touch the OpenSSF toolchain. This file is the source of truth.
-# `id` is used as the URL slug (/personas/<id>/) and as the lookup key in projects.yml.
+# PERSONAS — the roles that touch the OpenSSF toolchain. This file is the source of truth.
+# `id` is the URL slug (/personas/<id>/) and the key projects reference from
+# data/working-groups/<wg>.yml -> personas[].id.
 
 - id: developer
   name: Software Developer / Maintainer

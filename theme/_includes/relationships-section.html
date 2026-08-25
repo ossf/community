@@ -7,11 +7,11 @@
   Incoming forms invert the verb (implemented by / produced by / etc.).
 
   Each rendered target / source is a link to its /projects/<id>/ or
-  /artifacts/<id>/ page depending on the record's kind.
+  /publications/<id>/ page depending on the record's kind.
 
   Usage from a layout:
     {% include relationships-section.html record_id=page.project_id %}
-    {% include relationships-section.html record_id=page.artifact_id %}
+    {% include relationships-section.html record_id=page.publication_id %}
 {%- endcomment -%}
 
 {%- include community-records.html -%}
@@ -53,13 +53,13 @@
       <li class="relationship{% if rel.status == 'needs-review' %} relationship--nr{% endif %}">
         <span class="relationship__verb">{{ verb_text }}</span>
         {%- if target -%}
-          {%- if target.kind == "artifact" -%}{%- assign tgt_path = "/artifacts/" -%}{%- else -%}{%- assign tgt_path = "/projects/" -%}{%- endif -%}
+          {%- if target.kind == "publication" -%}{%- assign tgt_path = "/publications/" -%}{%- else -%}{%- assign tgt_path = "/projects/" -%}{%- endif -%}
           {%- if target.kind != "working-group" -%}
             <a class="relationship__link" href="{{ tgt_path | append: target.id | append: '/' | relative_url }}">{{ target.name }}</a>
           {%- else -%}
             <span class="relationship__name">{{ target.name }}</span>
           {%- endif -%}
-          {%- if target.kind == "artifact" %}<span class="relationship__kind-badge">artifact</span>{%- endif -%}
+          {%- if target.kind == "publication" %}<span class="relationship__kind-badge">publication</span>{%- endif -%}
           {%- if target.kind == "working-group" %}<span class="relationship__kind-badge">WG</span>{%- endif -%}
         {%- else -%}
           <span class="relationship__name relationship__name--unresolved">{{ rel.target }}</span>
@@ -89,13 +89,13 @@
             {%- endif -%}
             <li class="relationship{% if rel.status == 'needs-review' %} relationship--nr{% endif %}">
               <span class="relationship__verb">{{ verb_text }}</span>
-              {%- if r.kind == "artifact" -%}{%- assign src_path = "/artifacts/" -%}{%- else -%}{%- assign src_path = "/projects/" -%}{%- endif -%}
+              {%- if r.kind == "publication" -%}{%- assign src_path = "/publications/" -%}{%- else -%}{%- assign src_path = "/projects/" -%}{%- endif -%}
               {%- if r.kind != "working-group" -%}
                 <a class="relationship__link" href="{{ src_path | append: r.id | append: '/' | relative_url }}">{{ r.name }}</a>
               {%- else -%}
                 <span class="relationship__name">{{ r.name }}</span>
               {%- endif -%}
-              {%- if r.kind == "artifact" %}<span class="relationship__kind-badge">artifact</span>{%- endif -%}
+              {%- if r.kind == "publication" %}<span class="relationship__kind-badge">publication</span>{%- endif -%}
               {%- if r.kind == "working-group" %}<span class="relationship__kind-badge">WG</span>{%- endif -%}
               {%- if rel.status == "needs-review" -%}<span class="relationship__nr">needs-review</span>{%- endif -%}
               {%- if rel.note -%}<p class="relationship__note">{{ rel.note }}</p>{%- endif -%}

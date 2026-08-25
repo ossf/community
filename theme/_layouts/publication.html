@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- comment -%}
+  Resolve this page's publication from the catalog. The pool holds both
+  halves: externally-owned formats from data/definitions/publications.yml and
+  WG-hosted documents (kind: publication) from data/working-groups/.
+{%- endcomment -%}
+{%- assign publication_id = page.publication_id -%}
+{%- assign publication = nil -%}
+{%- for pub in site.data.catalog.publications -%}
+  {%- if pub.id == publication_id -%}{%- assign publication = pub -%}{%- endif -%}
+{%- endfor -%}
+
+<section class="tool-hero">
+  <p class="tool-hero__eyebrow"><i class="fa-solid fa-file-shield" aria-hidden="true"></i> OpenSSF publication</p>
+  <h1 class="tool-hero__title">{{ publication.name }}</h1>
+  {%- if publication.aliases -%}
+  <p class="tool-hero__aliases"><em>Also known as:</em> {{ publication.aliases | join: ", " }}</p>
+  {%- endif -%}
+  <p class="tool-hero__summary">{{ publication.description }}</p>
+  <p class="tool-hero__links">
+    {%- if publication.url -%}
+    <a class="tool-hero__link" href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Read the publication
+    </a>
+    {%- endif -%}
+    {%- if publication.insights -%}
+    <a class="tool-hero__link" href="{{ publication.insights }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
+    </a>
+    {%- endif -%}
+    {%- if publication.lfx_id -%}
+    <a class="tool-hero__link" href="https://insights.linuxfoundation.org/project/{{ publication.lfx_id }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-chart-line" aria-hidden="true"></i> LFX Insights
+    </a>
+    {%- endif -%}
+  </p>
+</section>
+
+{% include record-detail.html record=publication base="publications" %}

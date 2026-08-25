@@ -7,7 +7,8 @@
 #
 # These are not one problem. As of this writing:
 #
-#   gemara, osps-baseline      likely ORBIT, but unconfirmed by the TAC list.
+#   gemara, gemara-whitepaper,
+#   osps-baseline              likely ORBIT, but unconfirmed by the TAC list.
 #   slsa-github-generator,
 #   slsa-verifier              sub-projects of SLSA, which is Supply Chain
 #                              Integrity. Whether a sub-project inherits its
@@ -18,6 +19,13 @@
 #                              non-OpenSSF entries.
 #   sigstore, openbao, rstuf   established projects the TAC list does not place.
 #   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
+#
+# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
+# data/definitions/, and the build fails on any id it can't resolve.
+# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
+# means we want the project's own maintainers to check the claim. If that's
+# you, correcting it, setting the status to confirmed, and deleting the note
+# IS the edit we're hoping for. Run `make test` before opening a PR.
 
 projects:
 - id: gemara
@@ -26,33 +34,14 @@ projects:
   openssf_url: https://openssf.org/projects/gemara/
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
   description: >-
-    A GRC engineering model — a machine-readable, layered data model that bridges high-level
-    compliance requirements and low-level technical evidence to enable automated risk assessment
-    across security tooling.
+    Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
+    formats that bridge high-level compliance requirements and low-level technical evidence
+    to enable automated risk assessment across security tooling.
   kind: project
-  categories: [specification]
-  sdlc_stages: [source]
-  supply_chain_actors: [other, software-producer]
-  cell_synopses:
-  - stage: source
-    actor: other
-    status: needs-review
-    text: >-
-      Gemara models the categorical governance controls a project commits to in its repository
-      (e.g., release policy, dependency policy, vulnerability disclosure) so reviewers and
-      auditors can compare across projects on the same axes.
-    note: >-
-      Gemara's framing as repo-anchored governance modelling is recent; confirm scope with
-      the project.
-  - stage: source
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers use Gemara to express their project's governance commitments in machine-readable
-      form alongside the source they control.
-    note: >-
-      Producer-side adoption is the design intent but documentation is sparse; confirm with
-      upstream.
+  relationships:
+  - kind: implements
+    target: gemara-whitepaper
+    status: confirmed
   personas:
   - id: ospo
     note: >-
@@ -79,6 +68,14 @@ projects:
     note: >-
       Standardizes how risk and control evidence are expressed so posture can be assessed
       automatically and compared across projects.
+- id: gemara-whitepaper
+  name: Gemara Whitepaper
+  url: https://openssf.org/wp-content/uploads/2026/03/04_OpenSSF_Gemara-Project_Whitepaper.pdf
+  description: >-
+    "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
+    the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
+    and how they interoperate.
+  kind: publication
 - id: openbao
   name: OpenBao
   url: https://openbao.org/
@@ -88,45 +85,6 @@ projects:
     A community-governed, open source secrets management platform for storing, rotating, and
     brokering access to secrets, credentials, tokens, and cryptographic keys.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [build, consumer]
-  supply_chain_actors: [software-consumer, software-producer]
-  threats:
-  - id: slsa-v1-2-e5
-    status: needs-review
-    note: >-
-      OpenBao manages secrets used by build pipelines; reduces the surface where keys can
-      be stolen, but doesn't directly mitigate runtime compromise.
-  cell_synopses:
-  - stage: build
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      A few consumer-operated build platforms also consume OpenBao for the build secrets they
-      ingest.
-    note: Less common than producer-side build use; confirm whether to tag.
-  - stage: build
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers' build pipelines fetch credentials, signing keys, and short-lived tokens from
-      OpenBao at build time so secret material never lives in the build environment longer
-      than the job needs it.
-    note: >-
-      Build-stage role is the dominant deployment pattern but isn't framed as OpenBao's central
-      concern by upstream.
-  - stage: consumer
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Application operators (downstream consumers of the OpenBao image) deploy it to manage
-      their own runtime secrets, key rotation, and certificate issuance.
-  - stage: consumer
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Producers run OpenBao to manage the secrets their applications consume at runtime, replacing
-      static configuration with short-lived, audited credential leases.
   personas:
   - id: developer
     note: >-
@@ -168,48 +126,7 @@ projects:
   description: >-
     The Open Source Project Security Baseline — a consensus-driven minimum set of security
     requirements for projects to adopt and for consumers to expect.
-  kind: project
-  categories: [best-practices, specification]
-  sdlc_stages: [producer, source]
-  supply_chain_actors: [other, software-producer]
-  threats:
-  - id: slsa-v1-2-b1
-    status: needs-review
-    note: >-
-      OSPS Baseline includes review-related criteria; confirm whether they fully cover B1.
-  - id: slsa-v1-2-b8
-    status: needs-review
-    note: OSPS Baseline includes process-enforcement criteria; confirm coverage.
-  cell_synopses:
-  - stage: producer
-    actor: other
-    status: needs-review
-    text: >-
-      Compliance and governance reviewers use the Baseline as an audit checklist when scoring
-      producer-side practices.
-    note: >-
-      Compliance/audit use pattern is documented in ORBIT material; confirm specific framing.
-  - stage: producer
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Defines the minimum set of practices an OSS project's maintainers MUST adopt on their
-      development environment and project setup (account hygiene, signing, secret handling,
-      supported toolchain). Acts as the producer-stage 'floor'.
-  - stage: source
-    actor: other
-    status: needs-review
-    text: >-
-      Compliance and governance reviewers map repo-level evidence to specific Baseline criteria
-      when grading a project.
-    note: Same caveat as producer × other; confirm with the ORBIT WG.
-  - stage: source
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Baseline requirements that anchor at the repository — branch protection, signed commits,
-      vulnerability disclosure metadata, contribution policies — live here and are graded
-      by ORBIT-aligned tooling.
+  kind: publication
   personas:
   - id: developer
     note: >-
@@ -256,30 +173,6 @@ projects:
     A drop-in implementation of The Update Framework (TUF) that protects software repositories
     from compromise, rollback, and man-in-the-middle attacks.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [distribution]
-  supply_chain_actors: [software-consumer, software-distributor]
-  threats:
-  - id: slsa-v1-2-g3
-    status: needs-review
-    note: >-
-      RSTUF can enforce attestation requirements at the repository layer; confirm exact policy
-      hooks.
-  - id: slsa-v1-2-g5
-    status: confirmed
-  cell_synopses:
-  - stage: distribution
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers' TUF clients verify RSTUF metadata before accepting an artefact, defending
-      against compromised registries and downgrade attacks.
-  - stage: distribution
-    actor: software-distributor
-    status: confirmed
-    text: >-
-      Registries and mirrors run RSTUF to add TUF-style signed metadata over the artefacts
-      they serve, so downstream clients can detect tampering between the registry and themselves.
   personas:
   - id: developer
     note: >-
@@ -325,82 +218,6 @@ projects:
     A free, identity-based artefact-signing service backed by a public transparency log so
     anyone can verify who built what.
   kind: project
-  categories: [framework, service]
-  sdlc_stages: [build, consumer, distribution]
-  supply_chain_actors: [software-consumer, software-distributor, software-producer]
-  threats:
-  - id: slsa-v1-2-e1
-    status: confirmed
-  - id: slsa-v1-2-e5
-    status: confirmed
-  - id: slsa-v1-2-f3
-    status: confirmed
-  - id: slsa-v1-2-f4
-    status: confirmed
-  - id: slsa-v1-2-g6
-    status: confirmed
-  cell_synopses:
-  - stage: build
-    actor: software-consumer
-    status: needs-review
-    text: >-
-      Some consumers run reproducer builds to cross-check Sigstore-signed artefacts; this
-      is a niche flow.
-    note: >-
-      Not the central consumer-facing pattern; confirm if this should be tagged at all.
-  - stage: build
-    actor: software-distributor
-    status: needs-review
-    text: >-
-      Distributors with their own CI may operate Sigstore infrastructure to sign artefacts
-      they republish.
-    note: >-
-      Distributor-side adoption pattern; confirm whether registries operate Sigstore in their
-      own build path.
-  - stage: build
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Cosign and Fulcio let producers sign artefacts at build time with short-lived, identity-bound
-      certificates, replacing the long-lived signing keys traditional CI/CD pipelines need
-      to manage.
-  - stage: consumer
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Cosign verify (or any Sigstore-compatible verifier) lets consumers prove an artefact's
-      identity at install time without trusting the registry alone.
-  - stage: consumer
-    actor: software-distributor
-    status: needs-review
-    text: >-
-      Some distributors verify signatures as part of admission control before serving downloads.
-    note: Distributor-side verification pattern; confirm scope.
-  - stage: consumer
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Producers occasionally verify their own published artefacts during release rehearsal.
-    note: Tangential to producer focus; confirm whether to tag.
-  - stage: distribution
-    actor: software-consumer
-    status: confirmed
-    text: >-
-      Consumers receive Sigstore signatures alongside the artefact and can verify them before
-      extraction or install.
-  - stage: distribution
-    actor: software-distributor
-    status: confirmed
-    text: >-
-      Registries (npm, PyPI, container registries) verify Sigstore signatures and surface
-      them to consumers, integrating signed-provenance flows into the distribution layer itself.
-  - stage: distribution
-    actor: software-producer
-    status: confirmed
-    text: >-
-      Producers' Sigstore signatures (and Rekor inclusion proofs) ride with their artefacts
-      through registries, so the signed claim survives intermediate hops in the distribution
-      chain.
   personas:
   - id: developer
     note: >-
@@ -445,17 +262,6 @@ projects:
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation
     is not yet available, so scope and classification are provisional.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [source]
-  supply_chain_actors: [software-producer]
-  cell_synopses:
-  - stage: source
-    actor: software-producer
-    status: needs-review
-    text: >-
-      Provisional: fuzzing-related projects historically operate on producer-controlled source
-      repositories. Awaiting public docs to confirm the exact source-stage role.
-    note: Formation-stage project; upstream documentation not yet available.
 - id: in-toto
   name: in-toto
   url: https://in-toto.io/
@@ -463,9 +269,6 @@ projects:
     A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
     envelope that SLSA Provenance and other signed-statement formats ship in.
   kind: project
-  categories: [specification]
-  sdlc_stages: [build]
-  supply_chain_actors: [software-producer]
   relationships:
   - kind: produces
     target: in-toto-attestation
@@ -478,17 +281,6 @@ projects:
     A framework for LLM-based bug-finding and bug-fixing systems applied to open source software,
     exploring autonomous vulnerability discovery and remediation.
   kind: project
-  categories: [specification]
-  sdlc_stages: [source]
-  supply_chain_actors: [software-producer]
-  cell_synopses:
-  - stage: source
-    actor: software-producer
-    status: needs-review
-    text: >-
-      OSS-CRS uses LLM-based reasoning to find and propose fixes for bugs in open source code,
-      operating directly on the producer's source repository.
-    note: Sandbox-stage project; framing is in flux as the framework matures.
 - id: slsa-github-generator
   name: slsa-github-generator
   url: https://github.com/slsa-framework/slsa-github-generator
@@ -497,9 +289,6 @@ projects:
     Produces signed in-toto attestations bound to the builder identity per the SLSA build
     track.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [build]
-  supply_chain_actors: [software-producer]
   relationships:
   - kind: implements
     target: slsa
@@ -515,9 +304,6 @@ projects:
     validates the builder identity, and enforces SLSA build-level expectations on incoming
     artefacts.
   kind: project
-  categories: [tooling]
-  sdlc_stages: [build, distribution]
-  supply_chain_actors: [software-consumer, software-producer]
   relationships:
   - kind: consumes
     target: slsa-provenance
