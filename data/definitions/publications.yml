@@ -15,6 +15,11 @@
 # WHO PRODUCES/CONSUMES WHAT IS NOT AUTHORED HERE. A project declares its own
 # `produces:` / `consumes:` edges in its `relationships:` list, pointing at a
 # publication id. The publication pages reverse-derive from that.
+#
+# Persona / problem mappings ARE authored here, same shape as on a project.
+# Since these specs have no OpenSSF maintainer to confirm them, the mappings
+# are curator judgments about how each role uses the format — corrections
+# welcome by PR.
 
 - id: in-toto-attestation
   name: in-toto Attestation
@@ -24,6 +29,27 @@
     in. Defines the predicate/statement structure and signature wrapper used by every conforming
     attestation.
   kind: publication
+  personas:
+  - id: security
+    note: >-
+      Verifies attestation signatures and predicates to confirm supply-chain steps ran as
+      claimed before trusting an artifact.
+  - id: devops
+    note: >-
+      Configures build and pipeline steps to emit signed in-toto attestations so each step's
+      actions are independently verifiable.
+  - id: package-manager
+    note: >-
+      Verifies incoming attestations at publish time and surfaces their provenance claims
+      to package consumers.
+  problems:
+  - id: build-provenance
+    note: >-
+      The signed envelope that carries build and supply-chain evidence from producer to verifier.
+  - id: artifact-signing
+    note: >-
+      Wraps supply-chain statements in a signature layer so tampering with the claim invalidates
+      it.
 # UNRESOLVED — is OSV one publication or two?
 #
 # This record and the `osv-schema` record in
@@ -35,13 +61,12 @@
 # record (or giving them distinct urls and a real distinction). Left as-is
 # deliberately — this is a question for the OSV folks, not a cleanup.
 #
-# This record carried an `extends` edge pointing at `osv-openvex` until that
-# record was split into `openvex` and `osv-schema`. The edge is dropped here
-# rather than guessed at — re-authoring it is relationship-mapping work, not
-# part of unbreaking the build.
+# The `extends` edge below pointed at `osv-openvex` until that record was split
+# into `openvex` and `osv-schema`; it is authored against `osv-schema` here and
+# left needs-review until OSV maintainers confirm the target.
 #
 # The `description` below is also truncated mid-sentence; it arrived that way and
-# renders that way on /artifacts/osv-record/. Rewrite it when the above is settled.
+# renders that way on /publications/osv-record/. Rewrite it when the above is settled.
 - id: osv-record
   name: OSV Record (vulnerability record format)
   aliases: [OSV Record]
@@ -51,6 +76,36 @@
     GHSA, PyPA, Go vuln DB) and consumed by vuln scanners and SCA tools. Distinct from the
     `osv-schema` project, which is the authoring effort defining the f…
   kind: publication
+  relationships:
+  - kind: extends
+    target: osv-schema
+    status: needs-review
+    note: >-
+      The artifact (the record format itself) is the concrete instance of what the OSV Schema
+      project specifies. Authored against `osv-schema`, which replaced `osv-openvex` in the
+      split; OSV maintainers, please confirm the target — or tell us these are one record.
+  personas:
+  - id: developer
+    note: >-
+      Checks dependencies against OSV-format advisories (osv.dev, GHSA, PyPA) to catch known-vulnerable
+      versions before shipping.
+  - id: security
+    note: >-
+      Feeds OSV records into scanners and triage so findings share one schema across every
+      ecosystem.
+  - id: devops
+    note: >-
+      Fails or flags builds when dependency scans match OSV records, keeping known-vulnerable
+      versions out of releases.
+  problems:
+  - id: vulnerability-management
+    note: >-
+      Gives every ecosystem's advisories one machine-readable schema, so a single scan covers
+      them all.
+  - id: dependency-visibility
+    note: >-
+      Identifies affected package versions precisely, so dependency inventories can be matched
+      against known vulnerabilities.
 - id: sarif
   name: SARIF
   aliases: [Static Analysis Results Interchange Format]
@@ -60,6 +115,23 @@
     by code-scanning UIs (e.g. GitHub Code Scanning) and produced by linters, scanners, and
     policy tools such as Scorecard.
   kind: publication
+  personas:
+  - id: developer
+    note: >-
+      Reads scanner findings as SARIF in the editor or code-scanning UI instead of parsing
+      each tool's bespoke output.
+  - id: security
+    note: >-
+      Aggregates results from multiple scanners into one SARIF-based triage pipeline.
+  - id: devops
+    note: >-
+      Wires static-analysis tools into CI once, uploading SARIF wherever the code-scanning
+      platform expects it.
+  problems:
+  - id: vulnerability-management
+    note: >-
+      Normalizes static-analysis findings into one format, so triage doesn't depend on which
+      tool found the issue.
 - id: sbom
   name: Software Bill of Materials
   aliases: [SBOM]
@@ -69,6 +141,40 @@
     authoritative formats exist (CycloneDX, SPDX); this record models the SBOM concept itself
     rather than any single format.
   kind: publication
+  personas:
+  - id: developer
+    note: >-
+      Publishes an SBOM with each release so consumers can see exactly which components are
+      inside.
+  - id: ospo
+    note: >-
+      Requires SBOMs across the portfolio to track the components and licenses in software
+      the organization ships and consumes.
+  - id: security
+    note: >-
+      Queries SBOMs to scope exposure within hours of a new CVE instead of auditing each application
+      by hand.
+  - id: devops
+    note: >-
+      Generates SBOMs automatically in the build pipeline so every artifact ships with its
+      component inventory.
+  - id: executive
+    note: >-
+      Meets regulatory and customer demands (e.g. EO 14028, the Cyber Resilience Act) for
+      component transparency.
+  problems:
+  - id: dependency-visibility
+    note: >-
+      The machine-readable component inventory that every downstream dependency question starts
+      from.
+  - id: vulnerability-management
+    note: >-
+      Lets known-vulnerability data be matched against a precise component list instead of
+      guesswork.
+  - id: policy-compliance
+    note: >-
+      Satisfies the component-transparency requirements that regulation and procurement increasingly
+      mandate.
 - id: slsa-provenance
   name: SLSA Provenance
   url: https://slsa.dev/spec/v1.0/provenance
@@ -77,6 +183,27 @@
     build platform identity, source revision, build parameters, and the resulting artifact
     digest.
   kind: publication
+  personas:
+  - id: security
+    note: >-
+      Verifies provenance against expected source, builder, and parameters to detect tampering
+      between build and deployment.
+  - id: devops
+    note: >-
+      Configures build platforms to emit signed provenance for every artifact the pipeline
+      produces.
+  - id: package-manager
+    note: >-
+      Verifies and displays build provenance for published packages so consumers can check
+      who built what, from where.
+  problems:
+  - id: build-provenance
+    note: >-
+      The attestation format that records how, where, and from what an artifact was built.
+  - id: artifact-signing
+    note: >-
+      Binds the build record cryptographically to the artifact digest so provenance can't
+      be swapped or forged.
 - id: vex
   name: Vulnerability Exploitability eXchange
   aliases: [VEX]
@@ -85,6 +212,7 @@
     A machine-readable statement asserting whether a known vulnerability affects a given software
     artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive 
     vuln signals.
+  kind: publication
 - id: openssf-education
   name: OpenSSF Education Courses
   aliases: [OSSF-EDU]
@@ -308,3 +436,24 @@
     Mamber case studies demonstrating the value they have recieving in
     deploying  OpenSSF projects and practices.
   kind: publication
+  personas:
+  - id: developer
+    note: >-
+      Issues VEX statements for their releases so users aren't paged about vulnerabilities
+      that don't actually affect the product.
+  - id: security
+    note: >-
+      Consumes VEX to suppress non-exploitable findings and focus remediation on the vulnerabilities
+      that matter.
+  - id: devops
+    note: >-
+      Gates pipelines on exploitability rather than raw CVE counts, cutting false-positive
+      build failures.
+  problems:
+  - id: vulnerability-management
+    note: >-
+      States whether a vulnerability is actually exploitable in a given product, separating
+      real risk from noise.
+  - id: dependency-visibility
+    note: >-
+      Pairs with SBOMs to turn a raw component list into an actionable picture of exposure.

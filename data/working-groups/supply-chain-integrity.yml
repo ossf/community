@@ -97,6 +97,16 @@ projects:
   - kind: consumes
     target: slsa-provenance
     status: confirmed
+  - kind: consumes
+    target: osv-record
+    status: needs-review
+    note: >-
+      Ingests OSV vulnerability data to link known vulnerabilities into the artifact graph.
+  - kind: consumes
+    target: vex
+    status: needs-review
+    note: >-
+      Ingests VEX statements so exploitability status can be queried alongside composition.
   personas:
   - id: developer
     note: >-
@@ -194,3 +204,9 @@ projects:
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained
     systems by bundling applications and their dependencies into portable packages.
   kind: project
+  relationships:
+  - kind: produces
+    target: sbom
+    status: needs-review
+    note: >-
+      Generates SBOMs for the images and components it bundles into air-gapped packages.
