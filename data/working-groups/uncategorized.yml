@@ -28,54 +28,135 @@
 # IS the edit we're hoping for. Run `make test` before opening a PR.
 
 projects:
-- id: gemara
-  name: Gemara
-  url: https://gemara.openssf.org/
-  openssf_url: https://openssf.org/projects/gemara/
-  insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
+- id: bomctl
+  name: Bomctl
+  url: https://github.com/bomctl/bomctl
+  openssf_url: https://openssf.org/projects/bomctl/
   description: >-
-    Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
-    formats that bridge high-level compliance requirements and low-level technical evidence
-    to enable automated risk assessment across security tooling.
+    Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
+    and SBOM analysis — fetching, merging, and manipulating SBOMs across SPDX and CycloneDX.
   kind: project
-  relationships:
-  - kind: implements
-    target: gemara-whitepaper
-    status: confirmed
   personas:
+  - id: developer
+    note: >-
+      Fetches and merges the SBOMs for their project's dependencies into a single document
+      they can inspect and hand downstream.
   - id: ospo
     note: >-
-      Expresses the organization's controls and compliance requirements in Gemara's shared
-      model so they can be assessed consistently across projects.
+      Normalizes SBOMs arriving in mixed formats into a consistent inventory the organization
+      can track across every project.
   - id: security
     note: >-
-      Maps threats, controls, and evidence onto Gemara's layered schema to drive automated,
-      repeatable risk assessment.
+      Pulls together SBOMs from disparate sources so a component can be traced wherever it
+      appears in the portfolio.
   - id: devops
     note: >-
-      Consumes Gemara's machine-readable model to automate control evaluation and evidence
-      collection inside the pipeline.
+      Wires bomctl into the pipeline to fetch, merge, and reformat SBOMs as a build step rather
+      than a manual chore.
+  - id: package-manager
+    note: >-
+      Translates and consolidates incoming SBOMs so the registry can serve a clean, format-consistent
+      component inventory.
+  problems:
+  - id: dependency-visibility
+    note: >-
+      Bridges SBOM generation and analysis by fetching, merging, and translating bills of
+      materials into one queryable inventory.
+  compatible_with: [protobom, guac]
+- id: cve-bin-tool
+  name: CVE-BIN-TOOL
+  url: https://github.com/ossf/cve-bin-tool
+  description: >-
+    A tool to help you find known vulnerabilities in software, using data from the National Vulnerability Database (NVD) list of Common Vulnerabilities and Exposures (CVEs) as well as known vulnerability data from Redhat, Open Source Vulnerability Database (OSV), Gitlab Advisory Database (GAD), and Curl.
+  kind: project
+- id: fuzz-introspector
+  name: Fuzz Introspector
+  url: https://openssf.org/projects/fuzz-introspector/
+  openssf_url: https://openssf.org/projects/fuzz-introspector/
+  description: >-
+    Improves the fuzzing experience for projects by providing visibility into fuzzer coverage
+    and reachability.
+  kind: project
+- id: protobom
+  name: Protobom / SBOM Tools
+  url: https://github.com/protobom/protobom
+  openssf_url: https://openssf.org/projects/protobom/
+  insights: https://github.com/protobom/protobom/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A shared library and toolset for generating, translating, and consuming Software Bills
+    of Materials in standard formats such as SPDX and CycloneDX.
+  kind: project
+  personas:
+  - id: developer
+    note: >-
+      Integrates SBOM generation tools into their local build process to automatically document
+      the components used in their software.
+  - id: ospo
+    note: >-
+      Mandates the use of standard SBOM formats and tools like Protobom to maintain a comprehensive
+      inventory of third-party software assets.
+  - id: security
+    note: >-
+      Analyzes ingested SBOMs to rapidly identify and triage vulnerable components across
+      the organization's application portfolio.
+  - id: devops
+    note: >-
+      Embeds Protobom into the automated release pipeline to seamlessly generate and attach
+      SBOMs to every compiled artifact.
+  - id: package-manager
+    note: >-
+      Distributes generated Software Bill of Materials (SBOMs) alongside packages to provide
+      consumers with a transparent component inventory.
   - id: executive
     note: >-
-      Reads risk and compliance status rolled up through Gemara's model rather than from disconnected,
-      hand-assembled spreadsheets.
+      Demands SBOMs as trust signals to assess post-release risk and make informed consumption
+      decisions.
   problems:
-  - id: policy-compliance
+  - id: dependency-visibility
     note: >-
-      Encodes governance, risk, and compliance requirements as a shared data model so controls
-      map cleanly between regulations and evidence.
-  - id: security-posture
-    note: >-
-      Standardizes how risk and control evidence are expressed so posture can be assessed
-      automatically and compared across projects.
-- id: gemara-whitepaper
-  name: Gemara Whitepaper
-  url: https://openssf.org/wp-content/uploads/2026/03/04_OpenSSF_Gemara-Project_Whitepaper.pdf
+      Generates and translates SBOMs in standard formats so the component inventory travels
+      with the artefact.
+  compatible_with: [guac, osv-openvex]
+- id: sbomit
+  name: SBOMit
+  url: https://sbomit.dev/
+  openssf_url: https://openssf.org/projects/sbomit/
   description: >-
-    "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
-    the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
-    and how they interoperate.
-  kind: publication
+    An SBOM-format-independent method that embeds in-toto and Witness attestations into Software
+    Bills of Materials, cryptographically validating the steps performed across the software
+    supply chain.
+  kind: project
+  personas:
+  - id: developer
+    note: >-
+      Generates an SBOM whose entries are backed by signed attestations of how each component
+      was actually built.
+  - id: security
+    note: >-
+      Validates the in-toto attestations carried inside an SBOM to confirm the supply-chain
+      steps behind every listed component.
+  - id: devops
+    note: >-
+      Produces attestation-backed SBOMs as a release step so provenance travels with the component
+      inventory automatically.
+  - id: package-manager
+    note: >-
+      Distributes SBOMs whose contents are cryptographically tied to verifiable build steps,
+      raising the trust of served packages.
+  problems:
+  - id: build-provenance
+    note: >-
+      Binds in-toto and Witness attestations to SBOM entries so each component carries verifiable
+      proof of how it was built.
+  - id: dependency-visibility
+    note: >-
+      Produces a standard SBOM as the carrier for that provenance, keeping the component inventory
+      and its evidence together.
+  - id: artifact-signing
+    note: >-
+      Relies on signed attestations over components, so the bill of materials itself becomes
+      cryptographically verifiable.
+  compatible_with: [protobom, slsa, sigstore]
 - id: openbao
   name: OpenBao
   url: https://openbao.org/
@@ -117,98 +198,6 @@ projects:
       Stores, rotates, and brokers access to credentials and signing keys so they never get
       hardcoded or leaked.
   compatible_with: [sigstore]
-- id: osps-baseline
-  name: OSPS Baseline
-  url: https://baseline.openssf.org/
-  openssf_url: https://openssf.org/projects/osps-baseline/
-  insights: >-
-    https://github.com/ossf/security-baseline/blob/main/SECURITY-INSIGHTS.yml
-  description: >-
-    The Open Source Project Security Baseline — a consensus-driven minimum set of security
-    requirements for projects to adopt and for consumers to expect.
-  kind: publication
-  personas:
-  - id: developer
-    note: >-
-      Adopts the OSPS Baseline to implement fundamental security steps, like secure workflows
-      and disclosure policies, early in development.
-  - id: ospo
-    note: >-
-      Uses the OSPS Baseline to define and enforce security expectations for projects across
-      the enterprise.
-  - id: security
-    note: >-
-      Integrates the OSPS Baseline to enforce structured security requirements and reduce
-      defects early in the software creation phase.
-  - id: devops
-    note: >-
-      Configures pipeline guardrails to automatically verify that projects adhere to the fundamental
-      practices outlined in the baseline.
-  - id: package-manager
-    note: >-
-      Requires adherence to the baseline as a prerequisite for verifying or promoting packages
-      within the repository ecosystem.
-  - id: executive
-    note: >-
-      Adopts the structured baseline to ensure organizational compliance with policies and
-      regulations like the Cyber Resilience Act.
-  problems:
-  - id: policy-compliance
-    note: >-
-      Provides a consensus minimum set of requirements that maps cleanly onto regulations
-      like the Cyber Resilience Act.
-  - id: security-posture
-    note: >-
-      Defines the floor of expected security practices so projects can be measured against
-      a shared bar.
-  similar_to: [best-practices-badge]
-  compatible_with: [minder]
-- id: rstuf
-  name: Repository Service for TUF (RSTUF)
-  url: https://repository-service-tuf.readthedocs.io/
-  openssf_url: https://openssf.org/projects/repository-service-for-tuf/
-  insights: >-
-    https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
-  description: >-
-    A drop-in implementation of The Update Framework (TUF) that protects software repositories
-    from compromise, rollback, and man-in-the-middle attacks.
-  kind: project
-  personas:
-  - id: developer
-    note: >-
-      Relies on RSTUF-backed repositories to confidently pull dependencies without fear of
-      targeted man-in-the-middle or rollback attacks.
-  - id: ospo
-    note: >-
-      Recommends RSTUF to ensure the organization's internally hosted artifact repositories
-      are resilient against compromise.
-  - id: security
-    note: >-
-      Implements The Update Framework (TUF) via RSTUF to secure software delivery architectures
-      and protect cryptographic root keys.
-  - id: devops
-    note: >-
-      Configures build pipelines to exclusively interact with RSTUF-secured repositories to
-      guarantee the integrity of fetched dependencies.
-  - id: package-manager
-    note: >-
-      Implements RSTUF to secure content downloads against tampering between the remote repository
-      and the client.
-  - id: executive
-    note: >-
-      Reduces enterprise liability by ensuring all software updates distributed to customers
-      are cryptographically verified and secure.
-  problems:
-  - id: artifact-signing
-    note: >-
-      Cryptographically signs repository metadata so clients can verify content has not been
-      tampered with in transit.
-  - id: build-provenance
-    note: >-
-      Protects the distribution chain against rollback and man-in-the-middle attacks between
-      repository and client.
-  similar_to: [sigstore]
-  compatible_with: [slsa]
 - id: sigstore
   name: Sigstore
   url: https://www.sigstore.dev/
@@ -254,60 +243,4 @@ projects:
       downstream.
   similar_to: [rstuf]
   compatible_with: [slsa, openbao]
-- id: fuzzingbrain
-  name: FuzzingBrain
-  url: >-
-    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
-  description: >-
-    An OSSF project approved by the TAC and currently in LF legal formation; public documentation
-    is not yet available, so scope and classification are provisional.
-  kind: project
-- id: in-toto
-  name: in-toto
-  url: https://in-toto.io/
-  description: >-
-    A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
-    envelope that SLSA Provenance and other signed-statement formats ship in.
-  kind: project
-  relationships:
-  - kind: produces
-    target: in-toto-attestation
-    status: confirmed
-- id: oss-crs
-  name: OSS-CRS
-  url: https://openssf.org/projects/oss-crs/
-  openssf_url: https://openssf.org/projects/oss-crs/
-  description: >-
-    A framework for LLM-based bug-finding and bug-fixing systems applied to open source software,
-    exploring autonomous vulnerability discovery and remediation.
-  kind: project
-- id: slsa-github-generator
-  name: slsa-github-generator
-  url: https://github.com/slsa-framework/slsa-github-generator
-  description: >-
-    Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions.
-    Produces signed in-toto attestations bound to the builder identity per the SLSA build
-    track.
-  kind: project
-  relationships:
-  - kind: implements
-    target: slsa
-    status: confirmed
-  - kind: produces
-    target: slsa-provenance
-    status: confirmed
-- id: slsa-verifier
-  name: slsa-verifier
-  url: https://github.com/slsa-framework/slsa-verifier
-  description: >-
-    Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations,
-    validates the builder identity, and enforces SLSA build-level expectations on incoming
-    artefacts.
-  kind: project
-  relationships:
-  - kind: consumes
-    target: slsa-provenance
-    status: confirmed
-  - kind: implements
-    target: slsa
-    status: confirmed
+

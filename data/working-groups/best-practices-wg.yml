@@ -21,7 +21,7 @@
 working_group:
   id: best-practices-wg
   name: Best Practices for Open Source Developers
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/best-practices-for-open-source-developers/
   kind: working-group
 projects:
 - id: best-practices-badge

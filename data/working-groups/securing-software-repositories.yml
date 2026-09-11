@@ -24,6 +24,14 @@ working_group:
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
+- id: malicious-packages
+  name: Package Analysis
+  url: https://openssf.org/projects/package-analysis/
+  openssf_url: https://openssf.org/projects/package-analysis/
+  description: >-
+    Dynamically and statically analyzes packages from open source package registries to detect
+    malicious behavior such as credential exfiltration and backdoors.
+  kind: project
 - id: package-analysis
   name: Package Analysis
   url: https://openssf.org/projects/package-analysis/
@@ -32,3 +40,49 @@ projects:
     Dynamically and statically analyzes packages from open source package registries to detect
     malicious behavior such as credential exfiltration and backdoors.
   kind: project
+- id: rstuf
+  name: Repository Service for TUF (RSTUF)
+  url: https://repository-service-tuf.readthedocs.io/
+  openssf_url: https://openssf.org/projects/repository-service-for-tuf/
+  insights: >-
+    https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
+  description: >-
+    A drop-in implementation of The Update Framework (TUF) that protects software repositories
+    from compromise, rollback, and man-in-the-middle attacks.
+  kind: project
+  personas:
+  - id: developer
+    note: >-
+      Relies on RSTUF-backed repositories to confidently pull dependencies without fear of
+      targeted man-in-the-middle or rollback attacks.
+  - id: ospo
+    note: >-
+      Recommends RSTUF to ensure the organization's internally hosted artifact repositories
+      are resilient against compromise.
+  - id: security
+    note: >-
+      Implements The Update Framework (TUF) via RSTUF to secure software delivery architectures
+      and protect cryptographic root keys.
+  - id: devops
+    note: >-
+      Configures build pipelines to exclusively interact with RSTUF-secured repositories to
+      guarantee the integrity of fetched dependencies.
+  - id: package-manager
+    note: >-
+      Implements RSTUF to secure content downloads against tampering between the remote repository
+      and the client.
+  - id: executive
+    note: >-
+      Reduces enterprise liability by ensuring all software updates distributed to customers
+      are cryptographically verified and secure.
+  problems:
+  - id: artifact-signing
+    note: >-
+      Cryptographically signs repository metadata so clients can verify content has not been
+      tampered with in transit.
+  - id: build-provenance
+    note: >-
+      Protects the distribution chain against rollback and man-in-the-middle attacks between
+      repository and client.
+  similar_to: [sigstore]
+  compatible_with: [slsa]
