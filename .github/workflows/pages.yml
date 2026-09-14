@@ -29,7 +29,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
-          bundler-cache: true # runs bundle install and caches gems
+          bundler-cache: true  # runs bundle install and caches gems
 
       - name: Setup Pages
         id: pages
@@ -46,7 +46,7 @@ jobs:
           JEKYLL_ENV: production
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3 # defaults to ./_site
+        uses: actions/upload-pages-artifact@v3  # defaults to ./_site
 
   deploy:
     needs: build
