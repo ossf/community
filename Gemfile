@@ -23,6 +23,7 @@ end
 # Development and testing tools
 group :development, :test do
   gem "html-proofer", "~> 5.2"
+  gem "rubocop", "~> 1.81", require: false
 end
 
 # Platform-specific gems

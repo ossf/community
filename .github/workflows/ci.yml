@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+# Newer pushes to a PR supersede in-flight runs
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      # Builds the site (catalog_pages.rb fails on duplicate ids and
+      # unresolvable persona/problem/relationship targets) then link-checks it.
+      - run: make test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - run: pipx install yamllint
+
+      # RuboCop over theme/_plugins, yamllint over data/ and the workflows.
+      - run: make lint
+
+      # Workflow syntax and action refs. Not in `make lint` — it's a Go binary,
+      # not a gem, and these are the only files it checks.
+      - uses: docker://rhysd/actionlint:1.7.12
