@@ -16,7 +16,8 @@
 # `status:` on a relationship is `confirmed` or `needs-review` — needs-review
 # means we want the project's own maintainers to check the claim. If that's
 # you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# IS the edit we're hoping for. Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: securing-software-repositories

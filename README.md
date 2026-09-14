@@ -129,6 +129,7 @@ A `Makefile` wraps the common loops (Ruby ≥ 3.2 required):
 make deps     # bundle install (first time / after Gemfile changes)
 make start    # serve on http://localhost:4000
 make test     # jekyll build + htmlproofer (run this before opening a PR)
+make lint     # rubocop + yamllint (needs `pip3 install yamllint`)
 ```
 
 On a fresh macOS box, `make brand-new-env-installs` installs Ruby via Homebrew
@@ -220,8 +221,10 @@ place to state a fact the data already carries.
 
 `make test` runs the build and link-checks the output. The build itself fails on
 a duplicate id or an unresolvable reference, so most mistakes surface
-immediately. Run it before opening a pull request against
-[`ossf/community`](https://github.com/ossf/community).
+immediately. `make lint` covers formatting: yamllint over `data/` and the
+workflows, RuboCop over the plugins. Run both before opening a pull request
+against [`ossf/community`](https://github.com/ossf/community) — CI runs the
+same two targets on every PR.
 
 ## Accessibility
 

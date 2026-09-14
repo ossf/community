@@ -34,7 +34,7 @@ module OpenSSFCommunity
       groups = []
       hosted = []
 
-      (site.data[WG_DIR] || {}).sort.each do |slug, doc|
+      (site.data[WG_DIR] || {}).sort.each do |_slug, doc|
         next unless doc.is_a?(Hash)
 
         wg = doc["working_group"]
@@ -53,9 +53,9 @@ module OpenSSFCommunity
       publications += site.data.dig("definitions", "publications") || []
 
       site.data["catalog"] = {
-        "projects"       => projects.sort_by { |p| p["id"].to_s },
-        "publications"   => publications.sort_by { |p| p["id"].to_s },
-        "working_groups" => groups.sort_by { |g| g["id"].to_s },
+        "projects" => projects.sort_by { |p| p["id"].to_s },
+        "publications" => publications.sort_by { |p| p["id"].to_s },
+        "working_groups" => groups.sort_by { |g| g["id"].to_s }
       }
 
       uncategorized = hosted.count { |p| p["working_group"].nil? }
