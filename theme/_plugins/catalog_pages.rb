@@ -26,10 +26,10 @@ module OpenSSFCommunity
     # dir => [data path, layout name]. The layout name also gives the front
     # matter id key the layouts look up (`persona_id`, `project_id`, ...).
     TYPES = {
-      "personas"     => [%w[definitions personas], "persona"],
-      "problems"     => [%w[definitions problems], "problem"],
-      "projects"     => [%w[catalog projects],     "project"],
-      "publications" => [%w[catalog publications], "publication"],
+      "personas" => [%w[definitions personas], "persona"],
+      "problems" => [%w[definitions problems], "problem"],
+      "projects" => [%w[catalog projects],     "project"],
+      "publications" => [%w[catalog publications], "publication"]
     }.freeze
 
     def generate(site)
@@ -56,11 +56,11 @@ module OpenSSFCommunity
       page = Jekyll::PageWithoutAFile.new(site, site.source, dir, "#{id}.html")
       page.content = ""
       page.data.merge!(
-        "layout"        => layout,
-        "title"         => record["name"],
-        "permalink"     => "/#{dir}/#{id}/",
-        "#{layout}_id"  => id,
-        "description"   => description_for(layout, record, project_count)
+        "layout" => layout,
+        "title" => record["name"],
+        "permalink" => "/#{dir}/#{id}/",
+        "#{layout}_id" => id,
+        "description" => description_for(layout, record, project_count)
       )
       page
     end
@@ -80,7 +80,7 @@ module OpenSSFCommunity
           "#{name} — an OpenSSF project awaiting its persona and problem mapping."
         else
           "Which personas and problems #{name} addresses — a role-by-role and " \
-          "problem-by-problem breakdown of the OpenSSF project."
+            "problem-by-problem breakdown of the OpenSSF project."
         end
       when "publication"
         "What #{name} is and which OpenSSF projects produce, consume, or relate to it."
@@ -99,8 +99,10 @@ module OpenSSFCommunity
       records.each do |dir, list|
         ids = list.map { |r| r["id"] }
         dupes = ids.tally.select { |_, n| n > 1 }.keys
-        errors << "#{dir}: duplicate id(s) #{dupes.join(', ')} — the layouts' find pattern is " \
-                  "last-match-wins, so the later entry would silently shadow the earlier one" if dupes.any?
+        if dupes.any?
+          errors << "#{dir}: duplicate id(s) #{dupes.join(', ')} — the layouts' find pattern is " \
+                    "last-match-wins, so the later entry would silently shadow the earlier one"
+        end
         blank = list.reject { |r| r["id"] && r["name"] }
         errors << "#{dir}: #{blank.size} record(s) missing id or name" if blank.any?
       end
