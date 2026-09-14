@@ -1,4 +1,4 @@
-.PHONY: brand-new-env-installs deps start test
+.PHONY: brand-new-env-installs deps start test lint
 
 brand-new-env-installs:
 	@command -v brew >/dev/null || { echo "Homebrew not found. Install from https://brew.sh first."; exit 1; }
@@ -24,3 +24,12 @@ start: deps
 test: deps
 	bundle exec jekyll build
 	bundle exec htmlproofer ./_site --disable-external
+
+# yamllint is not a gem, so it isn't in the Gemfile. Use it from PATH if it's
+# there, otherwise as a module (how `pip install --user` leaves it).
+YAMLLINT := $(shell command -v yamllint 2>/dev/null || echo "python3 -m yamllint")
+
+lint: deps
+	bundle exec rubocop
+	@$(YAMLLINT) --version >/dev/null 2>&1 || { echo "yamllint not found. Install with: pip3 install yamllint"; exit 1; }
+	$(YAMLLINT) data/ .github/ _config.yml
