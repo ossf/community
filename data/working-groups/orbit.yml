@@ -33,6 +33,13 @@ projects:
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
   kind: project
+  relationships:
+  - kind: consumes
+    target: osps-baseline
+    status: needs-review
+    note: >-
+      Baseline requirements can be enforced as Minder policy profiles across an organization's
+      repositories.
   personas:
   - id: developer
     note: >-

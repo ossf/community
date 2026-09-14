@@ -32,3 +32,10 @@ projects:
     Dynamically and statically analyzes packages from open source package registries to detect
     malicious behavior such as credential exfiltration and backdoors.
   kind: project
+  relationships:
+  - kind: produces
+    target: osv-record
+    status: needs-review
+    note: >-
+      Detections feed the malicious-packages dataset, which publishes its advisories in OSV
+      format.

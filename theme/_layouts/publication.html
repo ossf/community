@@ -38,4 +38,26 @@ layout: default
   </p>
 </section>
 
+{%- comment -%}
+  security-insights only: which records publish a Security Insights file is
+  already stated once, by each record's own `insights:` link — so the list is
+  derived from that field, never authored as produces-edges (which would be a
+  second place to state the fact).
+{%- endcomment -%}
+{%- if publication.id == "security-insights" -%}
+{%- assign pool = site.data.catalog.projects | concat: site.data.catalog.publications -%}
+<section class="project-related">
+  <h2 class="project-related__heading">Published by</h2>
+  <p class="project-related__blurb">Catalog records shipping a Security Insights file, derived from each record's own insights link.</p>
+  <div class="tool-jumpnav project-related__links">
+    {%- for r in pool -%}
+      {%- if r.insights and r.id != publication.id -%}
+        {%- if r.kind == "publication" -%}{%- assign b = "/publications/" -%}{%- else -%}{%- assign b = "/projects/" -%}{%- endif -%}
+        <a href="{{ b | append: r.id | append: '/' | relative_url }}">{{ r.name }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
 {% include record-detail.html record=publication base="publications" %}
