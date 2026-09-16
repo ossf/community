@@ -128,7 +128,7 @@
 - id: mlsecops-paper
   name: Visualizing Secure MLOps-MLSecOps-A Practical Guide for Building Robust
     AIML Pipeline Security
-  aliases: [MLSECOPAPER]
+  aliases: [MLSECOPSPAPER]
   url: https://openssf.org/resources/visualizing-secure-mlops-mlsecops-a-practical-guide-for-building-robust-ai-ml-pipeline-security/
   description: >-
     This whitepaper introduces a practical, visual framework for
