@@ -229,7 +229,7 @@
   url: https://github.com/ossf/package-manager-best-practices/blob/main/published/npm.md#readme
   description: >-
     An all-inclusive document explaining the security
-    supply-chain  best practices when using npm's package manager.
+    supply-chain best practices when using npm's package manager.
   kind: publication
 - id: oss-cvd-guide
   name: Guide to Implementing a Coordinated Vulnerability Disclosure Process for
