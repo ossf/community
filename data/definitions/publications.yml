@@ -203,7 +203,7 @@
   description: >-
     As a software developer, before using open source software
     (OSS)  dependencies or tools, identify candidates and evaluate the
-    leading  ones against your needs
+    leading  ones against your needs.
   kind: publication
 - id: dev-sec-oss-guide
   name: Concise Guide for Developing More Secure Software
