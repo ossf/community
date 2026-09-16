@@ -279,7 +279,7 @@
   kind: publication
 - id: WitS
   name: What's in the SOSS
-  aliases: [ WitS]
+  aliases: [WitS]
   url: https://openssf.org/podcast/
   description: >-
     Get a taste for all ingredients that make up secure open
