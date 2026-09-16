@@ -252,7 +252,7 @@
   kind: publication
 - id: cyber-skills-framewk
   name: Cybersecurity Skills Framework
-  aliases: [CYBERSKIULLSFRAMEWK]
+  aliases: [CYBERSKILLSFRAMEWK]
   url: https://openssf.org/resources/cybersecurity-skills-framework/
   description: >-
     A free, customizable tool maps 14 core IT job families across three
