@@ -25,16 +25,13 @@ working_group:
   kind: working-group
 projects:
 - id: malicious-packages
-  name: Package Analysis
-  url: https://openssf.org/projects/package-analysis/
-  openssf_url: https://openssf.org/projects/package-analysis/
+  name: Malicious Packages
+  openssf_url: https://openssf.org/projects/malicious-packages/
   description: >-
-    Dynamically and statically analyzes packages from open source package registries to detect
-    malicious behavior such as credential exfiltration and backdoors.
+    An open source database of reports of malicious packages publshed on open source package repositories.
   kind: project
 - id: package-analysis
   name: Package Analysis
-  url: https://openssf.org/projects/package-analysis/
   openssf_url: https://openssf.org/projects/package-analysis/
   description: >-
     Dynamically and statically analyzes packages from open source package registries to detect
