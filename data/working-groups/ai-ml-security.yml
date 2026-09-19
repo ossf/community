@@ -21,12 +21,13 @@
 working_group:
   id: ai-ml-security
   name: AI/ML Security
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/ai-ml-security/
   kind: working-group
 projects:
 - id: model-signing
   name: OpenSSF Model Signing (OMS)
-  url: https://openssf.org/projects/model-signing/
+  url: https://github.com/ossf/model-signing-spec
+  openssf_url: https://openssf.org/projects/model-signing/
   description: >-
     A library and CLI for cryptographically signing and verifying machine learning models
     of any format or size, supporting multiple PKI backends including Sigstore, self-signed
@@ -59,11 +60,16 @@ projects:
       Attaches verifiable signatures to model artifacts, letting downstream users trace a
       model back to its origin.
   compatible_with: [sigstore]
+- id: oss-crs
+  name: OSS-CRS
+  url: https://oss-crs.openssf.org/
+  openssf_url: https://openssf.org/projects/oss-crs/
+  description: >-
+    A standard orchestration framework for building and running LLM-based autonomous bug-finding and bug-fixing systems (Cyber Reasoning Systems).
+  kind: project
 - id: secure-agentic-framework
   name: Secure Agentic Framework
-  url: >-
-    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  url: https://www.secureagenticframework.org/
   description: >-
-    An OSSF project approved by the TAC and currently in LF legal formation; public documentation
-    is not yet available, so scope and classification are provisional.
+    Map, assess, and mitigate threats across the entire agentic AI attack surface.
   kind: project

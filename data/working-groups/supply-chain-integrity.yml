@@ -24,6 +24,24 @@ working_group:
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
+- id: ampel
+  name: AMPEL (Amazing Multi-Purpose Policy Engine (and L))
+  url: https://github.com/carabiner-dev/ampel
+  description: >-
+    A lightweight supply chain policy engine designed to be embedded across the software development lifecycle to make sure that source code, tools and the build environment can be trusted by verifying unforgeable metadata captured in signed attestations.
+  kind: project
+- id: bomhort
+  name: BOMHort
+  url: https://docs.bomhort.dev/
+  description: >-
+    A standalone, Kubernetes-native SBOM visualization and governance platform. It ingests SPDX and CycloneDX SBOMs from S3-compatible storage, detects vulnerabilities via the OSV API, enforces license compliance policies, and applies VEX statements — all presented through an interactive dashboard with analytics.
+  kind: project
+- id: darnit
+  name: Darnit
+  url: https://github.com/darnitdevorg/darnit
+  description: >-
+    A pluggable compliance audit framework that helps projects conform to software engineering best practices. It provides infrastructure for running compliance audits, generating cryptographic attestations, and automating remediation workflows.
+  kind: project
 - id: gittuf
   name: gittuf
   url: https://github.com/gittuf/gittuf
@@ -170,7 +188,7 @@ projects:
   compatible_with: [rstuf]
 - id: zarf
   name: Zarf
-  url: https://openssf.org/projects/zarf/
+  url: https://zarf.dev/
   openssf_url: https://openssf.org/projects/zarf/
   description: >-
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained
