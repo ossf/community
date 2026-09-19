@@ -87,6 +87,228 @@
   url: https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases
   description: >-
     A machine-readable statement asserting whether a known vulnerability affects a given software
-    artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive
-    vuln signal.
+    artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive 
+    vuln signals.
+- id: openssf-education
+  name: OpenSSF Education Courses
+  aliases: [OSSF-EDU]
+  url: https://openssf.org/training/
+  description: >-
+    The Open Source Security Foundation (OpenSSF) has developed free
+    e-learning courses  via Linux Foundation Education that provide digital
+    badges on completion.
+  kind: publication
+- id: secure-coding-guide-python
+  name: Secure Coding Guide for Python
+  aliases: [PYTHONGUIDE]
+  url: https://best.openssf.org/Secure-Coding-Guide-for-Python/
+  description: >-
+    An initiative by the OpenSSF to provide new Python programmers a
+    resource to  study secure coding in CPython >= 3.9 with working code
+    examples.
+  kind: publication
+- id: risk-mgmt-sbom
+  name: Improving Risk Management Decisons with SBOM Data
+  aliases: [RMSBOM]
+  url: https://openssf.org/resources/improving-risk-management-decisions-with-sbom-data/
+  description: >-
+    Use this paper to turn SBOM information into clear, repeatable
+    decisions across  engineering, security, legal, and operations.
+  kind: publication
+- id: ai-assist-guide
+  name: Security-Focused Guide for AI Code Assistant Instructions
+  aliases: [AIASSISTGUIDE]
+  url: https://best.openssf.org/Security-Focused-Guide-for-AI-Code-Assistant-Instructions
+  description: >-
+    AI code assistants can significantly speed up development. However,
+    they need  guidance to produce secure and robust code. This guide explains
+    how to improve
+     the security of their results by creating custom prompts or custom instructions.
+  kind: publication
+- id: mlsecops-paper
+  name: Visualizing Secure MLOps-MLSecOps-A Practical Guide for Building Robust
+    AIML Pipeline Security
+  aliases: [MLSECOPSPAPER]
+  url: https://openssf.org/resources/visualizing-secure-mlops-mlsecops-a-practical-guide-for-building-robust-ai-ml-pipeline-security/
+  description: >-
+    This whitepaper introduces a practical, visual framework for
+    integrating security  across the machine learning lifecycle. Built for
+    practitioners, it draws on proven  DevSecOps strategies and adapts them for
+    AI/ML environments.
+  kind: publication
+- id: dev-cra-guide
+  name: Cyber Resilience Act (CRA) Brief Guide for OSS Developers
+  aliases: [DEVCRAGUIDE]
+  url: https://best.openssf.org/CRA-Brief-Guide-for-OSS-Developers
+  description: >-
+    This is a brief guide about basics of the CRA’s applicability for
+    those who develop open source software (OSS).
+  kind: publication
+- id: simple-comp-updates
+  name: Simplifying Software Component Updates
+  aliases: [SIMPCOMPGUIDE]
+  url: https://best.openssf.org/Simplifying-Software-Component-Updates
+  description: >-
+    This document guides component creators and component users to
+    simplify  updates and help avoid backward incompatibility problems when
+    updating.
+  kind: publication
+- id: regex-guide
+  name: Correctly Using Regular Expressions for Secure Input Validation
+  aliases: [USEREGEXGUIDE]
+  url: https://best.openssf.org/Correctly-Using-Regular-Expressions
+  description: >-
+    Regular expressions (aka regexes) can be a great way to validate
+    input against  specialized patterns. They’re widely available, widely
+    understood, flexible,  and efficient. However, they must be used correctly.
+  kind: publication
+- id: comp-hard-guide
+  name: Compiler Options Hardening Guide for C and C++
+  aliases: [COMPHARDGUIDE]
+  url: https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++
+  description: >-
+    This document is a guide for compiler and linker options that
+    contribute to delivering reliable and secure code using native (or cross) toolchains for C and C++. 
+  kind: publication
+- id: principles-reposec
+  name: Principles for Package Repository Security
+  aliases: [REPOSECPRINCIPLES]
+  url: https://repos.openssf.org/principles-for-package-repository-security
+  description: >-
+    A taxonomy of package repositories and a set of principles for their security
+    capabilities. This is intended to offer a set of best practices that package 
+    repositories should strive to adhere to.
+  kind: publication
+- id: oss-cna-guide
+  name: Guide to becoming a CVE Numbering Authority as an Open Source project
+  aliases: [OSSCNAGUIDE]
+  url: https://github.com/ossf/wg-vulnerability-disclosures/blob/main/docs/guides/becoming-a-cna-as-an-open-source-org-or-project.md
+  description: >-
+    A guide was for Open Source organizations and projects that are
+    interested in  becoming a CNA and managing their own CVEs.
+  kind: publication
+- id: scm-best-practices
+  name: Source Code Management Platform Configuration Best Practices
+  aliases: [SCMBPGUIDE]
+  url: https://best.openssf.org/SCM-BestPractices/
+  description: >-
+    Best practices for securing Source Code Manangement platforms, 
+    covering topics that include user authentication, access
+    control,  permissions, monitoring, and logging. "
+  kind: publication
+- id: eval-oss-guide
+  name: Concise Guide for Evaluating Open Source Software
+  aliases: [EVALOSSGUIDE]
+  url: https://best.openssf.org/Concise-Guide-for-Evaluating-Open-Source-Software
+  description: >-
+    As a software developer, before using open source software
+    (OSS)  dependencies or tools, identify candidates and evaluate the
+    leading  ones against your needs.
+  kind: publication
+- id: dev-sec-oss-guide
+  name: Concise Guide for Developing More Secure Software
+  aliases: [DEVSECOSSGUIDE]
+  url: https://best.openssf.org/Concise-Guide-for-Developing-More-Secure-Software
+  description: >-
+    A concise guide for all software developers for secure
+    software  development, building, and distribution.
+  kind: publication
+- id: finder-oss-cvd-guide
+  name: Guidance for Security Researchers to Coordinate Vulnerability Disclosures
+    with Open Source Software Projects
+  aliases: [FINDEROSSCVEGUIDE]
+  url: https://github.com/ossf/oss-vulnerability-guide/blob/main/finder-guide.md#readme
+  description: >-
+    This guide is intended to help security researchers (aka “Finders”)
+     engage with open source software (OSS) project maintainers to kick 
+     off and participate in the coordinated vulnerability response process.
+  kind: publication
+- id: npm-bp-guide
+  name: npm Best Practices Guide
+  aliases: [NPMBPGUIDE]
+  url: https://github.com/ossf/package-manager-best-practices/blob/main/published/npm.md#readme
+  description: >-
+    An all-inclusive document explaining the security
+    supply-chain best practices when using npm's package manager.
+  kind: publication
+- id: oss-cvd-guide
+  name: Guide to Implementing a Coordinated Vulnerability Disclosure Process for
+    Open Source Projects
+  aliases: [OSSCVDGUIDE]
+  url: https://github.com/ossf/oss-vulnerability-guide/blob/main/maintainer-guide.md#readme
+  description: >-
+    This guide is intended to help open source project maintainers create 
+    and maintain a coordinated vulnerability response process.
+  kind: publication
+- id: ossf-tech-talks
+  name: OpenSSF Tech Talks
+  aliases: [OSSFTECHTALKS]
+  url: https://openssf.org/resources/tech-talks/
+  description: >-
+    OpenSSF Tech Talks are educational, community-centric technical
+    webinars  deep-diving into the projects and initiatives that safeguard the
+    open  source ecosystem. Our primary mission is to foster, connect, and
+    grow  a collaborative, security-focused community.
+  kind: publication
+- id: cyber-skills-framewk
+  name: Cybersecurity Skills Framework
+  aliases: [CYBERSKILLSFRAMEWK]
+  url: https://openssf.org/resources/cybersecurity-skills-framework/
+  description: >-
+    A free, customizable tool maps 14 core IT job families across three
+    skill l evels, making it easy to identify gaps, prioritize training, and
+    build  real-world security capacity—broadly applicable across all tech
+    environments—open source, proprietary, or anything in between.
+  kind: publication
+- id: bp-for-sft-dev
+  name: Best Practices for Software Developers
+  aliases: [BP4SFTDEV]
+  url: https://best.openssf.org/developers
+  description: >-
+    Resources from the OpenSSF to help developers secure their software.
+  kind: publication
+- id: eucra-resources
+  name: EU Cyber Resilience Act (CRA) Resources
+  aliases: [EUCRARESOURCE]
+  url: https://openssf.org/public-policy/eu-cyber-resilience-act/
+  description: >-
+    The CRA intends to address threats and vulnerabilities by
+    establishing  standardized frameworks for cybersecurity requirements as part
+    of a wider  set of European product legislation. It regulates so-called
+    “products with digital elements."
+  kind: publication
+- id: WitS
+  name: What's in the SOSS
+  aliases: [WitS]
+  url: https://openssf.org/podcast/
+  description: >-
+    Get a taste for all ingredients that make up secure open
+    source software (SOSS) and explore the latest trends at the intersection 
+    of AI and security, vulnerability management, and threat assessments.  
+    Join the sharpest minds in security as they dig into challenges 
+    and opportunities that create a recipe for success in making software more secure.
+  kind: publication
+- id: ossf-news
+  name: OpenSSF Newsletter
+  aliases: [OSSFNEWS]
+  url: https://openssf.org/newsletter/
+  description: >-
+    Stay in the loop with all the latest updates and events within 
+    our community. We invite you to join our newsletter mailing list, 
+    your go-to source for all the essential information about OpenSSF.
+  kind: publication
+- id: ossf-research-reports
+  name: Ressearch & Reports
+  aliases: [OSSFRESEARCH]
+  url: https://openssf.org/resources/publications/
+  description: >-
+    Research reports sponsored by the OpenSSF on assorted OSS security topics.
+  kind: publication
+- id: ossf-case-studies
+  name: Case Studies
+  aliases: [OSSFCASESTUDIES]
+  url: https://openssf.org/case-studies/
+  description: >-
+    Mamber case studies demonstrating the value they have recieving in
+    deploying  OpenSSF projects and practices.
   kind: publication
