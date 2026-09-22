@@ -1,0 +1,1 @@
+These policies copied from [mindersec/minder-rules-and-profiles at commit 9af84c9c4e7599dde73ef07a5c6ce8c4d6dee003](https://github.com/mindersec/minder-rules-and-profiles/tree/9af84c9c4e7599dde73ef07a5c6ce8c4d6dee003)
