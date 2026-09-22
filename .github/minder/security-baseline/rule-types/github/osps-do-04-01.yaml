@@ -13,13 +13,13 @@ description: |
   a SUPPORT.md file present in the repo root, or a SUPPORT.eox file
   is present in the project.
 guidance: |
-  Source code must have a “Support” header in the README, a SUPPORT.md 
-  file present in the repo root, or a SUPPORT.eox file in the OpenEOX format 
-  describing the scope and duration of support for the project’s released 
+  Source code must have a “Support” header in the README, a SUPPORT.md
+  file present in the repo root, or a SUPPORT.eox file in the OpenEOX format
+  describing the scope and duration of support for the project’s released
   software assets.
 def:
   in_entity: repository
-  rule_schema: { }
+  rule_schema: {}
   ingest:
     type: git
   eval:

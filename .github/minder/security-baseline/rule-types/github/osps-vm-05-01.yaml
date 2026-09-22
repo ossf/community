@@ -10,9 +10,9 @@ severity:
 context:
   provider: github
 description: |
-  This rule ensures that the repository provides a clear process and contact information 
-  for reporting vulnerabilities. 
-  It checks for the presence of a SECURITY.md file containing relevant reporting 
+  This rule ensures that the repository provides a clear process and contact information
+  for reporting vulnerabilities.
+  It checks for the presence of a SECURITY.md file containing relevant reporting
   details or verifies if GitHub's private vulnerability reporting feature is enabled.
 guidance: |
   To address this issue:
