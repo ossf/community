@@ -1,0 +1,22 @@
+# The workflows pin actions to commit SHAs (OpenSSF Scorecard's
+# Pinned-Dependencies check). A pin with no updater is a frozen dependency,
+# so this is what keeps them current: dependabot reads the `# vX.Y.Z` comment
+# beside each SHA to know what it's looking at.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # Gemfile / Gemfile.lock: Jekyll, the plugins, and the lint gems.
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      gems:
+        patterns: ["*"]

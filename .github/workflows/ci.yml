@@ -17,9 +17,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@e8944e80fb94b20106697132f8c20c665fab29e9  # v1.325.0
         with:
           ruby-version: "3.3"
           bundler-cache: true
@@ -31,9 +33,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
 
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@e8944e80fb94b20106697132f8c20c665fab29e9  # v1.325.0
         with:
           ruby-version: "3.3"
           bundler-cache: true
@@ -45,4 +49,4 @@ jobs:
 
       # Workflow syntax and action refs. Not in `make lint` — it's a Go binary,
       # not a gem, and these are the only files it checks.
-      - uses: docker://rhysd/actionlint:1.7.12
+      - uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667  # 1.7.12
