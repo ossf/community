@@ -142,7 +142,11 @@ projects:
     note: >-
       Joins vulnerability data to the dependency graph to reveal the blast radius of a newly
       disclosed flaw.
+<<<<<<< HEAD
   compatible_with: [protobom]
+=======
+  compatible_with: [protobom, openvex]
+>>>>>>> 61a34d7 (Fix some cross-references)
 - id: slsa
   name: SLSA
   url: https://slsa.dev/

@@ -52,9 +52,17 @@
       it.
 # UNRESOLVED — is OSV one publication or two?
 #
+<<<<<<< HEAD
 # This record and the `osv-schema` record in
 # data/working-groups/vulnerability-disclosures.yml (also `kind: publication`)
 # share the same url (https://ossf.github.io/osv-schema/).
+=======
+# This record and the `openvex` record in
+# data/working-groups/vulnerability-disclosures.yml (also `kind: publication`
+# since the 2026 consolidation) share the same url
+# (https://ossf.github.io/osv-schema/), joined by the `osv-record extends
+# openvex` edge below.
+>>>>>>> 61a34d7 (Fix some cross-references)
 #
 # The pair looks like it was imported without anyone deciding what OSV is here.
 # Both being publications, the likely resolution is merging them into one
@@ -78,8 +86,13 @@
   kind: publication
   relationships:
   - kind: extends
+<<<<<<< HEAD
     target: osv-schema
     status: needs-review
+=======
+    target: openvex
+    status: confirmed
+>>>>>>> 61a34d7 (Fix some cross-references)
     note: >-
       The artifact (the record format itself) is the concrete instance of what the OSV Schema
       project specifies. Authored against `osv-schema`, which replaced `osv-openvex` in the

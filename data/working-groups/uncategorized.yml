@@ -278,3 +278,10 @@ projects:
       downstream.
   similar_to: [rstuf]
   compatible_with: [slsa, openbao]
+- id: gemara-whitepaper
+  name: Gemara Whitepaper
+  url: https://openssf.org/resources/gemara-a-governance-risk-and-compliance-engineering-model-for-automated-risk-assessment/
+  description: >-
+    A comprehensive whitepaper detailing the Gemara project, its architecture, and its approach to secure software supply chain management.
+  kind: publication
+  personas: []
