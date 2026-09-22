@@ -20,9 +20,9 @@ jobs:
     steps:
     # TODO: enable pinning.
     - name: Checkout repo
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
     - name: Apply Minder Config
-      uses: mindersec/minder-action@36984c41ce733c181ce7a5cf91256075799420ea # v1.1.2
+      uses: mindersec/minder-action@36984c41ce733c181ce7a5cf91256075799420ea  # v1.1.2
       with:
         project: openssf-community
         # Apply all the policies in the minder directory, which should be synced
