@@ -6,7 +6,7 @@ tests:
       type: repository
       entity:
         owner: "mindersec"
-        name: "minder"s
+        name: "minder"
     expect: "pass"
     http:
       status: 200

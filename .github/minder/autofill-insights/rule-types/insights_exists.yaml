@@ -152,8 +152,8 @@ def:
 
         For more information, see https://security-insights.openssf.org/.
       contents:
-      - path: .github/security-insights.yml
-        action: replace
-        content: |
-          # For more information on the Security Insights file, see https://security-insights.openssf.org/
-          {{.EvalResultOutput.content}}
+        - path: .github/security-insights.yml
+          action: replace
+          content: |
+            # For more information on the Security Insights file, see https://security-insights.openssf.org/
+            {{.EvalResultOutput.content}}
