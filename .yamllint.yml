@@ -1,0 +1,18 @@
+# Style gate for the hand-edited YAML in data/ and .github/.
+# Semantics are the build's job: theme/_plugins/catalog_pages.rb fails on
+# duplicate ids and unresolvable references. This only keeps the formatting
+# consistent for the project reps who PR against data/working-groups/.
+extends: default
+
+rules:
+  # Record descriptions and notes are prose; wrapping them to 80 would mean
+  # reflowing paragraphs on every edit.
+  line-length: disable
+  # House style: sequences sit at their parent key's column.
+  indentation:
+    indent-sequences: consistent
+  # These are Jekyll data files, not documents on a stream.
+  document-start: disable
+  truthy:
+    # GitHub Actions' `on:` key.
+    allowed-values: ["true", "false", "on"]

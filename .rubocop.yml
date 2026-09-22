@@ -1,0 +1,21 @@
+# Lints the Jekyll plugins. The layouts and data are covered by `make test`;
+# this is the only hand-written Ruby in the repo.
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Include:
+    - "theme/_plugins/**/*.rb"
+
+# House style, and what every file here already uses.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Each plugin opens with a header comment explaining what it does; a second
+# one directly above the module would just repeat it.
+Style/Documentation:
+  Enabled: false
+
+# catalog_pages.rb's validator is one long linear list of guards. Splitting it
+# to satisfy a length metric would scatter the checks without simplifying them.
+Metrics:
+  Enabled: false
