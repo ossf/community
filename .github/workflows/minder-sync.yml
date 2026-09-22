@@ -1,0 +1,25 @@
+name: Sync Minder Policies and Profiles
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - .github/workflows/minder-sync.yml
+  workflow_dispatch:
+    # Allow manual runs
+  schedule:
+    - cron: "0 8 * * 1" # Run every Monday at 8 AM UTC
+
+jobs:
+  sync-policies:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Needs write access to a branch to create PRs.
+      pull-requests: write
+    steps:
+      - name: Sync catalog from mindersec/minder-rules-and-profiles
+        uses: custcodian/sync-catalog@v1
+        with:
+          catalog_repo: mindersec/minder-rules-and-profiles
+          policy_dirs: autofill-insights,security-baseline
+          target_dir: .github/minder

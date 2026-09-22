@@ -1,0 +1,30 @@
+name: Apply Minder Profiles on Update
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - .github/minder/**
+  # Allow to run manually if needed.
+  workflow_dispatch:
+
+permissions:
+  # id-token: write is needed to fetch a GitHub Actions token for other services
+  id-token: write
+  # contents: read is needed to checkout the current repo
+  contents: read
+
+jobs:
+  minder-config:
+    runs-on: ubuntu-latest
+    steps:
+    # TODO: enable pinning.
+    - name: Checkout repo
+      uses: actions/checkout@v7
+    - name: Apply Minder Config
+      uses: mindersec/minder-action@v1
+      with:
+        project: openssf-community
+        # Apply all the policies in the minder directory, which should be synced
+        # from other sources by the `custcodian-sync.yaml` workflow.
+        directory: .github/minder
