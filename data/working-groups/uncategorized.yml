@@ -36,6 +36,17 @@ projects:
     Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
     and SBOM analysis — fetching, merging, and manipulating SBOMs across SPDX and CycloneDX.
   kind: project
+  relationships:
+  - kind: consumes
+    target: sbom
+    status: needs-review
+    note: >-
+      Fetches and merges existing SPDX and CycloneDX documents from registries and repositories.
+  - kind: produces
+    target: sbom
+    status: needs-review
+    note: >-
+      Emits the merged, translated, or otherwise manipulated SBOMs it assembles.
   personas:
   - id: developer
     note: >-
@@ -86,6 +97,18 @@ projects:
     A shared library and toolset for generating, translating, and consuming Software Bills
     of Materials in standard formats such as SPDX and CycloneDX.
   kind: project
+  relationships:
+  - kind: produces
+    target: sbom
+    status: needs-review
+    note: >-
+      Generates and translates SBOM documents in SPDX and CycloneDX formats.
+  - kind: consumes
+    target: sbom
+    status: needs-review
+    note: >-
+      Reads standard-format SBOMs into its protobuf representation for other tooling to work
+      with.
   personas:
   - id: developer
     note: >-
@@ -116,7 +139,7 @@ projects:
     note: >-
       Generates and translates SBOMs in standard formats so the component inventory travels
       with the artefact.
-  compatible_with: [guac, osv-openvex]
+  compatible_with: [guac]
 - id: sbomit
   name: SBOMit
   url: https://sbomit.dev/
@@ -126,6 +149,17 @@ projects:
     Bills of Materials, cryptographically validating the steps performed across the software
     supply chain.
   kind: project
+  relationships:
+  - kind: consumes
+    target: in-toto-attestation
+    status: needs-review
+    note: >-
+      Embeds in-toto and Witness attestations into the SBOMs it processes.
+  - kind: produces
+    target: sbom
+    status: needs-review
+    note: >-
+      Outputs SBOMs carrying embedded attestations for each supply-chain step.
   personas:
   - id: developer
     note: >-

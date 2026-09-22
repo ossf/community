@@ -64,6 +64,14 @@ projects:
     note: >-
       Standardizes how risk and control evidence are expressed so posture can be assessed
       automatically and compared across projects.
+- id: gemara-whitepaper
+  name: Gemara Whitepaper
+  url: https://openssf.org/wp-content/uploads/2026/03/04_OpenSSF_Gemara-Project_Whitepaper.pdf
+  description: >-
+    "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
+    the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
+    and how they interoperate.
+  kind: publication
 - id: minder
   name: Minder
   url: https://github.com/mindersec/minder
@@ -73,6 +81,13 @@ projects:
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
   kind: project
+  relationships:
+  - kind: consumes
+    target: osps-baseline
+    status: needs-review
+    note: >-
+      Baseline requirements can be enforced as Minder policy profiles across an organization's
+      repositories.
   personas:
   - id: developer
     note: >-
