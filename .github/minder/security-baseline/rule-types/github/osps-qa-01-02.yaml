@@ -9,8 +9,8 @@ severity:
 context:
   provider: github
 description: |
-  Ensure that the project's change history is publicly readable and 
-  cannot be overwritten, maintaining transparency and trust in the 
+  Ensure that the project's change history is publicly readable and
+  cannot be overwritten, maintaining transparency and trust in the
   development process. This helps maintain a complete and accurate history of all
   changes made to the codebase.
 guidance: |
