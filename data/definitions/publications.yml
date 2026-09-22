@@ -210,7 +210,7 @@
   url: https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-use-cases
   description: >-
     A machine-readable statement asserting whether a known vulnerability affects a given software
-    artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive 
+    artifact (and under what conditions). Pairs with SBOM and OSV records to reduce false-positive
     vuln signals.
   kind: publication
 - id: openssf-education
@@ -292,7 +292,7 @@
   url: https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++
   description: >-
     This document is a guide for compiler and linker options that
-    contribute to delivering reliable and secure code using native (or cross) toolchains for C and C++. 
+    contribute to delivering reliable and secure code using native (or cross) toolchains for C and C++.
   kind: publication
 - id: principles-reposec
   name: Principles for Package Repository Security
@@ -300,7 +300,7 @@
   url: https://repos.openssf.org/principles-for-package-repository-security
   description: >-
     A taxonomy of package repositories and a set of principles for their security
-    capabilities. This is intended to offer a set of best practices that package 
+    capabilities. This is intended to offer a set of best practices that package
     repositories should strive to adhere to.
   kind: publication
 - id: oss-cna-guide
@@ -316,7 +316,7 @@
   aliases: [SCMBPGUIDE]
   url: https://best.openssf.org/SCM-BestPractices/
   description: >-
-    Best practices for securing Source Code Manangement platforms, 
+    Best practices for securing Source Code Manangement platforms,
     covering topics that include user authentication, access
     control,  permissions, monitoring, and logging. "
   kind: publication
@@ -344,7 +344,7 @@
   url: https://github.com/ossf/oss-vulnerability-guide/blob/main/finder-guide.md#readme
   description: >-
     This guide is intended to help security researchers (aka “Finders”)
-     engage with open source software (OSS) project maintainers to kick 
+     engage with open source software (OSS) project maintainers to kick
      off and participate in the coordinated vulnerability response process.
   kind: publication
 - id: npm-bp-guide
@@ -361,7 +361,7 @@
   aliases: [OSSCVDGUIDE]
   url: https://github.com/ossf/oss-vulnerability-guide/blob/main/maintainer-guide.md#readme
   description: >-
-    This guide is intended to help open source project maintainers create 
+    This guide is intended to help open source project maintainers create
     and maintain a coordinated vulnerability response process.
   kind: publication
 - id: ossf-tech-talks
@@ -407,9 +407,9 @@
   url: https://openssf.org/podcast/
   description: >-
     Get a taste for all ingredients that make up secure open
-    source software (SOSS) and explore the latest trends at the intersection 
-    of AI and security, vulnerability management, and threat assessments.  
-    Join the sharpest minds in security as they dig into challenges 
+    source software (SOSS) and explore the latest trends at the intersection
+    of AI and security, vulnerability management, and threat assessments.
+    Join the sharpest minds in security as they dig into challenges
     and opportunities that create a recipe for success in making software more secure.
   kind: publication
 - id: ossf-news
@@ -417,8 +417,8 @@
   aliases: [OSSFNEWS]
   url: https://openssf.org/newsletter/
   description: >-
-    Stay in the loop with all the latest updates and events within 
-    our community. We invite you to join our newsletter mailing list, 
+    Stay in the loop with all the latest updates and events within
+    our community. We invite you to join our newsletter mailing list,
     your go-to source for all the essential information about OpenSSF.
   kind: publication
 - id: ossf-research-reports

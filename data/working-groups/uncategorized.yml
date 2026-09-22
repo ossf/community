@@ -278,4 +278,3 @@ projects:
       downstream.
   similar_to: [rstuf]
   compatible_with: [slsa, openbao]
-
