@@ -6,7 +6,7 @@ on:
     paths:
     - .github/workflows/minder-sync.yml
   workflow_dispatch:
-    # Allow manual runs
+  # Allow manual runs
   schedule:
     - cron: "0 8 * * 1" # Run every Monday at 8 AM UTC
 
