@@ -26,16 +26,19 @@
   kind: publication
 # UNRESOLVED — is OSV one publication or two?
 #
-# This record and the `osv-openvex` record in
-# data/working-groups/vulnerability-disclosures.yml (also `kind: publication`
-# since the 2026 consolidation) share the same url
-# (https://ossf.github.io/osv-schema/), joined by the `osv-record extends
-# osv-openvex` edge below.
+# This record and the `osv-schema` record in
+# data/working-groups/vulnerability-disclosures.yml (also `kind: publication`)
+# share the same url (https://ossf.github.io/osv-schema/).
 #
 # The pair looks like it was imported without anyone deciding what OSV is here.
-# Now that both are publications, the likely resolution is merging them into
-# one record (or giving them distinct urls and a real distinction). Left as-is
+# Both being publications, the likely resolution is merging them into one
+# record (or giving them distinct urls and a real distinction). Left as-is
 # deliberately — this is a question for the OSV folks, not a cleanup.
+#
+# This record carried an `extends` edge pointing at `osv-openvex` until that
+# record was split into `openvex` and `osv-schema`. The edge is dropped here
+# rather than guessed at — re-authoring it is relationship-mapping work, not
+# part of unbreaking the build.
 #
 # The `description` below is also truncated mid-sentence; it arrived that way and
 # renders that way on /artifacts/osv-record/. Rewrite it when the above is settled.
@@ -48,13 +51,6 @@
     GHSA, PyPA, Go vuln DB) and consumed by vuln scanners and SCA tools. Distinct from the
     `osv-schema` project, which is the authoring effort defining the f…
   kind: publication
-  relationships:
-  - kind: extends
-    target: osv-openvex
-    status: confirmed
-    note: >-
-      The artifact (the record format itself) is the concrete instance of what the OSV Schema
-      project specifies.
 - id: sarif
   name: SARIF
   aliases: [Static Analysis Results Interchange Format]

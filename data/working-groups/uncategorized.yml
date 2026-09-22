@@ -116,7 +116,7 @@ projects:
     note: >-
       Generates and translates SBOMs in standard formats so the component inventory travels
       with the artefact.
-  compatible_with: [guac, osv-openvex]
+  compatible_with: [guac]
 - id: sbomit
   name: SBOMit
   url: https://sbomit.dev/

@@ -26,12 +26,14 @@ working_group:
 projects:
 - id: malicious-packages
   name: Malicious Packages
+  url: https://github.com/ossf/malicious-packages
   openssf_url: https://openssf.org/projects/malicious-packages/
   description: >-
     An open source database of reports of malicious packages publshed on open source package repositories.
   kind: project
 - id: package-analysis
   name: Package Analysis
+  url: https://github.com/ossf/package-analysis
   openssf_url: https://openssf.org/projects/package-analysis/
   description: >-
     Dynamically and statically analyzes packages from open source package registries to detect
