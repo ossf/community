@@ -18,7 +18,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Sync catalog from mindersec/minder-rules-and-profiles
-        uses: custcodian/sync-catalog@v1
+        uses: custcodian/sync-catalog@2102f30831fb4877309e75c6a0b1ce9320c57df1 # v1.0.17
         with:
           catalog_repo: mindersec/minder-rules-and-profiles
           policy_dirs: autofill-insights,security-baseline
