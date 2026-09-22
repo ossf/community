@@ -1,0 +1,43 @@
+# For more information on the Security Insights file, see https://security-insights.openssf.org/
+header:
+  last-reviewed: "2026-09-22"
+  last-updated: "2026-09-22"
+  schema-version: 2.2.0
+  url: https://raw.githubusercontent.com/ossf/community/main/.github/security-insights.yml
+project:
+  administrators:
+  - name: GeauxJD
+    primary: false
+  - name: justaugustus
+    primary: false
+  - name: steiza
+    primary: false
+  name: community
+  repositories:
+  - comment: null
+    name: community
+    url: https://github.com/ossf/community
+  vulnerability-reporting:
+    bug-bounty-available: false
+    policy: https://github.com/ossf/community/blob/main/SECURITY.md
+    reports-accepted: true
+repository:
+  accepts-automated-change-request: true
+  accepts-change-request: true
+  core-team:
+  - name: GeauxJD
+    primary: false
+  - name: justaugustus
+    primary: false
+  - name: steiza
+    primary: false
+  documentation:
+    security-policy: https://github.com/ossf/community/blob/main/SECURITY.md
+  license:
+    expression: CC-BY-4.0
+    url: https://api.github.com/licenses/cc-by-4.0
+  security:
+    assessments: {}
+  status: active
+  url: https://github.com/ossf/community
+
