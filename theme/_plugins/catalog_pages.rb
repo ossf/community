@@ -35,7 +35,7 @@ module OpenSSFCommunity
     def generate(site)
       records = TYPES.transform_values { |(path, _)| site.data.dig(*path) || [] }
 
-      validate!(records)
+      validate!(records, site.data.dig("catalog", "awaiting_insights") || [])
 
       project_count = records["projects"].size
 
@@ -93,7 +93,7 @@ module OpenSSFCommunity
     # dangling persona/problem reference quietly renders a link to a page that
     # does not exist, and a typo'd threat/enum id or relationship target just
     # drops the fact from every derived view.
-    def validate!(records)
+    def validate!(records, awaiting)
       errors = []
 
       records.each do |dir, list|
@@ -105,12 +105,29 @@ module OpenSSFCommunity
         errors << "#{dir}: #{blank.size} record(s) missing id or name" if blank.any?
       end
 
+      # Hidden records are still declared records: their ids must stay unique
+      # and may still be relationship targets (the fact is true, the page just
+      # isn't rendered yet).
+      hosted = records["projects"] + records["publications"] + awaiting
+      dupes = hosted.map { |r| r["id"] }.tally.select { |_, n| n > 1 }.keys
+      errors << "duplicate id(s) across rendered and awaiting records: #{dupes.join(', ')}" if dupes.any?
+
+      # Two records pointing at one Security Insights file would be one project
+      # stated twice. A record with no `insights:` at all is only a warning —
+      # it is kept, hidden, until it has a repository.
+      targets = hosted.map { |r| r["insights"] }.compact
+      dupes = targets.tally.select { |_, n| n > 1 }.keys
+      errors << "duplicate insights: target(s) #{dupes.join(', ')}" if dupes.any?
+      awaiting.reject { |r| r["insights"] }.each do |r|
+        Jekyll.logger.warn "Catalog:", "#{r['id']} has no insights: target and will not be rendered"
+      end
+
       # Every id a record references must resolve — persona/problem links,
       # relationship kinds and targets, related records, and the status values
       # maintainers are asked to flip.
       persona_ids = records["personas"].map { |r| r["id"] }
       problem_ids = records["problems"].map { |r| r["id"] }
-      record_ids  = (records["projects"] + records["publications"]).map { |r| r["id"] }
+      record_ids  = hosted.map { |r| r["id"] }
       rel_kinds   = %w[implements produces consumes extends superseded-by]
       statuses    = %w[confirmed needs-review]
 

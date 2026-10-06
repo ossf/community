@@ -89,6 +89,13 @@
   render the union of (a) ids this record lists and (b) records that list this
   one. Build a delimited string, dedupe, drop self.
 {%- endcomment -%}
+{%- comment -%}
+  pool_ids: the records that actually have a page. An explicit id may name a
+  record hidden until its Security Insights file lands; skip those so the
+  section never renders a heading with no links.
+{%- endcomment -%}
+{%- assign pool_ids = "," -%}
+{%- for cand in pool -%}{%- assign pool_ids = pool_ids | append: cand.id | append: "," -%}{%- endfor -%}
 {%- assign rel_kinds = "similar_to,compatible_with" | split: "," -%}
 {%- for kind in rel_kinds -%}
   {%- assign acc = "," -%}
@@ -97,7 +104,9 @@
   {%- if explicit -%}
     {%- for rid in explicit -%}
       {%- assign probe = rid | prepend: "," | append: "," -%}
-      {%- unless acc contains probe -%}{%- assign acc = acc | append: rid | append: "," -%}{%- assign rel_count = rel_count | plus: 1 -%}{%- endunless -%}
+      {%- if pool_ids contains probe -%}
+        {%- unless acc contains probe -%}{%- assign acc = acc | append: rid | append: "," -%}{%- assign rel_count = rel_count | plus: 1 -%}{%- endunless -%}
+      {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
   {%- for cand in pool -%}

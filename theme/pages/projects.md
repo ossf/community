@@ -22,3 +22,24 @@ and complementary projects.
     </a>
   {% endfor %}
 </div>
+
+{%- assign awaiting = site.data.catalog.awaiting_insights -%}
+{%- if awaiting and awaiting != empty %}
+
+## Awaiting Security Insights
+
+A project's name, homepage and repositories on this site come from its own
+[Security Insights](https://github.com/ossf/security-insights-spec) file, so a
+project is listed only once it publishes a valid one. These
+{{ awaiting | size }} records are mapped to personas and problems already and
+will appear here as soon as their file lands.
+
+<ul class="tool-index-awaiting">
+  {%- for rec in awaiting %}
+  <li>
+    {%- if rec.url -%}<a href="{{ rec.url }}" target="_blank" rel="noopener noreferrer"><code>{{ rec.id }}</code></a>{%- else -%}<code>{{ rec.id }}</code>{%- endif %}
+    <span class="tool-index-awaiting__reason">{{ rec.reason }}</span>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}
