@@ -20,14 +20,15 @@
 #   sigstore, openbao, rstuf   established projects the TAC list does not place.
 #   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
 #
-# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
-# are NOT stated here. They come from your repository's Security Insights file
-# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
-# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
-# the standard paths. A project with no valid v2 file keeps its entry but is not
-# rendered until one lands; /projects/ lists those. The build reads a committed
-# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
-# `description` stays here. Persona and problem ids come from data/definitions/,
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage and repositories enrich
+# the record and the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
 # and the build fails on any id it can't resolve. `status:` on a relationship is
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
@@ -36,6 +37,7 @@
 
 projects:
 - id: gemara
+  name: Gemara
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
   openssf_url: https://openssf.org/projects/gemara/
   description: >-
@@ -74,6 +76,7 @@ projects:
       Standardizes how risk and control evidence are expressed so posture can be assessed
       automatically and compared across projects.
 - id: gemara-whitepaper
+  name: Gemara Whitepaper
   # no repository; awaiting Security Insights
   description: >-
     "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
@@ -81,6 +84,7 @@ projects:
     and how they interoperate.
   kind: publication
 - id: openbao
+  name: OpenBao
   insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/openbao/
   description: >-
@@ -120,6 +124,7 @@ projects:
       hardcoded or leaked.
   compatible_with: [sigstore]
 - id: osps-baseline
+  name: OSPS Baseline
   insights: ossf/security-baseline
   openssf_url: https://openssf.org/projects/osps-baseline/
   description: >-
@@ -163,6 +168,7 @@ projects:
   similar_to: [best-practices-badge]
   compatible_with: [minder]
 - id: rstuf
+  name: Repository Service for TUF (RSTUF)
   insights: repository-service-tuf/repository-service-tuf
   openssf_url: https://openssf.org/projects/repository-service-for-tuf/
   description: >-
@@ -206,6 +212,7 @@ projects:
   similar_to: [sigstore]
   compatible_with: [slsa]
 - id: sigstore
+  name: Sigstore
   insights: sigstore/sigstore
   openssf_url: https://openssf.org/projects/sigstore/
   description: >-
@@ -249,12 +256,14 @@ projects:
   similar_to: [rstuf]
   compatible_with: [slsa, openbao]
 - id: fuzzingbrain
+  name: FuzzingBrain
   # no repository; awaiting Security Insights
   description: >-
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation
     is not yet available, so scope and classification are provisional.
   kind: project
 - id: in-toto
+  name: in-toto
   insights: in-toto/in-toto
   description: >-
     A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
@@ -265,6 +274,7 @@ projects:
     target: in-toto-attestation
     status: confirmed
 - id: oss-crs
+  name: OSS-CRS
   insights: ossf/oss-crs
   openssf_url: https://openssf.org/projects/oss-crs/
   description: >-
@@ -272,6 +282,7 @@ projects:
     exploring autonomous vulnerability discovery and remediation.
   kind: project
 - id: slsa-github-generator
+  name: slsa-github-generator
   insights: slsa-framework/slsa-github-generator
   description: >-
     Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions.
@@ -286,6 +297,7 @@ projects:
     target: slsa-provenance
     status: confirmed
 - id: slsa-verifier
+  name: slsa-verifier
   insights: slsa-framework/slsa-verifier
   description: >-
     Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations,

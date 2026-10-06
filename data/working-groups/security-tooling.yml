@@ -11,14 +11,15 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
-# are NOT stated here. They come from your repository's Security Insights file
-# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
-# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
-# the standard paths. A project with no valid v2 file keeps its entry but is not
-# rendered until one lands; /projects/ lists those. The build reads a committed
-# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
-# `description` stays here. Persona and problem ids come from data/definitions/,
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage and repositories enrich
+# the record and the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
 # and the build fails on any id it can't resolve. `status:` on a relationship is
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
@@ -35,6 +36,7 @@ working_group:
   kind: working-group
 projects:
 - id: bomctl
+  name: Bomctl
   insights: bomctl/bomctl
   openssf_url: https://openssf.org/projects/bomctl/
   description: >-
@@ -69,6 +71,7 @@ projects:
       materials into one queryable inventory.
   compatible_with: [protobom, guac]
 - id: fuzz-introspector
+  name: Fuzz Introspector
   insights: ossf/fuzz-introspector
   openssf_url: https://openssf.org/projects/fuzz-introspector/
   description: >-
@@ -76,6 +79,7 @@ projects:
     and reachability.
   kind: project
 - id: protobom
+  name: Protobom / SBOM Tools
   insights: protobom/protobom
   openssf_url: https://openssf.org/projects/protobom/
   description: >-
@@ -114,6 +118,7 @@ projects:
       with the artefact.
   compatible_with: [guac, osv-openvex]
 - id: sbomit
+  name: SBOMit
   insights: SBOMit/sbomit
   openssf_url: https://openssf.org/projects/sbomit/
   description: >-
