@@ -25,7 +25,7 @@ layout: default
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Read the publication
     </a>
     {%- endif -%}
-    {%- if publication.insights -%}
+    {%- if publication.si_available -%}
     <a class="tool-hero__link" href="{{ publication.insights }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
     </a>
@@ -36,6 +36,7 @@ layout: default
     </a>
     {%- endif -%}
   </p>
+  {% include si-notice.html record=publication noun="publication" %}
 </section>
 
 {% include record-detail.html record=publication base="publications" %}

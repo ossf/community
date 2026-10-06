@@ -45,13 +45,13 @@ problem page surfaces the personas who care.
 ### Projects
 
 {% for project in site.data.catalog.projects %}
-- **[{{ project.name }}]({{ '/projects/' | append: project.id | append: '/' | relative_url }})** — <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">project site ↗</a>
+- **[{{ project.name }}]({{ '/projects/' | append: project.id | append: '/' | relative_url }})**{% if project.url %} — <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">project site ↗</a>{% endif %}
 {% endfor %}
 
 ### Publications
 
 {% for pub in site.data.catalog.publications %}
-- **[{{ pub.name }}]({{ '/publications/' | append: pub.id | append: '/' | relative_url }})** — <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">read it ↗</a>
+- **[{{ pub.name }}]({{ '/publications/' | append: pub.id | append: '/' | relative_url }})**{% if pub.url %} — <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">read it ↗</a>{% endif %}
 {% endfor %}
 
 ## How to use this site

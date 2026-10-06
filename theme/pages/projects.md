@@ -28,16 +28,16 @@ and complementary projects.
 
 ## Awaiting Security Insights
 
-A project's name, homepage and repositories on this site come from its own
-[Security Insights](https://github.com/ossf/security-insights-spec) file, so a
-project is listed only once it publishes a valid one. These
-{{ awaiting | size }} records are mapped to personas and problems already and
-will appear here as soon as their file lands.
+When a project publishes a valid
+[Security Insights](https://github.com/ossf/security-insights-spec) file, its
+name, homepage and repositories on this site come from that file. These
+{{ awaiting | size }} records have not yet, so their pages are built from
+curated data only.
 
 <ul class="tool-index-awaiting">
   {%- for rec in awaiting %}
   <li>
-    {%- if rec.url -%}<a href="{{ rec.url }}" target="_blank" rel="noopener noreferrer"><code>{{ rec.id }}</code></a>{%- else -%}<code>{{ rec.id }}</code>{%- endif %}
+    <a href="{{ rec.page | relative_url }}">{{ rec.name }}</a>
     <span class="tool-index-awaiting__reason">{{ rec.reason }}</span>
   </li>
   {%- endfor %}

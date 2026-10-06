@@ -18,7 +18,7 @@ layout: default
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Project site
     </a>
     {%- endif -%}
-    {%- if project.insights -%}
+    {%- if project.si_available -%}
     <a class="tool-hero__link" href="{{ project.insights }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
     </a>
@@ -29,6 +29,7 @@ layout: default
     </a>
     {%- endif -%}
   </p>
+  {% include si-notice.html record=project noun="project" %}
 </section>
 
 {% include record-detail.html record=project base="projects" %}

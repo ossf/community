@@ -35,7 +35,7 @@ module OpenSSFCommunity
     def generate(site)
       records = TYPES.transform_values { |(path, _)| site.data.dig(*path) || [] }
 
-      validate!(records, site.data.dig("catalog", "awaiting_insights") || [])
+      validate!(records)
 
       project_count = records["projects"].size
 
@@ -93,7 +93,7 @@ module OpenSSFCommunity
     # dangling persona/problem reference quietly renders a link to a page that
     # does not exist, and a typo'd threat/enum id or relationship target just
     # drops the fact from every derived view.
-    def validate!(records, awaiting)
+    def validate!(records)
       errors = []
 
       records.each do |dir, list|
@@ -105,21 +105,16 @@ module OpenSSFCommunity
         errors << "#{dir}: #{blank.size} record(s) missing id or name" if blank.any?
       end
 
-      # Hidden records are still declared records: their ids must stay unique
-      # and may still be relationship targets (the fact is true, the page just
-      # isn't rendered yet).
-      hosted = records["projects"] + records["publications"] + awaiting
-      dupes = hosted.map { |r| r["id"] }.tally.select { |_, n| n > 1 }.keys
-      errors << "duplicate id(s) across rendered and awaiting records: #{dupes.join(', ')}" if dupes.any?
+      hosted = records["projects"] + records["publications"]
 
       # Two records pointing at one Security Insights file would be one project
       # stated twice. A record with no `insights:` at all is only a warning —
-      # it is kept, hidden, until it has a repository.
+      # it renders from its curated data until it has a repository.
       targets = hosted.map { |r| r["insights"] }.compact
       dupes = targets.tally.select { |_, n| n > 1 }.keys
       errors << "duplicate insights: target(s) #{dupes.join(', ')}" if dupes.any?
-      awaiting.reject { |r| r["insights"] }.each do |r|
-        Jekyll.logger.warn "Catalog:", "#{r['id']} has no insights: target and will not be rendered"
+      hosted.select { |r| r.key?("si_available") && !r["insights"] }.each do |r|
+        Jekyll.logger.warn "Catalog:", "#{r['id']} has no insights: target — rendering from curated data only"
       end
 
       # Every id a record references must resolve — persona/problem links,

@@ -10,12 +10,14 @@
 # `working_group` attribute. Moving a record between working groups means moving
 # its entry between files, and nothing else.
 #
-# A RECORD'S NAME, HOMEPAGE AND REPOSITORIES ARE ITS SECURITY INSIGHTS FILE.
-# The entry only says where that file is (`insights:` — a GitHub blob URL, or
-# `owner/repo` for discovery); the snapshot holds what `si fetch` read from it,
-# one row per target. A record whose row is missing or not `ok` is not
-# rendered: it is reported under catalog.awaiting_insights instead, and keeps
-# its curated mapping in the file so it reappears intact when the file lands.
+# SECURITY INSIGHTS ENRICHES A RECORD; IT NEVER GATES IT. The entry states a
+# `name` and says where the project's Security Insights file is (`insights:` —
+# a GitHub blob URL, or `owner/repo` for discovery). The snapshot holds what
+# `si fetch` read from it, one row per target. When the row is ok, the SI
+# project name wins over the local one and homepage/repositories come from it.
+# When the row is missing or not ok, the record renders from its local name and
+# description, its url derives from the repo, and `si_available` is false so the
+# layouts can say why. catalog.awaiting_insights lists those records.
 #
 # Each data/working-groups/<id>.yml holds:
 #   working_group:  the WG's own record (name, description, url)
@@ -58,24 +60,20 @@ module OpenSSFCommunity
         end
       end
 
-      awaiting = []
-      rendered = hosted.select do |record|
-        reason = apply_insights!(record, snapshot[record["insights"]])
-        next true unless reason
+      hosted.each { |record| apply_insights!(record, snapshot[record["insights"]]) }
 
-        Jekyll.logger.debug "Catalog:", "#{record['id']} hidden — #{reason}"
-        awaiting << {
-          "id"            => record["id"],
-          "kind"          => record["kind"],
-          "working_group" => record["working_group"],
-          "insights"      => record["insights"],
-          "url"           => repo_url(record["insights"], snapshot[record["insights"]]),
-          "reason"        => reason,
+      awaiting = hosted.reject { |r| r["si_available"] }.map do |r|
+        {
+          "id"       => r["id"],
+          "name"     => r["name"],
+          "kind"     => r["kind"],
+          "page"     => "/#{r['kind'] == 'publication' ? 'publications' : 'projects'}/#{r['id']}/",
+          "repo_url" => r["repo_url"],
+          "reason"   => r["si_status"],
         }
-        false
       end
 
-      projects, publications = rendered.partition { |r| r["kind"] != "publication" }
+      projects, publications = hosted.partition { |r| r["kind"] != "publication" }
       publications += site.data.dig("definitions", "publications") || []
 
       site.data["catalog"] = {
@@ -85,36 +83,49 @@ module OpenSSFCommunity
         "awaiting_insights" => awaiting.sort_by { |a| a["id"].to_s },
       }
 
-      uncategorized = rendered.count { |p| p["working_group"].nil? }
+      uncategorized = hosted.count { |p| p["working_group"].nil? }
       Jekyll.logger.info "Catalog:", "#{projects.size} projects + #{publications.size} publications " \
                                      "across #{groups.size} working groups (#{uncategorized} uncategorized, " \
-                                     "#{awaiting.size} awaiting Security Insights)"
+                                     "#{awaiting.size} without Security Insights)"
     end
 
-    # Fills name/url/repositories from the snapshot row. Returns nil when the
-    # record is renderable, otherwise the reason it is hidden.
+    # Enrich a record from its snapshot row. Always leaves the record renderable:
+    # `si_available` says whether the SI file was usable, `si_status` is "ok" or
+    # the reason it was not.
     def self.apply_insights!(record, row)
-      return "no insights: target" unless record["insights"]
-      return "not in snapshot — run `make refresh-insights`" unless row
-      return "#{row['status']}: #{row['error'].to_s.lines.first.to_s.strip}" unless row["status"] == "ok"
+      record["repo_url"] = repo_url(record["insights"], row)
+
+      reason =
+        if !record["insights"]      then "no insights: target"
+        elsif !row                  then "not in snapshot — run `make refresh-insights`"
+        elsif row["status"] != "ok" then "#{row['status']}: #{row['error'].to_s.lines.first.to_s.strip}"
+        end
+
+      if reason
+        Jekyll.logger.debug "Catalog:", "#{record['id']} without Security Insights — #{reason}"
+        record["url"]          = record["repo_url"]
+        record["repositories"] = []
+        record["si_available"] = false
+        record["si_status"]    = reason
+        return
+      end
 
       si      = row["insights"] || {}
       project = si["project"]
-      record["name"]              = project ? project["name"] : record["id"].tr("-", " ")
-      record["url"]               = (project && project["homepage"]) || si.dig("repository", "url") || repo_url(record["insights"], row)
+      record["name"]              = project["name"] if project && !project["name"].to_s.empty?
+      record["url"]               = (project && project["homepage"]) || si.dig("repository", "url") || record["repo_url"]
       record["repositories"]      = (project && project["repositories"]) || []
-      record["si_status"]         = project ? "ok" : "no-project-block"
+      record["si_available"]      = true
+      record["si_status"]         = project ? "ok" : "ok (no project block)"
       record["si_schema_version"] = row["schema-version"]
       # `owner/repo` targets are not links; point the hero at the file that was found.
       unless record["insights"].start_with?("http")
         record["insights"] = "https://github.com/#{row['owner']}/#{row['repo']}/blob/HEAD/#{row['path']}"
       end
-      nil
     end
 
-    # Best link for a record we cannot render: the repo the file lives (or
-    # should live) in. owner/repo are omitempty on failed rows, so fall back
-    # to the target itself when it is already a URL.
+    # The repository the SI file lives (or should live) in. owner/repo are
+    # omitempty on failed rows, so fall back to the target itself.
     def self.repo_url(target, row)
       return "https://github.com/#{row['owner']}/#{row['repo']}" if row && row["owner"] && row["repo"]
       return target if target.to_s.start_with?("http")
