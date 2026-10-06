@@ -76,6 +76,16 @@ there is nothing to keep in sync — the build derives membership from the filen
 (`theme/_plugins/catalog.rb`). To move a record between working groups, move its
 entry between files. That is the entire change.
 
+**A record's name, homepage and repositories are its Security Insights file.**
+An entry does not state them; it says where the file is, in `insights:` —
+either the file's GitHub URL or `owner/repo` to have it discovered at any of
+the standard paths. `make refresh-insights` reads every file into the
+committed snapshot `data/generated/insights.json` (a weekly workflow does the
+same by PR), and the build joins each record to its row. A record with no
+valid v2 file keeps its entry and its persona/problem mapping but is not
+rendered; `/projects/` lists those under "Awaiting Security Insights". The
+`description` stays in the entry, because the SI schema has no such field.
+
 `kind:` distinguishes software (`project`) from documents and specifications
 (`publication`) within a file. WG-hosted publications (SLSA, OSPS Baseline,
 Security Insights, Gemara, OSV/OpenVEX) are pooled with the externally-owned

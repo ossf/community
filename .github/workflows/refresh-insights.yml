@@ -1,0 +1,58 @@
+name: Refresh Security Insights snapshot
+
+# Re-reads every project's Security Insights file and opens a PR when
+# data/generated/insights.json changes. The site build never touches the
+# network; this is the only place the snapshot is produced.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # Pinned to a fork until ossf/si-tooling ships `si fetch`. Once it does,
+  # set SI_TOOLING_REPO to ossf/si-tooling and SI_TOOLING_REF to a release tag.
+  SI_TOOLING_REPO: eddie-knight/si-tooling
+  SI_TOOLING_REF: si-fetch-cli
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+          cache-dependency-path: "**/go.sum"
+
+      - name: Fetch si-tooling
+        run: |
+          git clone --quiet "https://github.com/${SI_TOOLING_REPO}.git" "${RUNNER_TEMP}/si-tooling"
+          git -C "${RUNNER_TEMP}/si-tooling" checkout --quiet "${SI_TOOLING_REF}"
+
+      - name: Regenerate snapshot
+        # make writes to a temp file and only replaces the snapshot when the
+        # fetch exits 0, so a rate-limited or failed run never gets committed.
+        run: make refresh-insights SI_TOOLING_DIR="${RUNNER_TEMP}/si-tooling"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: data/generated/insights.json
+          branch: bot/refresh-insights
+          commit-message: "chore: refresh Security Insights snapshot"
+          signoff: true
+          title: "chore: refresh Security Insights snapshot"
+          body: |
+            Automated re-read of every `insights:` target in `data/working-groups/`.
+            Review the diff for projects that appeared, disappeared, or changed
+            name or homepage, then merge.

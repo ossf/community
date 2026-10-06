@@ -1,4 +1,9 @@
-.PHONY: brand-new-env-installs deps start test
+.PHONY: brand-new-env-installs deps start test refresh-insights
+
+# Checkout of ossf/si-tooling (or the fork pinned in
+# .github/workflows/refresh-insights.yml) that provides `si fetch`.
+SI_TOOLING_DIR ?= ../si-tooling
+SNAPSHOT := data/generated/insights.json
 
 brand-new-env-installs:
 	@command -v brew >/dev/null || { echo "Homebrew not found. Install from https://brew.sh first."; exit 1; }
@@ -24,3 +29,13 @@ start: deps
 test: deps
 	bundle exec jekyll build
 	bundle exec htmlproofer ./_site --disable-external
+
+# Re-read every `insights:` target and rewrite the snapshot. Writes to a temp
+# file first: any non-zero exit (rate limit, network, bad target) leaves the
+# committed snapshot untouched. Exit 0 still includes not-found/invalid rows —
+# those are facts about the project and are meant to land.
+refresh-insights:
+	ruby -ryaml -e 'puts Dir["data/working-groups/*.yml"].sort.flat_map { |f| (YAML.load_file(f)["projects"] || []).map { |p| p["insights"] }.compact }' \
+	  | xargs go -C $(SI_TOOLING_DIR)/v2 run ./cmd/si fetch > $(SNAPSHOT).tmp \
+	  && mv $(SNAPSHOT).tmp $(SNAPSHOT) \
+	  || { rm -f $(SNAPSHOT).tmp; exit 1; }
