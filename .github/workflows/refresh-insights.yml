@@ -17,7 +17,7 @@ env:
   # Pinned to a fork until ossf/si-tooling ships `si fetch`. Once it does,
   # set SI_TOOLING_REPO to ossf/si-tooling and SI_TOOLING_REF to a release tag.
   SI_TOOLING_REPO: eddie-knight/si-tooling
-  SI_TOOLING_REF: si-fetch-cli
+  SI_TOOLING_REF: 884d93e4a125ca6e2a2f7e10be2cfda01ac74d88 # si-fetch-cli branch
 
 jobs:
   refresh:
@@ -30,7 +30,8 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.23"
-          cache-dependency-path: "**/go.sum"
+          # No go.sum in this repo at checkout time; si-tooling is cloned below.
+          cache: false
 
       - name: Fetch si-tooling
         run: |
