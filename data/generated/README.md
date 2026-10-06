@@ -2,9 +2,11 @@
 
 `insights.json` is the committed snapshot of every project's Security Insights
 file, one row per `insights:` target in `data/working-groups/*.yml`, in file
-order. `theme/_plugins/catalog.rb` joins each record to its row by `target`
-and takes the project's name, homepage and repositories from it. A record
-whose row is missing or not `ok` keeps its entry but is not rendered.
+order. `theme/_plugins/catalog.rb` joins each record to its row by `target`.
+Security Insights enriches, never gates: on an `ok` row the SI project name
+wins over the entry's `name` and the homepage and repositories come from the
+file; on any other row the record renders from its entry with a notice and
+its homepage derives from the repository.
 
 Regenerate with `make refresh-insights` (needs Go and a checkout of
 ossf/si-tooling with the `si fetch` command; `SI_TOOLING_DIR` points at it,

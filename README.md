@@ -76,15 +76,17 @@ there is nothing to keep in sync — the build derives membership from the filen
 (`theme/_plugins/catalog.rb`). To move a record between working groups, move its
 entry between files. That is the entire change.
 
-**A record's name, homepage and repositories are its Security Insights file.**
-An entry does not state them; it says where the file is, in `insights:` —
-either the file's GitHub URL or `owner/repo` to have it discovered at any of
-the standard paths. `make refresh-insights` reads every file into the
-committed snapshot `data/generated/insights.json` (a weekly workflow does the
-same by PR), and the build joins each record to its row. A record with no
-valid v2 file keeps its entry and its persona/problem mapping but is not
-rendered; `/projects/` lists those under "Awaiting Security Insights". The
-`description` stays in the entry, because the SI schema has no such field.
+**Security Insights enriches a record; it never gates it.** An entry states
+its `name` and `description` and says where the project's Security Insights
+file is, in `insights:` — either the file's GitHub URL or `owner/repo` to have
+it discovered at any of the standard paths. `make refresh-insights` reads
+every file into the committed snapshot `data/generated/insights.json` (a
+weekly workflow does the same by PR), and the build joins each record to its
+row. When the file is valid, its project name wins over the local one and the
+homepage and repositories come from it. When it is missing or invalid, the
+page still renders from the entry, with a notice, and its homepage link
+derives from the repository; `/projects/` lists those under "Awaiting
+Security Insights". There is no `url` on an entry.
 
 `kind:` distinguishes software (`project`) from documents and specifications
 (`publication`) within a file. WG-hosted publications (SLSA, OSPS Baseline,
