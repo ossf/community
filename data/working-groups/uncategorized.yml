@@ -77,6 +77,7 @@ projects:
       automatically and compared across projects.
 - id: gemara-whitepaper
   name: Gemara Whitepaper
+  openssf_url: https://openssf.org/projects/gemara/ # published by the Gemara project; no page of its own
   # no repository; awaiting Security Insights
   description: >-
     "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
@@ -257,6 +258,7 @@ projects:
   compatible_with: [slsa, openbao]
 - id: fuzzingbrain
   name: FuzzingBrain
+  openssf_url: https://openssf.org/technical-initiatives/ # TODO: no project page on openssf.org yet
   # no repository; awaiting Security Insights
   description: >-
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation
@@ -264,6 +266,7 @@ projects:
   kind: project
 - id: in-toto
   name: in-toto
+  openssf_url: https://openssf.org/technical-initiatives/ # TODO: no project page on openssf.org yet
   insights: in-toto/in-toto
   description: >-
     A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
@@ -283,6 +286,7 @@ projects:
   kind: project
 - id: slsa-github-generator
   name: slsa-github-generator
+  openssf_url: https://openssf.org/projects/slsa/ # SLSA sub-project; no page of its own on openssf.org
   insights: slsa-framework/slsa-github-generator
   description: >-
     Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions.
@@ -298,6 +302,7 @@ projects:
     status: confirmed
 - id: slsa-verifier
   name: slsa-verifier
+  openssf_url: https://openssf.org/projects/slsa/ # SLSA sub-project; no page of its own on openssf.org
   insights: slsa-framework/slsa-verifier
   description: >-
     Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations,

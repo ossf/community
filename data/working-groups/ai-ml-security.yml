@@ -39,6 +39,7 @@ working_group:
 projects:
 - id: model-signing
   name: OpenSSF Model Signing (OMS)
+  openssf_url: https://openssf.org/projects/model-signing/
   insights: sigstore/model-transparency
   description: >-
     A library and CLI for cryptographically signing and verifying machine learning models
@@ -74,6 +75,7 @@ projects:
   compatible_with: [sigstore]
 - id: secure-agentic-framework
   name: Secure Agentic Framework
+  openssf_url: https://openssf.org/technical-initiatives/ # TODO: no project page on openssf.org yet
   # no repository; awaiting Security Insights
   description: >-
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation

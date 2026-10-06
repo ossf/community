@@ -13,6 +13,9 @@ layout: default
   <h1 class="tool-hero__title">{{ project.name }}</h1>
   <p class="tool-hero__summary">{{ project.description }}</p>
   <p class="tool-hero__links">
+    <a class="tool-hero__link" href="{{ project.openssf_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> On openssf.org
+    </a>
     {%- if project.url -%}
     <a class="tool-hero__link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Project site

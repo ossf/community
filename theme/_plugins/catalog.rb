@@ -103,7 +103,7 @@ module OpenSSFCommunity
 
       if reason
         Jekyll.logger.debug "Catalog:", "#{record['id']} without Security Insights — #{reason}"
-        record["url"]          = record["repo_url"]
+        record["url"]          = nil # the homepage is an SI fact; openssf_url is the link that is always there
         record["repositories"] = []
         record["si_available"] = false
         record["si_status"]    = reason
@@ -113,7 +113,7 @@ module OpenSSFCommunity
       si      = row["insights"] || {}
       project = si["project"]
       record["name"]              = project["name"] if project && !project["name"].to_s.empty?
-      record["url"]               = (project && project["homepage"]) || si.dig("repository", "url") || record["repo_url"]
+      record["url"]               = (project && project["homepage"]) || si.dig("repository", "url")
       record["repositories"]      = (project && project["repositories"]) || []
       record["si_available"]      = true
       record["si_status"]         = project ? "ok" : "ok (no project block)"

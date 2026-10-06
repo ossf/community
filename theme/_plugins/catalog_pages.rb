@@ -128,6 +128,12 @@ module OpenSSFCommunity
 
       (records["projects"] + records["publications"]).each do |rec|
         where = rec["id"]
+        # The openssf.org page is the one URL stated outside a record's Security
+        # Insights file, and the hero always links it — so it cannot be absent.
+        # Externally-owned formats (no working_group key) have no such page.
+        if rec.key?("working_group") && rec["openssf_url"].to_s.empty?
+          errors << "#{where}: missing openssf_url"
+        end
         (rec["personas"] || []).each do |link|
           errors << "#{where}: unknown persona id '#{link['id']}'" unless persona_ids.include?(link["id"])
         end

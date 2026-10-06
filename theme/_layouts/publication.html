@@ -20,6 +20,12 @@ layout: default
   {%- endif -%}
   <p class="tool-hero__summary">{{ publication.description }}</p>
   <p class="tool-hero__links">
+    {%- comment -%} Always present on WG-hosted records (the build enforces it); externally-owned formats have no openssf.org page. {%- endcomment -%}
+    {%- if publication.openssf_url -%}
+    <a class="tool-hero__link" href="{{ publication.openssf_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> On openssf.org
+    </a>
+    {%- endif -%}
     {%- if publication.url -%}
     <a class="tool-hero__link" href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Read the publication
