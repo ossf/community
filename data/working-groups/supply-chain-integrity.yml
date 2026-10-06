@@ -11,24 +11,32 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: supply-chain-integrity
   name: Supply Chain Integrity
+  description: >-
+    Provides a global community for collaborating to help individuals and organizations assess
+    and improve the security of end-to-end supply chains for open source software.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: gittuf
-  name: gittuf
-  url: https://github.com/gittuf/gittuf
+  insights: gittuf/gittuf
   openssf_url: https://openssf.org/projects/gittuf/
-  insights: https://github.com/gittuf/gittuf/blob/main/SECURITY_INSIGHTS.yml
   lfx_id: gittuf
   description: >-
     A platform-agnostic security layer for Git that applies The Update Framework concepts
@@ -64,10 +72,8 @@ projects:
   similar_to: [rstuf]
   compatible_with: [sigstore]
 - id: guac
-  name: GUAC
-  url: https://guac.sh/
-  openssf_url: https://openssf.org/projects/guac/
   insights: https://github.com/guacsec/guac/blob/main/SECURITY-INSIGHTS.yml
+  openssf_url: https://openssf.org/projects/guac/
   description: >-
     Graph for Understanding Artifact Composition — a queryable supply-chain knowledge graph
     that aggregates SBOMs, attestations, and vulnerability data.
@@ -115,10 +121,8 @@ projects:
       disclosed flaw.
   compatible_with: [protobom, osv-openvex]
 - id: slsa
-  name: SLSA
-  url: https://slsa.dev/
+  insights: slsa-framework/slsa
   openssf_url: https://openssf.org/projects/slsa/
-  insights: https://github.com/slsa-framework/slsa/blob/main/SECURITY-INSIGHTS.yml
   lfx_id: slsa
   description: >-
     Supply-chain Levels for Software Artifacts — a framework of progressive security requirements
@@ -169,8 +173,7 @@ projects:
   similar_to: [sigstore]
   compatible_with: [rstuf]
 - id: zarf
-  name: Zarf
-  url: https://openssf.org/projects/zarf/
+  insights: zarf-dev/zarf
   openssf_url: https://openssf.org/projects/zarf/
   description: >-
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained

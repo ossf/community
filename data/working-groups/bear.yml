@@ -13,16 +13,27 @@
 #
 # This working group currently hosts no projects.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: bear
   name: BEAR (Belonging, Empowerment, Allyship, and Representation)
+  description: >-
+    Fosters a more diverse and inclusive cybersecurity workforce by implementing strategies to
+    increase representation and enhance effectiveness through advocacy, collaboration, and
+    tailored initiatives.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects: []

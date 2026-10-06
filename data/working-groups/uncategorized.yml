@@ -20,19 +20,24 @@
 #   sigstore, openbao, rstuf   established projects the TAC list does not place.
 #   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 projects:
 - id: gemara
-  name: Gemara
-  url: https://gemara.openssf.org/
-  openssf_url: https://openssf.org/projects/gemara/
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
+  openssf_url: https://openssf.org/projects/gemara/
   description: >-
     Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
     formats that bridge high-level compliance requirements and low-level technical evidence
@@ -69,18 +74,15 @@ projects:
       Standardizes how risk and control evidence are expressed so posture can be assessed
       automatically and compared across projects.
 - id: gemara-whitepaper
-  name: Gemara Whitepaper
-  url: https://openssf.org/wp-content/uploads/2026/03/04_OpenSSF_Gemara-Project_Whitepaper.pdf
+  # no repository; awaiting Security Insights
   description: >-
     "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
     the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
     and how they interoperate.
   kind: publication
 - id: openbao
-  name: OpenBao
-  url: https://openbao.org/
-  openssf_url: https://openssf.org/projects/openbao/
   insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
+  openssf_url: https://openssf.org/projects/openbao/
   description: >-
     A community-governed, open source secrets management platform for storing, rotating, and
     brokering access to secrets, credentials, tokens, and cryptographic keys.
@@ -118,11 +120,8 @@ projects:
       hardcoded or leaked.
   compatible_with: [sigstore]
 - id: osps-baseline
-  name: OSPS Baseline
-  url: https://baseline.openssf.org/
+  insights: ossf/security-baseline
   openssf_url: https://openssf.org/projects/osps-baseline/
-  insights: >-
-    https://github.com/ossf/security-baseline/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     The Open Source Project Security Baseline — a consensus-driven minimum set of security
     requirements for projects to adopt and for consumers to expect.
@@ -164,11 +163,8 @@ projects:
   similar_to: [best-practices-badge]
   compatible_with: [minder]
 - id: rstuf
-  name: Repository Service for TUF (RSTUF)
-  url: https://repository-service-tuf.readthedocs.io/
+  insights: repository-service-tuf/repository-service-tuf
   openssf_url: https://openssf.org/projects/repository-service-for-tuf/
-  insights: >-
-    https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A drop-in implementation of The Update Framework (TUF) that protects software repositories
     from compromise, rollback, and man-in-the-middle attacks.
@@ -210,10 +206,8 @@ projects:
   similar_to: [sigstore]
   compatible_with: [slsa]
 - id: sigstore
-  name: Sigstore
-  url: https://www.sigstore.dev/
+  insights: sigstore/sigstore
   openssf_url: https://openssf.org/projects/sigstore/
-  insights: https://github.com/sigstore/sigstore/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A free, identity-based artefact-signing service backed by a public transparency log so
     anyone can verify who built what.
@@ -255,16 +249,13 @@ projects:
   similar_to: [rstuf]
   compatible_with: [slsa, openbao]
 - id: fuzzingbrain
-  name: FuzzingBrain
-  url: >-
-    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  # no repository; awaiting Security Insights
   description: >-
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation
     is not yet available, so scope and classification are provisional.
   kind: project
 - id: in-toto
-  name: in-toto
-  url: https://in-toto.io/
+  insights: in-toto/in-toto
   description: >-
     A framework for cryptographically attesting supply-chain steps. Defines the in-toto attestation
     envelope that SLSA Provenance and other signed-statement formats ship in.
@@ -274,16 +265,14 @@ projects:
     target: in-toto-attestation
     status: confirmed
 - id: oss-crs
-  name: OSS-CRS
-  url: https://openssf.org/projects/oss-crs/
+  insights: ossf/oss-crs
   openssf_url: https://openssf.org/projects/oss-crs/
   description: >-
     A framework for LLM-based bug-finding and bug-fixing systems applied to open source software,
     exploring autonomous vulnerability discovery and remediation.
   kind: project
 - id: slsa-github-generator
-  name: slsa-github-generator
-  url: https://github.com/slsa-framework/slsa-github-generator
+  insights: slsa-framework/slsa-github-generator
   description: >-
     Reference implementations of SLSA Level 3 build provenance generators for GitHub Actions.
     Produces signed in-toto attestations bound to the builder identity per the SLSA build
@@ -297,8 +286,7 @@ projects:
     target: slsa-provenance
     status: confirmed
 - id: slsa-verifier
-  name: slsa-verifier
-  url: https://github.com/slsa-framework/slsa-verifier
+  insights: slsa-framework/slsa-verifier
   description: >-
     Reference implementation of the SLSA Provenance verifier. Consumes signed in-toto attestations,
     validates the builder identity, and enforces SLSA build-level expectations on incoming

@@ -11,22 +11,33 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: securing-software-repositories
   name: Securing Software Repositories
+  description: >-
+    Focuses on the maintainers of software repositories, software registries, and tools which
+    rely on them, at various levels including system, language, plugin, extensions and container
+    systems, providing a forum to share experiences and to discuss shared problems, risks and
+    threats.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: package-analysis
-  name: Package Analysis
-  url: https://openssf.org/projects/package-analysis/
+  insights: ossf/package-analysis
   openssf_url: https://openssf.org/projects/package-analysis/
   description: >-
     Dynamically and statically analyzes packages from open source package registries to detect

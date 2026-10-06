@@ -11,25 +11,32 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: best-practices-wg
   name: Best Practices for Open Source Developers
+  description: >-
+    Provides open source developers with security best practices recommendations and easy ways
+    to learn and apply them.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: best-practices-badge
-  name: Best Practices Badge
-  url: https://www.bestpractices.dev/
+  insights: ossf/best-practices-badge
   openssf_url: https://openssf.org/projects/best-practices-badge/
-  insights: >-
-    https://github.com/coreinfrastructure/best-practices-badge/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A voluntary self-certification program that lets open source projects demonstrate they
     follow recognized development best practices.
@@ -70,10 +77,8 @@ projects:
   similar_to: [osps-baseline]
   compatible_with: [openssf-scorecard]
 - id: openssf-scorecard
-  name: OpenSSF Scorecard
-  url: https://scorecard.dev/
+  insights: https://github.com/ossf/scorecard/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/scorecard/
-  insights: https://github.com/ossf/scorecard/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     An automated tool that assesses open source projects against a curated set of security-health
     checks and produces a comparable score.

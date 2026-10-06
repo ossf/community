@@ -11,24 +11,34 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: orbit
   name: ORBIT (Open Resources for Baselines, Interoperability, and Tooling)
+  description: >-
+    Develops and maintains interoperable resources for the identification and presentation of
+    security-relevant data, providing a home for collaborative activities, best practice
+    definitions, documentation, testing, integration, and other artifacts supporting the
+    mission.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: minder
-  name: Minder
-  url: https://github.com/mindersec/minder
+  insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/minder/
-  insights: https://github.com/mindersec/minder/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
@@ -69,11 +79,8 @@ projects:
       from one control plane.
   compatible_with: [openssf-scorecard]
 - id: security-insights
-  name: Security Insights
-  url: https://github.com/ossf/security-insights-spec
+  insights: https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/security-insights/
-  insights: >-
-    https://github.com/ossf/security-insights-spec/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A machine-processable YAML specification that lets a project declare its security posture,
     vulnerability-handling process, and supporting resources.

@@ -11,22 +11,31 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: security-tooling
   name: Security Tooling
+  description: >-
+    Identifies, evaluates, improves, develops and eases deployment of universally-accessible,
+    developer-focused tooling to help the open source community secure their code.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: bomctl
-  name: Bomctl
-  url: https://github.com/bomctl/bomctl
+  insights: bomctl/bomctl
   openssf_url: https://openssf.org/projects/bomctl/
   description: >-
     Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
@@ -60,18 +69,15 @@ projects:
       materials into one queryable inventory.
   compatible_with: [protobom, guac]
 - id: fuzz-introspector
-  name: Fuzz Introspector
-  url: https://openssf.org/projects/fuzz-introspector/
+  insights: ossf/fuzz-introspector
   openssf_url: https://openssf.org/projects/fuzz-introspector/
   description: >-
     Improves the fuzzing experience for projects by providing visibility into fuzzer coverage
     and reachability.
   kind: project
 - id: protobom
-  name: Protobom / SBOM Tools
-  url: https://github.com/protobom/protobom
+  insights: protobom/protobom
   openssf_url: https://openssf.org/projects/protobom/
-  insights: https://github.com/protobom/protobom/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A shared library and toolset for generating, translating, and consuming Software Bills
     of Materials in standard formats such as SPDX and CycloneDX.
@@ -108,8 +114,7 @@ projects:
       with the artefact.
   compatible_with: [guac, osv-openvex]
 - id: sbomit
-  name: SBOMit
-  url: https://sbomit.dev/
+  insights: SBOMit/sbomit
   openssf_url: https://openssf.org/projects/sbomit/
   description: >-
     An SBOM-format-independent method that embeds in-toto and Witness attestations into Software

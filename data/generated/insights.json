@@ -1,0 +1,1002 @@
+[
+  {
+    "target": "sigstore/model-transparency",
+    "owner": "sigstore",
+    "repo": "model-transparency",
+    "status": "not-found",
+    "error": "security insights file not found: sigstore/model-transparency"
+  },
+  {
+    "target": "ossf/best-practices-badge",
+    "owner": "ossf",
+    "repo": "best-practices-badge",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/best-practices-badge"
+  },
+  {
+    "target": "https://github.com/ossf/scorecard/blob/main/.github/security-insights.yml",
+    "owner": "ossf",
+    "repo": "scorecard",
+    "path": ".github/security-insights.yml",
+    "status": "invalid",
+    "error": "error unmarshalling SI: [55:7] unknown field \"audit-2025\"\n  52 |     expression: Apache-2.0\n  53 |   security:\n  54 |     assessments:\n\u003e 55 |       audit-2025:\n             ^\n  56 |         evidence: https://openssf.org/blog/2025/10/10/openssf-scorecard-audit-is-complete/\n  57 |         comment: |\n  58 |           This audit was coordinated by Open Source Technology Improvement Fund (OSTIF) and undertaken by the ADA\n  59 |           Logics team during early summer of 2025.\n  60 |           Within the scope of review was five repositories: scorecard-webapp, scorecard-action, scorecard-monitor,\n  61 |           scorecard, and allstar. These five projects underwent formal threat modeling, which then guided the manual\n  62 |           code review that followed. Each repository interacts with different interfaces, handles different\n  63 |           (potentially sensitive) data, and therefore has differing attack impacts that affect its security needs.\n  64 |           Fuzzing work was also performed during this audit, and resulted in the uncovering of some of the reported\n  65 |           findings.\n  66 |   ",
+    "schema-version": "2.0.0"
+  },
+  {
+    "target": "https://github.com/mindersec/minder/blob/main/.github/security-insights.yml",
+    "owner": "mindersec",
+    "repo": "minder",
+    "path": ".github/security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.2.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-03-19",
+        "last-updated": "2026-03-19",
+        "schema-version": "2.2.0",
+        "url": "https://raw.githubusercontent.com/mindersec/minder/main/.github/security-insights.yml"
+      },
+      "project": {
+        "name": "minder",
+        "homepage": "https://mindersec.dev/",
+        "administrators": [
+          {
+            "name": "JAORMX",
+            "primary": false
+          },
+          {
+            "name": "evankanderson",
+            "primary": false
+          },
+          {
+            "name": "rdimitrov",
+            "primary": false
+          },
+          {
+            "name": "thelinuxfoundation",
+            "primary": false
+          }
+        ],
+        "repositories": [
+          {
+            "name": "minder",
+            "comment": "Software Supply Chain Security Platform",
+            "url": "https://github.com/mindersec/minder"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false,
+          "policy": "https://github.com/mindersec/minder/blob/main/SECURITY.md"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/mindersec/minder",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "JAORMX",
+            "primary": false
+          },
+          {
+            "name": "evankanderson",
+            "primary": false
+          },
+          {
+            "name": "rdimitrov",
+            "primary": false
+          },
+          {
+            "name": "thelinuxfoundation",
+            "primary": false
+          }
+        ],
+        "license": {
+          "url": "https://api.github.com/licenses/apache-2.0",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": ""
+            }
+          }
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/mindersec/minder/blob/main/CONTRIBUTING.md",
+          "security-policy": "https://github.com/mindersec/minder/blob/main/SECURITY.md"
+        }
+      }
+    }
+  },
+  {
+    "target": "https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml",
+    "owner": "ossf",
+    "repo": "security-insights-spec",
+    "path": ".github/security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.2.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-05-08",
+        "last-updated": "2026-05-08",
+        "schema-version": "2.2.0",
+        "url": "https://github.com/ossf/security-insights",
+        "comment": "This file contains the security information for the Security Insights project."
+      },
+      "project": {
+        "name": "Security Insights",
+        "steward": {
+          "uri": "https://openssf.org",
+          "comment": "The Security Insights Specification is a copyright of the Open Source Security Foundation (OpenSSF) and it is maintained by volunteers under the oversight of the OpenSSF.\n"
+        },
+        "administrators": [
+          {
+            "name": "Christopher Robinson",
+            "primary": true,
+            "affiliation": "Linux Foundation"
+          }
+        ],
+        "repositories": [
+          {
+            "name": "Security Insights",
+            "comment": "Security Insights is the core repo for the Security Insights project.\n",
+            "url": "https://github.com/ossf/security-insights"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false,
+          "contact": {
+            "name": "The OpenSSF provides security support for all projects in the foundation.",
+            "primary": true,
+            "email": "security@openssf.org"
+          }
+        },
+        "documentation": {
+          "detailed-guide": "https://security-insights.openssf.org/",
+          "quickstart-guide": "https://github.com/ossf/security-insights?tab=readme-ov-file#quick-start"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/ossf/security-insights",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": false,
+        "no-third-party-packages": true,
+        "core-team": [
+          {
+            "name": "Eddie Knight",
+            "primary": true,
+            "affiliation": "Sonatype"
+          },
+          {
+            "name": "Jason Meridth",
+            "primary": false,
+            "affiliation": "Chainguard"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/ossf/security-insights/blob/main/LICENSE",
+          "expression": "MIT AND Community Specification License 1.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "A light-weight threat model was completed when the project was first started,\nand it remains accurate to-date.\n"
+            }
+          }
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/ossf/security-insights/blob/main/.github/CONTRIBUTING.md",
+          "governance": "https://github.com/ossf/security-insights/blob/main/docs/GOVERNANCE.md"
+        },
+        "release": {
+          "automated-pipeline": false,
+          "distribution-points": [
+            {
+              "uri": "https://github.com/ossf/security-insights/releases",
+              "comment": "GitHub Release Page"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "target": "ossf/package-analysis",
+    "owner": "ossf",
+    "repo": "package-analysis",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/package-analysis"
+  },
+  {
+    "target": "bomctl/bomctl",
+    "owner": "bomctl",
+    "repo": "bomctl",
+    "status": "not-found",
+    "error": "security insights file not found: bomctl/bomctl"
+  },
+  {
+    "target": "ossf/fuzz-introspector",
+    "owner": "ossf",
+    "repo": "fuzz-introspector",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/fuzz-introspector"
+  },
+  {
+    "target": "protobom/protobom",
+    "owner": "protobom",
+    "repo": "protobom",
+    "status": "not-found",
+    "error": "security insights file not found: protobom/protobom"
+  },
+  {
+    "target": "SBOMit/sbomit",
+    "owner": "SBOMit",
+    "repo": "sbomit",
+    "status": "not-found",
+    "error": "security insights file not found: SBOMit/sbomit"
+  },
+  {
+    "target": "gittuf/gittuf",
+    "owner": "gittuf",
+    "repo": "gittuf",
+    "path": "SECURITY_INSIGHTS.yml",
+    "status": "ok",
+    "schema-version": "2.0.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-09-28",
+        "last-updated": "2026-09-28",
+        "schema-version": "2.0.0",
+        "url": "https://github.com/gittuf/gittuf"
+      },
+      "project": {
+        "name": "gittuf",
+        "administrators": [
+          {
+            "name": "Justin Cappos",
+            "primary": false,
+            "affiliation": "New York University",
+            "email": "jcappos@nyu.edu",
+            "social": "https://github.com/JustinCappos"
+          },
+          {
+            "name": "Aditya Sirish A Yelgundhalli",
+            "primary": true,
+            "affiliation": "Bloomberg",
+            "email": "aditya.sirish@nyu.edu",
+            "social": "https://github.com/adityasaky"
+          },
+          {
+            "name": "Billy Lynch",
+            "primary": false,
+            "affiliation": "Chainguard",
+            "email": "billy@chainguard.dev",
+            "social": "https://github.com/wlynch"
+          },
+          {
+            "name": "Reza Curtmola",
+            "primary": false,
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "reza.curtmola@njit.edu",
+            "social": "https://github.com/reza-curtmola"
+          },
+          {
+            "name": "Michael Lieberman",
+            "primary": false,
+            "affiliation": "Kusari",
+            "email": "mike@kusari.dev",
+            "social": "https://github.com/mlieberman85"
+          }
+        ],
+        "repositories": [
+          {
+            "name": "gittuf",
+            "comment": "gittuf/gittuf is the main repository for gittuf.\n",
+            "url": "https://github.com/gittuf/gittuf"
+          },
+          {
+            "name": "gittuf-community",
+            "comment": "gittuf/community contains the governance and community aspects of gittuf.\n",
+            "url": "https://github.com/gittuf/community"
+          },
+          {
+            "name": "gittuf-github-app",
+            "comment": "gittuf/github-app hosts the gittuf GitHub app that allows for easier deployment of gittuf on GitHub repositories.\n",
+            "url": "https://github.com/gittuf/github-app"
+          },
+          {
+            "name": "gittuf-visualizer",
+            "comment": "gittuf/visualizer contains the code for the web visualizer that helps visualize gittuf metadata.\n",
+            "url": "https://github.com/gittuf/visualizer"
+          },
+          {
+            "name": "gittuf.github.io",
+            "comment": "gittuf/gittuf.github.io contains the official gittuf website code and resources.\n",
+            "url": "https://github.com/gittuf/gittuf.github.io"
+          },
+          {
+            "name": "gittuf-demo",
+            "comment": "gittuf/demo contains the demo showcasing gittuf features.\n",
+            "url": "https://github.com/gittuf/demo"
+          },
+          {
+            "name": "gittuf-installer",
+            "comment": "gittuf/gittuf-installer contains the GitHub action which installs gittuf for a CI/CD workflow.\n",
+            "url": "https://github.com/gittuf/gittuf-installer"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/gittuf/gittuf",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Aditya Sirish A Yelgundhalli",
+            "primary": true,
+            "affiliation": "Bloomberg",
+            "email": "aditya.sirish@nyu.edu",
+            "social": "https://github.com/adityasaky"
+          },
+          {
+            "name": "Justin Cappos",
+            "primary": false,
+            "affiliation": "New York University",
+            "email": "jcappos@nyu.edu",
+            "social": "https://github.com/JustinCappos"
+          },
+          {
+            "name": "Billy Lynch",
+            "primary": false,
+            "affiliation": "Chainguard",
+            "email": "billy@chainguard.dev",
+            "social": "https://github.com/wlynch"
+          },
+          {
+            "name": "Reza Curtmola",
+            "primary": false,
+            "affiliation": "New Jersey Institute of Technology",
+            "email": "reza.curtmola@njit.edu",
+            "social": "https://github.com/reza-curtmola"
+          },
+          {
+            "name": "Patrick Zielinski",
+            "primary": false,
+            "affiliation": "New York University",
+            "email": "patrick.z@nyu.edu",
+            "social": "https://github.com/patzielinski"
+          },
+          {
+            "name": "Paulo Gomes",
+            "primary": false,
+            "affiliation": "Entire",
+            "email": "paulo@entire.io",
+            "social": "https://github.com/pjbgf"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/gittuf/gittuf/blob/main/LICENSE",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "Self assessment has not yet been completed.\\\n"
+            }
+          }
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/gittuf/gittuf/blob/main/CONTRIBUTING.md",
+          "dependency-management-policy": "https://github.com/gittuf/gittuf/blob/main/CONTRIBUTING.md#dependencies-policy",
+          "governance": "https://github.com/gittuf/community",
+          "review-policy": "TODO",
+          "security-policy": "https://github.com/gittuf/gittuf/blob/main/SECURITY.md"
+        },
+        "release": {
+          "automated-pipeline": true,
+          "distribution-points": [
+            {
+              "uri": "https://github.com/gittuf/gittuf/releases",
+              "comment": "GitHub Release Page"
+            }
+          ],
+          "changelog": "https://github.com/gittuf/gittuf/releases/tag/{version}#changelog",
+          "license": {
+            "url": "https://github.com/gittuf/gittuf/blob/main/LICENSE",
+            "expression": "Apache-2.0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "target": "https://github.com/guacsec/guac/blob/main/SECURITY-INSIGHTS.yml",
+    "owner": "guacsec",
+    "repo": "guac",
+    "path": "SECURITY-INSIGHTS.yml",
+    "status": "invalid",
+    "error": "error unmarshalling SI: [6:3] unknown field \"commit-hash\"\n   3 |   expiration-date: '2023-10-04T10:10:09.000Z'\n   4 |   last-updated: '2023-10-04'\n   5 |   last-reviewed: '2023-10-04'\n\u003e  6 |   commit-hash: 24dc68f69cc0ceb9783fbbae8f45893577f6a3de\n         ^\n   7 |   project-url: https://github.com/guacsec/guac\n   8 |   project-release: '0.2.0'\n   9 |   changelog: https://github.com/guacsec/guac/releases\n  10 |   ",
+    "schema-version": "1.0.0"
+  },
+  {
+    "target": "slsa-framework/slsa",
+    "owner": "slsa-framework",
+    "repo": "slsa",
+    "status": "not-found",
+    "error": "security insights file not found: slsa-framework/slsa"
+  },
+  {
+    "target": "zarf-dev/zarf",
+    "owner": "zarf-dev",
+    "repo": "zarf",
+    "status": "not-found",
+    "error": "security insights file not found: zarf-dev/zarf"
+  },
+  {
+    "target": "https://github.com/gemaraproj/gemara/blob/main/security-insights.yml",
+    "owner": "gemaraproj",
+    "repo": "gemara",
+    "path": "security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.0.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-01-15",
+        "last-updated": "2026-01-15",
+        "schema-version": "2.0.0",
+        "url": "https://github.com/gemaraproj/gemara",
+        "project-si-source": "https://raw.githubusercontent.com/gemaraproj/.github/refs/heads/main/.github/security-insights.yml"
+      },
+      "project": {
+        "name": "Gemara: GRC Engineering Model for Automated Risk Assessment",
+        "administrators": [
+          {
+            "name": "Jenn Power",
+            "primary": true,
+            "affiliation": "Red Hat",
+            "email": "barnabei.jennifer@gmail.com"
+          },
+          {
+            "name": "Eddie Knight",
+            "primary": false,
+            "affiliation": "Sonatype",
+            "email": "knight@linux.com"
+          }
+        ],
+        "repositories": [
+          {
+            "name": "gemara",
+            "comment": "The main repository for the GRC Engineering Model for Automated Risk Assessment (Gemara) project.\nIt contains the core codebase and documentation for the project.\n",
+            "url": "https://github.com/gemaraproj/gemara"
+          },
+          {
+            "name": "go-gemara",
+            "comment": "Go SDK for parsing Gemara documents.",
+            "url": "https://github.com/gemaraproj/go-gemara"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": false,
+          "bug-bounty-available": false
+        },
+        "documentation": {
+          "quickstart-guide": "https://gemara.openssf.org/implementation/"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/gemaraproj/gemara",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Eddie Knight",
+            "primary": false,
+            "affiliation": "Sonatype",
+            "email": "knight@linux.com"
+          },
+          {
+            "name": "Jenn Power",
+            "primary": true,
+            "affiliation": "Red Hat",
+            "email": "barnabei.jennifer@gmail.com"
+          },
+          {
+            "name": "Jason Meridth",
+            "primary": false,
+            "affiliation": "GitHub",
+            "email": "jmeridth@gmail.com"
+          },
+          {
+            "name": "Travis Truman",
+            "primary": false,
+            "affiliation": "Independent",
+            "email": "trumant@gmail.com"
+          },
+          {
+            "name": "Alex Speasmaker",
+            "primary": false,
+            "affiliation": "USAA",
+            "email": "alex.speasmaker@gmail.com"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/gemaraproj/gemara?tab=Apache-2.0-1-ov-file#readme",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "Self assessment has not yet been completed.\n"
+            }
+          },
+          "tools": [
+            {
+              "name": "Dependabot",
+              "type": "SCA",
+              "version": "2",
+              "rulesets": [
+                "built-in"
+              ],
+              "integration": {
+                "adhoc": true,
+                "ci": false,
+                "release": false
+              },
+              "results": {
+                "adhoc": {
+                  "name": "Scheduled SCA Scan Results",
+                  "location": "https://github.com/gemaraproj/gemara/security/dependabot",
+                  "predicate-uri": "https://docs.github.com/en/graphql/reference/objects#repositoryvulnerabilityalert",
+                  "comment": "The results of the scheduled SCA scan are available in the Dependabot tab of the Security Insights page.\n"
+                }
+              }
+            },
+            {
+              "name": "CodeQL",
+              "type": "SAST",
+              "version": "2.y.z",
+              "rulesets": [
+                "go",
+                "actions"
+              ],
+              "integration": {
+                "adhoc": true,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "adhoc": {
+                  "name": "Scheduled SAST Results",
+                  "location": "https://github.com/gemaraproj/gemara/security/code-scanning",
+                  "predicate-uri": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/schemas/sarif-schema-2.1.0.json",
+                  "comment": "The results of the scheduled SAST scan are available in the Code Scanning tab of the Security Insights page and as an artifact on the scheduled job.\n"
+                },
+                "ci": {
+                  "name": "CI SAST Results",
+                  "location": "https://github.com/gemaraproj/gemara/security/code-scanning",
+                  "predicate-uri": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/schemas/sarif-schema-2.1.0.json",
+                  "comment": "The results of the CI SAST scan are available in the Code Scanning tab of the Security Insights page.\n"
+                }
+              }
+            }
+          ]
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/gemaraproj/gemara/blob/main/CONTRIBUTING.md"
+        }
+      }
+    }
+  },
+  {
+    "target": "https://github.com/openbao/openbao/blob/main/.github/security-insights.yml",
+    "owner": "openbao",
+    "repo": "openbao",
+    "path": ".github/security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.2.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-07-28",
+        "last-updated": "2026-07-28",
+        "schema-version": "2.2.0",
+        "url": "https://github.com/openbao/openbao"
+      },
+      "project": {
+        "name": "OpenBao",
+        "homepage": "https://openbao.org/",
+        "administrators": [
+          {
+            "name": "Alex Scheel",
+            "primary": false,
+            "affiliation": "ControlPlane",
+            "email": "alexander.m.scheel@gmail.com",
+            "social": "https://github.com/cipherboy"
+          },
+          {
+            "name": "Andrii Fedorchuk",
+            "primary": false,
+            "affiliation": "Adfinis",
+            "email": "andrii.fedorchuk@adfinis.com",
+            "social": "https://github.com/driif"
+          },
+          {
+            "name": "Brad Corrion",
+            "primary": false,
+            "affiliation": "IOTech Systems",
+            "email": "brad@iotechsys.com"
+          },
+          {
+            "name": "Dan Ghita",
+            "primary": false,
+            "affiliation": "Wallix",
+            "email": "dghita@wallix.com",
+            "social": "https://github.com/DanGhita"
+          },
+          {
+            "name": "Eugene Davis",
+            "primary": false,
+            "affiliation": "ControlPlane",
+            "email": "eugene.davis@control-plane.io",
+            "social": "https://github.com/eugene-davis"
+          },
+          {
+            "name": "Fabien Catteau",
+            "primary": false,
+            "affiliation": "GitLab",
+            "email": "fcatteau@gitlab.com",
+            "social": "https://github.com/fcat"
+          },
+          {
+            "name": "James Butcher",
+            "primary": false,
+            "affiliation": "IOTech Systems",
+            "email": "james@iotechsys.com"
+          },
+          {
+            "name": "Jonas Köhnen",
+            "primary": false,
+            "affiliation": "SAP (Liquid Reply)",
+            "email": "j.koehnen@reply.de",
+            "social": "https://github.com/satoqz"
+          },
+          {
+            "name": "Julian Cassignol",
+            "primary": false,
+            "affiliation": "WALLIX",
+            "email": "jcassignol@wallix.com"
+          },
+          {
+            "name": "Klaus Kiefer",
+            "primary": false,
+            "affiliation": "SAP",
+            "email": "klaus.kiefer@sap.com",
+            "social": "https://github.com/klaus-sap"
+          },
+          {
+            "name": "Mark Mishaev",
+            "primary": false,
+            "affiliation": "GitLab",
+            "email": "mmishaev@gitlab.com",
+            "social": "https://github.com/markmishaev76"
+          },
+          {
+            "name": "Michael Hofer",
+            "primary": true,
+            "affiliation": "Adfinis",
+            "email": "michael.hofer@adfinis.com",
+            "social": "https://github.com/karras"
+          }
+        ],
+        "repositories": [
+          {
+            "name": ".github",
+            "comment": "Meta project to provide information about the OpenBao Github organisation.\n",
+            "url": "https://github.com/openbao/.github"
+          },
+          {
+            "name": "artwork",
+            "comment": "Artwork for the OpenBao project in standardized formats.\n",
+            "url": "https://github.com/openbao/artwork"
+          },
+          {
+            "name": "benchmark-openbao",
+            "comment": "A tool for benchmarking usage of OpenBao.\n",
+            "url": "https://github.com/openbao/benchmark-openbao"
+          },
+          {
+            "name": "dependency-vulnerabilities",
+            "comment": "Automates the identification and tracking of security vulnerabilities.\n",
+            "url": "https://github.com/openbao/dependency-vulnerabilities"
+          },
+          {
+            "name": "dev-wg",
+            "comment": "Meta project for the Development Working Group.\n",
+            "url": "https://github.com/openbao/dev-wg"
+          },
+          {
+            "name": "devbao",
+            "comment": "Development environment for starting OpenBao (Vault) instances.\n",
+            "url": "https://github.com/openbao/devbao"
+          },
+          {
+            "name": "dough",
+            "comment": "Greenfield UI rewrite.\n",
+            "url": "https://github.com/openbao/dough"
+          },
+          {
+            "name": "go-kms-wrapping",
+            "comment": "KMS wrapping libraries split out from OpenBao.\n",
+            "url": "https://github.com/openbao/go-kms-wrapping"
+          },
+          {
+            "name": "go-secure-stdlib",
+            "comment": "Stdlib for OpenBao Secure products.\n",
+            "url": "https://github.com/openbao/go-secure-stdlib"
+          },
+          {
+            "name": "marketing-wg",
+            "comment": "Meta project for the Marketing Working Group.\n",
+            "url": "https://github.com/openbao/marketing-wg"
+          },
+          {
+            "name": "openbao",
+            "comment": "This is the core repo for OpenBao.\n",
+            "url": "https://github.com/openbao/openbao/"
+          },
+          {
+            "name": "openbao-csi-provider",
+            "comment": "OpenBao provider for Secret Store CSI Driver.\n",
+            "url": "https://github.com/openbao/openbao-csi-provider"
+          },
+          {
+            "name": "openbao-ecosystem-logos",
+            "comment": "Logos for the OpenBao ecosystem page.\n",
+            "url": "https://github.com/openbao/openbao-ecosystem-logos"
+          },
+          {
+            "name": "openbao-fedora",
+            "comment": "EPEL/Fedora packaging for OpenBao.\n",
+            "url": "https://github.com/openbao/openbao-fedora"
+          },
+          {
+            "name": "openbao-helm",
+            "comment": "Helm chart to install OpenBao and other associated components.\n",
+            "url": "https://github.com/openbao/openbao-helm"
+          },
+          {
+            "name": "openbao-k8s",
+            "comment": "Sidecar OpenBao agent injector for Kubernetes.\n",
+            "url": "https://github.com/openbao/openbao-k8s"
+          },
+          {
+            "name": "openbao-nightly",
+            "comment": "Mirror of openbao for nightly build process.\n",
+            "url": "https://github.com/openbao/openbao-nightly"
+          },
+          {
+            "name": "openbao-plugin-secrets-oauthapp",
+            "comment": "OAuth 2.0 secrets plugin for OpenBao supporting a variety of grant types.\n",
+            "url": "https://github.com/openbao/openbao-plugin-secrets-oauthapp"
+          },
+          {
+            "name": "openbao-plugins",
+            "comment": "Plugins for OpenBao, which are maintained by the project but are not included in the core OpenBao binary.\n",
+            "url": "https://github.com/openbao/openbao-plugins"
+          },
+          {
+            "name": "openbao-snapshot-agent",
+            "comment": "Snapshot agent to create OpenBao backups.\n",
+            "url": "https://github.com/openbao/openbao-snapshot-agent"
+          },
+          {
+            "name": "openbao-template",
+            "comment": "Template rendering, notifier, and supervisor for OpenBao data.\n",
+            "url": "https://github.com/openbao/openbao-template"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false,
+          "contact": {
+            "name": "Security mailing list",
+            "primary": true,
+            "email": "openbao-security@lists.openssf.org"
+          },
+          "comment": "We take OpenBao's security and our users' trust very seriously. If you believe you have found a security issue in OpenBao, please responsibly disclose by contacting us."
+        },
+        "documentation": {
+          "detailed-guide": "https://openbao.org/docs/",
+          "quickstart-guide": "https://openbao.org/docs/get-started/developer-qs/",
+          "support-policy": "https://openbao.org/community/policies/support/"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/openbao/openbao",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Alex Scheel",
+            "primary": true,
+            "email": "alexander.m.scheel@gmail.com",
+            "social": "https://github.com/cipherboy"
+          },
+          {
+            "name": "Dan Ghita",
+            "primary": false,
+            "email": "dghita@wallix.com",
+            "social": "https://github.com/DanGhita"
+          },
+          {
+            "name": "Jan Martens",
+            "primary": false,
+            "email": "jan@martens.eu.org",
+            "social": "https://github.com/JanMa"
+          },
+          {
+            "name": "Jonas Köhnen",
+            "primary": false,
+            "email": "jonas@satoqz.net",
+            "social": "https://github.com/satoqz"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/openbao/openbao/blob/main/LICENSE",
+          "expression": "Mozilla Public License 2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "Self assessment has not yet been completed.\n"
+            }
+          }
+        },
+        "release": {
+          "automated-pipeline": true,
+          "distribution-points": [
+            {
+              "uri": "https://github.com/openbao/openbao/releases/",
+              "comment": "GitHub Release Page"
+            }
+          ],
+          "changelog": "https://github.com/openbao/openbao/blob/main/CHANGELOG.md"
+        }
+      }
+    }
+  },
+  {
+    "target": "ossf/security-baseline",
+    "owner": "ossf",
+    "repo": "security-baseline",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/security-baseline"
+  },
+  {
+    "target": "repository-service-tuf/repository-service-tuf",
+    "owner": "repository-service-tuf",
+    "repo": "repository-service-tuf",
+    "path": "SECURITY_INSIGHTS.yml",
+    "status": "invalid",
+    "error": "error unmarshalling SI: [5:3] unknown field \"project-url\"\n   2 |   schema-version: 2.1.0\n   3 |   last-updated: \"2026-03-26\"\n   4 |   last-reviewed: \"2026-03-26\"\n\u003e  5 |   project-url: https://github.com/repository-service-tuf/repository-service-tuf\n         ^\n   7 | project:\n   8 |   name: Repository Service for TUF (RSTUF)\n   9 |   ",
+    "schema-version": "2.1.0"
+  },
+  {
+    "target": "sigstore/sigstore",
+    "owner": "sigstore",
+    "repo": "sigstore",
+    "status": "not-found",
+    "error": "security insights file not found: sigstore/sigstore"
+  },
+  {
+    "target": "in-toto/in-toto",
+    "owner": "in-toto",
+    "repo": "in-toto",
+    "status": "not-found",
+    "error": "security insights file not found: in-toto/in-toto"
+  },
+  {
+    "target": "ossf/oss-crs",
+    "owner": "ossf",
+    "repo": "oss-crs",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/oss-crs"
+  },
+  {
+    "target": "slsa-framework/slsa-github-generator",
+    "owner": "slsa-framework",
+    "repo": "slsa-github-generator",
+    "status": "not-found",
+    "error": "security insights file not found: slsa-framework/slsa-github-generator"
+  },
+  {
+    "target": "slsa-framework/slsa-verifier",
+    "owner": "slsa-framework",
+    "repo": "slsa-verifier",
+    "status": "not-found",
+    "error": "security insights file not found: slsa-framework/slsa-verifier"
+  },
+  {
+    "target": "ossf/criticality_score",
+    "owner": "ossf",
+    "repo": "criticality_score",
+    "status": "not-found",
+    "error": "security insights file not found: ossf/criticality_score"
+  },
+  {
+    "target": "https://github.com/ossf/osv-schema/blob/main/security-insights.yml",
+    "owner": "ossf",
+    "repo": "osv-schema",
+    "path": "security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.1.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2025-11-24",
+        "last-updated": "2025-11-24",
+        "schema-version": "2.1.0",
+        "url": "https://github.com/ossf/osv-schema"
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/ossf/osv-schema",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Rex Pan",
+            "primary": true,
+            "affiliation": "Google"
+          },
+          {
+            "name": "Jason Shepherd",
+            "primary": true,
+            "affiliation": "Red Hat"
+          },
+          {
+            "name": "Madison Oliver",
+            "primary": true,
+            "affiliation": "GitHub"
+          },
+          {
+            "name": "Chris Robinson",
+            "primary": true,
+            "affiliation": "OpenSSF"
+          },
+          {
+            "name": "Andrew Pollock",
+            "primary": true
+          },
+          {
+            "name": "Vulnerability Disclosures WG",
+            "primary": true,
+            "affiliation": "OpenSSF",
+            "email": "openssf-wg-vul-disclosures@lists.openssf.org"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/ossf/osv-schema/blob/main/LICENSE",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "Self assessment has not yet been completed.\n"
+            }
+          }
+        }
+      }
+    }
+  }
+]

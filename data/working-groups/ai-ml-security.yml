@@ -11,22 +11,33 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` before opening a PR.
+# EDITING YOUR PROJECT'S ENTRY — your project's name, homepage and repositories
+# are NOT stated here. They come from your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), which `insights:` points at:
+# either the file's GitHub URL, or `owner/repo` to have it discovered at any of
+# the standard paths. A project with no valid v2 file keeps its entry but is not
+# rendered until one lands; /projects/ lists those. The build reads a committed
+# snapshot (data/generated/insights.json) refreshed by `make refresh-insights`.
+# `description` stays here. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` before opening a PR.
 
 working_group:
   id: ai-ml-security
   name: AI/ML Security
+  description: >-
+    Explores the security risks associated with Large Language Models (LLMs), Generative AI
+    (GenAI), and other forms of artificial intelligence (AI) and machine learning (ML), and
+    their impact on open source projects, maintainers, their security, communities, and
+    adopters.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: model-signing
-  name: OpenSSF Model Signing (OMS)
-  url: https://openssf.org/projects/model-signing/
+  insights: sigstore/model-transparency
   description: >-
     A library and CLI for cryptographically signing and verifying machine learning models
     of any format or size, supporting multiple PKI backends including Sigstore, self-signed
@@ -60,9 +71,7 @@ projects:
       model back to its origin.
   compatible_with: [sigstore]
 - id: secure-agentic-framework
-  name: Secure Agentic Framework
-  url: >-
-    https://docs.google.com/document/d/1OxjsWHO2v8SfzG4KkqyJEAy8yn1GA1yjgN7QCm6q85Q/edit
+  # no repository; awaiting Security Insights
   description: >-
     An OSSF project approved by the TAC and currently in LF legal formation; public documentation
     is not yet available, so scope and classification are provisional.
