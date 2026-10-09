@@ -30,7 +30,8 @@ and complementary projects.
 
 When a project publishes a valid
 [Security Insights](https://github.com/ossf/security-insights-spec) file, its
-name, homepage and repositories on this site come from that file. These
+name, homepage, repositories, license, status, administrators and
+vulnerability-reporting link on this site come from that file. These
 {{ awaiting | size }} records have not yet, so their pages are built from
 curated data only.
 

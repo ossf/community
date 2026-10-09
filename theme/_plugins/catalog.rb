@@ -14,10 +14,11 @@
 # `name` and says where the project's Security Insights file is (`insights:` —
 # a GitHub blob URL, or `owner/repo` for discovery). The snapshot holds what
 # `si fetch` read from it, one row per target. When the row is ok, the SI
-# project name wins over the local one and homepage/repositories come from it.
-# When the row is missing or not ok, the record renders from its local name and
-# description, its url derives from the repo, and `si_available` is false so the
-# layouts can say why. catalog.awaiting_insights lists those records.
+# project name wins over the local one, and the homepage, repositories,
+# vulnerability-reporting link, license, repository status and administrators
+# come from it. When the row is missing or not ok, the record renders from its
+# local name and description with none of those, and `si_available` is false so
+# the layouts can say why. catalog.awaiting_insights lists those records.
 #
 # Each data/working-groups/<id>.yml holds:
 #   working_group:  the WG's own record (name, description, url)
@@ -113,8 +114,13 @@ module OpenSSFCommunity
       si      = row["insights"] || {}
       project = si["project"]
       record["name"]              = project["name"] if project && !project["name"].to_s.empty?
-      record["url"]               = (project && project["homepage"]) || si.dig("repository", "url")
+      record["url"]               = project && project["homepage"]
       record["repositories"]      = (project && project["repositories"]) || []
+      # Emails are dropped here so neither the pages nor the catalog.json mirror publish them.
+      record["administrators"]    = ((project && project["administrators"]) || []).map { |a| a.reject { |k, _| k == "email" } }
+      record["security_url"]      = security_url(project && project["vulnerability-reporting"])
+      record["license"]           = si.dig("repository", "license")
+      record["repo_status"]       = si.dig("repository", "status")
       record["si_available"]      = true
       record["si_status"]         = project ? "ok" : "ok (no project block)"
       record["si_schema_version"] = row["schema-version"]
@@ -122,6 +128,16 @@ module OpenSSFCommunity
       unless record["insights"].start_with?("http")
         record["insights"] = "https://github.com/#{row['owner']}/#{row['repo']}/blob/HEAD/#{row['path']}"
       end
+    end
+
+    # Where to send a vulnerability report: the policy document, else the
+    # primary contact's email. Nil when the file names neither.
+    def self.security_url(reporting)
+      return nil unless reporting
+      return reporting["policy"] if reporting["policy"]
+
+      email = reporting.dig("contact", "email")
+      email && "mailto:#{email}"
     end
 
     # The repository the SI file lives (or should live) in. owner/repo are

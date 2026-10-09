@@ -15,8 +15,9 @@
 # `insights:` points at your repository's Security Insights file
 # (https://github.com/ossf/security-insights-spec), either as the file's GitHub
 # URL or as `owner/repo` to have it discovered at any of the standard paths.
-# When that file is valid, its project name, homepage and repositories enrich
-# the record and the SI name wins over the local one; when it is missing or
+# When that file is valid, its project name, homepage, repositories, license,
+# status, administrators and vulnerability-reporting link enrich the record and
+# the SI name wins over the local one; when it is missing or
 # invalid the record still renders from what is here, with a notice. The build
 # reads a committed snapshot (data/generated/insights.json) refreshed by
 # `make refresh-insights`. Persona and problem ids come from data/definitions/,

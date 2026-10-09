@@ -4,8 +4,9 @@
 file, one row per `insights:` target in `data/working-groups/*.yml`, in file
 order. `theme/_plugins/catalog.rb` joins each record to its row by `target`.
 Security Insights enriches, never gates: on an `ok` row the SI project name
-wins over the entry's `name` and the homepage and repositories come from the
-file; on any other row the record renders from its entry with a notice and
+wins over the entry's `name` and the homepage, repositories, license, status,
+administrators and vulnerability-reporting link come from the file; on any
+other row the record renders from its entry with a notice and
 no homepage link. The openssf.org link comes from the entry's `openssf_url`
 either way.
 

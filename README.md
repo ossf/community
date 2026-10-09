@@ -83,7 +83,8 @@ it discovered at any of the standard paths. `make refresh-insights` reads
 every file into the committed snapshot `data/generated/insights.json` (a
 weekly workflow does the same by PR), and the build joins each record to its
 row. When the file is valid, its project name wins over the local one and the
-homepage and repositories come from it. When it is missing or invalid, the
+homepage, repositories, license, repository status, administrators and
+vulnerability-reporting link come from it. When it is missing or invalid, the
 page still renders from the entry, with a notice linking the repository, and
 has no homepage link; `/projects/` lists those under "Awaiting Security
 Insights". There is no `url` on an entry. The one URL every entry does state
