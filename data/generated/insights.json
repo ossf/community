@@ -14,13 +14,247 @@
     "error": "security insights file not found: ossf/best-practices-badge"
   },
   {
-    "target": "https://github.com/ossf/scorecard/blob/main/.github/security-insights.yml",
+    "target": "ossf/scorecard",
     "owner": "ossf",
     "repo": "scorecard",
-    "path": ".github/security-insights.yml",
-    "status": "invalid",
-    "error": "error unmarshalling SI: [55:7] unknown field \"audit-2025\"\n  52 |     expression: Apache-2.0\n  53 |   security:\n  54 |     assessments:\n\u003e 55 |       audit-2025:\n             ^\n  56 |         evidence: https://openssf.org/blog/2025/10/10/openssf-scorecard-audit-is-complete/\n  57 |         comment: |\n  58 |           This audit was coordinated by Open Source Technology Improvement Fund (OSTIF) and undertaken by the ADA\n  59 |           Logics team during early summer of 2025.\n  60 |           Within the scope of review was five repositories: scorecard-webapp, scorecard-action, scorecard-monitor,\n  61 |           scorecard, and allstar. These five projects underwent formal threat modeling, which then guided the manual\n  62 |           code review that followed. Each repository interacts with different interfaces, handles different\n  63 |           (potentially sensitive) data, and therefore has differing attack impacts that affect its security needs.\n  64 |           Fuzzing work was also performed during this audit, and resulted in the uncovering of some of the reported\n  65 |           findings.\n  66 |   ",
-    "schema-version": "2.0.0"
+    "path": "security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.2.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-10-08",
+        "last-updated": "2026-10-08",
+        "schema-version": "2.2.0",
+        "url": "https://raw.githubusercontent.com/ossf/scorecard/main/security-insights.yml",
+        "comment": "This file contains the security information for the Scorecard project."
+      },
+      "project": {
+        "name": "Scorecard",
+        "homepage": "https://scorecard.dev",
+        "roadmap": "https://github.com/ossf/scorecard/blob/main/docs/ROADMAP.md",
+        "steward": {
+          "uri": "https://openssf.org",
+          "comment": "Scorecard is maintained by volunteers under the oversight of the Open Source Security Foundation (OpenSSF).\n"
+        },
+        "administrators": [
+          {
+            "name": "Stephen Augustus",
+            "primary": true,
+            "affiliation": "Bloomberg",
+            "social": "https://github.com/justaugustus"
+          },
+          {
+            "name": "Spencer Schrock",
+            "primary": false,
+            "affiliation": "Google",
+            "social": "https://github.com/spencerschrock"
+          }
+        ],
+        "repositories": [
+          {
+            "name": "Scorecard",
+            "comment": "Core repo for the OpenSSF Scorecard project.\n",
+            "url": "https://github.com/ossf/scorecard"
+          },
+          {
+            "name": "Scorecard Action",
+            "comment": "Official GitHub Action for OpenSSF Scorecard.\n",
+            "url": "https://github.com/ossf/scorecard-action"
+          },
+          {
+            "name": "Scorecard Webapp",
+            "comment": "Website for OpenSSF Scorecard.\n",
+            "url": "https://github.com/ossf/scorecard-webapp"
+          },
+          {
+            "name": "Scorecard Monitor",
+            "comment": "Automated markdown and JSON reports for tracking Scorecard results across an organization.\n",
+            "url": "https://github.com/ossf/scorecard-monitor"
+          },
+          {
+            "name": "Scorecard Visualizer",
+            "comment": "Tool for visualizing Scorecard API data.\n",
+            "url": "https://github.com/ossf/scorecard-visualizer"
+          },
+          {
+            "name": "Scorecard Infrastructure",
+            "comment": "OpenSSF Scorecard infrastructure, including the API server, batch scanning tooling, and deployment configurations.\n",
+            "url": "https://github.com/ossf/scorecard-infra"
+          },
+          {
+            "name": "Allstar",
+            "comment": "Scorecard GitHub App for setting and enforcing security policies.\n",
+            "url": "https://github.com/ossf/allstar"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false,
+          "contact": {
+            "name": "OpenSSF Security",
+            "primary": true,
+            "email": "security@openssf.org"
+          },
+          "comment": "Report vulnerabilities through GitHub private vulnerability reporting on the affected repository.\nUse the OpenSSF security contact email if a report can't be filed on GitHub or receives no response\nwithin the window described in the security policy.\n",
+          "policy": "https://github.com/ossf/scorecard/blob/main/SECURITY.md"
+        },
+        "documentation": {
+          "detailed-guide": "https://github.com/ossf/scorecard/blob/main/README.md",
+          "code-of-conduct": "https://github.com/ossf/scorecard/blob/main/CODE_OF_CONDUCT.md",
+          "release-process": "https://github.com/ossf/scorecard/blob/main/RELEASE.md",
+          "signature-verification": "https://github.com/ossf/scorecard/blob/main/README.md#verifying-slsa-provenance-for-downloaded-releases"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/ossf/scorecard",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Stephen Augustus",
+            "primary": true,
+            "affiliation": "Bloomberg",
+            "social": "https://github.com/justaugustus"
+          },
+          {
+            "name": "Spencer Schrock",
+            "primary": false,
+            "affiliation": "Google",
+            "social": "https://github.com/spencerschrock"
+          },
+          {
+            "name": "Jeff Mendoza",
+            "primary": false,
+            "affiliation": "Microsoft",
+            "social": "https://github.com/jeffmendoza"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/ossf/scorecard/blob/main/LICENSE",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "A self-assessment has not been completed yet. The 2025 third-party audit listed below included formal\nthreat modeling of this repository.\n"
+            },
+            "third-party": [
+              {
+                "comment": "This audit was coordinated by Open Source Technology Improvement Fund (OSTIF) and undertaken by the ADA\nLogics team during early summer of 2025.\nWithin the scope of review was five repositories: scorecard-webapp, scorecard-action, scorecard-monitor,\nscorecard, and allstar. These five projects underwent formal threat modeling, which then guided the manual\ncode review that followed. Each repository interacts with different interfaces, handles different\n(potentially sensitive) data, and therefore has differing attack impacts that affect its security needs.\nFuzzing work was also performed during this audit, and resulted in the uncovering of some of the reported\nfindings.\n",
+                "name": "OpenSSF Scorecard security audit (2025)",
+                "evidence": "https://openssf.org/blog/2025/10/10/openssf-scorecard-audit-is-complete/"
+              }
+            ]
+          },
+          "tools": [
+            {
+              "name": "CodeQL",
+              "type": "SAST",
+              "rulesets": [
+                "default"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "CodeQL analysis",
+                  "location": "https://github.com/ossf/scorecard/actions/workflows/codeql-analysis.yml",
+                  "predicate-uri": "https://github.com/github/codeql-action"
+                }
+              }
+            },
+            {
+              "name": "Dependency Review",
+              "type": "SCA",
+              "rulesets": [
+                "default"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "Dependency review",
+                  "location": "https://github.com/ossf/scorecard/actions/workflows/depsreview.yml",
+                  "predicate-uri": "https://github.com/actions/dependency-review-action"
+                }
+              }
+            },
+            {
+              "name": "OpenSSF Scorecard",
+              "type": "other",
+              "rulesets": [
+                "default"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "Scorecard analysis",
+                  "location": "https://github.com/ossf/scorecard/actions/workflows/scorecard-analysis.yml",
+                  "predicate-uri": "https://github.com/ossf/scorecard-action"
+                }
+              }
+            },
+            {
+              "name": "OSPS Baseline Scanner",
+              "type": "other",
+              "rulesets": [
+                "osps-baseline"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "OSPS Baseline evaluation",
+                  "location": "https://github.com/ossf/scorecard/actions/workflows/osps-baseline.yml",
+                  "predicate-uri": "https://github.com/revanite-io/osps-baseline-action"
+                }
+              }
+            }
+          ]
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/ossf/scorecard/blob/main/CONTRIBUTING.md",
+          "governance": "https://github.com/ossf/scorecard/blob/main/MAINTAINERS.md",
+          "security-policy": "https://github.com/ossf/scorecard/blob/main/SECURITY.md"
+        },
+        "release": {
+          "automated-pipeline": true,
+          "distribution-points": [
+            {
+              "uri": "https://github.com/ossf/scorecard/releases",
+              "comment": "GitHub Releases page"
+            },
+            {
+              "uri": "https://github.com/ossf/scorecard/pkgs/container/scorecard",
+              "comment": "Container images published to ghcr.io/ossf/scorecard"
+            }
+          ],
+          "changelog": "https://github.com/ossf/scorecard/releases",
+          "attestations": [
+            {
+              "name": "SLSA provenance",
+              "location": "https://github.com/ossf/scorecard/releases/latest",
+              "predicate-uri": "https://slsa.dev/provenance/v0.2",
+              "comment": "Each release includes SLSA Build Level 3 provenance generated by slsa-framework/slsa-github-generator.\n"
+            }
+          ]
+        }
+      }
+    }
   },
   {
     "target": "https://github.com/mindersec/minder/blob/main/.github/security-insights.yml",

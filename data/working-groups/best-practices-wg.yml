@@ -80,7 +80,7 @@ projects:
   compatible_with: [openssf-scorecard]
 - id: openssf-scorecard
   name: OpenSSF Scorecard
-  insights: https://github.com/ossf/scorecard/blob/main/.github/security-insights.yml
+  insights: ossf/scorecard
   openssf_url: https://openssf.org/projects/scorecard/
   description: >-
     An automated tool that assesses open source projects against a curated set of security-health

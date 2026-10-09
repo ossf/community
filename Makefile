@@ -1,8 +1,8 @@
 .PHONY: brand-new-env-installs deps start test refresh-insights
 
-# Checkout of ossf/si-tooling (or the fork pinned in
-# .github/workflows/refresh-insights.yml) that provides `si fetch`.
-SI_TOOLING_DIR ?= ../si-tooling
+# `si fetch` from ossf/si-tooling, pinned to a release. Override to run a
+# local checkout: make refresh-insights SI_FETCH="go -C ../si-tooling/v2 run ./cmd/si"
+SI_FETCH ?= go run github.com/ossf/si-tooling/v2/cmd/si@v2.3.0
 SNAPSHOT := data/generated/insights.json
 
 brand-new-env-installs:
@@ -36,6 +36,6 @@ test: deps
 # those are facts about the project and are meant to land.
 refresh-insights:
 	ruby -ryaml -e 'puts Dir["data/working-groups/*.yml"].sort.flat_map { |f| (YAML.load_file(f)["projects"] || []).map { |p| p["insights"] }.compact }' \
-	  | xargs go -C $(SI_TOOLING_DIR)/v2 run ./cmd/si fetch > $(SNAPSHOT).tmp \
+	  | xargs $(SI_FETCH) fetch > $(SNAPSHOT).tmp \
 	  && mv $(SNAPSHOT).tmp $(SNAPSHOT) \
 	  || { rm -f $(SNAPSHOT).tmp; exit 1; }

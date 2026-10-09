@@ -9,10 +9,10 @@ file; on any other row the record renders from its entry with a notice and
 no homepage link. The openssf.org link comes from the entry's `openssf_url`
 either way.
 
-Regenerate with `make refresh-insights` (needs Go and a checkout of
-ossf/si-tooling with the `si fetch` command; `SI_TOOLING_DIR` points at it,
-default `../si-tooling`). `.github/workflows/refresh-insights.yml` does the
-same weekly and opens a PR when the file changes.
+Regenerate with `make refresh-insights` (needs Go; it runs the ossf/si-tooling
+release pinned as `SI_FETCH` in the Makefile, so no checkout is required).
+`.github/workflows/refresh-insights.yml` does the same weekly and opens a PR
+when the file changes.
 
 Row shape, as emitted by `si fetch`:
 
