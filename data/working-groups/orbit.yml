@@ -25,7 +25,8 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
-# Run `make test` before opening a PR.
+# Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: orbit
@@ -35,9 +36,56 @@ working_group:
     security-relevant data, providing a home for collaborative activities, best practice
     definitions, documentation, testing, integration, and other artifacts supporting the
     mission.
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/orbit/
   kind: working-group
 projects:
+- id: gemara
+  name: Gemara
+  insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
+  openssf_url: https://openssf.org/projects/gemara/
+  description: >-
+    Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
+    formats that bridge high-level compliance requirements and low-level technical evidence
+    to enable automated risk assessment across security tooling.
+  kind: project
+  relationships:
+  - kind: implements
+    target: gemara-whitepaper
+    status: confirmed
+  personas:
+  - id: ospo
+    note: >-
+      Expresses the organization's controls and compliance requirements in Gemara's shared
+      model so they can be assessed consistently across projects.
+  - id: security
+    note: >-
+      Maps threats, controls, and evidence onto Gemara's layered schema to drive automated,
+      repeatable risk assessment.
+  - id: devops
+    note: >-
+      Consumes Gemara's machine-readable model to automate control evaluation and evidence
+      collection inside the pipeline.
+  - id: executive
+    note: >-
+      Reads risk and compliance status rolled up through Gemara's model rather than from disconnected,
+      hand-assembled spreadsheets.
+  problems:
+  - id: policy-compliance
+    note: >-
+      Encodes governance, risk, and compliance requirements as a shared data model so controls
+      map cleanly between regulations and evidence.
+  - id: security-posture
+    note: >-
+      Standardizes how risk and control evidence are expressed so posture can be assessed
+      automatically and compared across projects.
+- id: gemara-whitepaper
+  name: Gemara Whitepaper
+  openssf_url: https://openssf.org/projects/gemara/  # published by the Gemara project; no page of its own
+  description: >-
+    "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
+    the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
+    and how they interoperate.
+  kind: publication
 - id: minder
   name: Minder
   insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
@@ -46,6 +94,13 @@ projects:
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
   kind: project
+  relationships:
+  - kind: consumes
+    target: osps-baseline
+    status: needs-review
+    note: >-
+      Baseline requirements can be enforced as Minder policy profiles across an organization's
+      repositories.
   personas:
   - id: developer
     note: >-
@@ -81,8 +136,58 @@ projects:
       Enforces standardized security policy across whole portfolios of repositories and artefacts
       from one control plane.
   compatible_with: [openssf-scorecard]
+- id: osps-baseline
+  name: OSPS Baseline
+  insights: ossf/security-baseline
+  openssf_url: https://openssf.org/projects/osps-baseline/
+  description: >-
+    The Open Source Project Security Baseline — a consensus-driven minimum set of security
+    requirements for projects to adopt and for consumers to expect.
+  kind: publication
+  personas:
+  - id: developer
+    note: >-
+      Adopts the OSPS Baseline to implement fundamental security steps, like secure workflows
+      and disclosure policies, early in development.
+  - id: ospo
+    note: >-
+      Uses the OSPS Baseline to define and enforce security expectations for projects across
+      the enterprise.
+  - id: security
+    note: >-
+      Integrates the OSPS Baseline to enforce structured security requirements and reduce
+      defects early in the software creation phase.
+  - id: devops
+    note: >-
+      Configures pipeline guardrails to automatically verify that projects adhere to the fundamental
+      practices outlined in the baseline.
+  - id: package-manager
+    note: >-
+      Requires adherence to the baseline as a prerequisite for verifying or promoting packages
+      within the repository ecosystem.
+  - id: executive
+    note: >-
+      Adopts the structured baseline to ensure organizational compliance with policies and
+      regulations like the Cyber Resilience Act.
+  problems:
+  - id: policy-compliance
+    note: >-
+      Provides a consensus minimum set of requirements that maps cleanly onto regulations
+      like the Cyber Resilience Act.
+  - id: security-posture
+    note: >-
+      Defines the floor of expected security practices so projects can be measured against
+      a shared bar.
+  similar_to: [best-practices-badge]
+  compatible_with: [minder]
+- id: privateer
+  name: Privateer
+  openssf_url: https://openssf.org/projects/privateer/
+  description: >-
+    A validation framework that simplifies infrastructure testing and compliance validation. Built with infrastructure engineers in mind, pvtr helps accelerate security and compliance validation of any software asset.
+  kind: project
 - id: security-insights
-  name: Security Insights
+  name: Security Insights Specification
   insights: https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/security-insights/
   description: >-

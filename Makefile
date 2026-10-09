@@ -1,4 +1,4 @@
-.PHONY: brand-new-env-installs deps start test refresh-insights
+.PHONY: brand-new-env-installs deps start test lint refresh-insights
 
 # `si fetch` from ossf/si-tooling, pinned to a release. Override to run a
 # local checkout: make refresh-insights SI_FETCH="go -C ../si-tooling/v2 run ./cmd/si"
@@ -29,6 +29,15 @@ start: deps
 test: deps
 	bundle exec jekyll build
 	bundle exec htmlproofer ./_site --disable-external
+
+# yamllint is not a gem, so it isn't in the Gemfile. Use it from PATH if it's
+# there, otherwise as a module (how `pip install --user` leaves it).
+YAMLLINT := $(shell command -v yamllint 2>/dev/null || echo "python3 -m yamllint")
+
+lint: deps
+	bundle exec rubocop
+	@$(YAMLLINT) --version >/dev/null 2>&1 || { echo "yamllint not found. Install with: pip3 install yamllint"; exit 1; }
+	$(YAMLLINT) data/ .github/ _config.yml
 
 # Re-read every `insights:` target and rewrite the snapshot. Writes to a temp
 # file first: any non-zero exit (rate limit, network, bad target) leaves the

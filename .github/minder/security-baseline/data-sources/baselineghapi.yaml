@@ -1,0 +1,50 @@
+version: v1
+type: data-source
+name: baselineghapi
+context: {}
+rest:
+  providerAuth: true
+  def:
+    license:
+      endpoint: https://api.github.com/repos/{owner}/{repo}/license
+      parse: json
+      input_schema:
+        type: object
+        properties:
+          owner:
+            type: string
+          repo:
+            type: string
+    repo_config:
+      endpoint: https://api.github.com/repos/{owner}/{repo}
+      parse: json
+      input_schema:
+        type: object
+        properties:
+          owner:
+            type: string
+          repo:
+            type: string
+    private_vuln_reporting:
+      endpoint: https://api.github.com/repos/{owner}/{repo}/private-vulnerability-reporting
+      parse: json
+      input_schema:
+        type: object
+        properties:
+          owner:
+            type: string
+          repo:
+            type: string
+    # Get all rules which apply to a given branch
+    branch_protection_status:
+      endpoint: https://api.github.com/repos/{owner}/{repo}/rules/branches/{branch}
+      parse: json
+      input_schema:
+        type: object
+        properties:
+          owner:
+            type: string
+          repo:
+            type: string
+          branch:
+            type: string

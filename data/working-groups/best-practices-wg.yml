@@ -25,7 +25,8 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
-# Run `make test` before opening a PR.
+# Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: best-practices-wg
@@ -33,7 +34,7 @@ working_group:
   description: >-
     Provides open source developers with security best practices recommendations and easy ways
     to learn and apply them.
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/best-practices-for-open-source-developers/
   kind: working-group
 projects:
 - id: best-practices-badge

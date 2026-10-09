@@ -27,7 +27,8 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
-# Run `make test` before opening a PR.
+# Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: global-cyber-policy
@@ -36,6 +37,6 @@ working_group:
     Assembles subject matter experts from many disciplines to collaboratively discuss
     legislation, regulation, and cybersecurity frameworks and standards that can help
     stakeholders of all backgrounds meet their compliance obligations.
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/global-cyber-policy/
   kind: working-group
 projects: []

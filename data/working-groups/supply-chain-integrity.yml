@@ -25,7 +25,8 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
-# Run `make test` before opening a PR.
+# Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: supply-chain-integrity
@@ -36,6 +37,24 @@ working_group:
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
+- id: ampel
+  name: AMPEL (Amazing Multi-Purpose Policy Engine (and L))
+  openssf_url: https://openssf.org/projects/ampel/
+  description: >-
+    A lightweight supply chain policy engine designed to be embedded across the software development lifecycle to make sure that source code, tools and the build environment can be trusted by verifying unforgeable metadata captured in signed attestations.
+  kind: project
+- id: bomhort
+  name: BOMHort
+  openssf_url: https://openssf.org/projects/bomhort/
+  description: >-
+    A standalone, Kubernetes-native SBOM visualization and governance platform. It ingests SPDX and CycloneDX SBOMs from S3-compatible storage, detects vulnerabilities via the OSV API, enforces license compliance policies, and applies VEX statements — all presented through an interactive dashboard with analytics.
+  kind: project
+- id: darnit
+  name: Darnit
+  openssf_url: https://openssf.org/projects/darnit/
+  description: >-
+    A pluggable compliance audit framework that helps projects conform to software engineering best practices. It provides infrastructure for running compliance audits, generating cryptographic attestations, and automating remediation workflows.
+  kind: project
 - id: gittuf
   name: gittuf
   insights: gittuf/gittuf
@@ -89,6 +108,16 @@ projects:
   - kind: consumes
     target: slsa-provenance
     status: confirmed
+  - kind: consumes
+    target: osv-record
+    status: needs-review
+    note: >-
+      Ingests OSV vulnerability data to link known vulnerabilities into the artifact graph.
+  - kind: consumes
+    target: vex
+    status: needs-review
+    note: >-
+      Ingests VEX statements so exploitability status can be queried alongside composition.
   personas:
   - id: developer
     note: >-
@@ -123,7 +152,7 @@ projects:
     note: >-
       Joins vulnerability data to the dependency graph to reveal the blast radius of a newly
       disclosed flaw.
-  compatible_with: [protobom, osv-openvex]
+  compatible_with: [protobom]
 - id: slsa
   name: SLSA
   insights: slsa-framework/slsa
@@ -185,3 +214,9 @@ projects:
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained
     systems by bundling applications and their dependencies into portable packages.
   kind: project
+  relationships:
+  - kind: produces
+    target: sbom
+    status: needs-review
+    note: >-
+      Generates SBOMs for the images and components it bundles into air-gapped packages.

@@ -25,7 +25,8 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
-# Run `make test` before opening a PR.
+# Run `make test` and `make lint`
+# before opening a PR.
 
 working_group:
   id: ai-ml-security
@@ -35,13 +36,13 @@ working_group:
     (GenAI), and other forms of artificial intelligence (AI) and machine learning (ML), and
     their impact on open source projects, maintainers, their security, communities, and
     adopters.
-  url: https://openssf.org/community/openssf-working-groups/
+  url: https://openssf.org/groups/ai-ml-security/
   kind: working-group
 projects:
 - id: model-signing
   name: OpenSSF Model Signing (OMS)
-  openssf_url: https://openssf.org/projects/model-signing/
   insights: sigstore/model-transparency
+  openssf_url: https://openssf.org/projects/model-signing/
   description: >-
     A library and CLI for cryptographically signing and verifying machine learning models
     of any format or size, supporting multiple PKI backends including Sigstore, self-signed
@@ -74,11 +75,16 @@ projects:
       Attaches verifiable signatures to model artifacts, letting downstream users trace a
       model back to its origin.
   compatible_with: [sigstore]
+- id: oss-crs
+  name: OSS-CRS
+  insights: ossf/oss-crs
+  openssf_url: https://openssf.org/projects/oss-crs/
+  description: >-
+    A standard orchestration framework for building and running LLM-based autonomous bug-finding and bug-fixing systems (Cyber Reasoning Systems).
+  kind: project
 - id: secure-agentic-framework
   name: Secure Agentic Framework
-  openssf_url: https://openssf.org/technical-initiatives/ # TODO: no project page on openssf.org yet
-  # no repository; awaiting Security Insights
+  openssf_url: https://openssf.org/technical-initiatives/  # TODO: no project page on openssf.org yet
   description: >-
-    An OSSF project approved by the TAC and currently in LF legal formation; public documentation
-    is not yet available, so scope and classification are provisional.
+    Map, assess, and mitigate threats across the entire agentic AI attack surface.
   kind: project

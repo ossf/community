@@ -46,7 +46,7 @@ module OpenSSFCommunity
       hosted = []
       snapshot = (site.data.dig("generated", "insights") || []).to_h { |row| [row["target"], row] }
 
-      (site.data[WG_DIR] || {}).sort.each do |slug, doc|
+      (site.data[WG_DIR] || {}).sort.each do |_slug, doc|
         next unless doc.is_a?(Hash)
 
         wg = doc["working_group"]
@@ -65,12 +65,12 @@ module OpenSSFCommunity
 
       awaiting = hosted.reject { |r| r["si_available"] }.map do |r|
         {
-          "id"       => r["id"],
-          "name"     => r["name"],
-          "kind"     => r["kind"],
-          "page"     => "/#{r['kind'] == 'publication' ? 'publications' : 'projects'}/#{r['id']}/",
+          "id" => r["id"],
+          "name" => r["name"],
+          "kind" => r["kind"],
+          "page" => "/#{r['kind'] == 'publication' ? 'publications' : 'projects'}/#{r['id']}/",
           "repo_url" => r["repo_url"],
-          "reason"   => r["si_status"],
+          "reason" => r["si_status"]
         }
       end
 
@@ -78,10 +78,10 @@ module OpenSSFCommunity
       publications += site.data.dig("definitions", "publications") || []
 
       site.data["catalog"] = {
-        "projects"          => projects.sort_by { |p| p["id"].to_s },
-        "publications"      => publications.sort_by { |p| p["id"].to_s },
-        "working_groups"    => groups.sort_by { |g| g["id"].to_s },
-        "awaiting_insights" => awaiting.sort_by { |a| a["id"].to_s },
+        "projects" => projects.sort_by { |p| p["id"].to_s },
+        "publications" => publications.sort_by { |p| p["id"].to_s },
+        "working_groups" => groups.sort_by { |g| g["id"].to_s },
+        "awaiting_insights" => awaiting.sort_by { |a| a["id"].to_s }
       }
 
       uncategorized = hosted.count { |p| p["working_group"].nil? }
@@ -117,7 +117,7 @@ module OpenSSFCommunity
       record["url"]               = project && project["homepage"]
       record["repositories"]      = (project && project["repositories"]) || []
       # Emails are dropped here so neither the pages nor the catalog.json mirror publish them.
-      record["administrators"]    = ((project && project["administrators"]) || []).map { |a| a.reject { |k, _| k == "email" } }
+      record["administrators"]    = ((project && project["administrators"]) || []).map { |a| a.except("email") }
       record["security_url"]      = security_url(project && project["vulnerability-reporting"])
       record["license"]           = si.dig("repository", "license")
       record["repo_status"]       = si.dig("repository", "status")
@@ -125,9 +125,9 @@ module OpenSSFCommunity
       record["si_status"]         = project ? "ok" : "ok (no project block)"
       record["si_schema_version"] = row["schema-version"]
       # `owner/repo` targets are not links; point the hero at the file that was found.
-      unless record["insights"].start_with?("http")
-        record["insights"] = "https://github.com/#{row['owner']}/#{row['repo']}/blob/HEAD/#{row['path']}"
-      end
+      return if record["insights"].start_with?("http")
+
+      record["insights"] = "https://github.com/#{row['owner']}/#{row['repo']}/blob/HEAD/#{row['path']}"
     end
 
     # Where to send a vulnerability report: the policy document, else the
