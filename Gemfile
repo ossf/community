@@ -16,14 +16,14 @@ gem "minima", "~> 2.5"
 
 # Jekyll plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.18"
   gem "jekyll-seo-tag", "~> 2.9"
 end
 
 # Development and testing tools
 group :development, :test do
   gem "html-proofer", "~> 5.2"
-  gem "rubocop", "~> 1.81", require: false
+  gem "rubocop", "~> 1.92", require: false
 end
 
 # Platform-specific gems
