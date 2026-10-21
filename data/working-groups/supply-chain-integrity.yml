@@ -100,14 +100,17 @@ projects:
     status: confirmed
   - kind: consumes
     target: osv-record
-    status: needs-review
+    status: confirmed
     note: >-
       Ingests OSV vulnerability data to link known vulnerabilities into the artifact graph.
   - kind: consumes
     target: vex
-    status: needs-review
+    status: confirmed
     note: >-
       Ingests VEX statements so exploitability status can be queried alongside composition.
+  - kind: consumes
+    target: openssf-scorecard
+    status: confirmed
   personas:
   - id: developer
     note: >-
@@ -142,6 +145,7 @@ projects:
     note: >-
       Joins vulnerability data to the dependency graph to reveal the blast radius of a newly
       disclosed flaw.
+  similar_to: [bomhort]
   compatible_with: [protobom]
 - id: slsa
   name: SLSA
