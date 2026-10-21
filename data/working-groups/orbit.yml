@@ -128,8 +128,6 @@ projects:
   name: OSPS Baseline
   url: https://baseline.openssf.org/
   openssf_url: https://openssf.org/projects/osps-baseline/
-  insights: >-
-    https://github.com/ossf/security-baseline/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     The Open Source Project Security Baseline — a consensus-driven minimum set of security
     requirements for projects to adopt and for consumers to expect.
@@ -138,7 +136,7 @@ projects:
   - id: developer
     note: >-
       Adopts the OSPS Baseline to implement fundamental security steps, like secure workflows
-      and disclosure policies, early in development.
+      and disclosure policies.
   - id: ospo
     note: >-
       Uses the OSPS Baseline to define and enforce security expectations for projects across
@@ -146,18 +144,18 @@ projects:
   - id: security
     note: >-
       Integrates the OSPS Baseline to enforce structured security requirements and reduce
-      defects early in the software creation phase.
+      incidents in the software creation phase.
   - id: devops
     note: >-
       Configures pipeline guardrails to automatically verify that projects adhere to the fundamental
-      practices outlined in the baseline.
+      practices outlined in the OSPS Baseline.
   - id: package-manager
     note: >-
-      Requires adherence to the baseline as a prerequisite for verifying or promoting packages
+      Requires adherence to the OSPS Baseline as a prerequisite for verifying or promoting packages
       within the repository ecosystem.
   - id: executive
     note: >-
-      Adopts the structured baseline to ensure organizational compliance with policies and
+      Requires the OSPS Baseline for first-party projects to ensure organizational compliance with policies and
       regulations like the Cyber Resilience Act.
   problems:
   - id: policy-compliance
@@ -168,8 +166,17 @@ projects:
     note: >-
       Defines the floor of expected security practices so projects can be measured against
       a shared bar.
-  similar_to: [best-practices-badge]
-  compatible_with: [minder]
+  - id: secure-configuration
+    note: >-
+      Defines the floor of expected repository configuration for secure software development.
+  similar_to: [best-practices-badge, openssf-scorecard]
+  compatible_with: [darnit, minder, privateer]
+  relationships:
+  - kind: consumes
+    target: gemara
+    status: confirmed
+    note: >-
+      Expresses control catalog with Gemara.
 - id: privateer
   name: Privateer
   url: https://privateerproj.com/
