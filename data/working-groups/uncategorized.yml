@@ -20,18 +20,27 @@
 #   sigstore, openbao, rstuf   established projects the TAC list does not place.
 #   fuzzingbrain, oss-crs      formation-stage; scope still provisional.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` and `make lint`
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage, repositories, license,
+# status, administrators and vulnerability-reporting link enrich the record and
+# the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` and `make lint`
 # before opening a PR.
 
 projects:
 - id: bomctl
   name: Bomctl
-  url: https://github.com/bomctl/bomctl
+  insights: bomctl/bomctl
   openssf_url: https://openssf.org/projects/bomctl/
   description: >-
     Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
@@ -77,13 +86,13 @@ projects:
   compatible_with: [protobom, guac]
 - id: cve-bin-tool
   name: CVE-BIN-TOOL
-  url: https://github.com/ossf/cve-bin-tool
+  openssf_url: https://openssf.org/technical-initiatives/  # TODO: no project page on openssf.org yet
   description: >-
     A tool to help you find known vulnerabilities in software, using data from the National Vulnerability Database (NVD) list of Common Vulnerabilities and Exposures (CVEs) as well as known vulnerability data from Redhat, Open Source Vulnerability Database (OSV), Gitlab Advisory Database (GAD), and Curl.
   kind: project
 - id: fuzz-introspector
   name: Fuzz Introspector
-  url: https://openssf.org/projects/fuzz-introspector/
+  insights: ossf/fuzz-introspector
   openssf_url: https://openssf.org/projects/fuzz-introspector/
   description: >-
     Improves the fuzzing experience for projects by providing visibility into fuzzer coverage
@@ -91,9 +100,8 @@ projects:
   kind: project
 - id: protobom
   name: Protobom / SBOM Tools
-  url: https://github.com/protobom/protobom
+  insights: protobom/protobom
   openssf_url: https://openssf.org/projects/protobom/
-  insights: https://github.com/protobom/protobom/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A shared library and toolset for generating, translating, and consuming Software Bills
     of Materials in standard formats such as SPDX and CycloneDX.
@@ -143,7 +151,7 @@ projects:
   compatible_with: [guac]
 - id: sbomit
   name: SBOMit
-  url: https://sbomit.dev/
+  insights: SBOMit/sbomit
   openssf_url: https://openssf.org/projects/sbomit/
   description: >-
     An SBOM-format-independent method that embeds in-toto and Witness attestations into Software
@@ -194,9 +202,8 @@ projects:
   compatible_with: [protobom, slsa, sigstore]
 - id: openbao
   name: OpenBao
-  url: https://openbao.org/
-  openssf_url: https://openssf.org/projects/openbao/
   insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
+  openssf_url: https://openssf.org/projects/openbao/
   description: >-
     A community-governed, open source secrets management platform for storing, rotating, and
     brokering access to secrets, credentials, tokens, and cryptographic keys.
@@ -235,9 +242,8 @@ projects:
   compatible_with: [sigstore]
 - id: sigstore
   name: Sigstore
-  url: https://www.sigstore.dev/
+  insights: sigstore/sigstore
   openssf_url: https://openssf.org/projects/sigstore/
-  insights: https://github.com/sigstore/sigstore/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A free, identity-based artefact-signing service backed by a public transparency log so
     anyone can verify who built what.

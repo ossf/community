@@ -20,15 +20,34 @@ layout: default
   {%- endif -%}
   <p class="tool-hero__summary">{{ publication.description }}</p>
   <p class="tool-hero__links">
+    {%- comment -%} Always present on WG-hosted records (the build enforces it); externally-owned formats have no openssf.org page. {%- endcomment -%}
+    {%- if publication.openssf_url -%}
+    <a class="tool-hero__link" href="{{ publication.openssf_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> On openssf.org
+    </a>
+    {%- endif -%}
     {%- if publication.url -%}
     <a class="tool-hero__link" href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Read the publication
     </a>
     {%- endif -%}
-    {%- if publication.insights -%}
+    {%- if publication.si_available -%}
     <a class="tool-hero__link" href="{{ publication.insights }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
     </a>
+    {%- endif -%}
+    {%- if publication.security_url -%}
+    <a class="tool-hero__link" href="{{ publication.security_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-bug" aria-hidden="true"></i> Report a vulnerability
+    </a>
+    {%- endif -%}
+    {%- if publication.license -%}
+    <a class="tool-hero__link" href="{{ publication.license.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> {{ publication.license.expression }}
+    </a>
+    {%- endif -%}
+    {%- if publication.repo_status -%}
+    <span class="tool-hero__link"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> {{ publication.repo_status }}</span>
     {%- endif -%}
     {%- if publication.lfx_id -%}
     <a class="tool-hero__link" href="https://insights.linuxfoundation.org/project/{{ publication.lfx_id }}" target="_blank" rel="noopener noreferrer">
@@ -36,6 +55,7 @@ layout: default
     </a>
     {%- endif -%}
   </p>
+  {% include si-notice.html record=publication noun="publication" %}
 </section>
 
 {%- comment -%}

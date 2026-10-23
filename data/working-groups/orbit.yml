@@ -11,25 +11,38 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` and `make lint`
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage, repositories, license,
+# status, administrators and vulnerability-reporting link enrich the record and
+# the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` and `make lint`
 # before opening a PR.
 
 working_group:
   id: orbit
   name: ORBIT (Open Resources for Baselines, Interoperability, and Tooling)
+  description: >-
+    Develops and maintains interoperable resources for the identification and presentation of
+    security-relevant data, providing a home for collaborative activities, best practice
+    definitions, documentation, testing, integration, and other artifacts supporting the
+    mission.
   url: https://openssf.org/groups/orbit/
   kind: working-group
 projects:
 - id: gemara
   name: Gemara
-  url: https://gemara.openssf.org/
-  openssf_url: https://openssf.org/projects/gemara/
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
+  openssf_url: https://openssf.org/projects/gemara/
   description: >-
     Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
     formats that bridge high-level compliance requirements and low-level technical evidence
@@ -67,7 +80,7 @@ projects:
       automatically and compared across projects.
 - id: gemara-whitepaper
   name: Gemara Whitepaper
-  url: https://openssf.org/wp-content/uploads/2026/03/04_OpenSSF_Gemara-Project_Whitepaper.pdf
+  openssf_url: https://openssf.org/projects/gemara/  # published by the Gemara project; no page of its own
   description: >-
     "Gemara: A Governance, Risk, and Compliance Engineering Model for Automated Risk Assessment" —
     the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
@@ -75,9 +88,8 @@ projects:
   kind: publication
 - id: minder
   name: Minder
-  url: https://github.com/mindersec/minder
+  insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/minder/
-  insights: https://github.com/mindersec/minder/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
@@ -126,7 +138,7 @@ projects:
   compatible_with: [openssf-scorecard]
 - id: osps-baseline
   name: OSPS Baseline
-  url: https://baseline.openssf.org/
+  insights: ossf/security-baseline
   openssf_url: https://openssf.org/projects/osps-baseline/
   description: >-
     The Open Source Project Security Baseline — a consensus-driven minimum set of security
@@ -179,16 +191,14 @@ projects:
       Expresses control catalog with Gemara.
 - id: privateer
   name: Privateer
-  url: https://privateerproj.com/
+  openssf_url: https://openssf.org/projects/privateer/
   description: >-
     A validation framework that simplifies infrastructure testing and compliance validation. Built with infrastructure engineers in mind, pvtr helps accelerate security and compliance validation of any software asset.
   kind: project
 - id: security-insights
   name: Security Insights Specification
-  url: https://security-insights.openssf.org/
+  insights: https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/security-insights/
-  insights: >-
-    https://github.com/ossf/security-insights-spec/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A machine-processable YAML specification that lets a project declare its security posture,
     vulnerability-handling process, and supporting resources.
