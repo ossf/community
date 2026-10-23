@@ -51,20 +51,20 @@
       {%- assign verb_text = rel.kind -%}
       {%- if rel.kind == "superseded-by" -%}{%- assign verb_text = "superseded by" -%}{%- endif -%}
       <li class="relationship{% if rel.status == 'needs-review' %} relationship--nr{% endif %}">
-        <span class="relationship__verb">{{ verb_text }}</span>
+        <span class="relationship__verb">{{ verb_text }} </span>
         {%- if target -%}
           {%- if target.kind == "publication" -%}{%- assign tgt_path = "/publications/" -%}{%- else -%}{%- assign tgt_path = "/projects/" -%}{%- endif -%}
           {%- if target.kind != "working-group" -%}
             <a class="relationship__link" href="{{ tgt_path | append: target.id | append: '/' | relative_url }}">{{ target.name }}</a>
           {%- else -%}
-            <span class="relationship__name">{{ target.name }}</span>
+            <span class="relationship__name">{{ target.name }} </span>
           {%- endif -%}
           {%- if target.kind == "publication" %}<span class="relationship__kind-badge">publication</span>{%- endif -%}
           {%- if target.kind == "working-group" %}<span class="relationship__kind-badge">WG</span>{%- endif -%}
         {%- else -%}
-          <span class="relationship__name relationship__name--unresolved">{{ rel.target }}</span>
+          <span class="relationship__name relationship__name--unresolved">{{ rel.target }} </span>
         {%- endif -%}
-        {%- if rel.status == "needs-review" -%}<span class="relationship__nr">needs-review</span>{%- endif -%}
+        {%- if rel.status == "needs-review" -%}<span class="relationship__nr">needs-review </span>{%- endif -%}
         {%- if rel.note -%}<p class="relationship__note">{{ rel.note }}</p>{%- endif -%}
       </li>
     {%- endfor -%}
@@ -88,16 +88,16 @@
             {%- elsif rel.kind == "superseded-by" -%}{%- assign verb_text = "supersedes" -%}
             {%- endif -%}
             <li class="relationship{% if rel.status == 'needs-review' %} relationship--nr{% endif %}">
-              <span class="relationship__verb">{{ verb_text }}</span>
+              <span class="relationship__verb">{{ verb_text }} </span>
               {%- if r.kind == "publication" -%}{%- assign src_path = "/publications/" -%}{%- else -%}{%- assign src_path = "/projects/" -%}{%- endif -%}
               {%- if r.kind != "working-group" -%}
-                <a class="relationship__link" href="{{ src_path | append: r.id | append: '/' | relative_url }}">{{ r.name }}</a>
+                <a class="relationship__link" href="{{ src_path | append: r.id | append: '/' | relative_url }}">{{ r.name }} </a>
               {%- else -%}
-                <span class="relationship__name">{{ r.name }}</span>
+                <span class="relationship__name">{{ r.name }} </span>
               {%- endif -%}
-              {%- if r.kind == "publication" %}<span class="relationship__kind-badge">publication</span>{%- endif -%}
-              {%- if r.kind == "working-group" %}<span class="relationship__kind-badge">WG</span>{%- endif -%}
-              {%- if rel.status == "needs-review" -%}<span class="relationship__nr">needs-review</span>{%- endif -%}
+              {%- if r.kind == "publication" %}<span class="relationship__kind-badge">publication </span>{%- endif -%}
+              {%- if r.kind == "working-group" %}<span class="relationship__kind-badge">WG </span>{%- endif -%}
+              {%- if rel.status == "needs-review" -%}<span class="relationship__nr">(needs review) </span>{%- endif -%}
               {%- if rel.note -%}<p class="relationship__note">{{ rel.note }}</p>{%- endif -%}
             </li>
           {%- endif -%}
