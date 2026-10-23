@@ -37,106 +37,6 @@ project.
 
 There are no framework dependencies beyond the plugins pinned in `Gemfile`.
 
-## Data files
-
-All content lives in Jekyll data files plus a JSON mirror — everything else in
-the site is layout. `data/` is split by **who owns the edit**:
-
-### `data/definitions/` — static
-
-Vocabularies and externally-owned records. Catalog records *reference*
-personas and problems by id; nothing project-specific is described here.
-
-| File                            | Purpose                                                          |
-| ------------------------------- | ---------------------------------------------------------------- |
-| `definitions/personas.yml`      | Persona rows (id, name, short, icon, summary)                    |
-| `definitions/problems.yml`      | Problem rows (same five fields as a persona)                     |
-| `definitions/publications.yml`  | Externally-owned formats (SBOM, VEX, SARIF …) — outside specs, so nobody here owns them |
-
-### `data/working-groups/` — dynamic
-
-The catalog project representatives maintain. **This is the half you send a PR
-against.** One file per working group, holding the WG's own record and the
-records it hosts:
-
-```yaml
-# data/working-groups/orbit.yml
-working_group:
-  id: orbit
-  name: ORBIT (…)
-projects:
-  - id: minder            # kind: project — software you run
-    …
-  - id: security-insights # kind: publication — a document/spec you read
-    …
-```
-
-**A record's working group IS the file it lives in.** There is no `wg:` field, so
-there is nothing to keep in sync — the build derives membership from the filename
-(`theme/_plugins/catalog.rb`). To move a record between working groups, move its
-entry between files. That is the entire change.
-
-`kind:` distinguishes software (`project`) from documents and specifications
-(`publication`) within a file. WG-hosted publications (SLSA, OSPS Baseline,
-Security Insights, Gemara, OSV/OpenVEX) are pooled with the externally-owned
-formats from `definitions/publications.yml` into one publications catalog.
-
-One file in there is not a working group: `uncategorized.yml` is a **holding
-pen**. The project list published in [`ossf/tac`](https://github.com/ossf/tac)
-is the authoritative source for membership, and it does not place these
-records. Rather than guess, they wait here. Moving one into the right WG file
-is how you categorise it.
-
-Which publications a project **produces** or **consumes** is declared on the
-project, in its `relationships:` list. The publication pages reverse-derive it.
-
-`theme/assets/data/catalog.json` (published at `/assets/data/catalog.json`) is
-regenerated at build time from both halves — do not edit it by hand.
-
-### Relationships are derived, never authored twice
-
-Personas and problems are linked only *through* the records that declare them —
-a persona page derives the problems its records solve, and vice versa.
-Produces/consumes edges live on the declaring record, and the publication pages
-reverse-lookup. Nothing is ever stated in two places.
-
-### Pages are generated from the data
-
-`theme/_plugins/catalog_pages.rb` generates every persona, problem, project, and
-publication page at build time. **There are no per-page source files.** The only
-hand-written pages on the whole site are the handful in `theme/pages/` — the
-landing page, the section indexes, and the about page.
-
-Adding a record to `data/` creates its page and its sidebar entry; removing the
-record removes both. There is no override path, by design: a hand-crafted page
-would be a second place to state a fact.
-
-To add a record, append it to your working group's file in
-`data/working-groups/`. That is the whole task.
-
-The generator fails the build on a duplicate id, or on any reference that
-doesn't resolve — persona/problem ids, relationship kinds and targets,
-`similar_to` / `compatible_with` entries, and `status:` values outside
-`confirmed` / `needs-review`. The layouts resolve records with a
-last-match-wins find, so these mistakes would otherwise silently shadow or drop
-data rather than erroring.
-
-## Build
-
-A `Makefile` wraps the common loops (Ruby ≥ 3.2 required):
-
-```sh
-make deps     # bundle install (first time / after Gemfile changes)
-make start    # serve on http://localhost:4000
-make test     # jekyll build + htmlproofer (run this before opening a PR)
-make lint     # rubocop + yamllint (needs `pip3 install yamllint`)
-```
-
-On a fresh macOS box, `make brand-new-env-installs` installs Ruby via Homebrew
-first — pinned to `ruby@3.3`, because Ruby 4.x breaks C extensions in older
-gems Jekyll still depends on. The raw equivalents are `bundle install` and
-`bundle exec jekyll serve` if you'd rather not use `make`.
-
 ## Repository layout
 
 Two directories. The content, and the website that renders it.
@@ -186,7 +86,7 @@ community/
 └── Makefile
 ```
 
-Two things make that layout work, and both are load-bearing:
+Two things make that layout work:
 
 - `data/` is read via `data_dir` **and** listed in `exclude`. Jekyll only
   auto-skips directories whose name starts with `_`, so without the exclude the
@@ -195,6 +95,143 @@ Two things make that layout work, and both are load-bearing:
 - A static file's URL is normally its path, which is why assets usually have to
   live at the repo root. `theme/_plugins/theme_assets.rb` overrides that so
   `theme/assets/css/style.css` is published at `/assets/css/style.css`.
+
+### Data files
+
+All content lives in Jekyll data files plus a JSON mirror — everything else in
+the site is layout. `data/` is split by **who owns the edit**:
+
+#### `data/definitions/` — static
+
+Vocabularies and externally-owned records. Catalog records *reference*
+personas and problems by id; nothing project-specific is described here.
+
+| File                            | Purpose                                                          |
+| ------------------------------- | ---------------------------------------------------------------- |
+| `definitions/personas.yml`      | Persona rows (id, name, short, icon, summary)                    |
+| `definitions/problems.yml`      | Problem rows (same five fields as a persona)                     |
+| `definitions/publications.yml`  | Externally-owned formats (SBOM, VEX, SARIF …) — outside specs, so nobody here owns them |
+
+#### `data/working-groups/` — dynamic
+
+The catalog project representatives maintain. **This is the half you send a PR
+against.** One file per working group, holding the WG's own record and the
+records it hosts:
+
+```yaml
+# data/working-groups/orbit.yml
+working_group:
+  id: orbit
+  name: ORBIT (…)
+projects:
+  - id: minder            # kind: project — software you run
+    …
+  - id: security-insights # kind: publication — a document/spec you read
+    …
+```
+
+**A record's working group IS the file it lives in.** There is no `wg:` field, so
+there is nothing to keep in sync — the build derives membership from the filename
+(`theme/_plugins/catalog.rb`). To move a record between working groups, move its
+entry between files. That is the entire change.
+
+`kind:` distinguishes software (`project`) from documents and specifications
+(`publication`) within a file. WG-hosted publications (SLSA, OSPS Baseline,
+Security Insights, Gemara, OSV/OpenVEX) are pooled with the externally-owned
+formats from `definitions/publications.yml` into one publications catalog.
+
+One file in there is not a working group: `uncategorized.yml` is a **holding
+pen**. The project list published in [`ossf/tac`](https://github.com/ossf/tac)
+is the authoritative source for membership, and it does not place these
+records. Rather than guess, they wait here. Moving one into the right WG file
+is how you categorise it.
+
+Which publications a project **produces** or **consumes** is declared on the
+project, in its `relationships:` list. The publication pages reverse-derive it.
+
+`theme/assets/data/catalog.json` (published at `/assets/data/catalog.json`) is
+regenerated at build time from both halves — do not edit it by hand.
+
+##### Entry structure
+
+The `working_group` entry in a file is optional, but used on all files except `uncategorized.yml`.
+
+| Field | Description |
+| ----- | ----------- |
+| `id` | A unique identifier for the working group, used in URL slugs and as a reference in other entries |
+| `name` | The name of the working group |
+| `url` | The link to the working group's website |
+| `kind` | The kind of entry (always `working-group`)
+
+In addition to the `working_group` field, files contain a `projects` entry.
+Most of these appear to be optional.
+
+| Field | Description |
+| ----- | ----------- |
+| `id` | A unique identifier for the project, used in URL slugs and as a reference in other entries |
+| `name` | The name of the project |
+| `kind` | The kind of entry (`project` or `publication`)
+| `url` | The link to the project's website |
+| `openssf_url` | The link to the project's entry on the OpenSSF website |
+| `insights` | The URL of the project's [Security Insights](https://security-insights.openssf.org/) file |
+| `description` | A brief description of what the project does |
+| `relationships` | How the project relates to other projects (see below) |
+| `personas` | How the different personas use the project, with an `id` and `note` subfield |
+| `problems` | How the project relate to the different problems, with an `id` and `note` subfield |
+
+The `relationships` entry contains one or more sub-entries.
+
+| Field | Description |
+| ----- | ----------- |
+| `kind` | The type of relationship (`consumes`, `extends`, `implements`, `produces`)
+| `target` | The `id` of the project it relates to
+| `status` | Indiciates if the relationship is approved by maintainers (`confirmed`) or awaiting confirmation (`needs-review`)
+| `note` | A short explanation of the relationship |
+
+
+### Relationships are derived, never authored twice
+
+Personas and problems are linked only *through* the records that declare them —
+a persona page derives the problems its records solve, and vice versa.
+Produces/consumes edges live on the declaring record, and the publication pages
+reverse-lookup. Nothing is ever stated in two places.
+
+### Pages are generated from the data
+
+`theme/_plugins/catalog_pages.rb` generates every persona, problem, project, and
+publication page at build time. **There are no per-page source files.** The only
+hand-written pages on the whole site are the handful in `theme/pages/` — the
+landing page, the section indexes, and the about page.
+
+Adding a record to `data/` creates its page and its sidebar entry; removing the
+record removes both. There is no override path, by design: a hand-crafted page
+would be a second place to state a fact.
+
+To add a record, append it to your working group's file in
+`data/working-groups/`. That is the whole task.
+
+The generator fails the build on a duplicate id, or on any reference that
+doesn't resolve — persona/problem ids, relationship kinds and targets,
+`similar_to` / `compatible_with` entries, and `status:` values outside
+`confirmed` / `needs-review`. The layouts resolve records with a
+last-match-wins find, so these mistakes would otherwise silently shadow or drop
+data rather than erroring.
+
+## Build
+
+A `Makefile` wraps the common loops (Ruby ≥ 3.2 required):
+
+```sh
+make deps     # bundle install (first time / after Gemfile changes)
+make start    # serve on http://localhost:4000
+make test     # jekyll build + htmlproofer (run this before opening a PR)
+make lint     # rubocop + yamllint (needs `pip3 install yamllint`)
+```
+
+On a fresh macOS box, `make brand-new-env-installs` installs Ruby via Homebrew
+first — pinned to `ruby@3.3`, because Ruby 4.x breaks C extensions in older
+gems Jekyll still depends on. The raw equivalents are `bundle install` and
+`bundle exec jekyll serve` if you'd rather not use `make`.
 
 ## Contributing
 
@@ -239,5 +276,4 @@ same two targets on every PR.
 ## License & attribution
 
 The OpenSSF logo is used with attribution and links back to
-<https://openssf.org>. This site is distributed under the same license as the
-underlying OpenSSF project metadata.
+<https://openssf.org>. This site is distributed under the [Creative Commons Attribution 4.0 International license](LICENSE).
