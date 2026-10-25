@@ -128,6 +128,44 @@
   {%- endif -%}
 {%- endfor -%}
 
+{%- comment -%}
+  Repositories are a Security Insights fact (project.repositories); nothing
+  local states them, so this renders only for records whose SI file was read.
+{%- endcomment -%}
+{%- if record.repositories and record.repositories != empty -%}
+<h2 class="tool-matrix__heading">Repositories</h2>
+<section class="relationships">
+  <ul class="relationships__list">
+    {%- for repo in record.repositories -%}
+    <li class="relationship">
+      <a class="relationship__link" href="{{ repo.url }}" target="_blank" rel="noopener noreferrer">{{ repo.name | default: repo.url }}</a>
+      {%- if repo.comment -%}<p class="relationship__note">{{ repo.comment | strip }}</p>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+{%- comment -%} Administrators are also an SI fact (project.administrators). Emails are deliberately not rendered. {%- endcomment -%}
+{%- if record.administrators and record.administrators != empty -%}
+<h2 class="tool-matrix__heading">Administrators</h2>
+<section class="relationships">
+  <ul class="relationships__list">
+    {%- for admin in record.administrators -%}
+    <li class="relationship">
+      {%- if admin.social -%}
+      <a class="relationship__link" href="{{ admin.social }}" target="_blank" rel="noopener noreferrer">{{ admin.name }}</a>
+      {%- else -%}
+      <span class="relationship__name">{{ admin.name }}</span>
+      {%- endif -%}
+      {%- if admin.primary %} <span class="relationship__kind-badge">primary</span>{%- endif -%}
+      {%- if admin.affiliation -%}<p class="relationship__note">{{ admin.affiliation }}</p>{%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
 {% include relationships-section.html record_id=record.id %}
 
 <div class="persona-footer-actions">

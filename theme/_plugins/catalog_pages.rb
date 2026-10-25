@@ -107,17 +107,33 @@ module OpenSSFCommunity
         errors << "#{dir}: #{blank.size} record(s) missing id or name" if blank.any?
       end
 
+      hosted = records["projects"] + records["publications"]
+
+      # Two records pointing at one Security Insights file would be one project
+      # stated twice. A record with no `insights:` at all is only a warning —
+      # it renders from its curated data until it has a repository.
+      targets = hosted.map { |r| r["insights"] }.compact
+      dupes = targets.tally.select { |_, n| n > 1 }.keys
+      errors << "duplicate insights: target(s) #{dupes.join(', ')}" if dupes.any?
+      hosted.select { |r| r.key?("si_available") && !r["insights"] }.each do |r|
+        Jekyll.logger.warn "Catalog:", "#{r['id']} has no insights: target — rendering from curated data only"
+      end
+
       # Every id a record references must resolve — persona/problem links,
       # relationship kinds and targets, related records, and the status values
       # maintainers are asked to flip.
       persona_ids = records["personas"].map { |r| r["id"] }
       problem_ids = records["problems"].map { |r| r["id"] }
-      record_ids  = (records["projects"] + records["publications"]).map { |r| r["id"] }
+      record_ids  = hosted.map { |r| r["id"] }
       rel_kinds   = %w[implements produces consumes extends superseded-by]
       statuses    = %w[confirmed needs-review]
 
       (records["projects"] + records["publications"]).each do |rec|
         where = rec["id"]
+        # The openssf.org page is the one URL stated outside a record's Security
+        # Insights file, and the hero always links it — so it cannot be absent.
+        # Externally-owned formats (no working_group key) have no such page.
+        errors << "#{where}: missing openssf_url" if rec.key?("working_group") && rec["openssf_url"].to_s.empty?
         (rec["personas"] || []).each do |link|
           errors << "#{where}: unknown persona id '#{link['id']}'" unless persona_ids.include?(link["id"])
         end

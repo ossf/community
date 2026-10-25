@@ -11,30 +11,43 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` and `make lint`
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage, repositories, license,
+# status, administrators and vulnerability-reporting link enrich the record and
+# the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` and `make lint`
 # before opening a PR.
 
 working_group:
   id: securing-software-repositories
   name: Securing Software Repositories
+  description: >-
+    Focuses on the maintainers of software repositories, software registries, and tools which
+    rely on them, at various levels including system, language, plugin, extensions and container
+    systems, providing a forum to share experiences and to discuss shared problems, risks and
+    threats.
   url: https://openssf.org/community/openssf-working-groups/
   kind: working-group
 projects:
 - id: malicious-packages
   name: Malicious Packages
-  url: https://github.com/ossf/malicious-packages
   openssf_url: https://openssf.org/projects/malicious-packages/
   description: >-
     An open source database of reports of malicious packages publshed on open source package repositories.
   kind: project
 - id: package-analysis
   name: Package Analysis
-  url: https://github.com/ossf/package-analysis
+  insights: ossf/package-analysis
   openssf_url: https://openssf.org/projects/package-analysis/
   description: >-
     Dynamically and statically analyzes packages from open source package registries to detect
@@ -49,10 +62,8 @@ projects:
       format.
 - id: rstuf
   name: Repository Service for TUF (RSTUF)
-  url: https://repository-service-tuf.readthedocs.io/
+  insights: repository-service-tuf/repository-service-tuf
   openssf_url: https://openssf.org/projects/repository-service-for-tuf/
-  insights: >-
-    https://github.com/repository-service-tuf/repository-service-tuf/blob/main/SECURITY-INSIGHTS.yml
   description: >-
     A drop-in implementation of The Update Framework (TUF) that protects software repositories
     from compromise, rollback, and man-in-the-middle attacks.

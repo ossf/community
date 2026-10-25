@@ -11,23 +11,37 @@
 # does not place it, it belongs in uncategorized.yml until someone who knows says
 # otherwise.
 #
-# EDITING YOUR PROJECT'S ENTRY — persona and problem ids come from
-# data/definitions/, and the build fails on any id it can't resolve.
-# `status:` on a relationship is `confirmed` or `needs-review` — needs-review
-# means we want the project's own maintainers to check the claim. If that's
-# you, correcting it, setting the status to confirmed, and deleting the note
-# IS the edit we're hoping for. Run `make test` and `make lint`
+# EDITING YOUR PROJECT'S ENTRY — `name` and `description` are stated here;
+# `insights:` points at your repository's Security Insights file
+# (https://github.com/ossf/security-insights-spec), either as the file's GitHub
+# URL or as `owner/repo` to have it discovered at any of the standard paths.
+# When that file is valid, its project name, homepage, repositories, license,
+# status, administrators and vulnerability-reporting link enrich the record and
+# the SI name wins over the local one; when it is missing or
+# invalid the record still renders from what is here, with a notice. The build
+# reads a committed snapshot (data/generated/insights.json) refreshed by
+# `make refresh-insights`. Persona and problem ids come from data/definitions/,
+# and the build fails on any id it can't resolve. `status:` on a relationship is
+# `confirmed` or `needs-review` — needs-review means we want the project's own
+# maintainers to check the claim. If that's you, correcting it, setting the
+# status to confirmed, and deleting the note IS the edit we're hoping for.
+# Run `make test` and `make lint`
 # before opening a PR.
 
 working_group:
   id: ai-ml-security
   name: AI/ML Security
+  description: >-
+    Explores the security risks associated with Large Language Models (LLMs), Generative AI
+    (GenAI), and other forms of artificial intelligence (AI) and machine learning (ML), and
+    their impact on open source projects, maintainers, their security, communities, and
+    adopters.
   url: https://openssf.org/groups/ai-ml-security/
   kind: working-group
 projects:
 - id: model-signing
   name: OpenSSF Model Signing (OMS)
-  url: https://github.com/ossf/model-signing-spec
+  insights: sigstore/model-transparency
   openssf_url: https://openssf.org/projects/model-signing/
   description: >-
     A library and CLI for cryptographically signing and verifying machine learning models
@@ -63,14 +77,14 @@ projects:
   compatible_with: [sigstore]
 - id: oss-crs
   name: OSS-CRS
-  url: https://oss-crs.openssf.org/
+  insights: ossf/oss-crs
   openssf_url: https://openssf.org/projects/oss-crs/
   description: >-
     A standard orchestration framework for building and running LLM-based autonomous bug-finding and bug-fixing systems (Cyber Reasoning Systems).
   kind: project
 - id: secure-agentic-framework
   name: Secure Agentic Framework
-  url: https://www.secureagenticframework.org/
+  openssf_url: https://openssf.org/technical-initiatives/  # TODO: no project page on openssf.org yet
   description: >-
     Map, assess, and mitigate threats across the entire agentic AI attack surface.
   kind: project

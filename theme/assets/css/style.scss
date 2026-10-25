@@ -2014,6 +2014,42 @@ select:focus {
   transform: translateX(4px);
 }
 
+/* Hero notice: record rendered from curated data, no usable Security Insights. */
+.tool-hero__si-notice {
+  margin: var(--spacing-md) 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+
+  summary { cursor: pointer; }
+  i { margin-right: var(--spacing-xs); }
+}
+
+.tool-hero__si-reason {
+  margin: var(--spacing-xs) 0 0;
+  font-size: 0.85rem;
+}
+
+/* Records rendered from curated data only, pending a Security Insights file. */
+.tool-index-awaiting {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-lg);
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    align-items: baseline;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+.tool-index-awaiting__reason {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
 /* ---- Tool detail page -------------------------------------------------- */
 
 .tool-hero {
