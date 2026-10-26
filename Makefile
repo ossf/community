@@ -1,4 +1,9 @@
-.PHONY: brand-new-env-installs deps start test lint
+.PHONY: brand-new-env-installs deps start test lint refresh-insights
+
+# `si fetch` from ossf/si-tooling, pinned to a release. Override to run a
+# local checkout: make refresh-insights SI_FETCH="go -C ../si-tooling/v2 run ./cmd/si"
+SI_FETCH ?= go run github.com/ossf/si-tooling/v2/cmd/si@v2.3.0
+SNAPSHOT := data/generated/insights.json
 
 brand-new-env-installs:
 	@command -v brew >/dev/null || { echo "Homebrew not found. Install from https://brew.sh first."; exit 1; }
@@ -33,3 +38,13 @@ lint: deps
 	bundle exec rubocop
 	@$(YAMLLINT) --version >/dev/null 2>&1 || { echo "yamllint not found. Install with: pip3 install yamllint"; exit 1; }
 	$(YAMLLINT) data/ .github/ _config.yml
+
+# Re-read every `insights:` target and rewrite the snapshot. Writes to a temp
+# file first: any non-zero exit (rate limit, network, bad target) leaves the
+# committed snapshot untouched. Exit 0 still includes not-found/invalid rows —
+# those are facts about the project and are meant to land.
+refresh-insights:
+	ruby -ryaml -e 'puts Dir["data/working-groups/*.yml"].sort.flat_map { |f| (YAML.load_file(f)["projects"] || []).map { |p| p["insights"] }.compact }' \
+	  | xargs $(SI_FETCH) fetch > $(SNAPSHOT).tmp \
+	  && mv $(SNAPSHOT).tmp $(SNAPSHOT) \
+	  || { rm -f $(SNAPSHOT).tmp; exit 1; }

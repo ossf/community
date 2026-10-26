@@ -135,6 +135,20 @@ there is nothing to keep in sync — the build derives membership from the filen
 (`theme/_plugins/catalog.rb`). To move a record between working groups, move its
 entry between files. That is the entire change.
 
+**Security Insights enriches a record; it never gates it.** An entry states
+its `name` and `description` and says where the project's Security Insights
+file is, in `insights:` — either the file's GitHub URL or `owner/repo` to have
+it discovered at any of the standard paths. `make refresh-insights` reads
+every file into the committed snapshot `data/generated/insights.json` (a
+weekly workflow does the same by PR), and the build joins each record to its
+row. When the file is valid, its project name wins over the local one and the
+homepage, repositories, license, repository status, administrators and
+vulnerability-reporting link come from it. When it is missing or invalid, the
+page still renders from the entry, with a notice linking the repository, and
+has no homepage link; `/projects/` lists those under "Awaiting Security
+Insights". There is no `url` on an entry. The one URL every entry does state
+is `openssf_url`, its page on openssf.org, which the hero always links.
+
 `kind:` distinguishes software (`project`) from documents and specifications
 (`publication`) within a file. WG-hosted publications (SLSA, OSPS Baseline,
 Security Insights, Gemara, OSV/OpenVEX) are pooled with the externally-owned

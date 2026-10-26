@@ -13,15 +13,31 @@ layout: default
   <h1 class="tool-hero__title">{{ project.name }}</h1>
   <p class="tool-hero__summary">{{ project.description }}</p>
   <p class="tool-hero__links">
+    <a class="tool-hero__link" href="{{ project.openssf_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> On openssf.org
+    </a>
     {%- if project.url -%}
     <a class="tool-hero__link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Project site
     </a>
     {%- endif -%}
-    {%- if project.insights -%}
+    {%- if project.si_available -%}
     <a class="tool-hero__link" href="{{ project.insights }}" target="_blank" rel="noopener noreferrer">
       <i class="fa-solid fa-file-shield" aria-hidden="true"></i> Security Insights
     </a>
+    {%- endif -%}
+    {%- if project.security_url -%}
+    <a class="tool-hero__link" href="{{ project.security_url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-bug" aria-hidden="true"></i> Report a vulnerability
+    </a>
+    {%- endif -%}
+    {%- if project.license -%}
+    <a class="tool-hero__link" href="{{ project.license.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> {{ project.license.expression }}
+    </a>
+    {%- endif -%}
+    {%- if project.repo_status -%}
+    <span class="tool-hero__link"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> {{ project.repo_status }}</span>
     {%- endif -%}
     {%- if project.lfx_id -%}
     <a class="tool-hero__link" href="https://insights.linuxfoundation.org/project/{{ project.lfx_id }}" target="_blank" rel="noopener noreferrer">
@@ -29,6 +45,7 @@ layout: default
     </a>
     {%- endif -%}
   </p>
+  {% include si-notice.html record=project noun="project" %}
 </section>
 
 {% include record-detail.html record=project base="projects" %}

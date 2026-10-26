@@ -1,0 +1,23 @@
+{%- comment -%}
+  Hero notice for a WG-hosted record whose Security Insights file was not
+  usable. Only records that went through the snapshot join carry
+  `si_available`; externally-owned publications (SBOM, VEX …) never do, so
+  this renders nothing for them.
+
+  Usage:  {% include si-notice.html record=project noun="project" %}
+{%- endcomment -%}
+{%- assign rec = include.record -%}
+{%- if rec.si_available == false -%}
+<details class="tool-hero__si-notice">
+  <summary>
+    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+    This {{ include.noun }} has not published a valid
+    <a href="https://github.com/ossf/security-insights-spec" target="_blank" rel="noopener noreferrer">Security Insights</a>
+    file yet, so this page is built from curated data only.
+  </summary>
+  <p class="tool-hero__si-reason">
+    <code>{{ rec.si_status }}</code>
+    {%- if rec.repo_url %} — <a href="{{ rec.repo_url }}" target="_blank" rel="noopener noreferrer">repository</a>{%- endif %}
+  </p>
+</details>
+{%- endif -%}

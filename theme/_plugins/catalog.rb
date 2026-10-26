@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-# Assembles site.data["catalog"] from data/working-groups/*.yml and
-# data/definitions/publications.yml.
+# Assembles site.data["catalog"] from data/working-groups/*.yml,
+# data/definitions/publications.yml and the Security Insights snapshot in
+# data/generated/insights.json.
 #
 # A RECORD'S WORKING GROUP IS THE FILE IT LIVES IN. There is no `wg:` field on a
 # record, so there is nothing to fall out of sync — membership is derived here,
@@ -9,8 +10,18 @@
 # `working_group` attribute. Moving a record between working groups means moving
 # its entry between files, and nothing else.
 #
+# SECURITY INSIGHTS ENRICHES A RECORD; IT NEVER GATES IT. The entry states a
+# `name` and says where the project's Security Insights file is (`insights:` —
+# a GitHub blob URL, or `owner/repo` for discovery). The snapshot holds what
+# `si fetch` read from it, one row per target. When the row is ok, the SI
+# project name wins over the local one, and the homepage, repositories,
+# vulnerability-reporting link, license, repository status and administrators
+# come from it. When the row is missing or not ok, the record renders from its
+# local name and description with none of those, and `si_available` is false so
+# the layouts can say why. catalog.awaiting_insights lists those records.
+#
 # Each data/working-groups/<id>.yml holds:
-#   working_group:  the WG's own record (name, url)
+#   working_group:  the WG's own record (name, description, url)
 #   projects:       the records it hosts — `kind: project` for software,
 #                   `kind: publication` for documents/specs the WG stewards
 #
@@ -21,7 +32,7 @@
 #
 # catalog.publications pools BOTH halves: the hosted `kind: publication` records
 # and the externally-owned formats in data/definitions/publications.yml (SBOM,
-# VEX, SARIF … — nobody here owns those, so they have no WG file to live in).
+# VEX, SARIF … — nobody here owns those, so they have no WG file and no SI).
 #
 # Runs on :post_read, which fires after the data files are read but before the
 # generators, so site.data["catalog"] exists by the time catalog_pages.rb needs it.
@@ -33,6 +44,7 @@ module OpenSSFCommunity
     def self.build(site)
       groups = []
       hosted = []
+      snapshot = (site.data.dig("generated", "insights") || []).to_h { |row| [row["target"], row] }
 
       (site.data[WG_DIR] || {}).sort.each do |_slug, doc|
         next unless doc.is_a?(Hash)
@@ -49,18 +61,93 @@ module OpenSSFCommunity
         end
       end
 
+      hosted.each { |record| apply_insights!(record, snapshot[record["insights"]]) }
+
+      awaiting = hosted.reject { |r| r["si_available"] }.map do |r|
+        {
+          "id" => r["id"],
+          "name" => r["name"],
+          "kind" => r["kind"],
+          "page" => "/#{r['kind'] == 'publication' ? 'publications' : 'projects'}/#{r['id']}/",
+          "repo_url" => r["repo_url"],
+          "reason" => r["si_status"]
+        }
+      end
+
       projects, publications = hosted.partition { |r| r["kind"] != "publication" }
       publications += site.data.dig("definitions", "publications") || []
 
       site.data["catalog"] = {
         "projects" => projects.sort_by { |p| p["id"].to_s },
         "publications" => publications.sort_by { |p| p["id"].to_s },
-        "working_groups" => groups.sort_by { |g| g["id"].to_s }
+        "working_groups" => groups.sort_by { |g| g["id"].to_s },
+        "awaiting_insights" => awaiting.sort_by { |a| a["id"].to_s }
       }
 
       uncategorized = hosted.count { |p| p["working_group"].nil? }
       Jekyll.logger.info "Catalog:", "#{projects.size} projects + #{publications.size} publications " \
-                                     "across #{groups.size} working groups (#{uncategorized} uncategorized)"
+                                     "across #{groups.size} working groups (#{uncategorized} uncategorized, " \
+                                     "#{awaiting.size} without Security Insights)"
+    end
+
+    # Enrich a record from its snapshot row. Always leaves the record renderable:
+    # `si_available` says whether the SI file was usable, `si_status` is "ok" or
+    # the reason it was not.
+    def self.apply_insights!(record, row)
+      record["repo_url"] = repo_url(record["insights"], row)
+
+      reason =
+        if !record["insights"]      then "no insights: target"
+        elsif !row                  then "not in snapshot — run `make refresh-insights`"
+        elsif row["status"] != "ok" then "#{row['status']}: #{row['error'].to_s.lines.first.to_s.strip}"
+        end
+
+      if reason
+        Jekyll.logger.debug "Catalog:", "#{record['id']} without Security Insights — #{reason}"
+        record["url"]          = nil # the homepage is an SI fact; openssf_url is the link that is always there
+        record["repositories"] = []
+        record["si_available"] = false
+        record["si_status"]    = reason
+        return
+      end
+
+      si      = row["insights"] || {}
+      project = si["project"]
+      record["name"]              = project["name"] if project && !project["name"].to_s.empty?
+      record["url"]               = project && project["homepage"]
+      record["repositories"]      = (project && project["repositories"]) || []
+      # Emails are dropped here so neither the pages nor the catalog.json mirror publish them.
+      record["administrators"]    = ((project && project["administrators"]) || []).map { |a| a.except("email") }
+      record["security_url"]      = security_url(project && project["vulnerability-reporting"])
+      record["license"]           = si.dig("repository", "license")
+      record["repo_status"]       = si.dig("repository", "status")
+      record["si_available"]      = true
+      record["si_status"]         = project ? "ok" : "ok (no project block)"
+      record["si_schema_version"] = row["schema-version"]
+      # `owner/repo` targets are not links; point the hero at the file that was found.
+      return if record["insights"].start_with?("http")
+
+      record["insights"] = "https://github.com/#{row['owner']}/#{row['repo']}/blob/HEAD/#{row['path']}"
+    end
+
+    # Where to send a vulnerability report: the policy document, else the
+    # primary contact's email. Nil when the file names neither.
+    def self.security_url(reporting)
+      return nil unless reporting
+      return reporting["policy"] if reporting["policy"]
+
+      email = reporting.dig("contact", "email")
+      email && "mailto:#{email}"
+    end
+
+    # The repository the SI file lives (or should live) in. owner/repo are
+    # omitempty on failed rows, so fall back to the target itself.
+    def self.repo_url(target, row)
+      return "https://github.com/#{row['owner']}/#{row['repo']}" if row && row["owner"] && row["repo"]
+      return target if target.to_s.start_with?("http")
+      return "https://github.com/#{target}" if target.to_s.match?(%r{\A[\w.-]+/[\w.-]+\z})
+
+      nil
     end
   end
 
