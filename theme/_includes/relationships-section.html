@@ -55,7 +55,7 @@
         {%- if target -%}
           {%- if target.kind == "publication" -%}{%- assign tgt_path = "/publications/" -%}{%- else -%}{%- assign tgt_path = "/projects/" -%}{%- endif -%}
           {%- if target.kind != "working-group" -%}
-            <a class="relationship__link" href="{{ tgt_path | append: target.id | append: '/' | relative_url }}">{{ target.name }}</a>
+            <a class="relationship__link" href="{{ tgt_path | append: target.id | append: '/' | relative_url }}">{{ target.name }} </a>
           {%- else -%}
             <span class="relationship__name">{{ target.name }} </span>
           {%- endif -%}
