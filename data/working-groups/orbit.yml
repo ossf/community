@@ -44,7 +44,7 @@ projects:
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
   openssf_url: https://openssf.org/projects/gemara/
   description: >-
-    Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
+    Schemas, SDKs, and tooling implementing the Gemara model: Machine-readable
     formats that bridge high-level compliance requirements and low-level technical evidence
     to enable automated risk assessment across security tooling.
   kind: project
@@ -53,31 +53,41 @@ projects:
     target: gemara-whitepaper
     status: confirmed
   personas:
-  - id: ospo
-    note: >-
-      Expresses the organization's controls and compliance requirements in Gemara's shared
-      model so they can be assessed consistently across projects.
-  - id: security
-    note: >-
-      Maps threats, controls, and evidence onto Gemara's layered schema to drive automated,
-      repeatable risk assessment.
-  - id: devops
-    note: >-
-      Consumes Gemara's machine-readable model to automate control evaluation and evidence
-      collection inside the pipeline.
-  - id: executive
-    note: >-
-      Reads risk and compliance status rolled up through Gemara's model rather than from disconnected,
-      hand-assembled spreadsheets.
+    - id: developer
+      note: >-
+        Capture all requirements, from security to design documents, into machine-ready specifications
+        to ensure that your developer and agents have shared clarity on what is needed at every stage.
+    - id: devops
+      note: >-
+        Use Gemara's machine-readable strategy to automate security and GRC requirements
+        inside the pipeline.
+    - id: executive
+      note: >-
+        Ingest diverse data points into traceable single-pane-of-glass views using Gemara specifications
+        rather than from disconnected, hand-compiled summaries.
+    - id: ospo
+      note: >-
+        Express your organization's policies in Gemara's shared
+        model so they can be assessed consistently across projects.
+    - id: package-manager
+      note: >-
+        Registries already check for malicious or tampered packages before
+        publishing them, but the results stay internal. In principle you could publish those checks
+        as Gemara evaluations, so users can audit what was checked on a package and when.
+        (Not yet in active use)
+    - id: security
+      note: >-
+        Map threats, controls, and evidence onto Gemara's layered schema to drive automated,
+        repeatable security audits.
   problems:
-  - id: policy-compliance
-    note: >-
-      Encodes governance, risk, and compliance requirements as a shared data model so controls
-      map cleanly between regulations and evidence.
-  - id: security-posture
-    note: >-
-      Standardizes how risk and control evidence are expressed so posture can be assessed
-      automatically and compared across projects.
+    - id: policy-compliance
+      note: >-
+        Encodes governance, risk, and compliance requirements as a shared data model so controls
+        map cleanly between regulations and evidence.
+    - id: security-posture
+      note: >-
+        Standardizes how risk and control evidence are expressed so posture can be assessed
+        automatically and compared across projects.
 - id: gemara-whitepaper
   name: Gemara Whitepaper
   openssf_url: https://openssf.org/projects/gemara/  # published by the Gemara project; no page of its own
@@ -86,6 +96,32 @@ projects:
     the whitepaper defining Gemara's layered model of governance, risk, and compliance activities
     and how they interoperate.
   kind: publication
+  personas:
+    - id: devops
+      note: >-
+        See where the SDLC sits in the GRC model: platform teams own the sensitive activities that
+        controls are written about, while enforcement and evaluation happen around them.
+    - id: executive
+      note: >-
+        Understand why a traceable chain from threat to control to evidence lets you trust a
+        compliance report without re-checking it by hand.
+    - id: ospo
+      note: >-
+        Learn how responsibility splits across the different teams and tools, and how you can
+        help shape strategic adoption of security and compliance tools.
+    - id: security
+      note: >-
+        Organize the concepts you deal with daily, from threats and controls through evaluation,
+        enforcement, and audit, before choosing or building the tools that implement them.
+  problems:
+    - id: policy-compliance
+      note: >-
+        Explains why hand-assembled GRC can no longer keep pace with development, and sets out the
+        principles that let compliance act as an automated quality gate with useful audit processes.
+    - id: security-posture
+      note: >-
+        Separates the layers that define expectations from the layers that measure against them,
+        so posture can be assessed continuously instead of only at audit time.
 - id: minder
   name: Minder
   insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
@@ -184,17 +220,66 @@ projects:
   similar_to: [best-practices-badge, openssf-scorecard]
   compatible_with: [darnit, minder, privateer]
   relationships:
-  - kind: consumes
+  - kind: implements
     target: gemara
     status: confirmed
     note: >-
-      Expresses control catalog with Gemara.
+      Publishes its control catalog as a Gemara Layer 2 document.
 - id: privateer
   name: Privateer
+  insights: https://github.com/privateerproj/pvtr/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/privateer/
   description: >-
-    A validation framework that simplifies infrastructure testing and compliance validation. Built with infrastructure engineers in mind, pvtr helps accelerate security and compliance validation of any software asset.
+    A plugin-based framework for evaluations. Privateer orchestrates private or community-built
+    plugins, then writes a Gemara-compatible report that people and tools can both read.
   kind: project
+  relationships:
+  - kind: implements
+    target: gemara
+    status: confirmed
+    note: >-
+      Operates at Gemara's evaluation layer and scaffolds plugins from Gemara control catalogs.
+  - kind: consumes
+    target: osps-baseline
+    status: confirmed
+    note: >-
+      Validates against the OSPS Baseline control catalog; the GitHub repository plugin checks
+      repositories against it.
+  - kind: produces
+    target: gemara
+    status: confirmed
+    note: >-
+      Emits its results as Gemara Evaluation Logs.
+  personas:
+  - id: developer
+    note: >-
+      Run a Privateer plugin against your own repository to see which Baseline controls it
+      meets, and write plugins for systems the community hasn't covered yet.
+  - id: security
+    note: >-
+      Turn written controls into runnable checks and get evidence from each one, instead of
+      collecting spreadsheets and screenshots.
+  - id: devops
+    note: >-
+      Run Privateer in CI so evaluation results reach the pipeline and the GitHub Security tab
+      on every run.
+  - id: ospo
+    note: >-
+      Evaluate projects across your portfolio against a shared control catalog and publish the
+      results in a common format.
+  problems:
+  - id: policy-compliance
+    note: >-
+      Closes the gap between what a policy says and what a system actually does by evaluating
+      written controls automatically.
+  - id: security-posture
+    note: >-
+      Produces a control-by-control record of what was checked and found, in a form dashboards and
+      GRC platforms can read without conversion.
+  - id: secure-configuration
+    note: >-
+      Plugins inspect live configuration, such as repository settings, against the controls a
+      catalog requires.
 - id: security-insights
   name: Security Insights Specification
   insights: https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml

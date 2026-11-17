@@ -7,8 +7,6 @@
 #
 # These are not one problem. As of this writing:
 #
-#   gemara, gemara-whitepaper,
-#   osps-baseline              likely ORBIT, but unconfirmed by the TAC list.
 #   slsa-github-generator,
 #   slsa-verifier              sub-projects of SLSA, which is Supply Chain
 #                              Integrity. Whether a sub-project inherits its
