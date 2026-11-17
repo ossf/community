@@ -26,9 +26,15 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      # pa11y-ci (run by `make test`) needs Node >= 22.13.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "24"
+
       # Builds the site (catalog_pages.rb fails on duplicate ids and
-      # unresolvable persona/problem/relationship targets) then link-checks it.
-      - run: make test
+      # unresolvable persona/problem/relationship targets), link-checks it,
+      # then runs the WCAG 2 AA scan over every page in both themes.
+      - run: make test A11Y_SAMPLE=0
 
   lint:
     runs-on: ubuntu-latest

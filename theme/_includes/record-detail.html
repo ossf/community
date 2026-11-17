@@ -28,7 +28,7 @@
   {%- endfor -%}
 </nav>
 
-<div class="tool-matrix" role="list">
+<div class="tool-matrix">
   {%- for link in record.personas -%}
     {%- assign p = nil -%}
     {%- for cand in site.data.definitions.personas -%}{%- if cand.id == link.id -%}{%- assign p = cand -%}{%- endif -%}{%- endfor -%}
@@ -58,7 +58,7 @@
 {%- if record.problems and record.problems != empty -%}
 <h2 class="tool-matrix__heading">Problems {{ record.name }} helps with</h2>
 
-<div class="tool-matrix" role="list">
+<div class="tool-matrix">
   {%- for link in record.problems -%}
     {%- assign prob = nil -%}
     {%- for cand in site.data.definitions.problems -%}{%- if cand.id == link.id -%}{%- assign prob = cand -%}{%- endif -%}{%- endfor -%}

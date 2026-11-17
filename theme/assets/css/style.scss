@@ -59,7 +59,7 @@ html, body {
   --color-border-light: #e7ecf0;
   --color-text-primary: #24292f;
   --color-text-secondary: #57606a;
-  --color-text-tertiary: #6e7781;
+  --color-text-tertiary: #636c76; /* 4.5:1 on bg-secondary */
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
@@ -73,11 +73,14 @@ html, body {
   --spacing-xl: 2rem;
   --spacing-xxl: 3rem;
 
-  /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
+  /* Border Radius — rounded "battle card" shapes, shared by both themes */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
   --radius-super: 50px;
+
+  /* Card outline weight, shared by both themes */
+  --border-card: 2px;
 }
 
 /* ============================================
@@ -87,21 +90,22 @@ html, body {
 [data-theme="dark"] {
   /* OpenSSF Brand Colors - adjusted for dark mode */
   --openssf-purple: #a78bfa;
-  --openssf-purple-dark: #c4b5fd;
+  /* Headings read near-white on navy; purple stays the accent. */
+  --openssf-purple-dark: #f1f4fa;
   --openssf-purple-light: #8b5cf6;
   --openssf-purple-lighter: #a78bfa;
   --openssf-green: #34d399;
   --openssf-green-light: #6ee7b7;
 
-  /* Neutral Colors - dark mode (warmer, less harsh) */
-  --color-bg-primary: #1a1b23;
-  --color-bg-secondary: #252732;
-  --color-bg-tertiary: #2f3142;
-  --color-border: #3d4054;
-  --color-border-light: #2f3142;
-  --color-text-primary: #e2e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-text-tertiary: #64748b;
+  /* Neutral Colors - dark mode: deep navy surfaces, slate-blue outlines */
+  --color-bg-primary: #0e1830;
+  --color-bg-secondary: #15223f;
+  --color-bg-tertiary: #1d2d50;
+  --color-border: #44577d;
+  --color-border-light: #26375a;
+  --color-text-primary: #e8ecf4;
+  --color-text-secondary: #b4bfd3;
+  --color-text-tertiary: #8e9bb5;
 
   /* Shadows - adjusted for dark mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -183,7 +187,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "IBMPlexSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.2;
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
@@ -192,8 +197,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -299,6 +305,20 @@ a {
   text-decoration: none;
   transition: color 0.2s ease, border-bottom 0.2s ease;
   border-bottom: 1px solid transparent;
+}
+
+/* Unclassed anchors are prose links; every component link carries a class,
+   except .relationship__link, which sits inside running text. */
+a:not([class]),
+.relationship__link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+
+  &:hover {
+    border-bottom-color: transparent;
+    text-decoration-thickness: 2px;
+  }
 }
 
 a:hover {
@@ -657,7 +677,7 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
 
 .sidebar-content {
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
@@ -949,10 +969,8 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
    ============================================ */
 
 @mixin card-base {
-  background: linear-gradient(180deg,
-    var(--color-bg-primary) 0%,
-    var(--color-bg-secondary) 100%);
-  border: 2px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   transition: all 0.3s ease;
@@ -965,17 +983,7 @@ a[href^="http"]:not([href*="gemara"]):not([href*="openssf"]):not(.social-media-l
     box-shadow: var(--shadow-md);
     border-color: var(--openssf-purple-light);
     transform: translateY(-2px);
-    background: linear-gradient(180deg,
-      var(--color-bg-primary) 0%,
-      rgba(114, 83, 237, 0.05) 100%);
-  }
-
-  [data-theme="dark"] & {
-    &:hover {
-      background: linear-gradient(180deg,
-        var(--color-bg-primary) 0%,
-        rgba(167, 139, 250, 0.1) 100%);
-    }
+    background: var(--color-bg-tertiary);
   }
 
   &:visited {
@@ -1595,7 +1603,7 @@ select:focus {
 /* ---- Hero router: the three ways into the catalog ----------------------- */
 
 .hero-router {
-  border: 1px solid var(--color-border);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-bg-secondary);
   overflow: hidden;
@@ -1837,7 +1845,7 @@ select:focus {
   padding: var(--spacing-md);
   margin: var(--spacing-lg) 0 var(--spacing-xl);
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-md);
   position: sticky;
   top: 0;
@@ -1856,9 +1864,9 @@ select:focus {
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-super);
   background: var(--color-bg-primary);
-  border: 1px solid var(--color-border);
+  border: var(--border-card) solid var(--color-border);
   color: var(--color-text-primary) !important;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
   border-bottom: 1px solid var(--color-border) !important;
@@ -2098,6 +2106,7 @@ select:focus {
   font-weight: 600;
   font-size: 0.9rem;
   border-bottom: 1px solid var(--color-border) !important;
+  text-decoration: none;
 
   &:hover {
     border-color: var(--openssf-purple);
@@ -2112,25 +2121,32 @@ select:focus {
 .tool-jumpnav {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs) var(--spacing-md);
+  gap: var(--spacing-sm);
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
   background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-md);
   margin: 0 0 var(--spacing-xl);
   font-size: 0.9rem;
 
   a {
-    color: var(--openssf-purple) !important;
-    border-bottom: 1px solid transparent !important;
-    font-weight: 500;
+    color: var(--color-text-primary) !important;
+    border: var(--border-card) solid var(--color-border) !important;
+    border-radius: var(--radius-super);
+    background: var(--color-bg-primary);
+    padding: 2px var(--spacing-md);
+    font-weight: 600;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
 
+    i { color: var(--openssf-purple); }
+
     &:hover {
-      border-bottom: 1px solid var(--openssf-purple) !important;
+      border-color: var(--openssf-purple-light) !important;
+      background: var(--color-bg-tertiary);
     }
   }
 }
@@ -2154,10 +2170,8 @@ select:focus {
 }
 
 .tool-persona-row {
-  background: linear-gradient(180deg,
-    var(--color-bg-primary) 0%,
-    var(--color-bg-secondary) 100%);
-  border: 2px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  border: var(--border-card) solid var(--color-border);
   border-radius: var(--radius-md);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   scroll-margin-top: 80px;
