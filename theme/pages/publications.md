@@ -15,7 +15,11 @@ The documents of the OpenSSF ecosystem — specifications and frameworks like SL
   {% assign sorted_pubs = site.data.catalog.publications | sort: "name" %}
   {% for pub in sorted_pubs %}
     <a class="component-card persona-card" href="{{ '/publications/' | append: pub.id | append: '/' | relative_url }}">
+      {%- if pub.logo -%}
+      {% include logo-tile.html record=pub %}
+      {%- else -%}
       <div class="persona-card__icon" aria-hidden="true"><i class="fa-solid fa-file-shield"></i></div>
+      {%- endif -%}
       <h2 class="persona-card__name">{{ pub.name }}</h2>
       {%- if pub.aliases -%}
       <p class="component-description persona-card__short">aka {{ pub.aliases | join: ", " }}</p>

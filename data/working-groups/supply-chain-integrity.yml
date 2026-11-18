@@ -25,6 +25,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -46,12 +49,14 @@ projects:
 - id: bomhort
   name: BOMHort
   openssf_url: https://openssf.org/projects/bomhort/
+  logo: https://raw.githubusercontent.com/seebom-labs/BOMHort/d14e6a5d2907d9cfd0852c4687995157ba270a70/docs/static/images/bomhort-mascot.png
   description: >-
     A standalone, Kubernetes-native SBOM visualization and governance platform. It ingests SPDX and CycloneDX SBOMs from S3-compatible storage, detects vulnerabilities via the OSV API, enforces license compliance policies, and applies VEX statements — all presented through an interactive dashboard with analytics.
   kind: project
 - id: darnit
   name: Darnit
   openssf_url: https://openssf.org/projects/darnit/
+  logo: https://raw.githubusercontent.com/darnitdevorg/darnit/abf0702557b8f3c52c9105f2a4cee3983d7b0c6b/darnit_logo_svg.svg
   description: >-
     A pluggable compliance audit framework that helps projects conform to software engineering best practices. It provides infrastructure for running compliance audits, generating cryptographic attestations, and automating remediation workflows.
   kind: project
@@ -59,6 +64,7 @@ projects:
   name: gittuf
   insights: gittuf/gittuf
   openssf_url: https://openssf.org/projects/gittuf/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/gittuf/gittuf_horizontal_color.png
   lfx_id: gittuf
   description: >-
     A platform-agnostic security layer for Git that applies The Update Framework concepts
@@ -97,6 +103,7 @@ projects:
   name: GUAC
   insights: https://github.com/guacsec/guac/blob/main/SECURITY-INSIGHTS.yml
   openssf_url: https://openssf.org/projects/guac/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/guac/guac_icon_color.png
   description: >-
     Graph for Understanding Artifact Composition — a queryable supply-chain knowledge graph
     that aggregates SBOMs, attestations, and vulnerability data.
@@ -161,6 +168,7 @@ projects:
   name: SLSA
   insights: slsa-framework/slsa
   openssf_url: https://openssf.org/projects/slsa/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/slsa/slsa_logo.svg
   lfx_id: slsa
   description: >-
     Supply-chain Levels for Software Artifacts — a framework of progressive security requirements
@@ -214,6 +222,7 @@ projects:
   name: Zarf
   insights: zarf-dev/zarf
   openssf_url: https://openssf.org/projects/zarf/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/zarf/zarf.svg
   description: >-
     Enables continuous software delivery onto air-gapped, disconnected, or otherwise constrained
     systems by bundling applications and their dependencies into portable packages.

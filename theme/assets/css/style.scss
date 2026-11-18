@@ -2347,3 +2347,72 @@ select:focus {
   color: var(--color-text-secondary);
   margin: 0 0 var(--spacing-xl);
 }
+
+/* ---- Project logos on a light tile ------------------------------------- */
+/* Always light, in both themes: many logos are dark wordmarks drawn for a   */
+/* white page and vanish on navy.                                            */
+
+.logo-tile {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 4px;
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.logo-tile--sm {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.logo-tile--lg {
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  border-radius: var(--radius-md);
+}
+
+.tool-hero__title,
+.tool-card__title,
+.tool-index-card__title,
+.sidebar-nested-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.tool-hero__title { gap: var(--spacing-md); }
+
+/* Beat .component-grid h2 (space-between + wrap), which would split the tile
+   from the name. */
+.component-grid .tool-card__title,
+.component-grid .tool-index-card__title {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.logo-tile--empty {
+  background: none;
+  border-color: transparent;
+}
+
+/* On the publications index the tile stands in for .persona-card__icon. */
+.persona-card > .logo-tile {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--spacing-sm);
+}

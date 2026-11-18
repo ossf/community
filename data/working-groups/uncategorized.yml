@@ -34,6 +34,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -42,6 +45,7 @@ projects:
   name: Bomctl
   insights: bomctl/bomctl
   openssf_url: https://openssf.org/projects/bomctl/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/bomctl/bomctl_horizontal_color.png
   description: >-
     Format-agnostic Software Bill of Materials tooling that bridges the gap between SBOM generation
     and SBOM analysis — fetching, merging, and manipulating SBOMs across SPDX and CycloneDX.
@@ -102,6 +106,7 @@ projects:
   name: Protobom / SBOM Tools
   insights: protobom/protobom
   openssf_url: https://openssf.org/projects/protobom/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/protobom/protobom_horizontal_color.svg
   description: >-
     A shared library and toolset for generating, translating, and consuming Software Bills
     of Materials in standard formats such as SPDX and CycloneDX.
@@ -153,6 +158,7 @@ projects:
   name: SBOMit
   insights: SBOMit/sbomit
   openssf_url: https://openssf.org/projects/sbomit/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/sbomit/sbomit_icon.png
   description: >-
     An SBOM-format-independent method that embeds in-toto and Witness attestations into Software
     Bills of Materials, cryptographically validating the steps performed across the software
@@ -204,6 +210,7 @@ projects:
   name: OpenBao
   insights: https://github.com/openbao/openbao/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/openbao/
+  logo: https://raw.githubusercontent.com/openbao/openbao/ae3e4f73f7be11ac763426cc17d6e8a1ec88d888/website/public/img/logo-black.svg
   description: >-
     A community-governed, open source secrets management platform for storing, rotating, and
     brokering access to secrets, credentials, tokens, and cryptographic keys.
@@ -244,6 +251,7 @@ projects:
   name: Sigstore
   insights: sigstore/sigstore
   openssf_url: https://openssf.org/projects/sigstore/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/sigstore/stacked/color/Sigstore-logo_stacked-color.svg
   description: >-
     A free, identity-based artefact-signing service backed by a public transparency log so
     anyone can verify who built what.

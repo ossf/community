@@ -25,6 +25,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -43,6 +46,7 @@ projects:
   name: Gemara
   insights: https://github.com/gemaraproj/gemara/blob/main/security-insights.yml
   openssf_url: https://openssf.org/projects/gemara/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/gemara/gemara_icon.png
   description: >-
     Schemas, SDKs, and tooling implementing the Gemara GRC engineering model — machine-readable
     formats that bridge high-level compliance requirements and low-level technical evidence
@@ -90,6 +94,7 @@ projects:
   name: Minder
   insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/minder/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/minder/minder_stacked_color.svg
   description: >-
     A software-supply-chain security platform that continuously verifies secure practices
     and enforces standardized policies across repositories and artefacts.
@@ -140,6 +145,7 @@ projects:
   name: OSPS Baseline
   insights: ossf/security-baseline
   openssf_url: https://openssf.org/projects/osps-baseline/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/baseline/baseline_logo.svg
   description: >-
     The Open Source Project Security Baseline — a consensus-driven minimum set of security
     requirements for projects to adopt and for consumers to expect.
@@ -192,6 +198,7 @@ projects:
 - id: privateer
   name: Privateer
   openssf_url: https://openssf.org/projects/privateer/
+  logo: https://raw.githubusercontent.com/privateerproj/site/6af71dec14790e0f6405bcb835244e15a89e2366/static/logo/patches-head.svg
   description: >-
     A validation framework that simplifies infrastructure testing and compliance validation. Built with infrastructure engineers in mind, pvtr helps accelerate security and compliance validation of any software asset.
   kind: project
@@ -199,6 +206,7 @@ projects:
   name: Security Insights Specification
   insights: https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/security-insights/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/security_insights/security-insights_icon.png
   description: >-
     A machine-processable YAML specification that lets a project declare its security posture,
     vulnerability-handling process, and supporting resources.

@@ -10,7 +10,7 @@ layout: default
 
 <section class="tool-hero">
   <p class="tool-hero__eyebrow"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> OpenSSF project</p>
-  <h1 class="tool-hero__title">{{ project.name }}</h1>
+  <h1 class="tool-hero__title">{% include logo-tile.html record=project variant="lg" %}{{ project.name }}</h1>
   <p class="tool-hero__summary">{{ project.description }}</p>
   <p class="tool-hero__links">
     <a class="tool-hero__link" href="{{ project.openssf_url }}" target="_blank" rel="noopener noreferrer">

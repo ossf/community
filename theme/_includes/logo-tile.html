@@ -1,0 +1,13 @@
+{%- comment -%}
+  A record's logo on a light rounded tile, so dark wordmarks stay visible in
+  dark mode. Renders nothing when the record has no `logo:`.
+  Usage: {% include logo-tile.html record=project variant="sm|md|lg" reserve=true %}
+  alt="" because every caller puts the record's name right beside it.
+  reserve=true renders an empty spacer when there is no logo, so a list of
+  names stays aligned.
+{%- endcomment -%}
+{%- if include.record.logo -%}
+<span class="logo-tile logo-tile--{{ include.variant | default: 'md' }}"><img src="{{ include.record.logo }}" alt="" loading="lazy" decoding="async"></span>
+{%- elsif include.reserve -%}
+<span class="logo-tile logo-tile--{{ include.variant | default: 'md' }} logo-tile--empty" aria-hidden="true"></span>
+{%- endif -%}
