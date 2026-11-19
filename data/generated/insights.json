@@ -346,6 +346,226 @@
     }
   },
   {
+    "target": "https://github.com/privateerproj/pvtr/blob/main/.github/security-insights.yml",
+    "owner": "privateerproj",
+    "repo": "pvtr",
+    "path": ".github/security-insights.yml",
+    "status": "ok",
+    "schema-version": "2.2.0",
+    "insights": {
+      "header": {
+        "last-reviewed": "2026-10-01",
+        "last-updated": "2026-10-12",
+        "schema-version": "2.2.0",
+        "url": "https://github.com/privateerproj/pvtr/blob/main/.github/security-insights.yml",
+        "comment": "This file contains only the repository information for the core Privateer CLI.\n",
+        "project-si-source": "https://raw.githubusercontent.com/privateerproj/.github/refs/heads/main/.github/security-insights.yml"
+      },
+      "project": {
+        "name": "Privateer",
+        "homepage": "https://github.com/privateerproj",
+        "administrators": [
+          {
+            "name": "Eddie Knight",
+            "primary": true,
+            "affiliation": "Sonatype",
+            "social": "https://bsky.app/profile/eddieknight.dev"
+          }
+        ],
+        "repositories": [
+          {
+            "name": "Privateer",
+            "comment": "Privateer is the core executable that orchestrates community-built plugins.\n",
+            "url": "https://github.com/privateerproj/pvtr"
+          },
+          {
+            "name": "Privateer SDK",
+            "comment": "The Privateer SDK is a collection of tools and libraries to help developers create plugins for Privateer,\nand enables those plugins to be called from Privateer.\n",
+            "url": "https://github.com/privateerproj/privateer-sdk"
+          },
+          {
+            "name": "Privateer Homebrew Tap",
+            "comment": "The Homebrew tap that distributes the pvtr CLI.\n",
+            "url": "https://github.com/privateerproj/homebrew-tap"
+          },
+          {
+            "name": "Privateer Website",
+            "comment": "Source for the privateerproj.com website.\n",
+            "url": "https://github.com/privateerproj/site"
+          },
+          {
+            "name": "Privateer Plugin Example",
+            "comment": "A boilerplate plugin that shows the quickest way to build a Privateer plugin.\n",
+            "url": "https://github.com/privateerproj/plugin-example"
+          },
+          {
+            "name": "Privateer Plugin Generator Templates",
+            "comment": "Templates that `pvtr generate-plugin` uses to generate a new plugin from a Gemara control catalog.\n",
+            "url": "https://github.com/privateerproj/plugin-generator-templates"
+          }
+        ],
+        "vulnerability-reporting": {
+          "reports-accepted": true,
+          "bug-bounty-available": false,
+          "contact": {
+            "name": "Jason Meridth",
+            "primary": true,
+            "social": "https://github.com/jmeridth"
+          },
+          "policy": "https://github.com/privateerproj/.github/blob/main/.github/SECURITY.md"
+        },
+        "documentation": {
+          "detailed-guide": "https://github.com/privateerproj/pvtr/blob/main/README.md",
+          "code-of-conduct": "https://github.com/privateerproj/.github/blob/main/.github/CODE_OF_CONDUCT.md",
+          "quickstart-guide": "https://github.com/privateerproj/pvtr/blob/main/README.md"
+        }
+      },
+      "repository": {
+        "status": "active",
+        "url": "https://github.com/privateerproj/pvtr",
+        "accepts-change-request": true,
+        "accepts-automated-change-request": true,
+        "core-team": [
+          {
+            "name": "Eddie Knight",
+            "primary": true,
+            "affiliation": "Sonatype",
+            "social": "https://bsky.app/profile/eddieknight.dev"
+          },
+          {
+            "name": "Jason Meridth",
+            "primary": false,
+            "affiliation": "Revanite",
+            "social": "https://github.com/jmeridth"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/privateerproj/pvtr?tab=Apache-2.0-1-ov-file#readme",
+          "expression": "Apache-2.0"
+        },
+        "security": {
+          "assessments": {
+            "self": {
+              "comment": "Gemara v1.5.0 threat catalog for the Privateer CLI, written by the Privateer Maintainer Group.\nThreats live in .github/threat-assessment.yaml and reference the capabilities in .github/capability-catalog.yaml.\n",
+              "evidence": "https://github.com/privateerproj/pvtr/blob/main/.github/threat-assessment.yaml",
+              "date": "2026-02-28"
+            },
+            "third-party": [
+              {
+                "comment": "OSPS Baseline Level 1 (criteria v2026.08.28), self-reported on bestpractices.dev with autodetected answers.",
+                "name": "OpenSSF Best Practices OSPS Baseline",
+                "evidence": "https://www.bestpractices.dev/projects/15145/baseline-1",
+                "date": "2026-10-01"
+              }
+            ]
+          },
+          "champions": [
+            {
+              "name": "Jason Meridth",
+              "primary": true
+            }
+          ],
+          "tools": [
+            {
+              "name": "Dependabot",
+              "type": "SCA",
+              "version": "2",
+              "rulesets": [
+                "default"
+              ],
+              "integration": {
+                "adhoc": true,
+                "ci": false,
+                "release": false
+              },
+              "results": {
+                "adhoc": {
+                  "name": "Scheduled SCA Scan Results",
+                  "location": "https://github.com/privateerproj/pvtr/blob/main/.github/dependabot.yml",
+                  "predicate-uri": "https://docs.github.com/en/graphql/reference/objects#repositoryvulnerabilityalert",
+                  "comment": "Dependabot is configured in .github/dependabot.yml. Its alerts are visible to maintainers in the repository's Security tab.\n"
+                }
+              }
+            },
+            {
+              "name": "GitHub Secret Scanning",
+              "type": "secret",
+              "comment": "GitHub secret scanning and push protection are enabled in the\nrepository's security settings (OSPS-BR-07.01). Alerts are visible\nto maintainers only.\n",
+              "rulesets": [
+                "default"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "Secret scanning alerts",
+                  "location": "https://github.com/privateerproj/pvtr/security/secret-scanning",
+                  "predicate-uri": "https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning",
+                  "comment": "Alerts are visible to maintainers only.\n"
+                }
+              }
+            },
+            {
+              "name": "OSPS Baseline Scanner",
+              "type": "other",
+              "rulesets": [
+                "osps-baseline-2026-08"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "OSPS Baseline evaluation",
+                  "location": "https://github.com/privateerproj/pvtr/actions/workflows/osps-security-assessment.yaml",
+                  "predicate-uri": "https://github.com/revanite-io/osps-baseline-action"
+                }
+              }
+            },
+            {
+              "name": "OSPS Baseline Scanner (grc.store)",
+              "type": "other",
+              "rulesets": [
+                "osps-baseline-2026-08"
+              ],
+              "integration": {
+                "adhoc": false,
+                "ci": true,
+                "release": false
+              },
+              "results": {
+                "ci": {
+                  "name": "OSPS Baseline evaluation published to grc.store",
+                  "location": "https://grc.store/targets/privateer/pvtr",
+                  "predicate-uri": "https://github.com/revanite-io/pvtr-publish-results"
+                }
+              }
+            }
+          ]
+        },
+        "documentation": {
+          "contributing-guide": "https://github.com/privateerproj/pvtr/blob/main/CONTRIBUTING.md",
+          "security-policy": "https://github.com/privateerproj/.github/blob/main/.github/SECURITY.md"
+        },
+        "release": {
+          "automated-pipeline": true,
+          "distribution-points": [
+            {
+              "uri": "https://github.com/privateerproj/pvtr/releases",
+              "comment": "GitHub Release Page"
+            }
+          ],
+          "changelog": "https://github.com/privateerproj/pvtr/releases"
+        }
+      }
+    }
+  },
+  {
     "target": "https://github.com/ossf/security-insights-spec/blob/main/.github/security-insights.yml",
     "owner": "ossf",
     "repo": "security-insights-spec",
