@@ -124,49 +124,55 @@ projects:
       so posture can be assessed continuously instead of only at audit time.
 - id: minder
   name: Minder
-  insights: https://github.com/mindersec/minder/blob/main/.github/security-insights.yml
+  insights: https://raw.githubusercontent.com/mindersec/minder/main/.github/security-insights.yml
   openssf_url: https://openssf.org/projects/minder/
   description: >-
-    A software-supply-chain security platform that continuously verifies secure practices
-    and enforces standardized policies across repositories and artefacts.
+    A software-supply-chain security platform that enables users to define and apply
+    policies that continuously secure software projects.
   kind: project
   relationships:
-  - kind: consumes
+  - kind: implements
     target: osps-baseline
-    status: needs-review
+    status: confirmed
     note: >-
       Baseline requirements can be enforced as Minder policy profiles across an organization's
       repositories.
+  - kind: implements
+    target: openssf-scorecard
+    status: confirmed
+    note: >-
+      Minder rules can be used to enable the scorecard action and to remediate
+      many scorecard findings.
   personas:
   - id: developer
     note: >-
-      Uses Minder to proactively manage their security posture and attest secure practices
-      to downstream consumers.
+      Uses Minder to proactively manage their security posture and automate both security
+      and other software practices.
   - id: ospo
     note: >-
       Deploys Minder to establish and continuously verify standardized security policies across
       all internal and open source project portfolios.
   - id: security
     note: >-
-      Maps repository configurations to enterprise threat models, using Minder to continuously
-      enforce secure development lifecycles and prevent configuration drift.
+      Maps repository configurations to enterprise threat models, using Minder to define
+      continuously-enforced policies for secure development lifecycles and prevent
+      security configuration drift.
   - id: devops
     note: >-
       Configures Minder to execute security posture management checks and minimize risk along
       the supply chain.
-  - id: package-manager
-    note: >-
-      Ensures that published packages originate from repositories that continuously pass strict
-      security posture checks.
   - id: executive
     note: >-
-      Leverages verifiable proof of secure development practices to satisfy auditors and enterprise
-      customers through continuous attestation.
+      Measure and track security posture in the context of organization-specific rules and policies.
   problems:
   - id: secure-configuration
     note: >-
       Continuously verifies repository configuration against secure-by-default rules and prevents
       drift over time.
+  - id: security-posture
+    note: >-
+      Continuously evaluates the security posture of repositories and projects with respect to
+      defined policies.
   - id: policy-compliance
     note: >-
       Enforces standardized security policy across whole portfolios of repositories and artefacts
