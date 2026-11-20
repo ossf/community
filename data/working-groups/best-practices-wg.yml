@@ -25,6 +25,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -41,6 +44,7 @@ projects:
   name: Best Practices Badge
   insights: ossf/best-practices-badge
   openssf_url: https://openssf.org/projects/best-practices-badge/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/best_practices_badge/bestpracticesbadge.svg
   description: >-
     A voluntary self-certification program that lets open source projects demonstrate they
     follow recognized development best practices.
@@ -84,6 +88,7 @@ projects:
   name: OpenSSF Scorecard
   insights: ossf/scorecard
   openssf_url: https://openssf.org/projects/scorecard/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/scorecard/scorecard_logo.svg
   description: >-
     An automated tool that assesses open source projects against a curated set of security-health
     checks and produces a comparable score.

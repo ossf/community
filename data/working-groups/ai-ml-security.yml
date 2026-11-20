@@ -25,6 +25,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -79,6 +82,7 @@ projects:
   name: OSS-CRS
   insights: ossf/oss-crs
   openssf_url: https://openssf.org/projects/oss-crs/
+  logo: https://raw.githubusercontent.com/ossf/oss-crs/7a11f2704f51c808be934f092a77847342d3f1c7/site/static/img/logo.svg
   description: >-
     A standard orchestration framework for building and running LLM-based autonomous bug-finding and bug-fixing systems (Cyber Reasoning Systems).
   kind: project

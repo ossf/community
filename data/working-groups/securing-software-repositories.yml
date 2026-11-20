@@ -25,6 +25,9 @@
 # `confirmed` or `needs-review` — needs-review means we want the project's own
 # maintainers to check the claim. If that's you, correcting it, setting the
 # status to confirmed, and deleting the note IS the edit we're hoping for.
+# `logo:` is optional: the URL of the project's logo image. Pin it to a commit
+# (not a branch) so it can't change or disappear underneath us, and prefer the
+# project's folder in https://github.com/ossf/artwork/tree/main/projects.
 # Run `make test` and `make lint`
 # before opening a PR.
 
@@ -64,6 +67,7 @@ projects:
   name: Repository Service for TUF (RSTUF)
   insights: repository-service-tuf/repository-service-tuf
   openssf_url: https://openssf.org/projects/repository-service-for-tuf/
+  logo: https://raw.githubusercontent.com/ossf/artwork/a2fab1660b77cafa00925666bb8f07596e86e1a9/projects/rstuf/PNG/rstuf_icon-color.png
   description: >-
     A drop-in implementation of The Update Framework (TUF) that protects software repositories
     from compromise, rollback, and man-in-the-middle attacks.

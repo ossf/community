@@ -17,6 +17,8 @@
           {%- when "projects"  -%}{%- assign derived = site.data.catalog.projects -%}
           {%- when "publications" -%}{%- assign derived = site.data.catalog.publications -%}
         {%- endcase -%}
+        {%- assign reserve_tile = false -%}
+        {%- if item.derive == "projects" or item.derive == "publications" -%}{%- assign reserve_tile = true -%}{%- endif -%}
 
         {%- if derived or item.children -%}
           {%- assign is_open = false -%}
@@ -33,7 +35,7 @@
                   {%- if page.url == child_url -%}{%- assign is_current = true -%}{%- endif -%}
                   <a href="{{ child_url | relative_url }}"
                      class="sidebar-link sidebar-nested-link{% if is_current %} sidebar-link--active{% endif %}"
-                     {% if is_current %}aria-current="page"{% endif %}>{{ record.name | escape }}</a>
+                     {% if is_current %}aria-current="page"{% endif %}>{% include logo-tile.html record=record variant="sm" reserve=reserve_tile %}{{ record.name | escape }}</a>
                 {%- endfor -%}
               {%- else -%}
                 {%- for child in item.children -%}

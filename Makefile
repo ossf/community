@@ -1,4 +1,4 @@
-.PHONY: brand-new-env-installs deps start test lint refresh-insights
+.PHONY: brand-new-env-installs deps start test a11y lint refresh-insights
 
 # `si fetch` from ossf/si-tooling, pinned to a release. Override to run a
 # local checkout: make refresh-insights SI_FETCH="go -C ../si-tooling/v2 run ./cmd/si"
@@ -29,6 +29,17 @@ start: deps
 test: deps
 	bundle exec jekyll build
 	bundle exec htmlproofer ./_site --disable-external
+	A11Y_SAMPLE=$(or $(A11Y_SAMPLE),1) $(MAKE) a11y
+
+# WCAG 2 AA (axe) in both themes; config in .pa11yci.js. `make a11y` checks
+# every page (~7 min); `make test` checks one page per layout unless run as
+# `make test A11Y_SAMPLE=0`, which is what CI does.
+# Needs Node >= 22.13; pa11y-ci fetches its own headless Chrome on first run.
+PA11Y_CI ?= pa11y-ci@5.0.0
+a11y:
+	bundle exec ruby -run -e httpd _site -p 4001 >/dev/null 2>&1 & server=$$!; \
+	  curl -sf --retry 20 --retry-connrefused --retry-delay 1 -o /dev/null http://localhost:4001/ \
+	  && npx --yes $(PA11Y_CI) --config .pa11yci.js; status=$$?; kill $$server; exit $$status
 
 # yamllint is not a gem, so it isn't in the Gemfile. Use it from PATH if it's
 # there, otherwise as a module (how `pip install --user` leaves it).

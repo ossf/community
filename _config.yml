@@ -88,12 +88,16 @@ show_excerpts: false
 # Social Media Links (rendered via FontAwesome in footer)
 social_links:
   - icon: github
+    title: OpenSSF on GitHub
     url: "https://github.com/ossf"
   - icon: x-twitter
+    title: OpenSSF on X
     url: "https://x.com/openssf"
   - icon: bluesky
+    title: OpenSSF on Bluesky
     url: "https://bsky.app/profile/openssf.org"
   - icon: linkedin
+    title: OpenSSF on LinkedIn
     url: "https://www.linkedin.com/company/openssf/"
 
 # Markdown settings

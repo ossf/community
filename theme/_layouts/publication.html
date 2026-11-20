@@ -14,7 +14,7 @@ layout: default
 
 <section class="tool-hero">
   <p class="tool-hero__eyebrow"><i class="fa-solid fa-file-shield" aria-hidden="true"></i> OpenSSF publication</p>
-  <h1 class="tool-hero__title">{{ publication.name }}</h1>
+  <h1 class="tool-hero__title">{% include logo-tile.html record=publication variant="lg" %}{{ publication.name }}</h1>
   {%- if publication.aliases -%}
   <p class="tool-hero__aliases"><em>Also known as:</em> {{ publication.aliases | join: ", " }}</p>
   {%- endif -%}

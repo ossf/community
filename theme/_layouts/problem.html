@@ -68,7 +68,7 @@ layout: default
     {%- if match -%}
     {%- if project.kind == "publication" -%}{%- assign card_base = "/publications/" -%}{%- else -%}{%- assign card_base = "/projects/" -%}{%- endif -%}
     <a class="component-card tool-card" href="{{ card_base | append: project.id | append: '/' | relative_url }}">
-      <h2 class="tool-card__title">{{ project.name }}</h2>
+      <h2 class="tool-card__title">{% include logo-tile.html record=project %}{{ project.name }}</h2>
       <p class="tool-card__usage">{{ match.note }}</p>
       <p class="tool-card__link">Full breakdown <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p>
     </a>
