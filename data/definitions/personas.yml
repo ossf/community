@@ -55,3 +55,11 @@
     You make procurement, compliance, and risk decisions on behalf of a larger
     organization. You need tools that translate supply-chain evidence into
     signals you can act on.
+
+- id: marketing
+  name: Marketing and Community Engagement
+  short: Marketing
+  icon: fa-briefcase
+  summary: >-
+    You create marketing content for products and services or engage with upstream
+    communities. You need tools that can be leveraged by consumers, maintainers and suppliers.
